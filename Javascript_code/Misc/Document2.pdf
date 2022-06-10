@@ -1,0 +1,125 @@
+/*function titleCase(str) {
+  let slicedStr=''
+  let strArr=str.split(" ");
+  console.log(strArr)
+  for(let i=0;i<=strArr.length-1;i++){
+   strArr[0][0]='J'
+    console.log(strArr[0])
+  }
+  console.log(strArr)
+ console.log(str[2].toUpperCase())
+  return str;
+  
+}
+
+console.log(titleCase("i'm a little tea pot"));*/
+
+/*function titleCase(str) {
+  str = str.split(' ');
+
+  for (i = 0; i < str.length; i++) {
+    str[i] = str[i].toLowerCase().split('');
+    str[i][0] = str[i][0].toUpperCase();
+    str[i] = str[i].join('');
+  }
+
+  return str.join(' ');
+}
+
+console.log(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"));*/
+
+/*function titleCase(str) {
+  const newTitle = str.split(" ");  console.log("!",newTitle)
+  const updatedTitle = [];   console.log('!',updatedTitle)
+  for (let st in newTitle) {console.log('!',st)
+    updatedTitle[st] = newTitle[st][0].toUpperCase() + newTitle[st].slice(1).toLowerCase();
+  }
+  return updatedTitle.join(" ");
+}
+console.log(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"))*/
+
+
+/*let myArr=["the","test","array"];
+let myArr2=[];
+function cap(arr){
+  for(let el in arr){
+    myArr2[el]=arr[el][0].toUpperCase();
+  }
+  console.log(myArr2);
+}
+
+cap(myArr);
+let lol=16;
+
+function titleCase(str) {
+ let newStr=str.split(" ");
+ console.log(newStr)
+ let newStr2=[];
+ for (let el in newStr){
+  newStr2[el]=newStr[el][0].toUpperCase()+newStr[el].slice(1).toLowerCase();
+ }
+  
+ return newStr2.join();}
+
+console.log(typeof lol)
+function bouncer(arr) {
+  let fileArr=[];
+  for (let el in arr){
+    if(Boolean(arr[el])==false){  
+        fileArr.push(arr[el]);
+        console.log("FileArr"+el+"=",fileArr);//1
+}
+  }console.log("Arr=",arr);//2
+  for(let i=fileArr.length-1;i>=0;i--){
+    console.log(i,fileArr[i],"index is" +arr.indexOf(fileArr[i]))//
+    arr.splice(arr.indexOf(fileArr[i]),1)
+    console.log("FileArr postsplice=",fileArr)
+    console.log("Final Arr"+i,arr)//4
+  }
+  console.log("Final arr=",arr)//5
+  return arr;
+}
+
+bouncer([null, NaN, 1, 2, undefined]);
+
+function bouncer(arr) {
+  for (let el in arr){
+    console.log(Boolean(arr[el]),el)//1
+    if(Boolean(arr[el])===false){  
+        arr.splice(el,1);
+      console.log(arr.splice(el,1));
+      
+}}
+  console.log("arr",arr)
+  return arr;
+}
+
+bouncer([false, null, 0, NaN, undefined, ""]);
+
+function checkBoolean(arr){
+  for (let el in arr){
+    console.log(arr[el],Boolean(arr[el])==false);//1
+  }
+}
+
+console.log(checkBoolean([false, null, 0, NaN, undefined, ""]))*/
+
+
+function getIndexToIns(arr, num) {
+  let sorting=(a,b)=>a-b;
+  let sortedArr=arr.sort(sorting);
+  for(let i=0; i<=sortedArr.length-1;i++){
+    if(sortedArr[i]==num && num<sortedArr[i+1]){
+      return sortedArr.indexOf(sortedArr[i])
+    }else if(sortedArr[i]<num && num<sortedArr[i+1]){
+      return sortedArr.indexOf(sortedArr[i+1])
+    }else if(sortedArr[sortedArr.length-1]<num){
+      return sortedArr.length;
+    }else if(sortedArr.length<1){
+      console.log("empty arr");
+    }
+  }
+
+}
+
+console.log(getIndexToIns([], 19));
