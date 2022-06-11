@@ -1,0 +1,10 @@
+var num=Math.ceil(Math.random()*100)
+const myPromise=new Promise((resolve,reject)=>{
+    if(num>50){resolve (`Passing grade of ${num}`);
+    }else{
+        reject(`Failing grade of ${num}`);
+ }
+})
+myPromise.then(result=> result,error=>error)
+
+console.log(myPromise)
