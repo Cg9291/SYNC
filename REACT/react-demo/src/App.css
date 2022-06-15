@@ -40,3 +40,14 @@
 #tt{
   color:red;
 }
+
+#light-switch{
+  min-width:fit-content;
+  width:4rem;
+  height:2rem;
+}
+
+/*#for-reveal{
+  background-color: black;
+  color:black;
+}*/

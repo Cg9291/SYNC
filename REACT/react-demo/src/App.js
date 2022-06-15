@@ -6,6 +6,10 @@ import PropTypes from 'prop-types';
 let arr=[0,1,2,3,4,5]
 let arr1=["Bleu","Blanc","Rouge"].join(",")
 
+/* bulbs pics for toggle exercise
+https://www.w3schools.com/js/pic_bulboff.gif
+https://www.w3schools.com/js/pic_bulbon.gif */
+
 //DIV1      
 function Hello(props) {
   return <div className="divA">
@@ -123,11 +127,48 @@ function clicked(){
   window.alert("The button has been clicked");
 }
 
+//TOGGLE BULB
+class Light extends React.Component{
+  constructor(props){
+    super(props);
+    this.state={
+      lightstatus:true
+    }
+    this.toggleLight=this.toggleLight.bind(this)
+  }
+
+  toggleLight(){
+    this.setState((state)=>({
+      lightstatus:!state.lightstatus
+    })
+    )
+    if (this.state.lightstatus){
+      document.getElementById("light-img").setAttribute("src","https://www.w3schools.com/js/pic_bulbon.gif ");
+      document.getElementById("light-switch").innerText="Turn off the light";
+    }else{
+      document.getElementById("light-img").setAttribute("src","https://www.w3schools.com/js/pic_bulboff.gif ");
+      document.getElementById("light-switch").innerText="Turn on the light"};
+  }
+
+  render(){
+    return (
+      <div>
+        <img id="light-img" src="https://www.w3schools.com/js/pic_bulboff.gif "></img>
+        <button id="light-switch" onClick={this.toggleLight}>Turn on the light</button>
+      </div>)
+  }
+}
+
+
+
+//APP DISPLAY
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <Light />
+        <div id="for-reveal">
         <Hello name="Cg" />
         <div id="lol">
         </div>
@@ -147,6 +188,7 @@ function App() {
         >
           Learn React
         </a>
+        </div>
       </header>
     </div>
   );
