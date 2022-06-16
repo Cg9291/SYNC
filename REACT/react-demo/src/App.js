@@ -127,7 +127,7 @@ function clicked(){
   window.alert("The button has been clicked");
 }
 
-//TOGGLE BULB
+//TOGGLE BULB - Light
 class Light extends React.Component{
   constructor(props){
     super(props);
@@ -153,12 +153,93 @@ class Light extends React.Component{
   render(){
     return (
       <div>
-        <img id="light-img" src="https://www.w3schools.com/js/pic_bulboff.gif "></img>
+        <img id="light-img" src="https://www.w3schools.com/js/pic_bulboff.gif " alt=" a lightbulb"></img>
         <button id="light-switch" onClick={this.toggleLight}>Turn on the light</button>
       </div>)
   }
 }
 
+//COUNTER
+class Counter extends React.Component{
+  constructor(props){
+    super(props);
+    this.state={
+      count:0
+    }
+    this.add=this.add.bind(this)
+    this.substract=this.substract.bind(this)
+    this.reset=this.reset.bind(this)
+  }
+
+  add(){
+    this.setState(state=>({
+      count:state.count+1
+    }))
+  }
+
+  substract(){
+    this.setState(state=>({
+      count:state.count-1
+    }))
+  }
+
+  reset(){
+    this.setState({
+      count:0
+    })
+  }
+
+  render(){
+    return(
+      <div>
+        <button onClick={this.add}>add</button>
+        <button onClick={this.substract}>substract</button>
+        <button onClick={this.reset}>reset</button>
+        <p>You are on a <span id="streak-days">{this.state.count}</span> days streak!</p>
+      </div>
+    )
+  }
+}
+
+//INPUT COLOR CHANGE
+class Input extends React.Component{
+  constructor(props){
+    super(props);
+    this.state={
+      color:"",
+      submit:""
+    }
+    this.setColor=this.setColor.bind(this)
+    this.changeColor=this.changeColor.bind(this)
+  }
+
+  setColor(event){
+    this.setState({
+      color:event.target.value
+    })
+  }
+
+  changeColor(event){
+    event.preventDefault()
+    this.setState({
+      submit:this.state.color
+    })
+    document.getElementById("streak-days").style.setProperty("color",this.state.color)
+    return false
+  }
+
+    render(){
+      return(
+        <div>
+          <form onSubmit={this.changeColor}>
+          <input value={this.state.color}  onChange={this.setColor} placeholder="Enter a color?"></input>
+          <button>Submit</button>
+          </form>
+          <p>{this.state.color}</p>
+        </div>
+      )
+    }
+}
 
 
 //APP DISPLAY
@@ -168,10 +249,11 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Light />
+        <Counter />
+        <Input />
         <div id="for-reveal">
         <Hello name="Cg" />
-        <div id="lol">
-        </div>
+        <div id="lol" />
         <FunctionalStatelessComponent data={arr} data1={arr1} province="WA" country="America" />
         <ClassComponent tries={19} />  
         <Parent />
