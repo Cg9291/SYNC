@@ -1,0 +1,43 @@
+{//these brackets are around all settings,may not need to include when pasting
+
+"workbench.colorCustomizations": {
+    "editorBracketMatch.background": "#ffffff55",
+    "editor.background": "#000000ff",
+    "terminal.foreground" : "#00DD00",
+    "terminal.background" : "#000000",
+    "terminalCursor.foreground":"#FFFFFF",
+
+    },
+
+
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+    "liveServer.settings.CustomBrowser": "safari:PrivateMode",
+    "liveServer.settings.useBrowserPreview": true,
+    
+    "terminal.integrated.cursorBlinking": true,
+
+    "code-runner.showExecutionMessage": false,
+    
+    "editor.tokenColorCustomizations": {
+        "[Monokai Dimmed]": {
+            "comments": "#ffffff",
+            
+            }
+        
+    
+    },
+
+    "workbench.colorTheme": "Monokai Dimmed",
+    "editor.semanticTokenColorCustomizations": {
+        "rules": {
+            "function": "#ff4d4d",
+            "variable": "#5ba8f5c7",
+            "comment": "#66ff66",
+            "method": "#ff8533",
+            "property": "#cccc00",
+            "regexp": "#ffffff",
+            "operator": "#ff0000",
+                }
+    
+    },
+}
