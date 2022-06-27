@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" onload="handleFullWidthSizing()">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,15 +12,16 @@
   <section id="main-section">
     <section id="game-row">
       <img id="user-img" style="border:solid black" src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80"/>
+
       <div id="buttons">
-        <button id="chose-random">Random Selection</button>
+        <button id="choose-random" onclick="randomChoice()">Random Selection</button>
         <div>
           <button id="the-rock" value="rock" onclick="userChoice(this.id)">Rock</button>
           <button id="the-paper" onclick="userChoice(this.id)">Paper</button>
           <button id="the-scissors" onclick="userChoice(this.id)">Scissors</button>
         </div>
+
         <div id="results">
-          
         </div>
       </div>
       <img  id="cpu-img" style="border:solid black" src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F3bdb2575-9a92-42f8-8472-bb78c7bd118a_720x405.jpeg"/>

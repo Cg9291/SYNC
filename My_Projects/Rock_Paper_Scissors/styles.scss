@@ -5,37 +5,43 @@ html,body,section,div,header,img,footer,p,h1,h2,button{
 
 body{
   background-color: green;
-  display:flex;
-  flex-direction: column;
+ 
+  overflow-y: auto;
+ 
 }
 
 h1{
-  display: block;
+ 
   background-color: blue;
   text-align: center;
   height: fit-content;
 
 }
+
+
 #main-section{
   display: flex;
   align-items: center;
   background-color: red;
   height: 100vh;
-  width: 100vw;
   border:dotted blue;
   #game-row {
-    display: flex;
-    justify-content: space-evenly;
     width: 100%;
-    height: 30rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border: solid yellow;
+    img{
+      height: 30rem;
+      flex:0 0 40%;
+      border:solid 1px white;
+    }
     #buttons {
       border: solid green;
       display: flex;
       flex-direction: column;
-      
-      justify-content: center;
-      flex: 0 0 20%;
+      justify-content: space-evenly;
+      flex: 0 0 1fr;
       button{
         font-size: 1.5vw;
         padding: 0.5rem;
