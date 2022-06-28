@@ -19,17 +19,20 @@ section,div,p,img,ul,ol,li{
     border-right:solid 0.01rem grey;
     flex:0 0 33.33%;
     font-family: 'Arimo', sans-serif;
+    font-size:1.5rem;
     nav{
       display: flex;
       flex-direction: column;
       align-items: start;
-      width: 50%;
-      border: solid red;
+      width: 45%;
+      
       ul{
         list-style: disc inside;
         #twitter-logo{
           width:4rem;
           border-radius: 75%;
+          margin-left: -1.2rem;
+          margin-top:0.5rem;
           margin-bottom: 1rem;
           
         }
@@ -41,7 +44,7 @@ section,div,p,img,ul,ol,li{
           font-weight: bold;
           font-size: 1.1rem;
           border-radius:3rem;
-          width:16rem;
+          width:14rem;
           height:3.3rem;
           color:white;
           background-color: #1d9bf0;
@@ -58,9 +61,17 @@ section,div,p,img,ul,ol,li{
   
   };
   #right-container{
+    border:solid green;
+    padding-left: 2rem;
     border-left:solid 0.05rem grey;
     flex:0 0 33.33%;
-  
+    input{
+      background-color: rgba(239,243,244,255);
+      border-radius:3rem;
+      width: 50%;
+          height:2.5rem;
+    }
+    
   };
 }
 

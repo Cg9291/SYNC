@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.scss';
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
 
 function App() {
   return (
@@ -7,16 +9,11 @@ function App() {
       <section id="left-container">
         <Navigation/>
       </section>
-      <section id="middle-container"></section>
+      <section id="middle-container">
+        
+      </section>
       <section id="right-container">
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <SearchBar/>
       </section>
     </div>
   );
@@ -29,13 +26,14 @@ export default App;
 
 
 function Navigation(props){
+  const [li1,setLi1]=useState("Home")
   return (
     <nav>
       <ul>
         <img id="twitter-logo" 
       src="https://raw.githubusercontent.com/gist/mbostock/3094619/raw/78116ff0306b3b5c3f40e6cdd5f6f8f648ecffd1/thumbnail.png" 
       alt="twitter logo" />
-        <li><b>Home</b></li>
+        <li><b>{li1}</b></li>
         <li>Explore</li>
         <li>Notifications</li>
         <li>Messages</li>
@@ -43,9 +41,15 @@ function Navigation(props){
         <li>Lists</li>
         <li>Profile</li>
         <li>More</li>
-        <button type="click">Tweet</button>
+        <button type="click" /*onClick={()=>setLi1("Casa")}*/>Tweet</button>
       </ul>
     </nav>
+  )
+}
+
+function SearchBar(props){
+  return (
+    <input placeholder='Search Twitter'></input>
   )
 }
 
