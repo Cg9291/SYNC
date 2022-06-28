@@ -1,0 +1,94 @@
+section,div,p,img,ul,ol,li{
+  margin:0;
+  padding:0;
+}
+
+#App {
+  display: flex;
+  height:100vh;
+  background-color: white;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  section{
+    height:100%;
+  };
+  #left-container{
+    display: flex;
+    justify-content: end;
+    border-right:solid 0.01rem grey;
+    flex:0 0 33.33%;
+    font-family: 'Arimo', sans-serif;
+    nav{
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      width: 50%;
+      border: solid red;
+      ul{
+        list-style: disc inside;
+        #twitter-logo{
+          width:4rem;
+          border-radius: 75%;
+          margin-bottom: 1rem;
+          
+        }
+        li{
+          margin-bottom: 1rem;
+        }
+        button{
+          border-width: 0;
+          font-weight: bold;
+          font-size: 1.1rem;
+          border-radius:3rem;
+          width:16rem;
+          height:3.3rem;
+          color:white;
+          background-color: #1d9bf0;
+         
+        }
+      } 
+      //must add hover effect
+    }
+  
+  };
+  #middle-container{
+  
+    flex:0 0 33.33%;
+  
+  };
+  #right-container{
+    border-left:solid 0.05rem grey;
+    flex:0 0 33.33%;
+  
+  };
+}
+
+
+
+
+
+
+/*.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}*/
