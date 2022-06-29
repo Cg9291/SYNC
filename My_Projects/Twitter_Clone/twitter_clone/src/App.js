@@ -8,12 +8,14 @@ function App() {
     <div id="App">
       <section id="left-container">
         <Navigation/>
+        <Profile/>
       </section>
       <section id="middle-container">
-        
       </section>
       <section id="right-container">
       <SearchBar/>
+      <TrendingSection/>
+      <FollowsRecSection/>
       </section>
     </div>
   );
@@ -47,9 +49,47 @@ function Navigation(props){
   )
 }
 
+function Profile(props){
+  return(
+    <div id="profile-pill">
+      <img/>
+      <div id="username">
+        userName<br/>
+        @userHandle
+      </div>
+      <div>...</div>
+    </div>
+  )
+}
+
 function SearchBar(props){
   return (
     <input placeholder='Search Twitter'></input>
+  )
+}
+
+function TrendingSection(){
+  return (
+    <section id="trending-section">
+      <div class="cards-header">What's happening</div>
+      <div class="cards">NEWS #1</div>
+      <div class="cards">NEWS #2</div>
+      <div class="cards">NEWS #3</div>
+      <div class="cards">NEWS #4</div>
+      <div class="cards-footer"><a href='#'>Show more</a></div>
+    </section>
+  )
+}
+
+function FollowsRecSection(){
+  return(
+    <section id="rec-follows-section">
+      <div class="cards-header">Who to follow</div>
+      <div class="cards">PROFILE #1</div>
+      <div class="cards">PROFILE #2</div>
+      <div class="cards">PROFILE #3</div>
+      <div class="cards-footer"><a href='#'>Show more</a></div>
+    </section>
   )
 }
 
