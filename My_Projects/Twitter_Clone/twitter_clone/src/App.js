@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.scss';
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Profile/>
       </section>
       <section id="middle-container">
+        
       </section>
       <section id="right-container">
       <SearchBar/>
@@ -64,6 +66,22 @@ function Profile(props){
         </div>
         <div><strong>...</strong></div>
       </div>
+    </div>
+  )
+}
+
+function Timeline(props){
+  return (
+    <div id="timeline-div">
+     <TwitterTimelineEmbed
+     onLoad={function noRefCheck(){}}
+     options={{
+       height: 400
+     }}
+     screenName="ElonMusk"
+     sourceType="profile"
+     userId=""
+      />
     </div>
   )
 }
