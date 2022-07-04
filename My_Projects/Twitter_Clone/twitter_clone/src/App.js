@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.scss';
+
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
+import {Helmet} from "react-helmet";//this allows to use helmet(which supports the insertion of script tags in the component's html)
 
 function App() {
   return (
@@ -12,7 +14,7 @@ function App() {
         <Profile/>
       </section>
       <section id="middle-container">
-        
+        <Timeline/>
       </section>
       <section id="right-container">
       <SearchBar/>
@@ -73,15 +75,10 @@ function Profile(props){
 function Timeline(props){
   return (
     <div id="timeline-div">
-     <TwitterTimelineEmbed
-     onLoad={function noRefCheck(){}}
-     options={{
-       height: 400
-     }}
-     screenName="ElonMusk"
-     sourceType="profile"
-     userId=""
-      />
+      <a class="twitter-timeline" href="https://twitter.com/TheSportsMediaC/lists/1543020161199812608?ref_src=twsrc%5Etfw">A Twitter List by TheSportsMediaC</a> 
+      <Helmet>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </Helmet>
     </div>
   )
 }

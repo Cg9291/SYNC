@@ -3,7 +3,6 @@ section,div,p,img,ul,ol,li{
   padding:0;
 }
 
-
 #App {
   display: flex;
   height:100vh;
@@ -32,7 +31,12 @@ section,div,p,img,ul,ol,li{
       align-items: start;
       width: 45%; 
       ul{
-        list-style: disc inside;
+        list-style: none;
+        //list-style-image:url("birdhouse.png");
+        img{
+          width: 0.5rem;
+          height: 0.5rem;
+        }
         #twitter-logo{
           width:4rem;
           border-radius: 75%;
@@ -89,9 +93,14 @@ section,div,p,img,ul,ol,li{
   #middle-container{
   
     flex:0 0 33.33%;
+    overflow-y: scroll;
 
     #timeline-div{
-      height: 8rem;
+      height: 8rem; 
+      .twitter-timeline{
+        margin-top:-2rem;
+        position: absolute;
+      }
     }
   
   };
