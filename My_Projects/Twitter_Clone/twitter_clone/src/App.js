@@ -3,7 +3,6 @@ import './App.scss';
 
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 import {Helmet} from "react-helmet";//this allows to use helmet(which supports the insertion of script tags in the component's html)
 
 function App() {
