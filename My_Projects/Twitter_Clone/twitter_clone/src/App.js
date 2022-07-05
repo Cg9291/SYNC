@@ -46,7 +46,7 @@ function Navigation(props){
         <li>Lists</li>
         <li>Profile</li>
         <li>More</li>
-        <button type="click" class="fa fa-thumbs-up" /*onClick={()=>setLi1("Casa")}*/>Tweet</button>
+        <button type="click" /*onClick={()=>setLi1("Casa")}*/>Tweet</button>
       </ul>
     </nav>
   )
@@ -84,7 +84,7 @@ function Timeline(props){
 
 function SearchBar(props){
   return (
-    <input class="fa fa-search" placeholder='&#xf002; Search Twitter'></input>
+    <input placeholder='Search Twitter'></input>
   )
 }
 

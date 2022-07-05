@@ -111,18 +111,16 @@ section,div,p,img,ul,ol,li{
     padding-left: 2rem;
     border-left:solid 0.05rem grey;
     flex:0 0 33.33%;
-    
     input{
       background-color: rgba(239,243,244,255);
       border-width: 0;
       border-radius:3rem;
       width: 50%;
       height:2.5rem;
-      text-indent:1rem;
     }
-      /*::placeholder{
+      ::placeholder{
         padding-left: 2rem;
-      }*/
+      }
 
     #trending-section{
       display: flex;
