@@ -74,8 +74,12 @@ function Profile(props){
 function Timeline(props){
   return (
     <div id="timeline-div">
-      <input id="tweet-input"></input>
-      <a class="twitter-timeline" href="https://twitter.com/TheSportsMediaC/lists/1543020161199812608?ref_src=twsrc%5Etfw">A Twitter List by TheSportsMediaC</a> 
+      <div id='mid-header'>Home</div>
+      <div id="tweet-area">
+        <img src="https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640"/>
+        <input id="tweet-input" placeholder="What's happening?"></input>
+      </div>
+      <a id="timeline"class="twitter-timeline" href="https://twitter.com/TheSportsMediaC/lists/1543020161199812608?ref_src=twsrc%5Etfw">A Twitter List by TheSportsMediaC</a> 
       <Helmet>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </Helmet>

@@ -16,7 +16,6 @@ section,div,p,img,ul,ol,li{
     height:100%;
   };
   #left-container{
-    border:dotted green;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -99,12 +98,46 @@ section,div,p,img,ul,ol,li{
     
 
     #timeline-div{
+      
       height: 100vh; 
-      #tweet-input{
-        width: 100%;
+      #mid-header{
+        display: flex;
+        align-items: center;
+        font-size:1.2rem;
+        font-weight: bold;
+        height:3.2rem;
+        padding-left: 1rem;
+        
+      }
+      #tweet-area{
+        display: flex;
+        justify-content: space-between;
+        img{
+          width:3rem;  
+          height:3rem;
+          border-radius: 50%;
+          align-self: center;
+          margin-left: 1rem;
+          margin-top: -0.9rem;
+        }
+        #tweet-input{
+          width: 87%;
+          height:5rem;
+          border: none;
+          
+        }
+        ::placeholder{
+          font-size: 1.3rem;
+          font-weight:10;
+        }
+        #tweet-input:focus{
+          outline: 0;
+        }
       }
       .twitter-timeline{
         overflow-y: scroll;
+        margin-top: 10rem;
+        border: solid blue;
       }
     }
   };
