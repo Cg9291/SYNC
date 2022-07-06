@@ -20,7 +20,7 @@ section,div,p,img,ul,ol,li{
     flex-direction: column;
     justify-content: space-between;
     align-items: end;
-    border-right:solid 0.01rem grey;
+    border-right:0.05rem solid rgba(220,220,220,0.3);
     flex:0 0 30.6%;
     font-family: 'Arimo', sans-serif;
     font-size:1.3rem;
@@ -107,11 +107,11 @@ section,div,p,img,ul,ol,li{
         font-weight: bold;
         height:3.2rem;
         padding-left: 1rem;
-        
       }
       #tweet-area{
         display: flex;
         justify-content: space-between;
+       
         img{
           width:3rem;  
           height:3rem;
@@ -127,13 +127,45 @@ section,div,p,img,ul,ol,li{
           
         }
         ::placeholder{
-          font-size: 1.3rem;
-          font-weight:10;
+          font-size: 1.23rem;
+          
+          color: black;
+          opacity: 0.7;
         }
         #tweet-input:focus{
           outline: 0;
         }
       }
+      #icons-row{
+        padding:0 0 1rem 5rem;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 0.05rem solid rgba(220,220,220,0.3);
+        
+        ul{
+          display: flex;
+          li{
+            list-style: none;
+            margin:0 1rem 0 0;
+            img{
+              transform: scale(1.05);
+            }
+          }
+        }
+        button{
+          justify-self:end;
+          font-weight: bold;
+          font-size: 1.1rem;
+          border-radius:2.3rem;
+          width:5rem;
+          height:2.3rem;
+          color:white;
+          background-color: #1d9bf0;
+          border: none;
+          margin-right: 1rem;
+        }
+    }
+      
       .twitter-timeline{
         overflow-y: scroll;
         margin-top: 10rem;
@@ -150,7 +182,7 @@ section,div,p,img,ul,ol,li{
     flex-direction: column;
     gap: 1rem;
     padding-left: 2rem;
-    border-left:solid 0.05rem grey;
+    border-left:0.05rem solid rgba(220,220,220,0.3);
     flex:0 0 37.2%;
     input{
       background-color: rgba(239,243,244,255);
