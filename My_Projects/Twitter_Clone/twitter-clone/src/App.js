@@ -46,15 +46,15 @@ function Navigation(props){
         <img id="twitter-logo" 
       src="https://raw.githubusercontent.com/gist/mbostock/3094619/raw/78116ff0306b3b5c3f40e6cdd5f6f8f648ecffd1/thumbnail.png" 
       alt="twitter logo" />
-        <li><b>{li1}</b></li>
-        <li>Explore</li>
-        <li>Notifications</li>
-        <li>Messages</li>
-        <li>Bookmarks</li>
-        <li>Lists</li>
-        <li>Profile</li>
-        <li>More</li>
-        <button type="click" /*onClick={()=>setLi1("Casa")}*/>Tweet</button>
+        <a href="#"><li><b>{li1}</b></li></a>
+        <a href="#"><li>Explore</li></a>
+        <a href="#"><li>Notifications</li></a>
+        <a href="#"><li>Messages</li></a>
+        <a href="#"><li>Bookmarks</li></a>
+        <a href="#"> <li>Lists</li></a>
+        <a href="#"><li>Profile</li></a>
+        <a href="#"><li>More</li></a>
+        <a href="#"><button type="click" /*onClick={()=>setLi1("Casa")}*/>Tweet</button></a>
       </ul>
     </nav>
   )
@@ -89,16 +89,18 @@ function Timeline(props){
       </div>
       <div id="icons-row">
         <ul>
-          <li><a><img src={squarepicicon}/></a></li>
-          <li><a><img src={gificon}/></a></li>
-          <li><a><img src={alignicon}/></a></li>
-          <li><a><img src={noiconicon}/></a></li>
-          <li><a><img src={noiconicon}/></a></li>
-          <li><a><img src={locationicon}/></a></li>
+          <li><a href="#"><img src={squarepicicon}/></a></li>
+          <li><a href="#"><img src={gificon}/></a></li>
+          <li><a href="#"><img src={alignicon}/></a></li>
+          <li><a href="#"><img src={noiconicon}/></a></li>
+          <li><a href="#"><img src={noiconicon}/></a></li>
+          <li><a href="#"><img src={locationicon}/></a></li>
         </ul>
         <button>Tweet</button>
       </div>
-      <a id="timeline"class="twitter-timeline" href="https://twitter.com/TheSportsMediaC/lists/1543020161199812608?ref_src=twsrc%5Etfw">A Twitter List by TheSportsMediaC</a> 
+      <a id="timeline"class="twitter-timeline" href="https://twitter.com/TheSportsMediaC/lists/1543020161199812608?ref_src=twsrc%5Etfw" data-chrome="noheader" sourceType="list"
+    ownerScreenName= "TwitterDev"
+    slug= "national-parks">A Twitter List by TheSportsMediaC</a> 
       <Helmet>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </Helmet>
