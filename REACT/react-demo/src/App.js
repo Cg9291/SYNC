@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react';
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types';
+import { useState } from "react";
 let arr=[0,1,2,3,4,5]
 let arr1=["Bleu","Blanc","Rouge"].join(",")
 
@@ -160,6 +161,7 @@ class Light extends React.Component{
 }
 
 //COUNTER
+/*
 class Counter extends React.Component{
   constructor(props){
     super(props);
@@ -199,6 +201,44 @@ class Counter extends React.Component{
       </div>
     )
   }
+}*/
+
+function Counter(){
+  const [count,setCount]=useState(0);
+  const [hair,setHair]=useState({
+    length:"short",
+    style:"buzzed",
+    color:"black",
+  })
+
+  const updateColor = () => {
+    setHair(previousState => {
+      return { ...previousState, color: "red" }
+    });
+  }
+
+  return(
+    <div>
+        <button onClick={()=>setCount(count+1)}>add</button>
+        <button onClick={()=>setCount(count-1)}>substract</button>
+        <button onClick={()=>setCount(0)}>reset</button>
+        <p>You are on a <span id="streak-days">{count}</span> days streak!</p>
+        <div>
+          <button onClick={()=>setHair.hair.length("short")}>short</button>
+          <button onClick={()=>setHair.hair.length("medium")}>medium</button>
+          <button onClick={()=>setHair.hair.length("long")}>long</button>
+          <button onClick={()=>setHair.hair.style("buzzed")}>buzzed</button>
+          <button onClick={()=>setHair.hair.style("curly")}>curly</button>
+          <button onClick={()=>setHair.hair.style("frizzy")}>frizzy</button>
+          <button onClick={()=>setHair.hair.color("black")}>black</button>
+          <button onClick={()=>setHair.hair.color("blond")}>blond</button>
+          <button onClick={updateColor}>red</button>
+        </div>
+        <p>You currently have {hair.length},{hair.style} {hair.color} hair!</p>
+      </div>
+
+      //only the red button works...review
+  )
 }
 
 //INPUT COLOR CHANGE
