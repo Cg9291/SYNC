@@ -211,12 +211,18 @@ function Counter(){
     color:"black",
   })
 
-  const updateColor = () => {
+  const updateProp = (pro,valeur) => {
     setHair(previousState => {
-      return { ...previousState, color: "red" }
+      pro=="length"?
+      { ...previousState,length:valeur }
+      :pro=="style"?
+      { ...previousState,style:valeur }
+      :pro=="color"?
+      { ...previousState,color:valeur }
+      :"not a prop";
     });
   }
-
+    let purple="purple"
   return(
     <div>
         <button onClick={()=>setCount(count+1)}>add</button>
@@ -231,8 +237,8 @@ function Counter(){
           <button onClick={()=>setHair.hair.style("curly")}>curly</button>
           <button onClick={()=>setHair.hair.style("frizzy")}>frizzy</button>
           <button onClick={()=>setHair.hair.color("black")}>black</button>
-          <button onClick={()=>setHair.hair.color("blond")}>blond</button>
-          <button onClick={updateColor}>red</button>
+          <button onClick={()=>setHair(p=>{return {...p,color:"blond"}})}>blond</button>
+          <button onClick={()=>updateProp("length,purple")}>red</button>
         </div>
         <p>You currently have {hair.length},{hair.style} {hair.color} hair!</p>
       </div>
