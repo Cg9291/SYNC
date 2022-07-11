@@ -212,14 +212,14 @@ function Counter(){
   })
 
   const updateProp = (pro,valeur) => {
-    setHair(previousState => {
-      pro=="length"?
-      { ...previousState,length:valeur }
-      :pro=="style"?
-      { ...previousState,style:valeur }
-      :pro=="color"?
-      { ...previousState,color:valeur }
-      :"not a prop";
+    setHair(previousState =>{ 
+      if(pro=="length"){
+        return { ...previousState,length:valeur };
+      }else if(pro=="style"){
+        return { ...previousState,style:valeur };
+      }else if(pro=="color"){
+        return { ...previousState,color:valeur };
+      }
     });
   }
     let purple="purple"
@@ -230,15 +230,15 @@ function Counter(){
         <button onClick={()=>setCount(0)}>reset</button>
         <p>You are on a <span id="streak-days">{count}</span> days streak!</p>
         <div>
-          <button onClick={()=>setHair.hair.length("short")}>short</button>
-          <button onClick={()=>setHair.hair.length("medium")}>medium</button>
-          <button onClick={()=>setHair.hair.length("long")}>long</button>
-          <button onClick={()=>setHair.hair.style("buzzed")}>buzzed</button>
-          <button onClick={()=>setHair.hair.style("curly")}>curly</button>
-          <button onClick={()=>setHair.hair.style("frizzy")}>frizzy</button>
-          <button onClick={()=>setHair.hair.color("black")}>black</button>
+          <button onClick={()=>updateProp("length","short")}>short</button>
+          <button onClick={()=>setHair(p=>{return {...p,length:"medium"}})}>medium</button>
+          <button onClick={()=>updateProp("length","long")}>long</button>
+          <button onClick={()=>setHair(p=>{return {...p,style:"buzzed"}})}>buzzed</button>
+          <button onClick={()=>updateProp("style","curly")}>curly</button>
+          <button onClick={()=>setHair(p=>{return {...p,style:"frizzy"}})}>frizzy</button>
+          <button onClick={()=>updateProp("color","black")}>black</button>
           <button onClick={()=>setHair(p=>{return {...p,color:"blond"}})}>blond</button>
-          <button onClick={()=>updateProp("length,purple")}>red</button>
+          <button onClick={()=>updateProp("color","red")}>red</button>
         </div>
         <p>You currently have {hair.length},{hair.style} {hair.color} hair!</p>
       </div>
