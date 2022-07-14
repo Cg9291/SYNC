@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <Todo/>
     </div>
-  );
-}
+  )
+};
 
 export default App;
 
@@ -40,5 +40,46 @@ function Todo(){
         <ul>{messages.map(x=>{return (<li>{x}</li>)})}</ul>
     </div>
   )
-}
+};
 
+
+//REDUX
+const MESS='MESS';
+
+const sendMessages=(message)=>{
+  return {
+    type:MESS,
+    message:message
+  }
+};
+
+const messagesReducer=(state=[],action)=>{
+  switch(action.type){
+    case MESS:
+      return [...state,message];
+    default:
+      return state;
+  }  
+};
+
+const store=Redux.createStore(messagesReducer);
+
+//REACT-REDUX
+
+const mapStateToProps=(state)=>{
+  return {
+    messageState:state
+  }
+};
+
+const mapDispatchToProps=(dispatch)=>{
+  return{
+    messageDispatch:(message)=>{
+        dispatch(sendMessages(message))
+    }
+  }
+};
+
+const Provider=React.Redux.Provider;
+const connect=React.Redux.connect;
+const container=connect(mapStateToProps,mapDispatchToProps)(App)
