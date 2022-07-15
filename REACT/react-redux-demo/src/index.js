@@ -2,7 +2,8 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider,connect } from 'react-redux';
 import { store } from './app/store';
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { useEffect, useState } from "react";
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
@@ -13,7 +14,7 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <App/>
     </Provider>
   </React.StrictMode>
 );

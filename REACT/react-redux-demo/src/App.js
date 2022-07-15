@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
 import { useState,useRef } from "react";
+import { createStore } from 'redux';
+
 
 function App() {
   return (
@@ -43,7 +45,7 @@ function Todo(){
 };
 
 
-//REDUX
+///REDUX
 const MESS='MESS';
 
 const sendMessages=(message)=>{
@@ -56,13 +58,13 @@ const sendMessages=(message)=>{
 const messagesReducer=(state=[],action)=>{
   switch(action.type){
     case MESS:
-      return [...state,message];
+      return [...state,action.message];
     default:
       return state;
   }  
 };
 
-const store=Redux.createStore(messagesReducer);
+//const store=Redux.createStore(messagesReducer);
 
 //REACT-REDUX
 
@@ -82,4 +84,4 @@ const mapDispatchToProps=(dispatch)=>{
 
 const Provider=React.Redux.Provider;
 const connect=React.Redux.connect;
-const container=connect(mapStateToProps,mapDispatchToProps)(App)
+const Container=connect(mapStateToProps,mapDispatchToProps)(App)
