@@ -1,9 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { Provider,connect } from 'react-redux';
+import { Provider} from 'react-redux';
 import { store } from './app/store';
-import { useEffect, useState } from "react";
-import { createStore, combineReducers, applyMiddleware } from 'redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
