@@ -1,18 +1,13 @@
 import React from 'react';
 import './App.css';
-import{connect} from "react-redux"
-import { useState } from "react";
-import {Todo,mapDispatchToProps,mapStateToProps} from './react-redux'
-//import Redux from 'redux';
-//import ReactRedux from 'react-redux';
+import Todo from "./components/Todo"
+import Toda from "./components/Toda"
 
-
-
-function App(props) {
+export default function App(props) {
   return (
     <div className="App">
+      <Toda/>
+      <Todo/>
     </div>
   )
 };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Todo);

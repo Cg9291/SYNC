@@ -1,4 +1,4 @@
-export const messagesReducer=(state=[],action)=>{
+  export const messagesReducer=(state=[],action)=>{
     switch(action.type){
       case 'mess':
         return [...state,action.message];
@@ -6,3 +6,5 @@ export const messagesReducer=(state=[],action)=>{
         return state;
     }  
   };
+  
+ 
