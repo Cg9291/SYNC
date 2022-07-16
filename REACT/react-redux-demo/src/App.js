@@ -9,15 +9,10 @@ import {Todo,mapDispatchToProps,mapStateToProps} from './react-redux'
 
 
 function App(props) {
-  //connect(mapStateToProps,mapDispatchToProps)(Todo);
-  
   return (
     <div className="App">
-      
     </div>
   )
 };
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Todo);

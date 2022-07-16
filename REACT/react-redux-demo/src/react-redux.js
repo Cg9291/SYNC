@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState,useRef,useEffect } from "react";
 import React from 'react';
 
 //REACT
 function Todo(props){
   //const [messages,setMessages]=useState([])
-  const [input,setInput]=useState("")
-  //const inputElement=useRef();
+  const [input,setInput]=useState("");
+  const inputElement=useRef(null);
+
+  
 
   const updateMessages=()=>{
     if (input===""){
@@ -17,12 +19,13 @@ function Todo(props){
       setInput("");
       /*the setInput is meant to prevent the resubmission of input when clicking the button(empty field) after another click*/
     }
+
     
   return (
     <div>
-        <input onChange={(event)=>setInput(event.target.value)} onBlur={(event)=>{event.target.value=""}}/> {/*the onblur is meant to prevent the input text from remaining after button click */}
+        <input id="inputField" onChange={(event)=>setInput(event.target.value)}/> {/*the onblur is meant to prevent the input text from remaining after button click */}
         <button onClick={updateMessages}>Submit</button>
-        <ul></ul>
+        <ul>{props.messageState.map(x=>{return (<li>{x}</li>)})}</ul>
     </div>
   )
 };
