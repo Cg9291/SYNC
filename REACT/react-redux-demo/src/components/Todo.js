@@ -4,7 +4,6 @@ import {mapDispatchToProps,mapStateToProps} from "../redux/maps/messages-mapping
 
 function Todo(props){
   const [input,setInput]=useState("");
-  const [count,setCount]=useState(0);
   const inputField=useRef(null);
 
   const updateMessages=()=>{ 
@@ -22,10 +21,6 @@ function Todo(props){
       /*the setInput is meant to prevent the resubmission of input when clicking the button(empty field) after another click*/
   }
 
-  const giveId=()=>{
-   return Math.random()*100;
-  }
-
   const handleClick=()=>{
     updateMessages();
     clearRef();
@@ -35,7 +30,7 @@ function Todo(props){
     <div>
         <input ref={inputField} onChange={(event)=>setInput(event.target.value)}/>
         <button onClick={handleClick}>Submit</button>
-        <ul>{props.messageState.map(x=>{return (<li key={giveId}>{x}</li>)})}</ul>
+        <ul>{props.messageState.map((x,i)=>{return (<li key={i}>{x}</li>)})}</ul>
     </div>
   )
 };
