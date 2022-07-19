@@ -1,7 +1,68 @@
 .App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   background-color: bisque;
+  height: 100vh;
+
+  //PRESENTATIONAL
+  #wrapper{
+    #quote-box{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: fit-content;
+      width: fit-content;
+      min-height:10rem ;
+      min-width: 20rem;
+      max-width: 20rem;
+      border:solid green;
+      
+      #text{
+        align-self: center;
+        height: fit-content;
+        min-width: 80%;
+        max-width: 80%;
+        border:dotted blue;
+      }
+      #author{
+        align-self: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        min-width: 80%;
+        max-width: 80%;
+        border:dotted red;
+      }
+      #footer-row{
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        width:80%;
+        //margin-top: 1rem;
+        margin-bottom: 1rem;
+        border:dotted blue;
+        .button{
+          height: 1rem;
+          width: 3rem;
+        }
+        #tweet-quote{
+          justify-self: start;
+          border:solid red;
+        }
+        #new-quote{
+          justify-self: end;
+          border:solid blue;
+        }
+      }
+    }
+  }
+  
+  
 }
+
+
+
 
 .App-logo {
   height: 40vmin;
