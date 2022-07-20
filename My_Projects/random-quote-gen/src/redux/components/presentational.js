@@ -3,12 +3,17 @@ import {useEffect, useRef} from 'react'
 import {connect} from "react-redux"
 import { mapDispatchToProps, mapStateToProps } from "../mappings.js"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import variables from '../../variables.module.scss';
+
+import App from "../../App.js"
+
 
 
 
 function Presentational(props){
+    const ref=useRef();
     useEffect(()=>{//function works,but would be better if we could just use handleClick fn..work on it
-        let initIdx=Math.floor(Math.random()*(6.9-0)+0);
+        let initIdx=Math.floor(Math.random()*(11.9-0)+0);
         //props.dispatchId();
         document.getElementById("text").innerHTML=quotes[initIdx].quoteText;
         document.getElementById("author").innerHTML="- "+quotes[initIdx].quoteAuthor;
@@ -18,11 +23,12 @@ function Presentational(props){
         props.dispatchId();
         document.getElementById("text").innerHTML=quotes[props.indexState].quoteText;
         document.getElementById("author").innerHTML="- "+quotes[props.indexState].quoteAuthor;
+        ref.current.style.color=variables.redcolor;
     }
     return(
-        <div id="wrapper">
+        <div id="wrapper" >
             <div id="quote-box" ref={quoteBox}>
-                <div id="text">
+                <div id="text" ref={ref}>
                     
                 </div>
                 <div id="author">
