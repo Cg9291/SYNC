@@ -1,16 +1,13 @@
-
-
 .App {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: beige;
+  background-color: bisque;
   height: 100vh;
 
   //PRESENTATIONAL
   #wrapper{
-    opacity: 1;
     #quote-box{
       display: flex;
       flex-direction: column;
@@ -65,9 +62,7 @@
 }
 
 
-.color-change{
-  background-color:rgb(204, 207, 53)
-}
+
 
 .App-logo {
   height: 40vmin;
