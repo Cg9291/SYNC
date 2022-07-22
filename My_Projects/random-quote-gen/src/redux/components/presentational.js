@@ -3,7 +3,6 @@ import {useEffect, useRef} from 'react'
 import {connect} from "react-redux"
 import { mapDispatchToProps, mapStateToProps } from "../mappings.js"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import variables from '../../variables.module.scss';
 
 import App from "../../App.js"
 
@@ -20,10 +19,12 @@ function Presentational(props){
     },[]);
     const quoteBox=useRef(null);
     const handleClick=()=>{
+        let randomColor=(Math.random()*(256-0)+0)
         props.dispatchId();
         document.getElementById("text").innerHTML=quotes[props.indexState].quoteText;
         document.getElementById("author").innerHTML="- "+quotes[props.indexState].quoteAuthor;
-        ref.current.style.color=variables.redcolor;
+       
+        
     }
     return(
         <div id="wrapper" >
@@ -35,11 +36,18 @@ function Presentational(props){
 
                 </div>
                 <div id="footer-row">
-                    <a id="tweet-quote">
-                        <button className="butto">
-                            <FontAwesomeIcon icon="coffee"/> click
-                        </button>
-                    </a>
+                    <div>
+                        <a id="tweet-quote">
+                            <button>
+                                <FontAwesomeIcon icon="coffee"/> 1
+                            </button>
+                        </a>
+                        <a id="tumblr-quote">
+                            <button>
+                                <FontAwesomeIcon icon="coffee"/> 2
+                            </button>
+                        </a>
+                    </div>
                     <button id="new-quote" onClick={handleClick}>
                         New Quote
                     </button>      

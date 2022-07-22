@@ -1,3 +1,5 @@
+@use './variables';
+
 
 
 .App {
@@ -5,7 +7,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: beige;
+  background-color: variables.$theme-color;
   height: 100vh;
 
   //PRESENTATIONAL
@@ -17,25 +19,32 @@
       justify-content: space-between;
       height: fit-content;
       width: fit-content;
-      min-height:10rem ;
+      min-height:fit-content;
       min-width: 20rem;
       max-width: 20rem;
-      border:solid green;
+      //border:solid yellow;
+      border-radius: 1%;
+      background-color: white;
       
       #text{
         align-self: center;
         height: fit-content;
         min-width: 80%;
         max-width: 80%;
-        border:dotted blue;
+        margin-top:1rem;
+        //border:dotted variables.$red-color;
+        color:variables.$theme-color;
       }
       #author{
+        display:flex;
+        justify-content: end;
         align-self: center;
         margin-top: 1rem;
         margin-bottom: 1rem;
         min-width: 80%;
         max-width: 80%;
-        border:dotted red;
+        //border:dotted red;
+        color:variables.$theme-color;
       }
       #footer-row{
         display: flex;
@@ -44,25 +53,37 @@
         width:80%;
         //margin-top: 1rem;
         margin-bottom: 1rem;
-        border:dotted blue;
-        .button{
-          height: 1rem;
-          width: 3rem;
-        }
-        #tweet-quote{
-          justify-self: start;
-          border:solid red;
-        }
+        //border:dotted blue;
+        div{
+          display: flex;
+          justify-content: start;
+          #tweet-quote{
+            button{
+              color:white;
+              background-color:variables.$theme-color;
+              margin-right:0.18rem;
+            }
+          }
+
+            #tumblr-quote{
+              button{
+                color:white;
+                background-color:variables.$theme-color;
+              }
+            }
+          }
+      }
         #new-quote{
           justify-self: end;
-          border:solid blue;
+          color:white;
+          background-color:variables.$theme-color;;
         }
       }
     }
   }
   
   
-}
+
 
 
 .color-change{
