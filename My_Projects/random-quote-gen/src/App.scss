@@ -1,6 +1,12 @@
 @use './variables';
+$bgcolor:'background-color';
 
-
+.bg-sync{
+ // $bgcolor:green;
+}
+.txt-sync{
+  //color:green;
+}
 
 .App {
   display: flex;
