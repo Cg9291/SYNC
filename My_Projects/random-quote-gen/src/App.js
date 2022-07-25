@@ -1,15 +1,14 @@
 import './App.scss';
 import Presentational from './redux/components/presentational.js';
-import {useEffect, useRef} from 'react'
+import {useRef} from 'react'
 
 
 export default function App() {
-  const ref=useRef();
   return (
-    <div className="App bg-sync"  ref={ref}>
+    <div className="App bg-sync">
       <Presentational/>
     </div>
   );
 }
-console.log("aa")
+
 
