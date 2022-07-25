@@ -2,6 +2,7 @@
 $bgcolor:'background-color';
 
 .App {
+  background-color: variables.$theme-color;
   display: flex;
   justify-content: center;
   align-items: center;

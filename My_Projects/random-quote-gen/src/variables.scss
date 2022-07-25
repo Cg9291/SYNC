@@ -1,5 +1,9 @@
+.App{
+    --theme-color:rgba(10,250,10,1);
+}
+
 $red-color: red;
-$theme-color:green;
+$theme-color:var(--theme-color);
 
 :export{
     redColor:$red-color;

@@ -1,4 +1,5 @@
-import quotes from "./quotes.js"
+import quotes from "../objects/quotes.js"
+import themeColors from '../objects/colors.js' 
 import {useEffect, useRef} from 'react'
 import {connect} from "react-redux"
 import { mapDispatchToProps, mapStateToProps } from "../mappings.js"
@@ -18,11 +19,11 @@ function Presentational(props){
     },[]);
     const quoteBox=useRef(null);
     const handleClick=()=>{
-        let randomColor=(Math.random()*(256-0)+0);
         props.dispatchId();
+        props.dispatchColor();
         document.getElementById("text").innerHTML=quotes[props.indexState].quoteText;
         document.getElementById("author").innerHTML="- "+quotes[props.indexState].quoteAuthor;
-        variables.themeColor='blue';
+        document.getElementsByClassName('App')[0].style.setProperty('--theme-color',themeColors[props.colpick.indexState]);//FIX THIS...ACTIONS ARE BEING DISPATCHED, BUT CANT ACCESS THE STATE
         
        
         

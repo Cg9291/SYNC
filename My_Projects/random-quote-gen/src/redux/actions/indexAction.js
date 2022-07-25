@@ -1,4 +1,4 @@
-import indexPicker from '../components/indexPicker.js'
+import indexPicker from '../functions/indexPicker.js'
 
 
 let indexAction=()=>{
