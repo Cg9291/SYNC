@@ -5,8 +5,8 @@ import indexPicker from "./functions/indexPicker.js"
 
 const mapStateToProps=(state)=>{
     return {
-        indexState:state,
-        colorState:state,
+        indexState:state.indexReducer,
+        colorState:state.colorPickerReducer
     }
 }
 

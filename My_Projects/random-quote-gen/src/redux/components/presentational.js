@@ -23,7 +23,7 @@ function Presentational(props){
         props.dispatchColor();
         document.getElementById("text").innerHTML=quotes[props.indexState].quoteText;
         document.getElementById("author").innerHTML="- "+quotes[props.indexState].quoteAuthor;
-        document.getElementsByClassName('App')[0].style.setProperty('--theme-color',themeColors[props.colpick.indexState]);//FIX THIS...ACTIONS ARE BEING DISPATCHED, BUT CANT ACCESS THE STATE
+        document.getElementsByClassName('App')[0].style.setProperty('--theme-color',themeColors[props.colorState]);
         
        
         
