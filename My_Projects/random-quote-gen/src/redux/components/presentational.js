@@ -10,14 +10,21 @@ import variables from '../../variables.scss'
 
 
 function Presentational(props){
-    const ref=useRef();
+    let initIdx=Math.floor(Math.random()*(11.9-0)+0);
+
+    const textRef=useRef(quotes[initIdx].quoteText);
+    const authorRef=useRef("- "+quotes[initIdx].quoteAuthor);
+
     useEffect(()=>{//function works,but would be better if we could just use handleClick fn..work on it
-        let initIdx=Math.floor(Math.random()*(11.9-0)+0);
+        //let initIdx=Math.floor(Math.random()*(11.9-0)+0);
         //props.dispatchId();
-        document.getElementById("text").innerHTML=quotes[initIdx].quoteText;
-        document.getElementById("author").innerHTML="- "+quotes[initIdx].quoteAuthor;
+
+        
+
+        textRef.current.dangerouslySetInnerHTML={__html:textRef.current};
+        authorRef.current.dangerouslySetInnerHTML={__html:authorRef.current};
     },[]);
-    const quoteBox=useRef(null);
+
     const handleClick=()=>{
         props.dispatchId();
         props.dispatchColor();
@@ -30,12 +37,10 @@ function Presentational(props){
     }
     return(
         <div id="wrapper" >
-            <div id="quote-box" ref={quoteBox}>
-                <div id="text" className="" ref={ref}>
-                    
+            <div id="quote-box">
+                <div id="text" ref={textRef} dangerouslySetInnerHTML={{__html:textRef.current}}>   
                 </div>
-                <div id="author">
-
+                <div id="author" ref={authorRef} dangerouslySetInnerHTML={{__html:authorRef.current}}>
                 </div>
                 <div id="footer-row">
                     <div>
