@@ -1,5 +1,5 @@
-let randomColor=()=>{
+let colorPicker=()=>{
     return Math.floor(Math.random()*8.9)
 }
 
-export default randomColor;
+export default colorPicker;

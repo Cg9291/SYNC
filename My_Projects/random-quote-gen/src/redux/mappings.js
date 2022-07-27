@@ -1,11 +1,11 @@
 import colorAction from "./actions/colorAction.js"
 import colorPicker from "./functions/colorPicker.js"
-import indexAction from "./actions/indexAction.js"
-import indexPicker from "./functions/indexPicker.js"
+import indexAction from "./actions/quoteAction.js"
+import indexPicker from "./functions/quotePicker.js"
 
 const mapStateToProps=(state)=>{
     return {
-        indexState:state.indexReducer,
+        quoteState:state.quotePickerReducer,
         colorState:state.colorPickerReducer
     }
 }

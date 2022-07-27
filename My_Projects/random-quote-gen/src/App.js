@@ -4,9 +4,8 @@ import {useRef} from 'react'
 
 
 export default function App() {
-  const appRef=useRef('green')
   return (
-    <div className="App" ref={appRef}>
+    <div className="App">
       <Presentational/>
     </div>
   );

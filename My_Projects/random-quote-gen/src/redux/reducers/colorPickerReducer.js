@@ -1,6 +1,6 @@
-let colorPickerReducer=(state=0,action)=>{
+let colorPickerReducer=(state=Math.floor(Math.random()*8.9),action)=>{
     switch(action.type){
-        case 'COL':
+        case 'COLR':
             return action.colorNum;
         default:
             return state;

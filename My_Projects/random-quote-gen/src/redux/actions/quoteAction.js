@@ -1,9 +1,9 @@
-import indexPicker from '../functions/indexPicker.js'
+import indexPicker from '../functions/quotePicker.js'
 
 
 let indexAction=()=>{
     return {
-        type:"idx",
+        type:"QUOT",
         index:indexPicker()
     }
 }

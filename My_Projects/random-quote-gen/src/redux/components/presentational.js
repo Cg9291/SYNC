@@ -4,8 +4,7 @@ import {useEffect, useRef} from 'react'
 import {connect} from "react-redux"
 import { mapDispatchToProps, mapStateToProps } from "../mappings.js"
 import App from "../../App.js"
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import variables from '../../variables.scss'
+
 
 
 
@@ -29,8 +28,8 @@ function Presentational(props){
     const handleClick=()=>{
         props.dispatchId();
         props.dispatchColor();
-        textRef.current=quotes[props.indexState].quoteText;
-        authorRef.current="- "+quotes[props.indexState].quoteAuthor;
+        textRef.current=quotes[props.quoteState].quoteText;
+        authorRef.current="- "+quotes[props.quoteState].quoteAuthor;
         document.getElementsByClassName('App')[0].style.setProperty('--theme-color',themeColors[props.colorState]);  
     }
     return(
