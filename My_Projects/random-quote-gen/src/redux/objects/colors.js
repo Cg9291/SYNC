@@ -7,8 +7,7 @@ let themeColors=[
     'rgb(251, 105, 100)',
     'rgb(44, 62, 80)',
     'rgb(243, 156, 18)',
-    'rgb(119, 177, 169)',
-    'rgb(115, 168, 87)'  
+    'rgb(119, 177, 169)', 
 ]
 
 export default themeColors;

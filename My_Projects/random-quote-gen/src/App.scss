@@ -1,8 +1,7 @@
 @use './variables';
-$bgcolor:'background-color';
+
 
 .App {
-  background-color: variables.$theme-color;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +9,7 @@ $bgcolor:'background-color';
   background-color: variables.$theme-color;
   height: 100vh;
 
-  //PRESENTATIONAL
+  //PRESENTATIONAL  
   #wrapper{
     opacity: 1;
     #quote-box{
@@ -87,9 +86,7 @@ $bgcolor:'background-color';
 
 
 
-.color-change{
-  background-color:rgb(204, 207, 53)
-}
+
 
 .App-logo {
   height: 40vmin;

@@ -4,11 +4,12 @@ import {useRef} from 'react'
 
 
 export default function App() {
+  const appRef=useRef('green')
   return (
-    <div className="App bg-sync">
+    <div className="App" ref={appRef}>
       <Presentational/>
     </div>
   );
 }
 
-
+//export {appRef}

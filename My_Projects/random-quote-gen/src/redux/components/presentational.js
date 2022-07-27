@@ -3,6 +3,7 @@ import themeColors from '../objects/colors.js'
 import {useEffect, useRef} from 'react'
 import {connect} from "react-redux"
 import { mapDispatchToProps, mapStateToProps } from "../mappings.js"
+import App from "../../App.js"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import variables from '../../variables.scss'
 
@@ -10,12 +11,12 @@ import variables from '../../variables.scss'
 
 
 function Presentational(props){
-    let initIdx=Math.floor(Math.random()*(11.9-0)+0);
+    let initIdx=Math.floor(Math.random()*11.9);//review formula
 
     const textRef=useRef(quotes[initIdx].quoteText);
     const authorRef=useRef("- "+quotes[initIdx].quoteAuthor);
 
-    useEffect(()=>{//function works,but would be better if we could just use handleClick fn..work on it
+    /*useEffect(()=>{//function works,but would be better if we could just use handleClick fn..work on it
         //let initIdx=Math.floor(Math.random()*(11.9-0)+0);
         //props.dispatchId();
 
@@ -23,17 +24,14 @@ function Presentational(props){
 
         textRef.current.dangerouslySetInnerHTML={__html:textRef.current};
         authorRef.current.dangerouslySetInnerHTML={__html:authorRef.current};
-    },[]);
+    },[]);*/
 
     const handleClick=()=>{
         props.dispatchId();
         props.dispatchColor();
-        document.getElementById("text").innerHTML=quotes[props.indexState].quoteText;
-        document.getElementById("author").innerHTML="- "+quotes[props.indexState].quoteAuthor;
-        document.getElementsByClassName('App')[0].style.setProperty('--theme-color',themeColors[props.colorState]);
-        
-       
-        
+        textRef.current=quotes[props.indexState].quoteText;
+        authorRef.current="- "+quotes[props.indexState].quoteAuthor;
+        document.getElementsByClassName('App')[0].style.setProperty('--theme-color',themeColors[props.colorState]);  
     }
     return(
         <div id="wrapper" >
@@ -46,12 +44,12 @@ function Presentational(props){
                     <div>
                         <a id="tweet-quote">
                             <button className="bg-sync">
-                                <FontAwesomeIcon icon="coffee"/> 1
+                                 1
                             </button>
                         </a>
                         <a id="tumblr-quote" className="bg-sync">
                             <button>
-                                <FontAwesomeIcon icon="coffee"/> 2
+                                2
                             </button>
                         </a>
                     </div>
