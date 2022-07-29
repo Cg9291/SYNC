@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.scss';
-import Presentational from './redux/components/Presentational';
+import Presentational from './redux/components/Presentational.js';
 
 
 
