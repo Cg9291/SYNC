@@ -40,9 +40,10 @@ export default function Buttons(){
    },[]);
 
     return(
-        <div className="container-fluid d-flex justify-content-center" >
-            <div className="row">{state} is the test result</div>
-            <div className="row-cols-3 justify-content-center text-center" style={{border:'solid blue'}}> 
+        <div className="container-fluid justify-content-center align-items-center" >
+            <div className="row justify-content-center" >{state} is the test result</div>
+            <div className="row justify-content-center">
+            <div id="pad" className="col-4 row-cols-3" style={{border:'solid blue'}}> 
                 <button className="drum-pad col btn btn-dark" ref={buttonRefQ} onClick={(buttonRefQ)=>playSound}>
                     Q
                     <audio src="" className="clip" id="Q" ref={buttonRefQ} onClick={handleClick}>
@@ -105,6 +106,7 @@ export default function Buttons(){
                         
                     </audio>
                 </button>
+                </div>
             </div>
         </div>
         )  
