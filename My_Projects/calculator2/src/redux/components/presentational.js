@@ -172,7 +172,7 @@ export default function Presentational(){
         <div>
             <div className="container col-3 px-1 pb-1 pt-4 justify-content-center justify-self-center bg-dark border border-primary">
                 <div id="display" /*style={displayStyle}*/ className="row-cols-4 justify-content text-light" onClick={handleClick}>
-                   {input}={tally}//{clickStatus}
+                   {input}={tally}
                 </div>
                 <div className="row-cols-4 justify-content">
                     <button id='clear' className="col-6 btn btn-danger shadow-none rounded-0 border" value={'AC'} onClick={handleAcClick}>AC</button>
