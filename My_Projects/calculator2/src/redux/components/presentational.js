@@ -1,10 +1,14 @@
 import {connect } from "react-redux"
 import { useEffect, useState,useRef } from "react";
+import Display from "./Display";
 //import { mapStateToProps,mapDispatchToProps } from "react-redux"
 //import { mapStateToProps } from "../../../../random-quote-gen/src/redux/mappings"
 //FIGURE OUT HOW TO SELECT ALL ELEMENTS OF A CLASS/TYPE AND APPLY A FN/EVENTHANDLER TO THEM(REACT WAY)
 
 export default function Presentational(){
+    //const [input,setInput]=useState();
+    //const[outPut,setOuput]=useState();
+    
     const [input,setInput]=useState([]);  
     const [output,setOutput]=useState(0)
     const [lastIndex,setLastIndex]=useState(false);//index
@@ -51,7 +55,7 @@ export default function Presentational(){
         }
         else{
             setSecondVar([...secondVar,etv]);
-            setOutput();
+            setOutput(etv);
             setInput([...input.concat(etv)])
         }
     }
@@ -72,11 +76,28 @@ export default function Presentational(){
         
 
     }
-        
-        
-
-
     
+    const handleEqualClick=()=>{
+        setTally(turnToOperators(operator,Number(tally),Number(secondVar)));
+        
+       };
+   
+       const handleAcClick=()=>{
+           setInput([]);
+           setTally(0)
+           setOutput(0);
+           setOperator();
+           setSecondVar([])
+       }
+    //DEFAULT PROPS
+       Display.defaultProps={
+        outputState:output,
+        inputState:input,
+        hadleClick:handleClick,
+        tallyState:tally
+
+
+       }
 
     /*const handleClick=(event)=>{
     let etg=event.target.value;
@@ -110,7 +131,6 @@ export default function Presentational(){
                 }
                 };
     }*/
-
 
     /*const handleClick=(event)=>{
         let etg=event.target.value;
@@ -154,24 +174,12 @@ export default function Presentational(){
         }}        
     };*/
 
-    const handleEqualClick=()=>{
-     setTally(turnToOperators(operator,Number(tally),Number(secondVar)));
-     
-    };
-
-    const handleAcClick=()=>{
-        setInput([]);
-        setTally(0)
-        setOutput(0);
-        setOperator();
-    }
-
+    
     return(
         <div>
             <div className="container col-3 px-1 pb-1 pt-4 justify-content-center justify-self-center bg-dark border border-primary">
-                <div id="display" /*style={displayStyle}*/ className="row-cols-4 justify-content text-light" onClick={handleClick}>
-                   {output}/{input}/{tally}
-                </div>
+                
+                <Display outPut={output}/>
                 <div className="row-cols-4 justify-content">
                     <button id='clear' className="col-6 btn btn-danger shadow-none rounded-0 border" value={'AC'} onClick={handleAcClick}>AC</button>
                     <button id="divide" className="col-3 btn btn-primary shadow-none rounded-0 border" value={'/'} onClick={handleClickOperator}>/</button>

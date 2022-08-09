@@ -5,7 +5,7 @@ import Presentational from './redux/components/presentational';
 function App() {
   return (
     <div className="App">
-     <p>Calculator</p>
+     <h1>Calculator</h1>
      <Presentational/>
     </div>
   );
