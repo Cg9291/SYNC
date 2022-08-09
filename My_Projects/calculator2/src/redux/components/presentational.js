@@ -6,25 +6,24 @@ import Display from "./Display";
 //FIGURE OUT HOW TO SELECT ALL ELEMENTS OF A CLASS/TYPE AND APPLY A FN/EVENTHANDLER TO THEM(REACT WAY)
 
 export default function Presentational(){
-    //const [input,setInput]=useState();
-    //const[outPut,setOuput]=useState();
-    
-    const [input,setInput]=useState([]);  
-    const [output,setOutput]=useState(0)
-    const [lastIndex,setLastIndex]=useState(false);//index
+    const [input,setInput]=useState([0]);  
+    const [output,setOutput]=useState(0);
+    const [lastIndex,setLastIndex]=useState(0);//index
     const [operatorsList,setOperatorsList]=useState(['+','-','x','/']);  
     const [operator,setOperator]=useState();
     const [tally,setTally]=useState(0);
-    const [secondVar,setSecondVar]=useState([]);
+    const [secondVar,setSecondVar]=useState([[]]);
     const [result,setResult]=useState(0);
     const [clickStatus,setClickStatus]=useState();
     //const [isOperator,setLastIsOperator]=useState();
-    // const [output,setOutput]=useState();
-    const [displayStyle,setDisplayStyle]=useState({backgroundColor:'red'});
+    //const [output,setOutput]=useState();
+    //const [input,setInput]=useState();
+    //const[outPut,setOuput]=useState();
+    //const [displayStyle,setDisplayStyle]=useState({backgroundColor:'red'});
 
     const btnRef=useRef();
 
-    function handleKeyPress(event){
+    /*function handleKeyPress(event){
         setClickStatus(event.key);
         if(clickStatus==btnRef.current.value){
             btnRef.current.style=displayStyle;
@@ -32,7 +31,7 @@ export default function Presentational(){
         
     };
 
-    useEffect(()=>window.addEventListener("keydown",handleKeyPress,false),[]);
+    useEffect(()=>window.addEventListener("keydown",handleKeyPress,false),[]);*/
 
     let turnToOperators=(op,a,b)=>{  
         return op=='x'?a*b
@@ -42,22 +41,21 @@ export default function Presentational(){
         :'sign not recognized'
     };
 
+    let isNumber=()=>{
+        return typeof output==='number';}
+
     const handleClick=(event)=>{
         let etv=event.target.value;
-    
-        if(output===0){
-            setOutput(etv);
-            setInput([...input,etv])
-        }
-        else if (output>0){
-            setOutput(output+etv);
-            setInput([...input.concat(etv)])
+        if(isNumber()===true||etv==='.'){
+            setOutput(Number(output+etv))
+            setInput([input+etv]);
+            
         }
         else{
-            setSecondVar([...secondVar,etv]);
-            setOutput(etv);
-            setInput([...input.concat(etv)])
+            setOutput(Number(output+etv))  
+            setInput([...input,etv])
         }
+        
     }
 
     const handleClickOperator=(event)=>{
@@ -73,31 +71,46 @@ export default function Presentational(){
             setOutput(etv);
             setInput([...input,etv])
         }
-        
-
     }
     
     const handleEqualClick=()=>{
         setTally(turnToOperators(operator,Number(tally),Number(secondVar)));
-        
        };
    
-       const handleAcClick=()=>{
-           setInput([]);
-           setTally(0)
-           setOutput(0);
-           setOperator();
-           setSecondVar([])
+    const handleAcClick=()=>{
+        setInput([]);
+        setTally(0)
+        setOutput(0);
+        setOperator();
+        setSecondVar([])
        }
-    //DEFAULT PROPS
-       Display.defaultProps={
+
+    //DEFAULT PROPS ASSIGNMENTS
+    Display.defaultProps={
         outputState:output,
         inputState:input,
         hadleClick:handleClick,
-        tallyState:tally
-
-
+        tallyState:tally,
+        operatorState:operator
        }
+
+    /* const handleClick=(event)=>{
+        let etv=event.target.value;
+    
+        if(output===0){
+            setOutput(etv);
+            setInput([...input,etv])
+        }
+        else if (output>0){
+            setOutput(output+etv);
+            setInput([...input.concat(etv)])
+        }
+        else{
+            setSecondVar([...secondVar,etv]);
+            setOutput(etv);
+            setInput([...input.concat(etv)])
+        }
+    }*/
 
     /*const handleClick=(event)=>{
     let etg=event.target.value;
@@ -188,7 +201,7 @@ export default function Presentational(){
                 <div className="row-cols-4  justify-content">
                     <button id="seven" ref={btnRef} className="col-3 btn btn-dark shadow-none rounded-0 border" value={7} onClick={handleClick}>7</button>
                     <button id="eight" ref={btnRef} className="col-3 btn btn-dark shadow-none rounded-0 border" value={8} onClick={handleClick}>8</button>
-                    <button id="nine" ref={btnRef} className="col-3 btn btn-dark shadow-none rounded-0 border" value={9} onClick={handleClick} onKeyPress={handleKeyPress}>9</button>
+                    <button id="nine" ref={btnRef} className="col-3 btn btn-dark shadow-none rounded-0 border" value={9} onClick={handleClick} >9</button>
                     <button id="subtract" className="col-3 btn btn-primary shadow-none rounded-0 border" value={'-'} onClick={handleClickOperator}>-</button>
                 </div>
                 <div className="row-cols-4 justify-content">
