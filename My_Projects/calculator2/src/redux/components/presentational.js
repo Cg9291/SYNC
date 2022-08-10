@@ -6,7 +6,7 @@ import Display from "./Display";
 //FIGURE OUT HOW TO SELECT ALL ELEMENTS OF A CLASS/TYPE AND APPLY A FN/EVENTHANDLER TO THEM(REACT WAY)
 
 export default function Presentational(){
-    const [input,setInput]=useState([0]);  
+    const [input,setInput]=useState([]);  
     const [output,setOutput]=useState(0);
     const [lastIndex,setLastIndex]=useState(0);//index
     const [operatorsList,setOperatorsList]=useState(['+','-','x','/']);  
@@ -41,18 +41,25 @@ export default function Presentational(){
         :'sign not recognized'
     };
 
-    let isNumber=()=>{
-        return typeof output==='number';}
+    let isNumber=(state)=>{
+        return typeof state==='number';}
 
     const handleClick=(event)=>{
         let etv=event.target.value;
-        if(isNumber()===true||etv==='.'){
-            setOutput(Number(output+etv))
-            setInput([input+etv]);
-            
+        if(input.length===0){
+            setOutput(Number(etv));
+            setInput([etv]);
+        }else if(isNumber(output)===true||etv==='.'){
+            setOutput(Number(output+etv));
+            setInput(input.map(x=>{if(input.indexOf(x)==input.length-1){
+                return x+etv;
+            }
+            else{
+                return x;}}));  
+
         }
         else{
-            setOutput(Number(output+etv))  
+            setOutput(Number(etv))  
             setInput([...input,etv])
         }
         
@@ -60,16 +67,19 @@ export default function Presentational(){
 
     const handleClickOperator=(event)=>{
         let etv=event.target.value;
-        if(output===0){
+        if(isNumber(output)===true||etv==='.'){
             setOperator(etv);
             setOutput(etv);
             setInput([...input,etv])
         }
-        else if(output>0){
-            setTally(tally+Number(output));
+        else if(etv==='-'){
             setOperator(etv);
             setOutput(etv);
             setInput([...input,etv])
+           // setTally(tally+Number(output));
+            
+            
+            
         }
     }
     

@@ -9,7 +9,7 @@ export default function Display(props){
     else{
         return(
             <div id="display" /*style={displayStyle}*/ className="row-cols-4 justify-content text-light" onClick={props.handleClick}>
-                {props.outputState}/{props.inputState[0]}/{props.tallyState}/{props.operatorState}
+                {props.outputState}/{props.inputState}/{props.tallyState}/{props.operatorState}
             </div>
         )
     }
