@@ -20,7 +20,7 @@ export default function Presentational(){
     //const [input,setInput]=useState();
     //const[outPut,setOuput]=useState();
     //const [displayStyle,setDisplayStyle]=useState({backgroundColor:'red'});
-
+    useEffect(() => { console.log(output)})
     const btnRef=useRef();
 
     /*function handleKeyPress(event){
@@ -33,7 +33,7 @@ export default function Presentational(){
 
     useEffect(()=>window.addEventListener("keydown",handleKeyPress,false),[]);*/
 
-    let turnToOperators=(op,a,b)=>{  
+    let turnToOperators=(op,a,b,output)=>{  
         return op=='x'?a*b
         :op=='+'?a+b
         :op=='/'?a/b
@@ -84,7 +84,31 @@ export default function Presentational(){
     }
     
     const handleEqualClick=()=>{
-        setTally(turnToOperators(operator,Number(tally),Number(secondVar)));
+        let inputSlice=input.slice();
+
+        switch(inputSlice[0]){//must fix so that '.' is accounted for
+            case '+':
+            case '-':
+            case 'x':
+            case '/':
+                setOutput(0);
+            default:
+                setOutput(inputSlice[0]);
+        }
+        
+        for(let i=0;i<inputSlice.length;i++){
+            switch(inputSlice[i]){//must fix so that '.' is accounted for
+                case '+':
+                case '-':
+                case 'x':
+                case '/':
+                    setOutput(turnToOperators('+',Number(inputSlice[i-1]),Number(inputSlice[i+1])));
+                    
+                    setInput((input)=>input.splice(0,i,output))
+                    setResult(output)
+            }
+        }
+        
        };
    
     const handleAcClick=()=>{
@@ -101,7 +125,8 @@ export default function Presentational(){
         inputState:input,
         hadleClick:handleClick,
         tallyState:tally,
-        operatorState:operator
+        operatorState:operator,
+        resultState:result
        }
 
     /* const handleClick=(event)=>{
