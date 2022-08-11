@@ -20,7 +20,7 @@ export default function Presentational(){
     //const [input,setInput]=useState();
     //const[outPut,setOuput]=useState();
     //const [displayStyle,setDisplayStyle]=useState({backgroundColor:'red'});
-    useEffect(() => { console.log(output)})
+    
     const btnRef=useRef();
 
     /*function handleKeyPress(event){
@@ -33,7 +33,7 @@ export default function Presentational(){
 
     useEffect(()=>window.addEventListener("keydown",handleKeyPress,false),[]);*/
 
-    let turnToOperators=(op,a,b,output)=>{  
+    let turnToOperators=(op,a,b)=>{  
         return op=='x'?a*b
         :op=='+'?a+b
         :op=='/'?a/b
@@ -61,51 +61,47 @@ export default function Presentational(){
         else{
             setOutput(Number(etv))  
             setInput([...input,etv])
+
         }
         
     }
 
     const handleClickOperator=(event)=>{
         let etv=event.target.value;
+       
         if(isNumber(output)===true||etv==='.'){
             setOperator(etv);
             setOutput(etv);
             setInput([...input,etv])
+            
         }
         else if(etv==='-'){
             setOperator(etv);
             setOutput(etv);
             setInput([...input,etv])
-           // setTally(tally+Number(output));
-            
-            
-            
+           // setTally(tally+Number(output));  
         }
     }
     
     const handleEqualClick=()=>{
         let inputSlice=input.slice();
 
-        switch(inputSlice[0]){//must fix so that '.' is accounted for
-            case '+':
-            case '-':
-            case 'x':
-            case '/':
-                setOutput(0);
-            default:
-                setOutput(inputSlice[0]);
-        }
-        
         for(let i=0;i<inputSlice.length;i++){
             switch(inputSlice[i]){//must fix so that '.' is accounted for
                 case '+':
                 case '-':
                 case 'x':
                 case '/':
-                    setOutput(turnToOperators('+',Number(inputSlice[i-1]),Number(inputSlice[i+1])));
+                   if(inputSlice[i-1]==null){
+                    setOutput(turnToOperators(inputSlice[i],0,Number(inputSlice[i+1])));
+                    setInput([turnToOperators(inputSlice[i],0,Number(inputSlice[i+1]))]);
+                    }
+                    else{
+                    setOutput(turnToOperators(inputSlice[i],Number(inputSlice[i-1]),Number(inputSlice[i+1])));        
+                    setInput([turnToOperators(inputSlice[i],Number(inputSlice[i-1]),Number(inputSlice[i+1]))]);
+                    }
+                    break;
                     
-                    setInput((input)=>input.splice(0,i,output))
-                    setResult(output)
             }
         }
         
@@ -252,7 +248,7 @@ export default function Presentational(){
                     <button id="equals" className="col-3 btn btn-success shadow-none rounded-0 border" value={'='} onClick={handleEqualClick}>=</button>
                 </div>
                 <div className="row-cols-4 justify-content">
-                    <button className="col-6 btn btn-dark shadow-none rounded-0 border" value={0} onClick={handleClick}>0</button>
+                    <button id="zero" className="col-6 btn btn-dark shadow-none rounded-0 border" value={0} onClick={handleClick}>0</button>
                     <button id="decimal" className="col-3 btn btn-secondary shadow-none rounded-0 border" value={'.'} onClick={handleClick}>.</button>
                     <button id="equals" className="col-3 btn btn-success shadow-none rounded-0 border" value={'='} onClick={handleEqualClick}>=</button>
                 </div>
