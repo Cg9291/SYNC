@@ -8,17 +8,6 @@ import Display from "./Display";
 export default function Presentational(){
     const [input,setInput]=useState([]);  
     const [output,setOutput]=useState(0);
-    //const [lastIndex,setLastIndex]=useState(0);//index
-    //const [operatorsList,setOperatorsList]=useState(['+','-','x','/']);  
-    //const [operator,setOperator]=useState();
-    //const [tally,setTally]=useState(0);
-    //const [secondVar,setSecondVar]=useState([[]]);
-    //const [result,setResult]=useState(0);
-    //const [clickStatus,setClickStatus]=useState();
-    //const [isOperator,setLastIsOperator]=useState();
-    //const [output,setOutput]=useState();
-    //const [input,setInput]=useState();
-    //const[outPut,setOuput]=useState();
     //const [displayStyle,setDisplayStyle]=useState({backgroundColor:'red'});
     
     const btnRef=useRef();
@@ -29,9 +18,7 @@ export default function Presentational(){
             btnRef.current.style=displayStyle;
         }
         
-    };
-
-    useEffect(()=>window.addEventListener("keydown",handleKeyPress,false),[]);*/
+    };*/
 
     let turnToOperators=(op,a,b)=>{  
         return op=='x'?a*b
@@ -56,14 +43,11 @@ export default function Presentational(){
             }
             else{
                 return x;}}));  
-
         }
         else{
-            setOutput(Number(etv))  
-            setInput([...input,etv])
-
-        }
-        
+            setOutput(Number(etv));  
+            setInput([...input,etv]);
+        }    
     }
 
     const handleClickOperator=(event)=>{
@@ -108,145 +92,42 @@ export default function Presentational(){
                             setInput([turnToOperators(inputSlice[i],0,Number(inputSlice[i+1]))]);
                         }
                     }
+                    else{
+                        if(inputSlice[i+1]==='+'||inputSlice[i+1]==='x'||inputSlice[i+1]==='/'){
+                            setOutput(turnToOperators(inputSlice[i+1],inputSlice[i-1],Number(inputSlice[i+2])));
+                            setInput([turnToOperators(inputSlice[i+1],inputSlice[i-1],Number(inputSlice[i+2]))]);
+                               i++;
+                        }
+                        else if(inputSlice[i+1]==='-'){
+                            setOutput(turnToOperators(inputSlice[i],Number(inputSlice[i-1]),Number(inputSlice[i+1]+inputSlice[i+2])));
+                            setInput([turnToOperators(inputSlice[i],Number(inputSlice[i-1]),Number(inputSlice[i+1]+inputSlice[i+2]))]);
+                            i++;
+                            }
                         else{
-                            if(inputSlice[i+1]==='+'||inputSlice[i+1]==='x'||inputSlice[i+1]==='/'){
-                                setOutput(turnToOperators(inputSlice[i+1],inputSlice[i-1],Number(inputSlice[i+2])));
-                                setInput([turnToOperators(inputSlice[i+1],inputSlice[i-1],Number(inputSlice[i+2]))]);
-                                i++;
-                            }
-                            else if(inputSlice[i+1]==='-'){
-                                setOutput(turnToOperators(inputSlice[i],Number(inputSlice[i-1]),Number(inputSlice[i+1]+inputSlice[i+2])));
-                                setInput([turnToOperators(inputSlice[i],Number(inputSlice[i-1]),Number(inputSlice[i+1]+inputSlice[i+2]))]);
-                                i++;
-                            }
-                            else{
-                                setOutput(turnToOperators(inputSlice[i],Number(inputSlice[i-1]),Number(inputSlice[i+1])));
-                                setInput([turnToOperators(inputSlice[i],Number(inputSlice[i-1]),Number(inputSlice[i+1]))]);
-                            }
-                         }
-                        
-                    
+                            setOutput(turnToOperators(inputSlice[i],Number(inputSlice[i-1]),Number(inputSlice[i+1])));
+                            setInput([turnToOperators(inputSlice[i],Number(inputSlice[i-1]),Number(inputSlice[i+1]))]);
+                        }
+                    }                  
             }
         }
         
-       };
+    };
    
     const handleAcClick=()=>{
         setInput([]);
-       // setTally(0)
         setOutput(0);
-        //setOperator();
-        //setSecondVar([])
        }
 
     //DEFAULT PROPS ASSIGNMENTS
     Display.defaultProps={
         outputState:output,
         inputState:input,
-        handleClick:handleClick,
-        //tallyState:tally,
-        //operatorState:operator,
-        //resultState:result
+        handleClick:handleClick
        }
 
-    /* const handleClick=(event)=>{
-        let etv=event.target.value;
-    
-        if(output===0){
-            setOutput(etv);
-            setInput([...input,etv])
-        }
-        else if (output>0){
-            setOutput(output+etv);
-            setInput([...input.concat(etv)])
-        }
-        else{
-            setSecondVar([...secondVar,etv]);
-            setOutput(etv);
-            setInput([...input.concat(etv)])
-        }
-    }*/
-
-    /*const handleClick=(event)=>{
-    let etg=event.target.value;
-    let isOperator=(val)=>{
-        return operatorsList.indexOf(val)>=0;
-    }
-        switch(true){
-            case input[0]==0:
-                setInput([etg]);
-                break;
-            case isOperator(input[0]):
-                switch(true){
-                    case isOperator(etg):
-                        setOperator(true);
-                        //setDisplayStyle({backgroundColor:'red'});
-                        break;
-                    default:
-                        setInput([...input,etg]);
-                        break;   
-                }
-                break;
-            default:
-                switch(true){
-                    case isOperator(etg):
-                        setOperator(true);
-                        setInput([...input,etg])
-                        break;
-                    default:
-                        setInput([...input,etg]);
-                        break; 
-                }
-                };
-    }*/
-
-    /*const handleClick=(event)=>{
-        let etg=event.target.value;
-        if(input==0){//NO INPUT YET
-            if(lastIsOperator===false){
-                if(operatorsList.indexOf(etg)>=0){//entered an operator
-                    setCalc(input.slice());
-                    setOperator(etg);
-                    setInput(input.concat(etg));
-                    setLastIsOperator(true);
-                }
-                else{
-                    //setCalc('etg='+etg);
-                    setInput([etg]);
-                    setLastIsOperator(false);
-                }
-            }
-            else{//should be entering a number
-                setCalc(calc.concat(input[1]));
-                setInput(input.concat(etg));
-                setLastIsOperator(false);
-            }
-        }else{
-            if(lastIsOperator===false){//INPUT ALREADY EXISTS
-                if(operatorsList.indexOf(etg)>=0){//entered an operator
-                    setCalc(input.slice);
-                    setOperator(etg);
-                    setInput(input.concat(etg));
-                    setLastIsOperator(true);
-                }
-                else{
-                    //setCalc('etg='+etg);
-                    setInput(input.concat(etg));
-                    setLastIsOperator(false);
-                }
-            }
-            else{
-                setCalc(calc.concat(input[1]));
-                setInput(input.concat(etg));
-                setLastIsOperator(false);
-        }}        
-    };*/
-
-    
     return(
         <div>
-            <div className="container col-3 px-1 pb-1 pt-4 justify-content-center justify-self-center bg-dark border border-primary">
-                
+            <div className="container col-3 px-1 pb-1 pt-4 justify-content-center justify-self-center bg-dark border border-primary">   
                 <Display outPut={output}/>
                 <div className="row-cols-4 justify-content">
                     <button id='clear' className="col-6 btn btn-danger shadow-none rounded-0 border" value={'AC'} onClick={handleAcClick}>AC</button>
