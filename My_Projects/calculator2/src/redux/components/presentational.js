@@ -8,13 +8,13 @@ import Display from "./Display";
 export default function Presentational(){
     const [input,setInput]=useState([]);  
     const [output,setOutput]=useState(0);
-    const [lastIndex,setLastIndex]=useState(0);//index
-    const [operatorsList,setOperatorsList]=useState(['+','-','x','/']);  
-    const [operator,setOperator]=useState();
-    const [tally,setTally]=useState(0);
-    const [secondVar,setSecondVar]=useState([[]]);
-    const [result,setResult]=useState(0);
-    const [clickStatus,setClickStatus]=useState();
+    //const [lastIndex,setLastIndex]=useState(0);//index
+    //const [operatorsList,setOperatorsList]=useState(['+','-','x','/']);  
+    //const [operator,setOperator]=useState();
+    //const [tally,setTally]=useState(0);
+    //const [secondVar,setSecondVar]=useState([[]]);
+    //const [result,setResult]=useState(0);
+    //const [clickStatus,setClickStatus]=useState();
     //const [isOperator,setLastIsOperator]=useState();
     //const [output,setOutput]=useState();
     //const [input,setInput]=useState();
@@ -49,7 +49,7 @@ export default function Presentational(){
         if(input.length===0){
             setOutput(Number(etv));
             setInput([etv]);
-        }else if(isNumber(output)===true||etv==='.'){
+        }else if(isNumber(output)===true||output==='.'||etv==='.'){
             setOutput(Number(output+etv));
             setInput(input.map(x=>{if(input.indexOf(x)==input.length-1){
                 return x+etv;
@@ -69,17 +69,17 @@ export default function Presentational(){
     const handleClickOperator=(event)=>{
         let etv=event.target.value;
        
-        if(isNumber(output)===true||etv==='.'){
-            setOperator(etv);
+        if(isNumber(output)===true||output==='.'){//added output as dot so that it doesnt mess the inferred conditions of else statement
+            //setOperator(etv);
             setOutput(etv);
-            setInput([...input,etv])
-            
+            setInput([...input,etv]) 
         }
-        else if(etv==='-'){
-            setOperator(etv);
-            setOutput(etv);
-            setInput([...input,etv])
-           // setTally(tally+Number(output));  
+        else{
+            switch(etv){
+                case '-':   
+                    setOutput(etv);
+                    setInput([...input,etv]);        
+            }
         }
     }
     
@@ -92,15 +92,39 @@ export default function Presentational(){
                 case '-':
                 case 'x':
                 case '/':
-                   if(inputSlice[i-1]==null){
-                    setOutput(turnToOperators(inputSlice[i],0,Number(inputSlice[i+1])));
-                    setInput([turnToOperators(inputSlice[i],0,Number(inputSlice[i+1]))]);
+                    if(inputSlice[i-1]==null){
+                        if(inputSlice[i+1]==='+'||inputSlice[i+1]==='x'||inputSlice[i+1]==='/'){
+                            setOutput(turnToOperators(inputSlice[i+1],0,Number(inputSlice[i+2])));
+                            setInput([turnToOperators(inputSlice[i+1],0,Number(inputSlice[i+2]))]);
+                            i++;
+                        }
+                        else if(inputSlice[i+1]==='-'){
+                            setOutput(turnToOperators(inputSlice[i],0,Number(inputSlice[i+1]+inputSlice[i+2])));
+                            setInput([turnToOperators(inputSlice[i],0,Number(inputSlice[i+1]+inputSlice[i+2]))]);
+                            i++;
+                        }
+                        else{
+                            setOutput(turnToOperators(inputSlice[i],0,Number(inputSlice[i+1])));
+                            setInput([turnToOperators(inputSlice[i],0,Number(inputSlice[i+1]))]);
+                        }
                     }
-                    else{
-                    setOutput(turnToOperators(inputSlice[i],Number(inputSlice[i-1]),Number(inputSlice[i+1])));        
-                    setInput([turnToOperators(inputSlice[i],Number(inputSlice[i-1]),Number(inputSlice[i+1]))]);
-                    }
-                    break;
+                        else{
+                            if(inputSlice[i+1]==='+'||inputSlice[i+1]==='x'||inputSlice[i+1]==='/'){
+                                setOutput(turnToOperators(inputSlice[i+1],inputSlice[i-1],Number(inputSlice[i+2])));
+                                setInput([turnToOperators(inputSlice[i+1],inputSlice[i-1],Number(inputSlice[i+2]))]);
+                                i++;
+                            }
+                            else if(inputSlice[i+1]==='-'){
+                                setOutput(turnToOperators(inputSlice[i],Number(inputSlice[i-1]),Number(inputSlice[i+1]+inputSlice[i+2])));
+                                setInput([turnToOperators(inputSlice[i],Number(inputSlice[i-1]),Number(inputSlice[i+1]+inputSlice[i+2]))]);
+                                i++;
+                            }
+                            else{
+                                setOutput(turnToOperators(inputSlice[i],Number(inputSlice[i-1]),Number(inputSlice[i+1])));
+                                setInput([turnToOperators(inputSlice[i],Number(inputSlice[i-1]),Number(inputSlice[i+1]))]);
+                            }
+                         }
+                        
                     
             }
         }
@@ -109,20 +133,20 @@ export default function Presentational(){
    
     const handleAcClick=()=>{
         setInput([]);
-        setTally(0)
+       // setTally(0)
         setOutput(0);
-        setOperator();
-        setSecondVar([])
+        //setOperator();
+        //setSecondVar([])
        }
 
     //DEFAULT PROPS ASSIGNMENTS
     Display.defaultProps={
         outputState:output,
         inputState:input,
-        hadleClick:handleClick,
-        tallyState:tally,
-        operatorState:operator,
-        resultState:result
+        handleClick:handleClick,
+        //tallyState:tally,
+        //operatorState:operator,
+        //resultState:result
        }
 
     /* const handleClick=(event)=>{
