@@ -8,17 +8,17 @@ import Display from "./Display";
 export default function Presentational(){
     const [input,setInput]=useState([]);  
     const [output,setOutput]=useState(0);
-    //const [displayStyle,setDisplayStyle]=useState({backgroundColor:'red'});
+    const [displayStyle,setDisplayStyle]=useState({backgroundColor:'red'});
     
     const btnRef=useRef();
 
-    /*function handleKeyPress(event){
+    function handleKeyPress(event){
         setClickStatus(event.key);
         if(clickStatus==btnRef.current.value){
             btnRef.current.style=displayStyle;
         }
         
-    };*/
+    };
 
     let turnToOperators=(op,a,b)=>{  
         return op=='x'?a*b
