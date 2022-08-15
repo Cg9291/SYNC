@@ -12,13 +12,13 @@ export default function Presentational(){
     
     const btnRef=useRef();
 
-    function handleKeyPress(event){
+   /* function handleKeyPress(event){
         setClickStatus(event.key);
         if(clickStatus==btnRef.current.value){
             btnRef.current.style=displayStyle;
         }
         
-    };
+    };*/
 
     let turnToOperators=(op,a,b)=>{  
         return op=='x'?a*b
@@ -28,24 +28,32 @@ export default function Presentational(){
         :'sign not recognized'
     };
 
-    let isNumber=(state)=>{
-        return typeof state==='number';}
+    let isOperator=(sign)=>{
+        switch(sign){
+            case '+':
+            case '-':
+            case 'x':
+            case '/': 
+                return true;
+            default:
+                return false;
+        }}
 
     const handleClick=(event)=>{
         let etv=event.target.value;
-        if(input.length===0){
-            setOutput(Number(etv));
+        if(input.length===0){//if nothing entered,set input and output to etv
+            setOutput(etv);
             setInput([etv]);
-        }else if(isNumber(output)===true||output==='.'||etv==='.'){
-            setOutput(Number(output+etv));
+        }else if(isOperator(output)===false||(output==="." && etv!=".")||(output==="0" && etv!=="0")){//if last entered is not operator OR if its not consecutive dots,concat etv to ouptput;concat etv to last entered in input
+            setOutput(output+etv);
             setInput(input.map(x=>{if(input.indexOf(x)==input.length-1){
                 return x+etv;
             }
             else{
                 return x;}}));  
         }
-        else{
-            setOutput(Number(etv));  
+        else{//if last entered was operator
+            setOutput(etv);  
             setInput([...input,etv]);
         }    
     }
@@ -53,7 +61,8 @@ export default function Presentational(){
     const handleClickOperator=(event)=>{
         let etv=event.target.value;
        
-        if(isNumber(output)===true||output==='.'){//added output as dot so that it doesnt mess the inferred conditions of else statement
+        if(isOperator(output)===false){//
+            //added output as dot so that it doesnt mess the inferred conditions of else statement
             //setOperator(etv);
             setOutput(etv);
             setInput([...input,etv]) 
@@ -76,6 +85,9 @@ export default function Presentational(){
                 case '-':
                 case 'x':
                 case '/':
+                    if(inputSlice[i+1]===null){
+                        inputSlice=inputSlice.slice(0,inputSlice[i+1])
+                    }
                     if(inputSlice[i-1]==null){
                         if(inputSlice[i+1]==='+'||inputSlice[i+1]==='x'||inputSlice[i+1]==='/'){
                             setOutput(turnToOperators(inputSlice[i+1],0,Number(inputSlice[i+2])));
@@ -91,7 +103,7 @@ export default function Presentational(){
                             setOutput(turnToOperators(inputSlice[i],0,Number(inputSlice[i+1])));
                             setInput([turnToOperators(inputSlice[i],0,Number(inputSlice[i+1]))]);
                         }
-                    }
+                    }   
                     else{
                         if(inputSlice[i+1]==='+'||inputSlice[i+1]==='x'||inputSlice[i+1]==='/'){
                             setOutput(turnToOperators(inputSlice[i+1],inputSlice[i-1],Number(inputSlice[i+2])));

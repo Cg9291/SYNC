@@ -3,6 +3,7 @@ export default function Display(props){
         return(
             <div id="display" /*style={displayStyle}*/ className="row-cols-4 justify-content text-light" onClick={props.handleClick}>
                 {props.outputState}
+                {props.testState}
             </div>
          )
     }
