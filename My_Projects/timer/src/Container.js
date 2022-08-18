@@ -5,44 +5,39 @@ import { useState,useEffect } from "react";
 
 export default function Container(){
     const [timeElapsed,setTimeElapsed]=useState(0);
-    const [trackMinutes,setTrackMinutes]=useState(25);
-    const [trackSeconds,setTrackSeconds]=useState(0);
-    const [seconds,setSeconds]=useState(new Date(0,0,0,0,0,trackSeconds).getSeconds());
-    const [minutes,setMinutes]=useState(new Date (0,0,0,0,trackMinutes,0).getMinutes());
+   
+    const [trackMinutes,setTrackMinutes]=useState(10);
+    const [trackSeconds,setTrackSeconds]=useState(12);
+    const [minutes,setMinutes]=useState(new Date (0,0,0,12,trackMinutes,0).getMinutes());
+    const [seconds,setSeconds]=useState(new Date(0,0,0,6,0,trackSeconds).getSeconds());
     const [startStop,setStartStop]=useState(false);
 
 
-    /*useEffect(()=>{
+    useEffect(()=>{
         //document.addEventListener("click",startTimer())
         setInterval(() => {
-            setSeconds(seconds+1)
+            setTrackSeconds(trackSeconds+1)
          },1000)
-    })*/
+    })
    
     var myTime=new Date(0,0,0,0,minutes,seconds)
 
-    let startTimer=()=>{
+    /*let startTimer=()=>{
         setInterval(() => {
-            if(seconds===0){
-                setTrackMinutes((trackMinutes)=>trackMinutes-1)
-                setTrackSeconds((trackSeconds)=>trackSeconds-1)
-            }
-            else if (seconds>0){
-                setTrackSeconds((trackSeconds)=>trackSeconds-1)
-         }},1000);
+            setTrackMinutes((trackMinutes)=>trackMinutes-1);
+            setTrackSeconds((trackSeconds)=>44);
+            },1000);
        /* if(startStop){
             setStartStop(false);
         }
         else{
             setStartStop(true);
-        };*/
-        
-        
-    };
+        };*/  
+
 
     Timer.defaultProps={
         timeElpasedState:timeElapsed,
-        timeFunction:startTimer,
+        //timeFunction:startTimer,
         secondsState:seconds,
         minutesState:minutes,
         trackMinutesState:trackMinutes,
