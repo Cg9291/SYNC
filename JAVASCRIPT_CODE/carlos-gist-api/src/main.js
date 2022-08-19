@@ -1,9 +1,10 @@
 import { useState,useEffect} from "react";
+import './main.css'
 
 export default function Main(){
     const [json,setJson]=useState([]);
     const [jsonObj,setJsonObj]=useState();
-    const [html,setHtml]=useState();
+
 
     useEffect(()=>{
         const req=new XMLHttpRequest();
@@ -14,20 +15,31 @@ export default function Main(){
         }
     })
 
-    let html2="<div>";
+    let html2;
     const handleClick=()=>{
-        for(let i=0;i<jsonObj.length;i++){
-        html2+='<img src="' +jsonObj[i].owner.avatar_url+'"'+ '/>'; 
-        };
+        window.alert("It's gonna be a bit ugly because I decided to add the usernames instead of Id's, but was too lazy to format for the long ones and so greyed out the files backgrounds....just change line23 index.owner.login to index.owner.id if needed");
 
-        html2+="</div>";
-        setJson(()=>{return (html2)});
+        setJson(jsonObj.map(index=>html2=<div>
+            <div className="listContainer">
+                <div className="logins"><u>{index.owner.id}</u></div>
+                <div className="userDisplay">
+                    <img className="avatars" src={index.owner.avatar_url}/>
+                    <div className="files">{Object.keys(index.files)}</div>
+                </div>
+            </div>
+            <hr/>
+            </div>
+        ))
+        ;
+
+        //html2+="</div>";
+        //setJson(html2);
     }
 
     return(
         <div>
         <button onClick={handleClick}>Clickity Click</button>
-          <div>{json}</div>
+          <div className="listContainer">{json}</div>
         </div>
     )
 }

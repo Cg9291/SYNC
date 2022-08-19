@@ -1,0 +1,31 @@
+.listContainer{
+    display: flex;
+    flex-direction: column;
+    margin-left:1rem;
+}
+
+.listItem{
+   display: flex;
+   
+    
+}
+.logins{
+    display: flex;
+    justify-content: start;
+    width: fit-content;
+}
+    
+.files{
+    border-radius: 0.2rem;
+    background-color: lightgrey;
+}
+
+.userDisplay{
+    display: flex;
+    align-items: center;
+}
+.avatars{
+    width: 5rem;
+    height:auto;
+    margin-right:2rem
+}
