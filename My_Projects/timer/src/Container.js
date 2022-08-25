@@ -4,13 +4,7 @@ import Timer from "./components/TimerComponent";
 import { useState,useEffect } from "react";
 
 export default function Container(){
-    const [timeElapsed,setTimeElapsed]=useState(0);
-    
-    const [trackMinutes,setTrackMinutes]=useState(25);
-    const [trackSeconds,setTrackSeconds]=useState(0);
-    const [minutes,setMinutes]=useState(new Date (0,0,0,12,trackMinutes,0).getMinutes());
-    const [seconds,setSeconds]=useState(new Date(0,0,0,6,0,trackSeconds).getSeconds());
-    const [startStop,setStartStop]=useState(false);
+   
     //break component hooks
     const [breakLength,setBreakLength]=useState(5);
     //session component hooks
@@ -25,6 +19,33 @@ export default function Container(){
     const [started,setStarted]=useState(false)
     let start=started;
 
+    //buttons event handlers
+    let startTimer=()=>{
+        if (started===false){
+            setStarted(true);
+        }
+        else{
+            setStarted(false);
+        }
+    }
+
+    let sessionHandler=(event)=>{
+        if(event.target.id=="session-increment"){
+            setSessionLength((sessionLength)=>sessionLength+1);
+        }
+        else if(event.target.id=="session-decrement" && sessionLength>1){
+            setSessionLength((sessionLength)=>sessionLength-1)
+        }
+    }
+
+    let breakHandler=(event)=>{
+        if(event.target.id=="break-increment"){
+            setBreakLength((breakLength)=>breakLength+1);
+        }
+        else if(event.target.id=="break-decrement" && breakLength>1){
+            setBreakLength((breakLength)=>breakLength-1);
+        }
+    }
 
     useEffect(()=>setTime(new Date(0,0,0,0,timeMinutes,timeSeconds).toLocaleTimeString()),[timeSeconds])
 
@@ -39,31 +60,11 @@ export default function Container(){
     },[started])
 
     
-   
-   
-   
-
-    let startTimer=()=>{
-        if (started===false){
-            setStarted(true);
-            //setInterval(setTimeSeconds((timeSeconds)=>timeSeconds-1),1000)
-        }
-        else{
-            setStarted(false);
-            
-            //setInterval(setTimeSeconds((timeSeconds)=>timeSeconds+1),1000) 
-        }
-    }
+    
 
 
 
     Timer.defaultProps={
-        timeElpasedState:timeElapsed,
-        //timeFunction:startTimer,
-        secondsState:seconds,
-        minutesState:minutes,
-        trackMinutesState:trackMinutes,
-        trackSecondsState:trackSeconds,
         timeState:time,
         timeMinutesState:timeMinutes,
         timeSecondsState:timeSeconds,
@@ -72,11 +73,13 @@ export default function Container(){
     }
 
     Break.defaultProps={
-        breakLengthState:breakLength
+        breakLengthState:breakLength,
+        breakHandler:breakHandler
     }
 
     Session.defaultProps={
-        sessionLengthState:sessionLength
+        sessionLengthState:sessionLength,
+        sessionHandler:sessionHandler
     }
 
     return(
