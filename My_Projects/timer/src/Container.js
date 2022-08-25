@@ -1,23 +1,23 @@
 import Break from "./components/BreakComponent";
 import Session from "./components/SessionComponent";
 import Timer from "./components/TimerComponent";
-import { useState,useEffect } from "react";
+import { useState,useEffect,useRef } from "react";
 
 export default function Container(){
    
     //break component hooks
     const [breakLength,setBreakLength]=useState(5);
     //session component hooks
-    const [sessionLength,setSessionLength]=useState(25)
-
+    const [sessionLength,setSessionLength]=useState(0)
+    
     //new date object/state
     const [time,setTime]=useState()
-    const [timeMinutes,setTimeMinutes]=useState(0);
-    const [timeSeconds,setTimeSeconds]=useState(0)
+    const [timeMinutes,setTimeMinutes]=useState(sessionLength);
+    const [timeSeconds,setTimeSeconds]=useState(3)
 
     //timer start stop state
     const [started,setStarted]=useState(false)
-    let start=started;
+    const intvl = useRef();//THIS CAME CLUTCH IN MAKING THE TIMER WORK AS INTENTED(STOP AT 00:00)
 
     //buttons event handlers
     let startTimer=()=>{
@@ -47,18 +47,30 @@ export default function Container(){
         }
     }
 
-    useEffect(()=>setTime(new Date(0,0,0,0,timeMinutes,timeSeconds).toLocaleTimeString()),[timeSeconds])
+    let refreshHandler=()=>{
+        setBreakLength(5);
+        setSessionLength(25);
+        setTime(new Date(0,0,0,0,sessionLength,timeSeconds).toLocaleTimeString());
+        setTimeMinutes(0);
+        setTimeSeconds(0)
+    }
+
+    useEffect(()=>setTime(new Date(0,0,0,0,sessionLength,timeSeconds).toLocaleTimeString()),[timeSeconds,sessionLength])
 
     useEffect(()=>{
         //document.addEventListener("click",startTimer())
         if(started===true){
-            let int=setInterval(() => {
+             intvl.current=setInterval(() => {
                 setTimeSeconds((timeSeconds)=>timeSeconds-1);
              },1000);
-            return ()=>clearInterval(int)
+            return ()=>clearInterval(intvl.current)
         }
-    },[started])
+    },[started,sessionLength,timeSeconds])
 
+    useEffect(()=>{if(sessionLength==0 && timeSeconds==0){
+        clearInterval(intvl.current);
+        setStarted(false)
+    }} )
     
     
 
@@ -66,10 +78,11 @@ export default function Container(){
 
     Timer.defaultProps={
         timeState:time,
-        timeMinutesState:timeMinutes,
+        sessionLengthState:sessionLength,
         timeSecondsState:timeSeconds,
         startedState:started,
-        startTimerFunction:startTimer
+        startTimerFunction:startTimer,
+        refreshHandler:refreshHandler,
     }
 
     Break.defaultProps={
