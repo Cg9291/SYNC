@@ -85,11 +85,13 @@ export default function Container(){
 
     useEffect(()=>{
         setSeconds(()=>time.getSeconds()<10?'0'+time.getSeconds():time.getSeconds());
+        setMinutes(()=>time.getMinutes()<10?'0'+time.getMinutes():time.getMinutes());
     },[time])
 
-    useEffect(()=>{if(sessionLength==0 && timeSeconds==0){
+    useEffect(()=>{if(minutes==0 && seconds==0){
         clearInterval(intvl.current);
-        setStarted(false)
+        setStarted(false);
+        setMinutes(60)
     }} )
 
    /* useEffect(()=>{
