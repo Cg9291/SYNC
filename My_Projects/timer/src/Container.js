@@ -2,17 +2,15 @@ import Break from "./components/BreakComponent";
 import Session from "./components/SessionComponent";
 import Timer from "./components/TimerComponent";
 import { useState,useEffect,useLayoutEffect,useRef } from "react";
-//start back here tomorrow
+
 export default function Container(){
-   
-    //break component hooks
+    //break & session components hooks
     const [breakLength,setBreakLength]=useState(5);
-    //session component hooks
     const [sessionLength,setSessionLength]=useState(25)
     
     //new date object/state
     const [time,setTime]=useState(new Date(0,0,0,0,25,0))
-    const [timeSeconds,setTimeSeconds]=useState(3);
+    const [timeSeconds,setTimeSeconds]=useState(0);
     //const [timeMinutes,setTimeMinutes]=useState(0);
     const [minutes,setMinutes]=useState(time.getMinutes());
     //let secondsRef=useRef(time.getSeconds())
@@ -62,48 +60,33 @@ export default function Container(){
    
 
     //EFFECTS
-    useEffect(()=>setTime(new Date(0,0,0,0,sessionLength,timeSeconds)),[timeSeconds,sessionLength])
-
-    useEffect(()=>{
-        document.title="Cg's Timer Project"
-
-        //document.addEventListener("click",startTimer())
+    useEffect(()=>setTime(new Date(0,0,0,0,sessionLength,timeSeconds)),[sessionLength,timeSeconds]);
+    useEffect(()=>{document.title="Cg's Timer Project"});
+    useEffect(()=>{//counter
         if(started===true){
-             intvl.current=setInterval(() => {
+            intvl.current=setInterval(() => {
                 setTimeSeconds((timeSeconds)=>timeSeconds-1);
-                if(timeSeconds==0){
-                    setSessionLength(sessionLength-1);
-                    setMinutes(minutes-1)
-                };
-                /*if(time.getSeconds()<10){
-                    setSeconds('0'+seconds)
-                }*/
-             },1000);
-            return ()=>clearInterval(intvl.current)
+            },
+            1000);
+            return()=>clearInterval(intvl.current);
         }
-    },[started,sessionLength,timeSeconds])
+    },[started,timeSeconds]);
 
-    useEffect(()=>{
+    useEffect(()=>{//adds 0 to single digits
         setSeconds(()=>time.getSeconds()<10?'0'+time.getSeconds():time.getSeconds());
         setMinutes(()=>time.getMinutes()<10?'0'+time.getMinutes():time.getMinutes());
     },[time])
 
-    useEffect(()=>{if(minutes==0 && seconds==0){
-        clearInterval(intvl.current);
+    useEffect(()=>{if(minutes==="00" && seconds==="00"){
+        //clearInterval(intvl.current);
         setStarted(false);
         setMinutes(60)
     }} )
 
-   /* useEffect(()=>{
-        if(secondsRef.current<10){
-            seconds='0'+secondsRef.current
-        }
-    },[secondsRef.current])*/
-    
-    
+    useEffect(()=>setBreakLength(breakLength),[breakLength])
 
 
-
+    //PASSING PROPS/FUNCTIONS
     Timer.defaultProps={
         timeState:time,
         sessionLengthState:sessionLength,
