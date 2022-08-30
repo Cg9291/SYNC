@@ -12,10 +12,11 @@ export default function Container(){
     
     //new date object/state
     const [time,setTime]=useState(new Date(0,0,0,0,25,0))
-    const [timeSeconds,setTimeSeconds]=useState(0)
-    let minutes=time.getMinutes();
+    const [timeSeconds,setTimeSeconds]=useState(3);
+    //const [timeMinutes,setTimeMinutes]=useState(0);
+    const [minutes,setMinutes]=useState(time.getMinutes());
     //let secondsRef=useRef(time.getSeconds())
-    let seconds=time.getSeconds()
+    const [seconds,setSeconds]=useState(time.getSeconds());
     //timer start stop state
     const [started,setStarted]=useState(false)
     const intvl = useRef();//THIS CAME CLUTCH IN MAKING THE TIMER WORK AS INTENTED(STOP AT 00:00)
@@ -58,27 +59,33 @@ export default function Container(){
         setStarted(false);
     }
 
-    if(time.getSeconds()<10){
-        seconds='0'+seconds
-    }
+   
+
+    //EFFECTS
     useEffect(()=>setTime(new Date(0,0,0,0,sessionLength,timeSeconds)),[timeSeconds,sessionLength])
 
     useEffect(()=>{
         document.title="Cg's Timer Project"
+
         //document.addEventListener("click",startTimer())
         if(started===true){
              intvl.current=setInterval(() => {
                 setTimeSeconds((timeSeconds)=>timeSeconds-1);
+                if(timeSeconds==0){
+                    setSessionLength(sessionLength-1);
+                    setMinutes(minutes-1)
+                };
+                /*if(time.getSeconds()<10){
+                    setSeconds('0'+seconds)
+                }*/
              },1000);
             return ()=>clearInterval(intvl.current)
         }
     },[started,sessionLength,timeSeconds])
 
     useEffect(()=>{
-
-            seconds='00';
-        
-    },[timeSeconds])
+        setSeconds(()=>time.getSeconds()<10?'0'+time.getSeconds():time.getSeconds());
+    },[time])
 
     useEffect(()=>{if(sessionLength==0 && timeSeconds==0){
         clearInterval(intvl.current);
