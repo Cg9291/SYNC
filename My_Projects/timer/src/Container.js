@@ -8,6 +8,8 @@ export default function Container(){
     const [breakLength,setBreakLength]=useState(5);
     const [sessionLength,setSessionLength]=useState(25)
     
+    const [myMinutes,setMyMinutes]=useState([]);
+    const [mySeconds,setMyseconds]=useState([]);
     //new date object/state
     const [time,setTime]=useState(new Date(0,0,0,1,25,0))
     const [timeSeconds,setTimeSeconds]=useState(0);
@@ -21,12 +23,25 @@ export default function Container(){
 
 
     //EFFECTS
+    useEffect(()=>{for(let i=0;i<=60;i++){
+        setMinutes([...myMinutes,i]);
+    }})
+    useEffect(()=>{for(let i=0;i<60;i++){
+        setMyseconds([...mySeconds,i])
+    }})
+
+    /*useEffect(()=>{
+        for(let i=mySeconds.indexOf(0))
+    })*/
+
+//continue above here
+
     useEffect(()=>setTime(new Date(0,0,0,1,sessionLength,timeSeconds)),[sessionLength,timeSeconds]);
     useEffect(()=>{document.title="Cg's Timer Project"});
     useEffect(()=>{//counter
         if(started===true){
             intvl.current=setInterval(() => {
-                setTimeSeconds((timeSeconds)=>timeSeconds-1);
+                setSeconds(mySeconds[mySeconds.length-1])
             },
             1000);
             return()=>clearInterval(intvl.current);
