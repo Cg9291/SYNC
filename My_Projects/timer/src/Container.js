@@ -9,26 +9,50 @@ export default function Container(){
     const [sessionLength,setSessionLength]=useState(25)
     
     const [myMinutes,setMyMinutes]=useState([]);
-    const [mySeconds,setMyseconds]=useState([]);
+    const [mySeconds,setMySeconds]=useState([]);
     //new date object/state
     const [time,setTime]=useState(new Date(0,0,0,1,25,0))
     const [timeSeconds,setTimeSeconds]=useState(0);
     //const [timeMinutes,setTimeMinutes]=useState(0);
-    const [minutes,setMinutes]=useState(time.getMinutes());
+    const [minutes,setMinutes]=useState();
     //let secondsRef=useRef(time.getSeconds())
-    const [seconds,setSeconds]=useState(time.getSeconds());
+    const [seconds,setSeconds]=useState();
     //timer start stop state
     const [started,setStarted]=useState(false)
     const intvl = useRef();//THIS CAME CLUTCH IN MAKING THE TIMER WORK AS INTENTED(STOP AT 00:00)
 
 
     //EFFECTS
-    useEffect(()=>{for(let i=0;i<=60;i++){
-        setMinutes([...myMinutes,i]);
-    }})
-    useEffect(()=>{for(let i=0;i<60;i++){
-        setMyseconds([...mySeconds,i])
-    }})
+    useEffect(()=>{
+        setMySeconds([...Array(60).keys()]);
+        setMyMinutes([...Array(61).keys()])
+    },[])
+
+    /*useEffect(()=>{
+        setMySeconds((mySeconds)=>[...mySeconds,0])
+    },[])*/
+
+    useEffect(()=>{
+        setSeconds(0);
+        setMinutes(sessionLength)
+    },[])
+
+    useEffect(()=>{
+        if(started===true && seconds==0 ){
+            intvl.current=setInterval(() => {
+                setSeconds(59);
+                setMinutes(minutes-1)
+            },1000);
+            return()=>clearInterval(intvl.current);
+        }
+        else if(started===true){
+            intvl.current=setInterval(() => {
+                setSeconds(seconds-1);
+            },1000);
+            return()=>clearInterval(intvl.current);
+        }},[started,seconds])
+    
+    
 
     /*useEffect(()=>{
         for(let i=mySeconds.indexOf(0))
@@ -38,7 +62,7 @@ export default function Container(){
 
     useEffect(()=>setTime(new Date(0,0,0,1,sessionLength,timeSeconds)),[sessionLength,timeSeconds]);
     useEffect(()=>{document.title="Cg's Timer Project"});
-    useEffect(()=>{//counter
+   /* useEffect(()=>{//counter
         if(started===true){
             intvl.current=setInterval(() => {
                 setSeconds(mySeconds[mySeconds.length-1])
@@ -46,12 +70,12 @@ export default function Container(){
             1000);
             return()=>clearInterval(intvl.current);
         }
-    },[started,timeSeconds]);
+    },[started,timeSeconds]);*/
 
-    useEffect(()=>{//adds 0 to single digits
-        setSeconds(()=>time.getSeconds()<10?'0'+time.getSeconds():time.getSeconds());
-        setMinutes(()=>time.getMinutes()<10?'0'+time.getMinutes():time.getMinutes());
-    },[time])
+   /* useEffect(()=>{//adds 0 to single digits
+        setSeconds(()=>seconds<10?'0'+seconds:seconds);
+        setMinutes(()=>minutes<10?'0'+minutes:minutes);
+    },[time])*/
 
     useEffect(()=>{if(minutes==0 && seconds==0){
         clearInterval(intvl.current);
@@ -76,10 +100,11 @@ export default function Container(){
         if(started!==true){
         if(event.target.id=="session-increment" && sessionLength<60){
             setSessionLength((sessionLength)=>sessionLength+1);
-            setTimeSeconds(0)
+            setMinutes((sessionLength)=>sessionLength+1)
         }
         else if(event.target.id=="session-decrement" && sessionLength>1){
-            setSessionLength((sessionLength)=>sessionLength-1)
+            setSessionLength((sessionLength)=>sessionLength-1);
+            setMinutes((sessionLength)=>sessionLength-1)
         }
     }}
 
