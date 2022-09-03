@@ -6,43 +6,55 @@ import { useState,useEffect,useLayoutEffect,useRef } from "react";
 export default function Container(){
     //break & session components hooks
     const [breakLength,setBreakLength]=useState(5);
-    const [sessionLength,setSessionLength]=useState(25)
+    const [sessionLength,setSessionLength]=useState(25);
     
-    const [myMinutes,setMyMinutes]=useState([]);
-    const [mySeconds,setMySeconds]=useState([]);
+    //const [myMinutes,setMyMinutes]=useState([]);
+    //const [mySeconds,setMySeconds]=useState([]);
     //new date object/state
-    const [time,setTime]=useState(new Date(0,0,0,1,25,0))
-    const [timeSeconds,setTimeSeconds]=useState(0);
+    //const [time,setTime]=useState(new Date(0,0,0,1,25,0))
+    //const [timeSeconds,setTimeSeconds]=useState(0);
     //const [timeMinutes,setTimeMinutes]=useState(0);
-    const [minutes,setMinutes]=useState();
+    
     //let secondsRef=useRef(time.getSeconds())
-    const [seconds,setSeconds]=useState();
+    const [minutes,setMinutes]=useState(25);
+    const [seconds,setSeconds]=useState(0);
     //timer start stop state
-    const [started,setStarted]=useState(false)
+    const [started,setStarted]=useState(false);
+    const [status,setStatus]=useState("session")
+    const [timerColor,setTimerColor]=useState({color:'black'});
+    const [timerLabel,setTimerLabel]=useState("Time remaining");
     const intvl = useRef();//THIS CAME CLUTCH IN MAKING THE TIMER WORK AS INTENTED(STOP AT 00:00)
 
 
     //EFFECTS
-    useEffect(()=>{
+    /*useEffect(()=>{
         setMySeconds([...Array(60).keys()]);
         setMyMinutes([...Array(61).keys()])
-    },[])
+    },[])*/
 
     /*useEffect(()=>{
         setMySeconds((mySeconds)=>[...mySeconds,0])
     },[])*/
 
     useEffect(()=>{
-        setSeconds(0);
-        setMinutes(sessionLength)
-    },[])
+        if(status==="session"){
+            setSeconds(0);
+            setMinutes(sessionLength);
+        }
+        else if(status==="break"){
+            setSeconds(0);
+            setMinutes(breakLength);  
+            setTimerLabel("Break")
+        }
+    },[status])
 
     useEffect(()=>{
-        if(started===true && seconds==0 ){
+        if(started===true && seconds==0){
             intvl.current=setInterval(() => {
                 setSeconds(59);
                 setMinutes(minutes-1)
             },1000);
+            setTimerColor({color:'red'});
             return()=>clearInterval(intvl.current);
         }
         else if(started===true){
@@ -50,7 +62,7 @@ export default function Container(){
                 setSeconds(seconds-1);
             },1000);
             return()=>clearInterval(intvl.current);
-        }},[started,seconds])
+        }},[status,started,seconds])
     
     
 
@@ -60,7 +72,7 @@ export default function Container(){
 
 //continue above here
 
-    useEffect(()=>setTime(new Date(0,0,0,1,sessionLength,timeSeconds)),[sessionLength,timeSeconds]);
+    //useEffect(()=>setTime(new Date(0,0,0,1,sessionLength,timeSeconds)),[sessionLength,timeSeconds]);
     useEffect(()=>{document.title="Cg's Timer Project"});
    /* useEffect(()=>{//counter
         if(started===true){
@@ -78,21 +90,33 @@ export default function Container(){
     },[time])*/
 
     useEffect(()=>{if(minutes==0 && seconds==0){
-        clearInterval(intvl.current);
-        setStarted(false);
-        setMinutes(60)
-    }} )
+        
+        switch(status){
+            case "session":
+                setStatus("break");
+                //clearInterval(intvl.current);             
+                //setTimerColor({color:'black'});
+                //setMinutes(60);
+                break;
+
+            case "break":
+                setStatus("session");
+                break;
+        }
+    }})
 
     useEffect(()=>setBreakLength(breakLength),[breakLength])
 
    
     //buttons event handlers
     let startTimer=()=>{
-        if (started===false){
-            setStarted(true);
-        }
-        else{
-            setStarted(false);
+        switch(started){
+            case true:
+                setStarted(false);
+                break;
+            case false:
+                setStarted(true);
+                break;
         }
     }
 
@@ -121,9 +145,22 @@ export default function Container(){
     let refreshHandler=()=>{
         setBreakLength(5);
         setSessionLength(25);
-        setTime(new Date(0,0,0,0,25,0));
-        setTimeSeconds(0);
+        setMinutes(25);
+        setSeconds(0);
         setStarted(false);
+        setStatus();
+        //setTime(new Date(0,0,0,0,25,0));
+        //setTimeSeconds(0);
+        
+    }
+
+    //rendering function
+    let secondsRenderer=()=>{
+        return seconds<10?'0'+seconds:seconds;
+    }
+
+    let minutesRenderer=()=>{
+        return minutes<10?'0'+minutes:minutes;
     }
 
    
@@ -133,14 +170,19 @@ export default function Container(){
 
     //PASSING PROPS/FUNCTIONS
     Timer.defaultProps={
-        timeState:time,
+        //timeState:time,
         sessionLengthState:sessionLength,
-        timeSecondsState:timeSeconds,
+        //timeSecondsState:timeSeconds,
         startedState:started,
         startTimerFunction:startTimer,
         refreshHandler:refreshHandler,
         minutesState:minutes,
         secondsState:seconds,
+        timerColorState:timerColor,
+        secondsRendererFunction:secondsRenderer,
+        minutesRendererFunction:minutesRenderer,
+        breakLengthState:breakLength,
+        timerLabelState:timerLabel
     }
 
     Break.defaultProps={

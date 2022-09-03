@@ -5,11 +5,10 @@ export default function Timer(props){
         <div>
             <div className="fa fa-car" id="timer-label">Time remaining</div>
 
-            {props.startedState===true && <div id="time-left" style={{color:'red'}}>{props.minutesState}:{props.secondsState}</div>} 
-            {props.startedState===false && <div id="time-left">{props.minutesState}:{props.secondsState}</div>}
+            <div id="time-left" style={props.timerColorState}>{props.minutesRendererFunction()}:{props.secondsRendererFunction()}</div> 
 
-            {props.startedState===true && <button id="start_stop" className="fa fa-pause" style={{color:'red'}} onClick={props.startTimerFunction}></button>}
-            {props.startedState===false && <button id="start_stop" className="fa fa-play" onClick={props.startTimerFunction}></button>}
+            {(props.startedState===true) && <button id="start_stop" className="fa fa-pause" style={props.timerColorState} onClick={props.startTimerFunction}></button>}
+            {props.startedState===false && <button id="start_stop" className="fa fa-play" onClick={props.startTimerFunction}>{props.startTimerFunction}</button>}
 
             <button id="reset" className="fa fa-refresh" onClick={props.refreshHandler}></button>
         </div>
