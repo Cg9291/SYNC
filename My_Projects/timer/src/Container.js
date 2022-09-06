@@ -4,37 +4,28 @@ import Timer from "./components/TimerComponent";
 import { useState,useEffect,useLayoutEffect,useRef } from "react";
 
 export default function Container(){
-    //break & session components hooks
+    //HOOKS - break & session components hooks
     const [breakLength,setBreakLength]=useState(5);
     const [sessionLength,setSessionLength]=useState(25);
-    
-    //const [myMinutes,setMyMinutes]=useState([]);
-    //const [mySeconds,setMySeconds]=useState([]);
-    //new date object/state
-    //const [time,setTime]=useState(new Date(0,0,0,1,25,0))
-    //const [timeSeconds,setTimeSeconds]=useState(0);
-    //const [timeMinutes,setTimeMinutes]=useState(0);
-    
-    //let secondsRef=useRef(time.getSeconds())
+
+    //HOOKS - minutes & seconds
     const [minutes,setMinutes]=useState(25);
     const [seconds,setSeconds]=useState(0);
-    //timer start stop state
+
+    //HOOKS - timer start stop state
     const [started,setStarted]=useState(false);
-    const [status,setStatus]=useState("session")
+    const [status,setStatus]=useState("session");
+
+    //HOOKS - aesthetics
     const [timerColor,setTimerColor]=useState({color:'black'});
     const [timerLabel,setTimerLabel]=useState("Time remaining");
-    const intvl = useRef();//THIS CAME CLUTCH IN MAKING THE TIMER WORK AS INTENTED(STOP AT 00:00)
+
+    //REFS
+    const intvl = useRef();//THIS CAME CLUTCH IN MAKING THE TIMER WORK AS INTENTED(STOP AT 00:00),basically allows us to assign and thus call off a setInterval fn in the useeffect.
 
 
     //EFFECTS
-    /*useEffect(()=>{
-        setMySeconds([...Array(60).keys()]);
-        setMyMinutes([...Array(61).keys()])
-    },[])*/
-
-    /*useEffect(()=>{
-        setMySeconds((mySeconds)=>[...mySeconds,0])
-    },[])*/
+    useEffect(()=>{document.title="Cg's Timer Project"});
 
     useEffect(()=>{
         if(status==="session"){
@@ -46,7 +37,7 @@ export default function Container(){
             setMinutes((breakLength)=>breakLength);  
             setTimerLabel("Break")
         }
-    },[])
+    },[]);
 
     useEffect(()=>{
         if(started===true && seconds==0){
@@ -62,49 +53,22 @@ export default function Container(){
                 setSeconds(seconds-1);
             },1000);
             return()=>clearInterval(intvl.current);
-        }},[status,started,seconds])
-    
-    
+        }},[status,started,seconds]);
 
-    /*useEffect(()=>{
-        for(let i=mySeconds.indexOf(0))
-    })*/
-
-//continue above here
-
-    //useEffect(()=>setTime(new Date(0,0,0,1,sessionLength,timeSeconds)),[sessionLength,timeSeconds]);
-    useEffect(()=>{document.title="Cg's Timer Project"});
-   /* useEffect(()=>{//counter
-        if(started===true){
-            intvl.current=setInterval(() => {
-                setSeconds(mySeconds[mySeconds.length-1])
-            },
-            1000);
-            return()=>clearInterval(intvl.current);
+    useEffect(()=>{
+        if(minutes==0 && seconds==0){ 
+            switch(status){
+                case "session":
+                    setStatus("break");
+                    setStarted(false);
+                    break;
+                case "break":
+                    setStatus("session");
+                    setStarted(false);
+                    break;
+            } 
         }
-    },[started,timeSeconds]);*/
-
-   /* useEffect(()=>{//adds 0 to single digits
-        setSeconds(()=>seconds<10?'0'+seconds:seconds);
-        setMinutes(()=>minutes<10?'0'+minutes:minutes);
-    },[time])*/
-
-    useEffect(()=>{if(minutes==0 && seconds==0){ 
-        switch(status){
-            case "session":
-                setStatus("break");
-                setStarted(false);
-                //clearInterval(intvl.current);             
-                //setTimerColor({color:'black'});
-                //setMinutes(60);
-                break;
-
-            case "break":
-                setStatus("session");
-                setStarted(false);
-                break;
-        }
-    }},[minutes,seconds])
+    },[minutes,seconds]);
 
     useEffect(()=>{if(minutes==0 && seconds==0 && started===false){ 
         setTimeout(()=>{
@@ -121,12 +85,9 @@ export default function Container(){
                 setStarted(true);
             }
         },1000)      
-    }},[status])
+    }},[status]);
 
-    useEffect(()=>setBreakLength(breakLength),[breakLength])
-
-   
-    //buttons event handlers
+    //EVENT HANDLERS FUNCTIONS
     let startTimer=()=>{
         switch(started){
             case true:
@@ -157,7 +118,7 @@ export default function Container(){
                 setMinutes(sessionLength-1);
             }
         }
-    }
+    };
 
     let breakHandler=(event)=>{
         if(started===false && status!=="break"){
@@ -178,7 +139,7 @@ export default function Container(){
                 setMinutes(breakLength-1);
             } 
         }
-    }
+    };
 
     let refreshHandler=()=>{
         setBreakLength(5);
@@ -187,31 +148,22 @@ export default function Container(){
         setSeconds(0);
         setStarted(false);
         setStatus("session");
-        setTimerLabel("Time remaining");
-        //setTime(new Date(0,0,0,0,25,0));
-        //setTimeSeconds(0);
-        
-    }
+        setTimerLabel("Time remaining");      
+    };
 
-    //rendering function
+    //TIME RENDERING FUNCTIONS
     let secondsRenderer=()=>{
         return seconds<10?'0'+seconds:seconds;
-    }
+    };
 
     let minutesRenderer=()=>{
         return minutes<10?'0'+minutes:minutes;
-    }
-
-   
-
-    
+    };
 
 
     //PASSING PROPS/FUNCTIONS
     Timer.defaultProps={
-        //timeState:time,
         sessionLengthState:sessionLength,
-        //timeSecondsState:timeSeconds,
         startedState:started,
         startTimerFunction:startTimer,
         refreshHandler:refreshHandler,
@@ -222,26 +174,26 @@ export default function Container(){
         minutesRendererFunction:minutesRenderer,
         breakLengthState:breakLength,
         timerLabelState:timerLabel
-    }
+    };
 
     Break.defaultProps={
         breakLengthState:breakLength,
         breakHandler:breakHandler,
         startedState:started
-    }
+    };
 
     Session.defaultProps={
         sessionLengthState:sessionLength,
         sessionHandler:sessionHandler,
         startedState:started
-    }
+    };
 
     return(
-    <div>
-        <Break/>
-        <Session/>
-        <Timer/>    
-    </div>
+        <div>
+            <Break/>
+            <Session/>
+            <Timer/>    
+        </div>
     );
 }
 
