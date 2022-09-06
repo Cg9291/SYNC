@@ -46,7 +46,7 @@ export default function Container(){
             setMinutes((breakLength)=>breakLength);  
             setTimerLabel("Break")
         }
-    },[status])
+    },[])
 
     useEffect(()=>{
         if(started===true && seconds==0){
@@ -101,6 +101,7 @@ export default function Container(){
 
             case "break":
                 setStatus("session");
+                setStarted(false);
                 break;
         }
     }},[minutes,seconds])
@@ -138,26 +139,46 @@ export default function Container(){
     }
 
     let sessionHandler=(event)=>{
-        if(started!==true){
-        if(event.target.id=="session-increment" && sessionLength<60){
-            setSessionLength((sessionLength)=>sessionLength+1);
-            setMinutes((sessionLength)=>sessionLength+1)
+        if(started===false && status!=="session"){
+            if(event.target.id=="session-increment" && sessionLength<60){
+                setSessionLength(sessionLength+1);
+            }
+            else if(event.target.id=="session-decrement" && sessionLength>1){
+                setSessionLength(sessionLength-1);
+            }
         }
-        else if(event.target.id=="session-decrement" && sessionLength>1){
-            setSessionLength((sessionLength)=>sessionLength-1);
-            setMinutes((sessionLength)=>sessionLength-1)
+        else if(started===false && status==="session"){
+            if(event.target.id=="session-increment" && sessionLength<60){
+                setSessionLength(sessionLength+1);
+                setMinutes(sessionLength+1);
+            }
+            else if(event.target.id=="session-decrement" && sessionLength>1){
+                setSessionLength(sessionLength-1);
+                setMinutes(sessionLength-1);
+            }
         }
-    }}
+    }
 
     let breakHandler=(event)=>{
-        if(started!==true){
-        if(event.target.id=="break-increment" && breakLength<60){
-            setBreakLength((breakLength)=>breakLength+1);
+        if(started===false && status!=="break"){
+            if(event.target.id=="break-increment" && breakLength<60){
+                setBreakLength(breakLength+1);
+            }
+            else if(event.target.id=="break-decrement" && breakLength>1){
+                setBreakLength(breakLength-1);
+            }
         }
-        else if(event.target.id=="break-decrement" && breakLength>1){
-            setBreakLength((breakLength)=>breakLength-1);
+        else if(started===false && status==="break"){
+            if(event.target.id=="break-increment" && breakLength<60){
+                setBreakLength(breakLength+1);
+                setMinutes(breakLength+1);
+            }
+            else if(event.target.id=="break-decrement" && breakLength>1){
+                setBreakLength(breakLength-1);
+                setMinutes(breakLength-1);
+            } 
         }
-    }}
+    }
 
     let refreshHandler=()=>{
         setBreakLength(5);
