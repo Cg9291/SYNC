@@ -43,7 +43,7 @@ export default function Container(){
         }
         else if(status==="break"){
             setSeconds(0);
-            setMinutes(breakLength);  
+            setMinutes((breakLength)=>breakLength);  
             setTimerLabel("Break")
         }
     },[status])
@@ -57,7 +57,7 @@ export default function Container(){
             setTimerColor({color:'red'});
             return()=>clearInterval(intvl.current);
         }
-        else if(started===true){
+        else if(started===true && seconds>0){
             intvl.current=setInterval(() => {
                 setSeconds(seconds-1);
             },1000);
@@ -89,11 +89,11 @@ export default function Container(){
         setMinutes(()=>minutes<10?'0'+minutes:minutes);
     },[time])*/
 
-    useEffect(()=>{if(minutes==0 && seconds==0){
-        
+    useEffect(()=>{if(minutes==0 && seconds==0){ 
         switch(status){
             case "session":
                 setStatus("break");
+                setStarted(false);
                 //clearInterval(intvl.current);             
                 //setTimerColor({color:'black'});
                 //setMinutes(60);
@@ -103,7 +103,24 @@ export default function Container(){
                 setStatus("session");
                 break;
         }
-    }})
+    }},[minutes,seconds])
+
+    useEffect(()=>{if(minutes==0 && seconds==0 && started===false){ 
+        setTimeout(()=>{
+            if(status==="session"){
+                setSeconds(0);
+                setMinutes(sessionLength);
+                setTimerLabel("Time remaining");
+                setStarted(true);
+            }
+            else if(status==="break"){
+                setSeconds(0);
+                setMinutes(breakLength);  
+                setTimerLabel("Break");
+                setStarted(true);
+            }
+        },1000)      
+    }},[status])
 
     useEffect(()=>setBreakLength(breakLength),[breakLength])
 
@@ -148,7 +165,8 @@ export default function Container(){
         setMinutes(25);
         setSeconds(0);
         setStarted(false);
-        setStatus();
+        setStatus("session");
+        setTimerLabel("Time remaining");
         //setTime(new Date(0,0,0,0,25,0));
         //setTimeSeconds(0);
         
