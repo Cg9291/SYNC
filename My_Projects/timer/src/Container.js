@@ -1,7 +1,7 @@
 import Break from "./components/BreakComponent";
 import Session from "./components/SessionComponent";
-import Timer from "./components/TimerComponent";
-import { useState,useEffect,useLayoutEffect,useRef } from "react";
+import {Timer} from "./components/TimerComponent";
+import React,{ useState,useEffect,useLayoutEffect,useRef } from "react";
 
 export default function Container(){
     //HOOKS - break & session components hooks
@@ -22,6 +22,7 @@ export default function Container(){
 
     //REFS
     const intvl = useRef();//THIS CAME CLUTCH IN MAKING THE TIMER WORK AS INTENTED(STOP AT 00:00),basically allows us to assign and thus call off a setInterval fn in the useeffect.
+    const beep=React.createRef();
 
 
     //EFFECTS
@@ -71,6 +72,8 @@ export default function Container(){
     },[minutes,seconds]);
 
     useEffect(()=>{if(minutes==0 && seconds==0 && started===false){ 
+        beep.current.volume=0.01;
+        beep.current.play();
         setTimeout(()=>{
             if(status==="session"){
                 setSeconds(0);
@@ -148,7 +151,8 @@ export default function Container(){
         setSeconds(0);
         setStarted(false);
         setStatus("session");
-        setTimerLabel("Time remaining");      
+        setTimerLabel("Time remaining");   
+        beep.current.load();   
     };
 
     //TIME RENDERING FUNCTIONS
@@ -159,6 +163,11 @@ export default function Container(){
     let minutesRenderer=()=>{
         return minutes<10?'0'+minutes:minutes;
     };
+
+    let soundPlayer=()=>{
+        beep.current.volume=0.01;
+        beep.current.play();
+    }
 
 
     //PASSING PROPS/FUNCTIONS
@@ -173,7 +182,9 @@ export default function Container(){
         secondsRendererFunction:secondsRenderer,
         minutesRendererFunction:minutesRenderer,
         breakLengthState:breakLength,
-        timerLabelState:timerLabel
+        timerLabelState:timerLabel,
+        soundPlayerFunction:soundPlayer
+
     };
 
     Break.defaultProps={
@@ -192,7 +203,7 @@ export default function Container(){
         <div>
             <Break/>
             <Session/>
-            <Timer/>    
+            <Timer ref={beep}/>    
         </div>
     );
 }
