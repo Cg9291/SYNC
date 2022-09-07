@@ -1,7 +1,7 @@
 import Break from "./components/BreakComponent";
 import Session from "./components/SessionComponent";
 import {Timer} from "./components/TimerComponent";
-import React,{ useState,useEffect,useLayoutEffect,useRef } from "react";
+import React,{ useState,useEffect,useRef } from "react";
 
 export default function Container(){
     //HOOKS - break & session components hooks
@@ -22,41 +22,34 @@ export default function Container(){
 
     //REFS
     const intvl = useRef();//THIS CAME CLUTCH IN MAKING THE TIMER WORK AS INTENTED(STOP AT 00:00),basically allows us to assign and thus call off a setInterval fn in the useeffect.
-    const beep=React.createRef();
+    const beep=useRef();
 
 
     //EFFECTS
     useEffect(()=>{document.title="Cg's Timer Project"});
 
     useEffect(()=>{
-        if(status==="session"){
             setSeconds(0);
             setMinutes(sessionLength);
-        }
-        else if(status==="break"){
-            setSeconds(0);
-            setMinutes((breakLength)=>breakLength);  
-            setTimerLabel("Break")
-        }
-    },[]);
+        },[]);
 
-    useEffect(()=>{
+    useEffect(()=>{//starts & run the timer
         if(started===true && seconds==0){
-            intvl.current=setInterval(() => {
+            intvl.current=setTimeout(() => {
                 setSeconds(59);
                 setMinutes(minutes-1)
             },1000);
             setTimerColor({color:'red'});
-            return()=>clearInterval(intvl.current);
+            return()=>clearTimeout(intvl.current);
         }
         else if(started===true && seconds>0){
             intvl.current=setInterval(() => {
                 setSeconds(seconds-1);
             },1000);
             return()=>clearInterval(intvl.current);
-        }},[status,started,seconds]);
+        }},[started,seconds]);
 
-    useEffect(()=>{
+    useEffect(()=>{//stops the timer at 00:00 & switches between session and break states
         if(minutes==0 && seconds==0){ 
             switch(status){
                 case "session":
@@ -71,7 +64,7 @@ export default function Container(){
         }
     },[minutes,seconds]);
 
-    useEffect(()=>{if(minutes==0 && seconds==0 && started===false){ 
+    useEffect(()=>{if(minutes==0 && seconds==0 && started===false){ //plays session end sound & starts appropriate new timer
         beep.current.volume=0.01;
         beep.current.play();
         setTimeout(()=>{
@@ -164,38 +157,31 @@ export default function Container(){
         return minutes<10?'0'+minutes:minutes;
     };
 
-    let soundPlayer=()=>{
-        beep.current.volume=0.01;
-        beep.current.play();
-    }
-
 
     //PASSING PROPS/FUNCTIONS
     Timer.defaultProps={
-        sessionLengthState:sessionLength,
-        startedState:started,
         startTimerFunction:startTimer,
         refreshHandler:refreshHandler,
-        minutesState:minutes,
-        secondsState:seconds,
-        timerColorState:timerColor,
         secondsRendererFunction:secondsRenderer,
         minutesRendererFunction:minutesRenderer,
         breakLengthState:breakLength,
-        timerLabelState:timerLabel,
-        soundPlayerFunction:soundPlayer
-
+        sessionLengthState:sessionLength,
+        minutesState:minutes,
+        secondsState:seconds,
+        startedState:started,
+        timerColorState:timerColor,
+        timerLabelState:timerLabel
     };
 
     Break.defaultProps={
         breakLengthState:breakLength,
-        breakHandler:breakHandler,
+        breakHandlerFunction:breakHandler,
         startedState:started
     };
 
     Session.defaultProps={
         sessionLengthState:sessionLength,
-        sessionHandler:sessionHandler,
+        sessionHandlerFunction:sessionHandler,
         startedState:started
     };
 
