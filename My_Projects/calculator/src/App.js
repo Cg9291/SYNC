@@ -1,12 +1,12 @@
 import './App.scss';
-import Presentational from './redux/components/presentational';
+import Container from './redux/components/Container.js';
 
 
 function App() {
   return (
     <div className="App">
      <h1>Calculator</h1>
-     <Presentational/>
+     <Container/>
     </div>
   );
 }
