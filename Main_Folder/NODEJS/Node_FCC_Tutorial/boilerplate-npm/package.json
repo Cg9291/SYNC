@@ -1,0 +1,19 @@
+{
+	"name": "fcc-learn-npm-package-json",
+	"author":"CarlG",
+	"description": "a package that is created for tutorial purposes",
+	"keywords":["freecodecamp","node","learning"],
+	"license": "MIT",
+	"version": "69.42.0",
+	"dependencies": {
+		"express": "^4.14.0"
+	},
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://idontknow/todo.git"
+	}
+}

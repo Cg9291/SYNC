@@ -2,5 +2,6 @@
 **/node_modules
 **/Cg9291.github.io
 **/portfolio-index
-**/NODEJS/Node_FCC_Tutorial/boilerplate-express
-**/NODEJS/Node_FCC_Tutorial/boilerplate-npm
+**/.env
+**.env
+.env
