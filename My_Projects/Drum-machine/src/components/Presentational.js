@@ -3,11 +3,10 @@ import React, { useEffect,useRef } from "react";
 
 
 export default function Presentational(props){
-    const btnsRef=useRef();
     return (
         <div>
             <div id="drum-machine">
-                <h1>Presentational</h1>
+                <h1>Drum Machine</h1>
                 <Buttons/>
             </div>
         </div>
