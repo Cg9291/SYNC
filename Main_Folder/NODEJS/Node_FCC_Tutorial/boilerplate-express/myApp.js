@@ -12,6 +12,83 @@ const { json } = require('body-parser');
 let app = express();
 
 
+const players={
+    davis:{//0
+        Lastname: "Davis",
+        Firstname: "Anthony",
+        Position: "PF",
+        Jerseynumber:3,
+        Height: 208},
+    kuzma:{//1
+        Lastname: "Kuzma",
+        Firstname: "Kyle",
+        Position: "PF",
+        Jerseynumber: 0,
+        Height:207},
+    james:{//2
+        Lastname:"James",
+        Firstname:"Lebron",
+        Position:"SF",
+        Jerseynumber:23,
+        Height:207},
+    horton_tucker:{//3
+        Lastname:"Horton Tucker",
+        Firstname:"Talen",
+        Position:"PG",
+        Jerseynumber:99,
+        Height:193},
+    green:{//4
+        Lastname:"Green",
+        Firstname:"Danny",
+        Position:"SG",
+        Jerseynumber:"14",
+        Height:198},
+    cousins:{//5
+        Lastname:"Cousins",
+        Firstname:"Demarcus",
+        Position:"C",
+        Jerseynumber:99,
+        Height:211},
+    caldwell_pope:{//6
+        Lastname:"Caldwell-Pope",
+        Firstname:"Kentavious",
+        Position:"SG",
+        Jerseynumber:1,
+        Height:196},
+    mcgee:{//7
+        Lastname:"Mcgee",
+        Firstname:"Javale",
+        Position:"C",
+        Jerseynumber:"7",
+        Height:213},
+    cook:{//8
+        Lastname:"Cook",
+        Firstname:"Quinn",
+        Position:"PG",
+        Jerseynumber:2,
+        Height:193},
+    dudley:{//9
+        Lastname:"Dudley",
+        Firstname:"Jared",
+        Position:"SF",
+        Jerseynumber:10,
+        Height:198}
+};
+
+app.get("/",(req,res)=>{
+    //res.send('Hello Expressians');  //
+    res.sendFile(__dirname+'/views/index.html');
+    app.use("/public",express.static(__dirname + '/public'));
+})
+
+//personal example
+app.get('/players/:name',(req,res)=>{
+    res.json(players[req.params['name']])
+})
+
+app.get('/:word/echo',(req,res)=>{
+    res.json({echo:req.params.word})
+})
 
 app.get("/name", function(req,res) {
     var firstName = req.query.first;
@@ -24,11 +101,19 @@ app.get("/name", function(req,res) {
     });
   });
 
-/*app.get('/:word/echo',(req,res)=>{
-    res.json({echo:req.params.word})
-})
+  //personal example
+  app.get("/players", function(req,res) {
+   
+    res.json({
+      name: `${firstName} ${lastName}`
+    });
+  });
 
 
+
+
+
+/*
 app.use("/",(req,res,next)=>{//could not submit,works it terminal but not when submitted on fcc, found multiple posts pointing to error on their end..will follow up
     let string=`${req.method} ${req.path} - ${req.ip}`;
     console.log(string);
@@ -36,6 +121,7 @@ app.use("/",(req,res,next)=>{//could not submit,works it terminal but not when s
 });
 
 
+//COPIED UP
 app.get("/",(req,res)=>{
     //res.send('Hello Expressians');  //
     res.sendFile(__dirname+'/views/index.html');
