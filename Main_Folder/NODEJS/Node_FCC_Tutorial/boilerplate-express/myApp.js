@@ -1,5 +1,6 @@
 //MAKE SURE TO NEVER PUSH ENV FILE TO GITHUB, ADD IT TO GIT IGNORE LIST
 require('dotenv').config({path:'SYNC/JAVASCRIPT_CODE/NODEJS/Node FCC Tutorial/boilerplate-express/.env'});
+let bodyParser=require('body-parser');
 //FCC Q# [Use the .env File]=>Biggest hurdle here was:
 //1-not being able to access env vars unless in the root(programming folder//non project root)
 //2- not being able to use comparison operator even able to access env vars through non project root
@@ -11,7 +12,7 @@ let express = require('express');
 const { json } = require('body-parser');
 let app = express();
 
-
+console.log("Hello World");
 const players={
     davis:{//0
         Lastname: "Davis",
@@ -75,11 +76,21 @@ const players={
         Height:198}
 };
 
-app.get("/",(req,res)=>{
-    //res.send('Hello Expressians');  //
-    res.sendFile(__dirname+'/views/index.html');
-    app.use("/public",express.static(__dirname + '/public'));
-})
+app.use(bodyParser.urlencoded({extended: false}))
+
+app.use((req,res,next)=>{//could not submit,works it terminal but not when submitted on fcc, found multiple posts pointing to error on their end..will follow up
+    console.log(`${req.method} ${req.path} - ${req.ip}`);
+    next();
+});
+
+app.get("/now",(req,res,next)=>{
+    req.time=new Date().toString();
+    next();
+},
+    function(req,res){
+        res.json({time:req.time});
+    }
+)
 
 //personal example
 app.get('/players/:name',(req,res)=>{
@@ -109,11 +120,22 @@ app.get("/name", function(req,res) {
     });
   });
 
+  app.post('/name',(req,res)=>{
+    res.json({name:`${req.body.first} ${req.body.last}`})
+  })
 
-
-
+    
 
 /*
+app.post('/name',
+    app.use(bodyParser.urlencoded({extended: false}
+        ))
+    )
+*/
+
+/*
+//COPIED UP
+
 app.use("/",(req,res,next)=>{//could not submit,works it terminal but not when submitted on fcc, found multiple posts pointing to error on their end..will follow up
     let string=`${req.method} ${req.path} - ${req.ip}`;
     console.log(string);
@@ -137,6 +159,7 @@ app.get("/json",(req,res)=>{
     }
 })
 
+//COPIED UP
 app.get("/now",(req,res,next)=>{
     req.time=new Date().toString();
     next();
