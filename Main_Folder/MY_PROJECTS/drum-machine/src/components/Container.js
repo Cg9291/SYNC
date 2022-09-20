@@ -2,7 +2,7 @@ import Buttons from "./Buttons.js";
 import React, { useEffect,useRef } from "react";
 
 
-export default function Presentational(props){
+export default function Container(props){
     return (
         <div>
             <div id="drum-machine">
