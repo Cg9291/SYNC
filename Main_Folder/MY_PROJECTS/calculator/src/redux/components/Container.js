@@ -10,15 +10,73 @@ import {isOperator} from "../functions/isOperator_Function";
 
 export default function Container(){
     const [input,setInput]=useState([]);  
-    const [output,setOutput]=useState(0);
+    const [output,setOutput]=useState();
     const [displayStyle,setDisplayStyle]=useState({backgroundColor:'red'});
-    
+    const [test,setTest]=useState(0);
+    const [isOperator,setIsOperator]=useState(false);
+    const [operator,setOperator]=useState()
     const btnRef=useRef();
 
+    
    //EVENTS HANDLER FUNCTIONS
     const handleClick=(event)=>{
         let etv=event.target.value;
-        if(input.length===0){//if nothing entered,set input and output to etv
+        if(isOperator===false){
+            switch(etv){
+                case "+":
+                case "-":
+                case "x":
+                case "/":
+                    setIsOperator(true);
+                    setOperator(etv);
+                    setInput([...input,etv]);
+                    break;
+                default:
+                    setTest(Number(test+etv));
+                    setInput([...input,Number(etv)]);
+                    break;
+        }}
+        else{
+            switch(etv){
+                case "+":
+                case "x":
+                case "/":
+                    setOperator(etv);
+                    setInput([...input,etv]);
+                    break;
+                case "-":
+                    setOperator(operator+etv);
+                    setInput([...input,etv]);
+                    break;
+                case "=":
+                    setOutput(test);
+                    break;
+                default:
+                    switch(operator){
+                        case "+":
+                            setTest(test+Number(etv));
+                            setInput([...input,Number(etv)]);
+                            break;
+                        case "-":
+                            setTest(test-Number(etv));
+                            setInput([...input,Number(etv)]);
+                            break;
+                        case "x":
+                            setTest(test*Number(etv));
+                            setInput([...input,Number(etv)]);
+                            break;
+                        case "/":
+                            setTest(test/Number(etv));
+                            setInput([...input,Number(etv)]);
+                            break;  
+                    }
+                    setIsOperator(false);
+            }
+        }
+        
+
+        //start here
+        /*if(input.length===0){//if nothing entered,set input and output to etv
             setOutput(etv);
             setInput([etv]);
         }else if(isOperator(output)===false||(output==="." && etv!=".")||(output==="0" && etv!=="0")){//if last entered is not operator OR if its not consecutive dots,concat etv to ouptput;concat etv to last entered in input
@@ -32,11 +90,11 @@ export default function Container(){
         else{//if last entered was operator
             setOutput(etv);  
             setInput([...input,etv]);
-        }    
+        }    */
     }
 
     const handleClickOperator=(event)=>{
-        let etv=event.target.value;
+        /*let etv=event.target.value;
        
         if(isOperator(output)===false){//
             //added output as dot so that it doesnt mess the inferred conditions of else statement
@@ -50,11 +108,11 @@ export default function Container(){
                     setOutput(etv);
                     setInput([...input,etv]);        
             }
-        }
+        }*/
     }
     
     const handleEqualClick=()=>{
-        let inputSlice=input.slice();
+        /*let inputSlice=input.slice();
 
         for(let i=0;i<inputSlice.length;i++){
             switch(inputSlice[i]){//must fix so that '.' is accounted for
@@ -98,13 +156,15 @@ export default function Container(){
                         }
                     }                  
             }
-        }
+        }*/
         
     };
    
     const handleAcClick=()=>{
         setInput([]);
-        setOutput(0);
+        setOutput();
+        setTest(0);
+        setIsOperator(false)
        }
 
 
@@ -112,6 +172,9 @@ export default function Container(){
     Display.defaultProps={
         outputState:output,
         inputState:input,
+        testState:test,
+        isOperatorState:isOperator,
+        operatorState:operator,
         handleClick:handleClick
        }
        
@@ -119,7 +182,9 @@ export default function Container(){
         handleAcClick:handleAcClick,
         handleClickOperator:handleClickOperator,
         handleClick:handleClick,
-        handleEqualClick:handleEqualClick
+        handleEqualClick:handleEqualClick,
+        isOperatorState:isOperator,
+        operatorState:operator,
     }
 
     return(
