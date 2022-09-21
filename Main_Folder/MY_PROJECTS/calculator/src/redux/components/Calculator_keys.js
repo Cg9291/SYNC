@@ -5,7 +5,7 @@ import { forwardRef } from "react"
             <div className="row-cols-4 justify-content">
                 <button id='clear' className="col-6 btn btn-danger shadow-none rounded-0 border" value={'AC'} onClick={props.handleAcClick}>AC</button>
                 <button id="divide" className="col-3 btn btn-primary shadow-none rounded-0 border" value={'/'} onClick={props.handleClick}>/</button>
-                <button id="multiply" className="col-3 btn btn-primary shadow-none rounded-0 border" value={'x'} onClick={props.handleClick}>x</button>
+                <button id="multiply" className="col-3 btn btn-primary shadow-none rounded-0 border" value={'*'} onClick={props.handleClick}>x</button>
             </div>
             <div className="row-cols-4  justify-content">
                 <button id="seven" ref={btnRef} className="col-3 btn btn-dark shadow-none rounded-0 border" value={7} onClick={props.handleClick}>7</button>

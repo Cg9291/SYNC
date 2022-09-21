@@ -12,7 +12,7 @@ export default function Container(){
     const [input,setInput]=useState([]);  
     const [output,setOutput]=useState();
     const [displayStyle,setDisplayStyle]=useState({backgroundColor:'red'});
-    const [test,setTest]=useState(0);
+    const [num,setNum]=useState(0);
     const [isOperator,setIsOperator]=useState(false);
     const [operator,setOperator]=useState()
     const btnRef=useRef();
@@ -22,6 +22,56 @@ export default function Container(){
     const handleClick=(event)=>{
         let etv=event.target.value;
         if(isOperator===false){
+            switch(etv){
+                case "+":
+                case "-":
+                case "x":
+                case "/":
+                    setIsOperator(true);
+                    setOperator(etv);
+                    setNum(etv);
+                    setInput([...input,etv]);
+                    break;
+                default:
+                    let inputArr=input.slice();
+                    if(inputArr[inputArr.length-1]!=="." || etv!=="." ){
+                    setNum(Number(num+etv));
+                    setInput([...input,etv]);
+                    setIsOperator(false);
+                    }
+                    
+            } 
+        }else{
+            let inputArr=input.slice(); 
+            switch(etv){
+                case "+":
+                case "x":
+                case "/":
+                                       
+                    inputArr.splice(input.length-1,1,etv)  
+                    setIsOperator(true);
+                    setOperator(etv);
+                    setNum(etv);
+                    setInput(inputArr);
+                    break;
+                case "-":
+                    setIsOperator(true);
+                    setOperator(etv);
+                    setNum(etv);
+                    setInput([...input,etv]);
+                    break;
+                default:
+                    if(inputArr[inputArr.length-1]!=="." || etv!=="." ){
+                    setNum(etv);
+                    setInput([...input,etv]);
+                    setIsOperator(false);
+                    break;
+                    }
+                    
+            }  
+        }}
+
+        /*if(isOperator===false){
             switch(etv){
                 case "+":
                 case "-":
@@ -72,7 +122,7 @@ export default function Container(){
                     }
                     setIsOperator(false);
             }
-        }
+        }*/
         
 
         //start here
@@ -90,8 +140,8 @@ export default function Container(){
         else{//if last entered was operator
             setOutput(etv);  
             setInput([...input,etv]);
-        }    */
-    }
+        }    
+    }*/
 
     const handleClickOperator=(event)=>{
         /*let etv=event.target.value;
@@ -112,6 +162,10 @@ export default function Container(){
     }
     
     const handleEqualClick=()=>{
+        let result=eval(input.join(''));
+        setInput([result]);
+        setNum(result.toString());
+
         /*let inputSlice=input.slice();
 
         for(let i=0;i<inputSlice.length;i++){
@@ -163,8 +217,9 @@ export default function Container(){
     const handleAcClick=()=>{
         setInput([]);
         setOutput();
-        setTest(0);
-        setIsOperator(false)
+        setNum(0);
+        setIsOperator(false);
+        setOperator();
        }
 
 
@@ -172,7 +227,7 @@ export default function Container(){
     Display.defaultProps={
         outputState:output,
         inputState:input,
-        testState:test,
+        numState:num,
         isOperatorState:isOperator,
         operatorState:operator,
         handleClick:handleClick
