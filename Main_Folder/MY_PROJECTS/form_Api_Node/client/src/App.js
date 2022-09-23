@@ -1,11 +1,10 @@
 import Form from './components/Form';
-import Inputs from "./components/Inputs"
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <Form/>
+      <Form id='form'/>
     </div>
   );
 }

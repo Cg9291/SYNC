@@ -1,0 +1,20 @@
+.form{
+    height: 15rem;
+    width: fit-content;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.inputs{
+    margin-bottom: 0.2rem;
+}
+
+.submits{
+    margin-top: 1rem;
+    background-color: rgb(0, 81, 255);
+    border:0 solid black;
+    border-radius: 1rem;
+    
+}

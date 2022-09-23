@@ -1,10 +1,14 @@
+import "../styling/Form.scss"
 import Inputs from "./Inputs";
+
 
 export default function Form(){
   return(
-    <div>
+    <div id='form' action="http://localhost:3001/data">
       <h1>
+        <b>
         Form Header
+        </b>
       </h1>
       <Inputs/>
     </div>
