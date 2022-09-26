@@ -34,21 +34,9 @@ export default function Inputs(){
   )
 }
 
-/*<!DOCTYPE html>
-<html>
-<body>
 
-<form id='form'>
-	<input type='text' name='text1' value='foo'/>
-    <input type='text' name='text2' value='bar'/>
-    <input type='text' name='text3' value='baz'/>
-    <input type='text' name='text4' value='dop'/>
-    <input type='text' name='text5' value='lam'/>
-</form>
 
-<output id='output'></output>
 
-<script>
 	const form=document.getElementById('form');
     const formData=new FormData(form);
     const myObj={};
@@ -65,7 +53,4 @@ export default function Inputs(){
             }
       }
       output.textContent=JSON.stringify(myObj);
-</script>
-</body>
-</html> 
-*/
+
