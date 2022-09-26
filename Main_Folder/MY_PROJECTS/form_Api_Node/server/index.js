@@ -22,6 +22,10 @@ App.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname ,"..","client","build","index.html"));
 })
 
+App.post('/data',(req,res)=>{
+  
+})
+
 App.listen(PORT,()=>{
     console.log(`We are live on port ${PORT}`)
 })
