@@ -2,8 +2,8 @@ import '../styling/Inputs.scss';
 import { useState,useRef } from 'react';
 
 export default function Inputs(){
-  let fieldsArr=["FirstName","LastName","Year of Birth","Height","Weight","Occupation","City","Country of Origin","ID"];
-  let fields=fieldsArr.map((fieldName)=><label className="inputs"><input type="text" name={fieldName.replace(/\s/g, '')} placeholder={fieldName} onChange={(e)=>handleChange(e)}/>{fieldName.replace(/\s/g, '')}</label>);
+  let fieldsArr=["FirstName","LastName","City","Year of Birth","Height","Weight","Occupation","Country of Origin","ID"];//FOR NOW WILL ONLY RENDER THE FN,LN,CITY,OCCUPATION(TESTING PURPOSES)
+
   const [jObj,setJObj]=useState({});
   const formRef=useRef();
   const [myObj1,setmyObj1]=useState();
@@ -34,7 +34,15 @@ export default function Inputs(){
   return(
     <>
       <form className="form" ref={formRef} onSubmit={(e)=>handleSubmit(e)}>
-        {fields}
+        <label className="inputs">
+          <input type="text" name={fieldsArr[0].replace(/\s/g, '')} placeholder={fieldsArr[0]} onChange={(e)=>handleChange(e)}/>
+        </label>
+        <label className="inputs">
+          <input type="text" name={fieldsArr[1].replace(/\s/g, '')} placeholder={fieldsArr[1]} onChange={(e)=>handleChange(e)}/>
+        </label>
+        <label className="inputs">
+          <input type="text" name={fieldsArr[2].replace(/\s/g, '')} placeholder={fieldsArr[2]} onChange={(e)=>handleChange(e)}/>
+        </label>
         <button type='submit' className="submits">Submit</button>
       </form>
       {JSON.stringify(myObj)}
