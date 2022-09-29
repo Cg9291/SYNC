@@ -8,9 +8,10 @@ export default function Inputs(){
   const formRef=useRef();
   const [myObj1,setmyObj1]=useState();
   const [inputValue,setInputValue]=useState();
+  const [jsonObj,setJsonObj]=useState([]);
   const myObj={};
   let val;
-  const formData=new FormData(formRef.current);
+  
 
 
   const handleChange=(e)=>{
@@ -20,16 +21,10 @@ export default function Inputs(){
     
   
   const handleSubmit=(e)=>{
-    //e.preventDefault();
-    for(const [key,value] of myObj1){
-    	if(key=="FirstName"){
-        	val=value;
-            myObj[value]={};
-            }
-        else{
-            myObj[val][key]=value;
-            }
-      }
+    e.preventDefault();
+    const data=new FormData(e.target);
+    const value=Object.fromEntries(data.entries());
+    setJsonObj([...jsonObj,value]);
   }
   return(
     <>
@@ -45,8 +40,7 @@ export default function Inputs(){
         </label>
         <button type='submit' className="submits">Submit</button>
       </form>
-      {JSON.stringify(myObj)}
-      {JSON.stringify(myObj1)}
+      {JSON.stringify(jsonObj)}
     </>
     
   )
