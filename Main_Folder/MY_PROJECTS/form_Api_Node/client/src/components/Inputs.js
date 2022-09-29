@@ -9,8 +9,8 @@ export default function Inputs(){
   const [myObj1,setmyObj1]=useState();
   const [inputValue,setInputValue]=useState();
   const [jsonObj,setJsonObj]=useState([]);
-  const myObj={};
-  let val;
+  let myObj={};
+  let value;
   
 
 
@@ -21,14 +21,16 @@ export default function Inputs(){
     
   
   const handleSubmit=(e)=>{
-    e.preventDefault();
+    //e.preventDefault();
     const data=new FormData(e.target);
-    const value=Object.fromEntries(data.entries());
+    value=Object.fromEntries(data.entries());
+    setInputValue(value)
     setJsonObj([...jsonObj,value]);
+    myObj=[...jsonObj,value];
   }
   return(
     <>
-      <form className="form" ref={formRef} onSubmit={(e)=>handleSubmit(e)}>
+      <form className="form" ref={formRef} onSubmit={(e)=>handleSubmit(e)} action="/" method='POST'>
         <label className="inputs">
           <input type="text" name={fieldsArr[0].replace(/\s/g, '')} placeholder={fieldsArr[0]} onChange={(e)=>handleChange(e)}/>
         </label>
@@ -40,7 +42,8 @@ export default function Inputs(){
         </label>
         <button type='submit' className="submits">Submit</button>
       </form>
-      {JSON.stringify(jsonObj)}
+      {/*JSON.stringify(jsonObj)*/}
+      {/*JSON.stringify(inputValue)*/}
     </>
     
   )
@@ -66,3 +69,4 @@ export default function Inputs(){
       }
       output.textContent=JSON.stringify(myObj);*/
 
+//export let myObj=[...jsonObj,value]
