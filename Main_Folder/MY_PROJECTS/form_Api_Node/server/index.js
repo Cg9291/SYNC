@@ -31,14 +31,21 @@ App.use(express.static(path.join(__dirname,"..","client","build")));
 })*/
 
 App.post('/',(req,res)=>{
-  res.send(req.body)
-  fs.appendFile("Main_Folder/MY_PROJECTS/form_Api_Node/server/apiData.json",req.body)
+  res.send(req.body);
+  
+  fs.appendFile(__dirname+"/apiData.json",JSON.stringify(req.body),function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+  App.get('/api',(req,res)=>{
+    res.sendFile(__dirname+"/apiData.json")
+  })
 })
 
 
-App.get('/api',(req,res)=>{
+/*App.get('/api',(req,res)=>{
     res.sendFile(__dirname+'/apiData.json')
-})
+})*/
 
 
 
