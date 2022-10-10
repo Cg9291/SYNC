@@ -1,1 +1,7 @@
-.App{--theme-color:rgb(255, 186, 58)}:export{themeColor:var(--theme-color)}/*# sourceMappingURL=variables.css.map */
+.App {
+  --theme-color:rgb(255, 186, 58);
+}
+
+:export {
+  themeColor: var(--theme-color);
+}/*# sourceMappingURL=variables.css.map */
