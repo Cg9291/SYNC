@@ -1,1 +1,24 @@
-.form{height:15rem;width:fit-content;display:flex;flex-direction:column;justify-content:space-between;height:max-content}.inputs{margin-bottom:.2rem;border:#000 solid}.submits{margin-top:1rem;background-color:#0051ff;border:0 solid #000;border-radius:1rem}/*# sourceMappingURL=Inputs.css.map */
+.form {
+  height: 15rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.inputs {
+  margin-bottom: 0.2rem;
+  border: black solid;
+}
+
+.submits {
+  margin-top: 1rem;
+  background-color: rgb(0, 81, 255);
+  border: 0 solid black;
+  border-radius: 1rem;
+}/*# sourceMappingURL=Inputs.css.map */
