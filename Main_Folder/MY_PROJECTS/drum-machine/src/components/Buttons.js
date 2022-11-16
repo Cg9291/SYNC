@@ -1,6 +1,7 @@
 //MUST REPLACE KICK!!! (FILE DOESNT WORK)
 //OPTIONAL IMPROVEMENTS:(1-CHANGE KEYS COLOR WHEN PRESSED/CLICKED 2-ADD WINDOWS FOR LABEL AND POWER ON/OFF 3-FIX UNEVEN VOLUME)
 import React, { useEffect, useRef, useState } from "react";
+import ToggleButton from "./ToggleButton.js";
 import '../buttons.scss';
 import clap_Sound from '../audio/clap.mp3';
 import closed_HH_Sound from '../audio/closed-HH.mp3';
@@ -68,9 +69,8 @@ export default function Buttons(){
 
     return(
         <div className="container-fluid justify-content-center align-items-center col-6 m-auto">
-            <div id="display">{playing}</div>
             <div className="row m-auto" style={{border:'solid green'}}>
-                <div id="pad" className="row col-6" style={{border:'solid blue'}}> 
+                <div id="pad" className="row col-6" /*style={{border:'solid blue'}}*/> 
                     <div className="row justify-content-center">
                         <button id="Clap" className="drum-pad col-4 btn btn-dark m-2" onClick={playSound} style={{boxShadow: "2px 5px red"}}>
                             Q
@@ -138,6 +138,15 @@ export default function Buttons(){
                                 Your browser does not support this type of file.   
                             </audio>
                         </button>
+                    </div>
+                </div>
+                <div id="controls" height='50px' className="col-6" style={{border:'solid pink'}}>
+                    <div className="row justify-content-center align-content-center" >
+                        <div id="display" className="bg-secondary col-6 border border-dark fs-3 fw-bold mt-2" style={{minHeight:'50px'}}>{playing}
+                        </div>
+                    </div>
+                    <div className="row ">
+                        <ToggleButton/>
                     </div>
                 </div>
             </div>
