@@ -70,7 +70,7 @@ export default function Buttons(){
     return(
         <div className="container-fluid justify-content-center align-items-center col-6 m-auto">
             <div className="row m-auto" style={{border:'solid green'}}>
-                <div id="pad" className="row col-6" /*style={{border:'solid blue'}}*/> 
+                <div id="pad" className="row col-6 bg-secondary" /*style={{border:'solid blue'}}*/> 
                     <div className="row justify-content-center">
                         <button id="Clap" className="drum-pad col-4 btn btn-dark m-2" onClick={playSound} style={{boxShadow: "2px 5px red"}}>
                             Q
