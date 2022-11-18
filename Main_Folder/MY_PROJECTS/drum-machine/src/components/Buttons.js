@@ -27,48 +27,60 @@ export default function Buttons(){
    
    const [playing,setPlaying]=useState();
    const [toggle,setToggle]=useState(true);
+   const [volume,setVolume]=useState();
 
    function playSound(event){
     if(toggle){
         event.target.firstElementChild.play();
+        event.target.firstElementChild.volume=volume/100;
         setPlaying(event.target.id);
     }
    }
 
    function handleKeyPress(event){
             if(event.key.toUpperCase()==="Q"){
+                
                 Q.current.play();
+                Q.current.volume=volume/100;
                 setPlaying(Q.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="W"){
+                W.current.volume=volume/100;
                 W.current.play();
                 setPlaying(W.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="E"){
+                E.current.volume=volume/100;
                 E.current.play();
                 setPlaying(E.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="A"){
+                A.current.volume=volume/100;
                 A.current.play();
                 setPlaying(A.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="S"){
+                S.current.volume=volume/100;
                 S.current.play();
                 setPlaying(S.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="D"){
+                D.current.volume=volume/100;
                 D.current.play();
                 setPlaying(D.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="Z"){
+                Z.current.volume=volume/100;
                 Z.current.play();
                 setPlaying(Z.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="X"){
+                X.current.volume=volume/100;
                 X.current.play();
                 setPlaying(X.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="C"){
+                C.current.volume=volume/100;
                 C.current.play();
                 setPlaying(C.current.parentNode.id);
             }
@@ -80,7 +92,11 @@ export default function Buttons(){
         window.addEventListener("keypress",handleKeyPress,false);
     }
     return ()=>window.removeEventListener("keypress",handleKeyPress,false)
-    },[toggle]);
+    },[toggle,volume]);
+
+    function changeVolume(event){
+        setVolume(event.target.value)
+    }
 
     return(
         <div className="container-fluid justify-content-center align-items-center col-6 m-auto">
@@ -112,7 +128,7 @@ export default function Buttons(){
                     <div className="row justify-content-center">                
                         <button id="Heater 2" className="drum-pad col-4 btn btn-dark m-2" onClick={playSound} style={{boxShadow: "2px 5px purple"}}>
                             A
-                            <audio src={heater_2_Sound} className="clip" id='A' ref={A}>
+                            <audio src={heater_2_Sound} className="clip" id='A' ref={A} >
                                 Your browser does not support this type of file.  
                             </audio>
                         </button>
@@ -142,7 +158,7 @@ export default function Buttons(){
 
                         <button id="Kick" className="drum-pad col-4 btn btn-dark m-2" onClick={playSound} style={{boxShadow: "2px 5px yellow"}}>
                             X
-                            <audio src={kick_Sound} className="clip" id='X' ref={X} volume="0.9">
+                            <audio src={kick_Sound} className="clip" id='X' ref={X}>
                                 Your browser does not support this type of file.  
                             </audio>
                         </button>
@@ -157,11 +173,14 @@ export default function Buttons(){
                 </div>
                 <div id="controls" height='50px' className="col-6" style={{border:'solid pink'}}>
                     <div className="row justify-content-center align-content-center" >
-                        <div id="display" className="bg-secondary col-6 border border-dark fs-3 fw-bold mt-2" style={{minHeight:'50px'}}>{playing}
+                        <div id="display" className="bg-secondary col-6 border border-dark fs-3 fw-bold mt-2" style={{minHeight:'50px'}}>
+                            {playing}
                         </div>
                     </div>
                     <div className="row ">
                         <ToggleButton toggle={toggle} setToggle={setToggle}/>
+                        <input type='range' min={0} max={100} onChange={changeVolume}></input>
+                        volume is {volume}.
                     </div>
                 </div>
             </div>
