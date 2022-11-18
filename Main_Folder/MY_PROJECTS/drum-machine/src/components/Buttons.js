@@ -1,6 +1,6 @@
 //MUST REPLACE KICK!!! (FILE DOESNT WORK)
 //OPTIONAL IMPROVEMENTS:(1-CHANGE KEYS COLOR WHEN PRESSED/CLICKED 2-ADD WINDOWS FOR LABEL AND POWER ON/OFF 3-FIX UNEVEN VOLUME)
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect,useLayoutEffect, useRef, useState } from "react";
 import ToggleButton from "./ToggleButton.js";
 import '../buttons.scss';
 import clap_Sound from '../audio/clap.mp3';
@@ -26,46 +26,61 @@ export default function Buttons(){
    const C=useRef();
    
    const [playing,setPlaying]=useState();
+   const [toggle,setToggle]=useState(true);
 
    function playSound(event){
+    if(toggle){
         event.target.firstElementChild.play();
-        setPlaying(event.target.id)
+        setPlaying(event.target.id);
+    }
    }
 
    function handleKeyPress(event){
-    if(event.key.toUpperCase()==="Q"){
-        Q.current.play();
+            if(event.key.toUpperCase()==="Q"){
+                Q.current.play();
+                setPlaying(Q.current.parentNode.id);
+            }
+            else if(event.key.toUpperCase()==="W"){
+                W.current.play();
+                setPlaying(W.current.parentNode.id);
+            }
+            else if(event.key.toUpperCase()==="E"){
+                E.current.play();
+                setPlaying(E.current.parentNode.id);
+            }
+            else if(event.key.toUpperCase()==="A"){
+                A.current.play();
+                setPlaying(A.current.parentNode.id);
+            }
+            else if(event.key.toUpperCase()==="S"){
+                S.current.play();
+                setPlaying(S.current.parentNode.id);
+            }
+            else if(event.key.toUpperCase()==="D"){
+                D.current.play();
+                setPlaying(D.current.parentNode.id);
+            }
+            else if(event.key.toUpperCase()==="Z"){
+                Z.current.play();
+                setPlaying(Z.current.parentNode.id);
+            }
+            else if(event.key.toUpperCase()==="X"){
+                X.current.play();
+                setPlaying(X.current.parentNode.id);
+            }
+            else if(event.key.toUpperCase()==="C"){
+                C.current.play();
+                setPlaying(C.current.parentNode.id);
+            }
     }
-    else if(event.key.toUpperCase()==="W"){
-        W.current.play();
-    }
-    else if(event.key.toUpperCase()==="E"){
-        E.current.play();
-    }
-    else if(event.key.toUpperCase()==="A"){
-        A.current.play();
-    }
-    else if(event.key.toUpperCase()==="S"){
-        S.current.play();
-    }
-    else if(event.key.toUpperCase()==="D"){
-        D.current.play();
-    }
-    else if(event.key.toUpperCase()==="Z"){
-        Z.current.play();
-    }
-    else if(event.key.toUpperCase()==="X"){
-        X.current.play();
-    }
-    else if(event.key.toUpperCase()==="C"){
-        C.current.play();
-    }
-    };
 
 
-   useEffect(()=>{
-    window.addEventListener("keypress",handleKeyPress,false)
-   },[]);
+   useLayoutEffect(()=>{
+    if(toggle){
+        window.addEventListener("keypress",handleKeyPress,false);
+    }
+    return ()=>window.removeEventListener("keypress",handleKeyPress,false)
+    },[toggle]);
 
     return(
         <div className="container-fluid justify-content-center align-items-center col-6 m-auto">
@@ -146,7 +161,7 @@ export default function Buttons(){
                         </div>
                     </div>
                     <div className="row ">
-                        <ToggleButton/>
+                        <ToggleButton toggle={toggle} setToggle={setToggle}/>
                     </div>
                 </div>
             </div>

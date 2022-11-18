@@ -1,19 +1,19 @@
 import { useState } from "react";
 
-export default function ToggleButton(){
-    const[toggle,setToggle]=useState(false);
+export default function ToggleButton(props){
+    
 
     const switchToggle=()=>{
-        if (toggle){
-            setToggle(false);
+        if (props.toggle){
+            props.setToggle(false);
         }else{
-            setToggle(true);
+            props.setToggle(true);
         }
     }
 
     
 
-    if(toggle){
+    if(props.toggle){
         return(
         <div className="container-fluid col-2 border border-dark">
         <div className="row  col-12 m-0 p0 justify-content-start" style={{minHeight:'25px'}}>
