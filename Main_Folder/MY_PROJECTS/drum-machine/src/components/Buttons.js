@@ -45,43 +45,43 @@ export default function Buttons(){
                 setPlaying(Q.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="W"){
-                W.current.volume=volume/100;
                 W.current.play();
+                W.current.volume=volume/100;
                 setPlaying(W.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="E"){
-                E.current.volume=volume/100;
                 E.current.play();
+                E.current.volume=volume/100;
                 setPlaying(E.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="A"){
-                A.current.volume=volume/100;
                 A.current.play();
+                A.current.volume=volume/100;
                 setPlaying(A.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="S"){
-                S.current.volume=volume/100;
                 S.current.play();
+                S.current.volume=volume/100;
                 setPlaying(S.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="D"){
-                D.current.volume=volume/100;
                 D.current.play();
+                D.current.volume=volume/100;
                 setPlaying(D.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="Z"){
-                Z.current.volume=volume/100;
                 Z.current.play();
+                Z.current.volume=volume/100;
                 setPlaying(Z.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="X"){
-                X.current.volume=volume/100;
                 X.current.play();
+                X.current.volume=volume/100;
                 setPlaying(X.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="C"){
-                C.current.volume=volume/100;
                 C.current.play();
+                C.current.volume=volume/100;
                 setPlaying(C.current.parentNode.id);
             }
     }
