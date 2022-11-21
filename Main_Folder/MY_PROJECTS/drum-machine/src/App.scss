@@ -45,3 +45,12 @@
   padding: 0;
   margin:0;
 }
+
+#id{
+  display: grid;
+  grid-template-areas: 
+  "toggle . . . . slider"
+  "display display display display display slider"
+  ". . . . . slider";
+}
+

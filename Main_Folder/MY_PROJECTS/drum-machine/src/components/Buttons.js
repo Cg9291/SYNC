@@ -27,7 +27,7 @@ export default function Buttons(){
    
    const [playing,setPlaying]=useState();
    const [toggle,setToggle]=useState(true);
-   const [volume,setVolume]=useState();
+   const [volume,setVolume]=useState(50);
 
    function playSound(event){
     if(toggle){
@@ -39,7 +39,6 @@ export default function Buttons(){
 
    function handleKeyPress(event){
             if(event.key.toUpperCase()==="Q"){
-                
                 Q.current.play();
                 Q.current.volume=volume/100;
                 setPlaying(Q.current.parentNode.id);
@@ -173,13 +172,13 @@ export default function Buttons(){
                 </div>
                 <div id="controls" height='50px' className="col-6" style={{border:'solid pink'}}>
                     <div className="row justify-content-center align-content-center" >
-                        <div id="display" className="bg-secondary col-6 border border-dark fs-3 fw-bold mt-2" style={{minHeight:'50px'}}>
+                        <div id="display" className=" display bg-secondary col-6 border border-dark fs-3 fw-bold mt-2" style={{minHeight:'50px'}}>
                             {playing}
                         </div>
                     </div>
                     <div className="row ">
                         <ToggleButton toggle={toggle} setToggle={setToggle}/>
-                        <input type='range' min={0} max={100} onChange={changeVolume}></input>
+                        <input type='range' min={0} max={100} className='slider' onChange={changeVolume}></input>
                         volume is {volume}.
                     </div>
                 </div>
