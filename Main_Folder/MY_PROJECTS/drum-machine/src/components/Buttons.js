@@ -85,6 +85,9 @@ export default function Buttons(){
             }
     }
 
+    useEffect(()=>{
+        setPlaying(volume);
+    },[volume])
 
    useLayoutEffect(()=>{
     if(toggle){
@@ -94,7 +97,8 @@ export default function Buttons(){
     },[toggle,volume]);
 
     function changeVolume(event){
-        setVolume(event.target.value)
+        setVolume(event.target.value);
+        
     }
 
     return(
@@ -170,17 +174,20 @@ export default function Buttons(){
                         </button>
                     </div>
                 </div>
-                <div id="controls" height='50px' className="col-6" style={{border:'solid pink'}}>
-                    <div className="row col-10 bg-danger" >
+                <div id="controls" height='50px' className="row col-6 mx-auto " style={{border:'solid pink'}}>
+                    <div className="row col-10 bg-danger" style={{border:'solid yellow'}} >
+                        <div className="row h-25 bg-success">
                         <ToggleButton toggle={toggle} setToggle={setToggle}/>
-                        <div className="row justify-content-center align-content-center" >
-                            <div id="display" className=" display bg-secondary col-6 border border-dark fs-3 fw-bold mt-2" style={{minHeight:'50px'}}>
+                        </div>
+                        <div className="row h-75 bg-primary justify-content-center">
+                            <div id="display" className="row d-flex display bg-secondary col-6 border border-dark fs-3 fw-bold justify-content-center align-items-center" style={{minHeight:'65px',justifySelf:"flex-end",alignSelf:"center"}}>
                                 {playing}
                             </div>
                         </div>
+                        
                     </div>
-                    <div className="col ">
-                        <input type='range' min={0} max={100} className='slider' onChange={changeVolume} className="w-50"></input>
+                    <div className="col-2 d-flex flex-column">
+                        <input type='range' min={0} max={100} className='slider w-50' onChange={changeVolume}></input>
                         volume is {volume}.
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '../ToggleButtons.scss'
 
 export default function ToggleButton(props){
     
@@ -15,8 +16,8 @@ export default function ToggleButton(props){
 
     if(props.toggle){
         return(
-        <div className="container-fluid col-2 border border-dark ms-5">
-        <div className="row  col-12 m-0 p0 justify-content-start" style={{minHeight:'25px'}}>
+        <div className="container-fluid col-2 border border-dark border-0 ms-5 mt-3 bg-warning" style={{maxHeight:'25px'}}>
+        <div className="row col-12 m-0 p0 justify-content-start" style={{minHeight:'25px'}} >
             <button className="col col-6  m-0 p-0 bg-primary border border-0" onClick={switchToggle}>
             </button>
         </div>
@@ -24,7 +25,7 @@ export default function ToggleButton(props){
         )
     }else{
         return(
-            <div className="container-fluid col-2 border border-dark ms-5">
+            <div className="container-fluid col-2 border border-dark border-0 ms-5 mt-3 bg-warning" style={{maxHeight:'25px'}}>
             <div className="row  col-12 m-0 p0 justify-content-end" style={{minHeight:'25px'}}>
                 <button className="col col-6 m-0 p-0 bg-primary border border-0" onClick={switchToggle}>
                 </button>
