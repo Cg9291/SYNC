@@ -174,21 +174,19 @@ export default function Buttons(){
                         </button>
                     </div>
                 </div>
-                <div id="controls" height='50px' className="row col-6 mx-auto " style={{border:'solid pink'}}>
-                    <div className="row col-10 bg-danger" style={{border:'solid yellow'}} >
-                        <div className="row h-25 bg-success">
+                <div id="controls" height='50px' className="row col-6 mx-0 p-0 bg-danger">
+                    <div className="row col-10 m-0 p-0">
+                        <div className="h-25 m-0 p-0">
                         <ToggleButton toggle={toggle} setToggle={setToggle}/>
                         </div>
-                        <div className="row h-75 bg-primary justify-content-center">
+                        <div className="d-flex h-75 m-0 p-0  justify-content-center align-items-start">
                             <div id="display" className="row d-flex display bg-secondary col-6 border border-dark fs-3 fw-bold justify-content-center align-items-center" style={{minHeight:'65px',justifySelf:"flex-end",alignSelf:"center"}}>
                                 {playing}
                             </div>
                         </div>
-                        
                     </div>
-                    <div className="col-2 d-flex flex-column">
-                        <input type='range' min={0} max={100} className='slider w-50' onChange={changeVolume}></input>
-                        volume is {volume}.
+                    <div className="row col-2  m-0 p-0">
+                        <input type='range' min={0} max={100} className='slider w-100 p-0 m-0' onChange={changeVolume} style={{transform:'rotate(-90deg)'}}></input>
                     </div>
                 </div>
             </div>
