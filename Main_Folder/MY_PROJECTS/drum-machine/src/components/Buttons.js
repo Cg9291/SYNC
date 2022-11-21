@@ -172,14 +172,16 @@ export default function Buttons(){
                     </div>
                 </div>
                 <div id="controls" height='50px' className="col-6" style={{border:'solid pink'}}>
-                    <div className="row justify-content-center align-content-center" >
-                        <div id="display" className="bg-secondary col-6 border border-dark fs-3 fw-bold mt-2" style={{minHeight:'50px'}}>
-                            {playing}
+                    <div className="row col-10 bg-danger" >
+                        <ToggleButton toggle={toggle} setToggle={setToggle}/>
+                        <div className="row justify-content-center align-content-center" >
+                            <div id="display" className="bg-secondary col-6 border border-dark fs-3 fw-bold mt-2" style={{minHeight:'50px'}}>
+                                {playing}
+                            </div>
                         </div>
                     </div>
-                    <div className="row ">
-                        <ToggleButton toggle={toggle} setToggle={setToggle}/>
-                        <input type='range' min={0} max={100} onChange={changeVolume}></input>
+                    <div className="col ">
+                        <input type='range' min={0} max={100} onChange={changeVolume} className="w-50"></input>
                         volume is {volume}.
                     </div>
                 </div>
