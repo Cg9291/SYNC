@@ -27,7 +27,7 @@ export default function Buttons(){
    
    const [playing,setPlaying]=useState();
    const [toggle,setToggle]=useState(true);
-   const [volume,setVolume]=useState();
+   const [volume,setVolume]=useState(50);
 
    function playSound(event){
     if(toggle){
@@ -39,49 +39,48 @@ export default function Buttons(){
 
    function handleKeyPress(event){
             if(event.key.toUpperCase()==="Q"){
-                
                 Q.current.play();
                 Q.current.volume=volume/100;
                 setPlaying(Q.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="W"){
-                W.current.volume=volume/100;
                 W.current.play();
+                W.current.volume=volume/100;
                 setPlaying(W.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="E"){
-                E.current.volume=volume/100;
                 E.current.play();
+                E.current.volume=volume/100;
                 setPlaying(E.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="A"){
-                A.current.volume=volume/100;
                 A.current.play();
+                A.current.volume=volume/100;
                 setPlaying(A.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="S"){
-                S.current.volume=volume/100;
                 S.current.play();
+                S.current.volume=volume/100;
                 setPlaying(S.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="D"){
-                D.current.volume=volume/100;
                 D.current.play();
+                D.current.volume=volume/100;
                 setPlaying(D.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="Z"){
-                Z.current.volume=volume/100;
                 Z.current.play();
+                Z.current.volume=volume/100;
                 setPlaying(Z.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="X"){
-                X.current.volume=volume/100;
                 X.current.play();
+                X.current.volume=volume/100;
                 setPlaying(X.current.parentNode.id);
             }
             else if(event.key.toUpperCase()==="C"){
-                C.current.volume=volume/100;
                 C.current.play();
+                C.current.volume=volume/100;
                 setPlaying(C.current.parentNode.id);
             }
     }
@@ -175,13 +174,13 @@ export default function Buttons(){
                     <div className="row col-10 bg-danger" >
                         <ToggleButton toggle={toggle} setToggle={setToggle}/>
                         <div className="row justify-content-center align-content-center" >
-                            <div id="display" className="bg-secondary col-6 border border-dark fs-3 fw-bold mt-2" style={{minHeight:'50px'}}>
+                            <div id="display" className=" display bg-secondary col-6 border border-dark fs-3 fw-bold mt-2" style={{minHeight:'50px'}}>
                                 {playing}
                             </div>
                         </div>
                     </div>
                     <div className="col ">
-                        <input type='range' min={0} max={100} onChange={changeVolume} className="w-50"></input>
+                        <input type='range' min={0} max={100} className='slider' onChange={changeVolume} className="w-50"></input>
                         volume is {volume}.
                     </div>
                 </div>
