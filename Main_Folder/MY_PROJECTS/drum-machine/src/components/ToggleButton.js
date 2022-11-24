@@ -16,16 +16,16 @@ export default function ToggleButton(props){
 
     if(props.toggle){
         return(
-        <div className="row m-0 p-0 border border-dark   bg-warning h-25 w-25 mt-3 ms-4" style={{minHeight:'25px'}}>
+        <div className="row m-0 p-0 border border-dark bg-warning h-25 w-25 mt-3 ms-4" style={{minHeight:'25px'}}>
             <div className="col-6 d-flex justify-content-center align-items-center">ON</div>
-            <button className="col col-6  m-0 p-0 border border-0 bg-primary" onClick={switchToggle}>
+            <button className="col col-6  m-0 p-0 border bg-primary " onClick={switchToggle}>
             </button>
         </div>
         )
     }else{
         return(
             <div className="row m-0 p-0 border border-dark bg-warning h-25 w-25 mt-3 ms-4 " style={{minHeight:'25px'}}>
-                <button className="col col-6 m-0 p-0 bg-primary border border-0" onClick={switchToggle}>
+                <button className="col col-6 m-0 p-0 bg-primary border " onClick={switchToggle}>
                 </button>
                 <div className="col-6 d-flex justify-content-center align-items-center">OFF</div>
             </div>

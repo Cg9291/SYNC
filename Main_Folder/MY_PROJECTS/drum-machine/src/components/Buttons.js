@@ -93,7 +93,7 @@ export default function Buttons(){
     useLayoutEffect(()=>{
         if(!toggle){
             setPlaying();
-            setIndicatorLightColor('black')
+            setIndicatorLightColor('bg-dark')
         }else{
             setIndicatorLightColor('red')
         }
@@ -113,8 +113,8 @@ export default function Buttons(){
 
     return(
         <div className="container-fluid justify-content-center align-items-center col-6 m-auto">
-            <div className="row m-auto" style={{border:'solid green'}}>
-                <div id="pad" className="row col-6 bg-secondary" /*style={{border:'solid blue'}}*/> 
+            <div className="row m-auto">
+                <div id="pad" className="row col-6 bg-dark" /*style={{border:'solid blue'}}*/> 
                     <div className="row justify-content-center">
                         <button id="Clap" className="drum-pad col-4 btn btn-dark m-2" onClick={playSound} style={{boxShadow: "2px 5px red"}}>
                             Q
@@ -184,8 +184,8 @@ export default function Buttons(){
                         </button>
                     </div>
                 </div>
-                <div id="controls" height='50px' className="row col-6 mx-0 p-0 bg-danger">
-                    <div className="d-flex flex-column col-10 mx-auto p-0 bg-success" >
+                <div id="controls" height='50px' className="row col-6 mx-0 p-0 bg-dark">
+                    <div className="d-flex flex-column col-10 mx-auto p-0 bg-dark" >
                        <div className="row h-25 col-12 m-0 p-0 flex-grow-1">
                         <div className="d-flex justify-content-between h-25 col-12 m-0 p-0">
                             <ToggleButton toggle={toggle} setToggle={setToggle} playing={playing} setPlaying={setPlaying}/>
