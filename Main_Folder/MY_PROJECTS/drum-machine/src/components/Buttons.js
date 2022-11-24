@@ -28,6 +28,7 @@ export default function Buttons(){
    const [playing,setPlaying]=useState();
    const [toggle,setToggle]=useState(true);
    const [volume,setVolume]=useState(50);
+   const [indicatorLightColor,setIndicatorLightColor]=useState('black');
 
    function playSound(event){
     if(toggle){
@@ -88,6 +89,15 @@ export default function Buttons(){
     useEffect(()=>{
         setPlaying(volume);
     },[volume])
+    
+    useLayoutEffect(()=>{
+        if(!toggle){
+            setPlaying();
+            setIndicatorLightColor('black')
+        }else{
+            setIndicatorLightColor('red')
+        }
+    },[toggle])
 
    useLayoutEffect(()=>{
     if(toggle){
@@ -177,7 +187,13 @@ export default function Buttons(){
                 <div id="controls" height='50px' className="row col-6 mx-0 p-0 bg-danger">
                     <div className="d-flex flex-column col-10 mx-auto p-0 bg-success" >
                        <div className="row h-25 col-12 m-0 p-0 flex-grow-1">
-                            <ToggleButton toggle={toggle} setToggle={setToggle}/>
+                        <div className="d-flex justify-content-between h-25 col-12 m-0 p-0">
+                            <ToggleButton toggle={toggle} setToggle={setToggle} playing={playing} setPlaying={setPlaying}/>
+
+                            <svg viewBox="0 0 100 100" className="mt-1 me-2" >
+                                <circle cx="50" cy="50" r="50" fill={indicatorLightColor} />
+                            </svg>
+                        </div>
                         </div>
                         {/*<div className="d-flex h-75 m-0 p-0  justify-content-center align-items-start bg-primary">*/}
                         
