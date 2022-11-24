@@ -175,14 +175,18 @@ export default function Buttons(){
                     </div>
                 </div>
                 <div id="controls" height='50px' className="row col-6 mx-0 p-0 bg-danger">
-                    <div className="container col-10 mx-auto p-0 bg-success" >
-                        <div className="row h-25 col-12 m-0 p-0 border">
+                    <div className="d-flex flex-column col-10 mx-auto p-0 bg-success" >
+                       <div className="row h-25 col-12 m-0 p-0 flex-grow-1">
                             <ToggleButton toggle={toggle} setToggle={setToggle}/>
                         </div>
                         {/*<div className="d-flex h-75 m-0 p-0  justify-content-center align-items-start bg-primary">*/}
                         
-                        <div id="display" className="row d-flex  m-0 p-0  justify-content-center bg-warning col-6 border border-dark fs-3 fw-bold align-items-center align-self-center m-auto " style={{minHeight:'65px',/*alignSelf:"center"*/}}>
+                        <div id="display" className="row d-flex  m-0 p-0  justify-content-center bg-warning col-6 border border-dark fs-3 fw-bold align-items-center mx-auto my-auto flex-grow" style={{minHeight:'65px',/*alignSelf:"center"*/}}>
                             {playing}
+                        </div>
+
+                        <div className="row h-25 flex-grow-1  col-12 m-0 p-0">
+
                         </div>
                         
                         {/*</div>*/}
