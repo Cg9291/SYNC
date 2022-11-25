@@ -19,8 +19,8 @@
       height: fit-content;
       width: fit-content;
       min-height:fit-content;
-      min-width: 20rem;
-      max-width: 20rem;
+      min-width: 550px;
+      max-width: 550px;
       //border:solid yellow;
       border-radius: 1%;
       background-color: white;
@@ -30,7 +30,7 @@
         height: fit-content;
         min-width: 80%;
         max-width: 80%;
-        margin-top:1rem;
+        margin-top:2.063rem;
         //border:dotted variables.$red-color;
         color:variables.$theme-color;
       }
