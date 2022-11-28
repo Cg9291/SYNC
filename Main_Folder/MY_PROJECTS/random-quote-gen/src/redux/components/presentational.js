@@ -44,20 +44,16 @@ function Presentational(props){
                 </div>
                 <div id="footer-row">
                     <div>
-                        <a id="tweet-quote">
-                            <button className="bg-sync">
-                                 <FontAwesomeIcon icon={faTwitter}/>
-                            </button>
+                        <a id="tweet-quote" className="bg-sync" target="_top" href="https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=%22An%20unexamined%20life%20is%20not%20worth%20living.%22%20Socrates">
+                            <FontAwesomeIcon icon={faTwitter} />
                         </a>
-                        <a id="tumblr-quote" href='#'>
-                            <button className="bg-sync">
-                                <FontAwesomeIcon icon={faTumblr}/>
-                            </button>
+                        <a id="tumblr-quote" className="bg-sync" target="_blank" href="https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=Stephen%20Covey&content=I%20am%20not%20a%20product%20of%20my%20circumstances.%20I%20am%20a%20product%20of%20my%20decisions.&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button">
+                            <FontAwesomeIcon icon={faTumblr}/>
                         </a>
                     </div>
-                    <button id="new-quote" onClick={handleClick}>
+                    <a id="new-quote" href="#" onClick={handleClick}>
                         New Quote
-                    </button>      
+                    </a>      
                 </div>
             </div>
         </div>

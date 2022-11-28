@@ -10,6 +10,8 @@
   background-color: variables.$theme-color;
   height: 100vh;
   font-family: 'Raleway';
+  display:flex;
+  flex-direction: column;
 
   //PRESENTATIONAL  
   #wrapper{
@@ -43,20 +45,21 @@
         justify-content: end;
         align-self: center;
         margin-top: 1rem;
-        margin-bottom: 1rem;
         min-width: 80%;
         max-width: 80%;
         //border:dotted red;
         color:variables.$theme-color;
       }
+      
 
       #footer-row{
         display: flex;
         justify-content: space-between;
         align-self: center;
         width:80%;
-        //margin-top: 1rem;
-        margin-bottom: 1rem;
+        padding:0;
+        margin-top: 30px;
+        margin-bottom: 40px;
         //border:dotted blue;
         div{
           display: flex;
@@ -69,6 +72,10 @@
             color:white;
             background-color:variables.$theme-color;
             margin-right: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
           }
           }
       }
@@ -76,10 +83,15 @@
           justify-self: end;
           width: 101px;
           height: 38px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           color:white;
           border-radius: 5%;
           border: none;
-          background-color:variables.$theme-color;;
+          font-weight: 500;
+          text-decoration: none;
+          background-color:variables.$theme-color;
         }
       }
     }
