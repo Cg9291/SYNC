@@ -11,9 +11,6 @@ import { mapDispatchToProps, mapStateToProps } from "../mappings.js"
 import App from "../../App.js"
 import variables from '../../variables.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-//import {faTwitter} from '@fortawesome/fontawesome-svg-core'
-//import {faTwitter} from '@fortawesome/free-solid-svg-icons'
-//import {faTwitter} from '@fortawesome/react-fontawesome'
 import {faTumblr, faTwitter} from '@fortawesome/free-brands-svg-icons'
 
 
