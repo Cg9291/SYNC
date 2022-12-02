@@ -4,12 +4,12 @@
 */
 
 import quotes from "../objects/quotes.js"
-import themeColors from '../objects/colors.js' 
+//import themeColors from '../objects/colors.js' 
 import {useEffect, useRef} from 'react'
 import {connect} from "react-redux"
 import { mapDispatchToProps, mapStateToProps } from "../mappings.js"
-import App from "../../App.js"
-import variables from '../../variables.scss'
+//import App from "../../App.js"
+//import variables from '../../variables.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faTumblr, faTwitter} from '@fortawesome/free-brands-svg-icons'
 
