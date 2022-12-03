@@ -1,6 +1,8 @@
 /*improvements:
     -improve randomness by adding a fn that track states, runs the picker functions again if same number is generated consecutively
     -use react way to change --theme variable on click
+    -Enforce color change on click
+    -Add smooth transition effect onclick
     -review tweet and tumblr post links..copied the ones from project...should try to find my own from api's
 */
 
