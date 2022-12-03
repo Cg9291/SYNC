@@ -1,15 +1,13 @@
 /*improvements:
     -improve randomness by adding a fn that track states, runs the picker functions again if same number is generated consecutively
     -use react way to change --theme variable on click
+    -review tweet and tumblr post links..copied the ones from project...should try to find my own from api's
 */
 
 import quotes from "../objects/quotes.js"
-//import themeColors from '../objects/colors.js' 
 import {useEffect, useRef} from 'react'
 import {connect} from "react-redux"
 import { mapDispatchToProps, mapStateToProps } from "../mappings.js"
-//import App from "../../App.js"
-//import variables from '../../variables.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faTumblr, faTwitter} from '@fortawesome/free-brands-svg-icons'
 
@@ -18,7 +16,7 @@ import {faTumblr, faTwitter} from '@fortawesome/free-brands-svg-icons'
 
 
 
-function Presentational(props){
+function QuoteBox(props){
     let initIdx=Math.floor(Math.random()*11.9);//review formula
 
     const textRef=useRef(quotes[initIdx].quoteText);
@@ -57,4 +55,4 @@ function Presentational(props){
     )
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Presentational)
+export default connect(mapStateToProps,mapDispatchToProps)(QuoteBox)
