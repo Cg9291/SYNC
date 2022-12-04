@@ -29,7 +29,7 @@ function QuoteBox(props){
         props.dispatchColor();
         textRef.current=quotes[props.quoteState].quoteText;
         authorRef.current="- "+quotes[props.quoteState].quoteAuthor;
-        //document.getElementsByClassName('App')[0].style.setProperty('--theme-color',themeColors[props.colorState]);
+    
         
     }
     return(
