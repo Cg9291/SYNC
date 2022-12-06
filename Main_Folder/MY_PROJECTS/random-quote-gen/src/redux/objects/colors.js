@@ -8,6 +8,11 @@ let themeColors=[
     'rgb(44, 62, 80)',
     'rgb(243, 156, 18)',
     'rgb(119, 177, 169)', 
+    'red',
+    'green',
+    'yellow',
+    'turquoise',
+    'pink'
 ]
 
 export default themeColors;
