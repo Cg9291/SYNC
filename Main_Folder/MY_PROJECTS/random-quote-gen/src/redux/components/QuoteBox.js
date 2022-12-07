@@ -5,8 +5,11 @@
     -Add smooth transition effect onclick
     -review tweet and tumblr post links..copied the ones from project...should try to find my own from api's
 */
+/*issues:
+    -not rerendering on click..might be due to use of dangerouslysethtml instead of state'*/
 
 import quotes from "../objects/quotes.js"
+import color from "../objects/colors.js";
 import {useEffect, useRef} from 'react'
 import {connect} from "react-redux"
 import { mapDispatchToProps, mapStateToProps } from "../mappings.js"
@@ -20,21 +23,23 @@ import {faTumblr, faTwitter} from '@fortawesome/free-brands-svg-icons'
 
 function QuoteBox(props){
     let initIdx=Math.floor(Math.random()*11.9);//review formula
+    
 
     const textRef=useRef(quotes[initIdx].quoteText);
     const authorRef=useRef("- "+quotes[initIdx].quoteAuthor);
 
-    const handleClick=()=>{
+    const handleClick=(props)=>{
         props.dispatchId();
         props.dispatchColor();
+        props.initClr();
+        props.colorRef=color[props.initClr];
         textRef.current=quotes[props.quoteState].quoteText;
-        authorRef.current="- "+quotes[props.quoteState].quoteAuthor;
-    
-        
+        authorRef.current="- "+quotes[props.quoteState].quoteAuthor;    
     }
+
     return(
         <div id="wrapper" >
-            <div id="quote-box">
+            <div id="quote-box" style={{backgroundColor:props.colorRef}}>
                 <div id="text" ref={textRef} dangerouslySetInnerHTML={{__html:textRef.current}}>   
                 </div>
                 <div id="author" ref={authorRef} dangerouslySetInnerHTML={{__html:authorRef.current}}>

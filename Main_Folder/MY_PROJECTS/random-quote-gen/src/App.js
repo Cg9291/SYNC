@@ -1,13 +1,13 @@
 import './App.scss';
 import {useRef} from 'react'
-import QuoteBox from './redux/components/QuoteBox.js';
+import Container from './redux/components/Container.js';
 
 
 export default function App() {
   const appRef=useRef('green')
   return (
     <div className="App" ref={appRef}>
-      <QuoteBox/>
+      <Container/>
     </div>
   );
 }
