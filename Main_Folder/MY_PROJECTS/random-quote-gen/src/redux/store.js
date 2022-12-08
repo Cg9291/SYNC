@@ -4,6 +4,6 @@ import rootReducer from './reducers/reducersIndex.js'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-let store=createStore(rootReducer,composeEnhancers(applyMiddleware()))
+const store=createStore(rootReducer,composeEnhancers(applyMiddleware()))
 
 export default store;

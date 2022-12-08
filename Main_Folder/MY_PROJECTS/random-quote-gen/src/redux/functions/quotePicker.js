@@ -1,6 +1,6 @@
-let indexPicker=()=>{
+let quotePicker=()=>{
     return Math.floor(Math.random()*11.9)
 }
 
 //quotes quantity=7
-export default indexPicker
+export default quotePicker;

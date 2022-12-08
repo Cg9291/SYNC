@@ -8,13 +8,16 @@
 /*issues:
     -not rerendering on click..might be due to use of dangerouslysethtml instead of state'*/
 
-import quotes from "../objects/quotes.js"
+import quotes from "../objects/quotes.js";
 import color from "../objects/colors.js";
-import {useEffect, useRef} from 'react'
-import {connect} from "react-redux"
+import {useEffect, useRef, useState} from 'react';
+import {connect} from "react-redux";
 import { mapDispatchToProps, mapStateToProps } from "../mappings.js"
+import { useDispatch } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faTumblr, faTwitter} from '@fortawesome/free-brands-svg-icons'
+import colorPicker from "../functions/colorPicker.js"
+import quotePicker from "../functions/quotePicker.js"
 
 
 
@@ -25,24 +28,26 @@ function QuoteBox(props){
     let initIdx=Math.floor(Math.random()*11.9);//review formula
     
 
-    const textRef=useRef(quotes[initIdx].quoteText);
-    const authorRef=useRef("- "+quotes[initIdx].quoteAuthor);
+    const [quoteState,setQuoteState]=useState(quotes[initIdx].quoteText);
+    const [authorState,setAuthorState]=useState("- "+quotes[initIdx].quoteAuthor);
 
     const handleClick=(props)=>{
         props.dispatchId();
         props.dispatchColor();
-        props.initClr();
-        props.colorRef=color[props.initClr];
-        textRef.current=quotes[props.quoteState].quoteText;
-        authorRef.current="- "+quotes[props.quoteState].quoteAuthor;    
+        //props.colorRef=color[props.initClr];
+        setQuoteState(quotes[props.quoteState].quoteText);
+        setAuthorState(quotes[props.quoteState].quoteAuthor) 
+        //alert("clicked") ;
     }
 
     return(
         <div id="wrapper" >
             <div id="quote-box" style={{backgroundColor:props.colorRef}}>
-                <div id="text" ref={textRef} dangerouslySetInnerHTML={{__html:textRef.current}}>   
+                <div id="text"> 
+                    {quoteState} 
                 </div>
-                <div id="author" ref={authorRef} dangerouslySetInnerHTML={{__html:authorRef.current}}>
+                <div id="author">
+                    {authorState}
                 </div>
                 <div id="footer-row">
                     <div>
@@ -53,9 +58,9 @@ function QuoteBox(props){
                             <FontAwesomeIcon icon={faTumblr}/>
                         </a>
                     </div>
-                    <a id="new-quote" href="#" onClick={handleClick}>
+                    <button type="button" id="new-quote" onClick={handleClick}>
                         New Quote
-                    </a>      
+                    </button>      
                 </div>
             </div>
         </div>

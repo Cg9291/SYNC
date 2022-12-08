@@ -1,7 +1,7 @@
 import colorAction from "./actions/colorAction.js"
 import colorPicker from "./functions/colorPicker.js"
-import indexAction from "./actions/quoteAction.js"
-import indexPicker from "./functions/quotePicker.js"
+import quoteAction from "./actions/quoteAction.js"
+import quotePicker from "./functions/quotePicker.js"
 
 const mapStateToProps=(state)=>{
     return {
@@ -12,8 +12,8 @@ const mapStateToProps=(state)=>{
 
 const mapDispatchToProps=(dispatch)=>{
     return {
-        dispatchId:(idx=indexPicker)=>{
-            dispatch(indexAction(idx))
+        dispatchId:(idx=quotePicker)=>{
+            dispatch(quoteAction(idx))
         },
         dispatchColor:(clr=colorPicker)=>{
             dispatch(colorAction(clr))

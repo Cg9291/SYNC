@@ -10,8 +10,7 @@ export default function Container(){
         initClr:initClr,
         colorRef:colorRef
     }
-
-
+    
     return(
         <div>
             <QuoteBox/>
