@@ -31,9 +31,13 @@ function QuoteBox(props){
     const [quoteState,setQuoteState]=useState(quotes[initIdx].quoteText);
     const [authorState,setAuthorState]=useState("- "+quotes[initIdx].quoteAuthor);
 
-    const handleClick=(props)=>{
+    useEffect(()=>{
         props.dispatchId();
         props.dispatchColor();
+    },[quoteState,authorState])
+
+    const handleClick=(props)=>{
+        
         //props.colorRef=color[props.initClr];
         setQuoteState(quotes[props.quoteState].quoteText);
         setAuthorState(quotes[props.quoteState].quoteAuthor) 
