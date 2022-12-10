@@ -31,13 +31,16 @@ function QuoteBox(props){
     const [quoteState,setQuoteState]=useState(quotes[initIdx].quoteText);
     const [authorState,setAuthorState]=useState("- "+quotes[initIdx].quoteAuthor);
 
-    useEffect(()=>{
+    const [test,setTest]=useState()
+    /*useEffect(()=>{
         props.dispatchId();
         props.dispatchColor();
-    },[quoteState,authorState])
+    },[quoteState,authorState])*/
 
     const handleClick=(props)=>{
-        
+        setTest("tested")
+        props.dispatchId();
+        props.dispatchColor();
         //props.colorRef=color[props.initClr];
         setQuoteState(quotes[props.quoteState].quoteText);
         setAuthorState(quotes[props.quoteState].quoteAuthor) 
@@ -48,6 +51,7 @@ function QuoteBox(props){
         <div id="wrapper" >
             <div id="quote-box" style={{backgroundColor:props.colorRef}}>
                 <div id="text"> 
+                    {test}<br/>
                     {quoteState} 
                 </div>
                 <div id="author">
