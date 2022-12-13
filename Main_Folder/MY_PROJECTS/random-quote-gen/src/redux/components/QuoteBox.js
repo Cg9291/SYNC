@@ -11,13 +11,15 @@
 import quotes from "../objects/quotes.js";
 import color from "../objects/colors.js";
 import {useEffect, useRef, useState} from 'react';
-import {connect} from "react-redux";
+import {connect,useDispatch,useSelector,useStore} from "react-redux";
 import { mapDispatchToProps, mapStateToProps } from "../mappings.js"
-import { useDispatch } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faTumblr, faTwitter} from '@fortawesome/free-brands-svg-icons'
 import colorPicker from "../functions/colorPicker.js"
 import quotePicker from "../functions/quotePicker.js"
+import quotePickerReducer from "../reducers/quotePickerReducer.js";
+import quoteAction from "../actions/quoteAction.js";
+import colorAction from "../actions/colorAction.js";
 
 
 
@@ -26,10 +28,11 @@ import quotePicker from "../functions/quotePicker.js"
 
 function QuoteBox(props){
     let initIdx=Math.floor(Math.random()*11.9);//review formula
+    const dispatch=useDispatch()
     
 
-    const [quoteState,setQuoteState]=useState(quotes[initIdx].quoteText);
-    const [authorState,setAuthorState]=useState("- "+quotes[initIdx].quoteAuthor);
+    const [quoteState,setQuoteState]=useState(quotes[props.quoteState].quoteText);
+    const [authorState,setAuthorState]=useState("- "+quotes[props.quoteState].quoteAuthor);
 
     const [test,setTest]=useState()
     /*useEffect(()=>{
@@ -39,12 +42,14 @@ function QuoteBox(props){
 
     const handleClick=(props)=>{
         setTest("tested")
-        props.dispatchId();
+        //dispatch()
+        
+        /*props.dispatchId();
         props.dispatchColor();
         //props.colorRef=color[props.initClr];
         setQuoteState(quotes[props.quoteState].quoteText);
         setAuthorState(quotes[props.quoteState].quoteAuthor) 
-        //alert("clicked") ;
+        //alert("clicked") ;*/
     }
 
     return(
@@ -66,7 +71,7 @@ function QuoteBox(props){
                             <FontAwesomeIcon icon={faTumblr}/>
                         </a>
                     </div>
-                    <button type="button" id="new-quote" onClick={handleClick}>
+                    <button type="button" id="new-quote" onClick={()=>{dispatch(quoteAction());dispatch(colorAction())}}>
                         New Quote
                     </button>      
                 </div>
@@ -75,4 +80,4 @@ function QuoteBox(props){
     )
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(QuoteBox)
+export default connect(mapStateToProps,mapDispatchToProps)(QuoteBox);

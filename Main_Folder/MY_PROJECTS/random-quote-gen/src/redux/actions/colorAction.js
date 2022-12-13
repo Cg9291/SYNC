@@ -2,7 +2,7 @@ import colorPicker from '../functions/colorPicker.js'
 
 let colorAction=()=>{
     return {
-        type:'COLR',
+        type:"COLR",
         colorNum:colorPicker()
     }
 }

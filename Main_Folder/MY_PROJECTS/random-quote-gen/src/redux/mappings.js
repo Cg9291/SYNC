@@ -21,4 +21,4 @@ const mapDispatchToProps=(dispatch)=>{
     }
 }
 
-export {mapStateToProps,mapDispatchToProps}
+export {mapStateToProps,mapDispatchToProps};
