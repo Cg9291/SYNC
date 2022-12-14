@@ -1,6 +1,6 @@
 const colorPickerReducer=(state=Math.floor(Math.random()*8.9),action)=>{
     switch(action.type){
-        case "COLR":
+        case "JK":
             return action.colorNum;
         default:
             return state;

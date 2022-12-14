@@ -7,8 +7,8 @@ export default function App() {
   const appRef=useRef('green')
   return (
     <div className="App" ref={appRef}>
-        {/*<Container/>*/}
-        <QuoteBox/>
+      
+      <QuoteBox/>
     </div>
   );
 }

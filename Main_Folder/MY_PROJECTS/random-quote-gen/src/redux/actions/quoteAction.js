@@ -1,10 +1,11 @@
 import quotePicker from '../functions/quotePicker.js';
-
+import colorPicker from '../functions/colorPicker.js';
 
 let quoteAction=()=>{
     return {
-        type:"QUOT",
-        index:quotePicker()
+        type:"NEWQUOTE",
+        index:quotePicker(),
+        colorNum:colorPicker()
     }
 }
 

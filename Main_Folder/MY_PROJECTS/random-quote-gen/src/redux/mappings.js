@@ -5,19 +5,19 @@ import quotePicker from "./functions/quotePicker.js"
 
 const mapStateToProps=(state)=>{
     return {
-        quoteState:state.quotePickerReducer,
-        colorState:state.colorPickerReducer
+        quoteState:state.quotePickerReducer.quote,
+        colorState:state.quotePickerReducer.color
     }
 }
 
 const mapDispatchToProps=(dispatch)=>{
     return {
         dispatchId:(idx=quotePicker)=>{
-            dispatch(quoteAction(idx))
-        },
-        dispatchColor:(clr=colorPicker)=>{
-            dispatch(colorAction(clr))
+            dispatch(quoteAction())
         }
+        /*dispatchColor:(clr=colorPicker)=>{
+            dispatch(colorAction(clr))
+        }*/
     }
 }
 
