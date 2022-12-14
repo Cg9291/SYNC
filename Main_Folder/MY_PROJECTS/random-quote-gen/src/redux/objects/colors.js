@@ -1,7 +1,7 @@
 let themeColors=[
     'red',
     'green',
-    'yellow',
+    'gold',
     'turquoise',
     'pink',
     'rgb(231, 76, 60)',

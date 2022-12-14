@@ -2,20 +2,19 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500');
 
 
-.App {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color:green;
-  height: 100vh;
-  font-family: 'Raleway';
-  display:flex;
-  flex-direction: column;
-
-  //PRESENTATIONAL  
+.App { 
   #wrapper{
     opacity: 1;
+    //border:solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color:white;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Raleway';
+    flex-direction: column;
     #quote-box{
       display: flex;
       flex-direction: column;

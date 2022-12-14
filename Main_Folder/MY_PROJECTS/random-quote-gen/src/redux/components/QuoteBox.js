@@ -11,7 +11,7 @@
 
 import quotes from "../objects/quotes.js";
 import themeColors from "../objects/colors.js";
-import {useEffect, useRef, useState} from 'react';
+import {useState} from 'react';
 import {connect,useDispatch,useSelector,useStore} from "react-redux";
 import { mapDispatchToProps, mapStateToProps } from "../mappings.js"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -39,7 +39,7 @@ function QuoteBox(props){
     }
 
     return(
-        <div id="wrapper" >
+        <div id="wrapper" style={{backgroundColor:themeColor}}>
             <div id="quote-box">
                 <div id="text" style={{color:themeColor}}> 
                     {quoteText} 
