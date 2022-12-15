@@ -8,23 +8,24 @@
 import quotes from "../objects/quotes.js";
 import themeColors from "../objects/colors.js";
 import {useEffect, useState} from 'react';
-import {connect,useDispatch,useSelector,useStore} from "react-redux";
-import { mapDispatchToProps, mapStateToProps } from "../mappings.js"
+import {/*connect,*/useDispatch,useSelector,useStore} from "react-redux";
+//import { mapDispatchToProps, mapStateToProps } from "../mappings.js"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faTumblr, faTwitter} from '@fortawesome/free-brands-svg-icons'
 import quoteAction from "../actions/quoteAction.js";
 
 
 
-function QuoteBox(props){
-    const dispatch=useDispatch()
-    
-    const [quoteText,setQuoteText]=useState(quotes[props.quoteState].quoteText);
-    const [authorText,setAuthorText]=useState("- "+quotes[props.quoteState].quoteAuthor);
-    const [themeColor,setThemeColor]=useState(themeColors[props.colorState]);
-
+export default function QuoteBox(props){
     const quoteID=useSelector((state)=>state.quotePickerReducer.quote);
     const colorID=useSelector((state)=>state.quotePickerReducer.color);
+    
+    const dispatch=useDispatch()
+    
+    const [quoteText,setQuoteText]=useState(quotes[quoteID].quoteText);
+    const [authorText,setAuthorText]=useState("- "+quotes[quoteID].quoteAuthor);
+    const [themeColor,setThemeColor]=useState(themeColors[colorID]);
+
     
     const handleClick=()=>{
         dispatch(quoteAction());
@@ -63,4 +64,4 @@ function QuoteBox(props){
     )
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(QuoteBox);
+/*export default connect(mapStateToProps,/*mapDispatchToProps)(QuoteBox);*/

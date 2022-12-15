@@ -10,15 +10,15 @@ const mapStateToProps=(state)=>{
     }
 }
 
-const mapDispatchToProps=(dispatch)=>{
-    return {
+/*const mapDispatchToProps=(dispatch)=>{
+    /*return {
         dispatchId:(idx=quotePicker)=>{
             dispatch(quoteAction())
         }
         /*dispatchColor:(clr=colorPicker)=>{
             dispatch(colorAction(clr))
-        }*/
+        }
     }
-}
+}*/
 
-export {mapStateToProps,mapDispatchToProps};
+export {mapStateToProps,/*mapDispatchToProps*/};

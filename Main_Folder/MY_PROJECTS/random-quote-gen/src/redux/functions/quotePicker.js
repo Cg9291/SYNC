@@ -1,5 +1,5 @@
 let quotePicker=()=>{
-    return Math.floor(Math.random()*11.9)
+    return Math.floor(Math.random()*(12-0)+0)
 }
 
 //quotes quantity=7
