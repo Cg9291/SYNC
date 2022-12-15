@@ -1,17 +1,13 @@
 /*improvements:
     -improve randomness by adding a fn that track states, runs the picker functions again if same number is generated consecutively
-    -use react way to change --theme variable on click
-    -Enforce color change on click
     -Add smooth transition effect onclick
     -review tweet and tumblr post links..copied the ones from project...should try to find my own from api's
 */
-/*issues:
-    -not rerendering on click..might be due to use of dangerouslysethtml instead of state'
-    -first click does not change text/color..mostly due to state & asynchronous nature,try and useEffect to fix*/
+
 
 import quotes from "../objects/quotes.js";
 import themeColors from "../objects/colors.js";
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {connect,useDispatch,useSelector,useStore} from "react-redux";
 import { mapDispatchToProps, mapStateToProps } from "../mappings.js"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -25,18 +21,20 @@ function QuoteBox(props){
     
     const [quoteText,setQuoteText]=useState(quotes[props.quoteState].quoteText);
     const [authorText,setAuthorText]=useState("- "+quotes[props.quoteState].quoteAuthor);
-    const [themeColor,setThemeColor]=useState(themeColors[0]);
+    const [themeColor,setThemeColor]=useState(themeColors[props.colorState]);
 
     const quoteID=useSelector((state)=>state.quotePickerReducer.quote);
     const colorID=useSelector((state)=>state.quotePickerReducer.color);
     
-
     const handleClick=()=>{
         dispatch(quoteAction());
+    }
+
+    useEffect(()=>{
         setQuoteText(quotes[quoteID].quoteText);
         setAuthorText(quotes[quoteID].quoteAuthor);
         setThemeColor(themeColors[colorID])
-    }
+    },[quoteID,colorID])
 
     return(
         <div id="wrapper" style={{backgroundColor:themeColor}}>
