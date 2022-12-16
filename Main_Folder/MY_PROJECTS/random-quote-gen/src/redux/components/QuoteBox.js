@@ -13,12 +13,13 @@ import {/*connect,*/useDispatch,useSelector,useStore} from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faTumblr, faTwitter} from '@fortawesome/free-brands-svg-icons'
 import quoteAction from "../actions/quoteAction.js";
-
+import stateTrackingObject from "../objects/stateTracking.js";
 
 
 export default function QuoteBox(props){
     const quoteID=useSelector((state)=>state.quotePickerReducer.quote);
     const colorID=useSelector((state)=>state.quotePickerReducer.color);
+
     
     const dispatch=useDispatch()
     
@@ -29,6 +30,7 @@ export default function QuoteBox(props){
     
     const handleClick=()=>{
         dispatch(quoteAction());
+        stateTrackingObject.quotes.push(quoteID);
     }
 
     useEffect(()=>{
@@ -41,6 +43,7 @@ export default function QuoteBox(props){
         <div id="wrapper" style={{backgroundColor:themeColor}}>
             <div id="quote-box">
                 <div id="text" style={{color:themeColor}}> 
+                    {JSON.stringify(stateTrackingObject.quotes)}
                     {quoteText} 
                 </div>
                 <div id="author" style={{color:themeColor}}>
@@ -63,5 +66,6 @@ export default function QuoteBox(props){
         </div>
     )
 }
+
 
 /*export default connect(mapStateToProps,/*mapDispatchToProps)(QuoteBox);*/

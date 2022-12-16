@@ -1,6 +1,9 @@
+import stateTrackingObject from "../objects/stateTracking.js";
 let quotePicker=()=>{
-    return Math.floor(Math.random()*(12-0)+0)
+    let quoteIndex=Math.floor(Math.random()*(12-0)+0);
+    if(stateTrackingObject.quotes.indexOf(quoteIndex)>=0){
+        quoteIndex=Math.floor(Math.random()*(12-0)+0);
+    };
+    return quoteIndex;
 }
-
-//quotes quantity=7
 export default quotePicker;

@@ -3,7 +3,7 @@ import colorPicker from "./functions/colorPicker.js"
 import quoteAction from "./actions/quoteAction.js"
 import quotePicker from "./functions/quotePicker.js"
 
-const mapStateToProps=(state)=>{
+/*const mapStateToProps=(state)=>{
     return {
         quoteState:state.quotePickerReducer.quote,
         colorState:state.quotePickerReducer.color
@@ -21,4 +21,4 @@ const mapStateToProps=(state)=>{
     }
 }*/
 
-export {mapStateToProps,/*mapDispatchToProps*/};
+/*export {mapStateToProps,/*mapDispatchToProps};*/
