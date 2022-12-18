@@ -8,8 +8,7 @@
 import quotes from "../objects/quotes.js";
 import themeColors from "../objects/colors.js";
 import {useEffect, useState} from 'react';
-import {/*connect,*/useDispatch,useSelector,useStore} from "react-redux";
-//import { mapDispatchToProps, mapStateToProps } from "../mappings.js"
+import {useDispatch,useSelector,useStore} from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faTumblr, faTwitter} from '@fortawesome/free-brands-svg-icons'
 import quoteAction from "../actions/quoteAction.js";
@@ -66,6 +65,3 @@ export default function QuoteBox(props){
         </div>
     )
 }
-
-
-/*export default connect(mapStateToProps,/*mapDispatchToProps)(QuoteBox);*/
