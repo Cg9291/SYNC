@@ -1,5 +1,35 @@
 .App {
   text-align: center;
+  background-color: #6fb1d8;
+  //background-image: linear-gradient(blue, white);
+  #circle{
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: blue;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  button{
+    margin: auto;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-width: 0;
+    box-shadow: 1px 1px 5px 1px white,-1px -1px 5px white,-1px 1px 5px white,1px -1px 5px white;
+    background-color: blue;
+    color:white;
+    background-image: linear-gradient(red, yellow)
+    
+  }
 }
 
 .App-logo {
@@ -10,6 +40,16 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@media(max-width:390px){
+  
+  button{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: blue;
   }
 }
 

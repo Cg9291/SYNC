@@ -3,6 +3,13 @@ import Session from "./components/SessionComponent";
 import {Timer} from "./components/TimerComponent";
 import React,{ useState,useEffect,useRef } from "react";
 
+/*see anais designs
+    -make buttons rounded
+    -add animated circle around time
+    -use color gradient
+    -fancy clock design(rotating down)
+    
+*/
 export default function Container(){
     //HOOKS - break & session components hooks
     const [breakLength,setBreakLength]=useState(5);
