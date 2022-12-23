@@ -1,3 +1,4 @@
+import Circle from "./components/CircleComponent";
 import Break from "./components/BreakComponent";
 import Session from "./components/SessionComponent";
 import {Timer} from "./components/TimerComponent";
@@ -194,6 +195,7 @@ export default function Container(){
 
     return(
         <div>
+            <Circle/>
             <Break/>
             <Session/>
             <Timer ref={beep}/>    
