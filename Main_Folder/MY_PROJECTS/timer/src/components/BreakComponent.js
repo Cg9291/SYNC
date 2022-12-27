@@ -2,7 +2,8 @@ export default function Break(props){
     return(
         <div>
             <div id='break-label'>
-                Break Length
+                Break <br/>
+                Length
             </div>
             <button id="break-increment" className="fa fa-arrow-circle-up" onClick={props.breakHandlerFunction}></button>
             <div id="break-length">{props.breakLengthState}</div>

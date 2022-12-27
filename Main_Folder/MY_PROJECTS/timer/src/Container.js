@@ -1,6 +1,7 @@
 import Circle from "./components/CircleComponent";
 import Break from "./components/BreakComponent";
 import Session from "./components/SessionComponent";
+import TimedButtons from "./components/TimedButtons.js";
 import {Timer} from "./components/TimerComponent";
 import React,{ useState,useEffect,useRef } from "react";
 
@@ -167,6 +168,16 @@ export default function Container(){
 
 
     //PASSING PROPS/FUNCTIONS
+    Circle.defaultProps={
+        minutesState:minutes,
+        secondsState:seconds,
+        timerColorState:timerColor,
+        timerLabelState:timerLabel,
+        sessionLengthState:sessionLength,
+        secondsRendererFunction:secondsRenderer,
+        minutesRendererFunction:minutesRenderer,
+    }
+
     Timer.defaultProps={
         startTimerFunction:startTimer,
         refreshHandler:refreshHandler,
@@ -196,8 +207,9 @@ export default function Container(){
     return(
         <div>
             <Circle/>
-            <Break/>
-            <Session/>
+            <TimedButtons/>
+            {/*<Break/>
+            <Session/>*/}
             <Timer ref={beep}/>    
         </div>
     );

@@ -3,12 +3,7 @@ import beepSound from '../audio/beep.mp3'
 
  export const Timer=React.forwardRef((props,beep)=>(
         <>
-            <div id="circle">
-                <div className="fa fa-car" id="timer-label">{props.timerLabelState}
-                </div>
-                <div id="time-left" style={props.timerColorState}>{props.minutesRendererFunction()}:{props.secondsRendererFunction()}
-                </div> 
-            </div>
+            
 
             <div>
                 <>
