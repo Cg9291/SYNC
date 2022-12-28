@@ -6,7 +6,7 @@ import {Timer} from "./components/TimerComponent";
 import React,{ useState,useEffect,useRef } from "react";
 
 /*see anais designs
-    -make buttons rounded
+    -fix css to align start-refresh buttons
     -add animated circle around time
     -use color gradient
     -fancy clock design(rotating down)
