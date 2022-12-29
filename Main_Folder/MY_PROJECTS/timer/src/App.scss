@@ -1,6 +1,9 @@
+
 .App {
   text-align: center;
-  background-color: #6416a0;
+  color: white;
+  background-color: darkblue;
+  background-image: linear-gradient(darkblue,white);
   height:100vh;
   //border:solid red;
   padding-top: 20px;
@@ -14,11 +17,20 @@
   .settings-buttons{
     margin-bottom: 10px;
   }
-  /*#start-pause-refresh-buttons{
-    width:40px;
+  .start-refresh-buttons{
+    width: 50px;
+    height: 50px;
+  }
+  #time-left{
+    font-size: 120px;
+  }
+  #start-pause-refresh-buttons{
+    width:200px;
+    margin: auto;
     display: flex;
-    justify-content: space-evenly;
-  }*/
+    //justify-content: space-evenly;
+    //border:solid white
+  }
   #circle{
     margin: auto;
     margin-top: 20px;
@@ -27,12 +39,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 200px;
+    width: 500px;
+    height: 500px;
+    font-size: 50px;
     border-radius: 50%;
     border-style: solid;
     border-width: 2px;
-    border-color: blue;
+    //border-color: darkgoldenrod;
+    border-image:linear-gradient(red,yellow);
+    border-image-slice: 30%;
     background-color: rgba(0, 0, 0, 0);
   }
   button{
@@ -42,7 +57,6 @@
     border-radius: 50%;
     border-width: 0;
     box-shadow: 1px 1px 5px 1px white,-1px -1px 5px white,-1px 1px 5px white,1px -1px 5px white;
-    background-color: blue;
     color:white;
     background-image: linear-gradient(red, yellow)
     

@@ -6,9 +6,9 @@ import {Timer} from "./components/TimerComponent";
 import React,{ useState,useEffect,useRef } from "react";
 
 /*see anais designs
+    -find a way to add gradient with circle border
     -fix css to align start-refresh buttons
     -add animated circle around time
-    -use color gradient
     -fancy clock design(rotating down)
     
 */
@@ -26,7 +26,7 @@ export default function Container(){
     const [status,setStatus]=useState("session");
 
     //HOOKS - aesthetics
-    const [timerColor,setTimerColor]=useState({color:'black'});
+    const [timerColor,setTimerColor]=useState({color:'white'});
     const [timerLabel,setTimerLabel]=useState("Time remaining");
 
     //REFS

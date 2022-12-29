@@ -5,10 +5,10 @@ import beepSound from '../audio/beep.mp3'
         <>
             <div id='start-pause-refresh-buttons'>
                 <>
-                    {(props.startedState===true) && <button id="start_stop" className="fa fa-pause" style={props.timerColorState} onClick={props.startTimerFunction}></button>}
-                    {props.startedState===false && <button id="start_stop" className="fa fa-play" onClick={props.startTimerFunction}>{props.startTimerFunction}</button>}
+                    {(props.startedState===true) && <button id="start_stop" className="fa fa-pause start-refresh-buttons" style={props.timerColorState} onClick={props.startTimerFunction}></button>}
+                    {props.startedState===false && <button id="start_stop" className="fa fa-play start-refresh-buttons" onClick={props.startTimerFunction}>{props.startTimerFunction}</button>}
                 </>
-                <button id="reset" className="fa fa-refresh" onClick={props.refreshHandler}>
+                <button id="reset" className="fa fa-refresh start-refresh-buttons" onClick={props.refreshHandler}>
                 </button>
             </div>
             <audio id="beep" ref={beep}>
