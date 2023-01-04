@@ -3,7 +3,7 @@
   text-align: center;
   color: white;
   background-color: darkblue;
-  background-image: linear-gradient(darkblue,darkgrey);
+  background-image: linear-gradient(darkblue,white);
   height:100vh;
   //border:solid red;
   padding-top: 20px;
@@ -15,10 +15,7 @@
     margin-bottom: 15px;
   }
   .settings-buttons{
-    margin-top: 10px;
     margin-bottom: 10px;
-    width: 70px;
-    height: 70px;
   }
   .start-refresh-buttons{
     width: 50px;
@@ -48,8 +45,9 @@
     border-radius: 50%;
     border-style: solid;
     border-width: 2px;
-    /*border-image:linear-gradient(red,yellow);
-    border-image-slice: 30%;*/
+    //border-color: darkgoldenrod;
+    border-image:linear-gradient(red,yellow);
+    border-image-slice: 30%;
     background-color: rgba(0, 0, 0, 0);
   }
   button{
