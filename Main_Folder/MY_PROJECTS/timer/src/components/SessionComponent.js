@@ -6,7 +6,7 @@ export default function Session(props){
                 Length
             </div>
             <button id="session-increment" className="fa fa-arrow-circle-up settings-buttons" onClick={props.sessionHandlerFunction}></button>
-            <div id="session-length"  className="settings-buttons">{props.sessionLengthState}</div>
+            <div id="session-length">{props.sessionLengthState}</div>
             <button id="session-decrement" className="fa fa-arrow-circle-down settings-buttons" onClick={props.sessionHandlerFunction}></button>
         </div>
     );
