@@ -1,71 +1,43 @@
+
 .App {
   text-align: center;
   color: white;
   background-color: darkblue;
-  background-image: linear-gradient(darkblue, darkgrey);
-  height: 100vh;
+  background-image: linear-gradient(darkblue,darkgrey);
+  height:100vh;
   //border:solid red;
-  // padding-top: 20px;
-  margin-top: 0;
+  padding-top: 20px;
+  margin-top:0;
   min-height: 100vh;
   max-height: 100vh;
-
-  #lilCut{
-    display: grid;
-    grid-template-areas:
-    "area1 area2"
-    "area3 area3";
-    grid-template-rows: 1fr 1fr ;
-    grid-template-columns: 5fr 1fr ;
-  }
   //background-image: linear-gradient(blue, white);
-  .labels {
+  .labels{
     margin-bottom: 15px;
   }
-
-  .settings-buttons {
+  .settings-buttons{
     margin-top: 10px;
     margin-bottom: 10px;
     width: 70px;
     height: 70px;
   }
-
-  .start-refresh-buttons {
+  .start-refresh-buttons{
     width: 50px;
     height: 50px;
   }
-
-  #timed-buttons {
-    grid-area: area2;
-    // border: solid yellow;
-    // position: 'relative';
-    // margin-bottom: '968px';
-    // margin-left: '1400px';
-    display: 'flex';
-    justify-content: 'space-evenly';
-    // width: '200px';
-    // justify-self: 'center';
-    margin-bottom: '20px'
-  }
-
-  #time-left {
+  #time-left{
     font-size: 120px;
   }
-
-  #start-pause-refresh-buttons {
-    // width: 200px;
-    border: solid purple;
-    // margin: auto;
+  #start-pause-refresh-buttons{
+    width:200px;
+    margin: auto;
     display: flex;
-    grid-area: area3;
-    justify-content: space-evenly;
+    //justify-content: space-evenly;
     //border:solid white
   }
-
-  #circle {
-     margin: auto;
-     margin-top: 20px;
-     margin-bottom: 20px;
+  #circle{
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,39 +48,64 @@
     border-radius: 50%;
     border-style: solid;
     border-width: 2px;
-    background-color: red;
-    grid-area: area1;
     /*border-image:linear-gradient(red,yellow);
     border-image-slice: 30%;*/
+    background-color: rgba(0, 0, 0, 0);
   }
-
-  button {
+  button{
     margin: auto;
     width: 36px;
     height: 36px;
     border-radius: 50%;
     border-width: 0;
-    box-shadow: 1px 1px 5px 1px white, -1px -1px 5px white, -1px 1px 5px white, 1px -1px 5px white;
-    color: white;
+    box-shadow: 1px 1px 5px 1px white,-1px -1px 5px white,-1px 1px 5px white,1px -1px 5px white;
+    color:white;
     background-image: linear-gradient(red, yellow)
+    
   }
 }
 
-#test-area {
-  border: solid yellow;
-  font-size: 1rem;
-  display: grid;
-  width: 3rem;
-  height: 3rem;
-  grid-template-areas:
-    "ar1 ar1 ar2"
-    "ar3 ar3 ar2"
-    "ar4 ar4 ar4";
-  grid-template-rows: 33% 33% 33%;
-  grid-template-columns: 33% 33% 33%;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
-.test {
-  // width: 1rem;
-  // height: 1rem;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@media(max-width:390px){
+  
+  button{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: blue;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
