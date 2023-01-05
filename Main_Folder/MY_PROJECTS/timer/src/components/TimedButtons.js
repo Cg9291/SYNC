@@ -3,7 +3,7 @@ import Break from "./BreakComponent.js"
 
 export default function TimedButtons(){
   return (
-    <div >
+    <div id="timed-buttons" >
       <Session />
       <Break />
     </div>

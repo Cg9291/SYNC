@@ -203,18 +203,10 @@ export default function Container() {
   };
 
   return (
-    <div id="lilCut">
-      <div id="circle">
+    <div id="container">
         <Circle />
-      </div>
-      <div id="timed-buttons">
         <TimedButtons />
-      </div>
-      {/*<Break/>
-      <Session/>*/}
-      <div id="start-pause-refresh-buttons">
         <Timer ref={beep} />
-      </div>
     </div>
   );
 }

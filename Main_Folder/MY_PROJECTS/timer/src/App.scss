@@ -2,7 +2,6 @@
   text-align: center;
   color: white;
   background-color: darkblue;
-  background-image: linear-gradient(darkblue, darkgrey);
   height: 100vh;
   //border:solid red;
   // padding-top: 20px;
@@ -10,14 +9,20 @@
   min-height: 100vh;
   max-height: 100vh;
 
-  #lilCut{
-    display: grid;
+  #container {
+    padding-top: 40px;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    background-image: linear-gradient(darkblue, darkgrey);
+    /*display: grid;
     grid-template-areas:
-    "area1 area2"
-    "area3 area3";
-    grid-template-rows: 1fr 1fr ;
-    grid-template-columns: 5fr 1fr ;
+      "area1 area2"
+      "area3 area3";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 5fr 1fr;*/
   }
+
   //background-image: linear-gradient(blue, white);
   .labels {
     margin-bottom: 15px;
@@ -38,14 +43,13 @@
   #timed-buttons {
     grid-area: area2;
     // border: solid yellow;
-    // position: 'relative';
-    // margin-bottom: '968px';
-    // margin-left: '1400px';
+    position: absolute;
+    //left: 0;
+    right:5%;
     display: 'flex';
     justify-content: 'space-evenly';
     // width: '200px';
     // justify-self: 'center';
-    margin-bottom: '20px'
   }
 
   #time-left {
@@ -53,9 +57,13 @@
   }
 
   #start-pause-refresh-buttons {
-    // width: 200px;
-    border: solid purple;
-    // margin: auto;
+    width: 200px;
+    //border: solid purple;
+    position: absolute;
+    left:0;
+    right: 0;
+    margin: auto;
+    margin-top: 540px;
     display: flex;
     grid-area: area3;
     justify-content: space-evenly;
@@ -63,10 +71,11 @@
   }
 
   #circle {
-     margin: auto;
-     margin-top: 20px;
-     margin-bottom: 20px;
-     margin-left: 603px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    // margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
