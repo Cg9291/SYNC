@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   color: white;
-  background-color: darkblue;
+ 
   height: 100vh;
   //border:solid red;
   // padding-top: 20px;
@@ -14,7 +14,8 @@
     width: 100%;
     height: 100%;
     max-height: 100%;
-    background-image: linear-gradient(darkblue, darkgrey);
+    background-color: rgb(0, 50, 75);
+    //background-image: linear-gradient(darkblue, darkgrey);
     /*display: grid;
     grid-template-areas:
       "area1 area2"
@@ -41,12 +42,13 @@
   }
 
   #timed-buttons {
-    grid-area: area2;
-    // border: solid yellow;
+    // grid-area: area2;
+    border: solid yellow;
     position: absolute;
     //left: 0;
     right:5%;
     display: 'flex';
+    flex-direction: row;
     justify-content: 'space-evenly';
     // width: '200px';
     // justify-self: 'center';
@@ -100,6 +102,7 @@
     border-width: 0;
     box-shadow: 1px 1px 5px 1px white, -1px -1px 5px white, -1px 1px 5px white, 1px -1px 5px white;
     color: white;
-    background-image: linear-gradient(red, yellow)
+    background-color: darkblue;
+    //background-image: linear-gradient(red, yellow)
   }
 }
