@@ -2,8 +2,8 @@
 .App {
   text-align: center;
   color: white;
-  background-color: darkblue;
-  background-image: linear-gradient(darkblue,white);
+  background-color: darkslategrey;
+  //background-image: linear-gradient(darkblue,white);
   height:100vh;
   //border:solid red;
   padding-top: 20px;
@@ -16,6 +16,8 @@
   }
   .settings-buttons{
     margin-bottom: 10px;
+    width: 100px;
+    border-radius: 1%;
   }
   .start-refresh-buttons{
     width: 50px;
@@ -28,6 +30,7 @@
     width:200px;
     margin: auto;
     display: flex;
+    margin-bottom: 60px;
     //justify-content: space-evenly;
     //border:solid white
   }
@@ -58,11 +61,25 @@
     border-width: 0;
     box-shadow: 1px 1px 5px 1px white,-1px -1px 5px white,-1px 1px 5px white,1px -1px 5px white;
     color:white;
-    background-image: linear-gradient(red, yellow)
-    
+    //background-image: linear-gradient(red, yellow)
+    background-color: darkblue;
   }
 }
 
+#start_stop{
+  width: 75px;
+  height: 75px;
+}
+#reset{
+  width: 75px;
+  height: 75px;
+}
+#session-increment,#break-increment{
+  background-color: darkgreen;
+}
+#session-decrement,#break-decrement{
+  background-color: darkred;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
