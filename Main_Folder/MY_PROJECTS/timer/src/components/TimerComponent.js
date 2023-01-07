@@ -3,7 +3,7 @@ import beepSound from "../audio/beep.mp3";
 
 export const Timer = React.forwardRef((props, beep) => (
   <>
-    <div id="start-pause-refresh-buttons" >
+    <div id="start-pause-refresh-buttons">
       <>
         {props.startedState === true && (
           <button

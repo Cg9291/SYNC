@@ -204,9 +204,10 @@ export default function Container() {
 
   return (
     <div id="container">
-        <Circle />
-        <TimedButtons />
-        <Timer ref={beep} />
+        <Circle/>
+        <Session/>
+        <Break/>
+        {/* <Timer ref={beep} /> */}
     </div>
   );
 }
