@@ -1,14 +1,8 @@
 .App {
   text-align: center;
   color: white;
-<<<<<<< HEAD
-  background-color: darkblue;
-  background-image: linear-gradient(darkblue,darkgrey);
-  height:100vh;
-=======
 
   height: 100vh;
->>>>>>> c5ff90e26140a8fcfdbd6aff901954b96155d751
   //border:solid red;
   // padding-top: 20px;
   margin-top: 0;
@@ -43,16 +37,11 @@
     //border:solid red;
     grid-area: label;
   }
-<<<<<<< HEAD
-  .settings-buttons{
-    margin-top: 10px;
-    margin-bottom: 10px;
-=======
+  
 
   .settings-buttons {
     //margin-top: 10px;
     //margin-bottom: 10px;
->>>>>>> c5ff90e26140a8fcfdbd6aff901954b96155d751
     width: 70px;
     height: 70px;
   }
@@ -134,16 +123,10 @@
     border-radius: 50%;
     border-style: solid;
     border-width: 2px;
-<<<<<<< HEAD
-    /*border-image:linear-gradient(red,yellow);
-    border-image-slice: 30%;*/
-    background-color: rgba(0, 0, 0, 0);
-=======
     // background-color: red;
     grid-area: circle;
     /*border-image:linear-gradient(red,yellow);
     border-image-slice: 30%;*/
->>>>>>> c5ff90e26140a8fcfdbd6aff901954b96155d751
   }
   #session{
     grid-area: session;
