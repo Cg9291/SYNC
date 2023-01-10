@@ -8,18 +8,19 @@ export const Timer = React.forwardRef((props, beep) => (
         {props.startedState === true && (
           <button
             id="start_stop"
-            className="fa fa-pause start-refresh-buttons"
-            style={props.timerColorState}
+            className="start-refresh-buttons"
             onClick={props.startTimerFunction}
-          ></button>
+          >
+            <i className="fa fa-pause" style={props.timerColorState}></i>
+          </button>
         )}
         {props.startedState === false && (
           <button
-            id="start_stop start-refresh-buttons">
-              <div className="fa fa-play " onClick={props.startTimerFunction}
+            id="start_stop"
+            className="start-refresh-buttons"
+            onClick={props.startTimerFunction}
           >
-            {props.startTimerFunction}
-            </div>
+            <i className="fa fa-play " style={props.timerColorState}></i>
           </button>
         )}
       </>

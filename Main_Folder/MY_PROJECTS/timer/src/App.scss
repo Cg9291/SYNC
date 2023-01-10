@@ -55,7 +55,8 @@
 
   .start-refresh-buttons {
     min-width: 30%;
-    background-color: red;
+    height: max-content;
+    //background-color: black;
     aspect-ratio: 1 / 1;
   }
 
@@ -100,7 +101,6 @@
   #start-pause-refresh-buttons {
     /*width: 200px;
     //border: solid purple;
-    //position: absolute;
     left: 0;
     right: 0;
     margin: auto;
@@ -109,17 +109,22 @@
     grid-area: area3;
     justify-content: space-evenly;
     //border:solid white*/
+    position: relative;
     display: flex;
     justify-content: space-evenly;
-    border: solid black;
-    min-width: 17vw;
+    //border: solid black;
+    min-width: 45%;
+    bottom: -12%;
+    
+    
   }
 
   #circle {
-    //position: absolute;
+    position: relative;
     left: 0;
     right: 0;
     margin: auto;
+    padding:none ;
     // margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -144,6 +149,25 @@
     //width: max-content;
     border:solid salmon;
   }
+  #timer-label{
+    //position: absolute;
+    //align-self: flex-start;
+    margin-left: -45%;
+    margin-bottom: -2%;
+    font-weight: 100;
+    /*top: 10%;
+    left:20%;*/
+    //margin-bottom: 1%;
+    //border: solid wheat;
+  }
+  #time-left{
+    font-size: 500%;
+    // border:solid yellow;
+    padding: 0;
+    line-height: 85%;
+    //margin-bottom: 5%;
+  }
+  
   #break{
     grid-area: break;
     max-width: 100%;
@@ -171,7 +195,7 @@
       "circle"
       "session"
       "break";
-      background-color: red;
+      //background-color: red;
     }
     #circle{
       width: 80%;
@@ -179,7 +203,10 @@
       #timer-label{
         font-size: 4vw;
       }
-      
+    }
+    #start-pause-refresh-buttons{
+      min-width: 50%;
+      max-width: 50%;
     }
   }
 }
