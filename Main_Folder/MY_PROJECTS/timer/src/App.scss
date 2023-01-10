@@ -1,24 +1,27 @@
 .App {
   text-align: center;
-  color: white;
-
+  color:white;
+  background-color: yellow;
   height: 100vh;
   //border:solid red;
   // padding-top: 20px;
-  margin-top: 0;
+  //margin-top: 0;
   min-height: 100vh;
   max-height: 100vh;
 
   #container {
     display: grid;
+    /*grid-template-columns: 1fr 2fr 1fr  ;
+    grid-template-rows: 1fr 1fr 1fr;*/
     grid-template-areas:
-    ". circle circle ."
-    ". circle circle ."
-    "session circle circle break"
-    "session circle circle break" ;
+    ". circle ."
+    ". circle ."
+    //"session circle break"
+    "session circle break" ;
     //padding-top: 40px;
     width: 100%;
     height: 100%;
+    max-width: 100%;
     max-height: 100%;
     background-color: rgb(0, 50, 75);
     //background-image: linear-gradient(darkblue, darkgrey);
@@ -32,23 +35,28 @@
 
   //background-image: linear-gradient(blue, white);
   .labels {
-    font-size: 20px;
+    font-size: 2rem;
     margin-bottom: 15px;
     //border:solid red;
     grid-area: label;
   }
   
-
+  .fa-pause,.fa-play{
+    max-width: 100%;
+    max-height: 100%;
+  }
   .settings-buttons {
     //margin-top: 10px;
     //margin-bottom: 10px;
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
+    min-width: 20%;
   }
 
   .start-refresh-buttons {
-    width: 70px;
-    height: 70px;
+    min-width: 30%;
+    background-color: red;
+    aspect-ratio: 1 / 1;
   }
 
   .time-modifiers {
@@ -104,7 +112,7 @@
     display: flex;
     justify-content: space-evenly;
     border: solid black;
-    min-width: 200px;
+    min-width: 17vw;
   }
 
   #circle {
@@ -117,12 +125,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 850px;
-    height: 850px;
-    font-size: 50px;
+    width: 50vw;
+    //height: 50vw;
+    font-size: 3vw;
     border-radius: 50%;
     border-style: solid;
     border-width: 2px;
+    aspect-ratio: 1 / 1;
     // background-color: red;
     grid-area: circle;
     /*border-image:linear-gradient(red,yellow);
@@ -130,20 +139,47 @@
   }
   #session{
     grid-area: session;
+    max-width: 100%;
+    max-height: 100%;
+    //width: max-content;
+    border:solid salmon;
   }
   #break{
     grid-area: break;
+    max-width: 100%;
+    max-height: 100%;
+    //width: fit-content;
+    border:solid salmon;
   }
-
   button {
     margin: auto;
     width: 36px;
     height: 36px;
+    max-width: 100%;
     border-radius: 50%;
     border-width: 0;
     box-shadow: 1px 1px 5px 1px white, -1px -1px 5px white, -1px 1px 5px white, 1px -1px 5px white;
     color: white;
     background-color: darkblue;
     //background-image: linear-gradient(red, yellow)
+  }
+  @media screen and (max-width:500px) {
+    // for mobile phones
+    #container{
+      grid-template-areas: 
+      "circle"
+      "circle"
+      "session"
+      "break";
+      background-color: red;
+    }
+    #circle{
+      width: 80%;
+      aspect-ratio: 1 / 1;
+      #timer-label{
+        font-size: 4vw;
+      }
+      
+    }
   }
 }

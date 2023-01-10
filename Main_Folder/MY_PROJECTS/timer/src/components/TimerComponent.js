@@ -15,11 +15,11 @@ export const Timer = React.forwardRef((props, beep) => (
         )}
         {props.startedState === false && (
           <button
-            id="start_stop"
-            className="fa fa-play start-refresh-buttons"
-            onClick={props.startTimerFunction}
+            id="start_stop start-refresh-buttons">
+              <div className="fa fa-play " onClick={props.startTimerFunction}
           >
             {props.startTimerFunction}
+            </div>
           </button>
         )}
       </>
