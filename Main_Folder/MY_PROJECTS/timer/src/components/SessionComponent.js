@@ -13,7 +13,7 @@ export default function Session(props) {
       <div className="btn-row">
         <button
           id="session-increment"
-          className="fa fa-arrow-circle-up fa-4x increment-buttons settings-buttons "
+          className="fa fa-arrow-up fa-4x increment-buttons settings-buttons "
           onClick={props.sessionHandlerFunction}
         ></button>
         <div
@@ -24,7 +24,7 @@ export default function Session(props) {
         </div>
         <button
           id="session-decrement"
-          className="fa fa-arrow-circle-down fa-4x decrement-buttons settings-buttons"
+          className="fa fa-arrow-down fa-4x decrement-buttons settings-buttons"
           onClick={props.sessionHandlerFunction}
         ></button>
       </div>

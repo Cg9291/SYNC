@@ -46,7 +46,6 @@
     font-size: 250%;
   }
 
-
   .fa-pause,
   .fa-play {
     max-width: 100%;
@@ -61,15 +60,20 @@
     flex-basis: 30%;
     height: max-content;
     aspect-ratio: 1 / 1;
-    //min-width: 20%;
+
+    background-color: rgb(96, 132, 161);
+  }
+
+  .fa-arrow {
+    color: rgb(96, 132, 161);
   }
 
   .start-refresh-buttons {
-    min-width: 30%;
+    //min-width: 30%;
     height: max-content;
     aspect-ratio: 1 / 1;
-
-    //background-color: black;
+    //border: solid green;
+    background-color: rgb(0, 50, 75);
   }
 
   .time-modifiers {
@@ -99,7 +103,7 @@
 
     // border: dotted red;
 
-    flex-basis:10%;
+    flex-basis: 10%;
 
     padding: 0;
 
@@ -110,9 +114,8 @@
     grid-area: decrement;
   }
 
-  .btn-row{
+  .btn-row {
     display: flex;
-
   }
 
   #timed-buttons {
@@ -176,18 +179,20 @@
     max-height: 100%;*/
   }
 
-
   #timer-label {
-    margin-left: -45%;
+    align-self: flex-start;
+    margin-left: 17%;
+
     margin-bottom: -2%;
 
     //border: solid wheat;
 
+    font-size: 2.5vw;
     font-weight: 100;
   }
 
   #time-left {
-    // border:solid yellow;
+    //  border:solid yellow;
 
     padding: 0;
 
@@ -217,7 +222,7 @@
     height: 36px;
     max-width: 100%;
 
-    background-color: darkblue;
+    //background-color: darkblue;
 
     color: white;
   }

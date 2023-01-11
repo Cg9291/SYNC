@@ -12,7 +12,7 @@ export const Timer = React.forwardRef((props, beep) => (
             onClick={props.startTimerFunction}
           >
             <i
-              className="fa fa-pause"
+              className="fa fa-pause fa-2x"
               style={props.timerColorState}
             ></i>
           </button>
@@ -24,7 +24,7 @@ export const Timer = React.forwardRef((props, beep) => (
             onClick={props.startTimerFunction}
           >
             <i
-              className="fa fa-play "
+              className="fa fa-play fa-2x"
               style={props.timerColorState}
             ></i>
           </button>
@@ -32,7 +32,7 @@ export const Timer = React.forwardRef((props, beep) => (
       </>
       <button
         id="reset"
-        className="fa fa-refresh start-refresh-buttons"
+        className="fa fa-refresh start-refresh-buttons fa-2x"
         onClick={props.refreshHandler}
       ></button>
     </div>
