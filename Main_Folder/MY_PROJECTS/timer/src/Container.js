@@ -10,7 +10,6 @@ import React, { useState, useEffect, useRef } from "react";
     -fix css to align start-refresh buttons
     -add animated circle around time
     -fancy clock design(rotating down)
-    
 */
 export default function Container() {
   //HOOKS - break & session components hooks
@@ -204,10 +203,10 @@ export default function Container() {
 
   return (
     <div id="container">
-        <Circle/>
-        <Session/>
-        <Break/>
-        {/* <Timer ref={beep} /> */}
+      <Circle />
+      <Session />
+      <Break />
+      {/* <Timer ref={beep} /> */}
     </div>
   );
 }

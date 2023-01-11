@@ -11,7 +11,10 @@ export const Timer = React.forwardRef((props, beep) => (
             className="start-refresh-buttons"
             onClick={props.startTimerFunction}
           >
-            <i className="fa fa-pause" style={props.timerColorState}></i>
+            <i
+              className="fa fa-pause"
+              style={props.timerColorState}
+            ></i>
           </button>
         )}
         {props.startedState === false && (
@@ -20,7 +23,10 @@ export const Timer = React.forwardRef((props, beep) => (
             className="start-refresh-buttons"
             onClick={props.startTimerFunction}
           >
-            <i className="fa fa-play " style={props.timerColorState}></i>
+            <i
+              className="fa fa-play "
+              style={props.timerColorState}
+            ></i>
           </button>
         )}
       </>
@@ -30,8 +36,14 @@ export const Timer = React.forwardRef((props, beep) => (
         onClick={props.refreshHandler}
       ></button>
     </div>
-    <audio id="beep" ref={beep}>
-      <source src={beepSound} type="audio/mp3" />
+    <audio
+      id="beep"
+      ref={beep}
+    >
+      <source
+        src={beepSound}
+        type="audio/mp3"
+      />
       Your browser does not support the audio element.
     </audio>
   </>
