@@ -72,7 +72,7 @@
   }
 
   .start-refresh-buttons {
-    margin:0;
+    margin: 0;
     //min-width: 30%;
     height: max-content;
     aspect-ratio: 1 / 1;
@@ -133,9 +133,6 @@
     border: solid yellow;
   }
 
-  #time-left {
-    font-size: 120px;
-  }
 
   #start-pause-refresh-buttons {
     display: flex;
@@ -202,7 +199,7 @@
 
     padding: 0;
 
-    font-size: 500%;
+    font-size: 15vw;
     line-height: 85%;
   }
 
@@ -224,34 +221,51 @@
     box-shadow: 1px 1px 5px 1px white, -1px -1px 5px, white, -1px 1px 5px white,
       1px -1px 5px white;
 
-
     //background-color: darkblue;
 
     color: white;
   }
 
-  @media screen and (max-width: 500px) {
+// .................MEDIA QUERIES..............................
+  @media screen and (max-width: 576px) {
     // for mobile phones
     #container {
+      /*display: flex;
+      flex-direction: column;*/
       grid-template-areas:
         "circle"
         "circle"
         "session"
         "break";
+      grid-template-columns: 1fr;
     }
 
     #circle {
-      width: 80%;
+      margin-top: 10%;
+
+      width: 90vw;
       aspect-ratio: 1 / 1;
 
       #timer-label {
-        font-size: 4vw;
+        font-size: 3vw;
+
+      }
+      #time-left{
+        padding: 0;
+
+        font-size: 27.5vw;
+        line-height: 85%;
       }
     }
 
     #start-pause-refresh-buttons {
       min-width: 50%;
       max-width: 50%;
+    }
+
+    .length-values{
+      font-size: 15vw;
+      align-self: center;
     }
   }
 }
