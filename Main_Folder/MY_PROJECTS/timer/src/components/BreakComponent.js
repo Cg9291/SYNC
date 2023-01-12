@@ -13,7 +13,7 @@ export default function Break(props) {
       <div className="btn-row">
         <button
           id="break-increment"
-          className="fa fa-arrow-up fa-4x settings-buttons increment-buttons"
+          className="fa fa-arrow-up fa-2x settings-buttons increment-buttons"
           onClick={props.breakHandlerFunction}
         ></button>
         <div
@@ -24,7 +24,7 @@ export default function Break(props) {
         </div>
         <button
           id="break-decrement"
-          className="fa fa-arrow-down fa-4x settings-buttons decrement-buttons"
+          className="fa fa-arrow-down fa-2x settings-buttons decrement-buttons"
           onClick={props.breakHandlerFunction}
         ></button>
       </div>
