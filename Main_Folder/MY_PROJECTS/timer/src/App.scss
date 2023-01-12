@@ -57,8 +57,8 @@
   }
 
   .settings-buttons {
-   margin:0;
-   align-self: center;
+    margin: 0;
+    align-self: center;
 
     //width: 100%;
     flex-basis: 20%;
@@ -108,8 +108,6 @@
     grid-area: value;
     align-self: center;
 
-
-
     // border: dotted red;
 
     flex-basis: 15%;
@@ -142,7 +140,6 @@
 
     border: solid yellow;
   }
-
 
   #start-pause-refresh-buttons {
     display: flex;
@@ -233,18 +230,16 @@
 
     //background-color: darkblue;
 
-    color: white;
+    color: rgb(255, 255, 255);
   }
 
-// .................MEDIA QUERIES..............................
+  // .................MEDIA QUERIES..............................
   @media screen and (max-width: 576px) {
     // for mobile phones
     #container {
-      /*display: flex;
-      flex-direction: column;*/
       grid-template-areas:
         "circle"
-        "circle"
+        // "circle"
         "session"
         "break";
       grid-template-columns: 1fr;
@@ -259,12 +254,11 @@
       font-size: 3.5vw;
 
       #timer-label {
-        margin-left: 7.5%;
+        margin-left: 15.5%;
 
         font-size: 4vw;
-
       }
-      #time-left{
+      #time-left {
         padding: 0;
 
         font-size: 27.5vw;
@@ -272,14 +266,27 @@
       }
     }
 
+    #session {
+      margin-top: 0;
+      border: solid grey;
+    }
+
+    #break {
+      margin-top: 0;
+      border: solid grey;
+    }
+
     #start-pause-refresh-buttons {
       min-width: 50%;
       max-width: 50%;
     }
 
-    .length-values{
-      font-size: 15vw;
+    .length-values {
+      font-size: 10vw;
       align-self: center;
+    }
+    .settings-buttons {
+      flex-basis: 17%;
     }
   }
 }
