@@ -1,5 +1,4 @@
 export default function DynamicTimerCircle(props) {
-    
   return (
     <svg
       id="dynamic-timer-circle-svg"
@@ -16,7 +15,18 @@ export default function DynamicTimerCircle(props) {
           strokeWidth="10"
           fill="none"
         />
-        <circle
+        <path
+        id="circle-path"
+          d="
+          M 0, 0
+          m -45, 0
+          a 45 45 0 0,1 90,0
+          a 45 45 0 0,1 -90,0
+        "
+        strokeDasharray={props.timeRatioState}
+        //transform="rotate(-45deg)"
+        ></path>
+        {/*<circle
           cx="0"
           cy="0"
           r="45"
@@ -24,7 +34,7 @@ export default function DynamicTimerCircle(props) {
           strokeWidth="10"
           fill="none"
           strokeDasharray={props.timeRatioState}
-        />
+        />*/}
       </g>
     </svg>
   );

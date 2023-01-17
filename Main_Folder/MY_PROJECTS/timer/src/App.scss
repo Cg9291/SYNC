@@ -232,64 +232,70 @@
 
     color: rgb(255, 255, 255);
   }
-  #dynamic-timer-circle-svg{
-  
+  #circle-path {
+    stroke-width: 7px;
+    fill: none;
+    stroke: green;
+    stroke-linecap: round;
+    transform: rotate(95deg);
+    transition: 1s linear all ;
+    //transform-origin: center;
+  }
+}
+
+// .................MEDIA QUERIES..............................
+@media screen and (max-width: 576px) {
+  // for mobile phones
+  #container {
+    grid-template-areas:
+      "circle"
+      // "circle"
+      "session"
+      "break";
+    grid-template-columns: 1fr;
   }
 
-  // .................MEDIA QUERIES..............................
-  @media screen and (max-width: 576px) {
-    // for mobile phones
-    #container {
-      grid-template-areas:
-        "circle"
-        // "circle"
-        "session"
-        "break";
-      grid-template-columns: 1fr;
+  #circle {
+    margin-top: 10%;
+
+    width: 90vw;
+    aspect-ratio: 1 / 1;
+
+    font-size: 3.5vw;
+
+    #timer-label {
+      margin-left: 15.5%;
+
+      font-size: 4vw;
     }
+    #time-left {
+      padding: 0;
 
-    #circle {
-      margin-top: 10%;
-
-      width: 90vw;
-      aspect-ratio: 1 / 1;
-
-      font-size: 3.5vw;
-
-      #timer-label {
-        margin-left: 15.5%;
-
-        font-size: 4vw;
-      }
-      #time-left {
-        padding: 0;
-
-        font-size: 27.5vw;
-        line-height: 85%;
-      }
+      font-size: 27.5vw;
+      line-height: 85%;
     }
+  }
 
-    #session {
-      margin-top: 0;
-      border: solid grey;
-    }
+  #session {
+    margin-top: 0;
+    border: solid grey;
+  }
 
-    #break {
-      margin-top: 0;
-      border: solid grey;
-    }
+  #break {
+    margin-top: 0;
+    border: solid grey;
+  }
 
-    #start-pause-refresh-buttons {
-      min-width: 50%;
-      max-width: 50%;
-    }
+  #start-pause-refresh-buttons {
+    min-width: 50%;
+    max-width: 50%;
+  }
 
-    .length-values {
-      font-size: 10vw;
-      align-self: center;
-    }
-    .settings-buttons {
-      flex-basis: 17%;
-    }
+  .length-values {
+    font-size: 10vw;
+    align-self: center;
+  }
+  .settings-buttons {
+    flex-basis: 17%;
   }
 }
