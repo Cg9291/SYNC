@@ -4,6 +4,7 @@ import Session from "./components/SessionComponent";
 import TimedButtons from "./components/TimedButtons.js";
 import { Timer } from "./components/TimerComponent";
 import React, { useState, useEffect, useRef } from "react";
+import DynamicTimerCircle from "./components/DynamicTimerCircleComponent";
 
 /*see anais designs
     -find a way to add gradient with circle border
@@ -24,6 +25,13 @@ export default function Container() {
   const [started, setStarted] = useState(false);
   const [status, setStatus] = useState("session");
 
+  //HOOKS - time set & left in seconds
+  const [timeSetInSeconds, setTimeSetInSeconds] = useState(25 * 60);
+  const [timeLeftInSeconds, setTimeLeftInSeconds] = useState();
+  const [timeRatio, setTimeRatio] = useState(
+    ((timeLeftInSeconds / timeSetInSeconds) * 282.6, 282.6).toString()
+  );
+
   //HOOKS - aesthetics
   const [timerColor, setTimerColor] = useState({ color: "white" });
   const [timerLabel, setTimerLabel] = useState("Time remaining");
@@ -43,6 +51,10 @@ export default function Container() {
   }, []);
 
   useEffect(() => {
+    setTimeSetInSeconds(sessionLength * 60);
+  }, [sessionLength]);
+
+  useEffect(() => {
     //starts & run the timer
     if (started === true && seconds == 0) {
       intvl.current = setTimeout(() => {
@@ -58,6 +70,14 @@ export default function Container() {
       return () => clearInterval(intvl.current);
     }
   }, [started, seconds]);
+
+  useEffect(() => {
+    setTimeLeftInSeconds(minutes * 60 + seconds);
+  }, [seconds]);
+
+  useEffect(() => {
+    setTimeRatio(timeLeftInSeconds/timeSetInSeconds*282.6,282.6);
+  }, [timeLeftInSeconds]);
 
   useEffect(() => {
     //stops the timer at 00:00 & switches between session and break states
@@ -201,8 +221,17 @@ export default function Container() {
     startedState: started,
   };
 
+  DynamicTimerCircle.defaultProps = {
+    timeRatioState: timeRatio,
+  };
+
   return (
     <div id="container">
+      {timeRatio}
+      <br />
+      {timeLeftInSeconds}
+      <br />
+      {timeSetInSeconds}
       <Circle />
       <Session />
       <Break />
