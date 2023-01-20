@@ -1,3 +1,5 @@
+import Circle from "./CircleComponent.js";
+
 export default function DynamicTimerCircle(props) {
   return (
     <svg
@@ -15,6 +17,10 @@ export default function DynamicTimerCircle(props) {
           strokeWidth="10"
           fill="none"
         />
+        <text x="-40" y="0" font-family="Verdana" font-size="15" fill="red">wowowf</text>
+        <foreignObject x="0%" y="0%" width="80" height="80">
+          {/* <Circle> */}
+        </foreignObject>
         <path
         id="circle-path"
           d="
@@ -26,6 +32,7 @@ export default function DynamicTimerCircle(props) {
         strokeDasharray={props.timeRatioState}
         //transform="rotate(-45deg)"
         ></path>
+
         {/*<circle
           cx="0"
           cy="0"

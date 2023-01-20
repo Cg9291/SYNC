@@ -47,8 +47,8 @@ export default function Container() {
   });
 
   useEffect(() => {
-    setSeconds(0);
-    setMinutes(sessionLength);
+    setSeconds(5);
+    setMinutes(0);
   }, []);
 
   //DYNAMIC CIRCLE LOGIC
