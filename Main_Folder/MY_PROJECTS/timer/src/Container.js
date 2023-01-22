@@ -29,7 +29,8 @@ export default function Container() {
   const [timeSetInSeconds, setTimeSetInSeconds] = useState(25 * 60);
   const [timeLeftInSeconds, setTimeLeftInSeconds] = useState();
   const [timeRatio, setTimeRatio] = useState(
-    ((timeLeftInSeconds / timeSetInSeconds) * 282.6, 282.6).toString()
+    (timeLeftInSeconds / timeSetInSeconds) * 282.6,
+    282.6
   );
 
   //HOOKS - aesthetics
@@ -73,10 +74,14 @@ export default function Container() {
 
   useEffect(() => {
     setTimeLeftInSeconds(minutes * 60 + seconds);
-  }, [seconds]);
+  });
 
   useEffect(() => {
-    setTimeRatio(timeLeftInSeconds/timeSetInSeconds*282.6,282.6);
+    if (timeLeftInSeconds == 0) {
+      setTimeRatio(`0 282.6`);
+    } else {
+      setTimeRatio(`${(timeLeftInSeconds / timeSetInSeconds) * 282.6} 282.6`);
+    }
   }, [timeLeftInSeconds]);
 
   useEffect(() => {
