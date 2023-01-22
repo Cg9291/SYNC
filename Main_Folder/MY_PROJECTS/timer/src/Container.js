@@ -39,7 +39,7 @@ export default function Container(){
 
     useEffect(()=>{
             setSeconds(0);
-            setMinutes(sessionLength);
+            setMinutes(25);
         },[]);
 
     useEffect(()=>{//starts & run the timer
