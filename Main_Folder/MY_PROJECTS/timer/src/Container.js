@@ -15,7 +15,7 @@ import DynamicTimerCircle from "./components/DynamicTimerCircleComponent";
 export default function Container() {
   //HOOKS - break & session components hooks
   const [breakLength, setBreakLength] = useState(5);
-  const [sessionLength, setSessionLength] = useState(1);
+  const [sessionLength, setSessionLength] = useState(25);
 
   //HOOKS - minutes & seconds
   const [minutes, setMinutes] = useState(25);
@@ -47,8 +47,8 @@ export default function Container() {
   });
 
   useEffect(() => {
-    setSeconds(5);
-    setMinutes(0);
+    setSeconds(0);
+    setMinutes(25);
   }, []);
 
   //DYNAMIC CIRCLE LOGIC

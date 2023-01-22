@@ -2,18 +2,14 @@ import Circle from "./CircleComponent.js";
 
 export default function DynamicTimerCircle(props) {
   return (
-    <svg
-      id="dynamic-timer-circle-svg"
-      width="100"
-      height="100"
-      viewBox="-50 -50 100 100"
-    >
+    <svg id="dynamic-timer-circle-svg" className="circle-dimensions" viewBox="-50 -50 100 100">
       <g>
         <circle
           cx="0"
           cy="0"
           r="45"
-          stroke="white"
+          stroke="black"
+          strokeOpacity="0.1"
           strokeWidth="10"
           fill="none"
         />

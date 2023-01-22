@@ -156,6 +156,13 @@
     padding: 0;
   }
 
+  #dynamic-timer-circle-svg {
+    position: absolute;
+    width: 50vw;
+  }
+
+
+
   #circle {
     display: flex;
     flex-direction: column;
@@ -169,7 +176,7 @@
     left: 0;
     right: 0;
 
-    border: 2px solid;
+    //border: 2px solid;
     border-radius: 50%;
 
     width: 50vw;
@@ -233,8 +240,9 @@
 
     color: rgb(255, 255, 255);
   }
+
   #circle-path {
-    stroke-width: 7px;
+    stroke-width: 10px;
     fill: none;
     stroke: green;
     stroke-linecap: round;
@@ -245,16 +253,22 @@
 
   // .................MEDIA QUERIES..............................
 
-    @media screen and (max-width: 576px) {
-      // for mobile phones
-      #container {
-        grid-template-areas:
-          "circle"
-          // "circle"
-          "session"
-          "break";
-        grid-template-columns: 1fr;
-      }
+  @media screen and (max-width: 576px) {
+
+    // for mobile phones
+    #container {
+      grid-template-areas:
+        "circle"
+        // "circle"
+        "session"
+        "break";
+      grid-template-columns: 1fr;
+    }
+
+        #dynamic-timer-circle-svg {
+          
+          width: 90vw;
+        }
 
     #circle {
       margin-top: 10%;
