@@ -78,12 +78,16 @@ export default function Container() {
   }, [started, seconds]);
 
   useEffect(() => {
+    setTimeLeftInSeconds(minutes * 60 + seconds);
+  });
+
+  useEffect(() => {
     if (timeLeftInSeconds == 0) {
-      setTimeRatio('0 282.6');
+      setTimeRatio(`0 282.6`);
     } else {
       setTimeRatio(`${(timeLeftInSeconds / timeSetInSeconds) * 282.6} 282.6`);
     }
-  });
+  }, [timeLeftInSeconds]);
 
   useEffect(() => {
     //stops the timer at 00:00 & switches between session and break states

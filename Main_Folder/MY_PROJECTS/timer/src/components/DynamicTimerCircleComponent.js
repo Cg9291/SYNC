@@ -17,31 +17,17 @@ export default function DynamicTimerCircle(props) {
           strokeWidth="10"
           fill="none"
         />
-        <text x="-40" y="0" font-family="Verdana" font-size="15" fill="red">wowowf</text>
-        <foreignObject x="0%" y="0%" width="80" height="80">
-          {/* <Circle> */}
-        </foreignObject>
         <path
-        id="circle-path"
+          id="circle-path"
           d="
-          M 0, 0
-          m -45, 0
-          a 45 45 0 0,1 90,0
-          a 45 45 0 0,1 -90,0
-        "
-        strokeDasharray={props.timeRatioState}
-        //transform="rotate(-45deg)"
-        ></path>
-
-        {/*<circle
-          cx="0"
-          cy="0"
-          r="45"
-          stroke="blue"
-          strokeWidth="10"
-          fill="none"
+           M 0, 0
+           m -45, 0
+           a 45 45 0 0,1 90,0
+           a 45 45 0 0,1 -90,0
+         "
           strokeDasharray={props.timeRatioState}
-        />*/}
+          //transform="rotate(-45deg)"
+        ></path>
       </g>
     </svg>
   );
