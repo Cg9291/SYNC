@@ -47,8 +47,8 @@ export default function Container() {
   });
 
   useEffect(() => {
-    setSeconds(0);
-    setMinutes(25);
+    setSeconds(30);
+    setMinutes(0);
   }, []);
 
   //DYNAMIC CIRCLE LOGIC
@@ -242,7 +242,7 @@ export default function Container() {
       {timeLeftInSeconds}
       <br />
   {timeSetInSeconds}*/}
-      <Circle />
+      <Circle beepRef={beep}/>
       <Session />
       <Break />
       {/* <Timer ref={beep} /> */}

@@ -9,7 +9,7 @@ export default function Circle(props) {
       <div id="time-left" style={props.timerColorState}>
         {props.minutesRendererFunction()}:{props.secondsRendererFunction()}
       </div>
-      <Timer/>
+      <Timer ref={props.beepRef}/>
     </div>
   );
 }
