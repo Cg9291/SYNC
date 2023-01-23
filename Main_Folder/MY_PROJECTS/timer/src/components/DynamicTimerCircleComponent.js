@@ -22,6 +22,7 @@ export default function DynamicTimerCircle(props) {
            a 45 45 0 0,1 -90,0
          "
           strokeDasharray={props.timeRatioState}
+          stroke={props.ringColorState}
           //transform="rotate(-45deg)"
         ></path>
       </g>

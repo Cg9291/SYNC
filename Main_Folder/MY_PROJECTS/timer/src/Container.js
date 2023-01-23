@@ -36,6 +36,7 @@ export default function Container() {
   //HOOKS - aesthetics
   const [timerColor, setTimerColor] = useState({ color: "white" });
   const [timerLabel, setTimerLabel] = useState("Time remaining");
+  const [ringColor, setRingColor] = useState("green");
 
   //REFS
   const intvl = useRef(); //THIS CAME CLUTCH IN MAKING THE TIMER WORK AS INTENTED(STOP AT 00:00),basically allows us to assign and thus call off a setInterval fn in the useeffect.
@@ -47,7 +48,7 @@ export default function Container() {
   });
 
   useEffect(() => {
-    setSeconds(30);
+    setSeconds(20);
     setMinutes(0);
   }, []);
 
@@ -58,6 +59,16 @@ export default function Container() {
 
   useEffect(() => {
     setTimeLeftInSeconds(minutes * 60 + seconds);
+  });
+
+  useEffect(() => {
+    if (timeLeftInSeconds <= 10) {
+      setRingColor("red");
+    } else if (timeLeftInSeconds <= 15) {
+      setRingColor("orange");
+    }else{
+      setRingColor("green")
+    }
   });
 
   useEffect(() => {
@@ -233,6 +244,7 @@ export default function Container() {
 
   DynamicTimerCircle.defaultProps = {
     timeRatioState: timeRatio,
+    ringColorState: ringColor,
   };
 
   return (
@@ -242,7 +254,7 @@ export default function Container() {
       {timeLeftInSeconds}
       <br />
   {timeSetInSeconds}*/}
-      <Circle beepRef={beep}/>
+      <Circle beepRef={beep} />
       <Session />
       <Break />
       {/* <Timer ref={beep} /> */}
