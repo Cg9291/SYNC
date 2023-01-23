@@ -2,7 +2,11 @@ import Circle from "./CircleComponent.js";
 
 export default function DynamicTimerCircle(props) {
   return (
-    <svg id="dynamic-timer-circle-svg" className="circle-dimensions" viewBox="-50 -50 100 100">
+    <svg
+      id="dynamic-timer-circle-svg"
+      className="circle-dimensions"
+      viewBox="-50 -50 100 100"
+    >
       <g>
         <circle
           cx="0"
@@ -23,6 +27,7 @@ export default function DynamicTimerCircle(props) {
          "
           strokeDasharray={props.timeRatioState}
           stroke={props.ringColorState}
+          strokeOpacity={props.ringOpacityState}
           //transform="rotate(-45deg)"
         ></path>
       </g>

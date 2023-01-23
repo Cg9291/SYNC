@@ -18,8 +18,8 @@ export default function Container() {
   const [sessionLength, setSessionLength] = useState(25);
 
   //HOOKS - minutes & seconds
-  const [minutes, setMinutes] = useState(25);
-  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState();
+  const [seconds, setSeconds] = useState();
 
   //HOOKS - timer start stop state
   const [started, setStarted] = useState(false);
@@ -36,7 +36,8 @@ export default function Container() {
   //HOOKS - aesthetics
   const [timerColor, setTimerColor] = useState({ color: "white" });
   const [timerLabel, setTimerLabel] = useState("Time remaining");
-  const [ringColor, setRingColor] = useState("green");
+  const [ringColor, setRingColor] = useState();
+  const [ringOpacity, setRingOpacity] = useState(1);
 
   //REFS
   const intvl = useRef(); //THIS CAME CLUTCH IN MAKING THE TIMER WORK AS INTENTED(STOP AT 00:00),basically allows us to assign and thus call off a setInterval fn in the useeffect.
@@ -48,28 +49,38 @@ export default function Container() {
   });
 
   useEffect(() => {
-    setSeconds(20);
-    setMinutes(0);
+    setSeconds(0);
+    setMinutes(25);
   }, []);
 
   //DYNAMIC CIRCLE LOGIC
   useEffect(() => {
-    setTimeSetInSeconds(sessionLength * 60);
-  }, [sessionLength]);
+    if(status=="session"){
+      setTimeSetInSeconds(sessionLength * 60);
+    }else{
+      setTimeSetInSeconds(breakLength*60)
+    }
+    
+  },[status]);
 
   useEffect(() => {
     setTimeLeftInSeconds(minutes * 60 + seconds);
   });
 
+  //DYNAMIC CIRCLE COLORS LOGIC
   useEffect(() => {
-    if (timeLeftInSeconds <= 10) {
+    if (timeLeftInSeconds == 0) {
+      setRingColor("rgb(0, 50, 75)");
+      setRingOpacity(0.1);
+    } else if (timeLeftInSeconds <= 10) {
       setRingColor("red");
     } else if (timeLeftInSeconds <= 15) {
       setRingColor("orange");
-    }else{
-      setRingColor("green")
+    } else {
+      setRingColor("green");
+      setRingOpacity(1);
     }
-  });
+  }, [timeLeftInSeconds]);
 
   useEffect(() => {
     //starts & run the timer
@@ -245,6 +256,7 @@ export default function Container() {
   DynamicTimerCircle.defaultProps = {
     timeRatioState: timeRatio,
     ringColorState: ringColor,
+    ringOpacityState: ringOpacity,
   };
 
   return (
