@@ -26,7 +26,7 @@ export default function Container() {
   const [status, setStatus] = useState("session");
 
   //HOOKS - time set & left in seconds
-  const [timeSetInSeconds, setTimeSetInSeconds] = useState(25 * 60);
+  const [timeSetInSeconds, setTimeSetInSeconds] = useState();
   const [timeLeftInSeconds, setTimeLeftInSeconds] = useState();
   const [timeRatio, setTimeRatio] = useState(
     (timeLeftInSeconds / timeSetInSeconds) * 282.6,
@@ -61,7 +61,7 @@ export default function Container() {
       setTimeSetInSeconds(breakLength*60)
     }
     
-  },[status]);
+  },[sessionLength,breakLength,status]);
 
   useEffect(() => {
     setTimeLeftInSeconds(minutes * 60 + seconds);
