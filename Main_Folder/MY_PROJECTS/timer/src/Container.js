@@ -7,10 +7,10 @@ import React, { useState, useEffect, useRef } from "react";
 import DynamicTimerCircle from "./components/DynamicTimerCircleComponent";
 
 /*see anais designs
-    -find a way to add gradient with circle border
-    -fix css to align start-refresh buttons
-    -add animated circle around time
+    -fix bug where start-reset gets clipped on my iphone 13pro max
+    -add responsiveness for tablets & landscape modes
     -fancy clock design(rotating down)
+    -find a way to add gradient with circle border
 */
 export default function Container() {
   //HOOKS - break & session components hooks
@@ -60,7 +60,7 @@ export default function Container() {
     }else{
       setTimeSetInSeconds(breakLength*60)
     }
-    
+
   },[sessionLength,breakLength,status]);
 
   useEffect(() => {
