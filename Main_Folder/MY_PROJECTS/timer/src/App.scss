@@ -161,8 +161,6 @@
     width: 50vw;
   }
 
-
-
   #circle {
     display: flex;
     flex-direction: column;
@@ -233,8 +231,7 @@
 
     border-radius: 50%;
     border-width: 0;
-    box-shadow: 1px 1px 5px 1px white, -1px -1px 5px, white, -1px 1px 5px white,
-      1px -1px 5px white;
+    box-shadow: 1px 1px 5px 1px white, -1px -1px 5px, white, -1px 1px 5px white, 1px -1px 5px white;
 
     //background-color: darkblue;
 
@@ -254,7 +251,6 @@
   // .................MEDIA QUERIES..............................
 
   @media screen and (max-width: 576px) {
-
     // for mobile phones
     #container {
       grid-template-areas:
@@ -262,13 +258,13 @@
         // "circle"
         "session"
         "break";
+
       grid-template-columns: 1fr;
     }
 
-        #dynamic-timer-circle-svg {
-          
-          width: 90vw;
-        }
+    #dynamic-timer-circle-svg {
+      width: 90vw;
+    }
 
     #circle {
       margin-top: 10%;

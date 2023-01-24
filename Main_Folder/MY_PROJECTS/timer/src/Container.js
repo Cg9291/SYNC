@@ -28,10 +28,7 @@ export default function Container() {
   //HOOKS - time set & left in seconds
   const [timeSetInSeconds, setTimeSetInSeconds] = useState();
   const [timeLeftInSeconds, setTimeLeftInSeconds] = useState();
-  const [timeRatio, setTimeRatio] = useState(
-    (timeLeftInSeconds / timeSetInSeconds) * 282.6,
-    282.6
-  );
+  const [timeRatio, setTimeRatio] = useState((timeLeftInSeconds / timeSetInSeconds) * 282.6, 282.6);
 
   //HOOKS - aesthetics
   const [timerColor, setTimerColor] = useState({ color: "white" });
@@ -55,13 +52,12 @@ export default function Container() {
 
   //DYNAMIC CIRCLE LOGIC
   useEffect(() => {
-    if(status=="session"){
+    if (status == "session") {
       setTimeSetInSeconds(sessionLength * 60);
-    }else{
-      setTimeSetInSeconds(breakLength*60)
+    } else {
+      setTimeSetInSeconds(breakLength * 60);
     }
-
-  },[sessionLength,breakLength,status]);
+  }, [sessionLength, breakLength, status]);
 
   useEffect(() => {
     setTimeLeftInSeconds(minutes * 60 + seconds);
@@ -160,7 +156,7 @@ export default function Container() {
     }
   };
 
-  let sessionHandler = (event) => {
+  let sessionHandler = event => {
     if (started === false && status !== "session") {
       if (event.target.id == "session-increment" && sessionLength < 60) {
         setSessionLength(sessionLength + 1);
@@ -178,7 +174,7 @@ export default function Container() {
     }
   };
 
-  let breakHandler = (event) => {
+  let breakHandler = event => {
     if (started === false && status !== "break") {
       if (event.target.id == "break-increment" && breakLength < 60) {
         setBreakLength(breakLength + 1);
