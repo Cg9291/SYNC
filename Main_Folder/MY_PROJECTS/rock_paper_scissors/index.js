@@ -1,4 +1,4 @@
-
+// get deis
 let rockImg="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F3bdb2575-9a92-42f8-8472-bb78c7bd118a_720x405.jpeg";
 
 let paperImg="https://cdn.shopify.com/s/files/1/1320/9925/products/REC_TP_5_3x_52b64ff0-b2d4-4787-908a-7085eb3164c0_1120x1120.jpg?v=1610477216";
@@ -38,7 +38,7 @@ function userChoice(id){
 
   let randomNum=Math.floor(Math.random()*3);
   document.getElementById("cpu-img").src=numRef[randomNum];
-  
+
   round++;
 
   if(numRef.indexOf(result)==numRef.length-1 && randomNum==0 ||numRef.indexOf(result)<randomNum){
@@ -48,7 +48,7 @@ function userChoice(id){
   }else{
     document.getElementById("results").innerHTML="Round#: "+round+"<br>"+"It's a tie!!"//tie
   }
-  
+
 }
 
 
@@ -56,7 +56,7 @@ function userChoice(id){
 function randomChoice(){
  let randomNum=Math.floor(Math.random()*3);
  let randomNumCpu=Math.floor(Math.random()*3);
- 
+
 
  document.getElementById("user-img").src=numRef[randomNum];
  document.getElementById("cpu-img").src=numRef[randomNumCpu];

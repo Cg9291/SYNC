@@ -1,4 +1,4 @@
-/*improvements:
+/*TODO:
     -improve randomness by adding a fn that track states, runs the picker functions again if same number is generated consecutively
     -Add smooth transition effect onclick
     -review tweet and tumblr post links..copied the ones from project...should try to find my own from api's
@@ -19,14 +19,14 @@ export default function QuoteBox(props){
     const quoteID=useSelector((state)=>state.quotePickerReducer.quote);
     const colorID=useSelector((state)=>state.quotePickerReducer.color);
 
-    
+
     const dispatch=useDispatch();
-    
+
     const [quoteText,setQuoteText]=useState(quotes[quoteID].quoteText);
     const [authorText,setAuthorText]=useState("- "+quotes[quoteID].quoteAuthor);
     const [themeColor,setThemeColor]=useState(themeColors[colorID]);
 
-    
+
     const handleClick=()=>{
         dispatch(quoteAction());
         if(stateTrackingObject.quotes.indexOf(quoteID)>=0){
@@ -35,7 +35,7 @@ export default function QuoteBox(props){
         else{
             stateTrackingObject.quotes.push(quoteID);
         }
-        
+
     }
 
     useEffect(()=>{
@@ -47,9 +47,9 @@ export default function QuoteBox(props){
     return(
         <div id="wrapper" style={{backgroundColor:themeColor}}>
             <div id="quote-box">
-                <div id="text" style={{color:themeColor}}> 
+                <div id="text" style={{color:themeColor}}>
                     {JSON.stringify(stateTrackingObject.quotes)}{/*used for randomness tracking}*/}
-                    {quoteText} 
+                    {quoteText}
                 </div>
                 <div id="author" style={{color:themeColor}}>
                     {authorText}
@@ -65,7 +65,7 @@ export default function QuoteBox(props){
                     </div>
                     <button type="button" id="new-quote" style={{backgroundColor:themeColor}} onClick={handleClick}>
                         New Quote
-                    </button>      
+                    </button>
                 </div>
             </div>
         </div>
