@@ -5,7 +5,19 @@
 .App {
   .colorTransition{
       transition: background-color 1s, color 1s;
+      animation: blinker 4s linear;
     }
+    @keyframes blinker {
+  0% {
+    opacity: 1;
+  }
+  10%{
+    opacity: 0;
+  }
+  70%{
+    opacity: 100;
+  }
+}
   #wrapper{
     opacity: 1;
     //border:solid blue;

@@ -1,6 +1,7 @@
 /*TODOS:
     -improve randomness by adding a fn that track states, runs the picker functions again if same number is generated consecutively
-    -Add smooth transition effect onclick
+    -smoothen text transition
+    -remove blink effect of everything but text
     -review tweet and tumblr post links..copied the ones from project...should try to find my own from api's
 */
 
@@ -48,6 +49,7 @@ export default function QuoteBox(props) {
         <div
           id="text"
           className="colorTransition"
+          key={quoteText}
           style={{ color: themeColor }}
         >
           {JSON.stringify(stateTrackingObject.quotes)}
