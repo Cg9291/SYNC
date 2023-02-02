@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500');
 
 
-.App {
+
 .App {
   .colorTransition{
       transition: color 1s ease-out,opacity 1s;
@@ -154,5 +154,4 @@
   to {
     transform: rotate(360deg);
   }
-}
 }

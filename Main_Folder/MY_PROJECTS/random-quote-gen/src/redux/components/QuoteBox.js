@@ -27,12 +27,6 @@ export default function QuoteBox(props) {
   const [authorText, setAuthorText] = useState("- " + quotes[quoteID].quoteAuthor);
   const [themeColor, setThemeColor] = useState(themeColors[colorID]);
 
-    const dispatch=useDispatch();
-
-    const [quoteText,setQuoteText]=useState(quotes[quoteID].quoteText);
-    const [authorText,setAuthorText]=useState("- "+quotes[quoteID].quoteAuthor);
-    const [themeColor,setThemeColor]=useState(themeColors[colorID]);
-
 
     const handleClick=()=>{
         setTimeout(()=>{dispatch(quoteAction())},3000);
