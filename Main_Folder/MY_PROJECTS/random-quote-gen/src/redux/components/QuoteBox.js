@@ -20,23 +20,24 @@ export default function QuoteBox(props) {
   const colorID = useSelector(state => state.quotePickerReducer.color);
 
   const dispatch = useDispatch();
-  const [animationProp,setAnimationProp]=('');
-  const [animClass,setAnimClass]=useState(false)
-  const delayRef=useRef();
+  const [animationProp, setAnimationProp] = "";
+  const [animClass, setAnimClass] = useState(false);
+  const delayRef = useRef();
 
   const [quoteText, setQuoteText] = useState(quotes[quoteID].quoteText);
   const [authorText, setAuthorText] = useState("- " + quotes[quoteID].quoteAuthor);
   const [themeColor, setThemeColor] = useState(themeColors[colorID]);
 
+  const handleClick = () => {
+    setAnimClass(true);
+    setTimeout(() => {
+      dispatch(quoteAction());
+    }, 1000);
+    setTimeout(() => {
+      setAnimClass(false);
+    }, 2000);
 
-    const handleClick=()=>{
-        setAnimClass(true);
-        setTimeout(()=>{dispatch(quoteAction())},1000);
-        setTimeout(() => {
-          setAnimClass(false)
-        }, 2000);
-
-       /* BELOW IS CODE USED TO IMPROVE RANDOMNESS
+    /* BELOW IS CODE USED TO IMPROVE RANDOMNESS
         if(stateTrackingObject.quotes.indexOf(quoteID)>=0){
             dispatch(quoteAction());
         }
@@ -66,8 +67,14 @@ export default function QuoteBox(props) {
           // key={quoteText}
           style={{ color: themeColor, animation: animationProp }}
         >
-          {JSON.stringify(stateTrackingObject.quotes)}
+          {/* {JSON.stringify(stateTrackingObject.quotes)} */}
           {/*used for randomness tracking}*/}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 440 512"
+          >
+            <path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z" />
+          </svg>
           {quoteText}
         </div>
         <div
@@ -101,7 +108,7 @@ export default function QuoteBox(props) {
           <button
             type="button"
             id="new-quote"
-            className="colorTransition"
+            className="bgColorTransition"
             style={{ backgroundColor: themeColor }}
             onClick={handleClick}
           >

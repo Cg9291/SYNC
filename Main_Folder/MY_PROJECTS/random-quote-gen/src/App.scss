@@ -4,9 +4,15 @@
 
 
 .App {
+  svg{
+    width: 20%;
+    height: 20%;
+    padding: 0;
+    border:solid yellow
+  }
   .colorTransition{
       //transition: color 1s ease-out,opacity 1s;
-      animation: blinker 2s ;
+      animation: blinker 2s  ease-out;
     }
     @keyframes blinker {
   /* 0% {
@@ -20,7 +26,7 @@
   }
 }
 .bgColorTransition{
-  transition: background-color s
+  transition: background-color 1s
 }
   #wrapper{
     opacity: 1;
@@ -53,7 +59,7 @@
         min-width: 80%;
         max-width: 80%;
         margin-top:2.063rem;
-        font-size: 30px;
+        font-size: 170%;
         font-weight: 500;
         //border:dotted variables.$red-color;
         color:variables.$theme-color;
