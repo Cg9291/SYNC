@@ -4,12 +4,12 @@
 
 .App {
   .colorTransition{
-      transition: background-color 1s, color 1s;
-      animation: blinker 4s linear;
+      transition: color 1s ease-out,opacity 1s;
+      //animation: blinker 4s ease-out ;
     }
     @keyframes blinker {
   0% {
-    opacity: 1;
+    opacity: 0;
   }
   10%{
     opacity: 0;
@@ -17,6 +17,9 @@
   70%{
     opacity: 100;
   }
+}
+.bgColorTransition{
+  transition: background-color 1s
 }
   #wrapper{
     opacity: 1;

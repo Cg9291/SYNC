@@ -13,24 +13,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTumblr, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import quoteAction from "../actions/quoteAction.js";
 import stateTrackingObject from "../objects/stateTracking.js";
+import { useRef } from "react";
 
 export default function QuoteBox(props) {
   const quoteID = useSelector(state => state.quotePickerReducer.quote);
   const colorID = useSelector(state => state.quotePickerReducer.color);
 
   const dispatch = useDispatch();
+  const [animationProp,setAnimationProp]=('');
+  const delayRef=useRef();
 
   const [quoteText, setQuoteText] = useState(quotes[quoteID].quoteText);
   const [authorText, setAuthorText] = useState("- " + quotes[quoteID].quoteAuthor);
   const [themeColor, setThemeColor] = useState(themeColors[colorID]);
 
   const handleClick = () => {
-    dispatch(quoteAction());
-    if (stateTrackingObject.quotes.indexOf(quoteID) >= 0) {
-      dispatch(quoteAction());
-    } else {
-      stateTrackingObject.quotes.push(quoteID);
-    }
+    //dispatch(quoteAction());
+    //setAnimationProp("blinker 1s ease-out");
+    delayRef.current=setTimeout(() => {
+      if (stateTrackingObject.quotes.indexOf(quoteID) >= 0) {
+        dispatch(quoteAction());
+      } else {
+        stateTrackingObject.quotes.push(quoteID);
+      }
+    }, 500);
+
+    //clearTimeout(delayRef.current)
   };
 
   useEffect(() => {
@@ -42,7 +50,7 @@ export default function QuoteBox(props) {
   return (
     <div
       id="wrapper"
-      className="colorTransition"
+      className="bgColorTransition"
       style={{ backgroundColor: themeColor }}
     >
       <div id="quote-box">
@@ -50,7 +58,7 @@ export default function QuoteBox(props) {
           id="text"
           className="colorTransition"
           key={quoteText}
-          style={{ color: themeColor }}
+          style={{ color: themeColor , animation:animationProp}}
         >
           {JSON.stringify(stateTrackingObject.quotes)}
           {/*used for randomness tracking}*/}
@@ -67,7 +75,7 @@ export default function QuoteBox(props) {
           <div>
             <a
               id="tweet-quote"
-              className="bg-sync colorTransition"
+              className="bg-sync bgColorTransition"
               target="_top"
               href="https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=%22An%20unexamined%20life%20is%20not%20worth%20living.%22%20Socrates"
               style={{ backgroundColor: themeColor }}
@@ -76,7 +84,7 @@ export default function QuoteBox(props) {
             </a>
             <a
               id="tumblr-quote"
-              className="bg-sync colorTransition"
+              className="bg-sync bgColorTransition"
               target="_blank"
               href="https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=Stephen%20Covey&content=I%20am%20not%20a%20product%20of%20my%20circumstances.%20I%20am%20a%20product%20of%20my%20decisions.&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button"
               style={{ backgroundColor: themeColor }}
