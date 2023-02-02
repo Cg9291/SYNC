@@ -1,7 +1,7 @@
 /*TODOS:
-    -improve randomness by adding a fn that track states, runs the picker functions again if same number is generated consecutively
+    -improve randomness by adding a fn that track states, runs the picker functions again if same number is generated consecutively or could be improved by adding more color options
     -smoothen text transition
-    -remove blink effect of everything but text
+    -Fix sizing,position and color of quote SVG
     -review tweet and tumblr post links..copied the ones from project...should try to find my own from api's
 */
 
@@ -70,6 +70,7 @@ export default function QuoteBox(props) {
           {/* {JSON.stringify(stateTrackingObject.quotes)} */}
           {/*used for randomness tracking}*/}
           <svg
+            className="quoteSvg"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 440 512"
           >
