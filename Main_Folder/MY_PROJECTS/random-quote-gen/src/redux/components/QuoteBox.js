@@ -21,6 +21,7 @@ export default function QuoteBox(props) {
 
   const dispatch = useDispatch();
   const [animationProp,setAnimationProp]=('');
+  const [animClass,setAnimClass]=useState(false)
   const delayRef=useRef();
 
   const [quoteText, setQuoteText] = useState(quotes[quoteID].quoteText);
@@ -29,7 +30,12 @@ export default function QuoteBox(props) {
 
 
     const handleClick=()=>{
-        setTimeout(()=>{dispatch(quoteAction())},3000);
+        setAnimClass(true);
+        setTimeout(()=>{dispatch(quoteAction())},1000);
+        setTimeout(() => {
+          setAnimClass(false)
+        }, 2000);
+
        /* BELOW IS CODE USED TO IMPROVE RANDOMNESS
         if(stateTrackingObject.quotes.indexOf(quoteID)>=0){
             dispatch(quoteAction());
@@ -56,9 +62,9 @@ export default function QuoteBox(props) {
       <div id="quote-box">
         <div
           id="text"
-          className="colorTransition"
-          key={quoteText}
-          style={{ color: themeColor , animation:animationProp}}
+          className={animClass ? "colorTransition" : null}
+          // key={quoteText}
+          style={{ color: themeColor, animation: animationProp }}
         >
           {JSON.stringify(stateTrackingObject.quotes)}
           {/*used for randomness tracking}*/}
@@ -66,7 +72,7 @@ export default function QuoteBox(props) {
         </div>
         <div
           id="author"
-          className="colorTransition"
+          className={animClass ? "colorTransition" : null}
           style={{ color: themeColor }}
         >
           {authorText}
