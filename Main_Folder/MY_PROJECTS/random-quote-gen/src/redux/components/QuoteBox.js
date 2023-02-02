@@ -28,13 +28,14 @@ export default function QuoteBox(props){
 
 
     const handleClick=()=>{
-        dispatch(quoteAction());
+        setTimeout(()=>{dispatch(quoteAction())},3000);
+       /* BELOW IS CODE USED TO IMPROVE RANDOMNESS
         if(stateTrackingObject.quotes.indexOf(quoteID)>=0){
             dispatch(quoteAction());
         }
         else{
             stateTrackingObject.quotes.push(quoteID);
-        }
+        } */
 
     }
 

@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500');
 
 
-.App { 
+.App {
   #wrapper{
     opacity: 1;
     //border:solid blue;
@@ -15,6 +15,7 @@
     height: 100vh;
     font-family: 'Raleway';
     flex-direction: column;
+    transition: background-color 5s ease;
     #quote-box{
       display: flex;
       flex-direction: column;
@@ -27,7 +28,7 @@
       //border:solid yellow;
       border-radius: 1%;
       background-color: white;
-      
+
       #text{
         align-self: center;
         height: fit-content;
@@ -49,7 +50,7 @@
         //border:dotted red;
         color:variables.$theme-color;
       }
-      
+
 
       #footer-row{
         display: flex;
@@ -95,8 +96,8 @@
       }
     }
   }
-  
-  
+
+
 
 
 
