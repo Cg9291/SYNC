@@ -3,6 +3,25 @@
 
 
 .App {
+.App {
+  .colorTransition{
+      transition: color 1s ease-out,opacity 1s;
+      //animation: blinker 4s ease-out ;
+    }
+    @keyframes blinker {
+  0% {
+    opacity: 0;
+  }
+  10%{
+    opacity: 0;
+  }
+  70%{
+    opacity: 100;
+  }
+}
+.bgColorTransition{
+  transition: background-color 1s
+}
   #wrapper{
     opacity: 1;
     //border:solid blue;
@@ -15,7 +34,6 @@
     height: 100vh;
     font-family: 'Raleway';
     flex-direction: column;
-    transition: background-color 5s ease;
     #quote-box{
       display: flex;
       flex-direction: column;
@@ -136,4 +154,5 @@
   to {
     transform: rotate(360deg);
   }
+}
 }
