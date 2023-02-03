@@ -20,9 +20,7 @@ export default function QuoteBox(props) {
   const colorID = useSelector(state => state.colorPickerReducer.color);
 
   const dispatch = useDispatch();
-  const [animationProp, setAnimationProp] = "";
   const [animClass, setAnimClass] = useState(false);
-  const delayRef = useRef();
 
   const [quoteText, setQuoteText] = useState(quotes[quoteID].quoteText);
   const [authorText, setAuthorText] = useState("- " + quotes[quoteID].quoteAuthor);
@@ -69,7 +67,7 @@ export default function QuoteBox(props) {
           id="text"
           className={animClass ? "colorTransition" : null}
           // key={quoteText}
-          style={{ color: themeColor, animation: animationProp }}
+          style={{ color: themeColor}}
         >
           {/* {JSON.stringify(stateTrackingObject.quotes)} */}
           {/*used for randomness tracking}*/}
