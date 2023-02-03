@@ -1,125 +1,120 @@
-@use './variables';
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,500');
-
-
+@use "./variables";
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500");
 
 .App {
-  .colorTransition{
-      //transition: color 1s ease-out,opacity 1s;
-      animation: blinker 2s  ease-out;
-    }
-    @keyframes blinker {
-  /* 0% {
+  .colorTransition {
+    //transition: color 1s ease-out,opacity 1s;
+    animation: blinker 2s ;
+  }
+  @keyframes blinker {
+    /* 0% {
     opacity: 0;
   } */
-  50%{
-    opacity: 0;
+
+    25% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100;
+    }
   }
-  100%{
-    opacity: 100;
+  .bgColorTransition {
+    transition: background-color 2s;
   }
-}
-.bgColorTransition{
-  transition: background-color 1s
-}
-  #wrapper{
+  #wrapper {
     opacity: 1;
     //border:solid blue;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color:white;
+    background-color: white;
     width: 100vw;
     height: 100vh;
-    font-family: 'Raleway';
+    font-family: "Raleway";
     flex-direction: column;
-    #quote-box{
+    #quote-box {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       height: fit-content;
       width: fit-content;
-      min-height:fit-content;
+      min-height: fit-content;
       min-width: 550px;
       max-width: 550px;
       //border:solid yellow;
       border-radius: 1%;
       background-color: white;
 
-      #text{
+      #text {
         align-self: center;
         height: fit-content;
         min-width: 80%;
         max-width: 80%;
-        margin-top:2.063rem;
+        margin-top: 2.063rem;
         font-size: 170%;
         font-weight: 500;
         //border:dotted variables.$red-color;
-        color:variables.$theme-color;
+        color: variables.$theme-color;
       }
-      #author{
-        display:flex;
+      #author {
+        display: flex;
         justify-content: end;
         align-self: center;
         margin-top: 1rem;
         min-width: 80%;
         max-width: 80%;
         //border:dotted red;
-        color:variables.$theme-color;
+        color: variables.$theme-color;
       }
 
-
-      #footer-row{
+      #footer-row {
         display: flex;
         justify-content: space-between;
         align-self: center;
-        width:80%;
-        padding:0;
+        width: 80%;
+        padding: 0;
         margin-top: 30px;
         margin-bottom: 40px;
         //border:dotted blue;
-        div{
+        div {
           display: flex;
           justify-content: start;
-          .bg-sync{
+          .bg-sync {
             width: 40px;
-            height:38px;
-            border:none;
+            height: 38px;
+            border: none;
             border-radius: 10%;
-            color:white;
-            background-color:variables.$theme-color;
+            color: white;
+            background-color: variables.$theme-color;
             margin-right: 5px;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 0;
           }
-          }
-      }
-        #new-quote{
-          justify-self: end;
-          width: 101px;
-          height: 38px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color:white;
-          border-radius: 5%;
-          border: none;
-          font-weight: 500;
-          text-decoration: none;
-          background-color:variables.$theme-color;
         }
+      }
+      #new-quote {
+        justify-self: end;
+        width: 101px;
+        height: 38px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: 5%;
+        border: none;
+        font-weight: 500;
+        text-decoration: none;
+        background-color: variables.$theme-color;
       }
     }
   }
-
-
-
-
-
-
+}
 
 .App-logo {
   height: 40vmin;

@@ -1,7 +1,7 @@
 /*TODOS:
-    -improve randomness by adding a fn that track states, runs the picker functions again if same number is generated consecutively or could be improved by adding more color options
-    -smoothen text transition
-    -review tweet and tumblr post links..copied the ones from project...should try to find my own from api's
+    -**Maybe add animantion that shrinks text size on click and extends it back to normal at end of animation
+    -**improve randomness by adding a fn that track states, runs the picker functions again if same number is generated consecutively or could be improved by adding more color options
+    -**review tweet and tumblr post links..copied the ones from project...should try to find my own from api's
 */
 
 import quotes from "../objects/quotes.js";
@@ -11,12 +11,13 @@ import { useDispatch, useSelector, useStore } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTumblr, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import quoteAction from "../actions/quoteAction.js";
+import colorAction from "../actions/colorAction.js";
 import stateTrackingObject from "../objects/stateTracking.js";
 import { useRef } from "react";
 
 export default function QuoteBox(props) {
   const quoteID = useSelector(state => state.quotePickerReducer.quote);
-  const colorID = useSelector(state => state.quotePickerReducer.color);
+  const colorID = useSelector(state => state.colorPickerReducer.color);
 
   const dispatch = useDispatch();
   const [animationProp, setAnimationProp] = "";
@@ -30,11 +31,15 @@ export default function QuoteBox(props) {
   const handleClick = () => {
     setAnimClass(true);
     setTimeout(() => {
+      dispatch(colorAction());
+    }, 200);
+
+    setTimeout(() => {
       dispatch(quoteAction());
-    }, 1000);
+    }, 500);
     setTimeout(() => {
       setAnimClass(false);
-    }, 2000);
+    }, 2100);
 
     /* BELOW IS CODE USED TO IMPROVE RANDOMNESS
         if(stateTrackingObject.quotes.indexOf(quoteID)>=0){
@@ -75,8 +80,10 @@ export default function QuoteBox(props) {
             height="1.35rem"
             viewBox="100 100 200 320"
           >
-            <path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z"
-            fill={themeColor}/>
+            <path
+              d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z"
+              fill={themeColor}
+            />
           </svg>
           {quoteText}
         </div>
@@ -85,7 +92,9 @@ export default function QuoteBox(props) {
           className={animClass ? "colorTransition" : null}
           style={{ color: themeColor }}
         >
-          {authorText}
+          <i>
+            <b> - {authorText} </b>
+          </i>
         </div>
         <div id="footer-row">
           <div>

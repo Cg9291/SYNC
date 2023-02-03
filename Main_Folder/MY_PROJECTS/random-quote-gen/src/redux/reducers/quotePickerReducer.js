@@ -2,7 +2,7 @@ const quotePickerReducer=(state={quote:Math.floor(Math.random()*(12-0)+0),color:
     switch(action.type){
         case "NEWQUOTE":
             return {quote:action.index,
-                    color:action.colorNum};
+                    /*color:action.colorNum*/};
         default:
             return state;
     }
