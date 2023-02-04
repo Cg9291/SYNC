@@ -48,7 +48,7 @@ export default function Buttons() {
       setTimeout(() => {
         buttonRefs.current.Q.className = btnDefaultClass;
       }, 100);
-      setPlaying(Q.current.parentNode.id);
+      setPlaying(buttonRefs.current.Q.id);
     } else if (event.key.toUpperCase() === "W") {
       W.current.play();
       W.current.volume = volume / 100;
@@ -56,7 +56,7 @@ export default function Buttons() {
       setTimeout(() => {
         buttonRefs.current.W.className = btnDefaultClass;
       }, 100);
-      setPlaying(W.current.parentNode.id);
+      setPlaying(buttonRefs.current.W.id);
     } else if (event.key.toUpperCase() === "E") {
       E.current.play();
       E.current.volume = volume / 100;
@@ -64,7 +64,7 @@ export default function Buttons() {
       setTimeout(() => {
         buttonRefs.current.E.className = btnDefaultClass;
       }, 100);
-      setPlaying(E.current.parentNode.id);
+      setPlaying(buttonRefs.current.E.id);
     } else if (event.key.toUpperCase() === "A") {
       A.current.play();
       A.current.volume = volume / 100;
@@ -72,7 +72,7 @@ export default function Buttons() {
       setTimeout(() => {
         buttonRefs.current.A.className = btnDefaultClass;
       }, 100);
-      setPlaying(A.current.parentNode.id);
+      setPlaying(buttonRefs.current.A.id);
     } else if (event.key.toUpperCase() === "S") {
       S.current.play();
       S.current.volume = volume / 100;
@@ -80,7 +80,7 @@ export default function Buttons() {
       setTimeout(() => {
         buttonRefs.current.S.className = btnDefaultClass;
       }, 100);
-      setPlaying(S.current.parentNode.id);
+      setPlaying(buttonRefs.current.S.id);
     } else if (event.key.toUpperCase() === "D") {
       D.current.play();
       D.current.volume = volume / 100;
@@ -88,7 +88,7 @@ export default function Buttons() {
       setTimeout(() => {
         buttonRefs.current.D.className = btnDefaultClass;
       }, 100);
-      setPlaying(D.current.parentNode.id);
+      setPlaying(buttonRefs.current.D.id);
     } else if (event.key.toUpperCase() === "Z") {
       Z.current.play();
       Z.current.volume = volume / 100;
@@ -96,7 +96,7 @@ export default function Buttons() {
       setTimeout(() => {
         buttonRefs.current.Z.className = btnDefaultClass;
       }, 100);
-      setPlaying(Z.current.parentNode.id);
+      setPlaying(buttonRefs.current.Z.id);
     } else if (event.key.toUpperCase() === "X") {
       X.current.play();
       X.current.volume = volume / 100;
@@ -104,7 +104,7 @@ export default function Buttons() {
       setTimeout(() => {
         buttonRefs.current.X.className = btnDefaultClass;
       }, 100);
-      setPlaying(X.current.parentNode.id);
+      setPlaying(buttonRefs.current.X.id);
     } else if (event.key.toUpperCase() === "C") {
       C.current.play();
       C.current.volume = volume / 100;
@@ -112,7 +112,7 @@ export default function Buttons() {
       setTimeout(() => {
         buttonRefs.current.C.className = btnDefaultClass;
       }, 100);
-      setPlaying(C.current.parentNode.id);
+      setPlaying(buttonRefs.current.C.id);
     }
   }
 
