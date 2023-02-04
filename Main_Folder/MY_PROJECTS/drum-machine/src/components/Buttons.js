@@ -14,7 +14,9 @@ import kick_Sound from "../audio/kick.mp3";
 import open_HH_Sound from "../audio/open - HH.mp3";
 
 export default function Buttons() {
-  const buttonRefs = useRef([]); //using refcallback to target specific node/element
+  const buttonRefs = useRef([]); //using REFCALLBACK to target specific node/element
+
+  const audioRefs = useRef([]);
 
   const Q = useRef();
   const W = useRef();
@@ -42,72 +44,72 @@ export default function Buttons() {
   function handleKeyPress(event) {
     const btnDefaultClass = buttonRefs.current.Q.className;
     if (event.key.toUpperCase() === "Q") {
-      Q.current.play();
-      Q.current.volume = volume / 100;
+      audioRefs.current.Q.play();
+      audioRefs.current.Q.volume = volume / 100;
       buttonRefs.current.Q.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.Q.className = btnDefaultClass;
       }, 100);
       setPlaying(buttonRefs.current.Q.id);
     } else if (event.key.toUpperCase() === "W") {
-      W.current.play();
-      W.current.volume = volume / 100;
+      audioRefs.current.W.play();
+      audioRefs.current.W.volume = volume / 100;
       buttonRefs.current.W.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.W.className = btnDefaultClass;
       }, 100);
       setPlaying(buttonRefs.current.W.id);
     } else if (event.key.toUpperCase() === "E") {
-      E.current.play();
-      E.current.volume = volume / 100;
+      audioRefs.current.E.play();
+      audioRefs.current.E.volume = volume / 100;
       buttonRefs.current.E.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.E.className = btnDefaultClass;
       }, 100);
       setPlaying(buttonRefs.current.E.id);
     } else if (event.key.toUpperCase() === "A") {
-      A.current.play();
-      A.current.volume = volume / 100;
+      audioRefs.current.A.play();
+      audioRefs.current.A.volume = volume / 100;
       buttonRefs.current.A.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.A.className = btnDefaultClass;
       }, 100);
       setPlaying(buttonRefs.current.A.id);
     } else if (event.key.toUpperCase() === "S") {
-      S.current.play();
-      S.current.volume = volume / 100;
+      audioRefs.current.S.play();
+      audioRefs.current.S.volume = volume / 100;
       buttonRefs.current.S.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.S.className = btnDefaultClass;
       }, 100);
       setPlaying(buttonRefs.current.S.id);
     } else if (event.key.toUpperCase() === "D") {
-      D.current.play();
-      D.current.volume = volume / 100;
+      audioRefs.current.D.play();
+      audioRefs.current.D.volume = volume / 100;
       buttonRefs.current.D.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.D.className = btnDefaultClass;
       }, 100);
       setPlaying(buttonRefs.current.D.id);
     } else if (event.key.toUpperCase() === "Z") {
-      Z.current.play();
-      Z.current.volume = volume / 100;
+      audioRefs.current.Z.play();
+      audioRefs.current.Z.volume = volume / 100;
       buttonRefs.current.Z.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.Z.className = btnDefaultClass;
       }, 100);
       setPlaying(buttonRefs.current.Z.id);
     } else if (event.key.toUpperCase() === "X") {
-      X.current.play();
-      X.current.volume = volume / 100;
+      audioRefs.current.X.play();
+      audioRefs.current.X = volume / 100;
       buttonRefs.current.X.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.X.className = btnDefaultClass;
       }, 100);
       setPlaying(buttonRefs.current.X.id);
     } else if (event.key.toUpperCase() === "C") {
-      C.current.play();
-      C.current.volume = volume / 100;
+      audioRefs.current.C.play();
+      audioRefs.current.C = volume / 100;
       buttonRefs.current.C.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.C.className = btnDefaultClass;
@@ -162,7 +164,7 @@ export default function Buttons() {
                 src={clap_Sound}
                 className="clip"
                 id="Q"
-                ref={Q}
+                ref={ref => (audioRefs.current.Q = ref)}
               >
                 Your browser does not support this type of file.
               </audio>
@@ -180,7 +182,7 @@ export default function Buttons() {
                 src={closed_HH_Sound}
                 className="clip"
                 id="W"
-                ref={W}
+                ref={ref => (audioRefs.current.W = ref)}
               >
                 Your browser does not support this type of file.
               </audio>
@@ -198,7 +200,7 @@ export default function Buttons() {
                 src={heater_1_Sound}
                 className="clip"
                 id="E"
-                ref={E}
+                ref={ref => (audioRefs.current.E = ref)}
               >
                 Your browser does not support this type of file.
               </audio>
@@ -218,7 +220,7 @@ export default function Buttons() {
                 src={heater_2_Sound}
                 className="clip"
                 id="A"
-                ref={A}
+                ref={ref => (audioRefs.current.A = ref)}
               >
                 Your browser does not support this type of file.
               </audio>
@@ -236,7 +238,7 @@ export default function Buttons() {
                 src={heater_3_Sound}
                 className="clip"
                 id="S"
-                ref={S}
+                ref={ref => (audioRefs.current.S = ref)}
               >
                 Your browser does not support this type of file.
               </audio>
@@ -254,7 +256,7 @@ export default function Buttons() {
                 src={heater_4_Sound}
                 className="clip"
                 id="D"
-                ref={D}
+                ref={ref => (audioRefs.current.D = ref)}
               >
                 Your browser does not support this type of file.
               </audio>
@@ -274,7 +276,7 @@ export default function Buttons() {
                 src={kick_n_hat_Sound}
                 className="clip"
                 id="Z"
-                ref={Z}
+                ref={ref => (audioRefs.current.Z = ref)}
               >
                 Your browser does not support this type of file.
               </audio>
@@ -292,7 +294,7 @@ export default function Buttons() {
                 src={kick_Sound}
                 className="clip"
                 id="X"
-                ref={X}
+                ref={ref => (audioRefs.current.X = ref)}
               >
                 Your browser does not support this type of file.
               </audio>
@@ -310,7 +312,7 @@ export default function Buttons() {
                 src={open_HH_Sound}
                 className="clip"
                 id="C"
-                ref={C}
+                ref={ref => (audioRefs.current.C = ref)}
               >
                 Your browser does not support this type of file.
               </audio>
