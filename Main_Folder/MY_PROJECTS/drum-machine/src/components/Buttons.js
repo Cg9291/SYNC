@@ -15,7 +15,7 @@ import kick_n_hat_Sound from "../audio/basic sounds/kick_n_Hat.mp3";
 import kick_Sound from "../audio/basic sounds/kick.mp3";
 import open_HH_Sound from "../audio/basic sounds/open - HH.mp3";
 import sax from "../audio/Midnight Sillage Kit/Sax_Midnight_Sillage.mp3"
-import electric_guitar_01 from "../audio/Midnight Sillage Kit/Electric Guitar 01 - Midnight Sillage.aif"
+ import electric_guitar_01 from "../audio/Midnight Sillage Kit/Electric Guitar 01 - Midnight Sillage.mp3"
 import kick from "../audio/Midnight Sillage Kit/Electric Piano 01 - Midnight Sillage.mp3"
 
 export default function Buttons() {
