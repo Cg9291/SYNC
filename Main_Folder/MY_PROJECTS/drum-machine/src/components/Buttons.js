@@ -198,20 +198,20 @@ export default function Buttons() {
                 />
               </svg>
             </div>
-            <div className="d-flex flex-column col-10 mx-auto p-0 bg-dark">
+            {/* <div className="d-flex flex-column col-10 mx-auto p-0 bg-dark">
               <div className="row h-25 col-12 m-0 p-0 flex-grow-1">
                 <div className="d-flex justify-content-between h-25 col-12 m-0 p-0"></div>
               </div>
-              {/*<div className="d-flex h-75 m-0 p-0  justify-content-center align-items-start bg-primary">*/}
-            </div>
+              {/*<div className="d-flex h-75 m-0 p-0  justify-content-center align-items-start bg-primary">
+            </div> */}
             <div
               id="pad"
-              className="row bg-dark" /*style={{border:'solid blue'}}*/
+              className="container-fluid d-flex flex-column justify-content-center h-50 mt-5" /*style={{border:'solid blue'}}*/
             >
-              <div className="row justify-content-center">
+              <div className="row pad-row justify-content-center w-100 mb-2 g-0 ">
                 <button
                   id="Clap"
-                  className="drum-pad col-4 btn btn-dark m-2"
+                  className="drum-pad col-3 btn btn-dark m-2 border border-warning g-0"
                   ref={ref => (buttonRefs.current.Q = ref)}
                   onClick={playSound}
                   //onKeyDown={()=>buttonRefs.qParent.style.color='red'}
@@ -231,7 +231,7 @@ export default function Buttons() {
 
                 <button
                   id="Closed HH"
-                  className="drum-pad col-4 btn btn-dark m-2"
+                  className="drum-pad col-3 btn btn-dark m-2"
                   ref={ref => (buttonRefs.current.W = ref)}
                   onClick={playSound}
                   style={{ boxShadow: "2px 5px blue" }}
@@ -249,7 +249,7 @@ export default function Buttons() {
 
                 <button
                   id="Heater 1"
-                  className="drum-pad col-4 btn btn-dark m-2"
+                  className="drum-pad col-3 btn btn-dark m-2"
                   ref={ref => (buttonRefs.current.E = ref)}
                   onClick={playSound}
                   style={{ boxShadow: "2px 5px green" }}
@@ -264,9 +264,27 @@ export default function Buttons() {
                     Your browser does not support this type of file.
                   </audio>
                 </button>
+
+                <button
+                  id="#"
+                  className="drum-pad col-3  btn btn-dark m-2"
+                  ref={ref => (buttonRefs.current.R = ref)}
+                  onClick={playSound}
+                  style={{ boxShadow: "2px 5px green" }}
+                >
+                  R
+                  <audio
+                    src={heater_1_Sound}
+                    className="clip"
+                    id="R"
+                    ref={ref => (audioRefs.current.R = ref)}
+                  >
+                    Your browser does not support this type of file.
+                  </audio>
+                </button>
               </div>
 
-              <div className="row justify-content-center">
+              <div className="row justify-content-center mb-2">
                 <button
                   id="Heater 2"
                   className="drum-pad col-4 btn btn-dark m-2"
@@ -316,6 +334,23 @@ export default function Buttons() {
                     className="clip"
                     id="D"
                     ref={ref => (audioRefs.current.D = ref)}
+                  >
+                    Your browser does not support this type of file.
+                  </audio>
+                </button>
+                <button
+                  id="#"
+                  className="drum-pad col-4 btn btn-dark m-2"
+                  ref={ref => (buttonRefs.current.F = ref)}
+                  onClick={playSound}
+                  style={{ boxShadow: "2px 5px green" }}
+                >
+                  F
+                  <audio
+                    src={heater_1_Sound}
+                    className="clip"
+                    id="F"
+                    ref={ref => (audioRefs.current.F = ref)}
                   >
                     Your browser does not support this type of file.
                   </audio>
@@ -376,6 +411,23 @@ export default function Buttons() {
                     Your browser does not support this type of file.
                   </audio>
                 </button>
+                <button
+                  id="#"
+                  className="drum-pad col-4 btn btn-dark m-2"
+                  ref={ref => (buttonRefs.current.V = ref)}
+                  onClick={playSound}
+                  style={{ boxShadow: "2px 5px green" }}
+                >
+                  V
+                  <audio
+                    src={heater_1_Sound}
+                    className="clip"
+                    id="V"
+                    ref={ref => (audioRefs.current.V = ref)}
+                  >
+                    Your browser does not support this type of file.
+                  </audio>
+                </button>
               </div>
             </div>
 
@@ -384,7 +436,7 @@ export default function Buttons() {
               className="row d-flex  m-0 p-0  justify-content-center bg-warning col-6 border border-dark fs-3 fw-bold align-items-center mx-auto my-auto flex-grow"
               style={{ minHeight: "65px" /*alignSelf:"center"*/ }}
             >
-              {playing}
+              <div className="col-11 border border-dark ">{playing}</div>
             </div>
 
             <div className="row h-25 flex-grow-1  col-12 m-0 p-0"></div>
