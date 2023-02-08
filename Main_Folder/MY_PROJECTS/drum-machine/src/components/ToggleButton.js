@@ -2,7 +2,7 @@ import { useState } from "react";
 import '../ToggleButtons.scss'
 
 export default function ToggleButton(props){
-    
+
 
     const switchToggle=()=>{
         if (props.toggle){
@@ -12,7 +12,7 @@ export default function ToggleButton(props){
         }
     }
 
-    
+
 
     if(props.toggle){
         return(
