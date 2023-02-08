@@ -174,9 +174,12 @@ export default function Buttons() {
             /*  height="50px" */
             className=" vh-100 container mx-0 p-0 bg-black"
           >
-            <div className="row border " id="indicators-row">
+            <div
+              className="row border mw-100 m-0 p-0 mb-2 justify-content-between"
+              id="indicators-row"
+            >
               <ToggleButton
-              className="col-1"
+                className="col-1"
                 toggle={toggle}
                 setToggle={setToggle}
                 playing={playing}
@@ -185,7 +188,7 @@ export default function Buttons() {
 
               <svg
                 viewBox="0 0 100 100"
-                className="col-1 h-50 w-25 order-first me-auto border"
+                className="col-1 h-50 w-25 mt-3 order-first"
               >
                 <circle
                   cx="50"
