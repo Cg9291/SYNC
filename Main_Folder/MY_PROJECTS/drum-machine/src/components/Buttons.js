@@ -167,16 +167,16 @@ export default function Buttons() {
         </div>
         <div
           id="right-side"
-          className="col m-auto "
+          className="col m-auto"
         >
           <div
             id="controls"
             /*  height="50px" */
-            className=" vh-100 container mx-0 p-0 bg-black"
+            className=" vh-100 container mx-0 p-0 bg-black "
           >
             <div
-              className="row border mw-100 m-0 p-0 mb-2 justify-content-between"
               id="indicators-row"
+              className="row mw-100 m-0 p-0 mb-2 justify-content-between"
             >
               <ToggleButton
                 className="col-1"
@@ -206,7 +206,7 @@ export default function Buttons() {
             </div> */}
             <div
               id="pad"
-              className="container-fluid d-flex flex-column justify-content-center align-items-center h-50 mt-5 bg-warning" /*style={{border:'solid blue'}}*/
+              className="container-fluid d-flex flex-column justify-content-center align-items-center h-50 mt-5" /*style={{border:'solid blue'}}*/
             >
               <div className="row pad-row">
                 <button
