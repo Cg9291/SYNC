@@ -1,5 +1,5 @@
 import { useState } from "react";
-import '../ToggleButtons.scss'
+//import '../ToggleButtons.scss'
 
 export default function ToggleButton(props){
 

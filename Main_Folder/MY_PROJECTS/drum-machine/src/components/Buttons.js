@@ -4,7 +4,7 @@
 
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import ToggleButton from "./ToggleButton.js";
-import "../buttons.scss";
+//import "../buttons.scss";
 import clap_Sound from "../audio/basic sounds/clap.mp3";
 import closed_HH_Sound from "../audio/basic sounds/closed-HH.mp3";
 import heater_1_Sound from "../audio/basic sounds/heater-1.mp3";
@@ -206,12 +206,12 @@ export default function Buttons() {
             </div> */}
             <div
               id="pad"
-              className="container-fluid d-flex flex-column justify-content-center h-50 mt-5" /*style={{border:'solid blue'}}*/
+              className="container-fluid d-flex flex-column justify-content-center align-items-center h-50 mt-5 bg-warning" /*style={{border:'solid blue'}}*/
             >
-              <div className="row pad-row justify-content-center w-100 mb-2 g-0 ">
+              <div className="row pad-row">
                 <button
                   id="Clap"
-                  className="drum-pad col-3 btn btn-dark m-2 border border-warning g-0"
+                  className="btn drum-btn btn-dark"
                   ref={ref => (buttonRefs.current.Q = ref)}
                   onClick={playSound}
                   //onKeyDown={()=>buttonRefs.qParent.style.color='red'}
@@ -231,7 +231,7 @@ export default function Buttons() {
 
                 <button
                   id="Closed HH"
-                  className="drum-pad col-3 btn btn-dark m-2"
+                  className="btn drum-btn btn-dark"
                   ref={ref => (buttonRefs.current.W = ref)}
                   onClick={playSound}
                   style={{ boxShadow: "2px 5px blue" }}
@@ -249,7 +249,7 @@ export default function Buttons() {
 
                 <button
                   id="Heater 1"
-                  className="drum-pad col-3 btn btn-dark m-2"
+                  className="btn drum-btn btn-dark"
                   ref={ref => (buttonRefs.current.E = ref)}
                   onClick={playSound}
                   style={{ boxShadow: "2px 5px green" }}
@@ -267,7 +267,7 @@ export default function Buttons() {
 
                 <button
                   id="#"
-                  className="drum-pad col-3  btn btn-dark m-2"
+                  className="btn drum-btn btn-dark"
                   ref={ref => (buttonRefs.current.R = ref)}
                   onClick={playSound}
                   style={{ boxShadow: "2px 5px green" }}
@@ -284,10 +284,10 @@ export default function Buttons() {
                 </button>
               </div>
 
-              <div className="row justify-content-center mb-2">
+              <div className="row pad-row">
                 <button
                   id="Heater 2"
-                  className="drum-pad col-4 btn btn-dark m-2"
+                  className="btn drum-btn btn-dark"
                   ref={ref => (buttonRefs.current.A = ref)}
                   onClick={playSound}
                   style={{ boxShadow: "2px 5px purple" }}
@@ -305,7 +305,7 @@ export default function Buttons() {
 
                 <button
                   id="Heater 3"
-                  className="drum-pad col-4 btn btn-dark m-2"
+                  className="btn drum-btn btn-dark"
                   ref={ref => (buttonRefs.current.S = ref)}
                   onClick={playSound}
                   style={{ boxShadow: "2px 5px magenta" }}
@@ -323,7 +323,7 @@ export default function Buttons() {
 
                 <button
                   id="Heater 4"
-                  className="drum-pad col-4 btn btn-dark m-2"
+                  className="btn drum-btn btn-dark"
                   ref={ref => (buttonRefs.current.D = ref)}
                   onClick={playSound}
                   style={{ boxShadow: "2px 5px orange" }}
@@ -340,7 +340,7 @@ export default function Buttons() {
                 </button>
                 <button
                   id="#"
-                  className="drum-pad col-4 btn btn-dark m-2"
+                  className="btn drum-btn btn-dark"
                   ref={ref => (buttonRefs.current.F = ref)}
                   onClick={playSound}
                   style={{ boxShadow: "2px 5px green" }}
@@ -357,10 +357,10 @@ export default function Buttons() {
                 </button>
               </div>
 
-              <div className="row justify-content-center">
+              <div className="row pad-row">
                 <button
                   id="Kick n'Hat"
-                  className="drum-pad col-4 btn btn-dark m-2"
+                  className="btn drum-btn btn-dark"
                   ref={ref => (buttonRefs.current.Z = ref)}
                   onClick={playSound}
                   style={{ boxShadow: "2px 5px turquoise" }}
@@ -378,7 +378,7 @@ export default function Buttons() {
 
                 <button
                   id="Kick"
-                  className="drum-pad col-4 btn btn-dark m-2"
+                  className="btn drum-btn btn-dark"
                   onClick={playSound}
                   ref={ref => (buttonRefs.current.X = ref)}
                   style={{ boxShadow: "2px 5px yellow" }}
@@ -396,7 +396,7 @@ export default function Buttons() {
 
                 <button
                   id="Open HH"
-                  className="drum-pad col-4 btn btn-dark m-2"
+                  className="btn drum-btn btn-dark"
                   ref={ref => (buttonRefs.current.C = ref)}
                   onClick={playSound}
                   style={{ boxShadow: "2px 5px yellowgreen" }}
@@ -413,7 +413,7 @@ export default function Buttons() {
                 </button>
                 <button
                   id="#"
-                  className="drum-pad col-4 btn btn-dark m-2"
+                  className="btn drum-btn btn-dark"
                   ref={ref => (buttonRefs.current.V = ref)}
                   onClick={playSound}
                   style={{ boxShadow: "2px 5px green" }}
