@@ -4,6 +4,7 @@
 
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import ToggleButton from "./ToggleButton.js";
+import Vinyl from "./Vinyl.js";
 //import "../buttons.scss";
 import clap_Sound from "../audio/basic sounds/clap.mp3";
 import closed_HH_Sound from "../audio/basic sounds/closed-HH.mp3";
@@ -154,6 +155,7 @@ export default function Buttons() {
           id="left-side"
           className="col-7"
         >
+          <Vinyl/>
           <div className="col-2 d-flex m-0 p-0">
             <input
               type="range"

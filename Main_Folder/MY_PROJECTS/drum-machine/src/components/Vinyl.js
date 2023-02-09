@@ -1,0 +1,67 @@
+export default function Vinyl() {
+  return (
+    <div>
+      <svg
+        width="70%"
+        viewBox="0 0 100 100"
+      >
+        <circle
+          cx="50"
+          cy="50"
+          r="14.2"
+          fill="lightblue"
+          stroke="black"
+          strokeWidth="0.1"
+        ></circle>
+        <circle
+          cx="50"
+          cy="50"
+          r="12.9"
+          fill="grey"
+          // stroke="black"
+          strokeWidth="0.1"
+        ></circle>
+        <circle
+          cx="50"
+          cy="50"
+          r="11.6"
+          fill="grey"
+          stroke="black"
+          strokeWidth="0.1"
+        ></circle>
+        <circle
+          cx="50"
+          cy="50"
+          r="10"
+          fill="grey"
+          stroke="black"
+          strokeWidth="0.1"
+        ></circle>
+        <circle
+          cx="50"
+          cy="50"
+          r="7.5"
+          fill="black"
+        ></circle>
+        <circle
+          cx="50"
+          cy="50"
+          r="4.5"
+          fill="red"
+        ></circle>
+        <circle
+          cx="49.8"
+          cy="50.3"
+          r="1"
+          fill="black"
+        ></circle>
+        <circle
+          cx="50"
+          cy="50"
+          r="1"
+          fill="white"
+        ></circle>
+      </svg>
+    </div>
+  );
+}
