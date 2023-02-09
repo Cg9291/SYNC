@@ -149,11 +149,12 @@ export default function Buttons() {
   }
 
   return (
-    <div className="container-fluid justify-content-center align-items-center  m-auto">
+    <div className="container-fluid justify-content-center align-items-center">
       <div className="row">
         <div
           id="left-side"
-          className="col-7"
+          className="col-7
+          bg-black"
         >
           <Vinyl/>
           <div className="col-2 d-flex m-0 p-0">
@@ -169,7 +170,7 @@ export default function Buttons() {
         </div>
         <div
           id="right-side"
-          className="col m-auto"
+          className="col-5 m-0 p-0"
         >
           <div
             id="controls"

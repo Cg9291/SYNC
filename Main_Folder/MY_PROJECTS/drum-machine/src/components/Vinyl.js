@@ -8,7 +8,7 @@ export default function Vinyl() {
         <circle
           cx="50"
           cy="50"
-          r="14.2"
+          r="49"
           fill="lightblue"
           stroke="black"
           strokeWidth="0.1"
@@ -16,7 +16,7 @@ export default function Vinyl() {
         <circle
           cx="50"
           cy="50"
-          r="12.9"
+          r="43"
           fill="grey"
           // stroke="black"
           strokeWidth="0.1"
@@ -24,7 +24,7 @@ export default function Vinyl() {
         <circle
           cx="50"
           cy="50"
-          r="11.6"
+          r="38"
           fill="grey"
           stroke="black"
           strokeWidth="0.1"
@@ -32,7 +32,7 @@ export default function Vinyl() {
         <circle
           cx="50"
           cy="50"
-          r="10"
+          r="34"
           fill="grey"
           stroke="black"
           strokeWidth="0.1"
@@ -40,25 +40,25 @@ export default function Vinyl() {
         <circle
           cx="50"
           cy="50"
-          r="7.5"
+          r="27"
+          fill="black"
+        ></circle>
+        <circle
+          cx="50"
+          cy="50"
+          r="16"
+          fill="red"
+        ></circle>
+        <circle
+          cx="49.8"
+          cy="50.3"
+          r="4.5"
           fill="black"
         ></circle>
         <circle
           cx="50"
           cy="50"
           r="4.5"
-          fill="red"
-        ></circle>
-        <circle
-          cx="49.8"
-          cy="50.3"
-          r="1"
-          fill="black"
-        ></circle>
-        <circle
-          cx="50"
-          cy="50"
-          r="1"
           fill="white"
         ></circle>
       </svg>
