@@ -172,7 +172,7 @@ export default function Buttons() {
           <div
             id="controls"
             /*  height="50px" */
-            className=" vh-100 container mx-0 p-0 bg-black "
+            className=" vh-100 container d-flex flex-column mx-0 p-0 bg-black align-items-evenly "
           >
             <div
               id="indicators-row"
@@ -433,13 +433,13 @@ export default function Buttons() {
 
             <div
               id="display"
-              className="row d-flex  m-0 p-0  justify-content-center bg-warning col-6 border border-dark fs-3 fw-bold align-items-center mx-auto my-auto flex-grow"
-              style={{ minHeight: "65px" /*alignSelf:"center"*/ }}
+              className="row d-flex  p-0  justify-content-center bg-warning col-6 border border-dark fs-3 fw-bold align-items-center mx-auto my-auto flex-grow"
+              style={{ minHeight: "10vh" /*alignSelf:"center"*/ }}
             >
-              <div className="col-11 border border-dark ">{playing}</div>
+              <div className="col-11 h-75 d-flex align-items-center justify-content-center border border-dark ">{playing}</div>
             </div>
 
-            <div className="row h-25 flex-grow-1  col-12 m-0 p-0"></div>
+            {/* <div className="row h-25 flex-grow-1  col-12 m-0 p-0"></div> */}
 
             {/*</div>*/}
           </div>
