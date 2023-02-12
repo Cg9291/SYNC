@@ -9,7 +9,7 @@ export default function Vinyl() {
           cx="50"
           cy="50"
           r="49"
-          fill="lightblue"
+          fill="darkblue"
           stroke="black"
           strokeWidth="0.1"
         ></circle>
@@ -17,7 +17,8 @@ export default function Vinyl() {
           cx="50"
           cy="50"
           r="43"
-          fill="grey"
+          fill="black"
+          //opacity="0.5"
           // stroke="black"
           strokeWidth="0.1"
         ></circle>
