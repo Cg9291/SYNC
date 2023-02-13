@@ -14,6 +14,7 @@ export default function Vinyl() {
           strokeWidth="0.1"
         ></circle>
         <circle
+          className="vynil-grey-parts"
           cx="50"
           cy="50"
           r="43"
@@ -23,18 +24,18 @@ export default function Vinyl() {
           strokeWidth="0.1"
         ></circle>
         <circle
+          className="vynil-grey-parts"
           cx="50"
           cy="50"
           r="38"
-          fill="grey"
           stroke="black"
           strokeWidth="0.1"
         ></circle>
         <circle
+          className="vynil-grey-parts"
           cx="50"
           cy="50"
           r="34"
-          fill="grey"
           stroke="black"
           strokeWidth="0.1"
         ></circle>

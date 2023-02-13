@@ -154,7 +154,7 @@ export default function Buttons() {
         <div
           id="left-side"
           className="col-7
-          bg-black"
+          bg-white"
         >
           <Vinyl/>
           <div className="col-2 d-flex m-0 p-0">
