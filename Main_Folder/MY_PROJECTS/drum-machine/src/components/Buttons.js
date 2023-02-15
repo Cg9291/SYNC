@@ -156,16 +156,29 @@ export default function Buttons() {
           className="col-7
           bg-white"
         >
-          <Vinyl/>
-          <div className="col-2 d-flex m-0 p-0">
-            <input
-              type="range"
-              min={0}
-              max={100}
-              className="slider w-100 p-0 m-0"
-              onChange={changeVolume}
-              style={{ transform: "rotate(-90deg)" }}
-            ></input>
+          <div className="row m-0 p-0">
+            <svg className="col bg-danger">
+              {/* <rect
+                width="500"
+                height="3.5"
+                transform="rotate(80) translate(105) "
+                style={{ fill: "grey" }}
+              > </rect>*/}
+              <foreignObject
+                width="100%"
+                height="100%"
+              >
+                <input
+                  type="range"
+                  min={0}
+                  max={100}
+                  className="slider w-100 p-0 m-0"
+                  onChange={changeVolume}
+                  style={{ transform: "rotate(-90deg)" }}
+                ></input>
+              </foreignObject>
+            </svg>
+            <Vinyl />
           </div>
         </div>
         <div
@@ -439,7 +452,9 @@ export default function Buttons() {
               className="row d-flex  p-0  justify-content-center bg-warning col-6 border border-dark fs-3 fw-bold align-items-center mx-auto my-auto flex-grow"
               style={{ minHeight: "10vh" /*alignSelf:"center"*/ }}
             >
-              <div className="col-11 h-75 d-flex align-items-center justify-content-center border border-dark ">{playing}</div>
+              <div className="col-11 h-75 d-flex align-items-center justify-content-center border border-dark ">
+                {playing}
+              </div>
             </div>
 
             {/* <div className="row h-25 flex-grow-1  col-12 m-0 p-0"></div> */}
