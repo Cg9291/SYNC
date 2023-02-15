@@ -24,16 +24,6 @@ export default function Buttons() {
 
   const audioRefs = useRef([]);
 
-  /*  const Q = useRef();
-  const W = useRef();
-  const E = useRef();
-  const A = useRef();
-  const S = useRef();
-  const D = useRef();
-  const Z = useRef();
-  const X = useRef();
-  const C = useRef(); */
-
   const [playing, setPlaying] = useState();
   const [toggle, setToggle] = useState(true);
   const [volume, setVolume] = useState(50);
@@ -149,320 +139,281 @@ export default function Buttons() {
   }
 
   return (
-    <div className="container-fluid justify-content-center align-items-center">
-      <div className="row">
-        <div
-          id="left-side"
-          className="col-7
-          bg-white"
-        >
-          <div className="row m-0 p-0">
-            <svg className="col bg-danger">
-              {/* <rect
-                width="500"
-                height="3.5"
-                transform="rotate(80) translate(105) "
-                style={{ fill: "grey" }}
-              > </rect>*/}
-              <foreignObject
-                width="100%"
-                height="100%"
-              >
-                <input
-                  type="range"
-                  min={0}
-                  max={100}
-                  className="slider w-100 p-0 m-0"
-                  onChange={changeVolume}
-                  style={{ transform: "rotate(-90deg)" }}
-                ></input>
-              </foreignObject>
-            </svg>
-            <Vinyl />
-          </div>
-        </div>
-        <div
-          id="right-side"
-          className="col-5 m-0 p-0"
-        >
-          <div
-            id="controls"
-            /*  height="50px" */
-            className=" vh-100 container d-flex flex-column mx-0 p-0 bg-black align-items-evenly "
-          >
-            <div
-              id="indicators-row"
-              className="row mw-100 m-0 p-0 mb-2 justify-content-between"
-            >
-              <ToggleButton
-                className="col-1"
-                toggle={toggle}
-                setToggle={setToggle}
-                playing={playing}
-                setPlaying={setPlaying}
-              />
+    <div
+      id="controls"
+      /*  height="50px" */
+      className=" vh-100 row d-flex flex-column mx-0 p-0 bg-black align-items-evenly "
+    >
+      <div
+        id="indicators-row"
+        className="row mw-100 mt-5 m-0 p-0 mb-2 justify-content-between"
+      >
+        <ToggleButton
+          className="col-1"
+          toggle={toggle}
+          setToggle={setToggle}
+          playing={playing}
+          setPlaying={setPlaying}
+        />
 
-              <svg
-                viewBox="0 0 100 100"
-                className="col-1 h-50 w-25 mt-3 order-first"
-              >
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="50"
-                  fill={indicatorLightColor}
-                />
-              </svg>
-            </div>
-            {/* <div className="d-flex flex-column col-10 mx-auto p-0 bg-dark">
+        <svg
+          viewBox="0 0 100 100"
+          className="col-1 h-50 w-25 mt-3 order-first"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="50"
+            fill={indicatorLightColor}
+          />
+        </svg>
+      </div>
+      {/* <div className="d-flex flex-column col-10 mx-auto p-0 bg-dark">
               <div className="row h-25 col-12 m-0 p-0 flex-grow-1">
                 <div className="d-flex justify-content-between h-25 col-12 m-0 p-0"></div>
               </div>
               {/*<div className="d-flex h-75 m-0 p-0  justify-content-center align-items-start bg-primary">
             </div> */}
-            <div
-              id="pad"
-              className="container-fluid d-flex flex-column justify-content-center align-items-center h-50 mt-5" /*style={{border:'solid blue'}}*/
+      <div
+        id="pad"
+        className="container-fluid d-flex flex-column justify-content-center align-items-center h-50 mt-5" /*style={{border:'solid blue'}}*/
+      >
+        <div className="row pad-row">
+          <button
+            id="Clap"
+            className="btn drum-btn btn-dark"
+            ref={ref => (buttonRefs.current.Q = ref)}
+            onClick={playSound}
+            //onKeyDown={()=>buttonRefs.qParent.style.color='red'}
+            //    onKeyDown={}qqa
+            style={{ boxShadow: "2px 5px red" }}
+          >
+            Q
+            <audio
+              src={sax}
+              className="clip"
+              id="Q"
+              ref={ref => (audioRefs.current.Q = ref)}
             >
-              <div className="row pad-row">
-                <button
-                  id="Clap"
-                  className="btn drum-btn btn-dark"
-                  ref={ref => (buttonRefs.current.Q = ref)}
-                  onClick={playSound}
-                  //onKeyDown={()=>buttonRefs.qParent.style.color='red'}
-                  //    onKeyDown={}qqa
-                  style={{ boxShadow: "2px 5px red" }}
-                >
-                  Q
-                  <audio
-                    src={sax}
-                    className="clip"
-                    id="Q"
-                    ref={ref => (audioRefs.current.Q = ref)}
-                  >
-                    Your browser does not support this type of file.
-                  </audio>
-                </button>
+              Your browser does not support this type of file.
+            </audio>
+          </button>
 
-                <button
-                  id="Closed HH"
-                  className="btn drum-btn btn-dark"
-                  ref={ref => (buttonRefs.current.W = ref)}
-                  onClick={playSound}
-                  style={{ boxShadow: "2px 5px blue" }}
-                >
-                  W
-                  <audio
-                    src={kick}
-                    className="clip"
-                    id="W"
-                    ref={ref => (audioRefs.current.W = ref)}
-                  >
-                    Your browser does not support this type of file.
-                  </audio>
-                </button>
-
-                <button
-                  id="Heater 1"
-                  className="btn drum-btn btn-dark"
-                  ref={ref => (buttonRefs.current.E = ref)}
-                  onClick={playSound}
-                  style={{ boxShadow: "2px 5px green" }}
-                >
-                  E
-                  <audio
-                    src={heater_1_Sound}
-                    className="clip"
-                    id="E"
-                    ref={ref => (audioRefs.current.E = ref)}
-                  >
-                    Your browser does not support this type of file.
-                  </audio>
-                </button>
-
-                <button
-                  id="#"
-                  className="btn drum-btn btn-dark"
-                  ref={ref => (buttonRefs.current.R = ref)}
-                  onClick={playSound}
-                  style={{ boxShadow: "2px 5px green" }}
-                >
-                  R
-                  <audio
-                    src={heater_1_Sound}
-                    className="clip"
-                    id="R"
-                    ref={ref => (audioRefs.current.R = ref)}
-                  >
-                    Your browser does not support this type of file.
-                  </audio>
-                </button>
-              </div>
-
-              <div className="row pad-row">
-                <button
-                  id="Heater 2"
-                  className="btn drum-btn btn-dark"
-                  ref={ref => (buttonRefs.current.A = ref)}
-                  onClick={playSound}
-                  style={{ boxShadow: "2px 5px purple" }}
-                >
-                  A
-                  <audio
-                    src={heater_2_Sound}
-                    className="clip"
-                    id="A"
-                    ref={ref => (audioRefs.current.A = ref)}
-                  >
-                    Your browser does not support this type of file.
-                  </audio>
-                </button>
-
-                <button
-                  id="Heater 3"
-                  className="btn drum-btn btn-dark"
-                  ref={ref => (buttonRefs.current.S = ref)}
-                  onClick={playSound}
-                  style={{ boxShadow: "2px 5px magenta" }}
-                >
-                  S
-                  <audio
-                    src={heater_3_Sound}
-                    className="clip"
-                    id="S"
-                    ref={ref => (audioRefs.current.S = ref)}
-                  >
-                    Your browser does not support this type of file.
-                  </audio>
-                </button>
-
-                <button
-                  id="Heater 4"
-                  className="btn drum-btn btn-dark"
-                  ref={ref => (buttonRefs.current.D = ref)}
-                  onClick={playSound}
-                  style={{ boxShadow: "2px 5px orange" }}
-                >
-                  D
-                  <audio
-                    src={heater_4_Sound}
-                    className="clip"
-                    id="D"
-                    ref={ref => (audioRefs.current.D = ref)}
-                  >
-                    Your browser does not support this type of file.
-                  </audio>
-                </button>
-                <button
-                  id="#"
-                  className="btn drum-btn btn-dark"
-                  ref={ref => (buttonRefs.current.F = ref)}
-                  onClick={playSound}
-                  style={{ boxShadow: "2px 5px green" }}
-                >
-                  F
-                  <audio
-                    src={heater_1_Sound}
-                    className="clip"
-                    id="F"
-                    ref={ref => (audioRefs.current.F = ref)}
-                  >
-                    Your browser does not support this type of file.
-                  </audio>
-                </button>
-              </div>
-
-              <div className="row pad-row">
-                <button
-                  id="Kick n'Hat"
-                  className="btn drum-btn btn-dark"
-                  ref={ref => (buttonRefs.current.Z = ref)}
-                  onClick={playSound}
-                  style={{ boxShadow: "2px 5px turquoise" }}
-                >
-                  Z
-                  <audio
-                    src={kick_n_hat_Sound}
-                    className="clip"
-                    id="Z"
-                    ref={ref => (audioRefs.current.Z = ref)}
-                  >
-                    Your browser does not support this type of file.
-                  </audio>
-                </button>
-
-                <button
-                  id="Kick"
-                  className="btn drum-btn btn-dark"
-                  onClick={playSound}
-                  ref={ref => (buttonRefs.current.X = ref)}
-                  style={{ boxShadow: "2px 5px yellow" }}
-                >
-                  X
-                  <audio
-                    src={kick_Sound}
-                    className="clip"
-                    id="X"
-                    ref={ref => (audioRefs.current.X = ref)}
-                  >
-                    Your browser does not support this type of file.
-                  </audio>
-                </button>
-
-                <button
-                  id="Open HH"
-                  className="btn drum-btn btn-dark"
-                  ref={ref => (buttonRefs.current.C = ref)}
-                  onClick={playSound}
-                  style={{ boxShadow: "2px 5px yellowgreen" }}
-                >
-                  C
-                  <audio
-                    src={open_HH_Sound}
-                    className="clip"
-                    id="C"
-                    ref={ref => (audioRefs.current.C = ref)}
-                  >
-                    Your browser does not support this type of file.
-                  </audio>
-                </button>
-                <button
-                  id="#"
-                  className="btn drum-btn btn-dark"
-                  ref={ref => (buttonRefs.current.V = ref)}
-                  onClick={playSound}
-                  style={{ boxShadow: "2px 5px green" }}
-                >
-                  V
-                  <audio
-                    src={heater_1_Sound}
-                    className="clip"
-                    id="V"
-                    ref={ref => (audioRefs.current.V = ref)}
-                  >
-                    Your browser does not support this type of file.
-                  </audio>
-                </button>
-              </div>
-            </div>
-
-            <div
-              id="display"
-              className="row d-flex  p-0  justify-content-center bg-warning col-6 border border-dark fs-3 fw-bold align-items-center mx-auto my-auto flex-grow"
-              style={{ minHeight: "10vh" /*alignSelf:"center"*/ }}
+          <button
+            id="Closed HH"
+            className="btn drum-btn btn-dark"
+            ref={ref => (buttonRefs.current.W = ref)}
+            onClick={playSound}
+            style={{ boxShadow: "2px 5px blue" }}
+          >
+            W
+            <audio
+              src={kick}
+              className="clip"
+              id="W"
+              ref={ref => (audioRefs.current.W = ref)}
             >
-              <div className="col-11 h-75 d-flex align-items-center justify-content-center border border-dark ">
-                {playing}
-              </div>
-            </div>
+              Your browser does not support this type of file.
+            </audio>
+          </button>
 
-            {/* <div className="row h-25 flex-grow-1  col-12 m-0 p-0"></div> */}
+          <button
+            id="Heater 1"
+            className="btn drum-btn btn-dark"
+            ref={ref => (buttonRefs.current.E = ref)}
+            onClick={playSound}
+            style={{ boxShadow: "2px 5px green" }}
+          >
+            E
+            <audio
+              src={heater_1_Sound}
+              className="clip"
+              id="E"
+              ref={ref => (audioRefs.current.E = ref)}
+            >
+              Your browser does not support this type of file.
+            </audio>
+          </button>
 
-            {/*</div>*/}
-          </div>
+          <button
+            id="#"
+            className="btn drum-btn btn-dark"
+            ref={ref => (buttonRefs.current.R = ref)}
+            onClick={playSound}
+            style={{ boxShadow: "2px 5px green" }}
+          >
+            R
+            <audio
+              src={heater_1_Sound}
+              className="clip"
+              id="R"
+              ref={ref => (audioRefs.current.R = ref)}
+            >
+              Your browser does not support this type of file.
+            </audio>
+          </button>
+        </div>
+
+        <div className="row pad-row">
+          <button
+            id="Heater 2"
+            className="btn drum-btn btn-dark"
+            ref={ref => (buttonRefs.current.A = ref)}
+            onClick={playSound}
+            style={{ boxShadow: "2px 5px purple" }}
+          >
+            A
+            <audio
+              src={heater_2_Sound}
+              className="clip"
+              id="A"
+              ref={ref => (audioRefs.current.A = ref)}
+            >
+              Your browser does not support this type of file.
+            </audio>
+          </button>
+
+          <button
+            id="Heater 3"
+            className="btn drum-btn btn-dark"
+            ref={ref => (buttonRefs.current.S = ref)}
+            onClick={playSound}
+            style={{ boxShadow: "2px 5px magenta" }}
+          >
+            S
+            <audio
+              src={heater_3_Sound}
+              className="clip"
+              id="S"
+              ref={ref => (audioRefs.current.S = ref)}
+            >
+              Your browser does not support this type of file.
+            </audio>
+          </button>
+
+          <button
+            id="Heater 4"
+            className="btn drum-btn btn-dark"
+            ref={ref => (buttonRefs.current.D = ref)}
+            onClick={playSound}
+            style={{ boxShadow: "2px 5px orange" }}
+          >
+            D
+            <audio
+              src={heater_4_Sound}
+              className="clip"
+              id="D"
+              ref={ref => (audioRefs.current.D = ref)}
+            >
+              Your browser does not support this type of file.
+            </audio>
+          </button>
+          <button
+            id="#"
+            className="btn drum-btn btn-dark"
+            ref={ref => (buttonRefs.current.F = ref)}
+            onClick={playSound}
+            style={{ boxShadow: "2px 5px green" }}
+          >
+            F
+            <audio
+              src={heater_1_Sound}
+              className="clip"
+              id="F"
+              ref={ref => (audioRefs.current.F = ref)}
+            >
+              Your browser does not support this type of file.
+            </audio>
+          </button>
+        </div>
+
+        <div className="row pad-row">
+          <button
+            id="Kick n'Hat"
+            className="btn drum-btn btn-dark"
+            ref={ref => (buttonRefs.current.Z = ref)}
+            onClick={playSound}
+            style={{ boxShadow: "2px 5px turquoise" }}
+          >
+            Z
+            <audio
+              src={kick_n_hat_Sound}
+              className="clip"
+              id="Z"
+              ref={ref => (audioRefs.current.Z = ref)}
+            >
+              Your browser does not support this type of file.
+            </audio>
+          </button>
+
+          <button
+            id="Kick"
+            className="btn drum-btn btn-dark"
+            onClick={playSound}
+            ref={ref => (buttonRefs.current.X = ref)}
+            style={{ boxShadow: "2px 5px yellow" }}
+          >
+            X
+            <audio
+              src={kick_Sound}
+              className="clip"
+              id="X"
+              ref={ref => (audioRefs.current.X = ref)}
+            >
+              Your browser does not support this type of file.
+            </audio>
+          </button>
+
+          <button
+            id="Open HH"
+            className="btn drum-btn btn-dark"
+            ref={ref => (buttonRefs.current.C = ref)}
+            onClick={playSound}
+            style={{ boxShadow: "2px 5px yellowgreen" }}
+          >
+            C
+            <audio
+              src={open_HH_Sound}
+              className="clip"
+              id="C"
+              ref={ref => (audioRefs.current.C = ref)}
+            >
+              Your browser does not support this type of file.
+            </audio>
+          </button>
+          <button
+            id="#"
+            className="btn drum-btn btn-dark"
+            ref={ref => (buttonRefs.current.V = ref)}
+            onClick={playSound}
+            style={{ boxShadow: "2px 5px green" }}
+          >
+            V
+            <audio
+              src={heater_1_Sound}
+              className="clip"
+              id="V"
+              ref={ref => (audioRefs.current.V = ref)}
+            >
+              Your browser does not support this type of file.
+            </audio>
+          </button>
         </div>
       </div>
+
+      <div
+        id="display"
+        className="row d-flex  p-0  justify-content-center bg-warning col-6 border border-dark fs-3 fw-bold align-items-center mx-auto my-auto flex-grow"
+        style={{ minHeight: "10vh" /*alignSelf:"center"*/ }}
+      >
+        <div className="col-11 h-75 d-flex align-items-center justify-content-center border border-dark ">
+          {playing}
+        </div>
+      </div>
+
+      {/* <div className="row h-25 flex-grow-1  col-12 m-0 p-0"></div> */}
+
+      {/*</div>*/}
     </div>
   );
 }
