@@ -38,7 +38,7 @@ export default function Container(props) {
       <div className="row">
         <div
           id="left-side"
-          className="col-7 justify-content-center align-items-center"
+          className="col-7 justify-content-center align-items-center bg-black"
         >
           <div className="row m-0 p-0">
             <svg className="col bg-danger">

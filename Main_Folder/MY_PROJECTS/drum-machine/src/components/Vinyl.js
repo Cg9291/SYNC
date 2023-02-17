@@ -6,7 +6,7 @@ export default function Vinyl() {
         height="100vh"
         viewBox="0 0 200 200"
         // fill="red"
-        className="border"
+        className=""
       >
         <circle
           cx="100"
