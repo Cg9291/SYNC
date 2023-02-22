@@ -25,10 +25,10 @@ import kick from "../audio/Midnight Sillage Kit/Electric Piano 01 - Midnight Sil
  - get final design from Anais */
 
 export default function Container(props) {
-    const [volume, setVolume] = useState(50);
-    function changeVolume(event) {
-      setVolume(event.target.value);
-    }
+  const [volume, setVolume] = useState(50);
+  function changeVolume(event) {
+    setVolume(event.target.value);
+  }
 
   return (
     <div
@@ -40,28 +40,20 @@ export default function Container(props) {
           id="left-side"
           className="col-7 justify-content-center align-items-center bg-black"
         >
-          <div className="row m-0 p-0">
-            <svg className="col bg-danger">
-              {/* <rect
-                width="500"
-                height="3.5"
-                transform="rotate(80) translate(105) "
-                style={{ fill: "grey" }}
-              > </rect>*/}
-              <foreignObject
-                width="100%"
-                height="100%"
-              >
-                <input
-                  type="range"
-                  min={0}
-                  max={100}
-                  className="slider w-100 p-0 m-0"
-                  onChange={changeVolume}
-                  style={{ transform: "rotate(-90deg)" }}
-                ></input>
-              </foreignObject>
-            </svg>
+          <div
+            className="row m-0 p-0"
+            style={{height:"100vh" }}
+          >
+            <div className="col-1 m-0 p-0 d-flex justify-content-center align-items-center">
+              <input
+                type="range"
+                min={0}
+                max={100}
+                className="slider p-0 m-0 border "
+                onChange={changeVolume}
+                style={{ transform: "rotate(-90deg)" }}
+              ></input>
+            </div>
             <Vinyl />
           </div>
         </div>
