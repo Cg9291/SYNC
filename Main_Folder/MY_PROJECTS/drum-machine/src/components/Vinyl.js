@@ -6,19 +6,19 @@ export default function Vinyl() {
         height="100vh"
         viewBox="0 0 200 200"
         // fill="red"
-        className=""
+        className="border border-light"
       >
         <circle
           cx="100"
           cy="100"
-          r="49"
+          r="90"
           fill="darkturquoise"
         ></circle>
         <circle
           className="vynil-grey-parts"
           cx="100"
           cy="100"
-          r="43"
+          r="80"
           fill="black"
           //opacity="0.5"
           // stroke="black"
@@ -28,7 +28,7 @@ export default function Vinyl() {
           className="vynil-grey-parts"
           cx="100"
           cy="100"
-          r="38"
+          r="70"
           stroke="black"
           strokeWidth="0.1"
         ></circle>
@@ -36,41 +36,41 @@ export default function Vinyl() {
           className="vynil-grey-parts"
           cx="100"
           cy="100"
-          r="34"
+          r="61"
           stroke="black"
           strokeWidth="0.1"
         ></circle>
         <circle
           cx="100"
           cy="100"
-          r="27"
+          r="47"
           fill="black"
         ></circle>
         <circle
           cx="100"
           cy="100"
-          r="16"
+          r="30"
           fill="red"
         ></circle>
         <circle
           cx="99.6"
           cy="100.7"
-          r="4"
+          r="7"
           fill="black"
         ></circle>
         <circle
           cx="100"
           cy="100"
-          r="4"
+          r="7"
           fill="white"
         ></circle>
         <svg
-          x="-65"
-          y="-97"
-          width={"100"}
+          x="-85"
+          y="-120"
+          width="100"
           height="100%"
           viewBox="0 0 100 100"
-          fill="yellow"
+
         >
           <circle
             cx="100"
@@ -92,8 +92,8 @@ export default function Vinyl() {
           ></circle>
         </svg>
         <svg
-          x="50"
-          y="-2"
+          x="29.8"
+          y="-25"
           width={"100"}
           height="100%"
           viewBox="0 0 100 100"

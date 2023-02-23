@@ -49,7 +49,7 @@ export default function Container(props) {
                 type="range"
                 min={0}
                 max={100}
-                className="slider p-0 m-0 border "
+                className="slider p-0 m-0 border"
                 onChange={changeVolume}
                 style={{ transform: "rotate(-90deg)" }}
               ></input>
