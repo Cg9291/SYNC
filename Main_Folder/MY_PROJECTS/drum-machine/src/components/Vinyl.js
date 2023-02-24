@@ -1,9 +1,9 @@
 export default function Vinyl() {
   return (
-    <div className="col-11">
+    <div id="vinyl" className="bg-danger m-0">
       <svg
         width="100%"
-        height="100vh"
+        height="100%"
         viewBox="0 0 200 200"
         // fill="red"
         className="border border-light"

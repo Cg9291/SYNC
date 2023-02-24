@@ -38,24 +38,22 @@ export default function Container(props) {
       <div className="row">
         <div
           id="left-side"
-          className="col-7 justify-content-center align-items-center bg-black"
+          className="col-7 bg-black"
         >
-          <div
-            className="row m-0 p-0"
-            style={{height:"100vh" }}
-          >
-            <div className="col-1 m-0 p-0 d-flex justify-content-center align-items-center">
-              <input
-                type="range"
-                min={0}
-                max={100}
-                className="slider p-0 m-0 border"
-                onChange={changeVolume}
-                style={{ transform: "rotate(-90deg)" }}
-              ></input>
-            </div>
+
+
+               <input
+                 type="range"
+                 min={0}
+                 max={100}
+                 className="slider p-0 m-0 border"
+                 onChange={changeVolume}
+                //  style={{ transform: "rotate(-90deg)" }}
+               ></input>
+
+
             <Vinyl />
-          </div>
+
         </div>
         {/* <h1>Drum Machine</h1> */}
         <div
