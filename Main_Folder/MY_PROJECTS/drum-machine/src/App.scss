@@ -24,7 +24,20 @@ svg {
   // width:10vw;
   grid-area: slider;
   appearance: slider-vertical;
-  width: 1vw;
+  width: 1%;
+  height: 400px;
+
+  background: red;
+  opacity: 0.5s;
+
+.slider::-webkit-slider-thumb {
+
+ cursor: pointer;
+ appearance: none;
+ width: 10px;
+ height: 10px;
+}
+
 }
 
 #pad {
@@ -65,8 +78,8 @@ svg {
 #left-side {
   display: grid;
   grid-template-areas:
-    " . vinyl vinyl"
-    " slider vinyl vinyl";
+    " . vinyl "
+    " slider vinyl";
 }
 #vinyl {
   grid-area: vinyl;

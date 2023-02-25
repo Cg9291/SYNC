@@ -38,15 +38,16 @@ export default function Container(props) {
       <div className="row">
         <div
           id="left-side"
-          className="col-7 bg-black"
+          className="col-7 bg-black p-0 d-flex "
         >
 
 
                <input
                  type="range"
+
                  min={0}
                  max={100}
-                 className="slider p-0 m-0 border"
+                 className="slider p-0 ms-2 m-0 align-self-center"
                  onChange={changeVolume}
                 //  style={{ transform: "rotate(-90deg)" }}
                ></input>
