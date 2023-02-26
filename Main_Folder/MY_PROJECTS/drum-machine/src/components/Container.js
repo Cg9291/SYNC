@@ -40,21 +40,18 @@ export default function Container(props) {
           id="left-side"
           className="col-7 bg-black p-0 d-flex "
         >
+          <div style={{height:"25px",width:"103%", backgroundColor:"blue"}}>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              className="slider p-0 m-0 align-self-center"
+              onChange={changeVolume}
+                // style={{ transform: "rotate(-90deg)" }}
+            ></input>
+          </div>
 
-
-               <input
-                 type="range"
-
-                 min={0}
-                 max={100}
-                 className="slider p-0 ms-2 m-0 align-self-center"
-                 onChange={changeVolume}
-                //  style={{ transform: "rotate(-90deg)" }}
-               ></input>
-
-
-            <Vinyl />
-
+          <Vinyl />
         </div>
         {/* <h1>Drum Machine</h1> */}
         <div
