@@ -40,12 +40,12 @@ export default function Container(props) {
           id="left-side"
           className="col-7 bg-black p-0 d-flex "
         >
-          <div style={{height:"25px",width:"103%", backgroundColor:"blue"}}>
+          <div classname="d-flex flex-column justify-content-center" style={{height:"100vh",width:"4%", backgroundColor:"blue"}}>
             <input
               type="range"
               min={0}
               max={100}
-              className="slider p-0 m-0 align-self-center"
+              className="slider p-0 "
               onChange={changeVolume}
                 // style={{ transform: "rotate(-90deg)" }}
             ></input>
