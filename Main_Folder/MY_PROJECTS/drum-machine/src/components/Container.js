@@ -39,18 +39,20 @@ export default function Container(props) {
       <div className="row">
         <div
           id="left-side"
-          className="col-7 bg-black p-0 d-flex "
+          className="col-7 bg-black p-0"
         >
 
-            <input
-              type="range"
-              min={0}
-              max={100}
-              className="slider p-0"
-              onChange={changeVolume}
-                //  style={{ transform: "rotate(-90deg)" }}
-            ></input>
+            <div className="row ">
+              <input
+                type="range"
+                min={0}
+                max={100}
+                className="slider p-0"
+                onChange={changeVolume}
+                  //  style={{ transform: "rotate(-90deg)" }}
+              ></input>
 
+            </div>
 
           <VinylContainer />
         </div>

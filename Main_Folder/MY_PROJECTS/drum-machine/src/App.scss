@@ -95,8 +95,8 @@ svg {
 #left-side {
   display: grid;
   grid-template-areas:
-    " . slider "
-    "  vinyl ";
+    " vinyl vinyl vinyl "
+    " slider vinyl vinyl ";
 }
 #vinyl {
   // grid-area: vinyl;

@@ -75,19 +75,19 @@ export default function Vinyl() {
           <circle
             cx="100"
             cy="100"
-            r="10"
+            r="20"
             fill="darkturquoise"
           ></circle>
           <circle
             cx="100"
             cy="100"
-            r="7"
+            r="15"
             fill="black"
           ></circle>
           <circle
             cx="100"
             cy="100"
-            r="4"
+            r="7.5"
             fill="lightgrey"
           ></circle>
         </svg>
