@@ -18,12 +18,19 @@
 svg {
   filter: drop-shadow(-10px 10px 5px rgb(0 0 0 /0.4));
 }
-input[type=range] {
-  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-  width: 100%; /* Specific width is required for Firefox. */
-  height: 33%;
-  appearance: none;
+input[type=range],.slider {
+     -webkit-appearance: slider-vertical; /* Hides the slider so that custom slider can be made */
+   //width: 10vh; /* Specific width is required for Firefox. */
+   height: 33%;
+   margin-top: auto;
+   margin-bottom:auto;
+  /* margin-top: 95vh;
+   margin-left: -20vw;
+   margin-right: 0; */
+    appearance: slider-vertical;
   background: red; /* Otherwise white in Chrome */
+  border: solid yellow;
+  grid-area: slider;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -88,10 +95,15 @@ svg {
 #left-side {
   display: grid;
   grid-template-areas:
-    " . vinyl "
-    " slider vinyl";
+    " . slider "
+    "  vinyl ";
 }
 #vinyl {
+  // grid-area: vinyl;
+  border:solid grey;
+  //margin-left:-350px;
+}
+#vinyl-container{
   grid-area: vinyl;
 }
 /*#id{

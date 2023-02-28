@@ -2,6 +2,7 @@ import Buttons from "./Buttons.js";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import ToggleButton from "./ToggleButton.js";
 import Vinyl from "./Vinyl.js";
+import VinylContainer from "./VinylContainer.js";
 //import "../buttons.scss";
 import clap_Sound from "../audio/basic sounds/clap.mp3";
 import closed_HH_Sound from "../audio/basic sounds/closed-HH.mp3";
@@ -40,18 +41,18 @@ export default function Container(props) {
           id="left-side"
           className="col-7 bg-black p-0 d-flex "
         >
-          <div classname="d-flex flex-column justify-content-center" style={{height:"100vh",width:"4%", backgroundColor:"blue"}}>
+
             <input
               type="range"
               min={0}
               max={100}
-              className="slider p-0 "
+              className="slider p-0"
               onChange={changeVolume}
-                // style={{ transform: "rotate(-90deg)" }}
+                //  style={{ transform: "rotate(-90deg)" }}
             ></input>
-          </div>
 
-          <Vinyl />
+
+          <VinylContainer />
         </div>
         {/* <h1>Drum Machine</h1> */}
         <div

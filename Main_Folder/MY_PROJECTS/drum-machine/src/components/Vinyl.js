@@ -1,11 +1,11 @@
 export default function Vinyl() {
   return (
-    <div id="vinyl" className="m-0">
+    <div id="vinyl" className="h-75 w-100">
       <svg
         width="100%"
         height="100%"
         viewBox="0 0 200 200"
-       
+
 
       >
         <circle
