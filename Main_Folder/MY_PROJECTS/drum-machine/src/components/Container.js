@@ -49,13 +49,12 @@ export default function Container(props) {
                 max={100}
                 className="slider p-0 m-0 mb-5"
                 onChange={changeVolume}
-                //  style={{ transform: "rotate(-90deg)" }}
               ></input>
             </div>
             <Vinyl />
           </div>
         </div>
-        {/* <h1>Drum Machine</h1> */}
+
         <div
           id="right-side"
           className="col-4 m-0 p-0"

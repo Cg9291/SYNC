@@ -9,6 +9,10 @@
 .drum-btn {
   width: 7vw;
   height: 7vw;
+  font-size: 40px;
+}
+#drum-machine{
+  max-height: 100vh;
 }
 #indicators-row {
   max-height: 10vh;
@@ -103,6 +107,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .vynil-grey-parts {
   fill: rgba(30, 30, 30, 1);
+
 }
 
 svg {

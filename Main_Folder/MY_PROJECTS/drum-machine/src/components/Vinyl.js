@@ -10,8 +10,14 @@ export default function Vinyl() {
         viewBox="0 0 200 200"
         className=""
       >
-        <g style={{ transform: "scale(1) translate(0)" }}>
-          <g style={{ transform: "scale(0.9) translate(12px,8px)" }}>
+        <g
+          id="full-svg"
+          style={{ transform: "scale(1) translate(0,2.8px)" }}
+        >
+          <g
+            id="main-vinyl-svg"
+            style={{ transform: "scale(0.9) translate(12px,8px)" }}
+          >
             <circle
               cx="100"
               cy="100"
@@ -34,7 +40,7 @@ export default function Vinyl() {
               cy="100"
               r="70"
               stroke="black"
-              strokeWidth="0.1"
+              strokeWidth="1px"
             ></circle>
             <circle
               className="vynil-grey-parts"
@@ -42,7 +48,7 @@ export default function Vinyl() {
               cy="100"
               r="61"
               stroke="black"
-              strokeWidth="0.1"
+              strokeWidth="1px"
             ></circle>
             <circle
               cx="100"
@@ -55,6 +61,8 @@ export default function Vinyl() {
               cy="100"
               r="30"
               fill="red"
+              stroke="grey"
+              strokeWidth="1px"
             ></circle>
             <circle
               cx="99.6"
@@ -69,33 +77,31 @@ export default function Vinyl() {
               fill="white"
             ></circle>
           </g>
-          <svg
-            x="-5"
-            y="25"
-            width="80"
-            height="80"
-            viewBox="0 0 100 100"
+          <g
+            id="small-circle-svg"
+            style={{ transform: "translate(-4px,25px)" }}
           >
             <circle
-              // cx="100"
-              // cy="100"
+              cx="0"
+              cy="0"
               r="20"
               fill="darkturquoise"
             ></circle>
             <circle
-              // cx="100"
-              // cy="100"
+              cx="0"
+              cy="0"
               r="15"
               fill="black"
             ></circle>
             <circle
-              // cx="100"
-              // cy="100"
+              cx="0"
+              cy="0"
               r="7.5"
               fill="lightgrey"
             ></circle>
-          </svg>
+          </g>
           <svg
+            id="arm-svg"
             x="10"
             y="-28"
             width={"100"}

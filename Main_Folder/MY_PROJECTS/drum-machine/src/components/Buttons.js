@@ -148,6 +148,18 @@ export default function Buttons() {
         id="indicators-row"
         className="row mw-100 mt-2 m-0 p-0 mb-2 justify-content-between"
       >
+        <svg
+          viewBox="0 0 100 100"
+          className="col-1 h-50  mt-3 ms-3 justify-self-start "
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="90"
+            fill={indicatorLightColor}
+          />
+        </svg>
+
         <ToggleButton
           className="col-1"
           toggle={toggle}
@@ -155,18 +167,6 @@ export default function Buttons() {
           playing={playing}
           setPlaying={setPlaying}
         />
-
-        <svg
-          viewBox="0 0 100 100"
-          className="col-1 h-50 w-25 mt-3 order-first"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-            fill={indicatorLightColor}
-          />
-        </svg>
       </div>
       {/* <div className="d-flex flex-column col-10 mx-auto p-0 bg-dark">
               <div className="row h-25 col-12 m-0 p-0 flex-grow-1">
