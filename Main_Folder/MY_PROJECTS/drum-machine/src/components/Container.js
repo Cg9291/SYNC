@@ -39,7 +39,7 @@ export default function Container(props) {
       <div className="row">
         <div
           id="left-side"
-          className="col-7 bg-black p-0"
+          className="col-8 bg-black p-0"
         >
           <div className="row">
             <div className="col-1 d-flex align-items-end justify-content-center">
@@ -58,7 +58,7 @@ export default function Container(props) {
         {/* <h1>Drum Machine</h1> */}
         <div
           id="right-side"
-          className="col-5 m-0 p-0"
+          className="col-4 m-0 p-0"
         >
           <Buttons />
         </div>
