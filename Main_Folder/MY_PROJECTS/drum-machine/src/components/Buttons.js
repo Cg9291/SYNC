@@ -146,7 +146,7 @@ export default function Buttons() {
     >
       <div
         id="indicators-row"
-        className="row mw-100 mt-5 m-0 p-0 mb-2 justify-content-between"
+        className="row mw-100 mt-2 m-0 p-0 mb-2 justify-content-between"
       >
         <ToggleButton
           className="col-1"
@@ -403,7 +403,7 @@ export default function Buttons() {
 
       <div
         id="display"
-        className="row d-flex  p-0  justify-content-center bg-warning col-6 border border-dark fs-3 fw-bold align-items-center mx-auto my-auto flex-grow"
+        className="row d-flex  p-0  justify-content-center bg-warning col-6 border border-dark fs-3 fw-bold align-items-center mx-auto my-auto flex-grow "
         style={{ minHeight: "10vh" /*alignSelf:"center"*/ }}
       >
         <div className="col-11 h-75 d-flex align-items-center justify-content-center border border-dark ">
