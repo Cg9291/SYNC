@@ -63,6 +63,14 @@ export default function Buttons() {
         buttonRefs.current.E.className = btnDefaultClass;
       }, 100);
       setPlaying(buttonRefs.current.E.id);
+    } else if (event.key.toUpperCase() === "R") {
+      audioRefs.current.R.play();
+      audioRefs.current.R.volume = volume / 100;
+      buttonRefs.current.R.className += " pad-keys";
+      setTimeout(() => {
+        buttonRefs.current.R.className = btnDefaultClass;
+      }, 100);
+      setPlaying(buttonRefs.current.R.id);
     } else if (event.key.toUpperCase() === "A") {
       audioRefs.current.A.play();
       audioRefs.current.A.volume = volume / 100;
@@ -87,6 +95,14 @@ export default function Buttons() {
         buttonRefs.current.D.className = btnDefaultClass;
       }, 100);
       setPlaying(buttonRefs.current.D.id);
+    } else if (event.key.toUpperCase() === "F") {
+      audioRefs.current.F.play();
+      audioRefs.current.F.volume = volume / 100;
+      buttonRefs.current.F.className += " pad-keys";
+      setTimeout(() => {
+        buttonRefs.current.F.className = btnDefaultClass;
+      }, 100);
+      setPlaying(buttonRefs.current.F.id);
     } else if (event.key.toUpperCase() === "Z") {
       audioRefs.current.Z.play();
       audioRefs.current.Z.volume = volume / 100;
@@ -111,6 +127,14 @@ export default function Buttons() {
         buttonRefs.current.C.className = btnDefaultClass;
       }, 100);
       setPlaying(buttonRefs.current.C.id);
+    } else if (event.key.toUpperCase() === "V") {
+      audioRefs.current.V.play();
+      audioRefs.current.V.volume = volume / 100;
+      buttonRefs.current.V.className += " pad-keys";
+      setTimeout(() => {
+        buttonRefs.current.V.className = btnDefaultClass;
+      }, 100);
+      setPlaying(buttonRefs.current.V.id);
     }
   }
 
@@ -150,7 +174,8 @@ export default function Buttons() {
       >
         <svg
           viewBox="0 0 100 100"
-          className="col-1 h-50  mt-3 ms-3 justify-self-start "
+          className=" h-50  mt-3 ms-3 justify-self-start "
+          style={{width:"10%"}}
         >
           <circle
             cx="50"
@@ -161,7 +186,7 @@ export default function Buttons() {
         </svg>
 
         <ToggleButton
-          className="col-1"
+
           toggle={toggle}
           setToggle={setToggle}
           playing={playing}
@@ -181,14 +206,27 @@ export default function Buttons() {
         <div className="row pad-row">
           <button
             id="Clap"
-            className="btn drum-btn btn-dark"
+            className="btn drum-btn btn-dark p-0"
             ref={ref => (buttonRefs.current.Q = ref)}
             onClick={playSound}
             //onKeyDown={()=>buttonRefs.qParent.style.color='red'}
             //    onKeyDown={}qqa
             style={{ boxShadow: "2px 5px red" }}
           >
-            Q
+            <svg
+              viewBox="0 0 100 100"
+              fill="white"
+              className="d-flex justify-content-center align-items-center m-0 p-0 "
+            >
+              <text
+                x="34.5"
+                y="66.5"
+                className="p-0 m-0"
+              >
+                Q
+              </text>
+            </svg>
+
             <audio
               src={sax}
               className="clip"
@@ -201,12 +239,24 @@ export default function Buttons() {
 
           <button
             id="Closed HH"
-            className="btn drum-btn btn-dark"
+            className="btn drum-btn btn-dark p-0"
             ref={ref => (buttonRefs.current.W = ref)}
             onClick={playSound}
             style={{ boxShadow: "2px 5px blue" }}
           >
-            W
+            <svg
+              viewBox="0 0 100 100"
+              fill="white"
+              className="d-flex justify-content-center align-items-center m-0 p-0 "
+            >
+              <text
+                x="34.5"
+                y="66.5"
+                className="p-0 m-0"
+              >
+                W
+              </text>
+            </svg>
             <audio
               src={kick}
               className="clip"
@@ -219,12 +269,24 @@ export default function Buttons() {
 
           <button
             id="Heater 1"
-            className="btn drum-btn btn-dark"
+            className="btn drum-btn btn-dark p-0"
             ref={ref => (buttonRefs.current.E = ref)}
             onClick={playSound}
             style={{ boxShadow: "2px 5px green" }}
           >
-            E
+            <svg
+              viewBox="0 0 100 100"
+              fill="white"
+              className="d-flex justify-content-center align-items-center m-0 p-0 "
+            >
+              <text
+                x="34.5"
+                y="66.5"
+                className="p-0 m-0"
+              >
+                E
+              </text>
+            </svg>
             <audio
               src={heater_1_Sound}
               className="clip"
@@ -237,12 +299,24 @@ export default function Buttons() {
 
           <button
             id="#"
-            className="btn drum-btn btn-dark"
+            className="btn drum-btn btn-dark p-0 "
             ref={ref => (buttonRefs.current.R = ref)}
             onClick={playSound}
             style={{ boxShadow: "2px 5px green" }}
           >
-            R
+            <svg
+              viewBox="0 0 100 100"
+              fill="white"
+              className="d-flex justify-content-center align-items-center m-0 p-0 "
+            >
+              <text
+                x="39"
+                y="66.5"
+                className="p-0 m-0"
+              >
+                R
+              </text>
+            </svg>
             <audio
               src={heater_1_Sound}
               className="clip"
@@ -257,12 +331,24 @@ export default function Buttons() {
         <div className="row pad-row">
           <button
             id="Heater 2"
-            className="btn drum-btn btn-dark"
+            className="btn drum-btn btn-dark p-0"
             ref={ref => (buttonRefs.current.A = ref)}
             onClick={playSound}
             style={{ boxShadow: "2px 5px purple" }}
           >
-            A
+            <svg
+              viewBox="0 0 100 100"
+              fill="white"
+              className="d-flex justify-content-center align-items-center m-0 p-0 "
+            >
+              <text
+                x="34.5"
+                y="66.5"
+                className="p-0 m-0"
+              >
+                A
+              </text>
+            </svg>
             <audio
               src={heater_2_Sound}
               className="clip"
@@ -275,12 +361,24 @@ export default function Buttons() {
 
           <button
             id="Heater 3"
-            className="btn drum-btn btn-dark"
+            className="btn drum-btn btn-dark p-0"
             ref={ref => (buttonRefs.current.S = ref)}
             onClick={playSound}
             style={{ boxShadow: "2px 5px magenta" }}
           >
-            S
+            <svg
+              viewBox="0 0 100 100"
+              fill="white"
+              className="d-flex justify-content-center align-items-center m-0 p-0 "
+            >
+              <text
+                x="34.5"
+                y="66.5"
+                className="p-0 m-0"
+              >
+                S
+              </text>
+            </svg>
             <audio
               src={heater_3_Sound}
               className="clip"
@@ -293,12 +391,24 @@ export default function Buttons() {
 
           <button
             id="Heater 4"
-            className="btn drum-btn btn-dark"
+            className="btn drum-btn btn-dark p-0"
             ref={ref => (buttonRefs.current.D = ref)}
             onClick={playSound}
             style={{ boxShadow: "2px 5px orange" }}
           >
-            D
+            <svg
+              viewBox="0 0 100 100"
+              fill="white"
+              className="d-flex justify-content-center align-items-center m-0 p-0 "
+            >
+              <text
+                x="34.5"
+                y="66.5"
+                className="p-0 m-0"
+              >
+                D
+              </text>
+            </svg>
             <audio
               src={heater_4_Sound}
               className="clip"
@@ -310,12 +420,24 @@ export default function Buttons() {
           </button>
           <button
             id="#"
-            className="btn drum-btn btn-dark"
+            className="btn drum-btn btn-dark p-0"
             ref={ref => (buttonRefs.current.F = ref)}
             onClick={playSound}
             style={{ boxShadow: "2px 5px green" }}
           >
-            F
+            <svg
+              viewBox="0 0 100 100"
+              fill="white"
+              className="d-flex justify-content-center align-items-center m-0 p-0 "
+            >
+              <text
+                x="34.5"
+                y="66.5"
+                className="p-0 m-0"
+              >
+                F
+              </text>
+            </svg>
             <audio
               src={heater_1_Sound}
               className="clip"
@@ -330,12 +452,24 @@ export default function Buttons() {
         <div className="row pad-row">
           <button
             id="Kick n'Hat"
-            className="btn drum-btn btn-dark"
+            className="btn drum-btn btn-dark p-0"
             ref={ref => (buttonRefs.current.Z = ref)}
             onClick={playSound}
             style={{ boxShadow: "2px 5px turquoise" }}
           >
-            Z
+            <svg
+              viewBox="0 0 100 100"
+              fill="white"
+              className="d-flex justify-content-center align-items-center m-0 p-0 "
+            >
+              <text
+                x="34.5"
+                y="66.5"
+                className="p-0 m-0"
+              >
+                Z
+              </text>
+            </svg>
             <audio
               src={kick_n_hat_Sound}
               className="clip"
@@ -348,12 +482,24 @@ export default function Buttons() {
 
           <button
             id="Kick"
-            className="btn drum-btn btn-dark"
+            className="btn drum-btn btn-dark p-0"
             onClick={playSound}
             ref={ref => (buttonRefs.current.X = ref)}
             style={{ boxShadow: "2px 5px yellow" }}
           >
-            X
+            <svg
+              viewBox="0 0 100 100"
+              fill="white"
+              className="d-flex justify-content-center align-items-center m-0 p-0 "
+            >
+              <text
+                x="34.5"
+                y="66.5"
+                className="p-0 m-0"
+              >
+                X
+              </text>
+            </svg>
             <audio
               src={kick_Sound}
               className="clip"
@@ -366,12 +512,24 @@ export default function Buttons() {
 
           <button
             id="Open HH"
-            className="btn drum-btn btn-dark"
+            className="btn drum-btn btn-dark p-0"
             ref={ref => (buttonRefs.current.C = ref)}
             onClick={playSound}
             style={{ boxShadow: "2px 5px yellowgreen" }}
           >
-            C
+            <svg
+              viewBox="0 0 100 100"
+              fill="white"
+              className="d-flex justify-content-center align-items-center m-0 p-0 "
+            >
+              <text
+                x="34.5"
+                y="66.5"
+                className="p-0 m-0"
+              >
+                C
+              </text>
+            </svg>
             <audio
               src={open_HH_Sound}
               className="clip"
@@ -383,12 +541,24 @@ export default function Buttons() {
           </button>
           <button
             id="#"
-            className="btn drum-btn btn-dark"
+            className="btn drum-btn btn-dark p-0"
             ref={ref => (buttonRefs.current.V = ref)}
             onClick={playSound}
             style={{ boxShadow: "2px 5px green" }}
           >
-            V
+            <svg
+              viewBox="0 0 100 100"
+              fill="white"
+              className="d-flex justify-content-center align-items-center m-0 p-0 "
+            >
+              <text
+                x="34.5"
+                y="66.5"
+                className="p-0 m-0"
+              >
+                V
+              </text>
+            </svg>
             <audio
               src={heater_1_Sound}
               className="clip"
