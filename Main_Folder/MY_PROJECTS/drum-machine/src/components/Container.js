@@ -20,6 +20,7 @@ import kick from "../audio/Midnight Sillage Kit/Electric Piano 01 - Midnight Sil
 /*
  TODOS:
  - Align letters within drum pad buttons
+ -Refactor Buttons to reuse a function on keypress
  -add responsiveness to indicator
  - fix issue where btndefault class would either get overwritten or wont be ran in timeout after long pressing a key
  - download better sounds(maybe look at Logic Pro (in files))

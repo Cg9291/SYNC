@@ -4,6 +4,7 @@
 
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import ToggleButton from "./ToggleButton.js";
+import PadButtons from "./PadButtons.js";
 import Vinyl from "./Vinyl.js";
 //import "../buttons.scss";
 import clap_Sound from "../audio/basic sounds/clap.mp3";
@@ -162,6 +163,14 @@ export default function Buttons() {
     setVolume(event.target.value);
   }
 
+  PadButtons.defaultProps={
+    playSound:playSound,
+    buttonRefs:buttonRefs,
+    audioRefs:audioRefs
+  }
+
+
+
   return (
     <div
       id="controls"
@@ -175,7 +184,7 @@ export default function Buttons() {
         <svg
           viewBox="0 0 100 100"
           className=" h-50  mt-3 ms-3 justify-self-start "
-          style={{width:"10%"}}
+          style={{ width: "10%" }}
         >
           <circle
             cx="50"
@@ -186,7 +195,6 @@ export default function Buttons() {
         </svg>
 
         <ToggleButton
-
           toggle={toggle}
           setToggle={setToggle}
           playing={playing}
@@ -204,7 +212,27 @@ export default function Buttons() {
         className="container-fluid d-flex flex-column justify-content-center align-items-center h-50 mt-5" /*style={{border:'solid blue'}}*/
       >
         <div className="row pad-row">
-          <button
+          <PadButtons
+            id="tbd"
+            keyid="W"
+            boxshadowcolor="red"
+          />
+          <PadButtons
+            id="tbd"
+            keyid="Q"
+            boxshadowcolor="blue"
+          />
+          <PadButtons
+            id="tbd"
+            keyid="W"
+            boxshadowcolor="green"
+          />
+          <PadButtons
+            id="tbd"
+            keyid="W"
+            boxshadowcolor="lightgreen"
+          />
+          {/* <button
             id="Clap"
             className="btn drum-btn btn-dark p-0"
             ref={ref => (buttonRefs.current.Q = ref)}
@@ -216,12 +244,17 @@ export default function Buttons() {
             <svg
               viewBox="0 0 100 100"
               fill="white"
-              className="d-flex justify-content-center align-items-center m-0 p-0 "
+              className=""
             >
               <text
                 x="34.5"
                 y="66.5"
+                fill="red"
+                textLength="90"
+                lengthAdjust="spacing"
                 className="p-0 m-0"
+                // height="80px"
+                // width="50px"
               >
                 Q
               </text>
@@ -235,9 +268,9 @@ export default function Buttons() {
             >
               Your browser does not support this type of file.
             </audio>
-          </button>
+          </button> */}
 
-          <button
+          {/* <button
             id="Closed HH"
             className="btn drum-btn btn-dark p-0"
             ref={ref => (buttonRefs.current.W = ref)}
@@ -247,7 +280,8 @@ export default function Buttons() {
             <svg
               viewBox="0 0 100 100"
               fill="white"
-              className="d-flex justify-content-center align-items-center m-0 p-0 "
+              fontSize="50"
+              className=""
             >
               <text
                 x="34.5"
@@ -325,11 +359,31 @@ export default function Buttons() {
             >
               Your browser does not support this type of file.
             </audio>
-          </button>
+          </button>*/}
         </div>
 
         <div className="row pad-row">
-          <button
+          <PadButtons
+            id="tbd"
+            keyid="A"
+            boxshadowcolor="purple"
+          />
+          <PadButtons
+            id="tbd"
+            keyid="S"
+            boxshadowcolor="brown"
+          />
+          <PadButtons
+            id="tbd"
+            keyid="D"
+            boxshadowcolor="orange"
+          />
+          <PadButtons
+            id="tbd"
+            keyid="F"
+            boxshadowcolor="lightgreen"
+          />
+          {/* <button
             id="Heater 2"
             className="btn drum-btn btn-dark p-0"
             ref={ref => (buttonRefs.current.A = ref)}
@@ -446,11 +500,31 @@ export default function Buttons() {
             >
               Your browser does not support this type of file.
             </audio>
-          </button>
+          </button> */}
         </div>
 
         <div className="row pad-row">
-          <button
+          <PadButtons
+            id="tbd"
+            keyid="Z"
+            boxshadowcolor="turquoise"
+          />
+          <PadButtons
+            id="tbd"
+            keyid="X"
+            boxshadowcolor="yellow"
+          />
+          <PadButtons
+            id="tbd"
+            keyid="W"
+            boxshadowcolor="white"
+          />
+          <PadButtons
+            id="tbd"
+            keyid="W"
+            boxshadowcolor="lightgreen"
+          />
+          {/* <button
             id="Kick n'Hat"
             className="btn drum-btn btn-dark p-0"
             ref={ref => (buttonRefs.current.Z = ref)}
@@ -567,7 +641,7 @@ export default function Buttons() {
             >
               Your browser does not support this type of file.
             </audio>
-          </button>
+          </button> */}
         </div>
       </div>
 
