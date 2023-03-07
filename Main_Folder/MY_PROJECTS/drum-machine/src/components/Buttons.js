@@ -20,23 +20,23 @@ import sax from "../audio/Midnight Sillage Kit/Sax_Midnight_Sillage.mp3";
 import electric_guitar_01 from "../audio/Midnight Sillage Kit/Electric Guitar 01 - Midnight Sillage.mp3";
 import kick from "../audio/Midnight Sillage Kit/Electric Piano 01 - Midnight Sillage.mp3";
 
-export default function Buttons() {
+export default function Buttons(props) {
   const buttonRefs = useRef([]); //using REFCALLBACK to target specific node/element
 
   const audioRefs = useRef([]);
 
   const [playing, setPlaying] = useState();
   const [toggle, setToggle] = useState(true);
-  const [volume, setVolume] = useState(50);
+
   const [indicatorLightColor, setIndicatorLightColor] = useState("black");
 
    function playSound(event) {
     if (toggle) {
-      audioRefs.current.Q.play();
-      audioRefs.current.Q.volume = volume / 100;
-      /* event.target.firstElementChild.play();
-      event.target.firstElementChild.volume = volume / 100;
-      setPlaying(event.target.id); */
+      /* audioRefs.current.Q.play();
+      audioRefs.current.Q.volume = volume / 100; */
+      event.target.firstElementChild.play();
+      event.target.firstElementChild.volume = props.volume / 100;
+      setPlaying(event.target.id);
     }
   }
 
@@ -44,7 +44,7 @@ export default function Buttons() {
     const btnDefaultClass = buttonRefs.current.Q.className;
     if (event.key.toUpperCase() === "Q") {
       audioRefs.current.Q.play();
-      audioRefs.current.Q.volume = volume / 100;
+      audioRefs.current.Q.volume = props.volume / 100;
       buttonRefs.current.Q.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.Q.className = btnDefaultClass;
@@ -52,7 +52,7 @@ export default function Buttons() {
       setPlaying(buttonRefs.current.Q.id);
     } else if (event.key.toUpperCase() === "W") {
       audioRefs.current.W.play();
-      audioRefs.current.W.volume = volume / 100;
+      audioRefs.current.W.volume = props.volume / 100;
       buttonRefs.current.W.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.W.className = btnDefaultClass;
@@ -60,7 +60,7 @@ export default function Buttons() {
       setPlaying(buttonRefs.current.W.id);
     } else if (event.key.toUpperCase() === "E") {
       audioRefs.current.E.play();
-      audioRefs.current.E.volume = volume / 100;
+      audioRefs.current.E.volume = props.volume / 100;
       buttonRefs.current.E.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.E.className = btnDefaultClass;
@@ -68,7 +68,7 @@ export default function Buttons() {
       setPlaying(buttonRefs.current.E.id);
     } else if (event.key.toUpperCase() === "R") {
       audioRefs.current.R.play();
-      audioRefs.current.R.volume = volume / 100;
+      audioRefs.current.R.volume = props.volume / 100;
       buttonRefs.current.R.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.R.className = btnDefaultClass;
@@ -76,7 +76,7 @@ export default function Buttons() {
       setPlaying(buttonRefs.current.R.id);
     } else if (event.key.toUpperCase() === "A") {
       audioRefs.current.A.play();
-      audioRefs.current.A.volume = volume / 100;
+      audioRefs.current.A.volume = props.volume / 100;
       buttonRefs.current.A.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.A.className = btnDefaultClass;
@@ -84,7 +84,7 @@ export default function Buttons() {
       setPlaying(buttonRefs.current.A.id);
     } else if (event.key.toUpperCase() === "S") {
       audioRefs.current.S.play();
-      audioRefs.current.S.volume = volume / 100;
+      audioRefs.current.S.volume = props.volume / 100;
       buttonRefs.current.S.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.S.className = btnDefaultClass;
@@ -92,7 +92,7 @@ export default function Buttons() {
       setPlaying(buttonRefs.current.S.id);
     } else if (event.key.toUpperCase() === "D") {
       audioRefs.current.D.play();
-      audioRefs.current.D.volume = volume / 100;
+      audioRefs.current.D.volume = props.volume / 100;
       buttonRefs.current.D.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.D.className = btnDefaultClass;
@@ -100,7 +100,7 @@ export default function Buttons() {
       setPlaying(buttonRefs.current.D.id);
     } else if (event.key.toUpperCase() === "F") {
       audioRefs.current.F.play();
-      audioRefs.current.F.volume = volume / 100;
+      audioRefs.current.F.volume = props.volume / 100;
       buttonRefs.current.F.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.F.className = btnDefaultClass;
@@ -108,7 +108,7 @@ export default function Buttons() {
       setPlaying(buttonRefs.current.F.id);
     } else if (event.key.toUpperCase() === "Z") {
       audioRefs.current.Z.play();
-      audioRefs.current.Z.volume = volume / 100;
+      audioRefs.current.Z.volume = props.volume / 100;
       buttonRefs.current.Z.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.Z.className = btnDefaultClass;
@@ -116,7 +116,7 @@ export default function Buttons() {
       setPlaying(buttonRefs.current.Z.id);
     } else if (event.key.toUpperCase() === "X") {
       audioRefs.current.X.play();
-      audioRefs.current.X = volume / 100;
+      audioRefs.current.X = props.volume / 100;
       buttonRefs.current.X.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.X.className = btnDefaultClass;
@@ -124,7 +124,7 @@ export default function Buttons() {
       setPlaying(buttonRefs.current.X.id);
     } else if (event.key.toUpperCase() === "C") {
       audioRefs.current.C.play();
-      audioRefs.current.C = volume / 100;
+      audioRefs.current.C = props.volume / 100;
       buttonRefs.current.C.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.C.className = btnDefaultClass;
@@ -132,7 +132,7 @@ export default function Buttons() {
       setPlaying(buttonRefs.current.C.id);
     } else if (event.key.toUpperCase() === "V") {
       audioRefs.current.V.play();
-      audioRefs.current.V.volume = volume / 100;
+      audioRefs.current.V.volume = props.volume / 100;
       buttonRefs.current.V.className += " pad-keys";
       setTimeout(() => {
         buttonRefs.current.V.className = btnDefaultClass;
@@ -142,8 +142,8 @@ export default function Buttons() {
   }
 
   useEffect(() => {
-    setPlaying(volume);
-  }, [volume]);
+    setPlaying(props.volume);
+  }, [props.volume]);
 
   useLayoutEffect(() => {
     if (!toggle) {
@@ -159,14 +159,12 @@ export default function Buttons() {
       window.addEventListener("keypress", handleKeyPress, false);
     }
     return () => window.removeEventListener("keypress", handleKeyPress, false);
-  }, [toggle, volume]);
+  }, [toggle, props.volume]);
 
-  function changeVolume(event) {
-    setVolume(event.target.value);
-  }
+  
 
   PadButtons.defaultProps={
-    // playSound:playSound,
+     playSound:playSound,
     buttonRefs:buttonRefs,
     audioRefs:audioRefs
   }

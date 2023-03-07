@@ -29,6 +29,7 @@ import kick from "../audio/Midnight Sillage Kit/Electric Piano 01 - Midnight Sil
 
 export default function Container(props) {
   const [volume, setVolume] = useState(50);
+
   function changeVolume(event) {
     setVolume(event.target.value);
   }
@@ -61,7 +62,7 @@ export default function Container(props) {
           id="right-side"
           className="col-4 m-0 p-0"
         >
-          <Buttons />
+          <Buttons volume={volume}/>
         </div>
       </div>
     </div>
