@@ -21,10 +21,16 @@ export default function PadButtons(props){
         className=""
       >
         <text
-          x="34.5"
-          y="66.5"
-          textLength="20"
-          lengthAdjust="spacing"
+
+          x="50%"
+          y="55%"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          fontSize="1.5em"
+          letterSpacing="0"
+          textLength="100%" lengthAdjust="Glyphs"
+          /* textLength="20"
+          lengthAdjust="spacing" */
           className=""
           // height="80px"
           // width="50px"

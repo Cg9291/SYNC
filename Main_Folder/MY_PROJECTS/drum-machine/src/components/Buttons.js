@@ -30,11 +30,13 @@ export default function Buttons() {
   const [volume, setVolume] = useState(50);
   const [indicatorLightColor, setIndicatorLightColor] = useState("black");
 
-  function playSound(event) {
+   function playSound(event) {
     if (toggle) {
-      event.target.firstElementChild.play();
+      audioRefs.current.Q.play();
+      audioRefs.current.Q.volume = volume / 100;
+      /* event.target.firstElementChild.play();
       event.target.firstElementChild.volume = volume / 100;
-      setPlaying(event.target.id);
+      setPlaying(event.target.id); */
     }
   }
 
@@ -164,7 +166,7 @@ export default function Buttons() {
   }
 
   PadButtons.defaultProps={
-    playSound:playSound,
+    // playSound:playSound,
     buttonRefs:buttonRefs,
     audioRefs:audioRefs
   }
@@ -214,22 +216,22 @@ export default function Buttons() {
         <div className="row pad-row">
           <PadButtons
             id="tbd"
-            keyid="W"
+            keyid="Q"
             boxshadowcolor="red"
           />
           <PadButtons
             id="tbd"
-            keyid="Q"
+            keyid="W"
             boxshadowcolor="blue"
           />
           <PadButtons
             id="tbd"
-            keyid="W"
+            keyid="E"
             boxshadowcolor="green"
           />
           <PadButtons
             id="tbd"
-            keyid="W"
+            keyid="R"
             boxshadowcolor="lightgreen"
           />
           {/* <button
@@ -516,12 +518,12 @@ export default function Buttons() {
           />
           <PadButtons
             id="tbd"
-            keyid="W"
+            keyid="C"
             boxshadowcolor="white"
           />
           <PadButtons
             id="tbd"
-            keyid="W"
+            keyid="V"
             boxshadowcolor="lightgreen"
           />
           {/* <button
