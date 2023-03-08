@@ -1,49 +1,37 @@
-import { useRef } from "react";
- import sax from "../audio/Midnight Sillage Kit/Sax_Midnight_Sillage.mp3";
+import sax from "../audio/Midnight Sillage Kit/Sax_Midnight_Sillage.mp3";
 
-export default function PadButtons(props){
-
-
-
+export default function PadButtons(props) {
   return (
     <button
       id={props.id}
-      className="btn drum-btn btn-dark p-0"
       ref={ref => (props.buttonRefs.current[props.keyid] = ref)}
+      className="btn drum-btn btn-dark p-0"
       onClick={props.playSound}
-      //onKeyDown={()=>buttonRefs.qParent.style.color='red'}
-      //    onKeyDown={}qqa
       style={{ boxShadow: `2px 5px ${props.boxshadowcolor}` }}
     >
       <svg
         viewBox="0 0 100 100"
         fill="white"
-        className=""
       >
         <text
-
           x="50%"
           y="55%"
           textAnchor="middle"
           dominantBaseline="middle"
           fontSize="1.5em"
           letterSpacing="0"
-          textLength="100%" lengthAdjust="Glyphs"
-          /* textLength="20"
-          lengthAdjust="spacing" */
-          className=""
-          // height="80px"
-          // width="50px"
+          textLength="100%"
+          lengthAdjust="Glyphs"
         >
           {props.keyid}
         </text>
       </svg>
 
       <audio
-        src={sax}
-        className="clip"
         id={props.keyid}
         ref={ref => (props.audioRefs.current[props.keyid] = ref)}
+        className="clip"
+        src={sax}
       >
         Your browser does not support this type of file.
       </audio>

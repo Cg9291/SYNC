@@ -30,7 +30,16 @@ export default function Buttons(props) {
 
   const [indicatorLightColor, setIndicatorLightColor] = useState("black");
 
-   function playSound(event) {
+  const switchToggle = () => {
+    if (toggle) {
+      setToggle(false);
+    } else {
+      setToggle(true);
+      setPlaying(props.volume)
+    }
+  };
+
+  function playSound(event) {
     if (toggle) {
       /* audioRefs.current.Q.play();
       audioRefs.current.Q.volume = volume / 100; */
@@ -161,21 +170,16 @@ export default function Buttons(props) {
     return () => window.removeEventListener("keypress", handleKeyPress, false);
   }, [toggle, props.volume]);
 
-  
-
-  PadButtons.defaultProps={
-     playSound:playSound,
-    buttonRefs:buttonRefs,
-    audioRefs:audioRefs
-  }
-
-
+  PadButtons.defaultProps = {
+    playSound: playSound,
+    buttonRefs: buttonRefs,
+    audioRefs: audioRefs,
+  };
 
   return (
     <div
-      id="controls"
-      /*  height="50px" */
-      className=" vh-100 row d-flex flex-column mx-0 p-0 bg-black align-items-evenly "
+      id="buttons-pane"
+      className=" vh-100 d-flex flex-column mx-0 p-0 bg-black align-items-evenly "
     >
       <div
         id="indicators-row"
@@ -196,20 +200,13 @@ export default function Buttons(props) {
 
         <ToggleButton
           toggle={toggle}
-          setToggle={setToggle}
-          playing={playing}
-          setPlaying={setPlaying}
+          switchToggle={switchToggle}
         />
       </div>
-      {/* <div className="d-flex flex-column col-10 mx-auto p-0 bg-dark">
-              <div className="row h-25 col-12 m-0 p-0 flex-grow-1">
-                <div className="d-flex justify-content-between h-25 col-12 m-0 p-0"></div>
-              </div>
-              {/*<div className="d-flex h-75 m-0 p-0  justify-content-center align-items-start bg-primary">
-            </div> */}
+
       <div
         id="pad"
-        className="container-fluid d-flex flex-column justify-content-center align-items-center h-50 mt-5" /*style={{border:'solid blue'}}*/
+        className="container-fluid d-flex flex-column justify-content-center align-items-center h-50 mt-5"
       >
         <div className="row pad-row">
           <PadButtons
@@ -232,134 +229,6 @@ export default function Buttons(props) {
             keyid="R"
             boxshadowcolor="lightgreen"
           />
-          {/* <button
-            id="Clap"
-            className="btn drum-btn btn-dark p-0"
-            ref={ref => (buttonRefs.current.Q = ref)}
-            onClick={playSound}
-            //onKeyDown={()=>buttonRefs.qParent.style.color='red'}
-            //    onKeyDown={}qqa
-            style={{ boxShadow: "2px 5px red" }}
-          >
-            <svg
-              viewBox="0 0 100 100"
-              fill="white"
-              className=""
-            >
-              <text
-                x="34.5"
-                y="66.5"
-                fill="red"
-                textLength="90"
-                lengthAdjust="spacing"
-                className="p-0 m-0"
-                // height="80px"
-                // width="50px"
-              >
-                Q
-              </text>
-            </svg>
-
-            <audio
-              src={sax}
-              className="clip"
-              id="Q"
-              ref={ref => (audioRefs.current.Q = ref)}
-            >
-              Your browser does not support this type of file.
-            </audio>
-          </button> */}
-
-          {/* <button
-            id="Closed HH"
-            className="btn drum-btn btn-dark p-0"
-            ref={ref => (buttonRefs.current.W = ref)}
-            onClick={playSound}
-            style={{ boxShadow: "2px 5px blue" }}
-          >
-            <svg
-              viewBox="0 0 100 100"
-              fill="white"
-              fontSize="50"
-              className=""
-            >
-              <text
-                x="34.5"
-                y="66.5"
-                className="p-0 m-0"
-              >
-                W
-              </text>
-            </svg>
-            <audio
-              src={kick}
-              className="clip"
-              id="W"
-              ref={ref => (audioRefs.current.W = ref)}
-            >
-              Your browser does not support this type of file.
-            </audio>
-          </button>
-
-          <button
-            id="Heater 1"
-            className="btn drum-btn btn-dark p-0"
-            ref={ref => (buttonRefs.current.E = ref)}
-            onClick={playSound}
-            style={{ boxShadow: "2px 5px green" }}
-          >
-            <svg
-              viewBox="0 0 100 100"
-              fill="white"
-              className="d-flex justify-content-center align-items-center m-0 p-0 "
-            >
-              <text
-                x="34.5"
-                y="66.5"
-                className="p-0 m-0"
-              >
-                E
-              </text>
-            </svg>
-            <audio
-              src={heater_1_Sound}
-              className="clip"
-              id="E"
-              ref={ref => (audioRefs.current.E = ref)}
-            >
-              Your browser does not support this type of file.
-            </audio>
-          </button>
-
-          <button
-            id="#"
-            className="btn drum-btn btn-dark p-0 "
-            ref={ref => (buttonRefs.current.R = ref)}
-            onClick={playSound}
-            style={{ boxShadow: "2px 5px green" }}
-          >
-            <svg
-              viewBox="0 0 100 100"
-              fill="white"
-              className="d-flex justify-content-center align-items-center m-0 p-0 "
-            >
-              <text
-                x="39"
-                y="66.5"
-                className="p-0 m-0"
-              >
-                R
-              </text>
-            </svg>
-            <audio
-              src={heater_1_Sound}
-              className="clip"
-              id="R"
-              ref={ref => (audioRefs.current.R = ref)}
-            >
-              Your browser does not support this type of file.
-            </audio>
-          </button>*/}
         </div>
 
         <div className="row pad-row">
@@ -383,124 +252,6 @@ export default function Buttons(props) {
             keyid="F"
             boxshadowcolor="lightgreen"
           />
-          {/* <button
-            id="Heater 2"
-            className="btn drum-btn btn-dark p-0"
-            ref={ref => (buttonRefs.current.A = ref)}
-            onClick={playSound}
-            style={{ boxShadow: "2px 5px purple" }}
-          >
-            <svg
-              viewBox="0 0 100 100"
-              fill="white"
-              className="d-flex justify-content-center align-items-center m-0 p-0 "
-            >
-              <text
-                x="34.5"
-                y="66.5"
-                className="p-0 m-0"
-              >
-                A
-              </text>
-            </svg>
-            <audio
-              src={heater_2_Sound}
-              className="clip"
-              id="A"
-              ref={ref => (audioRefs.current.A = ref)}
-            >
-              Your browser does not support this type of file.
-            </audio>
-          </button>
-
-          <button
-            id="Heater 3"
-            className="btn drum-btn btn-dark p-0"
-            ref={ref => (buttonRefs.current.S = ref)}
-            onClick={playSound}
-            style={{ boxShadow: "2px 5px magenta" }}
-          >
-            <svg
-              viewBox="0 0 100 100"
-              fill="white"
-              className="d-flex justify-content-center align-items-center m-0 p-0 "
-            >
-              <text
-                x="34.5"
-                y="66.5"
-                className="p-0 m-0"
-              >
-                S
-              </text>
-            </svg>
-            <audio
-              src={heater_3_Sound}
-              className="clip"
-              id="S"
-              ref={ref => (audioRefs.current.S = ref)}
-            >
-              Your browser does not support this type of file.
-            </audio>
-          </button>
-
-          <button
-            id="Heater 4"
-            className="btn drum-btn btn-dark p-0"
-            ref={ref => (buttonRefs.current.D = ref)}
-            onClick={playSound}
-            style={{ boxShadow: "2px 5px orange" }}
-          >
-            <svg
-              viewBox="0 0 100 100"
-              fill="white"
-              className="d-flex justify-content-center align-items-center m-0 p-0 "
-            >
-              <text
-                x="34.5"
-                y="66.5"
-                className="p-0 m-0"
-              >
-                D
-              </text>
-            </svg>
-            <audio
-              src={heater_4_Sound}
-              className="clip"
-              id="D"
-              ref={ref => (audioRefs.current.D = ref)}
-            >
-              Your browser does not support this type of file.
-            </audio>
-          </button>
-          <button
-            id="#"
-            className="btn drum-btn btn-dark p-0"
-            ref={ref => (buttonRefs.current.F = ref)}
-            onClick={playSound}
-            style={{ boxShadow: "2px 5px green" }}
-          >
-            <svg
-              viewBox="0 0 100 100"
-              fill="white"
-              className="d-flex justify-content-center align-items-center m-0 p-0 "
-            >
-              <text
-                x="34.5"
-                y="66.5"
-                className="p-0 m-0"
-              >
-                F
-              </text>
-            </svg>
-            <audio
-              src={heater_1_Sound}
-              className="clip"
-              id="F"
-              ref={ref => (audioRefs.current.F = ref)}
-            >
-              Your browser does not support this type of file.
-            </audio>
-          </button> */}
         </div>
 
         <div className="row pad-row">
@@ -524,140 +275,18 @@ export default function Buttons(props) {
             keyid="V"
             boxshadowcolor="lightgreen"
           />
-          {/* <button
-            id="Kick n'Hat"
-            className="btn drum-btn btn-dark p-0"
-            ref={ref => (buttonRefs.current.Z = ref)}
-            onClick={playSound}
-            style={{ boxShadow: "2px 5px turquoise" }}
-          >
-            <svg
-              viewBox="0 0 100 100"
-              fill="white"
-              className="d-flex justify-content-center align-items-center m-0 p-0 "
-            >
-              <text
-                x="34.5"
-                y="66.5"
-                className="p-0 m-0"
-              >
-                Z
-              </text>
-            </svg>
-            <audio
-              src={kick_n_hat_Sound}
-              className="clip"
-              id="Z"
-              ref={ref => (audioRefs.current.Z = ref)}
-            >
-              Your browser does not support this type of file.
-            </audio>
-          </button>
-
-          <button
-            id="Kick"
-            className="btn drum-btn btn-dark p-0"
-            onClick={playSound}
-            ref={ref => (buttonRefs.current.X = ref)}
-            style={{ boxShadow: "2px 5px yellow" }}
-          >
-            <svg
-              viewBox="0 0 100 100"
-              fill="white"
-              className="d-flex justify-content-center align-items-center m-0 p-0 "
-            >
-              <text
-                x="34.5"
-                y="66.5"
-                className="p-0 m-0"
-              >
-                X
-              </text>
-            </svg>
-            <audio
-              src={kick_Sound}
-              className="clip"
-              id="X"
-              ref={ref => (audioRefs.current.X = ref)}
-            >
-              Your browser does not support this type of file.
-            </audio>
-          </button>
-
-          <button
-            id="Open HH"
-            className="btn drum-btn btn-dark p-0"
-            ref={ref => (buttonRefs.current.C = ref)}
-            onClick={playSound}
-            style={{ boxShadow: "2px 5px yellowgreen" }}
-          >
-            <svg
-              viewBox="0 0 100 100"
-              fill="white"
-              className="d-flex justify-content-center align-items-center m-0 p-0 "
-            >
-              <text
-                x="34.5"
-                y="66.5"
-                className="p-0 m-0"
-              >
-                C
-              </text>
-            </svg>
-            <audio
-              src={open_HH_Sound}
-              className="clip"
-              id="C"
-              ref={ref => (audioRefs.current.C = ref)}
-            >
-              Your browser does not support this type of file.
-            </audio>
-          </button>
-          <button
-            id="#"
-            className="btn drum-btn btn-dark p-0"
-            ref={ref => (buttonRefs.current.V = ref)}
-            onClick={playSound}
-            style={{ boxShadow: "2px 5px green" }}
-          >
-            <svg
-              viewBox="0 0 100 100"
-              fill="white"
-              className="d-flex justify-content-center align-items-center m-0 p-0 "
-            >
-              <text
-                x="34.5"
-                y="66.5"
-                className="p-0 m-0"
-              >
-                V
-              </text>
-            </svg>
-            <audio
-              src={heater_1_Sound}
-              className="clip"
-              id="V"
-              ref={ref => (audioRefs.current.V = ref)}
-            >
-              Your browser does not support this type of file.
-            </audio>
-          </button> */}
         </div>
       </div>
 
       <div
         id="display"
-        className="row d-flex  p-0  justify-content-center bg-warning col-6 border border-dark fs-3 fw-bold align-items-center mx-auto my-auto flex-grow "
-        style={{ minHeight: "10vh" /*alignSelf:"center"*/ }}
+        className="row d-flex  p-0  justify-content-center bg-warning col-6 fs-2 fw-bold align-items-center mx-auto my-auto  "
+        style={{ minHeight: "10vh" }}
       >
         <div className="col-11 h-75 d-flex align-items-center justify-content-center border border-dark ">
           {playing}
         </div>
       </div>
-
-      {/* <div className="row h-25 flex-grow-1  col-12 m-0 p-0"></div> */}
-
-      {/*</div>*/}
     </div>
   );
 }

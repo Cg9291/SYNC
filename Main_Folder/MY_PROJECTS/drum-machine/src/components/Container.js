@@ -19,6 +19,7 @@ import kick from "../audio/Midnight Sillage Kit/Electric Piano 01 - Midnight Sil
 
 /*
  TODOS:
+ -import all sounds directly into PadButtons component
  -rework alignment for buttons letters
  -add instrument id to PadButtons components
  -add responsiveness to indicator
