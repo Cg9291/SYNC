@@ -40,12 +40,15 @@ export default function Buttons(props) {
   };
 
   function playSound(event) {
+    let clickedKey=event.target.ref
     if (toggle) {
+      audioRefs.current.Q.play();
+      audioRefs.current.Q.volume=props.volume/100;
       /* audioRefs.current.Q.play();
       audioRefs.current.Q.volume = volume / 100; */
-      event.target.firstElementChild.play();
-      event.target.firstElementChild.volume = props.volume / 100;
-      setPlaying(event.target.id);
+      // event.target.firstElementChild.play();
+      // event.target.firstElementChild.volume = props.volume / 100;
+      // setPlaying(event.target.id);
     }
   }
 
