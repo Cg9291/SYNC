@@ -35,20 +35,15 @@ export default function Buttons(props) {
       setToggle(false);
     } else {
       setToggle(true);
-      setPlaying(props.volume)
+      setPlaying(props.volume);
     }
   };
 
-  function playSound(event) {
-    let clickedKey=event.target.ref
+  function playSound(keyid) {
     if (toggle) {
-      audioRefs.current.Q.play();
-      audioRefs.current.Q.volume=props.volume/100;
-      /* audioRefs.current.Q.play();
-      audioRefs.current.Q.volume = volume / 100; */
-      // event.target.firstElementChild.play();
-      // event.target.firstElementChild.volume = props.volume / 100;
-      // setPlaying(event.target.id);
+      audioRefs.current[keyid].play();
+      audioRefs.current[keyid].volume = props.volume / 100;
+      setPlaying(buttonRefs.current[keyid].id);
     }
   }
 
@@ -213,22 +208,22 @@ export default function Buttons(props) {
       >
         <div className="row pad-row">
           <PadButtons
-            id="tbd"
+            id="1"
             keyid="Q"
             boxshadowcolor="red"
           />
           <PadButtons
-            id="tbd"
+            id="2"
             keyid="W"
             boxshadowcolor="blue"
           />
           <PadButtons
-            id="tbd"
+            id="3"
             keyid="E"
             boxshadowcolor="green"
           />
           <PadButtons
-            id="tbd"
+            id="4"
             keyid="R"
             boxshadowcolor="lightgreen"
           />
@@ -236,22 +231,22 @@ export default function Buttons(props) {
 
         <div className="row pad-row">
           <PadButtons
-            id="tbd"
+            id="5"
             keyid="A"
             boxshadowcolor="purple"
           />
           <PadButtons
-            id="tbd"
+            id="6"
             keyid="S"
             boxshadowcolor="brown"
           />
           <PadButtons
-            id="tbd"
+            id="7"
             keyid="D"
             boxshadowcolor="orange"
           />
           <PadButtons
-            id="tbd"
+            id="8"
             keyid="F"
             boxshadowcolor="lightgreen"
           />
@@ -259,22 +254,22 @@ export default function Buttons(props) {
 
         <div className="row pad-row">
           <PadButtons
-            id="tbd"
+            id="9"
             keyid="Z"
             boxshadowcolor="turquoise"
           />
           <PadButtons
-            id="tbd"
+            id="10"
             keyid="X"
             boxshadowcolor="yellow"
           />
           <PadButtons
-            id="tbd"
+            id="11"
             keyid="C"
             boxshadowcolor="white"
           />
           <PadButtons
-            id="tbd"
+            id="12"
             keyid="V"
             boxshadowcolor="lightgreen"
           />

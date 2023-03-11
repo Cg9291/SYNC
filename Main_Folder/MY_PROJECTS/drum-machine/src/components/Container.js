@@ -63,7 +63,7 @@ export default function Container(props) {
           id="right-side"
           className="col-4 m-0 p-0"
         >
-          <Buttons volume={volume}/>
+          <Buttons volume={volume} />
         </div>
       </div>
     </div>

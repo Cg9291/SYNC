@@ -6,7 +6,7 @@ export default function PadButtons(props) {
       id={props.id}
       ref={ref => (props.buttonRefs.current[props.keyid] = ref)}
       className="btn drum-btn btn-dark p-0"
-      onClick={props.playSound}
+      onClick={() => props.playSound([props.keyid])}
       style={{ boxShadow: `2px 5px ${props.boxshadowcolor}` }}
     >
       <svg
