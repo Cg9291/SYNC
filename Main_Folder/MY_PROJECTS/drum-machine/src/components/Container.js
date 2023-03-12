@@ -25,8 +25,7 @@ import kick from "../audio/Midnight Sillage Kit/Electric Piano 01 - Midnight Sil
  -add responsiveness to indicator
  - fix issue where btndefault class would either get overwritten or wont be ran in timeout after long pressing a key
  - download better sounds(maybe look at Logic Pro (in files))
- - enable some type of visual feedback for when a key is clicked //pressed
- -  */
+  */
 
 export default function Container(props) {
   const [volume, setVolume] = useState(50);
