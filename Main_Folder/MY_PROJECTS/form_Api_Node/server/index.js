@@ -24,7 +24,7 @@ liveReloadServer.server.once("connection", () => {
     }, 100);
   });
 
-  
+
 //ROUTES
 App.use(express.urlencoded({extended: false}))
 App.use(express.json())
@@ -39,7 +39,7 @@ App.post('/',(req,res)=>{
   apiData2=[...apiData2,req.body]
   fs.writeFile(__dirname+"/apiData.json",JSON.stringify(apiData2),function (err) {
   if (err) throw err;
-  console.log('Saved!',apiData2);
+  console.log('Saved!',JSON.stringify(apiData2));
 });
 console.log(apiData)
   App.get('/api',(req,res)=>{
