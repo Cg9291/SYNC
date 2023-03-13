@@ -22,6 +22,11 @@ export default function Container() {
   //EVENTS HANDLER FUNCTIONS
   const handleClick = event => {
     let etv = event.target.value;
+    setInput(input=>
+      [...input,etv]
+    )
+
+    /* let etv = event.target.value;
     if (isOperator === false) {
       switch (etv) {
         case "+":
@@ -67,7 +72,7 @@ export default function Container() {
             break;
           }
       }
-    }
+    } */
   };
 
   /*if(isOperator===false){

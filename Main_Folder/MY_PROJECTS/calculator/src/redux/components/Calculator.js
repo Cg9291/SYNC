@@ -5,7 +5,7 @@ import Display from "./Display.js";
 export default function Calculator(props) {
   return (
     <>
-      <Display outPut={props.output} />
+      <Display outPut={props.input} />
       <Keys /*ref=btnRef*/ />
     </>
   );

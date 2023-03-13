@@ -19,7 +19,7 @@ export const Keys = forwardRef((props, btnRef) => (
       </div>
       <div className="row-cols-3  justify-content">
         <NumberKeys
-          id="nine"
+          id="seven"
           value={7}
         />
         <NumberKeys
@@ -96,7 +96,7 @@ export const Keys = forwardRef((props, btnRef) => (
         optionalClasses="col-12"
       />
       <OperatorKeys
-        id="equal"
+        id="equals"
         value="="
         optionalClasses="col-12  flex-grow-1"
       />
