@@ -10,3 +10,16 @@ export default function Calculator(props) {
     </>
   );
 }
+{/* <OperatorKeys
+  id="multiply"
+  value="x"
+/>
+<OperatorKeys
+         id="subtract"
+         value="-"
+       />
+        <OperatorKeys
+         id="add"
+         value="+"
+       /> */}
+;

@@ -3,7 +3,7 @@ export default function OperatorKeys (props){
       <>
         <button
           id={props.id}
-          className="col-3 btn btn-primary shadow-none rounded-0 border"
+          className={`col-3 btn btn-primary shadow-none rounded-0 border ${props.optionalClasses}`}
           value={props.value}
           onClick={props.handleClick}
         >
