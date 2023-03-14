@@ -5,7 +5,7 @@ export default function OperatorKeys (props){
           id={props.id}
           className={`col-3 btn btn-primary shadow-none rounded-0 border ${props.optionalClasses}`}
           value={props.value}
-          onClick={props.handleClick}
+          onClick={props.handleOperatorClick}
         >
           {props.value}
         </button>

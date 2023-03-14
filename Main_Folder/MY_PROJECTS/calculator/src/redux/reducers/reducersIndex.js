@@ -1,15 +1,6 @@
 import { combineReducers } from "redux";
+import inputReducer from "./inputReducer.js";
 
-//const rootReducer=combineReducers()
+const rootReducer=combineReducers({inputReducer})
 
-let colorPickerReducer=(state=Math.floor(Math.random()*8.9),action)=>{
-    switch(action.type){
-        case 'COLR':
-            return action.colorNum;
-        default:
-            return state;
-    }
-    
-}
-
-export default colorPickerReducer
+export default rootReducer

@@ -1,7 +1,7 @@
 const inputAction=(event)=>{
     return{
         type:'INPUT',
-        value:event.target.value
+        value:()=>{}
     }
 };
 

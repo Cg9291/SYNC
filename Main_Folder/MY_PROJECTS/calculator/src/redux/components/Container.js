@@ -6,13 +6,14 @@ import NumberKeys from "./NumberKeys.js";
 import { runOperation } from "../functions/arithmetic_Function";
 import { isOperator } from "../functions/isOperator_Function";
 import Calculator from "./Calculator";
+import OperatorKeys from "./OperatorKeys";
 //import { mapStateToProps,mapDispatchToProps } from "react-redux"
 //import { mapStateToProps } from "../../../../random-quote-gen/src/redux/mappings"
 //FIGURE OUT HOW TO SELECT ALL ELEMENTS OF A CLASS/TYPE AND APPLY A FN/EVENTHANDLER TO THEM(REACT WAY)
 
 export default function Container() {
   const [input, setInput] = useState([]);
-  const [output, setOutput] = useState();
+  const [output, setOutput] = useState(0);
   const [displayStyle, setDisplayStyle] = useState({ backgroundColor: "red" });
   const [num, setNum] = useState(0);
   const [isOperator, setIsOperator] = useState(false);
@@ -22,11 +23,9 @@ export default function Container() {
   //EVENTS HANDLER FUNCTIONS
   const handleClick = event => {
     let etv = event.target.value;
-    setInput(input=>
-      [...input,etv]
-    )
+    setInput(input => [...input, etv]);
 
-    /* let etv = event.target.value;
+    /* let etv = event.target.value;☺
     if (isOperator === false) {
       switch (etv) {
         case "+":
@@ -146,7 +145,33 @@ export default function Container() {
         }
     }*/
 
-  const handleClickOperator = event => {
+  const handleOperatorClick = event => {
+    let etv = event.target.value;
+    let firstVal=output;
+    let secondVal;
+    let op;
+    const compute = () => {
+      switch (op) {
+        case "x":
+          return firstVal * secondVal;
+        case "/":
+          return firstVal / secondVal;
+        case "-":
+          return firstVal - secondVal;
+        case "+":
+          return firstVal + secondVal;
+      }
+    };
+    switch (output) {
+      case 0:
+        setOutput(input);
+        setInput([]);
+        //op=etv;
+      default:
+        setOutput(compute())
+
+    }
+
     /*let etv=event.target.value;
 
         if(isOperator(output)===false){//
@@ -226,8 +251,8 @@ export default function Container() {
 
   //DEFAULT PROPS ASSIGNMENTS
   Display.defaultProps = {
-    outputState: output,
-    inputState: input,
+    output: output,
+    input: input,
     numState: num,
     isOperatorState: isOperator,
     operatorState: operator,
@@ -236,7 +261,7 @@ export default function Container() {
 
   Keys.defaultProps = {
     handleAcClick: handleAcClick,
-    handleClickOperator: handleClickOperator,
+    handleOperatorClick: handleOperatorClick,
     handleClick: handleClick,
     handleEqualClick: handleEqualClick,
     isOperatorState: isOperator,
@@ -245,6 +270,13 @@ export default function Container() {
 
   Calculator.defaultProps = {
     output: output,
+  };
+
+  NumberKeys.defaultProps = {
+    handleClick: handleClick,
+  };
+  OperatorKeys.defaultProps = {
+    handleOperatorClick: handleOperatorClick,
   };
 
   return (
