@@ -1,16 +1,19 @@
 import NumberKeys from "./NumberKeys.js";
 import { Keys } from "./Calculator_keys.js";
 import Display from "./Display.js";
-
-export default function Calculator(props) {
+import { handlersContext } from "../contexts/handlersContext.js";
+export default function Calculator(  props ) {
   return (
     <>
-      <Display outPut={props.input} />
-      <Keys /*ref=btnRef*/ />
+      <handlersContext.Provider value={props.handlers}>
+        <Display outPut={props.input} />
+        <Keys /*ref=btnRef*/ />
+      </handlersContext.Provider>
     </>
   );
 }
-{/* <OperatorKeys
+{
+  /* <OperatorKeys
   id="multiply"
   value="x"
 />
@@ -21,5 +24,5 @@ export default function Calculator(props) {
         <OperatorKeys
          id="add"
          value="+"
-       /> */}
-;
+       /> */
+}

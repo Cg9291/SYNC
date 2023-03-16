@@ -1,4 +1,7 @@
+import { useContext } from "react";
+import { handlersContext } from "../contexts/handlersContext";
 export default function NumberKeys(props){
+  const handlers=useContext(handlersContext);
     return (
       <>
         <button
@@ -6,7 +9,7 @@ export default function NumberKeys(props){
         //   ref={btnRef}
           className={`col-4 btn btn-dark shadow-none rounded-0 border ${props.optionalClass}`}
           value={props.value}
-          onClick={props.handleClick}
+          onClick={handlers.handleClick}
         >
           {props.value}
         </button>

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, createContext} from "react";
 import Display from "./Display";
 import { Keys } from "./Calculator_keys";
 import NumberKeys from "./NumberKeys.js";
@@ -7,9 +7,12 @@ import { runOperation } from "../functions/arithmetic_Function";
 import { isOperator } from "../functions/isOperator_Function";
 import Calculator from "./Calculator";
 import OperatorKeys from "./OperatorKeys";
+import { handlersContext } from "../contexts/handlersContext";
 //import { mapStateToProps,mapDispatchToProps } from "react-redux"
 //import { mapStateToProps } from "../../../../random-quote-gen/src/redux/mappings"
 //FIGURE OUT HOW TO SELECT ALL ELEMENTS OF A CLASS/TYPE AND APPLY A FN/EVENTHANDLER TO THEM(REACT WAY)
+
+
 
 export default function Container() {
   const [input, setInput] = useState([]);
@@ -19,6 +22,7 @@ export default function Container() {
   const [isOperator, setIsOperator] = useState(false);
   const [operator, setOperator] = useState();
   const btnRef = useRef();
+
 
   //EVENTS HANDLER FUNCTIONS
   const handleClick = event => {
@@ -273,17 +277,19 @@ export default function Container() {
   };
 
   NumberKeys.defaultProps = {
-    handleClick: handleClick,
+     handleClick: handleClick,
   };
   OperatorKeys.defaultProps = {
-    handleOperatorClick: handleOperatorClick,
+   /*  handleOperatorClick: handleOperatorClick, */
   };
 
   return (
     <div>
-      <div className="container col-3 px-1 pb-1 pt-4 justify-content-center justify-self-center bg-dark border border-primary">
-        <Calculator />
-      </div>
+
+        <div className="container col-3 px-1 pb-1 pt-4 justify-content-center justify-self-center bg-dark border border-primary">
+          <Calculator handlers={{handleClick:handleClick,ab:"aaa"}} />
+        </div>
+
     </div>
   );
 }
