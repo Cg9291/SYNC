@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { useEffect, useState, useRef, createContext} from "react";
+import { useEffect, useState, useRef, createContext } from "react";
 import Display from "./Display";
 import { Keys } from "./Calculator_keys";
 import NumberKeys from "./NumberKeys.js";
@@ -12,22 +12,26 @@ import { handlersContext } from "../contexts/handlersContext";
 //import { mapStateToProps } from "../../../../random-quote-gen/src/redux/mappings"
 //FIGURE OUT HOW TO SELECT ALL ELEMENTS OF A CLASS/TYPE AND APPLY A FN/EVENTHANDLER TO THEM(REACT WAY)
 
-
-
 export default function Container() {
   const [input, setInput] = useState([]);
   const [output, setOutput] = useState(0);
+  const [operator, setOperator] = useState();
+  const [operatorMode, setOperatorMode] = useState(false);
   const [displayStyle, setDisplayStyle] = useState({ backgroundColor: "red" });
   const [num, setNum] = useState(0);
   const [isOperator, setIsOperator] = useState(false);
-  const [operator, setOperator] = useState();
-  const btnRef = useRef();
 
+  const btnRef = useRef();
 
   //EVENTS HANDLER FUNCTIONS
   const handleClick = event => {
     let etv = event.target.value;
-    setInput(input => [...input, etv]);
+    if (operatorMode) {
+      setOperatorMode(false);
+      setInput([etv]);
+    } else {
+      setInput(input => [...input, etv]);
+    }
 
     /* let etv = event.target.value;☺
     if (isOperator === false) {
@@ -151,46 +155,33 @@ export default function Container() {
 
   const handleOperatorClick = event => {
     let etv = event.target.value;
-    let firstVal=output;
+    let firstVal;
     let secondVal;
     let op;
     const compute = () => {
-      switch (op) {
+      switch (operator) {
         case "x":
-          return firstVal * secondVal;
+          return output * Number(input.join(""));
         case "/":
-          return firstVal / secondVal;
+          return output / Number(input.join(""));
         case "-":
-          return firstVal - secondVal;
+          return output - Number(input.join(""));
         case "+":
-          return firstVal + secondVal;
+          return output + Number(input.join(""));
       }
     };
-    switch (output) {
-      case 0:
-        setOutput(input);
+    if (!operatorMode) {
+      if (!operator) {
+        setOperatorMode(true);
+        setOperator(etv);
+        setOutput(Number(input.join("")));
+      } else {
+        setOutput(compute());
         setInput([]);
-        //op=etv;
-      default:
-        setOutput(compute())
+        setOperator(etv)
+      }}
 
-    }
 
-    /*let etv=event.target.value;
-
-        if(isOperator(output)===false){//
-            //added output as dot so that it doesnt mess the inferred conditions of else statement
-            //setOperator(etv);
-            setOutput(etv);
-            setInput([...input,etv])
-        }
-        else{
-            switch(etv){
-                case '-':
-                    setOutput(etv);
-                    setInput([...input,etv]);
-            }
-        }*/
   };
 
   const handleEqualClick = () => {
@@ -277,19 +268,19 @@ export default function Container() {
   };
 
   NumberKeys.defaultProps = {
-     handleClick: handleClick,
+    handleClick: handleClick,
   };
   OperatorKeys.defaultProps = {
-   /*  handleOperatorClick: handleOperatorClick, */
+    /*  handleOperatorClick: handleOperatorClick, */
   };
 
   return (
     <div>
-
-        <div className="container col-3 px-1 pb-1 pt-4 justify-content-center justify-self-center bg-dark border border-primary">
-          <Calculator handlers={{handleClick:handleClick,ab:"aaa"}} />
-        </div>
-
+      <div className="container col-3 px-1 pb-1 pt-4 justify-content-center justify-self-center bg-dark border border-primary">
+        <Calculator
+          handlers={{ handleClick: handleClick, handleOperatorClick: handleOperatorClick }}
+        />
+      </div>
     </div>
   );
 }
