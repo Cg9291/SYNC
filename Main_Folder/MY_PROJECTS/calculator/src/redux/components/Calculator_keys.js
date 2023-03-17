@@ -1,8 +1,12 @@
 import { forwardRef } from "react";
 import NumberKeys from "./NumberKeys.js";
 import OperatorKeys from "./OperatorKeys.js";
+import { useContext } from "react";
+import { handlersContext } from "../contexts/handlersContext.js";
 
-export const Keys = forwardRef((props, btnRef) => (
+export const Keys =
+ forwardRef((props, btnRef) => (
+
   <div className="d-flex ">
     <div className="container-fluid m-0 p-0 justify-content-start w-75">
       <div className="row-cols-3 justify-content">
@@ -99,6 +103,7 @@ export const Keys = forwardRef((props, btnRef) => (
         id="equals"
         value="="
         optionalClasses="col-12  flex-grow-1"
+        
       />
     </div>
   </div>

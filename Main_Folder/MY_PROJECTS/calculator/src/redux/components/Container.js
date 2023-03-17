@@ -153,41 +153,50 @@ export default function Container() {
         }
     }*/
 
+  const compute = () => {
+    switch (operator) {
+      case "x":
+        return output * Number(input.join(""));
+      case "/":
+        return output / Number(input.join(""));
+      case "-":
+        return output - Number(input.join(""));
+      case "+":
+        return output + Number(input.join(""));
+    }
+  };
+
   const handleOperatorClick = event => {
     let etv = event.target.value;
-    let firstVal;
-    let secondVal;
-    let op;
-    const compute = () => {
-      switch (operator) {
-        case "x":
-          return output * Number(input.join(""));
-        case "/":
-          return output / Number(input.join(""));
-        case "-":
-          return output - Number(input.join(""));
-        case "+":
-          return output + Number(input.join(""));
-      }
-    };
+
     if (!operatorMode) {
       if (!operator) {
         setOperatorMode(true);
         setOperator(etv);
         setOutput(Number(input.join("")));
       } else {
+        setOperatorMode(true);
         setOutput(compute());
         setInput([]);
-        setOperator(etv)
-      }}
-
-
+        setOperator(etv);
+      }
+    }else{
+      setOperatorMode(true);
+      switch(operator) {
+        case "-":
+          setOperator(etv);
+          setOutput(-compute());
+          break;
+          default:
+            setOperator(etv);
+            setOutput(compute());
+      }
+    }
   };
 
   const handleEqualClick = () => {
-    let result = eval(input.join(""));
-    setInput([result]);
-    setNum(result.toString());
+   setOperatorMode(true);
+    //compute();
 
     /*let inputSlice=input.slice();
 
@@ -278,7 +287,8 @@ export default function Container() {
     <div>
       <div className="container col-3 px-1 pb-1 pt-4 justify-content-center justify-self-center bg-dark border border-primary">
         <Calculator
-          handlers={{ handleClick: handleClick, handleOperatorClick: handleOperatorClick }}
+          handlers={{ handleClick: handleClick, handleOperatorClick: handleOperatorClick ,compute:compute,
+          handleEqualClick:handleEqualClick}}
         />
       </div>
     </div>
