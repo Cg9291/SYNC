@@ -8,23 +8,11 @@ export default function Calculator(  props ) {
   return (
     <>
       <handlersContext.Provider value={props.handlers}>
-        <Display outPut={props.input} />
-        <Keys handlers={handlers} handleAcClick={props.handleAcClick} /*ref=btnRef*/ />
+        <Display/>
+        <Keys  /*ref=btnRef*/ />
       </handlersContext.Provider>
     </>
   );
 }
-{
-  /* <OperatorKeys
-  id="multiply"
-  value="x"
-/>
-<OperatorKeys
-         id="subtract"
-         value="-"
-       />
-        <OperatorKeys
-         id="add"
-         value="+"
-       /> */
-}
+
+

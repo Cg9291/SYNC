@@ -81,7 +81,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
             id="decimal"
             className="col-4 btn btn-secondary shadow-none rounded-0 border"
             value={"."}
-            onClick={props.handleClick}
+            onClick={handlers.handleDecimalClick}
           >
             .
           </button>
