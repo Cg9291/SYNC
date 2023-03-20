@@ -18,8 +18,7 @@ export default function Container() {
   const [operator, setOperator] = useState();
   const [operatorMode, setOperatorMode] = useState(false);
   const [displayStyle, setDisplayStyle] = useState({ backgroundColor: "red" });
-  const [num, setNum] = useState(0);
-  const [isOperator, setIsOperator] = useState(false);
+
 
   const btnRef = useRef();
 
@@ -247,30 +246,29 @@ export default function Container() {
 
   const handleAcClick = () => {
     setInput([]);
-    setOutput();
-    setNum(0);
-    setIsOperator(false);
+    setOutput(0);
     setOperator();
+    setOperatorMode(false)
   };
 
   //DEFAULT PROPS ASSIGNMENTS
   Display.defaultProps = {
     output: output,
     input: input,
-    numState: num,
+
     isOperatorState: isOperator,
     operatorState: operator,
     handleClick: handleClick,
   };
 
-  Keys.defaultProps = {
+  /* Keys.defaultProps = {
     handleAcClick: handleAcClick,
     handleOperatorClick: handleOperatorClick,
     handleClick: handleClick,
     handleEqualClick: handleEqualClick,
     isOperatorState: isOperator,
     operatorState: operator,
-  };
+  }; */
 
   Calculator.defaultProps = {
     output: output,
@@ -288,7 +286,7 @@ export default function Container() {
       <div className="container col-3 px-1 pb-1 pt-4 justify-content-center justify-self-center bg-dark border border-primary">
         <Calculator
           handlers={{ handleClick: handleClick, handleOperatorClick: handleOperatorClick ,compute:compute,
-          handleEqualClick:handleEqualClick}}
+          handleEqualClick:handleEqualClick,handleAcClick:handleAcClick}}
         />
       </div>
     </div>

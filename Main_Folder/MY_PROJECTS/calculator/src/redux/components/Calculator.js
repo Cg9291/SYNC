@@ -9,7 +9,7 @@ export default function Calculator(  props ) {
     <>
       <handlersContext.Provider value={props.handlers}>
         <Display outPut={props.input} />
-        <Keys handlers={handlers} /*ref=btnRef*/ />
+        <Keys handlers={handlers} handleAcClick={props.handleAcClick} /*ref=btnRef*/ />
       </handlersContext.Provider>
     </>
   );
