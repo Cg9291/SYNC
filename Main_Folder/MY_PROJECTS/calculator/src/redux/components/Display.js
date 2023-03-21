@@ -1,9 +1,9 @@
 export default function Display(props) {
   return (
-    <div>
+    <div className="bg-warning">
       <div
         /*style={displayStyle}*/ className="row-cols-4 justify-content text-light d-flex flex-column
-                align-items-center"
+                align-items-center "
       >
         <div>{props.input}</div>
       </div>

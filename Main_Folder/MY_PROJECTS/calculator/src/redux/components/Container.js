@@ -1,4 +1,4 @@
-import { useState, useRef} from "react";
+import { useState, useRef,useEffect} from "react";
 import Display from "./Display";
 import { Keys } from "./Calculator_keys";
 import NumberKeys from "./NumberKeys.js";
@@ -12,39 +12,50 @@ import { handlersContext } from "../contexts/handlersContext";
 /*
 -Despite them fully working..still need to tweak code to meet DISPLAY & DECIMALS requirements from fcc camp challenge.
 -Add function to operate on negative numbers.
--Get ui design 
+-Get ui design
 */
 
 export default function Container() {
   const [input, setInput] = useState([]);
-  const [output, setOutput] = useState(0);
+  const [output, setOutput] = useState([]);
   const [operator, setOperator] = useState();
   const [operatorMode, setOperatorMode] = useState(false);
   const [displayStyle, setDisplayStyle] = useState({ backgroundColor: "red" });
 
   const btnRef = useRef();
 
+ /*   useEffect(()=>{
+    if (input==[]){
+    setOutput(input)}
+  },[input]) */
+
+
   //EVENTS HANDLER FUNCTIONS
   const handleClick = event => {
     let etv = event.target.value;
     if (operatorMode) {
       setOperatorMode(false);
-      setInput([etv]);
+      setInput(input=>[...input,etv]);
+      setOutput(etv)
     } else {
       setInput(input => [...input, etv]);
+      setOutput([...output,etv])
     }
   };
 
-  const compute = () => {
+  let a;
+  let b;
+
+  const compute = (a=0,b) => {
     switch (operator) {
       case "x":
-        return output * Number(input.join(""));
+        return a * b;
       case "/":
-        return output / Number(input.join(""));
+        return a / b;
       case "-":
-        return output - Number(input.join(""));
+        return a - b;
       case "+":
-        return output + Number(input.join(""));
+        return a + b;
     }
   };
 
@@ -57,13 +68,17 @@ export default function Container() {
         //have not clicked on ANY operator yet
         setOperatorMode(true);
         setOperator(etv);
-        setOutput(Number(input.join("")));
+        setInput(input=>[input.splice(input.length-2,0,"ooo")])
+        setOutput([etv]);
+
       } else {
         //operator has been clicked at some point,just not rn
         setOperatorMode(true);
+        b = output;
         setOutput(compute());
-        setInput([]);
+        setInput(input => [...input, etv]);
         setOperator(etv);
+
       }
     } else {
       //have just clicked on operator
@@ -91,7 +106,7 @@ export default function Container() {
 
   const handleAcClick = () => {
     setInput([]);
-    setOutput(0);
+    setOutput([]);
     setOperator();
     setOperatorMode(false);
   };
