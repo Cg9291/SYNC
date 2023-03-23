@@ -1,4 +1,4 @@
-import { useState, useRef,useEffect} from "react";
+import { useState, useRef, useEffect } from "react";
 import Display from "./Display";
 import { Keys } from "./Calculator_keys";
 import NumberKeys from "./NumberKeys.js";
@@ -17,45 +17,58 @@ import { handlersContext } from "../contexts/handlersContext";
 
 export default function Container() {
   const [input, setInput] = useState([]);
-  const [output, setOutput] = useState([]);
+  const [output, setOutput] = useState(0);
+  const [result, setResult] = useState();
   const [operator, setOperator] = useState();
   const [operatorMode, setOperatorMode] = useState(false);
   const [displayStyle, setDisplayStyle] = useState({ backgroundColor: "red" });
 
   const btnRef = useRef();
 
- /*   useEffect(()=>{
-    if (input==[]){
-    setOutput(input)}
-  },[input]) */
-
+  useEffect(() => {
+    setOutput(result);
+  }, [result]);
+  useEffect(() => {
+    setOutput(output);
+  }, [output]);
 
   //EVENTS HANDLER FUNCTIONS
   const handleClick = event => {
     let etv = event.target.value;
+
     if (operatorMode) {
+      switch(output){
+        case []:
       setOperatorMode(false);
-      setInput(input=>[...input,etv]);
-      setOutput(etv)
-    } else {
       setInput(input => [...input, etv]);
-      setOutput([...output,etv])
+      setOutput([etv]);
+    }} else {
+      switch (output) {
+        case 0:
+          setInput(input => [...input, etv]);
+          setOutput([etv]);
+          break;
+        default:
+          setInput(input => [...input, etv]);
+          setOutput([...output, etv]);
+          break;
+      }
     }
   };
 
   let a;
   let b;
 
-  const compute = (a=0,b) => {
+  const compute = (value, operand) => {
     switch (operator) {
       case "x":
-        return a * b;
+        return value * operand;
       case "/":
-        return a / b;
+        return value / operand;
       case "-":
-        return a - b;
+        return value - operand;
       case "+":
-        return a + b;
+        return value + operand;
     }
   };
 
@@ -68,17 +81,15 @@ export default function Container() {
         //have not clicked on ANY operator yet
         setOperatorMode(true);
         setOperator(etv);
-        setInput(input=>[input.splice(input.length-2,0,"ooo")])
+        setInput(input => [...input, etv]);
+        setResult(Number(input.join("")));
         setOutput([etv]);
-
       } else {
         //operator has been clicked at some point,just not rn
         setOperatorMode(true);
-        b = output;
-        setOutput(compute());
+        setResult(result => compute(result, Number(output.join(""))));
         setInput(input => [...input, etv]);
         setOperator(etv);
-
       }
     } else {
       //have just clicked on operator
@@ -106,7 +117,8 @@ export default function Container() {
 
   const handleAcClick = () => {
     setInput([]);
-    setOutput([]);
+    setOutput(0);
+    setResult();
     setOperator();
     setOperatorMode(false);
   };
@@ -116,9 +128,11 @@ export default function Container() {
     if (operatorMode) {
       setOperatorMode(false);
       setInput([etv]);
+      setOutput([etv]);
     } else {
-      if (input.indexOf(".") === -1) {
+      if (output.indexOf(".") === -1) {
         setInput(input => [...input, etv]);
+        setOutput(output => [...output, etv]);
       }
     }
   };
@@ -140,14 +154,13 @@ export default function Container() {
     handleEqualClick: handleEqualClick,
     handleAcClick: handleAcClick,
     handleDecimalClick: handleDecimalClick,
+    result: result,
   };
 
   return (
     <div>
       <div className="container col-3 px-1 pb-1 pt-4 justify-content-center justify-self-center bg-dark border border-primary">
-        <Calculator
-          handlers={handlersContextProps}
-        />
+        <Calculator handlers={handlersContextProps} />
       </div>
     </div>
   );
