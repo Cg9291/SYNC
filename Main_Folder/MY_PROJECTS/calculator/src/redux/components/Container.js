@@ -10,8 +10,8 @@ import { handlersContext } from "../contexts/handlersContext";
 
 //TODOS
 /*
--Despite them fully working..still need to tweak code to meet DISPLAY & DECIMALS requirements from fcc camp challenge.
--Add function to operate on negative numbers.
+-Now passing all tests
+-Look for ways to improve code
 -Get ui design
 */
 
@@ -77,8 +77,7 @@ export default function Container() {
     }
   };
 
-  let a;
-  let b;
+
 
   const compute = (value, operand) => {
     switch (operator) {
@@ -90,6 +89,17 @@ export default function Container() {
         return value - operand;
       case "+":
         return value + operand;
+      default:
+        switch (operator[0]) {
+          case "x":
+            return value * -operand;
+          case "/":
+            return value / -operand;
+          case "-":
+            return value - -operand;
+          case "+":
+            return value + -operand;
+        }
     }
   };
 
@@ -120,6 +130,7 @@ export default function Container() {
         case "-":
           setInput(input=>[...input,etv])
           setOutput([etv]);
+          setOperator(operator=>[...operator,etv])
           //setOperator(etv);
           //setOutput(-compute());
           break;
