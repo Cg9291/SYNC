@@ -50,7 +50,7 @@ export default function Container() {
               break;
           }
         default:
-          setOperatorMode(false)
+          setOperatorMode(false);
           setInput(input => [...input, etv]);
           setOutput([etv]);
           break;
@@ -71,7 +71,7 @@ export default function Container() {
           break;
         default:
           setInput(input => [...input, etv]);
-          setOutput(output=>[...output, etv]);
+          setOutput(output => [...output, etv]);
           break;
       }
     }
@@ -115,15 +115,19 @@ export default function Container() {
     } else {
       //have just clicked on operator
       setOperatorMode(true);
-      setInput([]);
-      switch (operator) {
+      //setInput([]);
+      switch (etv) {
         case "-":
-          setOutput(-compute());
+          setInput(input=>[...input,etv])
+          setOutput([etv]);
           //setOperator(etv);
           //setOutput(-compute());
           break;
         default:
           setOperator(etv);
+          setInput(input => [...input.slice(0, input.length - 1), etv]);
+          setOutput([etv]);
+          break;
         //setOutput(compute());
       }
     }
