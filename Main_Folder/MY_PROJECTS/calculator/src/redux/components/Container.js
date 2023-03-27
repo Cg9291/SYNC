@@ -37,20 +37,41 @@ export default function Container() {
     let etv = event.target.value;
 
     if (operatorMode) {
-      switch(output){
-        case []:
-      setOperatorMode(false);
-      setInput(input => [...input, etv]);
-      setOutput([etv]);
-    }} else {
       switch (output) {
         case 0:
+          switch (etv) {
+            case 0:
+              setOperatorMode(false);
+              break;
+            default:
+              setOperatorMode(false);
+              setInput([etv]);
+              setOutput([etv]);
+              break;
+          }
+        default:
+          setOperatorMode(false)
           setInput(input => [...input, etv]);
           setOutput([etv]);
           break;
+      }
+    } else {
+      switch (output) {
+        case 0:
+          switch (etv) {
+            case "0":
+              setOperatorMode(false);
+              break;
+            default:
+              setOperatorMode(false);
+              setInput([etv]);
+              setOutput([etv]);
+              break;
+          }
+          break;
         default:
           setInput(input => [...input, etv]);
-          setOutput([...output, etv]);
+          setOutput(output=>[...output, etv]);
           break;
       }
     }
