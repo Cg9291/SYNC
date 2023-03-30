@@ -4,7 +4,7 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import ToggleButton from "./ToggleButton.js";
 import Vinyl from "./Vinyl.js";
 import VinylContainer from "./VinylContainer.js";
-//import "../buttons.scss";
+
 import clap_Sound from "../audio/basic sounds/clap.mp3";
 import closed_HH_Sound from "../audio/basic sounds/closed-HH.mp3";
 import heater_1_Sound from "../audio/basic sounds/heater-1.mp3";
@@ -21,9 +21,9 @@ import kick from "../audio/Midnight Sillage Kit/Electric Piano 01 - Midnight Sil
 /*
  TODO
  - add responsiveness
- -add responsiveness to indicator
+ - add responsiveness to indicator
  - fix issue where btndefault class would either get overwritten or wont be ran in timeout after long pressing a key
- - download better sounds(maybe look at Logic Pro (in files))
+ - !download better sounds(maybe look at Logic Pro (in files))
   */
 
 export default function Container(props) {

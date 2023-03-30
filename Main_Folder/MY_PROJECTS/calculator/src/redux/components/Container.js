@@ -11,6 +11,7 @@ import { handlersContext } from "../contexts/handlersContext";
 /*
 TODO
 -Now passing all tests
+-Review default props assignment and try to pass those to context
 -Look for ways to improve code
 -Get ui design
 */
@@ -25,6 +26,7 @@ export default function Container() {
 
   const btnRef = useRef();
 
+  //FUNCTION THAT CHANGES THE DISPLAYED VALUE BASED ON WHETHER VALUE IS INPUTTED OR COMPUTED
   useEffect(() => {
     setOutput(result);
   }, [result]);
@@ -181,6 +183,7 @@ export default function Container() {
     handleClick: handleClick,
   };
 
+  //CONTEXT
   const handlersContextProps = {
     handleClick: handleClick,
     handleOperatorClick: handleOperatorClick,

@@ -5,13 +5,13 @@ import TimedButtons from "./components/TimedButtons.js";
 import { Timer } from "./components/TimerComponent";
 import React, { useState, useEffect, useRef } from "react";
 import DynamicTimerCircle from "./components/DynamicTimerCircleComponent";
-//TODO:
+//TODO
 /*see anais designs
     -fix bug where start-reset gets clipped on my iphone 13pro max
-    -add responsiveness for tablets & landscape modes
-    -fix sizing of settings button arrows for tablets layout
-    -fancy clock design(rotating down)
-    -find a way to add gradient with circle border
+    -!add responsiveness for tablets & landscape modes
+    -!fix sizing of settings button arrows for tablets layout
+    -$fancy clock design(rotating down)
+    -$find a way to add gradient with circle border
 */
 export default function Container() {
   //HOOKS - break & session components hooks

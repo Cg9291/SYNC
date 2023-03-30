@@ -1,11 +1,12 @@
 /*
-TODO:
+TODO
 -replace & import missing images(broken links causing issues)
 -get correct image sizing
 -make images responsive
 -get design with Anais
 
 */
+
 let rockImg =
   "./images/the-rock-flex.jpg";
 
@@ -42,6 +43,7 @@ function userChoice(id) {
   }
 
   let randomNum = Math.floor(Math.random() * 3);
+  
   document.getElementById("cpu-img").src = numRef[randomNum];
 
   round++;
