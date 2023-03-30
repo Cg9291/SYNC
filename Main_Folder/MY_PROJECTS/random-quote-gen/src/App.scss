@@ -43,8 +43,8 @@
       height: fit-content;
       width: fit-content;
       min-height: fit-content;
-      min-width: 550px;
-      max-width: 550px;
+      min-width: 60vw;
+      max-width: 60vw;
       //border:solid yellow;
       border-radius: 1%;
       background-color: white;
@@ -53,9 +53,9 @@
         align-self: center;
         height: fit-content;
         min-width: 80%;
-        max-width: 80%;
-        margin-top: 2.063rem;
-        font-size: 170%;
+        //max-width: 80%;
+        margin: 2.063rem 2rem 0 2rem;
+        font-size: 1.7rem;
         font-weight: 500;
         //border:dotted variables.$red-color;
         color: variables.$theme-color;
@@ -113,6 +113,11 @@
         background-color: variables.$theme-color;
       }
     }
+  }
+  // .................MEDIA QUERIES..............................
+
+  @media screen and (max-width: 576px){
+
   }
 }
 
