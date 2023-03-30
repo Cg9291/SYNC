@@ -8,8 +8,8 @@ import Calculator from "./Calculator";
 import OperatorKeys from "./OperatorKeys";
 import { handlersContext } from "../contexts/handlersContext";
 
-//TODOS
 /*
+TODO
 -Now passing all tests
 -Look for ways to improve code
 -Get ui design
@@ -77,8 +77,6 @@ export default function Container() {
     }
   };
 
-
-
   const compute = (value, operand) => {
     switch (operator) {
       case "x":
@@ -128,9 +126,9 @@ export default function Container() {
       //setInput([]);
       switch (etv) {
         case "-":
-          setInput(input=>[...input,etv])
+          setInput(input => [...input, etv]);
           setOutput([etv]);
-          setOperator(operator=>[...operator,etv])
+          setOperator(operator => [...operator, etv]);
           //setOperator(etv);
           //setOutput(-compute());
           break;

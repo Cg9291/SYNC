@@ -238,7 +238,7 @@
 
   // .................MEDIA QUERIES..............................
 
-  @media screen and (max-width: 576px) {
+  @media (width < 576px) {
     // for mobile phones
     #container {
       grid-template-areas:
@@ -301,7 +301,8 @@
     }
   }
 
-  @media screen and (min-width: 576px) and (max-width: 1024px) {
+  @media (576px <= width <= 1024px) {//syntax from Media Queries level 4
+    
     //for tablets
 
     #container {

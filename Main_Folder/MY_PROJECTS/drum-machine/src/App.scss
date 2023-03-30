@@ -1,24 +1,30 @@
 .App {
   text-align: center;
+
+.btn{
+    border-radius: 10%;
+    height: 5rem;
+    width: 5rem;
 }
 
-.pad-keys{
-  color:red;
-  animation: blink 1s;
+#pad{
+    //width: 20rem;
+    margin:0;
+    padding:0;
 }
-@keyframes blink {
-  0%{
-    background-color: red;
+
+
+  .pad-keys {
+    color: red;
+    animation: blink 1s;
   }
-  100%{
-    background-color: black;
+  @keyframes blink {
+    0% {
+      background-color: red;
+    }
+    100% {
+      background-color: black;
+    }
   }
 }
 
-/*#id{
-  display: grid;
-  grid-template-areas:
-  "toggle . . . . slider"
-  "display display display display display slider"
-  ". . . . . slider";
-}*/

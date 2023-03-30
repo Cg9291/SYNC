@@ -23,15 +23,6 @@ export default function Buttons() {
 
   const audioRefs = useRef([]);
 
- /*  const Q = useRef();
-  const W = useRef();
-  const E = useRef();
-  const A = useRef();
-  const S = useRef();
-  const D = useRef();
-  const Z = useRef();
-  const X = useRef();
-  const C = useRef(); */
 
   const [playing, setPlaying] = useState();
   const [toggle, setToggle] = useState(true);
