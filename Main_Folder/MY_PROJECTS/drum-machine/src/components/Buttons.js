@@ -95,7 +95,7 @@ export default function Buttons(props) {
   return (
     <div
       id="buttons-pane"
-      className=" vh-100 d-flex flex-column mx-0 p-0 bg-black align-items-evenly "
+      className=" w-100 h-100 mh-100 d-flex flex-column m-0 p-0 bg-black align-items-evenly "
     >
       <div
         id="indicators-row"
@@ -196,7 +196,7 @@ export default function Buttons(props) {
 
       <div
         id="display"
-        className="row d-flex  p-0  justify-content-center bg-warning col-6 fs-2 fw-bold align-items-center mx-auto my-auto  "
+        className="row d-flex p-0  justify-content-center bg-warning col-6 fs-2 fw-bold align-items-center mx-auto my-auto  "
         style={{ minHeight: "10vh" }}
       >
         <div className="col-11 h-75 d-flex align-items-center justify-content-center border border-dark ">

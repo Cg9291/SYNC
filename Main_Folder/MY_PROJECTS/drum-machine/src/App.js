@@ -6,7 +6,7 @@ import Container from './components/Container.js';
 function App() {
   return (
     <div className="App">
-      <Container/>
+      {<Container/>}
     </div>
   );
 }

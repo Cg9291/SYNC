@@ -2,13 +2,11 @@ export default function Vinyl() {
   return (
     <div
       id="vinyl"
-      className="col-11"
+      className="col-11 h-100 mh-100 "
     >
       <svg
-        width="100%"
-        height="100vh"
         viewBox="0 0 200 200"
-        className=""
+        className="bg-warning w-100 h-100 "
       >
         <g
           id="full-svg"

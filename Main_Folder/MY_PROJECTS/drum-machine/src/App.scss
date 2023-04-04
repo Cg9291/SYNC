@@ -1,4 +1,10 @@
-
+.App{
+  background-color: purple;
+  height: 100vh;
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
 .btn {
   border-radius: 10%;
 }
@@ -7,9 +13,7 @@
   height: 7vw;
   font-size: 40px;
 }
-#drum-machine{
-  max-height: 100vh;
-}
+
 #indicators-row {
   max-height: 10vh;
   height: 10vh;
@@ -97,6 +101,11 @@ svg {
   overflow: visible;
 }
 
+@media (width<576px){
+  .h-sm-50{
+    height: 50% !important;
+  }
+}
 
 /*#id{
   display: grid;

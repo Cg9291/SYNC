@@ -3,7 +3,7 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import ToggleButton from "./ToggleButton.js";
 import Vinyl from "./Vinyl.js";
-import VinylContainer from "./VinylContainer.js";
+
 
 import clap_Sound from "../audio/basic sounds/clap.mp3";
 import closed_HH_Sound from "../audio/basic sounds/closed-HH.mp3";
@@ -36,15 +36,20 @@ export default function Container(props) {
   return (
     <div
       id="drum-machine"
-      className="container-fluid justify-content-center align-items-center"
+      className="container-fluid justify-content-center align-items-center mh-100 h-100 bg-primary"
+      // style={{ height: "0vh"}}
     >
-      <div className="row">
+      <div
+        className="row h-100
+      mh-100 bg-primary"
+      >
         <div
           id="left-side"
-          className="col-8 bg-black p-0"
+          className=" col-sm-8 bg-danger mh-100 h-100 h-sm-50 p-0"
+          //style={{ height: "100vh" }}
         >
-          <div className="row">
-            <div className="col-1 d-flex align-items-end justify-content-center">
+          <div className="row h-100">
+            <div className="col-1 d-flex align-items-end justify-content-center ">
               <input
                 type="range"
                 min={0}
@@ -59,7 +64,7 @@ export default function Container(props) {
 
         <div
           id="right-side"
-          className="col-4 m-0 p-0"
+          className="col-sm-4 m-0 p-0 mh-100 h-100 h-sm-50 bg-primary"
         >
           <Buttons volume={volume} />
         </div>
