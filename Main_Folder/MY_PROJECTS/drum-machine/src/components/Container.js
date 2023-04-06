@@ -20,7 +20,7 @@ import kick from "../audio/Midnight Sillage Kit/Electric Piano 01 - Midnight Sil
 /*
  TODO
  - add responsiveness
- - add responsiveness more responsiveness to indicator(use physical ipad & phone)
+ -learn & implement calculation to take mobile address bar into account
  - fix issue where btndefault class would either get overwritten or wont be ran in timeout after long pressing a key
  - !download better sounds(maybe look at Logic Pro (in files))
   */
@@ -35,8 +35,8 @@ export default function Container(props) {
   return (
     <div
       id="drum-machine"
-      className="container-fluid justify-content-center align-items-center  mh-100 h-100 bg-primary m-0 p-0 "
-      // style={{ height: "0vh"}}
+      className="container-fluid justify-content-center align-items-center bg-primary m-0 p-0 "
+      style={{ height: "100vh" }}
     >
       <div
         className="row h-100
@@ -44,7 +44,7 @@ export default function Container(props) {
       >
         <div
           id="left-side"
-          className=" col-sm-8 bg-danger mh-100 h-100 h-sm-50 p-0 "
+          className=" col-sm-8 bg-danger mh-100 h-100 h-sm-40 p-0 "
           //style={{ height: "100vh" }}
         >
           <div className="row h-100 mw-100 p-0 m-0">
@@ -63,7 +63,7 @@ export default function Container(props) {
 
         <div
           id="right-side"
-          className="col-sm-4 m-0 p-0 mh-100 h-100 h-sm-50 bg-primary"
+          className="col-sm-4 m-0 p-0 mh-100 h-100 h-sm-60 bg-success"
         >
           <Buttons volume={volume} />
         </div>
