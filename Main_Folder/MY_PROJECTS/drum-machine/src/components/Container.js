@@ -4,7 +4,6 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import ToggleButton from "./ToggleButton.js";
 import Vinyl from "./Vinyl.js";
 
-
 import clap_Sound from "../audio/basic sounds/clap.mp3";
 import closed_HH_Sound from "../audio/basic sounds/closed-HH.mp3";
 import heater_1_Sound from "../audio/basic sounds/heater-1.mp3";
@@ -36,20 +35,20 @@ export default function Container(props) {
   return (
     <div
       id="drum-machine"
-      className="container-fluid justify-content-center align-items-center mh-100 h-100 bg-primary"
+      className="container-fluid justify-content-center align-items-center  mh-100 h-100 bg-primary m-0 p-0 "
       // style={{ height: "0vh"}}
     >
       <div
         className="row h-100
-      mh-100 bg-primary"
+      mh-100 mw-100 w-100 bg-dark m-0 p-0  "
       >
         <div
           id="left-side"
-          className=" col-sm-8 bg-danger mh-100 h-100 h-sm-50 p-0"
+          className=" col-sm-8 bg-danger mh-100 h-100 h-sm-50 p-0 "
           //style={{ height: "100vh" }}
         >
-          <div className="row h-100">
-            <div className="col-1 d-flex align-items-end justify-content-center ">
+          <div className="row h-100 mw-100 p-0 m-0">
+            <div className="col-1 d-flex align-items-end justify-content-center  m-0 p-0 ">
               <input
                 type="range"
                 min={0}
