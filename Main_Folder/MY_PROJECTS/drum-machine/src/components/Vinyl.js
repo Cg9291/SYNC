@@ -10,7 +10,7 @@ export default function Vinyl() {
       >
         <g
           id="full-svg"
-          style={{ transform: "scale(1) translate(0,2.8px)" }}
+          style={{ transform: "scale(1) translate(10px,2.8px)" }}
         >
           <g
             id="main-vinyl-svg"
