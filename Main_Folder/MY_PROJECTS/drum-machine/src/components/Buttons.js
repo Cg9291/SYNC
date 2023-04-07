@@ -197,7 +197,7 @@ export default function Buttons(props) {
       <div
         id="display"
         className="row d-flex p-0  justify-content-center bg-warning col-6 fs-2 fw-bold align-items-center mx-auto "
-        style={{ minHeight: "10vh" }}
+        style={{ minHeight: "15%" }}
       >
         <div className="col-11 h-75 d-flex align-items-center justify-content-center border border-dark ">
           {playing}

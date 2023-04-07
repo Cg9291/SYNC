@@ -1,15 +1,21 @@
+
 .App {
   background-color: purple;
   width: 100vw;
   max-width: 100vw;
-  height: 100vh;
-  max-height: 100vh;
+//  height: calc(100vh - constant(safe-area-inset-bottom));
+
   margin: 0;
-  padding: 0;
+
+  //padding-bottom: env//(safe-area-inset-bottom);
   //overflow-y: hidden;
 }
+.drum-machine{
+  height: 100vh;
+  max-height: fill-available;
+  //put here instead of inline because inline wouldnt accept "fit available"
+}
 
-@media (width<576px) {
   .btn {
     border-radius: 10%;
   }
@@ -111,9 +117,16 @@
     max-height: 100%;
     overflow: visible;
   }
-}
 
-@media (width>576px) {
+
+@media (576px<width<992px) {
+  .drum-btn {
+    width: 15%;
+    aspect-ratio: 1/1;
+  }
+  .pad-row {
+    margin: 0 0 2% 0;
+  }
 }
 /*#id{
   display: grid;
