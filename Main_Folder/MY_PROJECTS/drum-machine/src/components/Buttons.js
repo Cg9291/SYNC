@@ -103,7 +103,7 @@ export default function Buttons(props) {
       >
         <svg
           viewBox="0 0 100 100"
-          className=" w-25 h-50 mw-25 mh-50 mt-3 ms-3 justify-self-start"
+          className=" w-25 h-50 mw-25 mh-50 mt-3 justify-self-start"
           //style={{ width: "4vw",height:"4vw" }}
         >
           <circle
