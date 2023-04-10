@@ -99,12 +99,12 @@ export default function Buttons(props) {
     >
       <div
         id="indicators-row"
-        className="row mw-100 h-auto m-0 p-0 mb-0  justify-content-between "
+        className="row mw-100 h-auto m-0 p-0 mb-0  "
       >
         <svg
           viewBox="0 0 100 100"
-          className=" w-25 h-50 mw-25 mh-50 mt-3 justify-self-start"
-          //style={{ width: "4vw",height:"4vw" }}
+          className=" w-25 h-50 mw-25 mh-50 mt-3 "
+          style={{ marginLeft:'0%',marginRight:'42%'}}
         >
           <circle
             cx="50"
