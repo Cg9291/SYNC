@@ -99,12 +99,12 @@ export default function Buttons(props) {
     >
       <div
         id="indicators-row"
-        className="row mw-100 h-auto m-0 p-0 mb-0  "
+        className="row mw-100 h-auto m-0 p-0 mb-0 border "
       >
         <svg
           viewBox="0 0 100 100"
           className=" w-25 h-50 mw-25 mh-50 mt-3 "
-          style={{ marginLeft:'0%',marginRight:'42%'}}
+          style={{ marginLeft:'0%'}}
         >
           <circle
             cx="50"
@@ -122,7 +122,7 @@ export default function Buttons(props) {
 
       <div
         id="pad"
-        className="container-fluid d-flex flex-column m-0 p-0"
+        className="container-fluid d-flex flex-column m-0 p-0 border"
       >
         <div className="row pad-row">
           <PadButtons

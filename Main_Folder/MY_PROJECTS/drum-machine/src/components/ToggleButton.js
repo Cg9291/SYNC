@@ -2,8 +2,8 @@ export default function ToggleButton(props) {
   if (props.toggle) {
     return (
       <div
-        className="row m-0 p-0  bg-warning h-50 w-25 mt-3"
-        style={{marginRight:"0%" }}
+        className="row m-0 p-0  bg-warning h-50 w-25 mt-3 ms-auto me-3"
+      
       >
         <div className="col-6 d-flex justify-content-center align-items-center">ON</div>
         <button
