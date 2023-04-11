@@ -19,8 +19,6 @@ import kick from "../audio/Midnight Sillage Kit/Electric Piano 01 - Midnight Sil
 
 /*
  TODO
- -setup laptops responsive design
- -tweak switch font sizes for tablets
  - fix issue where btndefault class would either get overwritten or wont be ran in timeout after long pressing a key
  - !download better sounds(maybe look at Logic Pro (in files))
   */
@@ -35,7 +33,7 @@ export default function Container(props) {
   return (
     <div
       id="drum-machine"
-      className="container-fluid justify-content-center align-items-center bg-primary m-0 p-0 drum-machine"
+      className="container-fluid justify-content-center align-items-center m-0 p-0 drum-machine"
     >
       <div
         className="row h-100
@@ -62,7 +60,7 @@ export default function Container(props) {
 
         <div
           id="right-side"
-          className="col-xl-4 xl-layout m-0 p-0 mh-100 h-100 h-sm-60  bg-success xl-display"
+          className="col-xl-4 xl-layout m-0 p-0 mh-100 h-100 h-sm-60   xl-display"
         >
           <Buttons volume={volume} />
         </div>
