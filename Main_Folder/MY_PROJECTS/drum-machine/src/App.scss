@@ -120,6 +120,9 @@
 
 
 @media (576px<width<992px) {
+  .display-tablets{
+  margin-top:3.8%
+}
   .drum-btn {
     width: 15%;
     aspect-ratio: 1/1;
@@ -133,8 +136,33 @@
   }
 }
 
-@media(width>992px){
-  
+@media(992px<width<1200px){
+.drum-btn {
+    width: 15%;
+    aspect-ratio: 1/1;
+  }
+
+  /* .h-xl-35{
+    height: 40% !important;
+  }
+  .h-xl-65{
+    height: 60% !important;
+  } */
+
+  .me-med{
+    margin-right: 8% !important;
+  }
+
+  .pad-row {
+    margin: 0 0 2% 0;
+  }
+  .display-tablets{
+  margin-top:1.2%
+}
+
+@media(width>1200px){
+
+}
 }
 /*#id{
   display: grid;

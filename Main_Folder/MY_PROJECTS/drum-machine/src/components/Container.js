@@ -19,8 +19,8 @@ import kick from "../audio/Midnight Sillage Kit/Electric Piano 01 - Midnight Sil
 
 /*
  TODO
- -setup ipad pro & laptops responsive designs
- -align red indicator and switch for ipad pro & laptops
+ -setup laptops responsive design
+ -tweak switch font sizes for tablets
  - fix issue where btndefault class would either get overwritten or wont be ran in timeout after long pressing a key
  - !download better sounds(maybe look at Logic Pro (in files))
   */
@@ -43,7 +43,7 @@ export default function Container(props) {
       >
         <div
           id="left-side"
-          className=" col-lg-8 bg-danger mh-100 h-100 h-sm-40 p-0 "
+          className=" col-xl-8 bg-danger m-0 p-0 mh-100 h-100 h-sm-40  p-0 "
           //style={{ height: "100vh" }}
         >
           <div className="row h-100 mw-100 p-0 m-0">
@@ -62,7 +62,7 @@ export default function Container(props) {
 
         <div
           id="right-side"
-          className="col-lg-4 m-0 p-0 mh-100 h-100 h-sm-60 bg-success"
+          className="col-xl-4 m-0 p-0 mh-100 h-100 h-sm-60  bg-success"
         >
           <Buttons volume={volume} />
         </div>
