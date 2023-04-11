@@ -43,7 +43,7 @@ export default function Container(props) {
       >
         <div
           id="left-side"
-          className=" col-xl-8 bg-danger m-0 p-0 mh-100 h-100 h-sm-40  p-0 "
+          className=" col-xl-8 xl-layout bg-danger m-0 p-0 mh-100 h-100 h-sm-40  p-0 "
           //style={{ height: "100vh" }}
         >
           <div className="row h-100 mw-100 p-0 m-0">
@@ -62,7 +62,7 @@ export default function Container(props) {
 
         <div
           id="right-side"
-          className="col-xl-4 m-0 p-0 mh-100 h-100 h-sm-60  bg-success"
+          className="col-xl-4 xl-layout m-0 p-0 mh-100 h-100 h-sm-60  bg-success xl-display"
         >
           <Buttons volume={volume} />
         </div>
