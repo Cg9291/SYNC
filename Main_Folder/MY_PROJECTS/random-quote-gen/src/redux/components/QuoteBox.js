@@ -1,5 +1,6 @@
 /*
 TODO
+DEPLOY READY
     -*maybe find a way to detect and resize automatically when text doesnt fit
     -**Maybe add animantion that shrinks text size on click and extends it back to normal at end of animation
     -**improve randomness by adding a fn that track states, runs the picker functions again if same number is generated consecutively or could be improved by adding more color options

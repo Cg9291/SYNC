@@ -13,7 +13,7 @@ TODO
 -Now passing all tests
 -Review default props assignment and try to pass those to context
 -Look for ways to improve code
--Get ui design
+*Get ui design
 */
 
 export default function Container() {
