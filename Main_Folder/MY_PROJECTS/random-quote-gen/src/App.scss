@@ -70,6 +70,7 @@
         justify-content: end;
         align-self: center;
         margin-top: 1rem;
+        font-size: 1rem;
         min-width: 80%;
         max-width: 80%;
         //border:dotted red;
@@ -158,5 +159,14 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media(width<=576px){
+  .small-device-textsize{
+    font-size: 130% !important;
+  }
+  .small-device-authorsize{
+    font-size:85% !important;
   }
 }

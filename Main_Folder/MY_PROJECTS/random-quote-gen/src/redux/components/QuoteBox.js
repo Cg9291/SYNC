@@ -1,6 +1,6 @@
 /*
 TODO
-    -fix responsiveness for smaller mobile size..make font size decrease when text doesnt fit inside
+    -*maybe find a way to detect and resize automatically when text doesnt fit
     -**Maybe add animantion that shrinks text size on click and extends it back to normal at end of animation
     -**improve randomness by adding a fn that track states, runs the picker functions again if same number is generated consecutively or could be improved by adding more color options
     -**review tweet and tumblr post links..copied the ones from project...should try to find my own from api's
@@ -67,7 +67,7 @@ export default function QuoteBox(props) {
       <div id="quote-box">
         <div
           id="text"
-          className={animClass ? "colorTransition" : null}
+          className={animClass ? "small-device-textsize colorTransition" : "small-device-textsize"}
           // key={quoteText}
           style={{ color: themeColor }}
         >
@@ -89,7 +89,7 @@ export default function QuoteBox(props) {
         </div>
         <div
           id="author"
-          className={animClass ? "colorTransition" : null}
+          className={animClass ? "small-device-authorsize colorTransition" : "small-device-authorsize"}
           style={{ color: themeColor }}
         >
           <i>
