@@ -1,7 +1,6 @@
 /*
 TODO
     -fix responsiveness for smaller mobile size..make font size decrease when text doesnt fit inside
-    - fix issue where clicking new quote too soon momentarily bugs the re-render
     -**Maybe add animantion that shrinks text size on click and extends it back to normal at end of animation
     -**improve randomness by adding a fn that track states, runs the picker functions again if same number is generated consecutively or could be improved by adding more color options
     -**review tweet and tumblr post links..copied the ones from project...should try to find my own from api's
@@ -33,14 +32,14 @@ export default function QuoteBox(props) {
     setAnimClass(true);
     setTimeout(() => {
       dispatch(colorAction());
-    }, 200);
+    }, 100);
 
     setTimeout(() => {
       dispatch(quoteAction());
     }, 500);
     setTimeout(() => {
       setAnimClass(false);
-    }, 2100);
+    }, 1100);
 
     /* BELOW IS CODE USED TO IMPROVE RANDOMNESS
         if(stateTrackingObject.quotes.indexOf(quoteID)>=0){
