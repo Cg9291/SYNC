@@ -39,7 +39,7 @@ export default function QuoteBox(props) {
     }, 500);
     setTimeout(() => {
       setAnimClass(false);
-    }, 1100);
+    }, 600);
 
     /* BELOW IS CODE USED TO IMPROVE RANDOMNESS
         if(stateTrackingObject.quotes.indexOf(quoteID)>=0){
