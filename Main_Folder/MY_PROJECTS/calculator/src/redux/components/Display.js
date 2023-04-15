@@ -1,6 +1,6 @@
 export default function Display(props) {
   return (
-    <div className="bg-warning">
+    <div className="bg-dark">
       <div
         /*style={displayStyle}*/ className="row-cols-4 justify-content text-light d-flex flex-column
                 align-items-center "
