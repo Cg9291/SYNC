@@ -24,13 +24,12 @@ h1{
   align-items: center;
   background-color: red;
   height: 100vh;
-  border:dotted blue;
+  
   #game-row {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: solid yellow;
     img{
       height: 30rem;
       flex:0 0 40%;
