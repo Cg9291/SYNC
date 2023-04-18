@@ -24,19 +24,17 @@ h1{
   align-items: center;
   background-color: red;
   height: 100vh;
-  
+
   #game-row {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    img{
+    .img{
       height: 30rem;
       flex:0 0 40%;
-      border:solid 1px white;
     }
     #buttons {
-      border: solid green;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;

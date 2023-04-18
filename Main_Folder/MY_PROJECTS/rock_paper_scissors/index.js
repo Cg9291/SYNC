@@ -16,8 +16,6 @@ let paperImg =
 let scissorsImg =
   "./images/caesars.jpg";
 
-document.getElementById("user-img").width = 720;
-document.getElementById("cpu-img").width = 720;
 document.getElementById("user-img").width = 405;
 document.getElementById("cpu-img").width = 405;
 
@@ -43,7 +41,7 @@ function userChoice(id) {
   }
 
   let randomNum = Math.floor(Math.random() * 3);
-  
+
   document.getElementById("cpu-img").src = numRef[randomNum];
 
   round++;
