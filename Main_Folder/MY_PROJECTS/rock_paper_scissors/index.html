@@ -13,22 +13,22 @@
   <h1>Come play the Game</h1>
   <section id="main-section">
     <section id="game-row">
-      <img id="user-img" class="img"
-        src="./images/rps1.jpg" />
+      <img id="user-img" class="img" src="./images/rps1.jpg" />
 
       <div id="buttons">
         <button id="choose-random" onclick="randomChoice()">Random Selection</button>
-        <div>
+
+        <div><!-- buttons choices row -->
           <button id="the-rock" value="rock" onclick="userChoice(this.id)">Rock</button>
           <button id="the-paper" onclick="userChoice(this.id)">Paper</button>
           <button id="the-scissors" onclick="userChoice(this.id)">Scissors</button>
         </div>
 
-        <div id="results">
+        <div id="results"><!-- only appears upon choice being made -->
         </div>
       </div>
-      <img id="cpu-img" class="img"
-        src="./images/rps2.jpg" />
+
+      <img id="cpu-img" class="img" src="./images/rps2.jpg" />
     </section>
   </section>
 

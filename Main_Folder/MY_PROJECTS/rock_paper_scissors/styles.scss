@@ -1,50 +1,45 @@
-html,body,section,div,header,img,footer,p,h1,h2,button{
-  margin: 0;
-  padding: 0;
+*{//this is the universal selector..it selects and applies style to all elements/tags
+  margin:0;
+  padding:0
 }
-
-body{
+body {
   background-color: green;
 
   overflow-y: auto;
-
 }
 
-h1{
-
-   background-color: red;
+h1 {
+  background-color: red;
   text-align: center;
   height: fit-content;
-
 }
 
-
-#main-section{
+#main-section {
+  height: 100vh;
   display: flex;
   align-items: center;
   background-color: red;
-  height: 100vh;
 
   #game-row {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .img{
+    .img {
+      flex: 0 0 40%;
       height: 30rem;
-      flex:0 0 40%;
     }
     #buttons {
+      flex: 0 0 1fr;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
-      flex: 0 0 1fr;
-      button{
-        font-size: 1.5vw;
-        padding: 0.5rem;
+      button {
         border-radius: 10%;
-      };
-      div{
+        padding: 0.5rem;
+        font-size: 1.5vw;
+      }
+      div {
         margin-top: 1rem;
         display: flex;
         justify-content: space-evenly;
