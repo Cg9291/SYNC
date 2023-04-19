@@ -1,11 +1,14 @@
-.App {
-  text-align: center;
-  color: aliceblue;
-  background-color: #282c34;
-  height: 100vh;
+.fill-avail{
+  height: fill-available;
+  max-height: fill-available;
 }
 
-.App-logo {
+eq-height{
+  max-height:min-content
+}
+
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -39,6 +42,4 @@
     transform: rotate(360deg);
   }
 }
-.container{
-    border:red solid;
-}
+ */

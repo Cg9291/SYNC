@@ -9,8 +9,8 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 
   return (
     <div className="d-flex ">
-      <div className="container-fluid m-0 p-0 justify-content-start w-75">
-        <div className="row-cols-3 justify-content">
+      <div className="container-fluid m-0 p-0  ">
+        <div className="row-cols-3 justify-content ">
           <button
             id="clear"
             value="AC"
@@ -106,7 +106,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
         <OperatorKeys
           id="equals"
           value="="
-          optionalClasses="col-12  flex-grow-1"
+          optionalClasses="col-12  eq-height flex-grow-1"
         />
       </div>
     </div>

@@ -1,7 +1,6 @@
 /*
 TODO
-*fix game logic in choice functions
-*figure out if userChoice function should be broken down
+-figure out if userChoice function should be broken down
 -replace & import missing images(broken links causing issues)
 -get correct image sizing
 -make images responsive
@@ -110,7 +109,7 @@ function userChoice(id) {
       alert(`ERROR:returned user value of ${cpuRandomNum} should not exist`);
       break;
   }
- 
+
 }
 
 function randomChoice() {

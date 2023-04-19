@@ -1,19 +1,18 @@
 export default function Display(props) {
   return (
-    <div className="bg-dark">
+    <div className="row-cols-1 h-25 mh-25 bg-dark border border-danger d-flex flex-column justify-content-end">
       <div
-        /*style={displayStyle}*/ className="row-cols-4 justify-content text-light d-flex flex-column
-                align-items-center "
+        className=" col text-light d-flex flex-column
+                align-items-end fs-1 "
       >
-        <div>{props.input}</div>
+        <div >{props.input}</div>
       </div>
       <div
         id="display"
-        /*style={displayStyle}*/ className="row-cols-4 justify-content text-light d-flex
-                flex-column align-items-center"
+        className=" col text-light d-flex
+                flex-column align-items-end fs-1"
       >
         <div>{props.output}</div>
-        {/*<div>{props.inputState}</div>*/}
       </div>
     </div>
   );

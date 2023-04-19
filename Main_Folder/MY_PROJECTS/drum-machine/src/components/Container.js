@@ -21,7 +21,7 @@ import kick from "../audio/Midnight Sillage Kit/Electric Piano 01 - Midnight Sil
  TODO
   *settle on final colors
   - fix issue where btndefault class would either get overwritten or wont be ran in timeout after long pressing a key
-  - !download better sounds(maybe look at Logic Pro (in files))
+  *download better sounds(maybe look at Logic Pro (in files))
   */
 
 export default function Container(props) {
