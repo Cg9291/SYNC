@@ -5,12 +5,12 @@ import { useContext } from "react";
 import { handlersContext } from "../contexts/handlersContext.js";
 
 export const Keys = forwardRef(function Keys(props, btnRef) {
-  const handlers=useContext(handlersContext);
+  const handlers = useContext(handlersContext);
 
   return (
-    <div className="d-flex ">
-      <div className="container-fluid m-0 p-0  ">
-        <div className="row-cols-3 justify-content ">
+    <div className=" border border-warning  d-flex w-100 fill-avail m-0 p-0 ">
+      <div className="container-fluid m-0 p-0 border w-100 h-100">
+        <div className="row justify-content p-0 m-0 border border-success h-20">
           <button
             id="clear"
             value="AC"
@@ -25,7 +25,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
             optionalClasses="col-4"
           />
         </div>
-        <div className="row-cols-3  justify-content">
+        <div className=" row p-0 m-0 h-20">
           <NumberKeys
             id="seven"
             value={7}
@@ -39,7 +39,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
             value={9}
           />
         </div>
-        <div className="row-cols-3 justify-content">
+        <div className="row p-0 m-0 h-20">
           <NumberKeys
             id="four"
             value={4}
@@ -53,7 +53,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
             value={6}
           />
         </div>
-        <div className="row-cols-3 justify-content">
+        <div className="row  p-0 m-0 h-20">
           <NumberKeys
             id="one"
             value={1}
@@ -71,7 +71,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
           />
         </div>
 
-        <div className="row-cols-3 justify-content ">
+        <div className="row  p-0 m-0 h-20">
           <NumberKeys
             id="zero"
             value={0}
@@ -87,27 +87,31 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
           </button>
         </div>
       </div>
-      <div className="w-25  d-flex flex-column">
-        <OperatorKeys
-          id="multiply"
-          value="x"
-          optionalClasses="col-12"
-        />
-        <OperatorKeys
-          id="subtract"
-          value="-"
-          optionalClasses="col-12"
-        />
-        <OperatorKeys
-          id="add"
-          value="+"
-          optionalClasses="col-12"
-        />
-        <OperatorKeys
-          id="equals"
-          value="="
-          optionalClasses="col-12  eq-height flex-grow-1"
-        />
+      <div className="d-flex flex-column w-25 h-100 m-0 p-0  border border-warning">
+
+          <OperatorKeys
+            id="multiply"
+            value="x"
+           optionalClasses="col-12 h-20"
+          />
+          <OperatorKeys
+            id="subtract"
+            value="-"
+            optionalClasses="col-12 h-20"
+          />
+          <OperatorKeys
+            id="add"
+            value="+"
+             optionalClasses="col-12 h-20"
+          />
+
+
+          <OperatorKeys
+            id="equals"
+            value="="
+            optionalClasses="col-12 flex-grow-1"
+          />
+       
       </div>
     </div>
   );

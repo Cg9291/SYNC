@@ -7,7 +7,7 @@ export default function NumberKeys(props){
         <button
           id={props.id}
         //   ref={btnRef}
-          className={`col-4 btn btn-dark shadow-none rounded-0 border ${props.optionalClass}`}
+          className={`col-4 btn btn-dark shadow-none rounded-0 border m-0 h-100 ${props.optionalClass}`}
           value={props.value}
           onClick={handlers.handleClick}
         >

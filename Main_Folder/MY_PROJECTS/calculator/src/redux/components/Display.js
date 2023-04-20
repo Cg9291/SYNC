@@ -1,16 +1,16 @@
 export default function Display(props) {
   return (
-    <div className="row-cols-1 h-25 mh-25 bg-dark border border-danger d-flex flex-column justify-content-end">
+    <div className=" h-100  bg-dark d-flex flex-column justify-content-center border m-0 p-0">
       <div
-        className=" col text-light d-flex flex-column
-                align-items-end fs-1 "
+        className="  text-light d-flex flex-column
+                align-items-end fs-1  mt-auto "
       >
-        <div >{props.input}</div>
+        <div>{props.input}</div>
       </div>
       <div
         id="display"
-        className=" col text-light d-flex
-                flex-column align-items-end fs-1"
+        className="  text-light d-flex
+                flex-column align-items-end fs-1  m-0 p-0  "
       >
         <div>{props.output}</div>
       </div>

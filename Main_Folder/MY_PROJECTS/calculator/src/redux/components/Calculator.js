@@ -5,7 +5,7 @@ import { handlersContext } from "../contexts/handlersContext.js";
 import { useContext } from "react";
 export default function Calculator(  props ) {
   return (
-    <div className="border border-success h-100 mh-100">
+    <div className="d-flex flex-column  m-0 p-0 fill-avail ">
       <handlersContext.Provider value={props.handlers}>
         <Display/>
         <Keys  /*ref=btnRef*/ />

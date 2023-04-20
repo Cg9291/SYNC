@@ -13,7 +13,6 @@ TODO
 -Now passing all tests
 -Review default props assignment and try to pass those to context
 -Look for ways to improve code
-*find a way to resize calcultator(mobile display) without the equal sign wylin' out
 *Get ui design
 */
 
@@ -196,8 +195,9 @@ export default function Container() {
   };
 
   return (
-    <div className="container-fluid w-100 mw-100 h-100 mh-100 justify-content-center bg-dark border border-warning p-0">
+    <div className="container-fluid d-flex flex-column w-100 mw-100 h-100 mh-100  bg-dark border border-danger p-0">
       <h1 className="row border w-100 mw-100 justify-content-center m-0 p-0">Calculator</h1>
+
       <Calculator handlers={handlersContextProps} />
     </div>
   );
