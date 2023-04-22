@@ -8,9 +8,9 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
   const handlers = useContext(handlersContext);
 
   return (
-    <div className=" border border-warning  d-flex w-100 h-100 m-0 p-0 ">
-      <div className="container-fluid m-0 p-0 border w-100 h-100">
-        <div className="row justify-content p-0 m-0 border border-success h-20">
+    <div className=" d-flex w-100 h-100 m-0 p-0 ">
+      <div className="container-fluid m-0 p-0 w-100 h-100">
+        <div className="row justify-content p-0 m-0  h-20">
           <button
             id="clear"
             value="AC"
@@ -87,7 +87,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
           </button>
         </div>
       </div>
-      <div className="d-flex flex-column w-25 h-100 m-0 p-0  border border-warning">
+      <div className="d-flex flex-column w-25 h-100 m-0 p-0 ">
 
           <OperatorKeys
             id="multiply"

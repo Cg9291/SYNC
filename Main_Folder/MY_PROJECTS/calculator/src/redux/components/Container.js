@@ -11,6 +11,7 @@ import {handlersContext} from "../contexts/handlersContext";
 /*
 TODO
 -Now passing all tests
+*still have to fix issue where continuous operations bugs when a "-" is pressed
 -Review default props assignment and try to pass those to context
 -Look for ways to improve code
 *Get ui design
