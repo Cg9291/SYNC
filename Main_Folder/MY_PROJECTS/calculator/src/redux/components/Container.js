@@ -196,8 +196,8 @@ export default function Container() {
 	};
 
 	return (
-		<div className="container-fluid d-flex flex-column w-100 mw-100 h-100 mh-100  bg-dark p-0">
-			<h1 className="row border w-100 mw-100 justify-content-center m-0 p-0">
+		<div className="container-fluid d-flex flex-column w-100 mw-100 h-100 mh-100  bg-dark p-0 pt-5 pb-5">
+			<h1 className="row  mw-100 justify-content-center m-0 ms-3 me-3 mb-3 p-0">
 				Calculator
 			</h1>
 			<Calculator handlers={handlersContextProps} />
