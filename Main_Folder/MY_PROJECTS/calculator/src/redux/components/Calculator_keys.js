@@ -1,20 +1,20 @@
-import { forwardRef } from "react";
+import {forwardRef} from "react";
 import NumberKeys from "./NumberKeys.js";
 import OperatorKeys from "./OperatorKeys.js";
-import { useContext } from "react";
-import { handlersContext } from "../contexts/handlersContext.js";
+import {useContext} from "react";
+import {handlersContext} from "../contexts/handlersContext.js";
 
 export const Keys = forwardRef(function Keys(props, btnRef) {
-  const handlers = useContext(handlersContext);
+	const handlers = useContext(handlersContext);
 
-  return (
+	return (
 		<div className=" d-flex h-100 m-0 border rounded p-2 ">
 			<div className="container-fluid m-0 p-0 w-100 h-100">
-				<div className="row justify-content p-0 m-0  h-20 border ">
+				<div className="row justify-content-evenly p-0 m-0   h-20 border ">
 					<button
 						id="clear"
 						value="AC"
-						className="col-8 btn btn-danger shadow-none rounded-0 border"
+						className="col-7 btn btn-danger shadow-none border top-row-buttons"
 						onClick={handlers.handleAcClick}
 					>
 						AC
@@ -22,7 +22,12 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 					<OperatorKeys
 						id="divide"
 						value="/"
-						optionalClasses="col-4"
+						optionalClasses="col-2 top-row-buttons"
+					/>
+					<OperatorKeys
+						id="multiply"
+						value="x"
+						optionalClasses=" h-20"
 					/>
 				</div>
 				<div className=" row p-0 m-0 h-20 border justify-content-evenly aling-items-center ">
@@ -38,6 +43,11 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 						id="nine"
 						value={9}
 					/>
+					<OperatorKeys
+						id="subtract"
+						value="-"
+						optionalClasses=" h-20"
+					/>
 				</div>
 				<div className="row p-0 m-0 h-20  border justify-content-evenly">
 					<NumberKeys
@@ -52,42 +62,56 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 						id="six"
 						value={6}
 					/>
-				</div>
-				<div className="row  p-0 m-0 h-20 border justify-content-evenly">
-					<NumberKeys
-						id="one"
-						value={1}
-
-					/>
-					<NumberKeys
-						id="two"
-						value={2}
-
-					/>
-					<NumberKeys
-						id="three"
-						value={3}
-
+					<OperatorKeys
+						id="add"
+						value="+"
+						optionalClasses=""
 					/>
 				</div>
+				<div className="row h-equal-sign m-0 p-0 border ">
+					<div className="  m-0 p-0 col-10 border border-warning">
+						<div className="row  p-0 m-0 h-50 border justify-content-evenly">
+							<NumberKeys
+								id="one"
+								value={1}
+								optionalClasses="col-3"
+							/>
+							<NumberKeys
+								id="two"
+								value={2}
+								optionalClasses="col-4"
+							/>
+							<NumberKeys
+								id="three"
+								value={3}
+								optionalClasses="col-4"
+							/>
+						</div>
 
-				<div className="row  p-0 m-0 h-20 border justify-content-between">
-					<NumberKeys
-						id="zero"
-						value={0}
-						optionalClass="col-7 ms-3"
+						<div className="row  h-50 p-0 m-0 h-20 border ">
+							<NumberKeys
+								id="zero"
+								value={0}
+								optionalClass="col-7 ms-3"
+							/>
+							<button
+								id="decimal"
+								className="col-3 btn btn-secondary shadow-none rounded border  h-80 my-auto"
+								value={"."}
+								onClick={handlers.handleDecimalClick}
+							>
+								.
+							</button>
+						</div>
+					</div>
+					<OperatorKeys
+						id="equals"
+						value="="
+						optionalClasses="border border-danger h-equal-sign "
 					/>
-					<button
-						id="decimal"
-						className="col-3 btn btn-secondary shadow-none rounded border me-3 h-80 my-auto"
-						value={"."}
-						onClick={handlers.handleDecimalClick}
-					>
-						.
-					</button>
 				</div>
 			</div>
-			<div className="d-flex flex-column w-25 h-100 m-0 p-0 ">
+			{/* <div className="d-flex flex-column w-25 h-100 m-0 p-0 ">
 				<OperatorKeys
 					id="multiply"
 					value="x"
@@ -107,9 +131,9 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 				<OperatorKeys
 					id="equals"
 					value="="
-					optionalClasses="col-12 flex-grow-1"
+					optionalClasses="col-12 h-equal-sign"
 				/>
-			</div>
+			</div> */}
 		</div>
 	);
 });
