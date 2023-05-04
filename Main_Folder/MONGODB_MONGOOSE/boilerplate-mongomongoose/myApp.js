@@ -33,7 +33,7 @@ const createAndSavePerson = done => {
 		name: "Carl",
 		age: 30,
 		city: "Vancouver",
-		favoriteFoods: ["Steak", "Sushi", "Popeye's Chicken"],
+		favoriteFoods: ["Steak", "Sushi", "Popeye's Chicken","Pizza"],
 	});
 	carl.save((err, data) => {
 		if (err) return console.error(err);
@@ -127,7 +127,7 @@ const queryChain = done => {
 	Person.find({favoriteFoods: foodToSearch})
 		.sort({name: 1})
 		.limit(2)
-		.select({age:0})
+		.select({age: 0})
 		.exec((err, data) => {
 			err ? done(err) : done(null, data);
 		});
