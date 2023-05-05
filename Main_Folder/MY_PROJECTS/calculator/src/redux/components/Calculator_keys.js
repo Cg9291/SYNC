@@ -14,7 +14,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 					<button
 						id="clear"
 						value="AC"
-						className="col-7 btn btn-danger shadow-none border top-row-buttons"
+						className="col-6 btn btn-danger shadow-none border top-row-buttons"
 						onClick={handlers.handleAcClick}
 					>
 						AC
@@ -68,47 +68,47 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 						optionalClasses=""
 					/>
 				</div>
-				<div className="row h-equal-sign m-0 p-0 border ">
-					<div className="  m-0 p-0 col-10 border border-warning">
-						<div className="row  p-0 m-0 h-50 border justify-content-evenly">
-							<NumberKeys
-								id="one"
-								value={1}
-								optionalClasses="col-3"
-							/>
-							<NumberKeys
-								id="two"
-								value={2}
-								optionalClasses="col-4"
-							/>
-							<NumberKeys
-								id="three"
-								value={3}
-								optionalClasses="col-4"
-							/>
-						</div>
 
-						<div className="row  h-50 p-0 m-0 h-20 border ">
-							<NumberKeys
-								id="zero"
-								value={0}
-								optionalClass="col-7 ms-3"
-							/>
-							<button
-								id="decimal"
-								className="col-3 btn btn-secondary shadow-none rounded border  h-80 my-auto"
-								value={"."}
-								onClick={handlers.handleDecimalClick}
-							>
-								.
-							</button>
-						</div>
-					</div>
-					<OperatorKeys
-						id="equals"
-						value="="
-						optionalClasses="border border-danger h-equal-sign "
+				<div className="row  p-0 m-0 h-20 border justify-content-evenly">
+					<NumberKeys
+						id="one"
+						value={1}
+						optionalClasses=""
 					/>
+					<NumberKeys
+						id="two"
+						value={2}
+						optionalClasses=""
+					/>
+					<NumberKeys
+						id="three"
+						value={3}
+						optionalClasses=""
+					/>
+
+					<div className="m-0 p-0 col-3 border border-danger ">
+						<OperatorKeys
+							id="equals"
+							value="="
+							optionalClasses="border  w-100 h-200 mt-2 "
+						/>
+
+					</div>
+				</div>
+				<div className="row w-75 p-0 m-0 h-20  border ">
+					<NumberKeys
+						id="zero"
+						value={0}
+						optionalClasses="col-8"
+					/>
+					<button
+						id="decimal"
+						className="col-4 btn btn-secondary shadow-none rounded border  h-80 my-auto"
+						value={"."}
+						onClick={handlers.handleDecimalClick}
+					>
+						.
+					</button>
 				</div>
 			</div>
 			{/* <div className="d-flex flex-column w-25 h-100 m-0 p-0 ">
