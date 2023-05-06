@@ -8,13 +8,13 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 	const handlers = useContext(handlersContext);
 
 	return (
-		<div className=" d-flex h-100 m-0 border rounded p-2 ">
+		<div className=" d-flex h-100 m-0  rounded p-2  bg-color2 pb-5">
 			<div className="container-fluid m-0 p-0 w-100 h-100">
-				<div className="row justify-content-evenly p-0 m-0   h-20 border ">
+				<div className="row justify-content-evenly p-0 m-0 mb-2  h-20  ">
 					<button
 						id="clear"
 						value="AC"
-						className="col-6 btn btn-danger shadow-none border top-row-buttons"
+						className="col-6 btn btn-danger shadow-none border  top-row-buttons"
 						onClick={handlers.handleAcClick}
 					>
 						AC
@@ -30,7 +30,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 						optionalClasses=" h-20"
 					/>
 				</div>
-				<div className=" row p-0 m-0 h-20 border justify-content-evenly aling-items-center ">
+				<div className=" row p-0 m-0 mb-2 h-20  justify-content-evenly aling-items-center ">
 					<NumberKeys
 						id="seven"
 						value={7}
@@ -49,7 +49,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 						optionalClasses=" h-20"
 					/>
 				</div>
-				<div className="row p-0 m-0 h-20  border justify-content-evenly">
+				<div className="row p-0 m-0 mb-2 h-20   justify-content-evenly">
 					<NumberKeys
 						id="four"
 						value={4}
@@ -68,9 +68,9 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 						optionalClasses=""
 					/>
 				</div>
-				<div className="row m-0 p-0 h-40 border">
+				<div className="row m-0 p-0 h-40 ">
 					<div className="col-9 m-0 p-0 h-100">
-						<div className="row p-0 m-0 h-50 border justify-content-evenly">
+						<div className="row p-0 m-0 mb-2 h-50  justify-content-evenly">
 							<NumberKeys
 								id="one"
 								value={1}
@@ -87,7 +87,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 								optionalClasses="col-4 m-0 p-0"
 							/>
 						</div>
-						<div className="row p-0 m-0 h-50  justify-content-evenly">
+						<div className="row p-0 m-0 h-50  justify-content-evenly ">
 							<NumberKeys
 								id="zero"
 								value={0}
@@ -95,7 +95,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 							/>
 							<button
 								id="decimal"
-								className="col-4 btn btn-secondary shadow-none rounded   h-80 my-auto"
+								className="col-4 btn btn-secondary shadow-none rounded   h-80 my-auto border"
 								value={"."}
 								onClick={handlers.handleDecimalClick}
 							>
@@ -104,11 +104,11 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 						</div>
 					</div>
 					<div className="m-0 p-0 col-3 h-100 ">
-						<div className="row m-0 p-0 h-100  ">
+						<div className="row m-0 p-0 h-200   ">
 							<OperatorKeys
 								id="equals"
 								value="="
-								optionalClasses=" w-100 h-90 "
+								optionalClasses=" w-100 "
 							/>
 						</div>
 					</div>

@@ -22,21 +22,36 @@ eq-height{
   height:40%;
 }
 .h-80{
-  height:80%;
+  height:100%;
 }
 .h-90{
   height:90%;
 }
 .h-200{
-  height:180%;
+  height:calc(100% + 0.5rem);
 }
 
 .top-row-buttons{
-  height:80%;
+  height:100%;
   margin:auto 0 auto 0;
    border-radius:0.25rem
 }
 
+.bg-color{
+  // background-color: midnightblue;
+  background-color: #1E3D58;
+}
+.bg-color2{
+  background-color: #050533;
+}
+
+.bg-color3{
+  background-color: #E8EEF1;
+}
+
+.bg-color4{
+  background-color: #A92420;
+}
 
 
 /* .App-logo {
