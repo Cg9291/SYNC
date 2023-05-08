@@ -14,7 +14,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 					<button
 						id="clear"
 						value="AC"
-						className="col-6 btn btn-danger shadow-none border  top-row-buttons"
+						className="col-7 btn btn-danger shadow-none border  top-row-buttons"
 						onClick={handlers.handleAcClick}
 					>
 						AC
@@ -22,7 +22,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 					<OperatorKeys
 						id="divide"
 						value="/"
-						optionalClasses="col-2 top-row-buttons"
+						optionalClasses="col-3 top-row-buttons"
 					/>
 					<OperatorKeys
 						id="multiply"
@@ -69,7 +69,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 					/>
 				</div>
 				<div className="row m-0 p-0 h-40 ">
-					<div className="col-9 m-0 p-0 h-100">
+					<div className="col-13 m-0 p-0 h-100">
 						<div className="row p-0 m-0 mb-2 h-50  justify-content-evenly">
 							<NumberKeys
 								id="one"
@@ -91,7 +91,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 							<NumberKeys
 								id="zero"
 								value={0}
-								optionalClasses="col-8"
+								optionalClasses="col-9"
 							/>
 							<button
 								id="decimal"
