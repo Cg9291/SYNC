@@ -6,7 +6,7 @@ export default function OperatorKeys (props){
       <>
         <button
           id={props.id}
-          className={`col-3 btn border shadow-none rounded  h-80 m-0 p-0 my-auto bg-color4 text-light ${props.optionalClasses}`}
+          className={` btn border shadow-none rounded h-100  m-0 p-0 my-auto bg-color4 text-light ${props.optionalClasses}`}
           value={props.value}
           onClick={handlers.handleOperatorClick}
         >
