@@ -8,7 +8,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 	const handlers = useContext(handlersContext);
 
 	return (
-		<div className=" d-flex h-100 m-0  rounded p-2  bg-color2 pb-5">
+		<div className=" d-flex h-100 m-0 rounded p-3  bg-color2 pb-5">
 			<div
 				id="keys-grid-container"
 				className="container-fluid m-0 p-0 w-100 h-100 "
@@ -16,7 +16,7 @@ export const Keys = forwardRef(function Keys(props, btnRef) {
 				<button
 					id="clear"
 					value="AC"
-					className=" btn border shadow-none rounded h-100  m-0 p-0 my-auto bg-color4 text-light wide-btns "
+					className=" btn border shadow-none rounded h-100  m-0 p-0 my-auto bg-color4 text-light wide-btns bg-black fs-1"
 					onClick={handlers.handleAcClick}
 				>
 					AC
