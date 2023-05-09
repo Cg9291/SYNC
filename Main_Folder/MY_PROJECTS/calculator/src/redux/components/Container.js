@@ -11,7 +11,6 @@ import {handlersContext} from "../contexts/handlersContext";
 /*
 TODO
 -Now passing all tests
-*still have to fix issue where continuous operations bugs when a "-" is pressed
 -Review default props assignment and try to pass those to context
 -Look for ways to improve code
 *Get ui design
@@ -125,23 +124,51 @@ export default function Container() {
 			}
 		} else {
 			//have just clicked on operator
-			setOperatorMode(true);
+			//setOperatorMode(true);
 			//setInput([]);
-			switch (etv) {
-				case "-":
+
+			if(etv=="-"){
+				if(operator=="="){
+					setInput(input => [...input.slice(0, input.length - 1), etv]);
+					setOutput([etv]);
+					setOperator(etv);
+				}else{
 					setInput(input => [...input, etv]);
 					setOutput([etv]);
-					setOperator(operator => [...operator, etv]);
-					//setOperator(etv);
-					//setOutput(-compute());
-					break;
+					setOperator(operator=>[...operator,etv]);
+				}
+			}else{
+				setOperator(etv);
+				setInput(input => [...input.slice(0, input.length - 1), etv]);
+				setOutput([etv]);
+			}
+			/* switch (etv) {
+				case "-":
+					switch (operator) {
+						case "=":
+							setInput(input => [...input.slice(0, input.length - 1), etv]);
+							setOutput([etv]);
+							setOperator(etv);
+							//setOperator(etv);
+							//setOutput(-compute());
+							break;
+
+						default:
+							setInput(input => [...input, etv]);
+							setOutput([etv]);
+							setOperator( "worked");
+							//setOperator(etv);
+							//setOutput(-compute());
+							break;
+					};
+
 				default:
-					setOperator(etv);
+					setOperator("etv");
 					setInput(input => [...input.slice(0, input.length - 1), etv]);
 					setOutput([etv]);
 					break;
 				//setOutput(compute());
-			}
+			} */
 		}
 	};
 
