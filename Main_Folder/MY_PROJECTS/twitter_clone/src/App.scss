@@ -1,3 +1,7 @@
+:root{
+  --top-section-height:106px
+}
+
 section,
 div,
 p,
@@ -16,8 +20,6 @@ li {
 	padding: 0;
 	//border: 0.1rem solid green;
 }
-
-
 
 #App {
 	display: flex;
@@ -117,9 +119,15 @@ li {
 	}
 	#middle-container {
 		flex: 0 0 100%;
+    display: flex;
+    direction:column;
 		overflow-y: scroll;
 		#header {
-			height: 106px;
+      position:fixed;
+			height: var(--top-section-height);
+      width:100%;
+      background-color: rgba($color: #ffffff, $alpha: 0.8);
+      backdrop-filter:blur(10px);
 			border-bottom: 0.1rem solid grey;
 			#header-top {
 				display: flex;
@@ -174,68 +182,67 @@ li {
 				}
 			}
 		}
-    #tweet-area {
-	display: none;
-	justify-content: space-between;
-	img {
-		width: 3rem;
-		height: 3rem;
-		border-radius: 50%;
-		align-self: center;
-		margin-left: 1rem;
-		margin-top: -0.9rem;
-	}
-	#tweet-input {
-		width: 87%;
-		height: 5rem;
-		border: none;
-	}
-	::placeholder {
-		font-size: 1.23rem;
+		#tweet-area {
+			display: none;
+			justify-content: space-between;
+			img {
+				width: 3rem;
+				height: 3rem;
+				border-radius: 50%;
+				align-self: center;
+				margin-left: 1rem;
+				margin-top: -0.9rem;
+			}
+			#tweet-input {
+				width: 87%;
+				height: 5rem;
+				border: none;
+			}
+			::placeholder {
+				font-size: 1.23rem;
 
-		color: black;
-		opacity: 0.7;
-	}
-	#tweet-input:focus {
-		outline: 0;
-	}
-}
+				color: black;
+				opacity: 0.7;
+			}
+			#tweet-input:focus {
+				outline: 0;
+			}
+		}
 
 		#timeline-div {
 			width: 100%;
-			//height: 100vh;
-
+      margin-top: var(--top-section-height);
 
 		}
-    #icons-row {
-				padding: 0 0 1rem 5rem;
-				display: none;
-				justify-content: space-between;
-				border-bottom: 0.05rem solid rgba(220, 220, 220, 0.3);
+		#icons-row {
+			padding: 0 0 1rem 5rem;
+			display: none;
+			justify-content: space-between;
+			border-bottom: 0.05rem solid rgba(220, 220, 220, 0.3);
 
-				ul {
-					display: flex;
-					li {
-						list-style: none;
-						margin: 0 1rem 0 0;
-						img {
-							transform: scale(1.05);
-						}
+			ul {
+				display: flex;
+				li {
+					list-style: none;
+					margin: 0 1rem 0 0;
+					img {
+						transform: scale(1.05);
 					}
 				}
-				button {
-					justify-self: end;
-					font-weight: bold;
-					font-size: 1.1rem;
-					border-radius: 2.3rem;
-					width: 5rem;
-					height: 2.3rem;
-					color: white;
-					background-color: #1d9bf0;
-					border: none;
-					margin-right: 1rem;
-				}
 			}
+			button {
+				justify-self: end;
+				font-weight: bold;
+				font-size: 1.1rem;
+				border-radius: 2.3rem;
+				width: 5rem;
+				height: 2.3rem;
+				color: white;
+				background-color: #1d9bf0;
+				border: none;
+				margin-right: 1rem;
+			}
+		}
 	}
 
 	#middle-container::-webkit-scrollbar {

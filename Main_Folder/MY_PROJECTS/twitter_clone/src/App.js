@@ -22,7 +22,7 @@ function App() {
 				<Navigation />
 				<Profile />
 			</section>
-			<section id="middle-container" style={{margin:0,padding:0}}>
+			<section id="middle-container">
 				<Header />
 				<Timeline />
 			</section>
