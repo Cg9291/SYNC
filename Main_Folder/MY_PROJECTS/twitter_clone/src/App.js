@@ -11,7 +11,9 @@ import TrendingSection from './components/Trending';
 
 /* TODO
 *replace my fonts with actual twitter fonts
+*adjust font size in timeline vs outside of it
 *add a tweet area component
+*add links to clickable elements
 -review icons'svgs
 */
 
