@@ -5,9 +5,9 @@ export default function Navigation(props){
     return (
       <nav>
         <ul>
-          <img id="twitter-logo" 
-        src="https://raw.githubusercontent.com/gist/mbostock/3094619/raw/78116ff0306b3b5c3f40e6cdd5f6f8f648ecffd1/thumbnail.png" 
-        alt="twitter logo" />
+         {/*  <img id="twitter-logo"
+        src="https://raw.githubusercontent.com/gist/mbostock/3094619/raw/78116ff0306b3b5c3f40e6cdd5f6f8f648ecffd1/thumbnail.png"
+        alt="twitter logo" /> */}
           <a href="#"><li><b>{li1}</b></li></a>
           <a href="#"><li>Explore</li></a>
           <a href="#"><li>Notifications</li></a>

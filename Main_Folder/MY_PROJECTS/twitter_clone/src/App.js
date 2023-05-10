@@ -9,7 +9,9 @@ import SearchBar from './components/Searchbar';
 import Timeline from './components/Timeline';
 import TrendingSection from './components/Trending';
 
-
+/* TODO
+-review icons'svgs
+*/
 
 function App() {
   return (
@@ -33,19 +35,3 @@ function App() {
 export default App;
 
 //THIS STARTS THE CHILDREN FUNCTIONS TO THE APP
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
