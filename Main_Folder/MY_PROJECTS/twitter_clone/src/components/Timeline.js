@@ -4,7 +4,6 @@ import Header from "./Header.js";
 export default function Timeline(props) {
 	return (
 		<div id="timeline-div">
-      <Header/>
 			<a
 				id="timeline"
 				class="twitter-timeline"
