@@ -14,6 +14,10 @@ import TrendingSection from './components/Trending';
 *adjust font size in timeline vs outside of it
 *add a tweet area component
 *add links to clickable elements
+*review twitter logo height - mobile
+*remove timeline api border
+*implement header size change on scroll
+-add notification blue indicators
 -review icons'svgs
 */
 

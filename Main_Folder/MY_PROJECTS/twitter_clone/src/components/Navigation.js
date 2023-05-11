@@ -7,12 +7,12 @@ export default function Navigation(props) {
 			<ul>
 				<a href="#">
 					<li>
-						<b>{homeIcon}</b>
+						{homeIcon}
 					</li>
 				</a>
 				<a href="#">
 					<li>
-						<b>{searchIcon}</b>
+						{searchIcon}
 					</li>
 				</a>
 				<a href="#">
