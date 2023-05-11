@@ -1,5 +1,20 @@
+@font-face {
+	font-family: "chirp";
+	src: url("./assets/fonts/twitterChirpRegular.woff") format("woff");
+}
+@font-face {
+	font-family: "chirpMedium";
+	src: url("./assets/fonts/twitterChirpMedium.woff") format("woff");
+	/* font-weight: bold; */
+}
+@font-face {
+	font-family: "chirpBold";
+	src: url("./assets/fonts/twitterChirpBold.woff") format("woff");
+	/* font-weight: 500; */
+}
+
 :root {
-	--top-section-height: 106px;
+	--header-height: 106px;
 }
 
 section,
@@ -176,18 +191,25 @@ li {
 		z-index: 1;
 		#header {
 			position: fixed;
-			height: var(--top-section-height);
+			display: flex;
+			flex-direction: column;
+			margin: 0;
+			padding: 0;
+			height: var(--header-height);
 			width: 100%;
 			background-color: rgba($color: #ffffff, $alpha: 0.8);
 			backdrop-filter: blur(10px);
 			border-bottom: 0.1rem solid rgb(239, 243, 244);
 			#header-top {
+				height: 53px;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				font-size: 1.2rem;
 				font-weight: bold;
-				height: 3.2rem;
+				flex-basis: 0 0 50%;
+				margin: 0;
+				padding: 0;
 				#profile-picture {
 					margin-left: 16px;
 					margin-top: 10px;
@@ -197,36 +219,62 @@ li {
 					padding: 0;
 					//border: 0.1rem solid red;
 				}
-
-				#twitter-logo {
-					height: 24.39px;
-					padding: 0;
+				#twitter-logo-box {
+					height: 100%;
+					display: flex;
+					align-items: center;
 					margin: 0;
-					flex: 1 1 auto;
-					fill: rgb(29, 155, 240);
-
+					padding: 0;
+					#twitter-logo {
+						height: 24.4px;
+						padding: 0;
+						margin: 0;
+						flex: 1 1 auto;
+						fill: rgb(29, 155, 240);
+					}
 				}
 			}
 			#header-bottom {
-				height: 50%;
+				height: 54px;
 				display: flex;
 				flex-direction: column;
+				flex-basis: 0 0 50%;
 				justify-content: end;
-				border-bottom: 0px;
+				border-bottom: 1px;
+				font-family: chirpMedium;
+				//font-weight: bold;
+				font-size: 15px;
+				line-height: 20px;
+				margin: 0;
+				padding: 0;
+				//font-weight:500;
+
 				ul {
 					display: flex;
 					justify-content: space-evenly;
+					align-items: center;
 					margin-top: auto;
 					margin-bottom: auto;
 					text-decoration: none;
 					list-style: none;
+					height: 100%;
+					margin: 0;
+					padding: 0;
 					a {
+						display: flex;
+						align-items: center;
+						height: 100%;
 						margin: 0;
 						padding: 0;
 						flex: 1 1 auto;
 						display: flex;
 						justify-content: center;
 						li {
+							display: flex;
+							align-items: center;
+							margin: 0;
+							padding: 0;
+							height: 100%;
 							font-size: 15px;
 							font-weight: 500;
 							line-height: 20px;
