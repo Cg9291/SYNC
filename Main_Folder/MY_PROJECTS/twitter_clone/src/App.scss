@@ -21,6 +21,10 @@ li {
 	//border: 0.1rem solid green;
 }
 
+.icon-fill{
+  fill:black
+}
+
 #App {
 	display: flex;
 	flex-direction: column;
@@ -61,12 +65,14 @@ li {
 		font-family: "Arimo", sans-serif;
 		font-size: 1.3rem;
 		nav {
-			display: flex;
-			flex-direction: column;
-			align-items: start;
-			width: 43.5%;
+
+
+
+			width: 100%;
 			text-decoration: none;
 			ul {
+        display: flex;
+        justify-content: space-around;
 				list-style: none;
 				//list-style-image:url("birdhouse.png");
 				img {
