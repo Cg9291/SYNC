@@ -2,7 +2,7 @@ export let homeIcon = (
 	<svg
 		width="26.25px"
 		height="26.25px"
-		viewBox="0 0 24 24"
+		viewBox="0 0 24 24 "
 		aria-hidden="true"
 		// style={{border:'solid red',padding:0}}
 	>

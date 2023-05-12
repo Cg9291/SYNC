@@ -5,22 +5,22 @@ export default function Navigation(props) {
 	return (
 		<nav>
 			<ul>
-				<a href="#">
-					<li>
-						{homeIcon}
-					</li>
-				</a>
-				<a href="#">
-					<li>
-						{searchIcon}
-					</li>
-				</a>
-				<a href="#">
-					<li>{bellIcon}</li>
-				</a>
-				<a href="#">
-					<li>{messageIcon}</li>
-				</a>
+				<li>
+					<a href="#">{homeIcon}</a>
+				</li>
+
+				<li>
+					<a href="#">{searchIcon}</a>
+				</li>
+
+				<li>
+					<a href="#">{bellIcon}</a>
+				</li>
+
+				<li>
+					<a href="#">{messageIcon}</a>
+				</li>
+
 				{/* <a href="#">
 					<li>Bookmarks</li>
 				</a>

@@ -35,21 +35,21 @@ export default function Header(props) {
 			</div>
 			<div id="header-bottom">
 				<ul>
-					<a>
-						<li>
-							<b>For you</b>
-						</li>
-					</a>
-					<a>
-						<li>
-							<b>Following</b>
-						</li>
-					</a>
-					<a>
-						<li>
-							<b>My feed</b>
-						</li>
-					</a>
+					<li>
+						<a href="#">
+							<span>For you</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span>Following</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span>My feed</span>
+						</a>
+					</li>
 				</ul>
 			</div>
 			<div id="tweet-area">
