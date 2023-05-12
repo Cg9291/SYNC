@@ -1,13 +1,13 @@
-import logo from './logo.svg';
-import './App.scss';
-import React, { useState } from "react";
-import Header from './components/Header';
-import FollowsRecSection from './components/FollowRecs';
-import Navigation from './components/Navigation';
-import Profile from './components/Profile';
-import SearchBar from './components/Searchbar';
-import Timeline from './components/Timeline';
-import TrendingSection from './components/Trending';
+import logo from "./logo.svg";
+import "./App.scss";
+import React, {useState, useEffect, useRef} from "react";
+import Header from "./components/Header";
+import FollowsRecSection from "./components/FollowRecs";
+import Navigation from "./components/Navigation";
+import Profile from "./components/Profile";
+import SearchBar from "./components/Searchbar";
+import Timeline from "./components/Timeline";
+import TrendingSection from "./components/Trending";
 
 /* TODO
 *replace my fonts with actual twitter fonts
@@ -16,20 +16,46 @@ import TrendingSection from './components/Trending';
 *add links to clickable elements
 *review twitter logo height - mobile
 *remove timeline api border
-*implement header size change on scroll
+*implement smooth animation/transition to header size change on scroll
 -add notification blue indicators
 -review icons'svgs
 */
 
 function App() {
-  return (
+	let midContainer = useRef();
+	let [scrollTopValue, setScrollTopValue] = useState();
+	let [prevScrollTopValue, setPrevScrollTopValue] = useState();
+	let [headerHeight, setHeaderHeight] = useState("0");
+
+	useEffect(() => {
+		setPrevScrollTopValue(midContainer.current.scrollTop);
+	});
+
+	useEffect(() =>
+		midContainer.current.addEventListener("scroll", () => {
+			midContainer.current.scrollTop > prevScrollTopValue
+				? setHeaderHeight("-50px")
+				: setHeaderHeight("0");
+			setPrevScrollTopValue(midContainer.current.scrollTop);
+			console.log(midContainer.current.scrollTop);
+		})
+	);
+	//   useEffect(()=>{
+	// scrollTopValue>lastScrollTopValue?setHeaderHeight("10px"):setHeaderHeight("106px");
+	// //lastScrollTopValue=scrollTopValue;
+	//   },[scrollTopValue])
+	// window.scrollY)
+	return (
 		<div id="App">
 			<section id="left-container">
 				<Navigation />
 				<Profile />
 			</section>
-			<section id="middle-container">
-				<Header />
+			<section
+				id="middle-container"
+				ref={midContainer}
+			>
+				<Header headerHeight={headerHeight} />
 				<Timeline />
 			</section>
 			<section id="right-container">

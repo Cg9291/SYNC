@@ -3,10 +3,12 @@ import gificon from "../twitter-newui-iconkit/icons to be used/twitter-gif.png";
 import alignicon from "../twitter-newui-iconkit/icons to be used/twitter-align.png";
 import locationicon from "../twitter-newui-iconkit/icons to be used/twitter-location.png";
 import noiconicon from "../twitter-newui-iconkit/icons to be used/twitter-cross-2.png";
+import {useEffect} from "react";
 
-export default function Header() {
+export default function Header(props) {
+
 	return (
-		<div id="header">
+		<div id="header" style={{marginTop:props.headerHeight}}>
 			<div id="header-top">
 				<div className="alignment-boxes">
 					<div>
@@ -16,7 +18,7 @@ export default function Header() {
 						/>
 					</div>
 				</div>
-				<div id="twitter-logo-box" >
+				<div id="twitter-logo-box">
 					<svg
 						id="twitter-logo"
 						viewBox="0 0 24 24"
@@ -31,13 +33,19 @@ export default function Header() {
 			<div id="header-bottom">
 				<ul>
 					<a>
-						<li>For you</li>
+						<li>
+							<b>For you</b>
+						</li>
 					</a>
 					<a>
-						<li>Following</li>
+						<li>
+							<b>Following</b>
+						</li>
 					</a>
 					<a>
-						<li>My feed</li>
+						<li>
+							<b>My feed</b>
+						</li>
 					</a>
 				</ul>
 			</div>
