@@ -6,9 +6,12 @@ import noiconicon from "../twitter-newui-iconkit/icons to be used/twitter-cross-
 import {useEffect} from "react";
 
 export default function Header(props) {
-
 	return (
-		<div id="header" style={{marginTop:props.headerHeight}}>
+		<div
+			id="header"
+			style={{marginTop: props.headerHeight}}
+			className="headerTransition"
+		>
 			<div id="header-top">
 				<div className="alignment-boxes">
 					<div>
