@@ -14,7 +14,7 @@
 }
 
 :root {
-	--header-height: 106px;
+	--header-height: 107px;
 }
 
 section,
@@ -36,39 +36,40 @@ li {
 	//border: 0.1rem solid green;
 }
 
-.icon-fill {
+/* .icon-fill {
 	fill: black;
-}
+} */
 
 #App {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	//justify-content: space-between;
 	height: 100vh;
 	/*width: 100vw;
 	max-width: 100vw; */
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
-	overflow-y: hidden;
+	//overflow-y: hidden;
 	background-color: white;
-	align-items: center;
-	font-size: calc(10px + 2vmin);
-	color: black;
-	section {
+	//align-items: center;
+	//font-size: calc(10px + 2vmin);
+	//color: black;
+	/* section {
 		height: 100%;
 		width: 100vw;
 		margin: 0;
 		padding: 0;
-	}
+	} */
 	#left-container {
+		//named based on desktop position..will be at bottom on mobile viewports
 		z-index: 2;
 		position: fixed;
 		margin-top: calc(100vh - 53.5px);
 		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		/* margin: 0; */
+		//flex-direction: column;
+		//justify-content: space-between;
+		// /* margin: 0; */ commented out to prevent fixed position being pushed to top
 		padding: 0;
 		//align-items: end;
 		border-top: 0.1rem solid rgb(239, 243, 244);
@@ -76,14 +77,14 @@ li {
 		width: 100%;
 		//border: solid red;
 		background-color: white;
-		font-family: "Arimo", sans-serif;
-		font-size: 1.3rem;
+		// font-family: "Arimo", sans-serif;
+		// font-size: 1.3rem;
 		nav {
 			width: 100%;
 			height: 100%;
 			margin: 0;
 			padding: 0;
-			text-decoration: none;
+			/* text-decoration: none; */
 			//border:solid yellow;
 			ul {
 				display: flex;
@@ -95,18 +96,17 @@ li {
 				//padding-left:2px;
 				//border: 1px solid green;
 				//list-style-image:url("birdhouse.png");
-				img {
+				/* img {
 					width: 1.5rem;
 					height: 2rem;
 					margin-bottom: 1rem;
-				}
-
+				} */
 				a {
 					display: flex;
 					justify-content: center;
 					align-items: center;
 					text-decoration: none;
-					color: initial;
+					/* color: initial; */
 					//margin: 0 0 0 2px;
 					padding: 0;
 					width: 100%;
@@ -121,11 +121,11 @@ li {
 						//padding: 1rem 1.5rem 1rem 1.5rem;
 						//border:solid blue;
 						svg {
-							display: inline-block;
+							//display: inline-block;
 							/* padding:0;
 							margin:0; */
 							//border:solid red;
-							align-self: center;
+							// align-self: center;
 						}
 					}
 					li:hover {
@@ -153,16 +153,15 @@ li {
 					background-color: #1d8ad3;
 				}
 			}
-			//must add hover effect
 		}
 		#profile-pill-container {
-			width: 45%;
+			// width: 45%;
 			display: none;
-			justify-content: start;
-			padding-bottom: 1rem;
+			// justify-content: start;
+			// padding-bottom: 1rem;
 		}
 		#profile-pill {
-			display: flex;
+			/* display: flex;
 			justify-content: space-between;
 			align-items: center;
 			justify-self: start;
@@ -176,18 +175,19 @@ li {
 				width: 3rem;
 				height: 3rem;
 				border-radius: 50%;
-			}
+			} */
 		}
 		#profile-pill:hover {
 			background-color: rgba(220, 220, 220, 255);
 		}
 	}
 	#middle-container {
-		flex: 0 0 100%;
-		display: flex;
-		direction: column;
+		//flex: 0 0 100%;
+		// display: flex;
+		//direction: column;
 		overflow-y: scroll;
-		order: 1;
+		scroll-behavior: smooth;
+		//order: 1;
 		z-index: 1;
 		#header {
 			position: fixed;
@@ -195,11 +195,10 @@ li {
 			flex-direction: column;
 			margin: 0;
 			padding: 0;
-			height: 107px;
+			height: var(--header-height);
 			width: 100%;
 			background-color: rgba($color: #ffffff, $alpha: 0.8);
 			backdrop-filter: blur(10px);
-
 			transition: margin-top 0.16s;
 			transition-timing-function: ease;
 			transition-delay: 0ms;
@@ -210,7 +209,7 @@ li {
 				justify-content: center;
 				align-items: center;
 				//font-size: 1.2rem;
-				font-weight: bold;
+				//font-weight: bold;
 				//flex-basis: 0 0 50%;
 				margin: 0;
 				padding: 0;
@@ -297,7 +296,7 @@ li {
 		}
 		#tweet-area {
 			display: none;
-			justify-content: space-between;
+			/* justify-content: space-between;
 			img {
 				width: 3rem;
 				height: 3rem;
@@ -305,8 +304,8 @@ li {
 				align-self: center;
 				margin-left: 1rem;
 				margin-top: -0.9rem;
-			}
-			#tweet-input {
+			} */
+			/* #tweet-input {
 				width: 87%;
 				height: 5rem;
 				border: none;
@@ -319,16 +318,17 @@ li {
 			}
 			#tweet-input:focus {
 				outline: 0;
-			}
+			} */
 		}
 
-		#timeline-div {
+		#timeline-container {
 			width: 100%;
 			margin-top: var(--header-height);
+			overflow-y: scroll;
 		}
 		#icons-row {
-			padding: 0 0 1rem 5rem;
 			display: none;
+			/* padding: 0 0 1rem 5rem;
 			justify-content: space-between;
 			border-bottom: 0.05rem solid rgba(220, 220, 220, 0.3);
 
@@ -353,7 +353,7 @@ li {
 				background-color: #1d9bf0;
 				border: none;
 				margin-right: 1rem;
-			}
+			} */
 		}
 	}
 
@@ -363,7 +363,7 @@ li {
 
 	#right-container {
 		display: none;
-		flex-direction: column;
+		/* //flex-direction: column;
 		//gap: 1rem;
 		//padding-left: 2rem;
 		//border-left: 0.05rem solid rgba(220, 220, 220, 0.3);
@@ -462,30 +462,10 @@ li {
 			.cards-footer:hover {
 				background-color: rgba(220, 220, 220, 255);
 			}
-		}
+		} */
 	}
 }
 
-/*.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media only screen and (500px<=width<=688px) {
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}*/

@@ -16,8 +16,12 @@ import TrendingSection from "./components/Trending";
 *add links to clickable elements
 *review twitter logo height - mobile
 *remove timeline api border
-*implement smooth animation/transition to header size change on scroll
--add notification blue indicators
+*add header text on selection highlight + blue underscore
+*add notification blue indicators
+*review anchor elements hover backgrounds
+*change css to fix ul,anchor,li relationship
+*useforward ref to move the midcontainer ref to the timeline-div and then adjust css to have both scroll indicator and sliding header together(moving scroll attribute from middle container to timeline div in css)
+-find a way to make header scroll behaviour smoother and more consistent
 -review icons'svgs
 */
 
@@ -34,7 +38,7 @@ function App() {
 	useEffect(() =>
 		midContainer.current.addEventListener("scroll", () => {
 			midContainer.current.scrollTop > prevScrollTopValue
-				? setHeaderHeight("-50px")
+				? setHeaderHeight("-53px")
 				: setHeaderHeight("0");
 			setPrevScrollTopValue(midContainer.current.scrollTop);
 			console.log(midContainer.current.scrollTop);
