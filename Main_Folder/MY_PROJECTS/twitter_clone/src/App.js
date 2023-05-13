@@ -10,6 +10,7 @@ import Timeline from "./components/Timeline";
 import TrendingSection from "./components/Trending";
 
 /* TODO
+MOBILE!!
 *replace my fonts with actual twitter fonts
 *adjust font size in timeline vs outside of it
 *add a tweet area component
@@ -23,6 +24,9 @@ import TrendingSection from "./components/Trending";
 *useforward ref to move the midcontainer ref to the timeline-div and then adjust css to have both scroll indicator and sliding header together(moving scroll attribute from middle container to timeline div in css)
 -find a way to make header scroll behaviour smoother and more consistent
 -review icons'svgs
+
+TABLETS!!
+*enable left container scroll behaviour
 */
 
 function App() {
