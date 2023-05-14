@@ -1,9 +1,21 @@
 import {useState} from "react";
-import {homeIcon, searchIcon,bellIcon,messageIcon} from "./svg_exports";
+import {
+	twitterLogo,
+	homeIcon,
+	searchIcon,
+	bellIcon,
+	messageIcon,
+  listsIcon,
+  bookmarksIcon,
+  twitterBlueIcon,
+  profileIcon,
+  moreIcon
+} from "./svg_exports";
 
 export default function Navigation(props) {
 	return (
 		<nav>
+			<div className="twitter-logo-box">{twitterLogo}</div>
 			<ul>
 				<li>
 					<a href="#">{homeIcon}</a>
@@ -19,6 +31,26 @@ export default function Navigation(props) {
 
 				<li>
 					<a href="#">{messageIcon}</a>
+				</li>
+
+				<li className="hidden500">
+					<a href="#">{listsIcon}</a>
+				</li>
+
+				<li className="hidden500">
+					<a href="#">{bookmarksIcon}</a>
+				</li>
+
+				<li className="hidden500">
+					<a href="#">{twitterBlueIcon}</a>
+				</li>
+
+				<li className="hidden500">
+					<a href="#">{profileIcon}</a>
+				</li>
+
+				<li className="hidden500">
+					<a href="#">{moreIcon}</a>
 				</li>
 
 				{/* <a href="#">
