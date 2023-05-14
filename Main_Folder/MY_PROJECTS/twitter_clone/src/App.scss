@@ -36,12 +36,12 @@ li {
 	padding: 0;
 	//border: 0.1rem solid green;
 }
-.nav-icons{
-  width:26.25px;
-  height: 26.25px;
+.nav-icons {
+	width: 26.25px;
+	height: 26.25px;
 }
-.hidden500{
-  display: none !important;
+.hidden500 {
+	display: none !important;
 }
 
 /* .icon-fill {
@@ -90,22 +90,22 @@ li {
 		// font-family: "Arimo", sans-serif;
 		// font-size: 1.3rem;
 
-	nav {
-		.twitter-logo-box {
-			height: 100%;
-      width: 100%;
-			display: none;
-			align-items: center;
-			margin: 0;
-			padding: 0;
-			.twitter-logo {
-				height: 24.4px;
-				padding: 0;
+		nav {
+			.twitter-logo-box {
+				height: 100%;
+				width: 100%;
+				display: none;
+				align-items: center;
 				margin: 0;
-				flex: 1 1 auto;
-				fill: rgb(29, 155, 240);
+				padding: 0;
+				.twitter-logo {
+					height: 24.4px;
+					padding: 0;
+					margin: 0;
+					flex: 1 1 auto;
+					fill: rgb(29, 155, 240);
+				}
 			}
-    }
 			width: 100%;
 			height: 100%;
 			margin: 0;
@@ -535,61 +535,79 @@ li {
 			height: 100vh;
 			// z-index: 2;
 			width: 68px;
+      border-top:0;
 			border-right: var(--borders-color);
 			margin: 0;
-			padding: 0;
+			padding: 0 4px 0 4px;
 			box-sizing: border-box;
+      overflow-y: scroll;
 
 			nav {
-        flex-direction: column;
-        //flex-basis: 0 0 auto;
-				width: 100%;
-				height: 585px;
-				border: 0.1px solid blue;
-				margin: 0;
-				padding: 0;
+				flex-direction: column;
+				//flex-basis: 0 0 auto;
+				width: 68px;
+				height: 587.25px;
+				//border: 0.1px solid blue;
+				//margin: 2px 0 4px 0;
+				padding: 0 4px 0 4px;
 				ul {
+					width: 60px;
+          height: 524.25px;
 					flex-direction: column;
-					//border: solid yellow;
-					margin: 0;
-					padding: 0;
 
-          .hidden-to-500{
-            //display: block;
-          }
-				}
-				.twitter-logo-box {
-					height: auto;
-					display: flex;
-					border: solid purple;
-					align-items: center;
-					margin: 0;
+					//border: solid yellow;
+					margin: 6px 0 0 0;
 					padding: 0;
-					.twitter-logo {
-						height: 24.4px;
-						padding: 0;
-						margin: 0;
-						flex: 1 1 auto;
-						fill: rgb(29, 155, 240);
+          li{
+            height:50.25px ;
+            padding:4;
+            margin-top:0;
+          }
+          .first-item{
+            margin-top: -8px;
+          }
+					.hidden500 {
+						display: flex !important;
 					}
 				}
+				.twitter-logo-box {
+					width: 60px;
+					height: 52px;
+					display: flex;
+					// border: solid purple;
+					align-items: center;
+					// margin: 5px 0 0 0;
+					 padding: 2px 0 2px 0;
+					.twitter-logo {
+            max-width:50px;
+						height: 30px;
+						padding: 0;
+						margin: 0;
+						//flex: 1 1 auto;
+						fill: rgb(29, 155, 240);
+            path{
+              margin:0;
+              padding:0;
 
+            }
+					}
+				}
 			}
-      #profile-pill-container{
-        display: none;
-      }
+			#profile-pill-container {
+				display: none;
+			}
 		}
 		#middle-container {
 			flex-basis: 1 1 auto;
 			width: 100%;
 			height: 100vh;
 			position: relative;
-			margin-left: 68px;
+			margin-left: 69px;
 
 			//border:solid red;
 			#header {
 				//position: relative;
-				width: calc(100vw - 68px);
+				width: calc(100vw - 69px);
 				margin: 0;
 				padding: 0;
 				//overflow-x: scroll;

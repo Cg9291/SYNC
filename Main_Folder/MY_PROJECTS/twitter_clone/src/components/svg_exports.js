@@ -1,7 +1,7 @@
 export let twitterLogo = (
 	<svg
 		//id="twitter-logo"
-		className="twitter-logo nav-icons"
+		className="twitter-logo "
 		viewBox="0 0 24 24"
 	>
 		<g>
@@ -56,7 +56,7 @@ export let messageIcon = (
 
 export let listsIcon = (
 	<svg
-		className="nav-icons secondary-nav-icons"
+		className="nav-icons "
 		viewBox="0 0 24 24 "
 	>
 		<g>
@@ -67,7 +67,7 @@ export let listsIcon = (
 
 export let bookmarksIcon = (
 	<svg
-		className="nav-icons secondary-nav-icons"
+		className="nav-icons "
 		viewBox="0 0 24 24 "
 	>
 		<g>
@@ -78,7 +78,7 @@ export let bookmarksIcon = (
 
 export let twitterBlueIcon = (
 	<svg
-		className="nav-icons secondary-nav-icons"
+		className="nav-icons "
 		viewBox="0 0 24 24 "
 	>
 		<g>
@@ -89,7 +89,7 @@ export let twitterBlueIcon = (
 
 export let profileIcon = (
 	<svg
-		className="nav-icons secondary-nav-icons"
+		className="nav-icons "
 		viewBox="0 0 24 24 "
 	>
 		<g>

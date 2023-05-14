@@ -17,7 +17,7 @@ export default function Navigation(props) {
 		<nav>
 			<div className="twitter-logo-box">{twitterLogo}</div>
 			<ul>
-				<li>
+				<li className="first-item">
 					<a href="#">{homeIcon}</a>
 				</li>
 
