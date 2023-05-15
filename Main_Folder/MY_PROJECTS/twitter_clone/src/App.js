@@ -8,6 +8,7 @@ import Profile from "./components/Profile";
 import SearchBar from "./components/Searchbar";
 import Timeline from "./components/Timeline";
 import TrendingSection from "./components/Trending";
+import TweetBox from "./components/Tweetbox";
 
 /* TODO
 MOBILE!!
@@ -64,6 +65,7 @@ function App() {
 				ref={midContainer}
 			>
 				<Header headerHeight={headerHeight} />
+        {/* <TweetBox/> */}
 				<Timeline />
 			</section>
 			<section id="right-container">
