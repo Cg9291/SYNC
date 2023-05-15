@@ -51,50 +51,38 @@ li {
 #App {
 	display: flex;
 	flex-direction: column;
-	//justify-content: space-between;
 	height: 100vh;
-	/*width: 100vw;
-	max-width: 100vw; */
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
-	//overflow-y: hidden;
+	overflow-y: scroll;
 	background-color: white;
 	font-family: chirp;
-	//align-items: center;
-	//font-size: calc(10px + 2vmin);
-	//color: black;
-	/* section {
-		height: 100%;
-		width: 100vw;
-		margin: 0;
-		padding: 0;
-	} */
 	#left-container {
 		//named based on desktop position..will be at bottom on mobile viewports
 		z-index: 2;
 		position: fixed;
 		margin-top: calc(100vh - 53.5px);
 		display: flex;
-		//flex-direction: column;
-		//justify-content: space-between;
 		// /* margin: 0; */ commented out to prevent fixed position being pushed to top
 		padding: 0;
-		//align-items: end;
 		border-top: var(--borders-color);
 		height: 53.5px;
 		width: 100%;
 		box-sizing: border-box;
 		//border: solid red;
 		background-color: white;
-		// font-family: "Arimo", sans-serif;
-		// font-size: 1.3rem;
 
 		nav {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+
 			.twitter-logo-box {
+				display: none;
 				height: 100%;
 				width: 100%;
-				display: none;
 				align-items: center;
 				margin: 0;
 				padding: 0;
@@ -106,12 +94,7 @@ li {
 					fill: rgb(29, 155, 240);
 				}
 			}
-			width: 100%;
-			height: 100%;
-			margin: 0;
-			padding: 0;
-			/* text-decoration: none; */
-			//border:solid yellow;
+
 			ul {
 				display: flex;
 				justify-content: space-evenly;
@@ -119,14 +102,6 @@ li {
 				margin: 0;
 				padding: 0;
 				height: 100%;
-				//padding-left:2px;
-				//border: 1px solid green;
-				//list-style-image:url("birdhouse.png");
-				/* img {
-					width: 1.5rem;
-					height: 2rem;
-					margin-bottom: 1rem;
-				} */
 
 				li {
 					display: flex;
@@ -136,30 +111,16 @@ li {
 					padding: 0;
 					width: 100%;
 					height: 100%;
-					//padding: 1rem 1.5rem 1rem 1.5rem;
-					//border:solid blue;
+
 					a {
 						display: flex;
 						justify-content: center;
 						align-items: center;
 						text-decoration: none;
-						//border:solid black;
-						/* color: initial; */
-						//margin: 0 0 0 2px;
-						padding: 0;
-						// width: 100%;
-						// height: 100%;
-						//border: 1px solid blue;
+
 						svg {
-							//background-color: #1d8ad3;
 							border-radius: 50%;
-							//border:solid red;
 							padding: 8px;
-							//display: inline-block;
-							/* padding:0;
-							margin:0; */
-							//border:solid red;
-							// align-self: center;
 						}
 						svg:active {
 							background-color: lightgray;
@@ -193,28 +154,9 @@ li {
 			}
 		}
 		#profile-pill-container {
-			// width: 45%;
 			display: none;
-			// justify-content: start;
-			// padding-bottom: 1rem;
 		}
-		#profile-pill {
-			/* display: flex;
-			justify-content: space-between;
-			align-items: center;
-			justify-self: start;
-			padding: 0.5rem 1rem 0.5rem 1rem;
-			width: 14rem;
-			height: 3.6rem;
-			border-radius: 3.6rem;
-			font-size: 1rem;
-			overflow: hidden;
-			img {
-				width: 3rem;
-				height: 3rem;
-				border-radius: 50%;
-			} */
-		}
+
 		#profile-pill:hover {
 			background-color: rgba(220, 220, 220, 255);
 		}
@@ -244,14 +186,11 @@ li {
 			//border:1px solid green;
 
 			#header-top {
-				height: 53px;
 				display: flex;
+				height: 53px;
 				justify-content: center;
 				align-items: center;
 				width: 100%;
-				//font-size: 1.2rem;
-				//font-weight: bold;
-				//flex-basis: 0 0 50%;
 				margin: 0;
 				padding: 0;
 				span {
@@ -286,12 +225,6 @@ li {
 				display: flex;
 				align-items: center;
 				width: 100%;
-				//flex-direction: column;
-				//flex-basis: 0 0 50%;
-				//justify-content: end;
-				//border-bottom: 1px;
-
-				//font-weight: bold;
 				font-size: 15px;
 				line-height: 20px;
 				margin: 0;
@@ -301,10 +234,7 @@ li {
 
 				ul {
 					display: flex;
-					//justify-content: space-between;
 					align-items: center;
-					// margin-top: auto;
-					// margin-bottom: auto;
 					text-decoration: none;
 					list-style: none;
 					height: 100%;
@@ -315,8 +245,6 @@ li {
 						display: flex;
 						align-items: center;
 						justify-content: center;
-						//margin: -0.5px 0 0.5px 0px;
-						// padding: 0 16px;
 						height: 100%;
 						flex: 1 0 auto;
 						font-size: 15px;
@@ -331,7 +259,6 @@ li {
 							width: 100%;
 							margin: 0;
 							padding: 0 16px;
-							//flex: 1 0 auto;
 							display: flex;
 							justify-content: center;
 							outline-style: none;
@@ -382,36 +309,11 @@ li {
 		#timeline-container {
 			width: 100%;
 			margin-top: var(--header-height);
-			overflow-y: scroll;
+			//overflow-y: scroll;
 		}
 		#icons-row {
 			display: none;
-			/* padding: 0 0 1rem 5rem;
-			justify-content: space-between;
-			border-bottom: 0.05rem solid rgba(220, 220, 220, 0.3);
-
-			ul {
-				display: flex;
-				li {
-					list-style: none;
-					margin: 0 1rem 0 0;
-					img {
-						transform: scale(1.05);
-					}
-				}
-			}
-			button {
-				justify-self: end;
-				font-weight: bold;
-				font-size: 1.1rem;
-				border-radius: 2.3rem;
-				width: 5rem;
-				height: 2.3rem;
-				color: white;
-				background-color: #1d9bf0;
-				border: none;
-				margin-right: 1rem;
-			} */
+			
 		}
 	}
 
@@ -535,39 +437,39 @@ li {
 			height: 100vh;
 			// z-index: 2;
 			width: 69px;
-      border-top:0;
+			border-top: 0;
 			border-right: var(--borders-color);
 			margin: 0;
 			padding: 0 4px 0 4px;
 			box-sizing: border-box;
-      overflow-y: scroll;
+			overflow-y: scroll;
 
 			nav {
-        display: flex;
+				display: flex;
 				flex-direction: column;
 				//flex-basis: 0 0 auto;
-        align-items: center;
+				align-items: center;
 				width: 100%;
 				height: 587.25px;
 				//border: 0.1px solid blue;
-				margin: 0 ;
-				padding:0;
+				margin: 0;
+				padding: 0;
 				ul {
 					width: 60px;
-          height: 524.25px;
+					height: 524.25px;
 					flex-direction: column;
-          align-items: center;
+					align-items: center;
 					//border: solid yellow;
 					margin: 6px 0 0 0;
 					padding: 0;
-          li{
-            height:50.25px ;
-            padding:4;
-            margin-top:0;
-          }
-          .first-item{
-            margin-top: -8px;
-          }
+					li {
+						height: 50.25px;
+						padding: 4;
+						margin-top: 0;
+					}
+					.first-item {
+						margin-top: -8px;
+					}
 					.hidden500 {
 						display: flex !important;
 					}
@@ -577,22 +479,21 @@ li {
 					height: 56px;
 					display: flex;
 					// border: solid purple;
-          justify-content: center;
+					justify-content: center;
 					align-items: center;
 					// margin: 5px 0 0 0;
-					 //padding: 2px 0 2px 1px;
+					//padding: 2px 0 2px 1px;
 					.twitter-logo {
-            max-width:50px;
+						max-width: 50px;
 						height: 30px;
 						padding: 0;
 						margin: 0 0 0 0;
 						//flex: 1 1 auto;
 						fill: rgb(29, 155, 240);
-            path{
-              margin:0;
-              padding:0;
-
-            }
+						path {
+							margin: 0;
+							padding: 0;
+						}
 					}
 				}
 			}
