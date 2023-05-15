@@ -1,9 +1,11 @@
 import {Helmet} from "react-helmet"; //this allows to use helmet(which supports the insertion of script tags in the component's html)
 import Header from "./Header.js";
+import TweetBox from "./Tweetbox.js";
 
 export default function Timeline(props) {
 	return (
 		<div id="timeline-container">
+			<TweetBox/>
 			<a
 				id="timeline"
 				class="twitter-timeline"

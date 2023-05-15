@@ -8,7 +8,7 @@ import Profile from "./components/Profile";
 import SearchBar from "./components/Searchbar";
 import Timeline from "./components/Timeline";
 import TrendingSection from "./components/Trending";
-import TweetBox from "./components/Tweetbox";
+import TweetBox from "./components/Tweetbox.js";
 
 /* TODO
 MOBILE!!
@@ -48,12 +48,9 @@ function App() {
 			setPrevScrollTopValue(midContainer.current.scrollTop);
 			console.log(midContainer.current.scrollTop);
 		})
+		//THIS FUNCTION IS SET TO ONLY WORK ON SIZES<500PX..SEE CSS
 	);
-	//   useEffect(()=>{
-	// scrollTopValue>lastScrollTopValue?setHeaderHeight("10px"):setHeaderHeight("106px");
-	// //lastScrollTopValue=scrollTopValue;
-	//   },[scrollTopValue])
-	// window.scrollY)
+
 	return (
 		<div id="App">
 			<section id="left-container">
@@ -65,7 +62,7 @@ function App() {
 				ref={midContainer}
 			>
 				<Header headerHeight={headerHeight} />
-        {/* <TweetBox/> */}
+				
 				<Timeline />
 			</section>
 			<section id="right-container">

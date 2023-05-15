@@ -15,6 +15,7 @@
 
 :root {
 	--header-height: 107px;
+	--tweet-box-height: 188px;
 	--borders-color: 1px solid rgb(239, 243, 244);
 }
 
@@ -313,7 +314,6 @@ li {
 		}
 		#icons-row {
 			display: none;
-			
 		}
 	}
 
@@ -428,6 +428,9 @@ li {
 
 @media only screen and (500px<=width<=688px) {
 	#App {
+		.hidden500 {
+			display: flex !important;
+		}
 		flex-direction: row;
 		overflow-x: scroll;
 		#left-container {
@@ -470,9 +473,6 @@ li {
 					.first-item {
 						margin-top: -8px;
 					}
-					.hidden500 {
-						display: flex !important;
-					}
 				}
 				.twitter-logo-box {
 					width: 100%;
@@ -510,9 +510,10 @@ li {
 
 			//border:solid red;
 			#header {
-				//position: relative;
+				position: fixed;
 				width: calc(100vw - 69px);
 				margin: 0;
+				margin-top: 0px !important;
 				padding: 0;
 				//overflow-x: scroll;
 				//border:solid brown;
@@ -533,6 +534,37 @@ li {
 						display: none;
 					}
 				}
+			}
+
+			#tweet-box {
+				display: flex;
+				//border:1px solid green;
+				width: 100%;
+
+				height: var(--tweet-box-height);
+				margin: 0;
+				.profile-img-box {
+					width: 60px;
+					padding-right: 12px;
+					img {
+						width: 48px;
+					}
+				}
+				#tweet-input {
+					width: 378px;
+					height: 124px;
+				}
+
+				/* #tweet-area {
+					display: flex;
+					width: 100%;
+					border: solid red;
+					z-index: 3;
+				} */
+			}
+			#timeline-container {
+				//margin-top:calc( var(--header-height) + var(--tweet-box-height) + 50px);
+				//height:400px;
 			}
 		}
 		// @media (width>600px) {
