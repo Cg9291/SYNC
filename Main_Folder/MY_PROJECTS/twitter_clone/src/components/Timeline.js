@@ -4,7 +4,7 @@ import TweetBox from "./Tweetbox.js";
 
 export default function Timeline(props) {
 	return (
-		<div id="timeline-container">
+		<div className="timeline-wrapper">
 			<TweetBox/>
 			<a
 				id="timeline"

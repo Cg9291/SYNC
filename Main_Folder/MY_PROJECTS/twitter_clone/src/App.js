@@ -52,17 +52,17 @@ function App() {
 	);
 
 	return (
-		<div id="App">
-			<section id="left-container">
+		<div className="App">
+			<section className="left-container">
 				<Navigation />
 				<Profile />
 			</section>
 			<section
-				id="middle-container"
+				className="middle-container"
 				ref={midContainer}
 			>
 				<Header headerHeight={headerHeight} />
-				
+
 				<Timeline />
 			</section>
 			<section id="right-container">

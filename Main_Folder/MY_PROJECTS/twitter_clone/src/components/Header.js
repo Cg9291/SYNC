@@ -8,45 +8,50 @@ import { twitterLogo } from "./svg_exports.js";
 export default function Header(props) {
 	return (
 		<div
-			id="header"
 			style={{marginTop: props.headerHeight}}
-			className="headerTransition"
+			className="header headerTransition"
 		>
-			<div id="header-top">
+			<div className="header_header-top">
 				<div className="alignment-boxes">
 					<div>
 						<img
-							id="profile-picture"
+							className="header_profile-picture"
 							src="https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640"
 						/>
-						<span>Home</span>
+						<span className="header_text-span">Home</span>
 					</div>
 				</div>
-				<div className="twitter-logo-box">
-					{twitterLogo}
-				</div>
+				<div className="twitter-logo-box">{twitterLogo}</div>
 				<div className="alignment-boxes"></div>
 			</div>
-			<div id="header-bottom">
-				<ul>
-					<li>
-						<a href="#">
+			<div className="header_header-bottom">
+				<ul className="header_ul">
+					<li className="header_li">
+						<a
+							href="#"
+							className="header_anchor"
+						>
 							<span>For you</span>
 						</a>
 					</li>
-					<li>
-						<a href="#">
+					<li className="header_li">
+						<a
+							href="#"
+							className="header_anchor"
+						>
 							<span>Following</span>
 						</a>
 					</li>
-					<li>
-						<a href="#">
+					<li className="header_li">
+						<a
+							href="#"
+							className="header_anchor"
+						>
 							<span>My feed</span>
 						</a>
 					</li>
 				</ul>
 			</div>
-			
 		</div>
 	);
 }

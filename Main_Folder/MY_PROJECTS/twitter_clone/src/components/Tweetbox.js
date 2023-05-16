@@ -1,19 +1,19 @@
 export default function TweetBox() {
 	return (
 		<div
-			id="tweet-box"
-			className="hidden500 tweet-area"
+			//id="tweet-box"
+			className="tweet-area hidden500 "
 		>
 			<div>
-				<div className="profile-img-box">
+				<div className="tweet-area_profile-image-box">
 					<img
-						classname="profile-img"
+						classname="tweet-area_profile-img"
 						src="https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640"
 					/>
 				</div>
 
 				<input
-					id="tweet-input"
+					className="tweet-area_tweet-input"
 					placeholder="What's happening?"
 				></input>
 			</div>

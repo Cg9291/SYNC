@@ -5,70 +5,98 @@ import {
 	searchIcon,
 	bellIcon,
 	messageIcon,
-  listsIcon,
-  bookmarksIcon,
-  twitterBlueIcon,
-  profileIcon,
-  moreIcon
+	listsIcon,
+	bookmarksIcon,
+	twitterBlueIcon,
+	profileIcon,
+	moreIcon,
 } from "./svg_exports";
 
 export default function Navigation(props) {
 	return (
-		<nav>
-			<div className="twitter-logo-box">{twitterLogo}</div>
-			<ul>
-				<li className="first-item">
-					<a href="#">{homeIcon}</a>
+		<nav className="nav">
+			<div className="nav_twitter-logo-box">{twitterLogo}</div>
+			<ul className="nav_ul">
+				<li className="nav_ul first-item">
+					<a
+						href="#"
+						className="nav_a"
+					>
+						{homeIcon}
+					</a>
 				</li>
 
-				<li>
-					<a href="#">{searchIcon}</a>
+				<li className="nav_ul">
+					<a
+						href="#"
+						className="nav_a"
+					>
+						{searchIcon}
+					</a>
 				</li>
 
-				<li>
-					<a href="#">{bellIcon}</a>
+				<li className="nav_ul">
+					<a
+						href="#"
+						className="nav_a"
+					>
+						{bellIcon}
+					</a>
 				</li>
 
-				<li>
-					<a href="#">{messageIcon}</a>
+				<li className="nav_ul">
+					<a
+						href="#"
+						className="nav_a"
+					>
+						{messageIcon}
+					</a>
 				</li>
 
-				<li className="hidden500">
-					<a href="#">{listsIcon}</a>
+				<li className="nav_ul hidden500">
+					<a
+						href="#"
+						className="nav_a"
+					>
+						{listsIcon}
+					</a>
 				</li>
 
-				<li className="hidden500">
-					<a href="#">{bookmarksIcon}</a>
+				<li className="nav_ul hidden500">
+					<a
+						href="#"
+						className="nav_a"
+					>
+						{bookmarksIcon}
+					</a>
 				</li>
 
-				<li className="hidden500">
-					<a href="#">{twitterBlueIcon}</a>
+				<li className="nav_ul hidden500">
+					<a
+						href="#"
+						className="nav_a"
+					>
+						{twitterBlueIcon}
+					</a>
 				</li>
 
-				<li className="hidden500">
-					<a href="#">{profileIcon}</a>
+				<li className="nav_ul hidden500">
+					<a
+						href="#"
+						className="nav_a"
+					>
+						{profileIcon}
+					</a>
 				</li>
 
-				<li className="hidden500">
-					<a href="#">{moreIcon}</a>
+				<li className="nav_ul hidden500">
+					<a
+						href="#"
+						className="nav_a"
+					>
+						{moreIcon}
+					</a>
 				</li>
-
-				{/* <a href="#">
-					<li>Bookmarks</li>
-				</a>
-				<a href="#">
-					{" "}
-					<li>Lists</li>
-				</a>
-				<a href="#">
-					<li>Profile</li>
-				</a>
-				<a href="#">
-					<li>More</li>
-				</a>
-				<a href="#">
-					<button type="click" /*onClick={()=>setLi1("Casa")}/>Tweet</button>
-				</a> */}
 			</ul>
 		</nav>
 	);
