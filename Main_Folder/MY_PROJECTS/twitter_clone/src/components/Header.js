@@ -3,7 +3,7 @@ import gificon from "../twitter-newui-iconkit/icons to be used/twitter-gif.png";
 import alignicon from "../twitter-newui-iconkit/icons to be used/twitter-align.png";
 import locationicon from "../twitter-newui-iconkit/icons to be used/twitter-location.png";
 import noiconicon from "../twitter-newui-iconkit/icons to be used/twitter-cross-2.png";
-import { twitterLogo } from "./svg_exports.js";
+import {twitterLogo} from "../assets/icons/svg_exports.js";
 
 export default function Header(props) {
 	return (

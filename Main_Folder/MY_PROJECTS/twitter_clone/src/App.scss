@@ -16,7 +16,7 @@
 :root {
 	--header-height: 107px;
 	--tweet-box-height: 188px;
-	--borders-color: 1px solid rgb(239, 243, 244);
+	--main-border-style: 1px solid rgb(239, 243, 244);
 }
 
 section,
@@ -49,6 +49,30 @@ li {
 	}
 }
 
+.hidden705{
+	display: none !important;
+	@media only screen and (705px<=width) {
+		display: flex !important;
+	}
+}
+
+.wrappers {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+.wrappers--flex {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+.wrappers--flex-column {
+	display: flex;
+	flex-direction: column;
+}
 /* .icon-fill {
 	fill: black;
 } */
@@ -77,7 +101,7 @@ li {
 	display: flex;
 	// /* margin: 0; */ commented out to prevent fixed position being pushed to top
 	padding: 0;
-	border-top: var(--borders-color);
+	border-top: var(--main-border-style);
 	height: 53.5px;
 	width: 100%;
 	box-sizing: border-box;
@@ -92,7 +116,7 @@ li {
 		// z-index: 2;
 		width: 69px;
 		border-top: 0;
-		border-right: var(--borders-color);
+		border-right: var(--main-border-style);
 		margin: 0;
 		padding: 0 4px 0 4px;
 		box-sizing: border-box;
@@ -362,7 +386,7 @@ button:hover {
 		line-height: 20px;
 		margin: 0;
 		padding: 0;
-		border-bottom: var(--borders-color);
+		border-bottom: var(--main-border-style);
 		//font-weight:500;
 	}
 
@@ -415,38 +439,76 @@ button:hover {
 
 .timeline-wrapper {
 	width: 100%;
-	padding: 0;;
+	padding: 0;
 	margin-top: var(--header-height);
 	//overflow-y: scroll;
 }
 
 .tweet-area {
+	display: flex;
+	flex-direction: column;
 	width: 100%;
-	margin:0;
+	height: 108px;
+	margin: 0;
+	padding: 4px 0;
+	//border:1px solid red;
+	border-bottom: var(--main-border-style);
+
+	&_wrapper {
+		@extend .wrappers--flex;
+		padding: 0 16px;
+		//border:1px solid purple;
+		box-sizing: border-box;
+	}
+
 	&_profile-image-box {
 		width: 60px;
+		height: 100%;
 		padding-right: 12px;
 	}
-		img {
+
+	/*  img {
 			width: 48px;
-		}
+		} */
 
-		&_profile-img {
-			width: 10px;
-			height: 10px;
-		}
-
-		&_tweet-input {
-			width: 100%;
-			height: 124px;
-			display: flex;
-			border: 1px solid green;
-			width: 100%;
-		}
+	&_profile-img {
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		padding: 4px 0;
 	}
 
-#icons-row {
-	display: none;
+	&_tweet-input {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		border: 1px solid green;
+		width: 100%;
+		padding: 4px 0;
+		box-sizing: border-box;
+	}
+
+	&_icons-row {
+		height: 100%;
+		box-sizing: border-box;
+		//border:1px solid blue;
+		box-sizing: border-box;
+	}
+
+	&_ul {
+		display: flex;
+		height: 100%;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		border: 1px solid orange;
+		box-sizing: border-box;
+	}
+
+	&_tweet-icons{
+		height:5px;
+		width: 5px;;
+	}
 }
 
 #middle-container::-webkit-scrollbar {

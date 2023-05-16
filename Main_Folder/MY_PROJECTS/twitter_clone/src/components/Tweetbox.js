@@ -1,13 +1,22 @@
+import {
+	imagesIcon,
+	gifsIcon,
+	pollsIcon,
+	emojisIcon,
+	schedulesIcon,
+	locationsIcon,
+} from "../assets/icons/tweetbox_svg";
+
 export default function TweetBox() {
 	return (
 		<div
 			//id="tweet-box"
 			className="tweet-area hidden500 "
 		>
-			<div>
+			<div className="tweet-area_wrapper">
 				<div className="tweet-area_profile-image-box">
 					<img
-						classname="tweet-area_profile-img"
+						className="tweet-area_profile-img"
 						src="https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640"
 					/>
 				</div>
@@ -17,25 +26,25 @@ export default function TweetBox() {
 					placeholder="What's happening?"
 				></input>
 			</div>
-			<div id="icons-row">
-				<ul>
+			<div className="tweet-area_icons-row">
+				<ul className="tweet-area_ul">
 					<li>
-						<a href="#">{/* <img src={squarepicicon} /> */}</a>
+						<a href="#">{imagesIcon}</a>
 					</li>
 					<li>
-						<a href="#">{/* <img src={gificon} /> */}</a>
+						<a href="#">{gifsIcon}</a>
+					</li>
+					<li className="hidden705">
+						<a href="#">{pollsIcon}</a>
 					</li>
 					<li>
-						<a href="#">{/* <img src={alignicon} /> */}</a>
+						<a href="#">{emojisIcon}</a>
+					</li>
+					<li className="hidden705">
+						<a href="#">{schedulesIcon}</a>
 					</li>
 					<li>
-						<a href="#">{/* <img src={noiconicon} /> */}</a>
-					</li>
-					<li>
-						<a href="#">{/* <img src={noiconicon} /> */}</a>
-					</li>
-					<li>
-						<a href="#">{/* <img src={locationicon} /> */}</a>
+						<a href="#">{locationsIcon}</a>
 					</li>
 				</ul>
 				<button>Tweet</button>

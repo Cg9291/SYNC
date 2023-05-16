@@ -10,7 +10,7 @@ import {
 	twitterBlueIcon,
 	profileIcon,
 	moreIcon,
-} from "./svg_exports";
+} from "../assets/icons/svg_exports";
 
 export default function Navigation(props) {
 	return (
