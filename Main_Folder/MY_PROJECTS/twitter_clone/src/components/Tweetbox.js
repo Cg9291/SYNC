@@ -28,26 +28,28 @@ export default function TweetBox() {
 			</div>
 			<div className="tweet-area_icons-row">
 				<ul className="tweet-area_ul">
-					<li>
+					<li className="tweet-area_li">
 						<a href="#">{imagesIcon}</a>
 					</li>
-					<li>
+					<li className="tweet-area_li">
 						<a href="#">{gifsIcon}</a>
 					</li>
-					<li className="hidden705">
+					<li className="tweet-area_li hidden705">
 						<a href="#">{pollsIcon}</a>
 					</li>
-					<li>
+					<li className="tweet-area_li">
 						<a href="#">{emojisIcon}</a>
 					</li>
-					<li className="hidden705">
+					<li className="tweet-area_li hidden705">
 						<a href="#">{schedulesIcon}</a>
 					</li>
-					<li>
+					<li className="tweet-area_li">
 						<a href="#">{locationsIcon}</a>
 					</li>
 				</ul>
-				<button>Tweet</button>
+				<div className="tweet-area_wrapper--btn">
+					<button className="tweet-area_btn">Tweet</button>
+				</div>
 			</div>
 		</div>
 	);
