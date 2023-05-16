@@ -1,6 +1,6 @@
 export let imagesIcon = (
 	<svg
-		className="tweet-area_tweet-icons"
+		className="tweet-area_tweet-icons tweet-area_tweet-icons--first-icon"
 		viewBox="0 0 24 24"
 	>
 		<g>

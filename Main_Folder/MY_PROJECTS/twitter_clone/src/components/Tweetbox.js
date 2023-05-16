@@ -21,34 +21,66 @@ export default function TweetBox() {
 					/>
 				</div>
 
-				<input
+				<textarea
 					className="tweet-area_tweet-input"
-					placeholder="What's happening?"
-				></input>
+					placeholder="What is happening?!"
+				></textarea>
 			</div>
 			<div className="tweet-area_icons-row">
 				<ul className="tweet-area_ul">
-					<li className="tweet-area_li">
-						<a href="#">{imagesIcon}</a>
+					<li className="tweet-area_li tweet-area_li--first-item">
+						<a
+							className="tweet-area_anchors"
+							href="#"
+						>
+							{imagesIcon}
+						</a>
 					</li>
 					<li className="tweet-area_li">
-						<a href="#">{gifsIcon}</a>
+						<a
+							className="tweet-area_anchors"
+							href="#"
+						>
+							{gifsIcon}
+						</a>
 					</li>
 					<li className="tweet-area_li hidden705">
-						<a href="#">{pollsIcon}</a>
-					</li>
-					<li className="tweet-area_li">
-						<a href="#">{emojisIcon}</a>
+						<a
+							className="tweet-area_anchors"
+							href="#"
+						>
+							{pollsIcon}
+						</a>
 					</li>
 					<li className="tweet-area_li hidden705">
-						<a href="#">{schedulesIcon}</a>
+						<a
+							className="tweet-area_anchors"
+							href="#"
+						>
+							{emojisIcon}
+						</a>
 					</li>
-					<li className="tweet-area_li">
-						<a href="#">{locationsIcon}</a>
+					<li className="tweet-area_li hidden705">
+						<a
+							className="tweet-area_anchors"
+							href="#"
+						>
+							{schedulesIcon}
+						</a>
+					</li>
+					<li className="tweet-area_li lightIcons">
+						<a
+							className="tweet-area_anchors"
+							href="#"
+						>
+							{locationsIcon}
+						</a>
 					</li>
 				</ul>
 				<div className="tweet-area_wrapper--btn">
-					<button className="tweet-area_btn">Tweet</button>
+					<button className="tweet-area_btn">
+						<span className="tweet-area_btn-text">Tweet</span>
+					</button>
 				</div>
 			</div>
 		</div>

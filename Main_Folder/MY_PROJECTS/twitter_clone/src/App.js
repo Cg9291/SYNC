@@ -28,6 +28,7 @@ MOBILE!!
 
 TABLETS!!
 *enable left container scroll behaviour
+*fix nav & tweet icons alignment
 */
 
 function App() {
