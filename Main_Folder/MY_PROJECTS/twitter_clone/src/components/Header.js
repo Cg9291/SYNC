@@ -21,7 +21,7 @@ export default function Header(props) {
 						<span className="header_text-span">Home</span>
 					</div>
 				</div>
-				<div className="twitter-logo-box">{twitterLogo}</div>
+				<div className="header_twitter-logo-box">{twitterLogo}</div>
 				<div className="alignment-boxes"></div>
 			</div>
 			<div className="header_header-bottom">

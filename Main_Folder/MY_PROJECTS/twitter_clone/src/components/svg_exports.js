@@ -1,7 +1,7 @@
 export let twitterLogo = (
 	<svg
 		//id="twitter-logo"
-		className="twitter-logo "
+		className="nav_twitter-logo header_twitter-logo"
 		viewBox="0 0 24 24"
 	>
 		<g>
