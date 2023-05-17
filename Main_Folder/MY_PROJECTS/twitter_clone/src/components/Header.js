@@ -29,7 +29,6 @@ export default function Header(props) {
 				<ul className="header_ul">
 					<li
 						className="header_li"
-					
 						onFocus={props.changeToBoldFont}
 						onBlur={props.changeToMediumFont}
 					>
@@ -42,7 +41,8 @@ export default function Header(props) {
 									: "header_anchor"
 							}`}
 						>
-							<span>For you</span>
+							<div>For you</div>
+							<span></span>
 						</a>
 					</li>
 					<li
@@ -59,7 +59,8 @@ export default function Header(props) {
 									: "header_anchor"
 							}`}
 						>
-							<span>Following</span>
+							<div>Following</div>
+							<span></span>
 						</a>
 					</li>
 					<li
@@ -76,7 +77,8 @@ export default function Header(props) {
 									: "header_anchor"
 							}`}
 						>
-							<span>My feed</span>
+							<div>My feed</div>
+							<span></span>
 						</a>
 					</li>
 				</ul>

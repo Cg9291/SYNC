@@ -28,7 +28,8 @@ MOBILE!!
 
 TABLETS!!
 *enable left container scroll behaviour
-*fix nav & tweet icons alignment
+*fix nav icons adjustments
+-for you,following and myfeed could use minor position adjustments
 */
 
 function App() {
@@ -51,7 +52,7 @@ function App() {
 					? setHeaderHeight("-53px")
 					: setHeaderHeight("0");
 				setPrevScrollTopValue(midContainer.current.scrollTop);
-				console.log(midContainer.current.scrollTop);
+				/* console.log(midContainer.current.scrollTop); */
 			})
 		//THIS FUNCTION IS SET TO ONLY WORK ON SIZES<500PX..SEE CSS
 	);

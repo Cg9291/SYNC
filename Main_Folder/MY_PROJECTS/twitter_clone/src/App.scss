@@ -321,6 +321,7 @@ button:hover {
 		width: 100%;
 		margin: 0;
 		padding: 0;
+		box-sizing: border-box;
 
 		@media only screen and (500px<=width<=688px) {
 			padding-left: 16px;
@@ -398,7 +399,8 @@ button:hover {
 		height: 100%;
 		width: 100%;
 		margin: 0;
-		padding: 0;
+		padding: 0 0 0 0;
+		box-sizing: border-box;
 	}
 	&_li {
 		display: flex;
@@ -409,6 +411,7 @@ button:hover {
 		font-size: 15px;
 		font-weight: 500;
 		line-height: 20px;
+		padding:0 0;
 
 		box-sizing: border-box;
 	}
@@ -425,17 +428,48 @@ button:hover {
 		text-decoration: none;
 		color: rgb(83, 100, 113);
 		box-sizing: border-box;
-		span {
+		div {
 			font-family: chirpMedium;
-		};
-
-		&--clicked {
-			@extend .header_anchor;
-			span {
-				font-family: chirpBold;
-				color: black;
-			}
 		}
+		span{
+			display: none;
+		}
+	}
+	&_anchor--clicked {
+		@extend .header_anchor;
+		display: flex;
+		flex-direction: column;
+		justify-content:center;
+		padding: 17px 16px 0 16px;
+		//align-items: space-between;
+		div {
+			flex-basis: 3fr;
+			font-family: chirpBold;
+			color: black;
+			justify-self: center;
+			/* border-bottom:3px solid green;
+				border-radius: 1%; */
+			//border-block-end: solid green;
+		}
+		span{
+			//display: inline-flex;
+			flex-basis:1fr;
+			display: inline-block;
+			//position: absolute;
+			margin:0;margin-top: auto;
+			justify-self: end;
+			//align-self: end;
+			background-color: #1d8ad3;
+			width: 50%;
+			height:4px;
+			border-radius: 99px;
+			border:none;
+
+		}
+	}
+
+	&_underline-bar{
+		background-color: #1d8ad3;
 	}
 	a:active {
 		background-color: lightgray;
@@ -563,7 +597,8 @@ button:hover {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		font-weight: bold;
+		//font-weight: bold;
+		font-family: chirpBold;
 		font-size: 15px;
 		border-radius: 3rem;
 		width: 77.83px;
