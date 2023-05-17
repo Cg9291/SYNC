@@ -33,6 +33,9 @@ TABLETS!!
 
 function App() {
 	let midContainer = useRef();
+
+	let [clickedClass, setClickedClass] = useState("");
+
 	let [scrollTopValue, setScrollTopValue] = useState();
 	let [prevScrollTopValue, setPrevScrollTopValue] = useState();
 	let [headerHeight, setHeaderHeight] = useState("0");
@@ -41,16 +44,31 @@ function App() {
 		setPrevScrollTopValue(midContainer.current.scrollTop);
 	});
 
-	useEffect(() =>
-		midContainer.current.addEventListener("scroll", () => {
-			midContainer.current.scrollTop > prevScrollTopValue
-				? setHeaderHeight("-53px")
-				: setHeaderHeight("0");
-			setPrevScrollTopValue(midContainer.current.scrollTop);
-			console.log(midContainer.current.scrollTop);
-		})
+	useEffect(
+		() =>
+			midContainer.current.addEventListener("scroll", () => {
+				midContainer.current.scrollTop > prevScrollTopValue
+					? setHeaderHeight("-53px")
+					: setHeaderHeight("0");
+				setPrevScrollTopValue(midContainer.current.scrollTop);
+				console.log(midContainer.current.scrollTop);
+			})
 		//THIS FUNCTION IS SET TO ONLY WORK ON SIZES<500PX..SEE CSS
 	);
+
+	const changeToBoldFont = e => {
+		setClickedClass(e.target.id);
+	};
+
+	const changeToMediumFont = e => {
+		e.target.style.color = "rgb(83, 100, 113)";
+	};
+
+	Header.defaultProps = {
+		clickedClass: clickedClass,
+		changeToBoldFont: changeToBoldFont,
+		changeToMediumFont: changeToMediumFont,
+	};
 
 	return (
 		<div className="App">

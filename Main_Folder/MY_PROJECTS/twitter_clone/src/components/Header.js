@@ -6,6 +6,7 @@ import noiconicon from "../twitter-newui-iconkit/icons to be used/twitter-cross-
 import {twitterLogo} from "../assets/icons/svg_exports.js";
 
 export default function Header(props) {
+	let fyRef = props.forYouRef;
 	return (
 		<div
 			style={{marginTop: props.headerHeight}}
@@ -26,26 +27,54 @@ export default function Header(props) {
 			</div>
 			<div className="header_header-bottom">
 				<ul className="header_ul">
-					<li className="header_li">
+					<li
+						className="header_li"
+					
+						onFocus={props.changeToBoldFont}
+						onBlur={props.changeToMediumFont}
+					>
 						<a
+							id="forYou"
 							href="#"
-							className="header_anchor"
+							className={`${
+								props.clickedClass === "forYou"
+									? "header_anchor--clicked"
+									: "header_anchor"
+							}`}
 						>
 							<span>For you</span>
 						</a>
 					</li>
-					<li className="header_li">
+					<li
+						className="header_li"
+						onFocus={props.changeToBoldFont}
+						onBlur={props.changeToMediumFont}
+					>
 						<a
+							id="following"
 							href="#"
-							className="header_anchor"
+							className={`${
+								props.clickedClass === "following"
+									? "header_anchor--clicked"
+									: "header_anchor"
+							}`}
 						>
 							<span>Following</span>
 						</a>
 					</li>
-					<li className="header_li">
+					<li
+						className="header_li"
+						onFocus={props.changeToBoldFont}
+						onBlur={props.changeToMediumFont}
+					>
 						<a
+							id="myFeed"
 							href="#"
-							className="header_anchor"
+							className={`${
+								props.clickedClass === "myFeed"
+									? "header_anchor--clicked"
+									: "header_anchor"
+							}`}
 						>
 							<span>My feed</span>
 						</a>
