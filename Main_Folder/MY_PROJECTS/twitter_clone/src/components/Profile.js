@@ -6,14 +6,14 @@ export default function Profile(props){
       userHandle:"@Cg_devs"
     })
     return(
-      <div id="profile-pill-container">
-        <div id="profile-pill">
+      <div className="profile-container">
+        <div className="profile-container_profile-pill">
           <img src="https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640"/>
-          <div id="username">
+          <div className="profile-container_user-info">
             {userName.userName}<br/>
             {userName.userHandle}
           </div>
-          <div><strong>...</strong></div>
+          <span><strong>...</strong></span>
         </div>
       </div>
     )

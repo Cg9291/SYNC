@@ -8,7 +8,7 @@ import Profile from "./components/Profile";
 import SearchBar from "./components/Searchbar";
 import Timeline from "./components/Timeline";
 import TrendingSection from "./components/Trending";
-import TweetBox from "./components/Tweetbox.js";
+import {tweetButton} from "./components/TweetButton.js"
 
 /* TODO
 MOBILE!!
@@ -28,7 +28,7 @@ MOBILE!!
 
 TABLETS!!
 *enable left container scroll behaviour
-*fix nav icons adjustments
+*fix write tweet button + nav svg clippings
 -for you,following and myfeed could use minor position adjustments
 */
 
@@ -75,6 +75,7 @@ function App() {
 		<div className="App">
 			<section className="left-container">
 				<Navigation />
+				{tweetButton()}
 				<Profile />
 			</section>
 			<section
