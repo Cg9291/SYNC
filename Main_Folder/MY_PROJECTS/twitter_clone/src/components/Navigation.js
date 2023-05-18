@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {
-	twitterLogo,
+	twitterLogoNav,
 	homeIcon,
 	searchIcon,
 	bellIcon,
@@ -15,7 +15,7 @@ import {
 export default function Navigation(props) {
 	return (
 		<nav className="nav">
-			<div className="nav_twitter-logo-box">{twitterLogo}</div>
+			<div className="nav_twitter-logo-box">{twitterLogoNav}</div>
 			<ul className="nav_ul">
 				<li className=" nav_li--first-item">
 					<a

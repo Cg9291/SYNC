@@ -177,7 +177,7 @@ li {
 	}
 
 	&_twitter-logo {
-		display: none;
+		display: flex;
 		//height: 24.4px;
 		padding: 0;
 		margin: 0;
@@ -185,12 +185,13 @@ li {
 		fill: rgb(29, 155, 240);
 
 		@media only screen and (500px<=width<=688px) {
-			display: contents;
-			width: 24px;
-			height: 2rem;
+			display: flex;
+			width: 50px;
+			height:30px;
+			//line-height: 20px;
 			border-radius: 0;
 			padding: 0;
-			margin: 0 0 0 0;
+			margin: 0;
 			//flex: 1 1 auto;
 			fill: rgb(29, 155, 240);
 			//border:1px solid green;
@@ -371,7 +372,7 @@ button:hover {
 		padding: 0;
 
 		@media only screen and (500px<=width<=688px) {
-			visibility: hidden;
+			display: none;
 		}
 	}
 
@@ -384,6 +385,7 @@ button:hover {
 		fill: rgb(29, 155, 240);
 
 		@media only screen and (500px<=width<=688px) {
+			display: none;
 		}
 	}
 
