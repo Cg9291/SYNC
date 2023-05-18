@@ -147,7 +147,7 @@ li {
 		//flex-basis: 0 0 auto;
 		align-items: center;
 		width: 100%;
-		height: 587.25px;
+		//height: 582px;
 		//border: 0.1px solid blue;
 		margin: 0;
 		padding: 0;
@@ -160,6 +160,7 @@ li {
 		align-items: center;
 		margin: 0;
 		padding: 0;
+		//box-sizing: border-box;
 		//border: solid green;
 
 		@media only screen and (500px<=width<=688px) {
@@ -170,7 +171,8 @@ li {
 			justify-content: center;
 			align-items: center;
 			margin: 0 0 0 0;
-			padding: 0;
+			padding: 2px 0;
+			box-sizing: border-box;
 		}
 	}
 
@@ -208,7 +210,7 @@ li {
 			flex-direction: column;
 			align-items: center;
 			//border: solid yellow;
-			margin: 6px 0 0 0;
+			margin: 2px 0 0 0;
 			padding: 0;
 		}
 	}
@@ -222,15 +224,22 @@ li {
 		width: 100%;
 		height: 100%;
 
+
 		@media only screen and (500px<=width<=688px) {
 			height: 50.25px;
-			padding: 4;
+			padding: 4px;
 			margin-top: 0;
+
 		}
 	}
 
 	&_li--first-item {
+		@extend .nav_li;
 		margin-top: -2px;
+
+		@media only screen and (500px<=width<=688px) {
+			margin-top: 0;
+		}
 	}
 
 	&_a {
@@ -411,7 +420,7 @@ button:hover {
 		font-size: 15px;
 		font-weight: 500;
 		line-height: 20px;
-		padding:0 0;
+		padding: 0 0;
 
 		box-sizing: border-box;
 	}
@@ -431,7 +440,7 @@ button:hover {
 		div {
 			font-family: chirpMedium;
 		}
-		span{
+		span {
 			display: none;
 		}
 	}
@@ -439,7 +448,7 @@ button:hover {
 		@extend .header_anchor;
 		display: flex;
 		flex-direction: column;
-		justify-content:center;
+		justify-content: center;
 		padding: 17px 16px 0 16px;
 		//align-items: space-between;
 		div {
@@ -451,24 +460,24 @@ button:hover {
 				border-radius: 1%; */
 			//border-block-end: solid green;
 		}
-		span{
+		span {
 			//display: inline-flex;
-			flex-basis:1fr;
+			flex-basis: 1fr;
 			display: inline-block;
 			//position: absolute;
-			margin:0;margin-top: auto;
+			margin: 0;
+			margin-top: auto;
 			justify-self: end;
 			//align-self: end;
 			background-color: #1d8ad3;
 			width: 50%;
-			height:4px;
+			height: 4px;
 			border-radius: 99px;
-			border:none;
-
+			border: none;
 		}
 	}
 
-	&_underline-bar{
+	&_underline-bar {
 		background-color: #1d8ad3;
 	}
 	a:active {
