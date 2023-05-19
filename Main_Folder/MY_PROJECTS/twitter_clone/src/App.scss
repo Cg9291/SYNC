@@ -130,7 +130,7 @@ li {
 		padding: 0 4px 0 4px;
 		box-sizing: border-box;
 
-		@media only screen and(600px<=width){
+		@media only screen and(600px<=width) {
 			width: 89px;
 		}
 	}
@@ -156,7 +156,7 @@ li {
 		padding: 0;
 
 		@media only screen and (600px<=width) {
-			height:582px;
+			height: 582px;
 		}
 	}
 
@@ -221,8 +221,6 @@ li {
 			margin: 2px 0 0 0;
 			padding: 0;
 		}
-
-
 	}
 
 	&_li {
@@ -277,51 +275,49 @@ button:hover {
 	background-color: #1d8ad3;
 }
 
-.tweet-btn-container{
+.tweet-btn-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height:52px;
-	width:54px;
+	height: 52px;
+	width: 54px;
 	align-self: center;
 	aspect-ratio: 1/1;
-	margin:4px 4px 4px 0 ;
+	margin: 4px 4px 4px 0;
 	padding: 0;
 	box-sizing: border-box;
 	/* background-color: rgb(29, 155, 240);
 	border-radius: 50%; */
 
-	@media screen and(600px<=width){
+	@media screen and(600px<=width) {
 		margin-top: 16px;
 	}
 }
-.tweet-btn-wrapper{
+.tweet-btn-wrapper {
 	//background-color: green;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
 	//border:1px solid green;
-	height:52px;
-	width:52px;
+	height: 52px;
+	width: 52px;
 	min-height: 52px;
 	min-height: 52px;
 	aspect-ratio: 1/1;
-	margin:4px 0 4px 4px ;
+	margin: 4px 0 4px 4px;
 	padding: 0;
 	box-sizing: border-box;
 	background-color: rgb(29, 155, 240);
 	border-radius: 50%;
 }
 
-.write-tweet-icon{
-
-	 width: 24px;
-	 height: 24px;
+.write-tweet-icon {
+	width: 24px;
+	height: 24px;
 	margin: 0;
 	padding: 0;
 	fill: white;
-
 }
 
 .profile-container {
@@ -334,41 +330,35 @@ button:hover {
 		width: 64px;
 		//padding: 4px;
 		padding: 0 0 0 0;
-		margin:12px 2px 12px -2px;
-		&_profile-pill{
+		margin: 12px 2px 12px -2px;
+		&_profile-pill {
 			height: 100%;
 			width: 100%;
-			padding: 12px ;
+			padding: 12px;
 			//justify-self: center;
 			box-sizing: border-box;
-
 		}
-		img{
-			display:flex;
+		img {
+			display: flex;
 			width: 100%;
 			height: 100%;
 			//aspect-ratio: 1/1;
 			border-radius: 50%;
-
 		}
 
-		span{
+		span {
 			display: none;
 		}
 
-		&_user-info{
+		&_user-info {
 			display: none;
 		}
 
-		@media screen and(600px<=width){
-		margin-top: 156px;
-		margin-left:8px;
+		@media screen and(600px<=width) {
+			margin-top: 156px;
+			margin-left: 8px;
+		}
 	}
-	}
-
-
-
-
 }
 
 #profile-pill:hover {
@@ -393,9 +383,7 @@ button:hover {
 
 		@media only screen and (600px<=width) {
 			margin-left: 89px;
-
-
-	}
+		}
 	}
 }
 
@@ -603,10 +591,10 @@ button:hover {
 .tweet-area {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	width:calc(100% - 1px) ;
 	height: auto;
 	margin: 0;
-	padding: 4px 14px 7.5px 16px;
+	padding: 4px 0 7.5px 0;
 	//border:1px solid red;
 	box-sizing: border-box;
 	border-bottom: var(--main-border-style);
@@ -620,10 +608,15 @@ button:hover {
 	}
 
 	&_profile-image-box {
-		width: 60px;
+		//width: 69px;
 		height: 100%;
-		padding-right: 10.5px;
-		margin: 0 0 0 0;
+		//padding-right: 10.5px;
+		margin: 0 14px 0 16px;
+		//box-sizing: border-box;
+
+		@media screen and (600px<=width) {
+			//padding-right: 9.5px;
+		}
 	}
 
 	&_profile-img {
@@ -647,7 +640,7 @@ button:hover {
 	&_icons-row {
 		display: flex;
 		height: 48px;
-		margin: 0 0 0 62px;
+		margin: 0 0 0 78px;
 		padding: 0;
 		justify-content: space-between;
 		box-sizing: border-box;
@@ -719,7 +712,7 @@ button:hover {
 		height: 36px;
 		color: white;
 		background-color: rgba(29, 155, 240, 0.5);
-		margin: 0 5px 0 0;
+		margin: 0 18px 0 0;
 		padding: 0;
 		border: none;
 		//margin-top: 1.5rem;
