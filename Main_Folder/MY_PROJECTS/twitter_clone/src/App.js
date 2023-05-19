@@ -8,7 +8,7 @@ import Profile from "./components/Profile";
 import SearchBar from "./components/Searchbar";
 import Timeline from "./components/Timeline";
 import TrendingSection from "./components/Trending";
-import {tweetButton} from "./components/TweetButton.js"
+import {tweetButton} from "./components/TweetButton.js";
 
 /* TODO
 MOBILE!!
@@ -86,7 +86,7 @@ function App() {
 
 				<Timeline />
 			</section>
-			<section id="right-container">
+			<section className="right-container ">
 				<SearchBar />
 				<TrendingSection />
 				<FollowsRecSection />

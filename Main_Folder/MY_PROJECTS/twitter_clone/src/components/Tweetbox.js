@@ -44,7 +44,7 @@ export default function TweetBox() {
 							{gifsIcon}
 						</a>
 					</li>
-					<li className="tweet-area_li hidden705">
+					<li className="tweet-area_li hidden688">
 						<a
 							className="tweet-area_anchors"
 							href="#"
@@ -60,7 +60,7 @@ export default function TweetBox() {
 							{emojisIcon}
 						</a>
 					</li>
-					<li className="tweet-area_li hidden705">
+					<li className="tweet-area_li hidden688">
 						<a
 							className="tweet-area_anchors"
 							href="#"

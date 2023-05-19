@@ -53,14 +53,21 @@ li {
 
 .hidden500 {
 	display: none !important;
-	@media only screen and (500px<=width<=699px) {
+	@media only screen and (500px<=width) {
+		display: flex !important;
+	}
+}
+
+.hidden688 {
+	display: none !important;
+	@media only screen and (688px<=width) {
 		display: flex !important;
 	}
 }
 
 .hidden705 {
 	display: none !important;
-	@media only screen and (688px<=width) {
+	@media only screen and (705px<=width) {
 		display: flex !important;
 	}
 }
@@ -82,6 +89,7 @@ li {
 	display: flex;
 	flex-direction: column;
 }
+
 /* .icon-fill {
 	fill: black;
 } */
@@ -96,7 +104,7 @@ li {
 	overflow-y: scroll;
 	background-color: white;
 	font-family: chirp;
-	@media only screen and (500px<=width<=699px) {
+	@media only screen and (500px<=width) {
 		flex-direction: row;
 		overflow-x: scroll;
 	}
@@ -117,8 +125,8 @@ li {
 	//border: solid red;
 	background-color: white;
 
-	@media only screen and (500px<=width<=699px) {
-		position: fixed;
+	@media only screen and (500px<=width) {
+		position: relative;
 		flex-direction: column;
 		flex: 1 0 auto;
 		height: 100vh;
@@ -129,10 +137,15 @@ li {
 		margin: 0;
 		padding: 0 4px 0 4px;
 		box-sizing: border-box;
-
-		@media only screen and(600px<=width) {
-			width: 89px;
-		}
+	}
+	@media only screen and(600px<=width) {
+		position: relative;
+		box-sizing: border-box;
+		padding:0;
+		width: 88px;
+		//max-width: 88px;
+		flex: 1 0 auto;
+		border:none;
 	}
 }
 
@@ -144,20 +157,22 @@ li {
 	//background-color: #1d8ad3;
 	//border: solid red;
 
-	@media only screen and (500px<=width<=699px) {
+	@media only screen and (500px<=width) {
 		display: flex;
 		flex-direction: column;
 		//flex-basis: 0 0 auto;
 		align-items: center;
 		width: 100%;
-		//height: 582px;
+		height: 582px;
 		//border: 0.1px solid blue;
 		margin: 0 0 4px 0;
 		padding: 0;
-
-		@media only screen and (600px<=width) {
-			height: 582px;
-		}
+	}
+	@media only screen and (600px<=width) {
+		box-sizing: border-box;
+		width: 88px;;
+		padding: 0 8px;
+		height: 582px;
 	}
 
 	&_twitter-logo-box {
@@ -170,7 +185,7 @@ li {
 		//box-sizing: border-box;
 		//border: solid green;
 
-		@media only screen and (500px<=width<=699px) {
+		@media only screen and (500px<=width) {
 			width: 100%;
 			height: 56px;
 			display: flex;
@@ -191,7 +206,7 @@ li {
 		//flex: 1 1 auto;
 		fill: rgb(29, 155, 240);
 
-		@media only screen and (500px<=width<=699px) {
+		@media only screen and (500px<=width) {
 			display: flex;
 			width: 50px;
 			height: 30px;
@@ -212,7 +227,7 @@ li {
 		padding: 0;
 		height: 100%;
 
-		@media only screen and (500px<=width<=699px) {
+		@media only screen and (500px<=width) {
 			width: 60px;
 			height: 524.25px;
 			flex-direction: column;
@@ -220,6 +235,11 @@ li {
 			//border: solid yellow;
 			margin: 2px 0 0 0;
 			padding: 0;
+		}
+
+		@media only screen and (600px<=width) {
+			//margin:auto 0 auto auto;
+			width: 100%;
 		}
 	}
 
@@ -232,7 +252,7 @@ li {
 		width: 100%;
 		height: 100%;
 
-		@media only screen and (500px<=width<=699px) {
+		@media only screen and (500px<=width) {
 			height: 50.25px;
 			padding: 4px;
 			margin-top: 0;
@@ -243,7 +263,7 @@ li {
 		@extend .nav_li;
 		margin-top: -2px;
 
-		@media only screen and (500px<=width<=699px) {
+		@media only screen and (500px<=width) {
 			margin-top: 0;
 		}
 	}
@@ -289,8 +309,8 @@ button:hover {
 	/* background-color: rgb(29, 155, 240);
 	border-radius: 50%; */
 
-	@media screen and(600px<=width) {
-		margin-top: 16px;
+	@media screen and(500px<=width) {
+		margin-top: 4px;
 	}
 }
 .tweet-btn-wrapper {
@@ -324,7 +344,7 @@ button:hover {
 	display: none;
 	box-sizing: border-box;
 
-	@media only screen and (500px<=width<=699px) {
+	@media only screen and (500px<=width) {
 		display: flex;
 		height: 64px;
 		width: 64px;
@@ -366,24 +386,36 @@ button:hover {
 }
 
 .middle-container {
+	width: 100%;
 	flex: 1 1 auto;
 	display: flex;
-	direction: column;
+	flex-direction: column;
 	overflow-y: scroll;
-	scroll-behavior: smooth;
+	//scroll-behavior: smooth;
 	//order: 1;
 	//z-index: 1;
 
-	@media only screen and (500px<=width<=699px) {
-		flex-basis: 1 1 auto;
+	@media only screen and (500px<=width) {
+		flex-basis: 0 1 auto;
 		width: 100%;
 		height: 100vh;
 		position: relative;
-		margin-left: 69px;
+		//margin-left: 69px;
+	}
 
-		@media only screen and (600px<=width) {
-			margin-left: 89px;
-		}
+	@media only screen and (600px<=width) {
+		//margin-left: 88px;
+		width: 100%;
+		flex:1 1  auto;
+		border-left:var(--main-border-style);
+		box-sizing: border-box;
+
+	}
+
+	@media only screen and (688px<=width) {
+		width: 600px;
+		flex:0 1 auto;
+
 	}
 }
 
@@ -396,6 +428,7 @@ button:hover {
 	padding: 0;
 	height: var(--header-height);
 	width: 100%;
+	max-width:100%;
 	background-color: rgba($color: #ffffff, $alpha: 0.8);
 	backdrop-filter: blur(10px);
 	transition: margin-top 0.16s;
@@ -403,7 +436,7 @@ button:hover {
 	transition-delay: 0ms;
 	//border:1px solid green;
 
-	@media only screen and (500px<=width<=699px) {
+	@media only screen and (500px<=width) {
 		position: fixed;
 		width: calc(100vw - 69px);
 		margin: 0;
@@ -412,6 +445,18 @@ button:hover {
 		//overflow-x: scroll;
 		//border:solid brown;
 		//margin-right:68px;
+	}
+
+	@media only screen and (600px<=width) {
+		position: relative;
+		width: 100%;
+		//border:1px solid red;
+
+	}
+
+	@media only screen and (688px<=width) {
+		width: inherit;
+
 	}
 
 	&_header-top {
@@ -424,7 +469,7 @@ button:hover {
 		padding: 0;
 		box-sizing: border-box;
 
-		@media only screen and (500px<=width<=699px) {
+		@media only screen and (500px<=width) {
 			padding-left: 16px;
 			padding-top: 15px;
 		}
@@ -432,7 +477,7 @@ button:hover {
 	&_text-span {
 		display: none;
 
-		@media only screen and (500px<=width<=699px) {
+		@media only screen and (500px<=width) {
 			display: inline-block;
 			font-family: chirpBold;
 			font-size: 20px;
@@ -450,7 +495,7 @@ button:hover {
 		padding: 0;
 		//border: 0.1rem solid red;
 
-		@media only screen and (500px<=width<=699px) {
+		@media only screen and (500px<=width) {
 			display: none;
 		}
 	}
@@ -462,7 +507,7 @@ button:hover {
 		margin: 0;
 		padding: 0;
 
-		@media only screen and (500px<=width<=699px) {
+		@media only screen and (500px<=width) {
 			display: none;
 		}
 	}
@@ -475,7 +520,7 @@ button:hover {
 		flex: 1 1 auto;
 		fill: rgb(29, 155, 240);
 
-		@media only screen and (500px<=width<=699px) {
+		@media only screen and (500px<=width) {
 			display: none;
 		}
 	}
@@ -584,15 +629,15 @@ button:hover {
 .timeline-wrapper {
 	width: 100%;
 	padding: 0;
-	margin-top: var(--header-height);
+	//margin-top: var(--header-height);
 	//overflow-y: scroll;
 }
 
 .tweet-area {
 	display: flex;
 	flex-direction: column;
-	width:calc(100% - 1px) ;
-	height: auto;
+	width: calc(100% - 1px);
+	//height: auto;
 	margin: 0;
 	padding: 4px 0 7.5px 0;
 	//border:1px solid red;
@@ -727,8 +772,16 @@ button:hover {
 	display: none;
 }
 
-#right-container {
+.right-container {
 	display: none;
+
+	@media screen and(699px<=width) {
+display: flex;
+//width: 150px;
+flex: 1 1 auto;
+border-left: var(--main-border-style);
+
+	}
 	/* //flex-direction: column;
 		//gap: 1rem;
 		//padding-left: 2rem;
