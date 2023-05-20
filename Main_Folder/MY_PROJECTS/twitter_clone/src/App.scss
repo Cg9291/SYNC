@@ -154,6 +154,7 @@ li {
 	}
 
 	@media only screen and(688px<=width) {
+		width: auto;
 		flex: 1 1 auto;
 		border: none;
 	}
@@ -817,9 +818,12 @@ button:hover {
 	display: none;
 }
 .custom-containers-margin {
-	width: 20px;
-	//margin-right: 20px;
-	//background-color: #1d8ad3;
+	display: none;
+	@media screen and (988px<=width) {
+		width: 20px;
+		//margin-right: 20px;
+		//background-color: #1d8ad3
+	}
 }
 
 .right-container {
@@ -830,11 +834,12 @@ button:hover {
 		width: auto;
 		flex: 2 1 auto;
 		flex-direction: column;
-		margin-right: 10px;
+
 		// border-left: var(--main-border-style);
 	}
 
 	@media screen and(988px<=width) {
+		margin-right: 10px;
 		overflow-y: scroll;
 		// width: 290px;
 		//margin-left: 17px;
@@ -858,13 +863,13 @@ button:hover {
 
 .searchBar {
 	@media screen and(988px<=width) {
-	width: 100%;
-	height: 100%;
-	border: none;
-	border-radius: 99px;
-	background-color: rgba(239, 243, 244, 255);
-	margin-top: 4.5px;
-	box-sizing: border-box;
+		width: 100%;
+		height: 100%;
+		border: none;
+		border-radius: 99px;
+		background-color: rgba(239, 243, 244, 255);
+		margin-top: 4.5px;
+		box-sizing: border-box;
 	}
 }
 
