@@ -101,7 +101,7 @@ li {
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
-	overflow-y: scroll;
+	overflow-y: hidden;
 	background-color: white;
 	font-family: chirp;
 	@media only screen and (500px<=width) {
@@ -420,7 +420,7 @@ button:hover {
 }
 
 .header {
-	position: fixed;
+	position: relative;
 	//border:solid green;
 	display: flex;
 	flex-direction: column;
@@ -630,7 +630,7 @@ button:hover {
 	width: 100%;
 	padding: 0;
 	//margin-top: var(--header-height);
-	//overflow-y: scroll;
+	overflow-y: scroll;
 }
 
 .tweet-area {

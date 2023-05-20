@@ -1,10 +1,10 @@
 import {Helmet} from "react-helmet"; //this allows to use helmet(which supports the insertion of script tags in the component's html)
+import React from "react";
 import Header from "./Header.js";
 import TweetBox from "./Tweetbox.js";
 
-export default function Timeline(props) {
-	return (
-		<div className="timeline-wrapper">
+ export const Timeline=React.forwardRef((props,scrollTracker)=> (
+		<div className="timeline-wrapper" ref={scrollTracker}>
 			<TweetBox/>
 			<a
 				id="timeline"
@@ -42,5 +42,4 @@ export default function Timeline(props) {
 				></script>
 			</Helmet> */}
 		</div>
-	);
-}
+	));

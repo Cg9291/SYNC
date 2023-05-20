@@ -6,7 +6,7 @@ import FollowsRecSection from "./components/FollowRecs";
 import Navigation from "./components/Navigation";
 import Profile from "./components/Profile";
 import SearchBar from "./components/Searchbar";
-import Timeline from "./components/Timeline";
+import {Timeline} from "./components/Timeline";
 import TrendingSection from "./components/Trending";
 import {tweetButton} from "./components/TweetButton.js";
 
@@ -33,7 +33,7 @@ TABLETS!!
 */
 
 function App() {
-	let midContainer = useRef();
+	let scrollTracker = useRef();
 
 	let [clickedClass, setClickedClass] = useState("");
 
@@ -42,17 +42,17 @@ function App() {
 	let [headerHeight, setHeaderHeight] = useState("0");
 
 	useEffect(() => {
-		setPrevScrollTopValue(midContainer.current.scrollTop);
+		setPrevScrollTopValue(scrollTracker.current.scrollTop);
 	});
 
 	useEffect(
 		() =>
-			midContainer.current.addEventListener("scroll", () => {
-				midContainer.current.scrollTop > prevScrollTopValue
+			scrollTracker.current.addEventListener("scroll", () => {
+				scrollTracker.current.scrollTop > prevScrollTopValue
 					? setHeaderHeight("-53px")
 					: setHeaderHeight("0");
-				setPrevScrollTopValue(midContainer.current.scrollTop);
-				/* console.log(midContainer.current.scrollTop); */
+				setPrevScrollTopValue(scrollTracker.current.scrollTop);
+				 //console.log(scrollTracker.current.scrollTop);
 			})
 		//THIS FUNCTION IS SET TO ONLY WORK ON SIZES<500PX..SEE CSS
 	);
@@ -78,13 +78,10 @@ function App() {
 				{tweetButton()}
 				<Profile />
 			</section>
-			<section
-				className="middle-container"
-				ref={midContainer}
-			>
+			<section className="middle-container">
 				<Header headerHeight={headerHeight} />
 
-				<Timeline />
+				<Timeline ref={scrollTracker} />
 			</section>
 			<section className="right-container ">
 				<SearchBar />
