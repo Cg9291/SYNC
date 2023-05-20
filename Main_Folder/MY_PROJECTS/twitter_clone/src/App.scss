@@ -21,7 +21,8 @@
 
 ::placeholder {
 	opacity: 0.72;
-	color: black;
+	color: rgba(15, 20, 25,0.8);
+	font-family: chirp;
 }
 
 section,
@@ -310,6 +311,7 @@ button:hover {
 
 	@media screen and(500px<=width) {
 		display: flex;
+		position: relative;
 		justify-content: center;
 		align-items: center;
 		height: 52px;
@@ -350,6 +352,7 @@ button:hover {
 		min-height: 52px;
 		aspect-ratio: 1/1;
 		margin: 4px 0 4px 4px;
+		box-shadow:none;
 	}
 }
 
@@ -458,8 +461,8 @@ button:hover {
 	//border:1px solid green;
 
 	@media only screen and (500px<=width) {
-		position: fixed;
-		width: calc(100vw - 69px);
+		position: relative;
+		width: 100%;
 		margin: 0;
 		margin-top: 0px !important;
 		padding: 0;
@@ -665,7 +668,7 @@ button:hover {
 
 	&_wrapper {
 		@extend .wrappers--flex;
-		padding: 0 0 4px 0;
+		padding: 0px 0 4px 0;
 		//padding: 0 16px;
 		//border:1px solid purple;
 		box-sizing: border-box;
@@ -699,6 +702,7 @@ button:hover {
 		border: none;
 		font-size: 20px;
 		font-family: chirp;
+		font-weight: bold;
 	}
 
 	&_icons-row {
@@ -774,7 +778,7 @@ button:hover {
 		border-radius: 3rem;
 		width: 77.83px;
 		height: 36px;
-		color: white;
+		color: rgb(255,255,255);
 		background-color: rgba(29, 155, 240, 0.5);
 		margin: 0 18px 0 0;
 		padding: 0;
@@ -784,6 +788,8 @@ button:hover {
 
 	&_btn-text {
 		display: inline-block;
+		color: rgb(255,255,255);
+
 	}
 }
 
