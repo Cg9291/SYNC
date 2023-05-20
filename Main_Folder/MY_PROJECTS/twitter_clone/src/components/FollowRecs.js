@@ -1,6 +1,6 @@
 export default function FollowsRecSection(){
     return(
-      <section id="rec-follows-section">
+      <section className="follow-recommendations">
         <div class="cards-header">Who to follow</div>
         <div class="cards">PROFILE #1</div>
         <div class="cards">PROFILE #2</div>

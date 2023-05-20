@@ -74,19 +74,22 @@ function App() {
 	return (
 		<div className="App">
 			<section className="left-container">
-				{/* <Navigation />
+				<Navigation />
 				{tweetButton()}
-				<Profile /> */}
+				<Profile />
 			</section>
 			<section className="middle-container">
 				<Header headerHeight={headerHeight} />
 
 				<Timeline ref={scrollTracker} />
 			</section>
+      <div className="custom-containers-margin">
+
+      </div>
 			<section className="right-container ">
-				{/* <SearchBar />
+				<SearchBar />
 				<TrendingSection />
-				<FollowsRecSection /> */}
+				<FollowsRecSection />
 			</section>
 		</div>
 	);

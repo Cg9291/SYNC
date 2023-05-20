@@ -1,6 +1,6 @@
 export default function TrendingSection(){
     return (
-      <section id="trending-section">
+      <section className="trending-wrapper">
         <div class="cards-header">What's happening</div>
         <div class="cards">NEWS #1</div>
         <div class="cards">NEWS #2</div>
