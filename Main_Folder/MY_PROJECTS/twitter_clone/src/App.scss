@@ -148,6 +148,11 @@ li {
 		flex: 1 0 auto;
 		border: none;
 	}
+
+	@media only screen and(688px<=width) {
+		flex: 1 1 auto;
+		border: none;
+	}
 }
 
 .nav {
@@ -440,6 +445,8 @@ button:hover {
 	@media only screen and (688px<=width) {
 		width: 600px;
 		flex: 0 1 auto;
+		border-right:var(--main-border-style)
+
 	}
 }
 
@@ -493,7 +500,7 @@ button:hover {
 
 		@media only screen and (500px<=width) {
 			padding-left: 16px;
-			padding-top: 15px;
+			padding-top: 14.5px;
 		}
 	}
 	&_text-span {
@@ -503,7 +510,8 @@ button:hover {
 			display: inline-block;
 			font-family: chirpBold;
 			font-size: 20px;
-			font-weight: bold;
+			margin-bottom: 20px;
+			//font-weight: bold;
 			//transform: scale(1.0363,1);
 			//border: solid;
 		}
@@ -598,7 +606,8 @@ button:hover {
 		color: rgb(83, 100, 113);
 		box-sizing: border-box;
 		div {
-			font-family: chirpMedium;
+			font-family: chirpBold;
+			//font-weight: bold;
 		}
 		span {
 			display: none;
@@ -800,11 +809,11 @@ button:hover {
 .right-container {
 	display: none;
 
-	@media screen and(699px<=width) {
+	@media screen and(688px<=width) {
 		display: flex;
-		//width: 150px;
-		flex: 1 1 auto;
-		border-left: var(--main-border-style);
+		width: auto;
+		flex: 2 1 auto;
+		// border-left: var(--main-border-style);
 	}
 	/* //flex-direction: column;
 		//gap: 1rem;

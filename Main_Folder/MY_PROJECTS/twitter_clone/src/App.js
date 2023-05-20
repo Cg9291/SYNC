@@ -74,9 +74,9 @@ function App() {
 	return (
 		<div className="App">
 			<section className="left-container">
-				<Navigation />
+				{/* <Navigation />
 				{tweetButton()}
-				<Profile />
+				<Profile /> */}
 			</section>
 			<section className="middle-container">
 				<Header headerHeight={headerHeight} />
@@ -84,9 +84,9 @@ function App() {
 				<Timeline ref={scrollTracker} />
 			</section>
 			<section className="right-container ">
-				<SearchBar />
+				{/* <SearchBar />
 				<TrendingSection />
-				<FollowsRecSection />
+				<FollowsRecSection /> */}
 			</section>
 		</div>
 	);
