@@ -847,6 +847,7 @@ button:hover {
 		display: flex;
 		width: 290px;
 		height: 44px;
+		margin-bottom: 16.5px;
 		//background-color: #1d8ad3;
 		//margin-right: 10px;
 		//border-radius: 50%;
@@ -859,14 +860,53 @@ button:hover {
 	border:none;
 	border-radius:99px;
 	background-color: rgba(239, 243, 244, 255);
-	margin: 4.5px 0 16.5px 0;
+	margin-top: 4.5px;
 	box-sizing: border-box;
 }
 
 .trending-wrapper {
-	width: 100%;
+
 	display: none;
 	@media screen and(988px<=width) {
+		display: flex;
+		flex-direction: column;
+		width: 290px;
+		height: 500px;
+		background-color: rgba(239, 243, 244, 255);
+		margin-top: 4.5px;
+			border-radius:17px;
+			//padding: 15px 0 0 0;
+			box-sizing:border-box;
+	}
+
+	&_cards-header{
+		display: flex;
+		align-items: center;
+		height: 48px;
+		font-size: 20px;
+		font-family: chirpBold;
+		width: 100%;
+		width: 288px;
+		padding:12px 16px;
+		box-sizing: border-box;
+		span{
+			//margin:0 17px;
+		}
+	}
+
+	&_cards{
+		display: flex;
+		width: 288;
+		height: 92px;
+		padding: 12px 16px;
+		box-sizing: border-box;
+	}
+
+	&_cards-footer{
+		width: 288px;
+		height: 52px;
+		box-sizing: border-box;
+		padding: 16px;
 	}
 }
 
