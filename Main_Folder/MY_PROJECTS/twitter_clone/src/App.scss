@@ -20,9 +20,11 @@
 }
 
 ::placeholder {
-	opacity: 0.72;
-	color: rgba(15, 20, 25, 0.8);
+	//opacity: 0.72;
+	//background-color: rgba(255,255,255,0.72);
+	color: rgba(15, 20, 25, 0.72);
 	font-family: chirp;
+	//z-index: 1;
 }
 
 section,
@@ -46,10 +48,6 @@ li {
 .nav-icons {
 	width: 26.25px;
 	height: 26.25px;
-}
-
-.lightIcons {
-	opacity: 0.5;
 }
 
 .hidden500 {
@@ -107,7 +105,7 @@ li {
 	padding: 0;
 	overflow-x: hidden;
 	overflow-y: hidden;
-	background-color: white;
+	//background-color: white;
 	font-family: chirp;
 	@media only screen and (500px<=width) {
 		flex-direction: row;
@@ -200,7 +198,6 @@ li {
 		align-self: flex-end;
 	}
 
-
 	// @media screen and (688px<=width) {
 	// 	padding: 0;
 	// }
@@ -289,7 +286,7 @@ li {
 		}
 
 		@media only screen and (688px<=width) {
-			margin:0 0;
+			margin: 0 0;
 		}
 	}
 
@@ -363,6 +360,14 @@ button:hover {
 
 	@media screen and (600px<=width) {
 	}
+
+	@media screen and(688px<=width) {
+		width: 88px;
+		margin: 16px 0 0 0;
+		padding: 0;
+		align-self: flex-end;
+		box-sizing: border-box;
+	}
 }
 .tweet-btn-wrapper {
 	display: flex;
@@ -376,6 +381,7 @@ button:hover {
 	border-radius: 50%;
 	box-shadow: 0px 1px 8px 1px rgba(101, 119, 134, 0.4);
 
+
 	@media screen and(500px<=width) {
 		//background-color: green;
 
@@ -388,6 +394,14 @@ button:hover {
 		margin: 4px 0 4px 4px;
 		box-shadow: none;
 	}
+
+	@media screen and(500px<=width) {
+		padding: 4px;
+		margin: 0;
+	}
+
+
+
 }
 
 .write-tweet-icon {
@@ -438,6 +452,9 @@ button:hover {
 			margin-left: 8px;
 		}
 	}
+	@media screen and(688px<=width) {
+			display: none;
+		}
 }
 
 #profile-pill:hover {
@@ -482,7 +499,7 @@ button:hover {
 }
 
 .header {
-	position: relative;
+	position: fixed;
 	//border:solid green;
 	display: flex;
 	flex-direction: column;
@@ -492,18 +509,19 @@ button:hover {
 	width: 100%;
 	max-width: 100%;
 	background-color: rgba($color: #ffffff, $alpha: 0.8);
-	backdrop-filter: blur(10px);
+	backdrop-filter: blur(15px);
 	transition: margin-top 0.16s;
 	transition-timing-function: ease;
 	transition-delay: 0ms;
 	//border:1px solid green;
 
 	@media only screen and (500px<=width) {
-		position: relative;
+		position: fixed;
 		width: 100%;
 		margin: 0;
 		margin-top: 0px !important;
 		padding: 0;
+		//visibility: hidden;
 		//overflow-x: scroll;
 		//border:solid brown;
 		//margin-right:68px;
@@ -516,6 +534,7 @@ button:hover {
 	}
 
 	@media only screen and (688px<=width) {
+		position: fixed;
 		width: inherit;
 	}
 
@@ -622,8 +641,6 @@ button:hover {
 		padding: 0 0;
 
 		box-sizing: border-box;
-
-
 	}
 	&_anchor {
 		display: flex;
@@ -693,8 +710,12 @@ button:hover {
 .timeline-wrapper {
 	width: 100%;
 	padding: 0;
-	//margin-top: var(--header-height);
-	overflow-y: scroll;
+
+	overflow-y: visible;
+
+	@media screen and (688px<=width) {
+		margin-top: var(--header-height);
+	}
 }
 
 .tweet-area {
@@ -800,6 +821,11 @@ button:hover {
 		padding: 0;
 		fill: rgb(29, 155, 240);
 		//stroke-width: 1px;
+
+		&--light-icons {
+			@extend .tweet-area_tweet-icons;
+			fill: rgba(29, 155, 240,0.5);
+		}
 	}
 
 	&_wrapper--btn {
@@ -826,6 +852,10 @@ button:hover {
 		padding: 0;
 		border: none;
 		//margin-top: 1.5rem;
+
+		@media screen and (688px<=width){
+margin: 0 17px 0 0;
+		}
 	}
 
 	&_btn-text {

@@ -55,7 +55,7 @@ export let schedulesIcon = (
 
 export let locationsIcon = (
 	<svg
-		className="tweet-area_tweet-icons"
+		className="tweet-area_tweet-icons--light-icons "
 		viewBox="0 0 24 24"
 	>
 		<g>
