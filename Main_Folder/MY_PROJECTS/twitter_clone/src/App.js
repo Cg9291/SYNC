@@ -91,7 +91,10 @@ function App() {
 				<TrendingSection />
 				<FollowsRecSection />
 			</section>
+			<div className="whiteSpace-right"></div>
 		</div>
+
+
 	);
 }
 
