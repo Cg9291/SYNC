@@ -157,6 +157,7 @@ li {
 		width: auto;
 		flex: 1 1 auto;
 		border: none;
+		align-items: baseline;
 	}
 
 	@media only screen and(988px<=width) {
@@ -191,6 +192,18 @@ li {
 		padding: 0 8px;
 		height: 582px;
 	}
+
+	@media only screen and (688px<=width) {
+		width: 88px;
+		padding: 0;
+		height: 582px;
+		align-self: flex-end;
+	}
+
+
+	// @media screen and (688px<=width) {
+	// 	padding: 0;
+	// }
 
 	&_twitter-logo-box {
 		display: none;
@@ -274,6 +287,10 @@ li {
 			padding: 4px;
 			margin-top: 0;
 		}
+
+		@media only screen and (688px<=width) {
+			margin:0 0;
+		}
 	}
 
 	&_li--first-item {
@@ -295,6 +312,7 @@ li {
 svg {
 	border-radius: 50%;
 	padding: 8px;
+	overflow: visible;
 }
 svg:active {
 	background-color: lightgray;
@@ -524,7 +542,7 @@ button:hover {
 			font-family: chirpBold;
 			font-size: 20px;
 			margin-bottom: 20px;
-			//font-weight: bold;
+			font-weight: bold;
 			//transform: scale(1.0363,1);
 			//border: solid;
 		}
@@ -604,6 +622,8 @@ button:hover {
 		padding: 0 0;
 
 		box-sizing: border-box;
+
+
 	}
 	&_anchor {
 		display: flex;
