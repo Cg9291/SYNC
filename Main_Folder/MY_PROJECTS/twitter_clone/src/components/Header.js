@@ -19,9 +19,9 @@ export default function Header(props) {
 							className="header_profile-picture"
 							src="https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640"
 						/>
-						<span className="header_text-span">Home</span>
 					</div>
 				</div>
+				<span className="header_text-span">Home</span>
 				<div className="header_twitter-logo-box">{twitterLogoHeader}</div>
 				<div className="alignment-boxes"></div>
 			</div>

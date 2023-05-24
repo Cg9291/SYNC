@@ -40,6 +40,10 @@ li {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+
+	@media screen and (500px<=width) {
+		display: none;
+	}
 }
 
 .hidden500 {
@@ -119,13 +123,10 @@ li {
 		flex-direction: column;
 		flex: 1 0 auto;
 		height: 100vh;
-		// z-index: 2;
-		width: 69px;
+		width: 68px;
 		border-top: 0;
-		border-right: var(--main-border-style);
 		margin: 0;
-		padding: 0 4px 0 4px;
-		box-sizing: border-box;
+		padding: 0 4px;
 	}
 	@media only screen and(600px<=width) {
 		position: relative;
@@ -170,13 +171,9 @@ li {
 	@media only screen and (500px<=width) {
 		display: flex;
 		flex-direction: column;
-		//flex-basis: 0 0 auto;
 		align-items: center;
-		width: 100%;
 		height: 582px;
-		//border: 0.1px solid blue;
 		margin: 0 0 4px 0;
-		padding: 0;
 	}
 	@media only screen and (600px<=width) {
 		box-sizing: border-box;
@@ -202,22 +199,14 @@ li {
 
 	&_twitter-logo-box {
 		display: none;
-		//height: 100%;
-		//width: 100%;
-		//align-items: center;
-		//margin: 0;
-		//padding: 0;
-		//box-sizing: border-box;
-		//border: solid green;
 
 		@media only screen and (500px<=width) {
 			width: 100%;
 			height: 56px;
 			display: flex;
-			// border: solid purple;
 			justify-content: center;
 			align-items: center;
-			margin: 0 0 0 0;
+			margin: 0;
 			padding: 2px 0;
 			box-sizing: border-box;
 		}
@@ -225,25 +214,17 @@ li {
 
 	&_twitter-logo {
 		display: flex;
-		//height: 24.4px;
-		/* padding: 0;
-		margin: 0; */
-		//flex: 1 1 auto;
-		//fill: rgb(29, 155, 240);
 
 		@media only screen and (500px<=width) {
-			display: flex;
 			width: 50px;
 			height: 30px;
-			//line-height: 20px;
 			border-radius: 0;
 			padding: 0;
 			margin: 0;
-			//flex: 1 1 auto;
 			fill: rgb(29, 155, 240);
-			//border:1px solid green;
 		}
 	}
+
 	&_ul {
 		display: flex;
 		justify-content: space-evenly;
@@ -257,13 +238,10 @@ li {
 			height: 524.25px;
 			flex-direction: column;
 			align-items: center;
-			//border: solid yellow;
 			margin: 2px 0 0 0;
-			padding: 0;
 		}
 
 		@media only screen and (600px<=width) {
-			//margin:auto 0 auto auto;
 			width: 100%;
 		}
 	}
@@ -280,7 +258,6 @@ li {
 		@media only screen and (500px<=width) {
 			height: 50.25px;
 			padding: 4px;
-			margin-top: 0;
 		}
 
 		@media only screen and (688px<=width) {
@@ -468,7 +445,6 @@ button:hover {
 
 .middle-container {
 	width: 100%;
-	//flex: 1 1 auto;
 	display: flex;
 	flex-direction: column;
 	overflow-y: scroll;
@@ -478,7 +454,9 @@ button:hover {
 		width: 100%;
 		height: 100vh;
 		position: relative;
-		//margin-left: 69px;
+		box-sizing: border-box;
+		border-left: var(--main-border-style);
+		border-right: var(--main-border-style);
 	}
 
 	@media only screen and (600px<=width) {
@@ -518,8 +496,11 @@ button:hover {
 	transition-delay: 0ms;
 
 	@media only screen and (500px<=width) {
-		position: fixed;
+		position: sticky;
 		width: 100%;
+		max-width: 100%;
+
+		top: 0;
 		margin: 0;
 		margin-top: 0px !important;
 		padding: 0;
@@ -553,8 +534,9 @@ button:hover {
 		box-sizing: border-box;
 
 		@media only screen and (500px<=width) {
-			padding-left: 16px;
-			padding-top: 14.5px;
+			width: 100%;
+			justify-content: start;
+			align-items: center;
 		}
 	}
 	&_text-span {
@@ -564,7 +546,9 @@ button:hover {
 			display: inline-block;
 			font-family: chirpBold;
 			font-size: 20px;
-			margin-bottom: 20px;
+
+			margin-left: 16px;
+
 			font-weight: bold;
 			//transform: scale(1.0363,1);
 			//border: solid;
@@ -673,16 +657,23 @@ button:hover {
 			font-family: chirpBold;
 			color: black;
 			justify-self: center;
+			@media screen and (500px<=width) {
+				margin-top: 1px;
+			}
 		}
 		span {
 			display: inline-block;
 			margin: auto 0 1px 0;
 			justify-self: end;
 			background-color: rgb(29, 155, 240);
-			width: 65%;
+			width: 45%;
 			height: 4px;
 			border-radius: 99px;
 			border: none;
+
+			@media screen and (500px<=width) {
+				margin: auto 0 0 0;
+			}
 		}
 	}
 
@@ -697,14 +688,12 @@ button:hover {
 .timeline-wrapper {
 	width: 100%;
 	padding: 0;
-	margin-top: var(--header-height);
 }
 
 .tweet-area {
 	display: flex;
 	flex-direction: column;
 	width: calc(100% - 1px);
-	//height: auto;
 	margin: 0;
 	padding: 4px 0 7.5px 0;
 	box-sizing: border-box;
@@ -713,17 +702,13 @@ button:hover {
 	&_wrapper {
 		@extend .wrappers--flex;
 		padding: 0px 0 4px 0;
-		//padding: 0 16px;
-		//border:1px solid purple;
 		box-sizing: border-box;
 	}
 
 	&_profile-image-box {
-		//width: 69px;
 		height: 100%;
-		//padding-right: 10.5px;
+
 		margin: 0 14px 0 16px;
-		//box-sizing: border-box;
 
 		@media screen and (600px<=width) {
 			//padding-right: 9.5px;
@@ -746,7 +731,6 @@ button:hover {
 		border: none;
 		font-size: 20px;
 		font-family: chirp;
-		font-weight: bold;
 	}
 
 	&_icons-row {
@@ -762,10 +746,8 @@ button:hover {
 		display: flex;
 		flex: 0 1 33%;
 		height: 100%;
-		//width: 100%;
 		margin: 0;
 		padding: 12px 0 0 0;
-		//border: 1px solid orange;
 		box-sizing: border-box;
 		list-style: none;
 	}
@@ -789,10 +771,7 @@ button:hover {
 	&_anchors {
 		display: flex;
 		width: auto;
-		// width: 100%;
-		// height: 100%;
 		justify-content: start;
-		//border: 1px solid red;
 	}
 
 	&_tweet-icons {
