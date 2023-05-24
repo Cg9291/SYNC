@@ -10,7 +10,6 @@ import {
 export default function TweetBox() {
 	return (
 		<div
-			//id="tweet-box"
 			className="tweet-area hidden500 "
 		>
 			<div className="tweet-area_wrapper">

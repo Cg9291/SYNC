@@ -73,7 +73,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<section className="left-container">
+			<section className="nav-container">
 				<Navigation />
 				{tweetButton()}
 				<Profile />
