@@ -165,7 +165,8 @@ li {
 	}
 
 	@media screen and (1008px<=width){
-		width: 88px;
+		width: 78px;
+		flex:1 0 auto;
 
 	}
 }
@@ -202,6 +203,13 @@ li {
 		height: 582px;
 		align-self: flex-end;
 	}
+
+	@media screen and (1008px<=width){
+		width: 68px;
+
+	}
+
+
 
 	// @media screen and (688px<=width) {
 	// 	padding: 0;
@@ -273,6 +281,8 @@ li {
 			//margin:auto 0 auto auto;
 			width: 100%;
 		}
+
+
 	}
 
 	&_li {
@@ -293,6 +303,8 @@ li {
 		@media only screen and (688px<=width) {
 			margin: 0 0;
 		}
+
+
 	}
 
 	&_li--first-item {
@@ -309,6 +321,7 @@ li {
 		justify-content: center;
 		align-items: center;
 		text-decoration: none;
+
 	}
 }
 svg {
@@ -372,6 +385,11 @@ button:hover {
 		padding: 0;
 		align-self: flex-end;
 		box-sizing: border-box;
+	}
+
+	@media screen and(1008px<=width) {
+		width: 68px;
+
 	}
 }
 .tweet-btn-wrapper {
@@ -1044,7 +1062,9 @@ margin: 0 17px 0 0;
 	}
 
 	@media screen and (1008px<=width){
-		display: none;
+		display: flex;
+		width: 10px;
+		flex:1 0 auto;
 
 	}
 }
