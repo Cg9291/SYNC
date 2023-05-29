@@ -96,7 +96,7 @@ li {
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
-	overflow-y: hidden;
+	//overflow-y: scroll;
 	font-family: chirp;
 	@media only screen and (500px<=width) {
 		flex-direction: row;
@@ -104,16 +104,25 @@ li {
 	}
 }
 
+/* .twitter-timeline{
+	border-bottom: var(--main-border-style);
+} */
+
 .nav-container {
 	//named based on desktop position..will be at bottom on mobile viewports
-	z-index: 2;
-	position: fixed;
-	margin-top: calc(100vh - 53.5px);
+	z-index: 3;
+	position: sticky;
+	//overflow-y: visible;
+	order: 2;
+	//top: calc(100vh - 53.5px);
 	display: flex;
+	bottom: 0px;
 	// /* margin: 0; */ commented out to prevent fixed position being pushed to top
+	margin: 0;
 	padding: 0;
 	border-top: var(--main-border-style);
-	height: 53.5px;
+	min-height: 52.5px;
+	max-height: 52.5px; //both heights required + purposefully diff from twitter actual height in order to avoid creating wrapper inside nav
 	width: 100%;
 	box-sizing: border-box;
 	background-color: white;
@@ -445,9 +454,14 @@ button:hover {
 
 .middle-container {
 	width: 100%;
+	position: relative;
+	//height: auto;
 	display: flex;
 	flex-direction: column;
-	overflow-y: scroll;
+	z-index: 1;
+	border-bottom: var(--main-border-style);
+
+	//overflow-y: auto;
 
 	@media only screen and (500px<=width) {
 		flex-basis: 0 1 auto;
@@ -480,19 +494,23 @@ button:hover {
 }
 
 .header {
-	position: absolute;
+	position: sticky;
 	display: flex;
 	flex-direction: column;
 	top: -0.5px;
+	//bottom:107px ;
 	margin: 0;
+	z-index: 1;
+	//margin-top:-20px;
 	padding: 0;
 	height: var(--header-height);
 	width: 100%;
 	max-width: 100%;
 	background-color: rgba($color: #ffffff, $alpha: 0.8);
-	backdrop-filter: blur(15px);
+	backdrop-filter: blur(10px);
 	transition: margin-top 0.16s;
-	transition-timing-function: ease;
+	transition: top 0.16s;
+	transition-timing-function: ease-in-out;
 	transition-delay: 0ms;
 
 	@media only screen and (500px<=width) {
@@ -687,7 +705,13 @@ button:hover {
 
 .timeline-wrapper {
 	width: 100%;
+	height: auto;
 	padding: 0;
+	z-index: 0;
+	margin: 0;
+	//position: ;
+	//margin-top: var(--header-height);
+	//overflow-y: visible;//necessary for the scroll detection function to work
 }
 
 .tweet-area {

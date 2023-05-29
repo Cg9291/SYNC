@@ -6,7 +6,7 @@ import FollowsRecSection from "./components/FollowRecs";
 import Navigation from "./components/Navigation";
 import Profile from "./components/Profile";
 import SearchBar from "./components/Searchbar";
-import {Timeline} from "./components/Timeline";
+import Timeline from "./components/Timeline";
 import TrendingSection from "./components/Trending";
 import {tweetButton} from "./components/TweetButton.js";
 
@@ -22,7 +22,7 @@ MOBILE!!
 *add notification blue indicators
 *review anchor elements hover backgrounds
 *review viewbox for svg bottom row svg elements
-*useforward ref to move the midcontainer ref to the timeline-div and then adjust css to have both scroll indicator and sliding header together(moving scroll attribute from middle container to timeline div in css)
+*clean up header scroll animation smoothness
 -find a way to make header scroll behaviour smoother and more consistent
 -review icons'svgs
 
@@ -43,16 +43,19 @@ function App() {
 
 	useEffect(() => {
 		setPrevScrollTopValue(scrollTracker.current.scrollTop);
-	});
+		console.log(scrollTracker.current.scrollTop);
+	}, []);
+
+	useEffect(() => console.log(scrollTracker.current.className));
 
 	useEffect(
 		() =>
 			scrollTracker.current.addEventListener("scroll", () => {
 				scrollTracker.current.scrollTop > prevScrollTopValue
 					? setHeaderHeight("-53px")
-					: setHeaderHeight("0");
+					: setHeaderHeight("-0.5px");
 				setPrevScrollTopValue(scrollTracker.current.scrollTop);
-				 //console.log(scrollTracker.current.scrollTop);
+				// console.log(scrollTracker.current.scrollTop,"scrolled");
 			})
 		//THIS FUNCTION IS SET TO ONLY WORK ON SIZES<500PX..SEE CSS
 	);
@@ -72,7 +75,10 @@ function App() {
 	};
 
 	return (
-		<div className="App">
+		<div
+			className="App"
+			ref={scrollTracker}
+		>
 			<section className="nav-container">
 				<Navigation />
 				{tweetButton()}
@@ -83,9 +89,7 @@ function App() {
 
 				<Timeline ref={scrollTracker} />
 			</section>
-      <div className="custom-containers-margin">
-
-      </div>
+			<div className="custom-containers-margin"></div>
 			<section className="right-container ">
 				<SearchBar />
 				<TrendingSection />
@@ -93,8 +97,6 @@ function App() {
 			</section>
 			<div className="whiteSpace-right"></div>
 		</div>
-
-
 	);
 }
 

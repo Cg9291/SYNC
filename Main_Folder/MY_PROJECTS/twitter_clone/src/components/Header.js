@@ -6,10 +6,9 @@ import noiconicon from "../twitter-newui-iconkit/icons to be used/twitter-cross-
 import {twitterLogoHeader} from "../assets/icons/svg_exports.js";
 
 export default function Header(props) {
-	let fyRef = props.forYouRef;
 	return (
 		<div
-			style={{marginTop: props.headerHeight}}
+			style={{top: props.headerHeight}}
 			className="header headerTransition"
 		>
 			<div className="header_header-top">
