@@ -661,7 +661,7 @@ button:hover {
 		div {
 			font-family: chirpMedium;
 		}
-		span {
+		.blue-focused-bar {
 			display: none;
 		}
 	}
@@ -669,6 +669,7 @@ button:hover {
 		@extend .header_anchor;
 		flex-direction: column;
 		padding: 16px 16px 0 16px;
+		overflow-x: visible;
 		div {
 			font-family: chirpBold;
 			color: black;
@@ -677,12 +678,12 @@ button:hover {
 				margin-top: 1px;
 			}
 		}
-		span {
+		.blue-focused-bar {
 			display: inline-block;
 			margin: auto 0 1px 0;
 			justify-self: end;
 			background-color: rgb(29, 155, 240);
-			width: 45%;
+			//width: 45%;
 			height: 4px;
 			border-radius: 99px;
 			border: none;

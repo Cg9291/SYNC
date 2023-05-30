@@ -23,6 +23,7 @@ MOBILE!!
 *review anchor elements hover backgrounds
 *review viewbox for svg bottom row svg elements
 *clean up header scroll animation smoothness
+*review for you clicked bar size + words alignment
 -find a way to make header scroll behaviour smoother and more consistent
 -review icons'svgs
 
@@ -34,8 +35,11 @@ TABLETS!!
 
 function App() {
 	let scrollTracker = useRef();
+	let focusedText=useRef([]);
 
-	let [clickedClass, setClickedClass] = useState("");
+	let [clickedElement, setClickedElement] = useState('forYou');
+
+	let [focusedBarLength,setFocusedBarLength]=useState("100%");
 
 	let [scrollTopValue, setScrollTopValue] = useState();
 	let [prevScrollTopValue, setPrevScrollTopValue] = useState();
@@ -46,7 +50,7 @@ function App() {
 		console.log(scrollTracker.current.scrollTop);
 	}, []);
 
-	useEffect(() => console.log(scrollTracker.current.className));
+	/* useEffect(() => console.log(scrollTracker.current.className)); */
 
 	useEffect(
 		() =>
@@ -60,18 +64,28 @@ function App() {
 		//THIS FUNCTION IS SET TO ONLY WORK ON SIZES<500PX..SEE CSS
 	);
 
-	const changeToBoldFont = e => {
-		setClickedClass(e.target.id);
+	useEffect(() =>{
+		clickedElement==="forYou"?setFocusedBarLength(`${focusedText.current[clickedElement].offsetWidth+0}px`):
+		setFocusedBarLength(`${focusedText.current[clickedElement].offsetWidth}px`);
+		/* setFocusedBarLength(focusedText.current[clickedElement]) */},[clickedElement]
+	);
+
+	const focusHeader = e => {
+		setClickedElement(e.target.id);
+		console.log(focusedText.current[e.target.id].offsetWidth/* .innerText.length */)
 	};
 
-	const changeToMediumFont = e => {
+
+	/* const unfocusHeader = e => {
 		e.target.style.color = "rgb(83, 100, 113)";
-	};
+	}; */
 
 	Header.defaultProps = {
-		clickedClass: clickedClass,
-		changeToBoldFont: changeToBoldFont,
-		changeToMediumFont: changeToMediumFont,
+		clickedElement: clickedElement,
+		focusHeader: focusHeader,
+		focusedBarLength:focusedBarLength,
+		focusedText:focusedText
+		/* unfocusHeader: unfocusHeader, */
 	};
 
 	return (
@@ -85,7 +99,7 @@ function App() {
 				<Profile />
 			</section>
 			<section className="middle-container">
-				<Header headerHeight={headerHeight} />
+				<Header headerHeight={headerHeight} ref={focusedText}/>
 
 				<Timeline ref={scrollTracker} />
 			</section>

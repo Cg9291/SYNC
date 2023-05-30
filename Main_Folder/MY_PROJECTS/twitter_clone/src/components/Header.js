@@ -4,6 +4,8 @@ import alignicon from "../twitter-newui-iconkit/icons to be used/twitter-align.p
 import locationicon from "../twitter-newui-iconkit/icons to be used/twitter-location.png";
 import noiconicon from "../twitter-newui-iconkit/icons to be used/twitter-cross-2.png";
 import {twitterLogoHeader} from "../assets/icons/svg_exports.js";
+import { ForwardedRef, forwardRef } from "react";
+import { useRef } from "react";
 
 export default function Header(props) {
 	return (
@@ -28,56 +30,68 @@ export default function Header(props) {
 				<ul className="header_ul">
 					<li
 						className="header_li"
-						onFocus={props.changeToBoldFont}
-						onBlur={props.changeToMediumFont}
+						onFocus={props.focusHeader}
 					>
 						<a
 							id="forYou"
 							href="#"
 							className={`${
-								props.clickedClass === "forYou"
+								props.clickedElement === "forYou"
 									? "header_anchor--clicked"
 									: "header_anchor"
 							}`}
 						>
-							<div>For you</div>
-							<span></span>
+							<div ref={ref => (props.focusedText.current["forYou"] = ref)}>
+								For you
+							</div>
+							<span
+								className="blue-focused-bar"
+								style={{width: props.focusedBarLength}}
+							></span>
 						</a>
 					</li>
 					<li
 						className="header_li"
-						onFocus={props.changeToBoldFont}
-						onBlur={props.changeToMediumFont}
+						onFocus={props.focusHeader}
 					>
 						<a
 							id="following"
 							href="#"
 							className={`${
-								props.clickedClass === "following"
+								props.clickedElement === "following"
 									? "header_anchor--clicked"
 									: "header_anchor"
 							}`}
 						>
-							<div>Following</div>
-							<span></span>
+							<div ref={ref => (props.focusedText.current["following"] = ref)}>
+								Following
+							</div>
+							<span
+								className="blue-focused-bar"
+								style={{width: props.focusedBarLength}}
+							></span>
 						</a>
 					</li>
 					<li
 						className="header_li"
-						onFocus={props.changeToBoldFont}
-						onBlur={props.changeToMediumFont}
+						onFocus={props.focusHeader}
 					>
 						<a
 							id="myFeed"
 							href="#"
 							className={`${
-								props.clickedClass === "myFeed"
+								props.clickedElement === "myFeed"
 									? "header_anchor--clicked"
 									: "header_anchor"
 							}`}
 						>
-							<div>My feed</div>
-							<span></span>
+							<div ref={ref => (props.focusedText.current["myFeed"] = ref)}>
+								My feed
+							</div>
+							<span
+								className="blue-focused-bar"
+								style={{width: props.focusedBarLength}}
+							></span>
 						</a>
 					</li>
 				</ul>

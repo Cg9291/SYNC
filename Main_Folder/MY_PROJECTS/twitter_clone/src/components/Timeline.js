@@ -8,7 +8,7 @@ export default function Timeline(props) {
 		<TweetBox />
 		<a
 			id="timeline"
-			class="twitter-timeline"
+			className="twitter-timeline"
 			href="https://twitter.com/TheSportsMediaC/lists/1543020161199812608?ref_src=twsrc%5Etfw"
 			data-chrome="noheader"
 			sourceType="list"
