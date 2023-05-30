@@ -136,6 +136,7 @@ li {
 		border-top: 0;
 		margin: 0;
 		padding: 0 4px;
+		order: unset;
 	}
 	@media only screen and(600px<=width) {
 		position: relative;
@@ -303,13 +304,6 @@ li {
 	}
 }
 
-/* li:hover {
-					background-color: rgba(220, 220, 220, 0.6);
-					border-radius: 2rem;
-					width: max-content;
-					padding: 1rem 1.5rem 1rem 1.5rem;
-				}
- */
 
 button:hover {
 	background-color: #1d8ad3;
@@ -335,13 +329,13 @@ button:hover {
 		justify-content: center;
 		align-items: center;
 		height: 52px;
-		width: 54px;
+		width: 60px;
 		align-self: center;
-		aspect-ratio: 1/1;
-		margin: 4px 4px 4px 0;
+		//aspect-ratio: 1/1;
+		margin: 4px 0 0 0;
 		padding: 0;
 		box-sizing: border-box;
-		left: initial;
+		right: initial;
 		bottom: initial;
 		/* background-color: rgb(29, 155, 240);
 	border-radius: 50%; */
@@ -368,7 +362,8 @@ button:hover {
 	}
 }
 .tweet-btn-wrapper {
-	@extend .wrappers--flex;
+	width: 50px;
+	height: 50px;
 
 	justify-content: center;
 	align-items: center;
@@ -379,21 +374,19 @@ button:hover {
 
 	@media screen and(500px<=width) {
 		//background-color: green;
-
+		display: flex;
 		//border:1px solid green;
 		height: 52px;
 		width: 52px;
-		min-height: 52px;
-		min-height: 52px;
+		/* min-height: 52px;
+		min-height: 52px; */
 		aspect-ratio: 1/1;
-		margin: 4px 0 4px 4px;
+		// margin: 4px 0 4px 4px;
+		//margin-bottom: 4px;
 		box-shadow: none;
 	}
 
-	@media screen and(500px<=width) {
-		padding: 4px;
-		margin: 0;
-	}
+
 }
 
 .write-tweet-icon {
