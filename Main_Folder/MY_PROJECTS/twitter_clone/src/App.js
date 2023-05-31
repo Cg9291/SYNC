@@ -43,7 +43,7 @@ function App() {
 
 	let [scrollTopValue, setScrollTopValue] = useState();
 	let [prevScrollTopValue, setPrevScrollTopValue] = useState();
-	let [headerHeight, setHeaderHeight] = useState("-0.5");
+	let [headerHeight, setHeaderHeight] = useState("-0.5px");
 
 	useEffect(() => {
 		setPrevScrollTopValue(scrollTracker.current.scrollTop);
