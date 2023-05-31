@@ -96,24 +96,18 @@ li {
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
-	//overflow-y: scroll;
 	font-family: chirp;
+
 	@media only screen and (500px<=width) {
 		flex-direction: row;
 		overflow-x: scroll;
 	}
 }
 
-/* .twitter-timeline{
-	border-bottom: var(--main-border-style);
-} */
-
 .nav-container {
 	z-index: 3;
 	position: sticky;
-	//overflow-y: visible;
 	order: 2;
-	//top: calc(100vh - 53.5px);
 	display: flex;
 	bottom: 0px;
 	// /* margin: 0; */ commented out to prevent fixed position being pushed to top
@@ -127,9 +121,8 @@ li {
 	background-color: white;
 
 	@media only screen and (500px<=width) {
-		//position: sticky;
 		flex-direction: column;
-		top:-0.5px;
+		top: -0.5px;
 		flex: 1 0 auto;
 		height: 100vh;
 		min-height: 100vh;
@@ -140,36 +133,28 @@ li {
 		order: unset;
 	}
 	@media only screen and(600px<=width) {
-		position: relative;
-		box-sizing: border-box;
 		padding: 0;
 		width: 88px;
-		//max-width: 88px;
-		flex: 1 0 auto;
 		border: none;
 	}
 
 	@media only screen and(688px<=width) {
 		width: auto;
 		flex: 1 1 auto;
-		border: none;
 		align-items: baseline;
 	}
 
 	@media only screen and(988px<=width) {
 		width: 68px;
 		flex: 1 0 auto;
-		border: none;
 	}
 
 	@media screen and (1008px<=width) {
 		width: 78px;
-		flex: 1 0 auto;
 	}
 	@media screen and (1025px<=width) {
 		width: 96.5px;
 		align-items: end;
-		//flex:1 0 auto;
 	}
 }
 
@@ -190,13 +175,10 @@ li {
 		box-sizing: border-box;
 		width: 88px;
 		padding: 0 8px;
-		height: 582px;
 	}
 
 	@media only screen and (688px<=width) {
-		width: 88px;
 		padding: 0;
-		height: 582px;
 		align-self: flex-end;
 	}
 
@@ -205,7 +187,6 @@ li {
 	}
 	@media screen and (1025px<=width) {
 		width: 88px;
-		//flex:1 0 auto;
 	}
 
 	&_twitter-logo-box {
@@ -305,7 +286,6 @@ li {
 	}
 }
 
-
 button:hover {
 	background-color: #1d8ad3;
 }
@@ -338,8 +318,6 @@ button:hover {
 		box-sizing: border-box;
 		right: initial;
 		bottom: initial;
-		/* background-color: rgb(29, 155, 240);
-	border-radius: 50%; */
 	}
 
 	@media screen and (600px<=width) {
@@ -374,20 +352,14 @@ button:hover {
 	box-shadow: 0px 1px 8px 1px rgba(101, 119, 134, 0.4);
 
 	@media screen and(500px<=width) {
-		//background-color: green;
 		display: flex;
-		//border:1px solid green;
 		height: 52px;
 		width: 52px;
-		/* min-height: 52px;
-		min-height: 52px; */
 		aspect-ratio: 1/1;
 		// margin: 4px 0 4px 4px;
 		//margin-bottom: 4px;
 		box-shadow: none;
 	}
-
-
 }
 
 .write-tweet-icon {
@@ -397,7 +369,6 @@ button:hover {
 	padding: 0;
 	fill: white;
 	position: absolute;
-	//overflow: visible;
 }
 
 .profile-container {
@@ -465,14 +436,13 @@ button:hover {
 		width: 100%;
 		height: max-content;
 		position: sticky;
-		top:unset !important;
+		top: unset !important;
 		box-sizing: border-box;
 		border-left: var(--main-border-style);
 		border-right: var(--main-border-style);
 	}
 
 	@media only screen and (600px<=width) {
-		//margin-left: 88px;
 		width: 100%;
 		flex: 1 1 auto;
 		border-left: var(--main-border-style);
@@ -487,7 +457,6 @@ button:hover {
 
 	@media only screen and (988px<=width) {
 		flex: 0 0 auto;
-		//margin-right: 30px;
 	}
 }
 
@@ -508,29 +477,14 @@ button:hover {
 	transition-delay: 0ms;
 
 	@media only screen and (500px<=width) {
-		//position: sticky;
-		//width: 100%;
-		//max-width: 100%;
-
 		top: -0.5px !important;
-		//margin: 0;
-		//margin-top: 0px !important;
-		//padding: 0;
-		//visibility: hidden;
-		//overflow-x: scroll;
-		//border:solid brown;
-		//margin-right:68px;
 	}
 
 	@media only screen and (600px<=width) {
-		position: relative;
-		width: 100%;
-		//border:1px solid red;
+		top: unset;
 	}
 
 	@media only screen and (688px<=width) {
-		position: fixed;
-		width: inherit;
 		max-width: 598px;
 		box-sizing: border-box;
 	}
@@ -558,12 +512,8 @@ button:hover {
 			display: inline-block;
 			font-family: chirpBold;
 			font-size: 20px;
-
 			margin-left: 16px;
-
 			font-weight: bold;
-			//transform: scale(1.0363,1);
-			//border: solid;
 		}
 	}
 	&_profile-picture {
@@ -573,7 +523,6 @@ button:hover {
 		height: 32px;
 		border-radius: 50%;
 		padding: 0;
-		//border: 0.1rem solid red;
 
 		@media only screen and (500px<=width) {
 			display: none;
@@ -627,7 +576,7 @@ button:hover {
 		margin: 0;
 		padding: 0 0 0 0;
 		box-sizing: border-box;
-		overflow-x: auto;//this allows for perfect alignment of the texts in this case
+		overflow-x: auto; //this allows for perfect alignment of the texts in this case
 	}
 	&_li {
 		display: flex;
@@ -637,10 +586,8 @@ button:hover {
 		height: 100%;
 		flex: 1 0 auto;
 		font-size: 15px;
-		//font-weight: 500;
-		//line-height: 20px;
 		letter-spacing: normal;
-		padding: 0 ;
+		padding: 0;
 		margin: 0;
 		box-sizing: border-box;
 		text-size-adjust: 100%;
@@ -669,7 +616,6 @@ button:hover {
 		flex-direction: column;
 		padding: 16px 16px 0 16px;
 		box-sizing: border-box;
-		//overflow-x: auto;
 		div {
 			font-family: chirpBold;
 			color: black;
@@ -683,7 +629,6 @@ button:hover {
 			margin: auto 0 1px 0;
 			justify-self: end;
 			background-color: rgb(29, 155, 240);
-			//width: 45%;
 			height: 4px;
 			border-radius: 99px;
 			border: none;
@@ -694,9 +639,6 @@ button:hover {
 		}
 	}
 
-	/* &_underline-bar {
-		background-color: #1d8ad3;
-	} */
 	a:active {
 		background-color: lightgray;
 	}
@@ -708,9 +650,6 @@ button:hover {
 	padding: 0;
 	z-index: 0;
 	margin: 0;
-	//position: ;
-	//margin-top: var(--header-height);
-	//overflow-y: visible;//necessary for the scroll detection function to work
 }
 
 .tweet-area {
@@ -730,12 +669,8 @@ button:hover {
 
 	&_profile-image-box {
 		height: 100%;
-
 		margin: 0 14px 0 16px;
 
-		@media screen and (600px<=width) {
-			//padding-right: 9.5px;
-		}
 	}
 
 	&_profile-img {
@@ -804,7 +739,6 @@ button:hover {
 		margin: 0;
 		padding: 0;
 		fill: rgb(29, 155, 240);
-		//stroke-width: 1px;
 
 		&--light-icons {
 			@extend .tweet-area_tweet-icons;
@@ -819,13 +753,11 @@ button:hover {
 		justify-content: end;
 		align-items: end;
 		margin-right: 1px;
-		//border: 2px solid green;
 	}
 	&_btn {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		//font-weight: bold;
 		font-family: chirpBold;
 		font-size: 15px;
 		border-radius: 3rem;
@@ -836,11 +768,6 @@ button:hover {
 		margin: 0 0 0 0;
 		padding: 0;
 		border: none;
-		//margin-top: 1.5rem;
-
-		@media screen and (688px<=width) {
-			margin: 0 17px 0 0;
-		}
 	}
 
 	&_btn-text {
@@ -849,17 +776,11 @@ button:hover {
 	}
 }
 
-/* .middle-container::-webkit-scrollbar {
-
-	z-index: 5;
-} */
 .custom-containers-margin {
 	display: none;
 	@media screen and (988px<=width) {
 		display: flex;
 		width: 20px;
-		//margin-right: 20px;
-		//background-color: #1d8ad3
 	}
 }
 
@@ -871,8 +792,6 @@ button:hover {
 		width: auto;
 		flex: 2 1 auto;
 		flex-direction: column;
-
-		// border-left: var(--main-border-style);
 	}
 
 	@media screen and(988px<=width) {
@@ -881,7 +800,6 @@ button:hover {
 		margin-right: 10px;
 		overflow-y: scroll;
 		max-width: 290px;
-		//margin-left: 17px;
 	}
 }
 
@@ -894,9 +812,6 @@ button:hover {
 		min-height: 44px;
 		margin-bottom: 16.5px;
 		box-sizing: border-box;
-		//background-color: #1d8ad3;
-		//margin-right: 10px;
-		//border-radius: 50%;
 	}
 }
 
@@ -923,7 +838,6 @@ button:hover {
 		margin-top: 4.5px;
 		margin-bottom: 16px;
 		border-radius: 17px;
-		//padding: 15px 0 0 0;
 		box-sizing: border-box;
 	}
 
@@ -938,7 +852,6 @@ button:hover {
 		padding: 12px 16px;
 		box-sizing: border-box;
 		span {
-			//margin:0 17px;
 			border: none;
 			margin: 0;
 			padding: 0;
@@ -987,7 +900,6 @@ button:hover {
 		padding: 12px 16px;
 		box-sizing: border-box;
 		span {
-			//margin:0 17px;
 			border: none;
 			margin: 0;
 			padding: 0;
