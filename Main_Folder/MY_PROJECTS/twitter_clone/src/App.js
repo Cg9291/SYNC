@@ -12,7 +12,7 @@ import {tweetButton} from "./components/TweetButton.js";
 
 /* TODO
 MOBILE!!
-*replace my fonts with actual twitter fonts
+
 *adjust font size in timeline vs outside of it
 *add a tweet area component
 *add links to clickable elements
@@ -39,7 +39,7 @@ function App() {
 
 	let [clickedElement, setClickedElement] = useState('forYou');
 
-	let [focusedBarLength,setFocusedBarLength]=useState("100%");
+	let [focusedBarLength,setFocusedBarLength]=useState();
 
 	let [scrollTopValue, setScrollTopValue] = useState();
 	let [prevScrollTopValue, setPrevScrollTopValue] = useState();
@@ -67,12 +67,13 @@ function App() {
 	useEffect(() =>{
 		clickedElement==="forYou"?setFocusedBarLength(`${focusedText.current[clickedElement].offsetWidth+0}px`):
 		setFocusedBarLength(`${focusedText.current[clickedElement].offsetWidth}px`);
+		console.log(focusedText.current[clickedElement].offsetWidth);
 		/* setFocusedBarLength(focusedText.current[clickedElement]) */},[clickedElement]
 	);
 
 	const focusHeader = e => {
 		setClickedElement(e.target.id);
-		console.log(focusedText.current[e.target.id].offsetWidth/* .innerText.length */)
+		/* .innerText.length */
 	};
 
 
