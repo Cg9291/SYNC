@@ -96,7 +96,7 @@ function App() {
 		>
 			<section className="nav-container">
 				<Navigation />
-				{tweetButton()}
+				{/* {tweetButton()} */}
 				<Profile />
 			</section>
 			<section className="middle-container">

@@ -77,8 +77,8 @@ export default function TweetBox() {
 					</li>
 				</ul>
 				<div className="tweet-area_wrapper--btn">
-					<button className="tweet-area_btn">
-						<span className="tweet-area_btn-text">Tweet</span>
+					<button className="tweet-area_pill-btn">
+						<span className="tweet-area_pill-btn-text">Tweet</span>
 					</button>
 				</div>
 			</div>

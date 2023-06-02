@@ -122,15 +122,18 @@ li {
 
 	@media only screen and (500px<=width) {
 		flex-direction: column;
-		top: -0.5px;
+		//top: -0.5px;
 		flex: 1 0 auto;
 		height: 100vh;
+		max-height: 100vh;
 		min-height: 100vh;
 		width: 68px;
 		border-top: 0;
 		margin: 0;
 		padding: 0 4px;
 		order: unset;
+		overflow-y: auto;
+		justify-content: space-between;
 	}
 	@media only screen and(600px<=width) {
 		padding: 0;
@@ -141,7 +144,7 @@ li {
 	@media only screen and(688px<=width) {
 		width: auto;
 		flex: 1 1 auto;
-		align-items: baseline;
+		align-items: end;
 	}
 
 	@media only screen and(988px<=width) {
@@ -168,7 +171,7 @@ li {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		height: 582px;
+		//height: 582px;
 		margin: 0 0 4px 0;
 	}
 	@media only screen and (600px<=width) {
@@ -179,7 +182,7 @@ li {
 
 	@media only screen and (688px<=width) {
 		padding: 0;
-		align-self: flex-end;
+		/* align-self: flex-end; */
 	}
 
 	@media screen and (1008px<=width) {
@@ -195,6 +198,7 @@ li {
 		@media only screen and (500px<=width) {
 			width: 100%;
 			height: 56px;
+			min-height: 56px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -231,7 +235,7 @@ li {
 			height: 524.25px;
 			flex-direction: column;
 			align-items: center;
-			margin: 2px 0 0 0;
+			margin: 2px 0 4px 0;
 		}
 
 		@media only screen and (600px<=width) {
@@ -290,7 +294,7 @@ button:hover {
 	background-color: #1d8ad3;
 }
 
-.tweet-btn-container {
+.tweet-circular-btn-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -313,7 +317,7 @@ button:hover {
 		width: 60px;
 		align-self: center;
 		//aspect-ratio: 1/1;
-		margin: 4px 0 0 0;
+		margin: 4px 0;
 		padding: 0;
 		box-sizing: border-box;
 		right: initial;
@@ -340,7 +344,7 @@ button:hover {
 		margin-right: 1px;
 	}
 }
-.tweet-btn-wrapper {
+.tweet-circular-btn-wrapper {
 	width: 50px;
 	height: 50px;
 
@@ -381,8 +385,8 @@ button:hover {
 		box-sizing: border-box;
 		//padding: 4px;
 		padding: 0 0 0 0;
-		margin: 12px 2px 12px -2px;
-		&_profile-pill {
+		margin: 8px 2px 12px -2px;
+		&_image-wrapper {
 			height: 100%;
 			width: 100%;
 			padding: 12px;
@@ -406,7 +410,7 @@ button:hover {
 		}
 
 		@media screen and(600px<=width) {
-			margin-top: 156px;
+			//margin-top: 156px;
 			margin-left: 8px;
 		}
 	}
@@ -514,6 +518,7 @@ button:hover {
 			font-size: 20px;
 			margin-left: 16px;
 			font-weight: bold;
+			color:#0F1419;
 		}
 	}
 	&_profile-picture {
@@ -754,7 +759,7 @@ button:hover {
 		align-items: end;
 		margin-right: 1px;
 	}
-	&_btn {
+	&_pill-btn {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -770,7 +775,7 @@ button:hover {
 		border: none;
 	}
 
-	&_btn-text {
+	&_pill-btn-text {
 		display: inline-block;
 		color: rgb(255, 255, 255);
 	}

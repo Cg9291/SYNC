@@ -7,7 +7,7 @@ export default function Profile(props){
     })
     return(
       <div className="profile-container">
-        <div className="profile-container_profile-pill">
+        <div className="profile-container_image-wrapper">
           <img src="https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640"/>
           <div className="profile-container_user-info">
             {userName.userName}<br/>

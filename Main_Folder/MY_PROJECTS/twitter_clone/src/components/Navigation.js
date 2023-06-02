@@ -1,4 +1,5 @@
 import {useState} from "react";
+import { tweetButton } from "./TweetButton";
 import {
 	twitterLogoNav,
 	homeIcon,
@@ -98,6 +99,9 @@ export default function Navigation(props) {
 					</a>
 				</li>
 			</ul>
+			<div>
+				{tweetButton()}
+			</div>
 		</nav>
 	);
 }
