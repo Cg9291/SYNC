@@ -832,6 +832,8 @@ button:hover {
 		margin-right: 10px;
 		overflow-y: scroll;
 		max-width: 290px;
+		//padding-left: 1px;
+		box-sizing: border-box;
 	}
 }
 
@@ -856,6 +858,19 @@ button:hover {
 		background-color: rgba(239, 243, 244, 255);
 		margin-top: 4.5px;
 		box-sizing: border-box;
+		display: flex;
+	}
+
+	&_searchIcon-wrapper{
+		min-width: 44px;
+		max-width: 44px;
+		padding-left:12px;
+	}
+
+	&_input{
+		@extend .searchBar;
+		margin:0;
+		outline: none;
 	}
 }
 
@@ -867,6 +882,7 @@ button:hover {
 		width: 290px;
 		height: 500px;
 		background-color: rgba(239, 243, 244, 255);
+		border:1px solid white;
 		margin-top: 4.5px;
 		margin-bottom: 16px;
 		border-radius: 17px;
@@ -893,7 +909,7 @@ button:hover {
 
 	&_cards {
 		display: flex;
-		width: 288;
+		width: 288px;
 		height: 92px;
 		padding: 12px 16px;
 		box-sizing: border-box;
@@ -968,7 +984,7 @@ button:hover {
 
 	@media screen and (1008px<=width) {
 		display: flex;
-		width: 10px;
+		width: 0px;
 		flex: 1 0 auto;
 	}
 }
