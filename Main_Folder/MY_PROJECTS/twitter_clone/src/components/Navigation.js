@@ -11,6 +11,7 @@ import {
 	twitterBlueIcon,
 	profileIcon,
 	moreIcon,
+	hashtagIcon
 } from "../assets/icons/svg_exports";
 
 export default function Navigation(props) {
@@ -27,12 +28,20 @@ export default function Navigation(props) {
 					</a>
 				</li>
 
-				<li className="nav_li">
+				<li className="nav_li--search-icon">
 					<a
 						href="#"
 						className="nav_a"
 					>
 						{searchIcon}
+					</a>
+				</li>
+				<li className="nav_li--hashtag-icon">
+					<a
+						href="#"
+						className="nav_a"
+					>
+						{hashtagIcon}
 					</a>
 				</li>
 
@@ -99,9 +108,7 @@ export default function Navigation(props) {
 					</a>
 				</li>
 			</ul>
-			<div>
-				{tweetButton()}
-			</div>
+			<div>{tweetButton()}</div>
 		</nav>
 	);
 }
