@@ -150,10 +150,12 @@ li {
 	@media only screen and(988px<=width) {
 		width: 68px;
 		flex: 1 0 auto;
+		//align-items: center;
+
 	}
 
 	@media screen and (1008px<=width) {
-		width: 78px;
+		width: 88px;
 	}
 	@media screen and (1025px<=width) {
 		width: 96.5px;
@@ -185,8 +187,18 @@ li {
 		/* align-self: flex-end; */
 	}
 
+	@media only screen and(988px<=width) {
+		width: 60px;
+		padding: 0 4px;
+		flex: 1 0 auto;
+		box-sizing: content-box;
+	}
+
+
 	@media screen and (1008px<=width) {
-		width: 68px;
+		width: 88px;
+		padding: 0 8px;
+		box-sizing: border-box;
 	}
 	@media screen and (1025px<=width) {
 		width: 88px;
