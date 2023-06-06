@@ -904,8 +904,8 @@ button:hover {
 		display: flex;
 		flex-direction: column;
 		width: 290px;
-		height: 500px;
-		background-color: rgba(239, 243, 244, 255);
+		min-height: 500px;
+		background-color: rgb(247, 249, 249);
 		border: 1px solid white;
 		margin-top: 4.5px;
 		margin-bottom: 16px;
@@ -934,7 +934,7 @@ button:hover {
 	&_cards {
 		display: flex;
 		width: 288px;
-		height: 92px;
+		height: 82px;
 		padding: 12px 16px;
 		box-sizing: border-box;
 	}
@@ -957,7 +957,7 @@ button:hover {
 	@media screen and(988px<=width) {
 		display: flex;
 		flex-direction: column;
-		background-color: rgba(239, 243, 244, 255);
+		background-color: rgb(247, 249, 249);
 		border-radius: 17px;
 	}
 
