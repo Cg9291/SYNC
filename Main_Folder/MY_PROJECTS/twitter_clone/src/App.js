@@ -13,23 +13,18 @@ import {tweetButton} from "./components/TweetButton.js";
 /* TODO
 MOBILE!!
 
-*adjust font size in timeline vs outside of it
-*add a tweet area component
+*adjust font size in timeline
 *add links to clickable elements
 *review twitter logo height - mobile
 *remove timeline api border
-*add header text on selection highlight + blue underscore
 *add notification blue indicators
 *review anchor elements hover backgrounds
-*review viewbox for svg bottom row svg elements
-*clean up header scroll animation smoothness
 *review for you clicked bar size + words alignment
+
 -find a way to make header scroll behaviour smoother and more consistent
 -review icons'svgs
 
 TABLETS!!
-*enable left container scroll behaviour
-*fix write tweet button + nav svg clippings
 -for you,following and myfeed could use minor position adjustments
 */
 
