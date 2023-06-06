@@ -3,7 +3,7 @@ import { tweetButton } from "./TweetButton";
 import {
 	twitterLogoNav,
 	homeIcon,
-	searchIcon,
+	searchIconNav,
 	bellIcon,
 	messageIcon,
 	listsIcon,
@@ -33,7 +33,7 @@ export default function Navigation(props) {
 						href="#"
 						className="nav_a"
 					>
-						{searchIcon}
+						{searchIconNav}
 					</a>
 				</li>
 				<li className="nav_li--hashtag-icon">

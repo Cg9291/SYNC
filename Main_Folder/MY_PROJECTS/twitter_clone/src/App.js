@@ -25,6 +25,7 @@ MOBILE!!
 -review icons'svgs
 
 TABLETS!!
+*add blue color to search bar border+icon on focus/selection
 -for you,following and myfeed could use minor position adjustments
 */
 

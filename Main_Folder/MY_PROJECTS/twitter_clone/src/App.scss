@@ -134,7 +134,7 @@ li {
 		order: unset;
 		overflow-y: auto;
 		justify-content: space-between;
-		top:0;
+		top: 0;
 	}
 	@media only screen and(600px<=width) {
 		padding: 0;
@@ -156,7 +156,7 @@ li {
 
 	@media screen and (1008px<=width) {
 		width: 88px;
-		flex:1 0 auto;
+		flex: 1 0 auto;
 		overflow-y: hidden;
 	}
 	@media screen and (1025px<=width) {
@@ -724,6 +724,7 @@ button:hover {
 		font-size: 20px;
 		font-family: chirp;
 		resize: none;
+		outline: none;
 	}
 
 	&_icons-row {
@@ -823,7 +824,7 @@ button:hover {
 
 	@media screen and(688px<=width) {
 		position: sticky;
-		top:0;
+		top: 0;
 		display: flex;
 		width: auto;
 		flex: 2 1 auto;
@@ -865,16 +866,35 @@ button:hover {
 		display: flex;
 	}
 
-	&_searchIcon-wrapper{
+	&_searchIcon-wrapper {
 		min-width: 44px;
 		max-width: 44px;
-		padding-left:12px;
+		padding-left: 14px;
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
-	&_input{
+	&_search-icon {
+		@extend .nav_nav-icons;
+		height: 18.75px;
+		width: 44px;
+		padding: 0;
+		fill: rgb(83, 100, 113);
+	}
+
+	&_input {
 		@extend .searchBar;
-		margin:0;
+		margin: 0;
 		outline: none;
+		display: flex;
+		padding: 2px 0 0 13px;
+	}
+
+	&_input::placeholder {
+		font-size: 15px;
+		text-align: left;
 	}
 }
 
@@ -886,7 +906,7 @@ button:hover {
 		width: 290px;
 		height: 500px;
 		background-color: rgba(239, 243, 244, 255);
-		border:1px solid white;
+		border: 1px solid white;
 		margin-top: 4.5px;
 		margin-bottom: 16px;
 		border-radius: 17px;
