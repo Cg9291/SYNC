@@ -1011,6 +1011,12 @@ button:hover {
 		width: 0px;
 		flex: 1 0 auto;
 	}
+
+	@media screen and (1025px<=width) {
+		display: flex;
+		width: 8.5px;
+		flex: 1 0 auto;
+	}
 }
 
 /* //
