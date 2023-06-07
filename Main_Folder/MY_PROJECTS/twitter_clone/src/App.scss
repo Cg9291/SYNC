@@ -163,6 +163,10 @@ li {
 		width: 96.5px;
 		align-items: end;
 	}
+	@media screen and (1078px<=width) {
+		width: 88px;
+		align-items: end;
+	}
 }
 
 .nav {
@@ -817,6 +821,11 @@ button:hover {
 		display: flex;
 		width: 20px;
 	}
+
+	@media screen and (1078px<=width) {
+		display: flex;
+		width: 30px;
+	}
 }
 
 .right-container {
@@ -840,6 +849,11 @@ button:hover {
 		//padding-left: 1px;
 		box-sizing: border-box;
 	}
+
+	@media screen and(1078px<=width) {
+		max-width: 350px;
+		width: 350px;
+	}
 }
 
 .searchBar-wrapper {
@@ -851,6 +865,11 @@ button:hover {
 		min-height: 44px;
 		margin-bottom: 16.5px;
 		box-sizing: border-box;
+	}
+
+	@media screen and(1078px<=width) {
+		max-width: 350px;
+		width: 350px;
 	}
 }
 
@@ -911,6 +930,11 @@ button:hover {
 		margin-bottom: 16px;
 		border-radius: 17px;
 		box-sizing: border-box;
+	}
+
+	@media screen and(1078px<=width) {
+		max-width: 350px;
+		width: 350px;
 	}
 
 	&_cards-header {
@@ -1015,6 +1039,12 @@ button:hover {
 	@media screen and (1025px<=width) {
 		display: flex;
 		width: 8.5px;
+		flex: 1 0 auto;
+	}
+
+	@media screen and(1078px<=width) {
+		width: 0px;
+		//max-width: 0px;
 		flex: 1 0 auto;
 	}
 }

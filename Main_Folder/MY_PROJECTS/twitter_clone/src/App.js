@@ -27,6 +27,7 @@ MOBILE!!
 TABLETS!!
 *add blue color to search bar border+icon on focus/selection
 *review flexible sizing for trending cards(maybe after api is added)
+*review scroll behavior of right container to make it move with timeline up to a point
 -for you,following and myfeed could use minor position adjustments
 */
 
