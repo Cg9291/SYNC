@@ -290,18 +290,18 @@ li {
 	&_li--search-icon {
 		@extend .nav_li;
 
-		@media only screen and (988px<=width) {
+		/* @media only screen and (988px<=width) {
 			display: none;
-		}
+		} */
 	}
 
 	&_li--hashtag-icon {
 		@extend .nav_li;
 		display: none;
-
+/*
 		@media only screen and (988px<=width) {
 			display: flex;
-		}
+		} */
 	}
 
 	&_a {
@@ -694,9 +694,9 @@ button:hover {
 .tweet-area {
 	display: flex;
 	flex-direction: column;
-	width: calc(100% - 1px);
+	width: 100%;
 	margin: 0;
-	padding: 4px 16px 7.5px 0;
+	padding: 4px 16px 7.5px 16px;
 	box-sizing: border-box;
 	border-bottom: var(--main-border-style);
 
@@ -708,21 +708,24 @@ button:hover {
 
 	&_profile-image-box {
 		height: 100%;
-		margin: 0 14px 0 16px;
+		width: 40px;
+		margin: 0 12px 0 0 ;
+		padding-top:12px ;
 	}
 
 	&_profile-img {
-		width: 48px;
-		height: 48px;
+		width: 40px;
+		height: 40px;
 		border-radius: 50%;
-		padding: 4px 0;
+		//margin:12px 12px 0 0 ;
+		//padding: 4px 0;
 	}
 
 	&_tweet-input {
 		width: 100%;
 		height: 124px;
 		display: flex;
-		padding: 18px 0 0 0;
+		padding: 18px 0 0 2px;
 		box-sizing: border-box;
 		border: none;
 		font-size: 20px;
@@ -734,8 +737,8 @@ button:hover {
 	&_icons-row {
 		display: flex;
 		height: 48px;
-		margin: 0 0 0 78px;
-		padding: 0;
+		margin: 0 0 0 52px;
+		padding: 0 0 0 2px;
 		justify-content: space-between;
 		box-sizing: border-box;
 	}
@@ -791,7 +794,7 @@ button:hover {
 		max-width: 89.83px;
 		justify-content: end;
 		align-items: end;
-		margin-right: 1px;
+		margin-right: 2px;
 	}
 	&_pill-btn {
 		display: flex;
