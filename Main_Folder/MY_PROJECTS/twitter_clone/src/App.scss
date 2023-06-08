@@ -167,6 +167,12 @@ li {
 		width: 88px;
 		align-items: end;
 	}
+	@media screen and (1265px<=width) {
+		width: 275px;
+		align-items: start;
+		padding: 0px 8px;
+		//box-sizing: border-box;
+	}
 }
 
 .nav {
@@ -209,6 +215,12 @@ li {
 		width: 88px;
 	}
 
+	@media screen and (1265px<=width) {
+		width: 259px;
+		padding: 0 0 0 12px;
+		align-items: start;
+	}
+
 	&_twitter-logo-box {
 		display: none;
 
@@ -223,6 +235,9 @@ li {
 			padding: 2px 0;
 			box-sizing: border-box;
 		}
+		@media screen and (1265px<=width) {
+			justify-content: start;
+		}
 	}
 
 	&_twitter-logo {
@@ -235,6 +250,11 @@ li {
 			padding: 0;
 			margin: 0;
 			fill: rgb(29, 155, 240);
+		}
+
+		@media only screen and (500px<=width) {
+			width: fit-content;
+			margin-left: -1.5px;
 		}
 	}
 
@@ -277,6 +297,10 @@ li {
 		@media only screen and (688px<=width) {
 			margin: 0 0;
 		}
+
+		@media only screen and (1265px<=width) {
+			padding: 4px 0;
+		}
 	}
 
 	&_li--first-item {
@@ -298,7 +322,7 @@ li {
 	&_li--hashtag-icon {
 		@extend .nav_li;
 		display: none;
-/*
+		/*
 		@media only screen and (988px<=width) {
 			display: flex;
 		} */
@@ -309,6 +333,11 @@ li {
 		justify-content: center;
 		align-items: center;
 		text-decoration: none;
+
+		@media screen and (1265px<=width) {
+			width: 100%;
+			justify-content: flex-start;
+		}
 	}
 
 	&_nav-icons {
@@ -317,10 +346,26 @@ li {
 		border-radius: 50%;
 		padding: 8px;
 		overflow: visible;
+		@media screen and (1265px<=width) {
+			padding: 0;
+			margin-right: 20px;
+			//box-sizing: border-box;
+		}
 	}
 
 	&_nav-icons:active {
 		background-color: lightgray;
+	}
+
+	&_text {
+		display: none;
+
+		@media screen and (1265px<=width) {
+			display: flex;
+			font-size: 20px;
+			color: black;
+			//margin-left:auto
+		}
 	}
 }
 
@@ -709,8 +754,8 @@ button:hover {
 	&_profile-image-box {
 		height: 100%;
 		width: 40px;
-		margin: 0 12px 0 0 ;
-		padding-top:12px ;
+		margin: 0 12px 0 0;
+		padding-top: 12px;
 	}
 
 	&_profile-img {
