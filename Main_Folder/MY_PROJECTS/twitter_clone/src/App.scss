@@ -169,8 +169,8 @@ li {
 	}
 	@media screen and (1265px<=width) {
 		width: 275px;
-		align-items: start;
-		padding: 0px 8px;
+		align-items: end;
+		padding: 0;
 		//box-sizing: border-box;
 	}
 }
@@ -216,9 +216,11 @@ li {
 	}
 
 	@media screen and (1265px<=width) {
-		width: 259px;
-		padding: 0 0 0 12px;
-		align-items: start;
+		width: 275px;
+		max-width: 275px;
+		padding: 0 8px;
+		//margin-left:20.5px;
+		//align-items: start;
 	}
 
 	&_twitter-logo-box {
@@ -237,6 +239,7 @@ li {
 		}
 		@media screen and (1265px<=width) {
 			justify-content: start;
+			padding-left:12px;
 		}
 	}
 
@@ -337,6 +340,7 @@ li {
 		@media screen and (1265px<=width) {
 			width: 100%;
 			justify-content: flex-start;
+			padding-left: 12px;
 		}
 	}
 
@@ -348,8 +352,7 @@ li {
 		overflow: visible;
 		@media screen and (1265px<=width) {
 			padding: 0;
-			margin-right: 20px;
-			//box-sizing: border-box;
+			margin-right: 20.5px;
 		}
 	}
 
