@@ -240,7 +240,7 @@ li {
 
 		@media screen and (1265px<=width) {
 			justify-content: start;
-			padding-left: 12px;
+			//padding-left: 12px;
 		}
 	}
 
@@ -259,6 +259,11 @@ li {
 		@media only screen and (500px<=width) {
 			width: fit-content;
 			//margin-left: -1.5px;
+		}
+
+		@media screen and (1265px<=width) {
+			justify-content: start;
+			padding-left: 11px;
 		}
 	}
 
@@ -353,7 +358,7 @@ li {
 		overflow: visible;
 		@media screen and (1265px<=width) {
 			padding: 0;
-			margin-right: 20.5px;
+			margin-right: 20px;
 		}
 	}
 
