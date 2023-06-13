@@ -237,6 +237,7 @@ li {
 			padding: 2px 0;
 			box-sizing: border-box;
 		}
+
 		@media screen and (1265px<=width) {
 			justify-content: start;
 			padding-left:12px;
@@ -257,7 +258,7 @@ li {
 
 		@media only screen and (500px<=width) {
 			width: fit-content;
-			margin-left: -1.5px;
+			//margin-left: -1.5px;
 		}
 	}
 
@@ -423,7 +424,7 @@ button:hover {
 
 	@media screen and(1024px<=width) {
 		width: 88px;
-		margin-right: 1px;
+		//margin-right: 1px;
 	}
 }
 .tweet-circular-btn-wrapper {

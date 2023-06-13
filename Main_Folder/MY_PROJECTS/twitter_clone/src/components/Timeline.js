@@ -12,12 +12,11 @@ export default function Timeline(props) {
 				href="https://twitter.com/TheSportsMediaC/lists/1543020161199812608"
 				data-chrome="noheader"
 				sourceType="list"
-				ownerScreenName="TwitterDev"
+				ownerScreenName="TheSportsMediaC"
 				slug="national-parks"
 			>
 				A Twitter List by TheSportsMediaC
 			</a>
-
 			<script
 				async
 				src="https://platform.twitter.com/widgets.js"
