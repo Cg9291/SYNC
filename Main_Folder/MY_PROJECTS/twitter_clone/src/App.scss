@@ -315,9 +315,11 @@ li {
 	&_li--first-item {
 		@extend .nav_li;
 
+
 		@media only screen and (500px<=width) {
 			margin-top: 0;
 		}
+
 	}
 
 	&_li--search-icon {
@@ -350,6 +352,23 @@ li {
 		}
 	}
 
+	&_a:focus {
+		.nav_text {
+			font-family: chirpBold;
+		}
+
+
+		g{
+			fill:red;
+		}
+
+		svg:hover{
+			fill: green;
+		}
+
+
+	}
+
 	&_nav-icons {
 		width: 26.25px;
 		height: 26.25px;
@@ -376,6 +395,13 @@ li {
 			//margin-left:auto
 		}
 	}
+
+	/* &_text--selected{
+		@extend .nav_text;
+		@media screen and (1265px<=width) {
+			font-family: chirpBold;
+		}
+	} */
 }
 
 button:hover {
@@ -464,10 +490,14 @@ button:hover {
 	}
 
 	&_pill-btn-text {
-		display: inline-block;
-		color: rgb(255, 255, 255);
-		font-size:17px;
-	font-family: chirpBold;
+		display: none;
+
+		@media screen and(1265px<=width) {
+			display: inline-block;
+			color: rgb(255, 255, 255);
+			font-size: 17px;
+			font-family: chirpBold;
+		}
 	}
 }
 
@@ -965,18 +995,19 @@ button:hover {
 	&_searchIcon-wrapper {
 		min-width: 44px;
 		max-width: 44px;
-		padding-left: 14px;
+		//padding-left: 14px;
 		box-sizing: border-box;
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: end;
 	}
 
 	&_search-icon {
 		@extend .nav_nav-icons;
 		height: 18.75px;
 		width: 44px;
-		padding: 0;
+		margin:0;
+		margin-left: 14px;
 		fill: rgb(83, 100, 113);
 	}
 
