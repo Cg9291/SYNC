@@ -117,7 +117,7 @@ export default function Navigation(props) {
 					</a>
 				</li>
 			</ul>
-			<div>{tweetButton()}</div>
+			<div style={{width:"100%",marginLeft:0}}>{tweetButton()}</div>
 		</nav>
 	);
 }

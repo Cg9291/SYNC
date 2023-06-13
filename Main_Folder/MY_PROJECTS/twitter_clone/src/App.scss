@@ -240,7 +240,7 @@ li {
 
 		@media screen and (1265px<=width) {
 			justify-content: start;
-			padding-left:12px;
+			padding-left: 12px;
 		}
 	}
 
@@ -424,7 +424,11 @@ button:hover {
 
 	@media screen and(1024px<=width) {
 		width: 88px;
-		//margin-right: 1px;
+	}
+
+	@media screen and(1265px<=width) {
+		width: 233.094px;
+		margin-left: 0;
 	}
 }
 .tweet-circular-btn-wrapper {
@@ -447,6 +451,19 @@ button:hover {
 		//margin-bottom: 4px;
 		box-shadow: none;
 	}
+
+	@media screen and(1265px<=width) {
+		width: 100%;
+		border-radius: 99px;
+		text-decoration: none;
+	}
+
+	&_pill-btn-text {
+		display: inline-block;
+		color: rgb(255, 255, 255);
+		font-size:17px;
+	font-family: chirpBold;
+	}
 }
 
 .write-tweet-icon {
@@ -456,6 +473,9 @@ button:hover {
 	padding: 0;
 	fill: white;
 	position: absolute;
+	@media screen and(1265px<=width) {
+		display: none;
+	}
 }
 
 .profile-container {
