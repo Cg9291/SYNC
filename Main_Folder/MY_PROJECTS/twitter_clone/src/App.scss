@@ -536,7 +536,7 @@ button:hover {
 	}
 }
 
-.profile-container {
+.profile-wrapper {
 	display: none;
 
 	@media only screen and (500px<=width) {
@@ -567,8 +567,16 @@ button:hover {
 		box-sizing: border-box;
 	}
 
+	@media screen and (1265px<=width) {
+		width: 275px;
+		padding: 0 8px;
+		box-sizing: border-box;
+	}
 
-	&_image-wrapper {
+
+
+
+	&_container {
 		display: flex;
 		height: 100%;
 		width: 100%;

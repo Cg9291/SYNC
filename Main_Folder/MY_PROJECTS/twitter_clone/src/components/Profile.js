@@ -6,10 +6,10 @@ export default function Profile(props){
       userHandle:"@Cg_devs"
     })
     return(
-      <div className="profile-container">
-        <div className="profile-container_image-wrapper">
+      <div className="profile-wrapper">
+        <div className="profile-wrapper_container">
           <img src="https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640"/>
-          <div className="profile-container_user-info">
+          <div className="profile-wrapper_user-info">
             {userName.userName}<br/>
             {userName.userHandle}
           </div>
