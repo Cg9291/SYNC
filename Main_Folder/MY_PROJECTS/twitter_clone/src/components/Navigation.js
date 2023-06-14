@@ -1,5 +1,5 @@
 import {useState} from "react";
-import { tweetButton } from "./TweetButton";
+import {tweetButton} from "./TweetButton";
 import {
 	twitterLogoNav,
 	homeIcon,
@@ -11,7 +11,7 @@ import {
 	twitterBlueIcon,
 	profileIcon,
 	moreIcon,
-	hashtagIcon
+	hashtagIcon,
 } from "../assets/icons/svg_exports";
 
 export default function Navigation(props) {
@@ -117,7 +117,7 @@ export default function Navigation(props) {
 					</a>
 				</li>
 			</ul>
-			<div style={{width: "100%", marginLeft: 0}}>{tweetButton()}</div>
+			<div className="wrappers2">{tweetButton()}</div>
 		</nav>
 	);
 }

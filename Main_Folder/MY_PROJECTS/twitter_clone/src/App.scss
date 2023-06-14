@@ -315,11 +315,9 @@ li {
 	&_li--first-item {
 		@extend .nav_li;
 
-
 		@media only screen and (500px<=width) {
 			margin-top: 0;
 		}
-
 	}
 
 	&_li--search-icon {
@@ -357,16 +355,13 @@ li {
 			font-family: chirpBold;
 		}
 
-
-		g{
-			fill:red;
+		g {
+			fill: red;
 		}
 
-		svg:hover{
+		svg:hover {
 			fill: green;
 		}
-
-
 	}
 
 	&_nav-icons {
@@ -408,6 +403,12 @@ button:hover {
 	background-color: #1d8ad3;
 }
 
+.wrappers2 {
+	@media screen and (1265px<=width) {
+		display: block;
+		width: 100%;
+	}
+}
 .tweet-circular-btn-container {
 	display: flex;
 	justify-content: center;
@@ -1006,7 +1007,7 @@ button:hover {
 		@extend .nav_nav-icons;
 		height: 18.75px;
 		width: 44px;
-		margin:0;
+		margin: 0;
 		margin-left: 14px;
 		fill: rgb(83, 100, 113);
 	}
