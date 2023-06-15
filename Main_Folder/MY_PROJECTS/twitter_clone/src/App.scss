@@ -136,6 +136,7 @@ li {
 		justify-content: space-between;
 		align-items: center;
 		top: 0;
+		overflow-x:hidden
 	}
 	@media only screen and (width>=600px) {
 		padding: 0;
@@ -654,7 +655,7 @@ button:hover {
 
 	@media only screen and (width>=500px) {
 		flex-basis: 0 1 auto;
-		width: 100%;
+		width: 472px;
 		height: max-content;
 		position: sticky;
 		top: unset !important;
@@ -879,7 +880,7 @@ button:hover {
 	flex-direction: column;
 	width: 100%;
 	margin: 0;
-	padding: 4px 16px 7.5px 16px;
+	padding: 4px 16px 0 16px;
 	box-sizing: border-box;
 	border-bottom: var(--main-border-style);
 
@@ -1024,6 +1025,8 @@ button:hover {
 		width: auto;
 		flex: 2 1 auto;
 		flex-direction: column;
+		overflow-x: hidden;
+		scrollbar-width: none;
 	}
 
 	@media screen and (width>=988px) {
@@ -1039,6 +1042,10 @@ button:hover {
 	@media screen and (width>=1078px) {
 		max-width: 350px;
 		width: 350px;
+	}
+
+	&::-webkit-scrollbar {
+		display: none;
 	}
 }
 
