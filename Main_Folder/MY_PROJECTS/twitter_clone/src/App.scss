@@ -156,8 +156,7 @@ li {
 		align-items: end;
 		//justify-content: end;
 		overflow-y: hidden;
-		padding:0;
-
+		padding: 0;
 	}
 
 	@media screen and (1008px<=width) {
@@ -413,11 +412,10 @@ button:hover {
 }
 
 .wrappers2 {
-
 	@media screen and (998px<=width) {
 		display: flex;
 		width: 100%;
-		justify-content:center ;
+		justify-content: center;
 	}
 	@media screen and (1265px<=width) {
 		display: block;
@@ -447,7 +445,7 @@ button:hover {
 		width: 60px;
 		align-self: center;
 		//aspect-ratio: 1/1;
-		margin: 16px 0px ;
+		margin: 16px 0px;
 		padding: 0;
 		box-sizing: border-box;
 		right: initial;
@@ -557,7 +555,7 @@ button:hover {
 
 	@media screen and(988px<=width) {
 		width: 60px;
-		padding:0 4px;
+		padding: 0 4px;
 		//box-sizing: border-box;
 	}
 
@@ -573,9 +571,6 @@ button:hover {
 		box-sizing: border-box;
 	}
 
-
-
-
 	&_container {
 		display: flex;
 		height: 100%;
@@ -585,6 +580,10 @@ button:hover {
 		align-items: center;
 		//justify-self: center;
 		box-sizing: border-box;
+		@media screen and (1265px<=width) {
+			justify-content: stretch;
+			height: 65.06px;
+		}
 	}
 	img {
 		display: flex;
@@ -592,14 +591,44 @@ button:hover {
 		aspect-ratio: 1/1;
 		//aspect-ratio: 1/1;
 		border-radius: 50%;
+		//flex:0 0 auto;
+	}
+
+
+	&_user-info {
+		display: none;
+		@media screen and (1265px<=width) {
+			display: flex;
+			flex-direction: column;
+			width: 176.25px;
+			//flex:4 0 auto;
+			padding: 0 12px;
+			font-size:15px;
+			box-sizing: border-box;
+
+			b{
+				padding-bottom: 2px;
+			};
+			div{
+				padding-top: 2px;
+				color: #536471;
+			}
+		}
 	}
 
 	span {
 		display: none;
-	}
-
-	&_user-info {
-		display: none;
+		@media screen and (1265px<=width) {
+			height: 100%;
+			display: flex;
+			box-sizing: border-box;
+			padding: 4px 0px 0 2px ;
+			/* margin: 7.1px 0 0 1px; */
+			font-size:19px;
+			align-items: start;
+			letter-spacing: 1px;
+			//flex:1 0 auto
+		}
 	}
 
 	/* @media screen and(688px<=width) {

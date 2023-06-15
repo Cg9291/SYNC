@@ -5,16 +5,20 @@ export default function Profile(props){
       userName:"CGcodes",
       userHandle:"@Cg_devs"
     })
-    return(
-      <div className="profile-wrapper">
-        <div className="profile-wrapper_container">
-          <img src="https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640"/>
-          <div className="profile-wrapper_user-info">
-            {userName.userName}<br/>
-            {userName.userHandle}
-          </div>
-          <span><strong>...</strong></span>
-        </div>
-      </div>
-    )
+    return (
+			<div className="profile-wrapper">
+				<div className="profile-wrapper_container">
+					<div className="">
+						<img src="https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640" />
+					</div>
+					<div className="profile-wrapper_user-info">
+						<b>{userName.userName}</b>
+						<div>{userName.userHandle}</div>
+					</div>
+					<span>
+						<b>...</b>
+					</span>
+				</div>
+			</div>
+		);
   }
