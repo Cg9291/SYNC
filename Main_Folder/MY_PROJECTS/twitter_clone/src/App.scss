@@ -192,7 +192,7 @@ li {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: start;
 		/* height: 100vh; */
 		margin: 0 0 4px 0;
 		/* border:solid red */
@@ -421,6 +421,7 @@ button:hover {
 		width: 100%;
 		height: 52px;
 		justify-content: center;
+		align-items: center;
 		margin:4px 0;
 	}
 
@@ -433,6 +434,13 @@ button:hover {
 		display: block;
 		width: 100%;
 	}
+
+
+	@media screen and (height>=795px) {
+		margin: 16px 0;
+	}
+
+
 }
 .tweet-circular-btn-container {
 	display: flex;
@@ -457,7 +465,7 @@ button:hover {
 		width: 60px;
 		align-self: center;
 		//aspect-ratio: 1/1;
-		margin: 16px 0px;
+		//margin: 16px 0px;
 		padding: 0;
 		box-sizing: border-box;
 		right: initial;
@@ -465,7 +473,7 @@ button:hover {
 	}
 
 	@media screen and (width>=600px) {
-		margin: 16px 0;
+		//margin: 0 0;
 	}
 
 	@media screen and (width>=688px) {
@@ -889,18 +897,18 @@ button:hover {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	height: 120px;
-	margin: 0;
+	height: 180px;
+	margin: 0 0 0 0;
 	padding: 4px 16px 0 16px;
 	box-sizing: border-box;
-	border-bottom: var(--main-border-style);
+	/* border-bottom: var(--main-border-style); */
 
 	&_wrapper {
 		@extend .wrappers--flex;
 		padding: 0;
 		box-sizing: border-box;
-		height: 56px;
-		margin-bottom: 4px;
+		height: 124px;
+		//margin-bottom: 3px;
 	}
 
 	&_profile-image-box {
@@ -920,9 +928,9 @@ button:hover {
 
 	&_tweet-input {
 		width: 100%;
-		height: 56px;
+		height: 124px;
 		display: flex;
-		padding: 20px 0 0 2px;
+		padding: 18px 0 0 2px;
 		box-sizing: border-box;
 		border: none;
 		font-size: 20px;
@@ -933,7 +941,7 @@ button:hover {
 
 	&_icons-row {
 		display: flex;
-		height: 48px;
+		height: 52px;
 		margin: 0 0 0 52px;
 		padding: 0 0 0 2px;
 		justify-content: space-between;
@@ -945,7 +953,7 @@ button:hover {
 		flex: 0 1 33%;
 		height: 100%;
 		margin: 0;
-		padding: 12px 0 0 0;
+		padding: 15px 0 0 0;
 		box-sizing: border-box;
 		list-style: none;
 	}
