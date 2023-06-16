@@ -51,7 +51,7 @@ export default function TweetBox() {
 							{pollsIcon}
 						</a>
 					</li>
-					<li className="tweet-area_li hidden-More">
+					<li className="tweet-area_li ">
 						<a
 							className="tweet-area_anchors"
 							href="#"

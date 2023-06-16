@@ -12,6 +12,7 @@ import {
 	profileIcon,
 	moreIcon,
 	hashtagIcon,
+	communitiesIcon,
 } from "../assets/icons/svg_exports";
 
 export default function Navigation(props) {
@@ -84,6 +85,16 @@ export default function Navigation(props) {
 					>
 						{bookmarksIcon}
 						<span className="nav_text">Bookmarks</span>
+					</a>
+				</li>
+
+				<li className="nav_li hidden500">
+					<a
+						href="#"
+						className="nav_a"
+					>
+						{communitiesIcon}
+						<span className="nav_text">Communities</span>
 					</a>
 				</li>
 
