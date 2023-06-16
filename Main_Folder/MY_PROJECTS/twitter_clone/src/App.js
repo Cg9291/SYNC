@@ -8,6 +8,7 @@ import Profile from "./components/Profile";
 import SearchBar from "./components/Searchbar";
 import Timeline from "./components/Timeline";
 import TrendingSection from "./components/Trending";
+import { GetVerified } from "./components/GetVerified";
 import {tweetButton} from "./components/TweetButton.js";
 
 /* TODO
@@ -109,6 +110,7 @@ function App() {
 			<div className="custom-containers-margin"></div>
 			<section className="right-container ">
 				<SearchBar />
+				<GetVerified />
 				<TrendingSection />
 				<FollowsRecSection />
 			</section>

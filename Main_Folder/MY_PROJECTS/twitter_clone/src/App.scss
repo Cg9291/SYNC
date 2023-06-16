@@ -1077,7 +1077,7 @@ button:hover {
 		width: 290px;
 		height: 44px;
 		min-height: 44px;
-		margin-bottom: 16.5px;
+		margin-bottom: 20px;
 		box-sizing: border-box;
 	}
 
@@ -1132,6 +1132,32 @@ button:hover {
 	}
 }
 
+.getVerified-wrapper{
+	display: none;
+	@media screen and (width>=988px) {
+		display: flex;
+		flex-direction: column;
+		width: 290px;
+		min-height:126px;
+		background-color: rgb(247, 249, 249);
+		border: 1px solid white;
+		//margin-top: 3px;
+		margin-bottom: 14px;
+		border-radius: 17px;
+		//box-sizing: border-box;
+	}
+
+	@media screen and (width>=1078px) {
+		max-width: 350px;
+		width: 350px;
+	}
+}
+
+.getVerified-container{
+	display: flex;
+	flex-direction: column;
+}
+
 .trending-wrapper {
 	display: none;
 	@media screen and (width>=988px) {
@@ -1141,7 +1167,7 @@ button:hover {
 		min-height: 500px;
 		background-color: rgb(247, 249, 249);
 		border: 1px solid white;
-		margin-top: 4.5px;
+		//margin-top: 4.5px;
 		margin-bottom: 16px;
 		border-radius: 17px;
 		box-sizing: border-box;
