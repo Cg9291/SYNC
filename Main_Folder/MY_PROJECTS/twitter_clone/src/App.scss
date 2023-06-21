@@ -1,50 +1,32 @@
 @font-face {
-	font-family: "chirpLighter";
-	src: url("./assets/fonts/Chirp-Light.3a18e64a.woff2") format("woff2");
-	//font-weight: light;
-}
-
-@font-face {
-	font-family: "chirpLight";
-	src: url("./assets/fonts/twitterChirpRegular.woff") format("woff");
-	//font-weight: lighter;
-}
-
-@font-face {
-	font-family: "chirpRegular";
+	font-family: "chirp";
 	src: url("./assets/fonts/Chirp-Regular.80fda27a.woff2") format("woff2");
-	//font-weight: light;
+	font-weight: 400;//regular
 }
 
 @font-face {
-	font-family: "chirpMedium";
-	src: url("./assets/fonts/Chirp-Medium.f8e2739a.woff2") format("woff2");
-	//font-weight: light;
-}
-@font-face {
-	font-family: "chirpNormal";
-	src: url("./assets/fonts/twitterChirpMedium.woff") format("woff");
-	//font-weight: normal;
-	/* font-weight: bold; */
-}
-@font-face {
-	font-family: "chirpBold";
-	src: url("./assets/fonts/twitterChirpBold.woff") format("woff");
-	//font-weight: bold;
-	/* font-weight: 500; */
+	font-family: "chirp";
+	src: url("./assets/fonts/Chirp-Medium.f8e2739a.woff2") format("woff");
+	font-weight: 500//medium;
 }
 
 @font-face {
-	font-family: "chirpBold2";
+	font-family: "chirp";
 	src: url("./assets/fonts/Chirp-Bold.ebb56aba.woff2") format("woff2");
-	//font-weight: light;
+	font-weight: 700;//bold
 }
 
 @font-face {
-	font-family: "chirpHeavy";
+	font-family: "chirp";
 	src: url("./assets/fonts/Chirp-Heavy.f44ae4ea.woff2") format("woff2");
-	//font-weight: light;
+	font-weight: 900//heavy;
 }
+@font-face {
+	font-family: "chirp";
+	src: url("./assets/fonts/Chirp-Light.3a18e64a.woff2") format("woff2");
+	font-weight: 300;//light
+}
+
 
 :root {
 	--header-height: 107px;
@@ -53,8 +35,7 @@
 }
 
 ::placeholder {
-	color: rgba(15, 20, 25, 0.72);
-	font-family: chirp;
+	color: #536471;
 }
 
 section,
@@ -890,8 +871,8 @@ button:hover {
 		text-align: start;
 		flex:1 0 auto;
 		div {
-			font-family: chirpMedium;
-			//font-weight: bold;
+			font-family: chirp;
+			font-weight: 500;
 			line-height: 20px;
 			display: block;
 			box-sizing: border-box;
@@ -914,8 +895,16 @@ button:hover {
 		padding: 16px 16px 0 16px;
 		box-sizing: border-box;
 		div {
-			font-family: chirpMedium;
+			font-family: chirp;
 			font-weight: 700;
+			font-feature-settings: normal;
+			font-optical-sizing:auto;
+			font-kerning:auto;
+			font-size: 15px;
+			font-stretch: 100%;
+			font-weight: 700;
+			letter-spacing: normal;
+			word-wrap:wrap;
 			color: black;
 			justify-self: center;
 			@media screen and (width>=500px) {
@@ -984,17 +973,31 @@ button:hover {
 	}
 
 	&_tweet-input {
+		appearance: none;
+		background-color: rgba(0,0,0,0);
+		color:rgb(15,20,25);
 		width: 100%;
 		height: 124px;
-		display: flex;
+		display: block;
 		padding: 18px 0 0 2px;
 		box-sizing: border-box;
 		border: none;
 		font-size: 20px;
 		font-family: chirp;
-		font-weight: lighter;
+		font-weight: 400;
+		font-optical-sizing: auto;
 		resize: none;
 		outline: none;
+		font-feature-settings: normal;
+		font-kerning: auto;
+		font-stretch: 100%;
+		letter-spacing: normal;
+		text-rendering: auto;
+		text-shadow: none;
+		text-transform: none;
+		word-wrap: wrap;
+		line-height: normal;
+		overflow-wrap: break-word;
 	}
 
 	&_icons-row {
