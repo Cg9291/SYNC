@@ -1119,7 +1119,7 @@ button:hover {
 		width: 290px;
 		flex: 0 0 auto;
 		margin-right: 10px;
-		overflow-y: scroll;
+		//overflow-y: scroll;
 		max-width: 290px;
 		//padding-left: 1px;
 		box-sizing: border-box;
@@ -1138,6 +1138,8 @@ button:hover {
 .searchBar-wrapper {
 	display: none;
 	@media screen and (width>=988px) {
+		position: sticky;
+		top:0;
 		display: flex;
 		width: 290px;
 		height: 44px;
