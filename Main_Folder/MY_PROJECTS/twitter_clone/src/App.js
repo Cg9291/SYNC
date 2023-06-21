@@ -13,16 +13,13 @@ import {tweetButton} from "./components/TweetButton.js";
 
 /* TODO
 MOBILE!!
-
-*review twitter logo height - mobile
-*add notification blue indicators
 *review anchor elements hover backgrounds
 *review for you clicked bar size + words alignment
 
 Once timeline is switched from embed to api
 *remove timeline api border
 *adjust font size in timeline
-
+*add notification blue indicators
 *add links to clickable elements
 
 -find a way to make header scroll behaviour smoother and more consistent

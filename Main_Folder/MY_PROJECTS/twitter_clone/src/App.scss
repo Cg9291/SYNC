@@ -50,7 +50,7 @@ li {
 }
 
 .alignment-boxes {
-	flex: 1 1 46.66%;
+	flex: 1 1 50%;
 	height: 100%;
 	margin: 0;
 	padding: 0;
@@ -749,7 +749,7 @@ button:hover {
 		align-items: center;
 		width: 100%;
 		margin: 0;
-		padding: 0;
+		padding: 0 16px;
 		box-sizing: border-box;
 
 		@media only screen and (width>=500px) {
@@ -766,13 +766,13 @@ button:hover {
 			font-family: chirp;
 			font-weight: bold;
 			font-size: 20px;
-			margin-left: 16px;
+			//margin-left: 16px;
 			font-weight: bold;
 			color: #0f1419;
 		}
 	}
 	&_profile-picture {
-		margin-left: 16px;
+		margin-left: 0;
 		margin-top: 10.5px;
 		width: 32px;
 		height: 32px;
@@ -786,6 +786,8 @@ button:hover {
 
 	&_twitter-logo-box {
 		height: 100%;
+		//min-width: 24px;
+		flex:1 0 auto;
 		display: flex;
 		align-items: center;
 		margin: 0;
@@ -797,7 +799,8 @@ button:hover {
 	}
 
 	&_twitter-logo {
-		height: 25px;
+		width: 24.391px;
+		height: 53px;
 		display: flex;
 		padding: 0;
 		margin: 0;
