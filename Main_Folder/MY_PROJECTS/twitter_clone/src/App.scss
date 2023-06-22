@@ -1266,12 +1266,19 @@ button:hover {
 
 	&_cards {
 		display: flex;
+		flex-direction: column;
 		width: 288px;
 		height: 82px;
 		padding: 12px 16px;
 		box-sizing: border-box;
+
 	}
 
+	.thesec{
+		color:black;
+		background-color: red;
+		border: solid black;
+	}
 	&_cards-footer {
 		width: 288px;
 		height: 52px;
