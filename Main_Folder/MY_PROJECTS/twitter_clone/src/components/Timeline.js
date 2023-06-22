@@ -3,19 +3,20 @@ import React from "react";
 import TweetBox from "./Tweetbox.js";
 
 export default function Timeline(props) {
+	var myJson = require("../apiResponse.json");
 	return (
 		<div className="timeline-wrapper">
 			<TweetBox />
+			{/* {myJson.html} */}
 			<a
 				id="timeline"
 				className="twitter-timeline"
 				href="https://twitter.com/TheSportsMediaC/lists/1543020161199812608"
-				data-chrome="noheader"
+				data-chrome="noheader nofooter noborders"
 				sourceType="list"
 				ownerScreenName="TheSportsMediaC"
-				slug="national-parks"
 			>
-				A Twitter List by TheSportsMediaC
+				Timeline is loading
 			</a>
 			<script
 				async
