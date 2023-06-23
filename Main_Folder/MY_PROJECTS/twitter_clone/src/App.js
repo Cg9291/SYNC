@@ -17,7 +17,7 @@ MOBILE!!
 *review for you clicked bar size + words alignment
 
 Once timeline is switched from embed to api
-*remove timeline api border
+
 *adjust font size in timeline
 *add notification blue indicators
 *add links to clickable elements
@@ -76,17 +76,41 @@ function App() {
 		/* .innerText.length */
 	};
 
+	let myTrendingNews = {
+		section1: {
+			category: "Breaking News",
+			topic: "Titanic",
+			scope: "140K tweets",
+		},
+		section2: {
+			category: "Sports",
+			topic: "#NBADraft",
+			scope: "Trending with...",
+		},
+		section3: {
+			category: "Business and Finance",
+			topic: "Carl's twitter clone",
+			scope: "22k tweets",
+		},
+		section4: {
+			category: "Uplifting News",
+			topic: "Carl's got a programmer Job",
+			scope: "900k tweets",
+		},
+		section5: {
+			category: "World",
+			topic: "Vancouver's hottest Summer",
+			scope: "trending with...",
+		},
+	};
 
-	/* const unfocusHeader = e => {
-		e.target.style.color = "rgb(83, 100, 113)";
-	}; */
+
 
 	Header.defaultProps = {
 		clickedElement: clickedElement,
 		focusHeader: focusHeader,
 		focusedBarLength:focusedBarLength,
 		focusedText:focusedText
-		/* unfocusHeader: unfocusHeader, */
 	};
 
 	return (
@@ -96,7 +120,6 @@ function App() {
 		>
 			<section className="nav-container">
 				<Navigation />
-				{/* {tweetButton()} */}
 				<Profile />
 			</section>
 			<section className="middle-container">
@@ -108,7 +131,7 @@ function App() {
 			<section className="right-container ">
 				<SearchBar />
 				<GetVerified />
-				<TrendingSection />
+				<TrendingSection myTrendingNews={myTrendingNews}/>
 				<FollowsRecSection />
 			</section>
 			<div className="whiteSpace-right"></div>

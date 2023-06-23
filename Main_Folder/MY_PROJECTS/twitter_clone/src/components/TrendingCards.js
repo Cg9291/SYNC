@@ -4,6 +4,7 @@ import Section from "./Sections.js";
 
 export default function TrendingCards() {
 	const level = useContext(CardsInfoContext);
+	console.log({level});
 
 	return (
 		<div className="trending-wrapper_cards">
