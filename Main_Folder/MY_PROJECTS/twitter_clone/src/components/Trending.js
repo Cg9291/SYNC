@@ -5,7 +5,7 @@ export default function TrendingSection(props) {
 	return (
 		<section className="trending-wrapper">
 			<div className="trending-wrapper_cards-header">
-				<span>What's happening</span>
+				<span>What’s happening</span>
 			</div>
 			<Section
 				level={{
