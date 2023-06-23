@@ -8,9 +8,15 @@ export default function TrendingCards() {
 
 	return (
 		<div className="trending-wrapper_cards">
-			<div className="category">{level.category}</div>
-			<div className="topic">{level.topic}</div>
-			<div className="trending-scope">{level.scope}</div>
+			<div className="trending-wrapper_categories">
+				<span>{level.category}</span>
+			</div>
+			<div className="trending-wrapper_topics">
+				<span>{level.topic}</span>
+			</div>
+			<div className="trending-wrapper_trending-scopes">
+				<span>{level.scope}</span>
+			</div>
 		</div>
 	);
 }
