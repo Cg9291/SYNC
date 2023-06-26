@@ -8,7 +8,7 @@ import Profile from "./components/Profile";
 import SearchBar from "./components/Searchbar";
 import Timeline from "./components/Timeline";
 import TrendingSection from "./components/Trending";
-import { GetVerified } from "./components/GetVerified";
+import {GetVerified} from "./components/GetVerified";
 import {tweetButton} from "./components/TweetButton.js";
 
 /* TODO
@@ -35,22 +35,27 @@ TABLETS!!
 
 function App() {
 	let scrollTracker = useRef();
-	let focusedText=useRef([]);
+	let focusedText = useRef([]);
+	let autoFocusNavElement=useRef();
 
-	let [clickedElement, setClickedElement] = useState('forYou');
+	let [clickedElement, setClickedElement] = useState("forYou");
 
-	let [focusedBarLength,setFocusedBarLength]=useState();
+	let [focusedBarLength, setFocusedBarLength] = useState();
 
 	let [scrollTopValue, setScrollTopValue] = useState();
 	let [prevScrollTopValue, setPrevScrollTopValue] = useState();
 	let [headerHeight, setHeaderHeight] = useState("-0.5px");
+
+	//EFFECTS
 
 	useEffect(() => {
 		setPrevScrollTopValue(scrollTracker.current.scrollTop);
 		console.log(scrollTracker.current.scrollTop);
 	}, []);
 
-
+	useEffect(()=>{
+		autoFocusNavElement.style.color="red"
+	})
 
 	useEffect(
 		() =>
@@ -64,17 +69,25 @@ function App() {
 		//THIS FUNCTION IS SET TO ONLY WORK ON SIZES<500PX..SEE CSS
 	);
 
-	useEffect(() =>{
-		clickedElement==="forYou"?setFocusedBarLength(`${focusedText.current[clickedElement].offsetWidth+0}px`):
-		setFocusedBarLength(`${focusedText.current[clickedElement].offsetWidth}px`);
+	useEffect(() => {
+		clickedElement === "forYou"
+			? setFocusedBarLength(
+					`${focusedText.current[clickedElement].offsetWidth + 0}px`
+			  )
+			: setFocusedBarLength(
+					`${focusedText.current[clickedElement].offsetWidth}px`
+			  );
 		console.log(focusedText.current[clickedElement].offsetWidth);
-		/* setFocusedBarLength(focusedText.current[clickedElement]) */},[clickedElement]
-	);
+		/* setFocusedBarLength(focusedText.current[clickedElement]) */
+	}, [clickedElement]);
+
+	//FUNCTIONS
 
 	const focusHeader = e => {
 		setClickedElement(e.target.id);
 		/* .innerText.length */
 	};
+	
 
 	let myTrendingNews = {
 		section1: {
@@ -104,13 +117,11 @@ function App() {
 		},
 	};
 
-
-
 	Header.defaultProps = {
 		clickedElement: clickedElement,
 		focusHeader: focusHeader,
-		focusedBarLength:focusedBarLength,
-		focusedText:focusedText
+		focusedBarLength: focusedBarLength,
+		focusedText: focusedText,
 	};
 
 	return (
@@ -119,11 +130,14 @@ function App() {
 			ref={scrollTracker}
 		>
 			<section className="nav-container">
-				<Navigation />
+				<Navigation ref={autoFocusNavElement}/>
 				<Profile />
 			</section>
 			<section className="middle-container">
-				<Header headerHeight={headerHeight} ref={focusedText}/>
+				<Header
+					headerHeight={headerHeight}
+					ref={focusedText}
+				/>
 
 				<Timeline ref={scrollTracker} />
 			</section>
@@ -131,7 +145,7 @@ function App() {
 			<section className="right-container ">
 				<SearchBar />
 				<GetVerified />
-				<TrendingSection myTrendingNews={myTrendingNews}/>
+				<TrendingSection myTrendingNews={myTrendingNews} />
 				<FollowsRecSection />
 			</section>
 			<div className="whiteSpace-right"></div>

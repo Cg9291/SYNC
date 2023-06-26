@@ -1,6 +1,7 @@
 import Section from "./Sections.js";
 import TrendingCards from "./TrendingCards.js";
 
+
 export default function TrendingSection(props) {
 	return (
 		<section className="trending-wrapper">
