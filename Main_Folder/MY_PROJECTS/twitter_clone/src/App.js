@@ -36,7 +36,7 @@ TABLETS!!
 function App() {
 	let scrollTracker = useRef();
 	let focusedText = useRef([]);
-	let autoFocusNavElement=useRef();
+	//let autoFocusNavElement=useRef();
 
 	let [clickedElement, setClickedElement] = useState("forYou");
 
@@ -53,9 +53,9 @@ function App() {
 		console.log(scrollTracker.current.scrollTop);
 	}, []);
 
-	useEffect(()=>{
-		autoFocusNavElement.style.color="red"
-	})
+	// useEffect(()=>{
+	// 	autoFocusNavElement.style.color="red"
+	// })
 
 	useEffect(
 		() =>
@@ -87,7 +87,7 @@ function App() {
 		setClickedElement(e.target.id);
 		/* .innerText.length */
 	};
-	
+
 
 	let myTrendingNews = {
 		section1: {
@@ -130,7 +130,7 @@ function App() {
 			ref={scrollTracker}
 		>
 			<section className="nav-container">
-				<Navigation ref={autoFocusNavElement}/>
+				<Navigation/>
 				<Profile />
 			</section>
 			<section className="middle-container">

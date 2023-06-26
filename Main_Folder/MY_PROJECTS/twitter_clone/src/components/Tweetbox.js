@@ -6,12 +6,11 @@ import {
 	schedulesIcon,
 	locationsIcon,
 } from "../assets/icons/tweetbox_svg";
+import { tweetButton } from "./TweetButton";
 
 export default function TweetBox() {
 	return (
-		<div
-			className="tweet-area hidden500 "
-		>
+		<div className="tweet-area hidden500 ">
 			<div className="tweet-area_wrapper">
 				<div className="tweet-area_profile-image-box">
 					<img
@@ -77,9 +76,11 @@ export default function TweetBox() {
 					</li>
 				</ul>
 				<div className="tweet-area_wrapper--btn">
+					{/*
 					<button className="tweet-area_pill-btn">
 						<span className="tweet-area_pill-btn-text">Tweet</span>
-					</button>
+					</button> */}
+					{tweetButton('Tweet',"btn")}
 				</div>
 			</div>
 		</div>

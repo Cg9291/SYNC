@@ -1,3 +1,5 @@
+import {tweetButton} from "./TweetButton";
+
 export function GetVerified() {
 	return (
 		<div className="getVerified-wrapper">
@@ -6,7 +8,7 @@ export function GetVerified() {
 				<span className="getVerified-container_text">
 					Subscribe to unlock new features.
 				</span>
-				<div
+				{/* <div
 					className="tweet-area_wrapper--btn"
 					style={{width: "120.16px", height: "36px"}}
 				>
@@ -21,7 +23,8 @@ export function GetVerified() {
 					>
 						<span className="tweet-area_pill-btn-text">Get verified</span>
 					</button>
-				</div>
+				</div> */}
+				{tweetButton("Get Verified")}
 			</div>
 		</div>
 	);

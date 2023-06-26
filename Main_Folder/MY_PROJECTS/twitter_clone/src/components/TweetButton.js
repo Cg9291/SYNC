@@ -1,13 +1,34 @@
-import { writeTweetIcon } from "../assets/icons/svg_exports.js"
+import {writeTweetIcon} from "../assets/icons/svg_exports.js";
 
-export const tweetButton = () => (
-	<div className="tweet-circular-btn-container">
-		<a
-			href="#"
-			className="tweet-circular-btn-wrapper"
+export const tweetButton = (text, btn) =>
+	btn === "btn" ? (
+		<form
+		//href="#"
+		/* className="tweet-button-wrapper" */
 		>
-			<>{writeTweetIcon}</>
-			<span className="tweet-circular-btn-wrapper_pill-btn-text">Tweet</span>
-		</a>
-	</div>
-);
+			<button className="tweet-area_pill-btn">
+				{/* <>{writeTweetIcon}</> */}
+				<span className="tweet-area_pill-btn-text">{text}</span>
+			</button>
+		</form>
+	) : text === "Tweet" ? (
+		<div className="tweet-button-container">
+			<a
+				href="#"
+				className="tweet-button-wrapper"
+			>
+				<>{writeTweetIcon}</>
+				<span className="tweet-button-wrapper_text">{text}</span>
+			</a>
+		</div>
+	) : (
+		<div className="getVerified-container_button-container">
+			<a
+				href="#"
+				className="getVerified-container_button-wrapper"
+			>
+				{/* <>{writeTweetIcon}</> */}
+				<span className="getVerified-container_button-text">{text}</span>
+			</a>
+		</div>
+	);

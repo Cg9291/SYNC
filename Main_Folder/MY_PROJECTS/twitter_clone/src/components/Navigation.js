@@ -20,7 +20,7 @@ export default function Navigation(props) {
 		<nav className="nav">
 			<div className="nav_twitter-logo-box">{twitterLogoNav}</div>
 			<ul className="nav_ul">
-				<li className=" nav_li--first-item">
+				<li className=" nav_li--first-item" >
 					<a
 						href="#"
 						className="nav_a"
@@ -128,7 +128,7 @@ export default function Navigation(props) {
 					</a>
 				</li>
 			</ul>
-			<div className="wrappers2">{tweetButton()}</div>
+			<div className="wrappers2">{tweetButton("Tweet")}</div>
 		</nav>
 	);
 }
