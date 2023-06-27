@@ -1,4 +1,4 @@
-import {tweetButton} from "./TweetButton";
+import {tweetButton} from "../functions/tweetButton.js";
 
 export function GetVerified() {
 	return (

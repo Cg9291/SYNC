@@ -6,7 +6,7 @@ import {
 	schedulesIcon,
 	locationsIcon,
 } from "../assets/icons/tweetbox_svg";
-import { tweetButton } from "./TweetButton";
+import {tweetButton} from "../functions/tweetButton.js";
 
 export default function TweetBox() {
 	return (
@@ -80,7 +80,7 @@ export default function TweetBox() {
 					<button className="tweet-area_pill-btn">
 						<span className="tweet-area_pill-btn-text">Tweet</span>
 					</button> */}
-					{tweetButton('Tweet',"btn")}
+					{tweetButton("Tweet", "btn")}
 				</div>
 			</div>
 		</div>

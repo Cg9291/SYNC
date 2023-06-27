@@ -21,6 +21,16 @@ export const tweetButton = (text, btn) =>
 				<span className="tweet-button-wrapper_text">{text}</span>
 			</a>
 		</div>
+	) : text === "Follow" ? (
+		<div className="tweet-button-container">
+			<a
+				href="#"
+				className="tweet-button-wrapper"
+			>
+				<>{writeTweetIcon}</>
+				<span className="tweet-button-wrapper_text">{text}</span>
+			</a>
+		</div>
 	) : (
 		<div className="getVerified-container_button-container">
 			<a
