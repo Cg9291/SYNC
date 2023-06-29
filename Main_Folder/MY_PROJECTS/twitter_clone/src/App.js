@@ -15,6 +15,8 @@ import {profile} from "./functions/profile.js"
 /* TODO
 GLOBAL!!
 *program profile username to end "..." when text is too long
+*remove all references to twitter i.e classes using "twitter",tweet,word
+
 
 MOBILE!!
 *review anchor elements hover backgrounds
