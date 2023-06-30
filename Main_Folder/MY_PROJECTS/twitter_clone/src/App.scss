@@ -1372,6 +1372,7 @@ button:hover {
 		flex-direction: column;
 		background-color: rgb(247, 249, 249);
 		border-radius: 17px;
+		margin-bottom: 16px;
 	}
 
 	&_cards-header {
@@ -1416,6 +1417,7 @@ button:hover {
 
 		&_user-info {
 			@extend .profile-wrapper_user-info;
+			margin-right: 12px;
 		}
 
 		&_image {
@@ -1428,10 +1430,14 @@ button:hover {
 	}
 
 	&_button_container {
-		@extend .tweet-button-container;
+		//@extend .tweet-button-container;
 		width: 78px;
 		max-height: 40px;
 		padding: 0;
+		display: flex;
+		justify-content: end;
+		align-items: center;
+		margin-left:12px;
 	}
 
 	&_button_wrapper {
@@ -1441,14 +1447,19 @@ button:hover {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		background-color: #0f1419;
 	}
 
 	&_button_text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		font-size: 14px;
 		font-weight: 700;
 		color: white;
-		padding: 0 !important;
+		//padding: 0 !important;
 		margin: 0;
+		height: 100%;
 	}
 
 	&_cards-footer {
@@ -1460,6 +1471,13 @@ button:hover {
 			color: rgb(29, 155, 240);
 			text-decoration: none;
 		}
+	}
+}
+
+.more-info{
+	display: flex;
+	&_elements{
+
 	}
 }
 

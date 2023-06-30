@@ -22,14 +22,14 @@ export const tweetButton = (text, btn) =>
 			</a>
 		</div>
 	) : text === "Follow" ? (
-
+		// <div className="follow-recommendations_button_container">
 			<a
 				href="#"
 				className="follow-recommendations_button_wrapper"
 			>
 				<span className="follow-recommendations_button_text">{text}</span>
 			</a>
-		
+		// </div>
 	) : (
 		<div className="getVerified-container_button-container">
 			<a

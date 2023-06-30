@@ -20,7 +20,7 @@ export const profile = (img, userName, handle, follow) =>
 					<b>{userName}</b>
 					<div>@{handle}</div>
 				</div>
-				<span className="follow-recommendations_button-container">
+				<span className="follow-recommendations_button_container">
 					{tweetButton("Follow")}
 				</span>
 			</div>
