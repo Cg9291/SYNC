@@ -10,6 +10,7 @@ import Timeline from "./components/Timeline";
 import TrendingSection from "./components/Trending";
 import {GetVerified} from "./components/GetVerified";
 import {profile} from "./functions/profile.js"
+import { moreInfo } from "./functions/moreInfo";
 /* import {tweetButton} from "./components/TweetButton.js"; */
 
 /* TODO
@@ -156,6 +157,8 @@ function App() {
 				<GetVerified />
 				<TrendingSection myTrendingNews={myTrendingNews} />
 				<FollowsRecSection />
+				<>{moreInfo()}
+				</>
 			</section>
 			<div className="whiteSpace-right"></div>
 		</div>

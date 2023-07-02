@@ -1476,8 +1476,33 @@ button:hover {
 
 .more-info{
 	display: flex;
+	width:350px;
+	height: 40px;
+	margin: 0 16px;
+	box-sizing: border-box;
+	flex-wrap: wrap;
 	&_elements{
+		display: flex;
+		align-items: center;
 
+	}
+
+	&_text{
+		font-size: 13px;
+		font-weight: 400;
+		margin-right: 12px;
+		display: flex;
+		align-items: center;
+		color:rgb(83, 100, 113);
+	}
+
+	&_ellipsis{
+		width: 17px;
+		height:15.5px ;
+		padding: 3px 2px 0px 2px;
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
 	}
 }
 
