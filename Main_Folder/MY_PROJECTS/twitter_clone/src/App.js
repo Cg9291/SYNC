@@ -155,7 +155,7 @@ function App() {
 			<section className="right-container ">
 				<SearchBar />
 				<GetVerified />
-				<TrendingSection myTrendingNews={myTrendingNews} />
+				<TrendingSection myTrendingNews={myTrendingNews} imageSource={imageSource}/>
 				<FollowsRecSection />
 				<>{moreInfo()}
 				</>

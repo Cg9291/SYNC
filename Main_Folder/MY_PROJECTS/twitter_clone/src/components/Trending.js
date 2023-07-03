@@ -13,6 +13,7 @@ export default function TrendingSection(props) {
 					category: `${props.myTrendingNews.section1.category}`,
 					topic: `${props.myTrendingNews.section1.topic}`,
 					scope: `${props.myTrendingNews.section1.scope}`,
+					pic:`${props.imageSource}`
 				}}
 			/>
 			<Section
