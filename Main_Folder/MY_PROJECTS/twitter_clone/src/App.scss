@@ -102,15 +102,14 @@ li {
 	flex-direction: column;
 }
 
-.justify-stretch{
+.justify-stretch {
 	justify-content: stretch;
 }
 
-
-.flex-b1{
+.flex-b1 {
 	flex-basis: 1;
 }
-.flex-b3{
+.flex-b3 {
 	flex-basis: 3;
 }
 
@@ -1025,6 +1024,7 @@ button:hover {
 		padding: 0 0 0 2px;
 		justify-content: space-between;
 		box-sizing: border-box;
+		//border-bottom: 1px solid var(--main-border-style);
 	}
 
 	&_ul {
@@ -1347,22 +1347,42 @@ button:hover {
 		height: 82px;
 		padding: 12px 16px;
 		box-sizing: border-box;
-
 	}
-	&_cards-with-image{
+	&_cards-with-image {
 		@extend .trending-wrapper_cards;
 		height: 92px;
+		width: 100%;
 
-		.wrapper1{
+		.wrapper1 {
 			@extend .wrappers--flex;
-			min-width:236px;
+			min-width: 236px;
 			margin-right: 12px;
 			box-sizing: border-box;
 			flex-direction: column;
+			align-items: stretch;
+
+			.trending-wrapper_categories {
+				font-size: 13px;
+				height: 20px;
+				padding: 2.25px 0;
+				box-sizing: border-box;
+				display: flex;
+				align-items: center;
+				span {
+					max-height: 15.5px;
+					line-height: 16px;
+					font-weight: 400;
+					display: flex;
+				}
+			}
+
+			.trending-wrapper_topics{
+				margin-top:3.5px;
+			}
 		}
 	}
 
-	&_images{
+	&_images {
 		width: 68px;
 		height: 68px;
 		border-radius: 12px;
@@ -1400,6 +1420,7 @@ button:hover {
 		a {
 			color: rgb(29, 155, 240);
 			text-decoration: none;
+			font-size: 15px;
 		}
 	}
 }
@@ -1411,8 +1432,11 @@ button:hover {
 		display: flex;
 		flex-direction: column;
 		background-color: rgb(247, 249, 249);
-		border-radius: 17px;
+		border-radius: 16px;
 		margin-bottom: 16px;
+		border: 1px solid rgb(247, 249, 249);
+		box-sizing: border-box;
+		height: 233.109px;
 	}
 
 	&_cards-header {
@@ -1437,7 +1461,7 @@ button:hover {
 	&_cards {
 		display: flex;
 		width: 348px;
-		height: 65.063px;
+		height: 65.5546875px;
 		padding: 12px 16px;
 		box-sizing: border-box;
 
@@ -1477,7 +1501,7 @@ button:hover {
 		display: flex;
 		justify-content: end;
 		align-items: center;
-		margin-left:12px;
+		margin-left: 12px;
 	}
 
 	&_button_wrapper {
@@ -1510,40 +1534,44 @@ button:hover {
 		a {
 			color: rgb(29, 155, 240);
 			text-decoration: none;
+			font-size: 15px;
 		}
 	}
 }
 
-.more-info{
-	display: flex;
-	width:350px;
+.more-info {
+	display: none;
+	@media screen and (width>=988px){
+display: flex;
+	width: 350px;
 	height: 40px;
 	margin: 0 16px;
 	box-sizing: border-box;
 	flex-wrap: wrap;
-	&_elements{
+	&_elements {
 		display: flex;
 		align-items: center;
-
 	}
 
-	&_text{
+	&_text {
 		font-size: 13px;
 		font-weight: 400;
 		margin-right: 12px;
 		display: flex;
 		align-items: center;
-		color:rgb(83, 100, 113);
+		color: rgb(83, 100, 113);
 	}
 
-	&_ellipsis{
+	&_ellipsis {
 		width: 17px;
-		height:15.5px ;
+		height: 15.5px;
 		padding: 3px 2px 0px 2px;
 		box-sizing: border-box;
 		display: flex;
 		align-items: center;
 	}
+	}
+
 }
 
 .whiteSpace-right {

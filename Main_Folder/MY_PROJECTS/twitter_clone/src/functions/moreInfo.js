@@ -4,7 +4,7 @@ export const moreInfo = () => {
 	return (
 		<div className="more-info">
 			<a className="more-info_elements">
-				<span className="more-info_text">Terms of service</span>
+				<span className="more-info_text">Terms of Service</span>
 			</a>
 			<a className="more-info_elements">
 				<span className="more-info_text">Privacy Policy</span>

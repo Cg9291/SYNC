@@ -98,7 +98,7 @@ function App() {
 
 	let myTrendingNews = {
 		section1: {
-			category: "Breaking News",
+			category: "NBA - LIVE",
 			topic: "Titanic",
 			scope: "140K tweets",
 		},
