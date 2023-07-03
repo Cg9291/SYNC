@@ -1227,7 +1227,7 @@ button:hover {
 		width: 290px;
 		min-height: 126px;
 		background-color: rgb(247, 249, 249);
-		border: 1px solid white;
+		border: 1px solid rgb(247, 249, 249);
 		//margin-top: 3px;
 		margin-bottom: 16px;
 		border-radius: 17px;
@@ -1264,7 +1264,7 @@ button:hover {
 
 	&_button-container {
 		//@extend .tweet-button-container
-		border: 1px solid rgb(247, 249, 249);
+		//border: 1px solid rgb(247, 249, 249);
 
 		height: 36px;
 		box-sizing: border-box;
@@ -1275,18 +1275,23 @@ button:hover {
 	&_button-wrapper {
 		@extend .tweet-button-wrapper;
 		background-color: black;
-		height: 38px;
-		width: 120.148px;
+		height: 36px;
+		min-width: 120.148px;
+		max-width: 120.148px;
 		padding: 0px 16px;
 		box-sizing: border-box;
-		border: 1px solid rgb(247, 249, 249);
+		//border: 1px solid rgb(247, 249, 249);
 	}
 
 	&_button-text {
 		@extend .tweet-button-wrapper_text;
+		display: flex;
+		align-items: center;
 		font-size: 15px;
+		line-height: 20px;
 		height: 20px;
 		font-weight: 700;
+		text-size-adjust: 100%;
 	}
 }
 
