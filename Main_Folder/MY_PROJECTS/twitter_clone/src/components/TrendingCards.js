@@ -9,7 +9,7 @@ export default function TrendingCards() {
 	return typeof level.pic === "string" ? (
 		<div className="trending-wrapper_cards-with-image">
 
-			<div className="wrappers--flex justify-stretch">
+			<div className="wrappers--flex ">
 				<div className="wrapper1">
 					<div className="trending-wrapper_categories">
 						<span>{level.category}</span>

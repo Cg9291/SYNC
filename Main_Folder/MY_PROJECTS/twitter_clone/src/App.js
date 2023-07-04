@@ -17,6 +17,8 @@ import { moreInfo } from "./functions/moreInfo";
 GLOBAL!!
 *program profile username to end "..." when text is too long
 *remove all references to twitter i.e classes using "twitter",tweet,word
+*review color of "getVerified text" & "show more" footers
+*add profiles and trending header images
 
 
 MOBILE!!

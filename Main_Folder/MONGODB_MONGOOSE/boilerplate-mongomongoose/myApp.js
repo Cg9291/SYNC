@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({path:"Main_Folder/MONGODB_MONGOOSE/boilerplate-mongomongoose/.env"});
 let mongoose = require("mongoose");
 mongoose
 	.connect(process.env.MONGO_URI, {
