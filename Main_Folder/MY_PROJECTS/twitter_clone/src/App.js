@@ -9,8 +9,8 @@ import SearchBar from "./components/Searchbar";
 import Timeline from "./components/Timeline";
 import TrendingSection from "./components/Trending";
 import {GetVerified} from "./components/GetVerified";
-import {profile} from "./functions/profile.js"
-import { moreInfo } from "./functions/moreInfo";
+import {profile} from "./functions/profile.js";
+import {moreInfo} from "./functions/moreInfo";
 /* import {tweetButton} from "./components/TweetButton.js"; */
 
 /* TODO
@@ -97,10 +97,9 @@ function App() {
 		/* .innerText.length */
 	};
 
-
 	let myTrendingNews = {
 		section1: {
-			category: "NBA - LIVE",
+			category: "NBA · LIVE",
 			topic: "Titanic",
 			scope: "140K tweets",
 		},
@@ -142,8 +141,8 @@ function App() {
 			ref={scrollTracker}
 		>
 			<section className="nav-container">
-				<Navigation/>
-				{profile(imageSource,"TheSportsMediaCh...","TheSportsMediaC")}
+				<Navigation />
+				{profile(imageSource, "TheSportsMediaCh...", "TheSportsMediaC")}
 			</section>
 			<section className="middle-container">
 				<Header
@@ -157,10 +156,12 @@ function App() {
 			<section className="right-container ">
 				<SearchBar />
 				<GetVerified />
-				<TrendingSection myTrendingNews={myTrendingNews} imageSource={imageSource}/>
+				<TrendingSection
+					myTrendingNews={myTrendingNews}
+					imageSource={imageSource}
+				/>
 				<FollowsRecSection />
-				<>{moreInfo()}
-				</>
+				<>{moreInfo()}</>
 			</section>
 			<div className="whiteSpace-right"></div>
 		</div>

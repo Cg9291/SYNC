@@ -132,9 +132,10 @@ li {
 .nav-container {
 	z-index: 3;
 	position: sticky;
-	order: 2;
+	order: 3;
 	display: flex;
-	bottom: 0px;
+	bottom: 0;
+	//top:53.5px;
 	// /* margin: 0; */ commented out to prevent fixed position being pushed to top
 	margin: 0;
 	padding: 0;
@@ -464,9 +465,9 @@ button:hover {
 		width: 100%;
 	}
 
-	@media screen and (height>=795px) {
+	/* @media screen and (height>=795px) {
 		margin: 16px 0;
-	}
+	} */
 }
 .tweet-button-container {
 	display: flex;
@@ -964,7 +965,7 @@ button:hover {
 	margin: 0 0 0 0;
 	padding: 4px 16px 0 16px;
 	box-sizing: border-box;
-	/* border-bottom: var(--main-border-style); */
+	//border-bottom: var(--main-border-style);
 
 	&_wrapper {
 		@extend .wrappers--flex;
@@ -1318,6 +1319,7 @@ button:hover {
 	@media screen and (width>=1078px) {
 		max-width: 350px;
 		width: 350px;
+		min-height: 520px;
 	}
 
 	&_cards-header {
@@ -1465,13 +1467,14 @@ button:hover {
 
 	&_cards {
 		display: flex;
-		width: 348px;
+		width: 100%;
 		height: 65.5546875px;
 		padding: 12px 16px;
 		box-sizing: border-box;
 
 		&_wrapper {
 			//@extend .profile-wrapper;
+			display: flex;
 			padding: 0;
 			margin: 0;
 			width: 100%;
@@ -1489,11 +1492,17 @@ button:hover {
 			margin-right: 12px;
 			display: flex;
 			flex-direction: column;
-			width: 100%;
+			min-width: 114.203px;
+			width: 114.203px;
 			//flex:4 0 auto;
 			padding: 0 12px;
 			font-size: 15px;
 			box-sizing: border-box;
+
+			@media screen and (width>=1078px) {
+				min-width: 169.75px;
+				width: 169.75px;
+			}
 
 			b {
 				padding-bottom: 2px;
@@ -1516,7 +1525,7 @@ button:hover {
 
 	&_button_container {
 		//@extend .tweet-button-container;
-		width: 78px;
+		width: 77.797px;
 		max-height: 40px;
 		padding: 0;
 		display: flex;
@@ -1534,6 +1543,7 @@ button:hover {
 		justify-content: center;
 		align-items: center;
 		background-color: #0f1419;
+		text-decoration: none;
 	}
 
 	&_button_text {
@@ -1558,6 +1568,11 @@ button:hover {
 			text-decoration: none;
 			font-size: 15px;
 		}
+		@media screen and (width>=1078px) {
+		width: 348px;
+		padding:0;
+		
+	}
 	}
 }
 
