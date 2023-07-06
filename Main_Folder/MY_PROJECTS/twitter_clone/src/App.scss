@@ -61,7 +61,14 @@ li {
 
 .hidden500 {
 	display: none !important;
-	@media only screen and (width>=500px) {
+	@media only screen and (width>=500px) and (height>=500px) {
+		display: flex !important;
+	}
+}
+
+.hidden615-h{
+	display: none !important;
+	@media only screen and (width>=500px) and (height>=615px) {
 		display: flex !important;
 	}
 }
@@ -123,7 +130,7 @@ li {
 	font-family: chirp;
 	font-weight: light;
 
-	@media only screen and (width>=500px) {
+	@media only screen and (width>=500px) and (height>=500px) {
 		flex-direction: row;
 		overflow-x: scroll;
 	}
@@ -146,7 +153,7 @@ li {
 	box-sizing: border-box;
 	background-color: white;
 
-	@media only screen and (width>=500px) {
+	@media only screen and (width>=500px) and (height>=500px) {
 		flex-direction: column;
 		//top: -0.5px;
 		flex: 1 0 auto;
@@ -158,8 +165,8 @@ li {
 		margin: 0;
 		padding: 0 4px;
 		order: unset;
-		overflow-y: auto;
-		justify-content: space-between;
+		overflow-y: scroll;
+		/* justify-content: space-between; */
 		align-items: center;
 		top: 0;
 		overflow-x: hidden;
@@ -210,17 +217,18 @@ li {
 
 .nav {
 	width: 100%;
-	height: 100%;
+	height: fit-content;
 	margin: 0;
 	padding: 0;
 
-	@media only screen and (width>=500px) {
+	@media only screen and (width>=500px) and (height>=500px) {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: start;
 		/* height: 100vh; */
 		margin: 0 0 4px 0;
+		z-index: 0;
 		/* border:solid red */
 	}
 	@media only screen and (width>=600px) {
@@ -263,7 +271,8 @@ li {
 	&_twitter-logo-box {
 		display: none;
 
-		@media only screen and (width>=500px) {
+		@media only screen and (width>=500px) and (height>=500px) {
+			//position: relative;
 			width: 100%;
 			height: 56px;
 			min-height: 56px;
@@ -313,16 +322,22 @@ li {
 		padding: 0;
 		height: 100%;
 
-		@media only screen and (width>=500px) {
+		@media only screen and (width>=500px) and (height>=500px) {
 			width: 60px;
-			height: 582.5px;
+			height: min-content;
 			flex-direction: column;
 			align-items: center;
+			justify-content: start;
 			margin: 2px 0 4px 0;
 		}
 
 		@media only screen and (width>=600px) {
 			width: 100%;
+		}
+
+		@media screen and (height>=500px) {
+			height: 402px;
+			flex: 1 1 auto;
 		}
 	}
 
@@ -337,7 +352,7 @@ li {
 
 		@media only screen and (width>=500px) {
 			height: 50.25px;
-			padding: 4px;
+			//padding: 4px;
 		}
 
 		@media only screen and (width>=688px) {
@@ -446,7 +461,7 @@ button:hover {
 }
 
 .wrappers2 {
-	@media screen and (width>=500px) {
+	@media screen and (width>=500px) and (height>=500px) {
 		display: flex;
 		width: 100%;
 		height: 52px;
@@ -483,7 +498,7 @@ button:hover {
 	padding: 0;
 	//border: solid red;
 
-	@media screen and (width>=500px) {
+	@media screen and (width>=500px) and (height>=500px) {
 		display: flex;
 		position: relative;
 		justify-content: center;
@@ -585,7 +600,7 @@ button:hover {
 .profile-wrapper {
 	display: none;
 
-	@media only screen and (width>=500px) {
+	@media only screen and (width>=500px) and (height>500px) {
 		display: flex;
 		min-height: 64px;
 		width: 64px;
@@ -593,8 +608,17 @@ button:hover {
 		//padding: 4px;
 		padding: 0;
 		margin: auto 0px 12px 0px;
-		padding-top: 8px;
+		//padding-top: 8px;
 		//align-self: center;
+
+		@media screen and (height>=700px) {
+			position: absolute;
+			bottom: 0px;
+			z-index: 0;
+			margin: 12px 0;
+			z-index: 2;
+			background-color: white;
+		}
 	}
 
 	@media screen and (width>=688px) {
@@ -1306,7 +1330,7 @@ button:hover {
 		display: flex;
 		flex-direction: column;
 		width: 290px;
-		min-height:min-content ;
+		min-height: min-content;
 		background-color: rgb(247, 249, 249);
 		//border: 1px solid white;
 		//margin-top: 4.5px;
@@ -1571,10 +1595,9 @@ button:hover {
 			font-size: 15px;
 		}
 		@media screen and (width>=1078px) {
-		width: 348px;
-		padding:0;
-
-	}
+			width: 348px;
+			padding: 0;
+		}
 	}
 }
 

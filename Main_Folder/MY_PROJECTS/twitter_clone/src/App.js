@@ -42,6 +42,9 @@ TABLETS!!
 -for you,following and myfeed could use minor position adjustments
 */
 
+/* NOTES:
+	-remember that sticky remains in flow of things vs absolute doesnt..therefore sticky is preferred if you wanna make the sticky element part of a container/group scroll behaviour */
+
 function App() {
 	let scrollTracker = useRef();
 	let focusedText = useRef([]);
