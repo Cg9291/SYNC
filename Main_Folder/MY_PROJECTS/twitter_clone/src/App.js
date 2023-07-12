@@ -15,6 +15,7 @@ import {moreInfo} from "./functions/moreInfo";
 
 /* TODO
 GLOBAL!!
+*add conditionallity for checkmark display in backup timeline
 *work on mass imports for tweetArray function
 *program profile username to end "..." when text is too long
 *remove all references to twitter i.e classes using "twitter",tweet,word

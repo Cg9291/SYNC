@@ -66,7 +66,7 @@ li {
 	}
 }
 
-.hidden615-h{
+.hidden615-h {
 	display: none !important;
 	@media only screen and (width>=500px) and (height>=615px) {
 		display: flex !important;
@@ -91,7 +91,7 @@ li {
 	display: none !important;
 }
 
-.wrapper{
+.wrapper {
 	display: flex;
 	flex-direction: column;
 	//justify-content: ;
@@ -100,8 +100,7 @@ li {
 	//flex-wrap: wrap;
 	overflow-y: scroll;
 	//z-index: 1;
-	flex:1 0 auto;
-
+	flex: 1 0 auto;
 }
 
 .wrappers {
@@ -237,7 +236,7 @@ li {
 	@media only screen and (width>=500px) and (height>=500px) {
 		display: flex;
 		height: 412px;
-		flex:1 0 auto;
+		flex: 1 0 auto;
 		flex-direction: column;
 		align-items: center;
 		justify-content: start;
@@ -625,7 +624,7 @@ button:hover {
 		display: flex;
 		min-height: 64px;
 		width: 64px;
-		flex:0 0 auto;
+		flex: 0 0 auto;
 		//box-sizing: border-box;
 		//padding: 4px;
 		padding: 0;
@@ -1005,30 +1004,78 @@ button:hover {
 	margin: 0;
 }
 
-.timeline-backup{
+.timeline-backup {
 	width: 100%;
 	box-sizing: border-box;
 	padding: 0 17px;
 
-	&_tweets-card{
+	&_tweets-card {
 		display: flex;
-		height: 335.438px;
+		height: min-content;
 		width: 100%;
+		box-sizing: border-box;
+		margin-top: 12px;
 	}
 
-	&_profile-picture-wrapper{
+	&_profile-picture-wrapper {
 		width: 40px;
 		margin-right: 12px;
-		flex:0 0 auto;
-		img{
+		flex: 0 0 auto;
+		img {
 			height: 40px;
+			//border-radius: 99;
 		}
 	}
 
-	&_main-section-container{
+	&_main-section-container {
 		width: 288px;
-		flex:1 0 auto;
-		border:none
+		flex: 1 0 auto;
+		border: none;
+	}
+
+	&_header {
+		display: flex;
+		font-size: 15px;
+		font-weight: 400;
+		color: rgb(83, 100, 113);
+		line-height: 20px;
+		justify-content: start;
+
+		&_user-name {
+			font-weight: 700;
+			color: black;
+		}
+		&_checkmark-wrapper {
+			margin-left: 2px;
+		}
+		&_checkmark {
+			width: 18.75px;
+			aspect-ratio: 1/1;
+			fill: rgb(29, 155, 240);
+		}
+		&_handle {
+			margin-left: 4px;
+			margin-right: 4px;
+		}
+		&_posting-time {
+			margin-left: 4px;
+		}
+
+		&_ellipsis {
+			width: 18.75px;
+			aspect-ratio: 1/1;
+			margin-left: auto;
+		}
+	}
+	&_tweet-text {
+		height: max-content;
+		max-width: 100%;
+		word-wrap: break-word;
+	}
+	&_media{
+		width: 100%;
+		height: 357.5px;
+		border-radius: 5%;
 	}
 }
 
