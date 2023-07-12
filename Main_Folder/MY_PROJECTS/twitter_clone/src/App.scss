@@ -1005,6 +1005,33 @@ button:hover {
 	margin: 0;
 }
 
+.timeline-backup{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 17px;
+
+	&_tweets-card{
+		display: flex;
+		height: 335.438px;
+		width: 100%;
+	}
+
+	&_profile-picture-wrapper{
+		width: 40px;
+		margin-right: 12px;
+		flex:0 0 auto;
+		img{
+			height: 40px;
+		}
+	}
+
+	&_main-section-container{
+		width: 288px;
+		flex:1 0 auto;
+		border:none
+	}
+}
+
 .tweet-area {
 	display: flex;
 	flex-direction: column;

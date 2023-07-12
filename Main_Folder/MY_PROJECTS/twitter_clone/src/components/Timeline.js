@@ -1,6 +1,7 @@
 import {Helmet} from "react-helmet"; //this allows to use helmet(which supports the insertion of script tags in the component's html)
 import React from "react";
 import TweetBox from "./Tweetbox.js";
+import TimelineBackup from "./TimelineBackup.js";
 
 export default function Timeline(props) {
 	var myJson = require("../apiResponse.json");
@@ -8,7 +9,8 @@ export default function Timeline(props) {
 		<div className="timeline-wrapper">
 			<TweetBox />
 			{/* {myJson.html} */}
-			<a
+			<TimelineBackup />
+			{/* <a
 				id="timeline"
 				className="twitter-timeline"
 				href="https://twitter.com/TheSportsMediaC/lists/1543020161199812608"
@@ -18,11 +20,12 @@ export default function Timeline(props) {
 			>
 				Timeline is loading
 			</a>
+
 			<script
 				async
 				src="https://platform.twitter.com/widgets.js"
 				charset="utf-8"
-			></script>
+			></script> */}
 			{/* <a
 				id="timeline"
 				class="twitter-timeline"
