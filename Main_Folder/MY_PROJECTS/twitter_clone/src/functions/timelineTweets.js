@@ -1,5 +1,8 @@
 import {checkMark} from "../assets/icons/svg_exports";
 import {ellipsis} from "../assets/icons/svg_exports";
+import { commentsIcon,retweetsIcon,likesIcon,statsIcon,shareIcon } from "../assets/icons/statistics_svg";
+import tweetStats from "./tweetStats";
+
 export const timelineTweets = tweetObj => {
 	let num = Math.random();
 	let tweetAuthorUserName = tweetObj.authorInfo.userName;
@@ -37,7 +40,13 @@ export const timelineTweets = tweetObj => {
 					className="timeline-backup_media"
 					src={tweetMedia}
 				></img>
-				<div></div>
+				<div className="timeline-backup_statistics-row">
+					{tweetStats(commentsIcon, 22)}
+					{tweetStats(retweetsIcon, 98)}
+					{tweetStats(likesIcon, 798)}
+					{tweetStats(statsIcon, "75.6K")}
+					{tweetStats(shareIcon)}
+				</div>
 			</div>
 		</div>
 	);
