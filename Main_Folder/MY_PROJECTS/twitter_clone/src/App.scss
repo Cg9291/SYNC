@@ -1075,38 +1075,40 @@ button:hover {
 		word-wrap: break-word;
 		line-height: 20px;
 	}
-	&_media{
+	&_media {
 		width: 100%;
 		height: 357.5px;
 		border-radius: 5%;
 		margin-top: 12px;
 	}
-	&_statistics-row{
+	&_statistics-row {
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
 		height: 32px;
-		//padding-top: 12px;
+		box-sizing: border-box;
+		padding-top: 12px;
 
-		// &_icons-wrapper{
-		// 	display: flex;
-
-		// }
-		&_group{
-			display:flex;
+		&_group {
+			display: flex;
 			align-items: start;
 			justify-content: space-between;
 			width: max-content;
 		}
 
-		&_icons{
+		&_icons {
 			width: 18.75px;
 			aspect-ratio: 1/1;
-			//padding-top: 4px;
+			fill: rgb(83, 100, 113);
 		}
-		&_values{
-			//align-self: start;
-			margin:0 15px;
+		&_values {
+			font-size: 13px;
+			margin: 0 15px;
+			height: 20px;
+			line-height: 16px;
+			color: rgb(83, 100, 113);
+			display: flex;
+			align-items: center;
 		}
 	}
 }
