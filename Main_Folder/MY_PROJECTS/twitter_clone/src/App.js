@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.scss";
-import React, {useState, useEffect, useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Header from "./components/Header";
 import FollowsRecSection from "./components/FollowRecs";
 import Navigation from "./components/Navigation";
@@ -8,9 +8,9 @@ import Profile from "./functions/profile";
 import SearchBar from "./components/Searchbar";
 import Timeline from "./components/Timeline";
 import TrendingSection from "./components/Trending";
-import {GetVerified} from "./components/GetVerified";
-import {profile} from "./functions/profile.js";
-import {moreInfo} from "./functions/moreInfo";
+import { GetVerified } from "./components/GetVerified";
+import { profile } from "./functions/profile.js";
+import { moreInfo } from "./functions/moreInfo";
 /* import {tweetButton} from "./components/TweetButton.js"; */
 
 /* TODO
@@ -60,7 +60,7 @@ function App() {
 	let [prevScrollTopValue, setPrevScrollTopValue] = useState();
 	let [headerHeight, setHeaderHeight] = useState("-0.5px");
 
-	var displayedTweetsIds=[];
+	var displayedTweetsIds = [];
 	//EFFECTS
 
 	useEffect(() => {
@@ -80,17 +80,17 @@ function App() {
 					: setHeaderHeight("-0.5px");
 				setPrevScrollTopValue(scrollTracker.current.scrollTop);
 				// console.log(scrollTracker.current.scrollTop,"scrolled");
-			})
+			}),
 		//THIS FUNCTION IS SET TO ONLY WORK ON SIZES<500PX..SEE CSS
 	);
 
 	useEffect(() => {
 		clickedElement === "forYou"
 			? setFocusedBarLength(
-					`${focusedText.current[clickedElement].offsetWidth + 0}px`
+					`${focusedText.current[clickedElement].offsetWidth + 0}px`,
 			  )
 			: setFocusedBarLength(
-					`${focusedText.current[clickedElement].offsetWidth}px`
+					`${focusedText.current[clickedElement].offsetWidth}px`,
 			  );
 		console.log(focusedText.current[clickedElement].offsetWidth);
 		/* setFocusedBarLength(focusedText.current[clickedElement]) */

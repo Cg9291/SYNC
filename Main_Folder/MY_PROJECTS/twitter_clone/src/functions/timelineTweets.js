@@ -1,6 +1,12 @@
-import {checkMark} from "../assets/icons/svg_exports";
-import {ellipsis} from "../assets/icons/svg_exports";
-import { commentsIcon,retweetsIcon,likesIcon,statsIcon,shareIcon } from "../assets/icons/statistics_svg";
+import { checkMark } from "../assets/icons/svg_exports";
+import { ellipsis } from "../assets/icons/svg_exports";
+import {
+	commentsIcon,
+	retweetsIcon,
+	likesIcon,
+	statsIcon,
+	shareIcon,
+} from "../assets/icons/statistics_svg";
 import tweetStats from "./tweetStats";
 
 export const timelineTweets = tweetObj => {
@@ -10,6 +16,7 @@ export const timelineTweets = tweetObj => {
 	let profilePicture = tweetObj.authorInfo.profilePicture;
 	let tweetText = tweetObj.tweetText;
 	let tweetMedia = tweetObj.tweetMedia;
+	const aha = 55;
 
 	return (
 		<div className="timeline-backup_tweets-card">
