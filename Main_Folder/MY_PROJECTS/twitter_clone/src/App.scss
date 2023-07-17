@@ -101,12 +101,15 @@ li {
 
 		flex-direction: column;
 		//justify-content: ;
-		max-height: 100%;
+		min-height: max-content;
+		max-height: max-content;
+		height: max-content;
 		width: min-content;
 		//flex-wrap: wrap;
-		overflow-y: scroll;
+		overflow-y: visible;
 		//z-index: 1;
 		flex: 1 0 auto;
+		padding: 0;
 	}
 }
 
@@ -176,9 +179,9 @@ li {
 		flex-direction: column;
 		//top: -0.5px;
 		flex: 1 0 auto;
-		height: 100vh;
+		height: max-content;
 		max-height: 100vh;
-		min-height: 100vh;
+		min-height: max-content;
 		width: 68px;
 		border-top: 0;
 		margin: 0;
@@ -189,6 +192,7 @@ li {
 		align-items: center;
 		top: 0;
 		overflow-x: hidden;
+		overflow-y: scroll;
 	}
 	@media only screen and (width>=600px) {
 		padding: 0;
@@ -242,14 +246,16 @@ li {
 
 	@media only screen and (width>=500px) and (height>=500px) {
 		display: flex;
-		height: 412px;
+		min-height: max-content;
+		max-height: max-content;
+		height: max-content;
 		flex: 1 0 auto;
 		flex-direction: column;
 		align-items: center;
 		justify-content: start;
 		margin: 0;
 		z-index: 0;
-		//overflow-y: scroll;
+		overflow-y: visible;
 	}
 	@media only screen and (width>=600px) {
 		box-sizing: border-box;
@@ -344,12 +350,14 @@ li {
 
 		@media only screen and (width>=500px) and (height>=500px) {
 			width: 60px;
-			max-height: 402px;
-			height: 402px;
+			//max-height: 402px;
+			height: max-content;
 			flex-direction: column;
 			align-items: center;
 			justify-content: start;
 			margin: 2px 0 4px 0;
+			overflow-y: visible;
+			flex:1 0 auto;
 			//flex:1 0 auto;
 		}
 
@@ -359,11 +367,6 @@ li {
 
 		@media only screen and (width>=600px) {
 			width: 100%;
-		}
-
-		@media screen and (height>=500px) {
-			height: 402px;
-			flex: 1 1 auto;
 		}
 	}
 
@@ -635,7 +638,7 @@ button:hover {
 		//box-sizing: border-box;
 		//padding: 4px;
 		padding: 0;
-		margin: 12px 0px 28px 0px;
+		margin: 12px 0px 12px 0px;
 		//position: relative;
 		//z-index: 0;
 		//padding-top: 8px;
@@ -1014,9 +1017,13 @@ button:hover {
 .timeline-backup {
 	width: 100%;
 	box-sizing: border-box;
-	padding: 0 17px 0 17px;
+	padding: 0 16px;
 	box-sizing: border-box;
 	margin-top: -0.5px;
+
+	@media screen and (width>=500px) {
+		margin-top: 0;
+	}
 
 	&_tweets-card {
 		display: flex;
@@ -1024,7 +1031,11 @@ button:hover {
 		width: 100%;
 		box-sizing: border-box;
 		margin-top: 12px;
+		@media screen and (width>=500px) {
+		margin-top: 13px;
 	}
+	}
+
 
 	&_profile-picture-wrapper {
 		width: 40px;
@@ -1032,7 +1043,7 @@ button:hover {
 		flex: 0 0 auto;
 		img {
 			height: 40px;
-			//border-radius: 99;
+			border-radius: 3px;
 		}
 	}
 
