@@ -79,7 +79,7 @@ export default function Navigation(props) {
 						</a>
 					</li>
 
-					<li className="nav_li hidden615-h">
+					<li className="nav_li hidden750-h">
 						<a
 							href="#"
 							className="nav_a"
