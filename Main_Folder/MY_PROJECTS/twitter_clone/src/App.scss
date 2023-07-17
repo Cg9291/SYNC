@@ -1013,7 +1013,9 @@ button:hover {
 .timeline-backup {
 	width: 100%;
 	box-sizing: border-box;
-	padding: 0 17px;
+	padding: 0 17px 0 17px;
+	box-sizing: border-box;
+	margin-top: -0.5px;
 
 	&_tweets-card {
 		display: flex;
@@ -1043,15 +1045,18 @@ button:hover {
 		display: flex;
 		font-size: 15px;
 		max-height: 20px;
-		margin-bottom: 2px;
+		margin-bottom: 3px;
 		font-weight: 400;
 		color: rgb(83, 100, 113);
 		line-height: 20px;
 		justify-content: start;
+		box-sizing: border-box;
+		padding: 0 0;
 
 		&_user-name {
 			font-weight: 700;
 			color: black;
+			
 		}
 		&_checkmark-wrapper {
 			margin-left: 2px;
@@ -1079,13 +1084,13 @@ button:hover {
 		height: max-content;
 		max-width: 100%;
 		word-wrap: break-word;
-		line-height: 20px;
+		line-height: 18px;
 	}
 	&_media {
 		width: 100%;
 		height: 357.5px;
 		border-radius: 5%;
-		margin-top: 12px;
+		margin-top: 14px;
 	}
 	&_statistics-row {
 		display: flex;

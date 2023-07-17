@@ -8,7 +8,7 @@ export const tweetsArray = [
 		authorInfo: {
 			profilePicture:
 				pic,
-			userName: "NBA on ESPN",
+			userName: "NBA Memes",
 			userHandle: "ESPN",
 		},
 		tweetText: "This is a test tweet",
