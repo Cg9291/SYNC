@@ -6,13 +6,74 @@ import media2 from "../assets/pictures/tweet_pictures/jokic.jpeg"
 export const tweetsArray = [
 	{
 		authorInfo: {
-			profilePicture:
-				pic,
-			userName: "Phoenix Suns",
+			profilePicture: pic,
+			userName: "ESPN on TNT",
 			userHandle: "ESPN",
 		},
 		tweetText: "This is a test tweet",
-		tweetMedia:
-			media2,
+		tweetMedia: media2,
+	},
+	{
+		authorInfo: {
+			profilePicture: nbaProfilePic,
+			userName: "NBA",
+			userHandle: "NBA",
+		},
+		tweetText: "This is a second test tweet",
+		tweetMedia: media,
+	},
+	{
+		authorInfo: {
+			profilePicture: pic,
+			userName: "ESPN on TNT",
+			userHandle: "ESPN",
+		},
+		tweetText: "This is a test tweet",
+		tweetMedia: media2,
+	},
+	{
+		authorInfo: {
+			profilePicture: nbaProfilePic,
+			userName: "NBA",
+			userHandle: "NBA",
+		},
+		tweetText: "This is a second test tweet",
+		tweetMedia: media,
+	},
+	{
+		authorInfo: {
+			profilePicture: pic,
+			userName: "ESPN on TNT",
+			userHandle: "ESPN",
+		},
+		tweetText: "This is a test tweet",
+		tweetMedia: media2,
+	},
+	{
+		authorInfo: {
+			profilePicture: nbaProfilePic,
+			userName: "NBA",
+			userHandle: "NBA",
+		},
+		tweetText: "This is a second test tweet",
+		tweetMedia: media,
+	},
+	{
+		authorInfo: {
+			profilePicture: pic,
+			userName: "ESPN on TNT",
+			userHandle: "ESPN",
+		},
+		tweetText: "This is a test tweet",
+		tweetMedia: media2,
+	},
+	{
+		authorInfo: {
+			profilePicture: nbaProfilePic,
+			userName: "NBA",
+			userHandle: "NBA",
+		},
+		tweetText: "This is a second test tweet",
+		tweetMedia: media,
 	},
 ];

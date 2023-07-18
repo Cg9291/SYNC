@@ -43,10 +43,12 @@ export const timelineTweets = tweetObj => {
 					<span className="timeline-backup_header_ellipsis">{ellipsis}</span>
 				</div>
 				<div className="timeline-backup_tweet-text">{tweetText}</div>
-				<img
-					className="timeline-backup_media"
-					src={tweetMedia}
-				></img>
+				<div className="timeline-backup_media-wrapper">
+					<img
+						className="timeline-backup_media"
+						src={tweetMedia}
+					></img>
+				</div>
 				<div className="timeline-backup_statistics-row">
 					{tweetStats(commentsIcon, 22)}
 					{tweetStats(retweetsIcon, 98)}
