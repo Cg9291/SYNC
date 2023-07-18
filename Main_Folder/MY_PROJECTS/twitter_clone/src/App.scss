@@ -1698,6 +1698,7 @@ button:hover {
 			@extend .profile-wrapper_container;
 			padding: 0;
 			height: 100%;
+
 		}
 
 		&_user-info {
@@ -1705,12 +1706,14 @@ button:hover {
 			margin-right: 12px;
 			display: flex;
 			flex-direction: column;
-			min-width: 114.203px;
-			width: 114.203px;
+			//min-width: 114px;
+			width: 114px;
 			//flex:4 0 auto;
-			padding: 0 12px;
+			padding: 0px;
 			font-size: 15px;
 			box-sizing: border-box;
+			flex-basis: 1 0 auto;
+			overflow-x: hidden;
 
 			@media screen and (width>=1078px) {
 				min-width: 169.75px;
@@ -1740,13 +1743,17 @@ button:hover {
 
 	&_button_container {
 		//@extend .tweet-button-container;
-		width: 77.797px;
+		width: 78px;
 		max-height: 40px;
 		padding: 0;
 		display: flex;
 		justify-content: end;
 		align-items: center;
-		margin-left: 12px;
+		//margin-left: 12px;
+
+		@media screen and (width>=1078px) {
+			margin-left:auto;
+		}
 	}
 
 	&_button_wrapper {
