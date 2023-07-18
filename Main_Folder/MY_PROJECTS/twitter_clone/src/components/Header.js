@@ -44,10 +44,10 @@ export default function Header(props) {
 							<div ref={ref => (props.focusedText.current["forYou"] = ref)}>
 								For you
 							</div>
-							<span
+							<div
 								className="blue-focused-bar"
 								style={{width: props.focusedBarLength}}
-							></span>
+							></div>
 						</a>
 					</li>
 					<li

@@ -60,7 +60,6 @@ function App() {
 	let [prevScrollTopValue, setPrevScrollTopValue] = useState();
 	let [headerHeight, setHeaderHeight] = useState("-0.5px");
 
-	var displayedTweetsIds = [];
 	//EFFECTS
 
 	useEffect(() => {
@@ -87,7 +86,7 @@ function App() {
 	useEffect(() => {
 		clickedElement === "forYou"
 			? setFocusedBarLength(
-					`${focusedText.current[clickedElement].offsetWidth + 0}px`,
+					/* `${focusedText.current[clickedElement].offsetWidth + 3.16}px` */"56px",
 			  )
 			: setFocusedBarLength(
 					`${focusedText.current[clickedElement].offsetWidth}px`,

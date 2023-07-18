@@ -91,6 +91,10 @@ li {
 	display: none !important;
 }
 
+.overflow-x-v{
+overflow-x: visible;
+}
+
 .wrapper {
 	display: flex;
 	min-width: 100%;
@@ -175,7 +179,7 @@ li {
 	// /* margin: 0; */ commented out to prevent fixed position being pushed to top
 	margin: 0;
 	padding: 0;
-	margin-top:auto;
+	margin-top: auto;
 	border-top: var(--main-border-style);
 	height: 53.5px;
 	min-height: 53.5px;
@@ -205,10 +209,9 @@ li {
 		overflow-y: scroll;
 
 		@media screen and (height>=662px) {
-		min-height: 100%;
+			min-height: 100%;
+		}
 	}
-	}
-
 
 	@media only screen and (width>=600px) {
 		padding: 0;
@@ -951,6 +954,7 @@ button:hover {
 		//flex:1 1 0;
 		box-sizing: border-box;
 		overflow-x: auto; //this allows for perfect alignment of the texts in this case
+		flex-wrap: nowrap;
 	}
 	&_li {
 		display: flex;
@@ -1028,7 +1032,7 @@ button:hover {
 			}
 		}
 		.blue-focused-bar {
-			display: inline-block;
+			display: block;
 			margin: auto 0 1px 0;
 			justify-self: end;
 			background-color: rgb(29, 155, 240);
@@ -1073,9 +1077,6 @@ button:hover {
 		margin-top: 12px;
 		padding: 0px 17px 12px;
 		border-bottom: var(--main-border-style);
-		@media screen and (width>=500px) {
-			margin-top: 13px;
-		}
 	}
 
 	&_profile-picture-wrapper {
@@ -1138,12 +1139,12 @@ button:hover {
 		word-wrap: break-word;
 		line-height: 18px;
 	}
-	&_media-wrapper{
+	&_media-wrapper {
 		width: 100%;
 		height: 357.5px;
 		margin-top: 14px;
 		box-sizing: border-box;
-		border:1px solid white;
+		border: 1px solid white;
 	}
 	&_media {
 		width: 100%;
@@ -1187,11 +1188,11 @@ button:hover {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	height: 180px;
+	height: 181px;
 	margin: 0 0 0 0;
 	padding: 4px 16px 0 16px;
 	box-sizing: border-box;
-	//border-bottom: var(--main-border-style);
+	border-bottom: var(--main-border-style);
 
 	&_wrapper {
 		@extend .wrappers--flex;
@@ -1713,7 +1714,6 @@ button:hover {
 			@extend .profile-wrapper_container;
 			padding: 0;
 			height: 100%;
-
 		}
 
 		&_user-info {
@@ -1767,7 +1767,7 @@ button:hover {
 		//margin-left: 12px;
 
 		@media screen and (width>=1078px) {
-			margin-left:auto;
+			margin-left: auto;
 		}
 	}
 
@@ -1848,7 +1848,6 @@ button:hover {
 	@media screen and (width>=1078px) {
 		width: 318px;
 	}
-
 }
 
 .whiteSpace-right {
