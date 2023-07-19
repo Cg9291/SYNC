@@ -10,7 +10,7 @@ export default function tweetStats(icon, value) {
 			<span className="timeline-backup_statistics-row_icons-wrapper">
 				{icon}
 			</span>
-			<span className="timeline-backup_statistics-row_values"> {value}</span>
+			<span className="timeline-backup_statistics-row_values">{value}</span>
 		</div>
 	);
 }

@@ -197,6 +197,7 @@ overflow-x: visible;
 		max-height: 100vh;
 		min-height: max-content;
 		width: 68px;
+		max-width: 68px;
 		border-top: 0;
 		margin: 0;
 		padding: 0 4px;
@@ -215,8 +216,10 @@ overflow-x: visible;
 
 	@media only screen and (width>=600px) {
 		padding: 0;
+		max-width: unset;
 		width: 88px;
 		border: none;
+
 	}
 
 	@media only screen and (width>=688px) {
@@ -1166,6 +1169,10 @@ button:hover {
 		box-sizing: border-box;
 		padding-top: 12px;
 
+		@media screen and (width>=579px) {
+			max-width: 425px;
+		}
+
 		&_group {
 			display: flex;
 			align-items: start;
@@ -1192,12 +1199,13 @@ button:hover {
 			align-items: center;
 			justify-content: start;
 			box-sizing: border-box;
-			padding-left:4px;
+			padding:0px 4px;
 			//flex:1 0 auto
 
 			@media screen and (width>=500px) {
-				padding-left:12px;
+				padding:0px 12px;
 			}
+
 		}
 	}
 }
@@ -1854,12 +1862,20 @@ button:hover {
 		}
 
 		&_ellipsis {
-			width: 17px;
-			height: 15.5px;
+			width: 18.75px;
+			aspect-ratio: 1/1;
 			padding: 3px 2px 0px 2px;
 			box-sizing: border-box;
 			display: flex;
 			align-items: center;
+			fill: rgb(83, 100, 113);
+
+			@media screen and (width>=988px) {
+				padding: 0px;
+
+				//stroke: red;
+
+			}
 		}
 	}
 
