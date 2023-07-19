@@ -1077,6 +1077,10 @@ button:hover {
 		margin-top: 12px;
 		padding: 0px 17px 12px;
 		border-bottom: var(--main-border-style);
+
+		@media screen and (width>=500px) {
+			padding:0px 16px 12px;
+		}
 	}
 
 	&_profile-picture-wrapper {
@@ -1128,6 +1132,8 @@ button:hover {
 		}
 
 		&_ellipsis {
+			display: flex;
+			align-items: center;
 			width: 18.75px;
 			aspect-ratio: 1/1;
 			margin-left: auto;
@@ -1163,23 +1169,35 @@ button:hover {
 		&_group {
 			display: flex;
 			align-items: start;
-			justify-content: space-between;
-			width: max-content;
+			justify-content: start;
+			//justify-content: space-between;
+			width: min-content;
+			//flex:1 0 auto
 		}
 
 		&_icons {
+			display: flex;
 			width: 18.75px;
 			aspect-ratio: 1/1;
 			fill: rgb(83, 100, 113);
+			//flex: 0 0 auto;
 		}
 		&_values {
 			font-size: 13px;
-			margin: 0 15px;
+			//margin: 0 15px;
 			height: 20px;
 			line-height: 16px;
 			color: rgb(83, 100, 113);
 			display: flex;
 			align-items: center;
+			justify-content: start;
+			box-sizing: border-box;
+			padding-left:4px;
+			//flex:1 0 auto
+
+			@media screen and (width>=500px) {
+				padding-left:12px;
+			}
 		}
 	}
 }
