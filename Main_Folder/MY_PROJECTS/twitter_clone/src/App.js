@@ -29,7 +29,7 @@ MOBILE!!
 
 Once timeline is switched from embed to api
 
-*adjust font size in timeline
+
 *add notification blue indicators
 *add links to clickable elements
 

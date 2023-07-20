@@ -25,8 +25,10 @@ export default function Navigation(props) {
 						<a
 							href="#"
 							className="nav_a"
-						>
-							{homeIcon}
+							onFocus={()=>homeIcon(true)}
+							 onBlur={()=>homeIcon()}
+						>{homeIcon()}
+							{/* {homeIcon} */}
 							<span className="nav_text">Home</span>
 						</a>
 					</li>

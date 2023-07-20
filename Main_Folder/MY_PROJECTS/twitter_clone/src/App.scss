@@ -429,10 +429,10 @@ overflow-x: visible;
 
 		@media only screen and (width>=500px) {
 			/* margin-top: 0; */
-			.nav_text:focus {
+			/* .nav_text:focus {
 				font-family: chirp;
 				font-weight: bold;
-			}
+			} */
 			@media screen and (height>=855px) {
 				padding: 4px 0px;
 			}
@@ -479,12 +479,8 @@ overflow-x: visible;
 			font-weight: bold;
 		}
 
-		g {
-			fill: red;
-		}
-
-		svg:hover {
-			fill: green;
+		.nav_nav-icons{
+			fill: black;
 		}
 	}
 
@@ -494,10 +490,16 @@ overflow-x: visible;
 		border-radius: 50%;
 		padding: 12px 8px;
 		overflow: visible;
+		//fill: red ;
+		/* color: red; */
+		//fill:white;
+		//stroke: red;
+		//stroke: black;
 		@media screen and (width>=1265px) {
 			padding: 0;
 			margin-right: 20px;
 		}
+
 	}
 
 	&_nav-icons:active {
