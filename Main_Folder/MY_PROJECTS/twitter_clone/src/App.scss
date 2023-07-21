@@ -37,6 +37,10 @@
 	color: #536471;
 }
 
+:focus{
+	outline:0;
+}
+
 section,
 div,
 p,
@@ -479,9 +483,9 @@ overflow-x: visible;
 			font-weight: bold;
 		}
 
-		.nav_nav-icons{
+		/* .nav_nav-icons{
 			fill: black;
-		}
+		} */
 	}
 
 	&_nav-icons {

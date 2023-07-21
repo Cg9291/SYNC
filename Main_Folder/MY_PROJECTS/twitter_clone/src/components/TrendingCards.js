@@ -4,7 +4,7 @@ import Section from "./Sections.js";
 
 export default function TrendingCards() {
 	const level = useContext(CardsInfoContext);
-	console.log({level});
+	/* console.log({level}); */
 
 	return typeof level.pic === "string" ? (
 		<div className="trending-wrapper_cards-with-image">

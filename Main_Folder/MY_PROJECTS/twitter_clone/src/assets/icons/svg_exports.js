@@ -22,7 +22,7 @@ export let twitterLogoHeader = (
 );
 
 export let homeIcon = focused => {
-	return focused == true ?
+	return focused === true ?
 		<svg
 			className="nav_nav-icons"
 			viewBox="0 0 24 24 "

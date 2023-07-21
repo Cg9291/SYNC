@@ -1,5 +1,5 @@
-import {useState} from "react";
-import {tweetButton} from "../functions/tweetButton.js";
+import { useState, forwardRef } from "react";
+import { tweetButton } from "../functions/tweetButton.js";
 import {
 	twitterLogoNav,
 	homeIcon,
@@ -15,7 +15,8 @@ import {
 	communitiesIcon,
 } from "../assets/icons/svg_exports";
 
-export default function Navigation(props) {
+export const Navigation = forwardRef(function (props,navFirstElement) {
+	console.log(props.focusedLi.home);
 	return (
 		<nav className="nav">
 			<div className="wrapper">
@@ -25,10 +26,11 @@ export default function Navigation(props) {
 						<a
 							href="#"
 							className="nav_a"
-							onFocus={()=>homeIcon(true)}
-							 onBlur={()=>homeIcon()}
-						>{homeIcon()}
-							{/* {homeIcon} */}
+							ref={navFirstElement}
+							onFocus={() => props.setFocusedLi(po => ({ ...po, home: true }))}
+							onBlur={() => props.setFocusedLi(po => ({ ...po, home: false }))}
+						>
+							{homeIcon(props.focusedLi.home)}
 							<span className="nav_text">Home</span>
 						</a>
 					</li>
@@ -37,8 +39,14 @@ export default function Navigation(props) {
 						<a
 							href="#"
 							className="nav_a"
+							onFocus={() =>
+								props.setFocusedLi(po => ({ ...po, searchIcon: true }))
+							}
+							onBlur={() =>
+								props.setFocusedLi(po => ({ ...po, searchIcon: false }))
+							}
 						>
-							{searchIconNav}
+							{homeIcon(props.focusedLi.searchIcon)}
 							<span className="nav_text">Explore</span>
 						</a>
 					</li>
@@ -135,4 +143,4 @@ export default function Navigation(props) {
 			</div>
 		</nav>
 	);
-}
+});

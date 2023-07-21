@@ -3,7 +3,7 @@ import "./App.scss";
 import React, { useState, useEffect, useRef } from "react";
 import Header from "./components/Header";
 import FollowsRecSection from "./components/FollowRecs";
-import Navigation from "./components/Navigation";
+import {Navigation} from "./components/Navigation";
 import Profile from "./functions/profile";
 import SearchBar from "./components/Searchbar";
 import Timeline from "./components/Timeline";
@@ -50,6 +50,7 @@ TABLETS!!
 function App() {
 	let scrollTracker = useRef();
 	let focusedText = useRef([]);
+	let navFirstElement=useRef()
 	//let autoFocusNavElement=useRef();
 
 	let [clickedElement, setClickedElement] = useState("forYou");
@@ -60,7 +61,24 @@ function App() {
 	let [prevScrollTopValue, setPrevScrollTopValue] = useState();
 	let [headerHeight, setHeaderHeight] = useState("-0.5px");
 
+	let [focusedLi, setFocusedLi] = useState({
+		home: true,
+		searchIcon: false,
+		bell: false,
+		message: false,
+		lists: false,
+		bookmarks: false,
+		communities: false,
+		twitterBlue: false,
+		profile: false,
+		more: false,
+	});
+
 	//EFFECTS
+
+	useEffect(()=>{
+		navFirstElement.current.focus();
+	},[])
 
 	useEffect(() => {
 		setPrevScrollTopValue(scrollTracker.current.scrollTop);
@@ -137,6 +155,11 @@ function App() {
 		focusedText: focusedText,
 	};
 
+	Navigation.defaultProps={
+		focusedLi:focusedLi,
+		setFocusedLi:setFocusedLi
+	}
+
 	let imageSource =
 		"https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640";
 
@@ -146,7 +169,7 @@ function App() {
 			ref={scrollTracker}
 		>
 			<section className="nav-container">
-				<Navigation />
+				<Navigation ref={navFirstElement} />
 				{profile(imageSource, "TheSportsMediaCh...", "TheSportsMediaC")}
 			</section>
 			<section className="middle-container">
