@@ -15,8 +15,7 @@ import {
 	communitiesIcon,
 } from "../assets/icons/svg_exports";
 
-export const Navigation = forwardRef(function (props,navFirstElement) {
-	console.log(props.focusedLi.home);
+export const Navigation = forwardRef(function (props, navFirstElement) {
 	return (
 		<nav className="nav">
 			<div className="wrapper">
@@ -46,7 +45,7 @@ export const Navigation = forwardRef(function (props,navFirstElement) {
 								props.setFocusedLi(po => ({ ...po, searchIcon: false }))
 							}
 						>
-							{homeIcon(props.focusedLi.searchIcon)}
+							{searchIconNav(props.focusedLi.searchIcon)}
 							<span className="nav_text">Explore</span>
 						</a>
 					</li>
@@ -63,8 +62,10 @@ export const Navigation = forwardRef(function (props,navFirstElement) {
 						<a
 							href="#"
 							className="nav_a"
+							onFocus={() => props.setFocusedLi(po => ({ ...po, bell: true }))}
+							onBlur={() => props.setFocusedLi(po => ({ ...po, bell: false }))}
 						>
-							{bellIcon}
+							{bellIcon(props.focusedLi.bell)}
 							<span className="nav_text">Notifications</span>
 						</a>
 					</li>
@@ -73,8 +74,14 @@ export const Navigation = forwardRef(function (props,navFirstElement) {
 						<a
 							href="#"
 							className="nav_a"
+							onFocus={() =>
+								props.setFocusedLi(po => ({ ...po, message: true }))
+							}
+							onBlur={() =>
+								props.setFocusedLi(po => ({ ...po, message: false }))
+							}
 						>
-							{messageIcon}
+							{messageIcon(props.focusedLi.message)}
 							<span className="nav_text">Messages</span>
 						</a>
 					</li>
@@ -83,8 +90,10 @@ export const Navigation = forwardRef(function (props,navFirstElement) {
 						<a
 							href="#"
 							className="nav_a"
+							onFocus={() => props.setFocusedLi(po => ({ ...po, lists: true }))}
+							onBlur={() => props.setFocusedLi(po => ({ ...po, lists: false }))}
 						>
-							{listsIcon}
+							{listsIcon(props.focusedLi.lists)}
 							<span className="nav_text">Lists</span>
 						</a>
 					</li>
@@ -93,8 +102,14 @@ export const Navigation = forwardRef(function (props,navFirstElement) {
 						<a
 							href="#"
 							className="nav_a"
+							onFocus={() =>
+								props.setFocusedLi(po => ({ ...po, bookmarks: true }))
+							}
+							onBlur={() =>
+								props.setFocusedLi(po => ({ ...po, bookmarks: false }))
+							}
 						>
-							{bookmarksIcon}
+							{bookmarksIcon(props.focusedLi.bookmarks)}
 							<span className="nav_text">Bookmarks</span>
 						</a>
 					</li>
@@ -103,8 +118,14 @@ export const Navigation = forwardRef(function (props,navFirstElement) {
 						<a
 							href="#"
 							className="nav_a"
+							onFocus={() =>
+								props.setFocusedLi(po => ({ ...po, communities: true }))
+							}
+							onBlur={() =>
+								props.setFocusedLi(po => ({ ...po, communities: false }))
+							}
 						>
-							{communitiesIcon}
+							{communitiesIcon(props.focusedLi.communities)}
 							<span className="nav_text">Communities</span>
 						</a>
 					</li>
@@ -113,8 +134,14 @@ export const Navigation = forwardRef(function (props,navFirstElement) {
 						<a
 							href="#"
 							className="nav_a"
+							onFocus={() =>
+								props.setFocusedLi(po => ({ ...po, twitterBlue: true }))
+							}
+							onBlur={() =>
+								props.setFocusedLi(po => ({ ...po, twitterBlue: false }))
+							}
 						>
-							{twitterBlueIcon}
+							{twitterBlueIcon(props.focusedLi.twitterBlue)}
 							<span className="nav_text">Verified</span>
 						</a>
 					</li>
@@ -123,8 +150,14 @@ export const Navigation = forwardRef(function (props,navFirstElement) {
 						<a
 							href="#"
 							className="nav_a"
+							onFocus={() =>
+								props.setFocusedLi(po => ({ ...po, profile: true }))
+							}
+							onBlur={() =>
+								props.setFocusedLi(po => ({ ...po, profile: false }))
+							}
 						>
-							{profileIcon}
+							{profileIcon(props.focusedLi.profile)}
 							<span className="nav_text">Profile</span>
 						</a>
 					</li>
@@ -133,8 +166,14 @@ export const Navigation = forwardRef(function (props,navFirstElement) {
 						<a
 							href="#"
 							className="nav_a"
+							onFocus={() =>
+								props.setFocusedLi(po => ({ ...po, more: true }))
+							}
+							onBlur={() =>
+								props.setFocusedLi(po => ({ ...po, more: false }))
+							}
 						>
-							{moreIcon}
+							{moreIcon(props.focusedLi.more)}
 							<span className="nav_text">More</span>
 						</a>
 					</li>
