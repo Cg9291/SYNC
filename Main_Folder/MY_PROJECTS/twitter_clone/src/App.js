@@ -50,7 +50,7 @@ TABLETS!!
 function App() {
 	let scrollTracker = useRef();
 	let focusedText = useRef([]);
-	let navFirstElement=useRef()
+	//let navFirstElement=useRef()
 	//let autoFocusNavElement=useRef();
 
 	let [clickedElement, setClickedElement] = useState("forYou");
@@ -62,23 +62,23 @@ function App() {
 	let [headerHeight, setHeaderHeight] = useState("-0.5px");
 
 	let [focusedLi, setFocusedLi] = useState({
-		home: true,
+		homeIcon: true,
 		searchIcon: false,
-		bell: false,
-		message: false,
-		lists: false,
-		bookmarks: false,
-		communities: false,
-		twitterBlue: false,
-		profile: false,
-		more: false,
+		bellIcon: false,
+		messagesIcon: false,
+		listsIcon: false,
+		bookmarksIcon: false,
+		communitiesIcon: false,
+		checkmarkIcon: false,
+		profileIcon: false,
+		moreIcon: false,
 	});
 
 	//EFFECTS
-
+/*
 	useEffect(()=>{
 		navFirstElement.current.focus();
-	},[])
+	},[]) */
 
 	useEffect(() => {
 		setPrevScrollTopValue(scrollTracker.current.scrollTop);
@@ -169,7 +169,7 @@ function App() {
 			ref={scrollTracker}
 		>
 			<section className="nav-container">
-				<Navigation ref={navFirstElement} />
+				<Navigation /* ref={navFirstElement} */ />
 				{profile(imageSource, "TheSportsMediaCh...", "TheSportsMediaC")}
 			</section>
 			<section className="middle-container">

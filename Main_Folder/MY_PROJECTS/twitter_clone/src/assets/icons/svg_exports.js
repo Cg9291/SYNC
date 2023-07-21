@@ -98,7 +98,7 @@ export let bellIcon = focused => {
 	);
 };
 
-export let messageIcon = focused => {
+export let messagesIcon = focused => {
 	return focused === true ? (
 		<svg
 			className="nav_nav-icons"
@@ -186,7 +186,7 @@ export let communitiesIcon = focused => {
 	);
 };
 
-export let twitterBlueIcon = focused => {
+export let checkmarkIcon = focused => {
 	return focused === true ? (
 		<svg
 			className="nav_nav-icons"
