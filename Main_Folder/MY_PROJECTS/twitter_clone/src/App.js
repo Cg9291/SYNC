@@ -3,7 +3,7 @@ import "./App.scss";
 import React, { useState, useEffect, useRef } from "react";
 import Header from "./components/Header";
 import FollowsRecSection from "./components/FollowRecs";
-import {Navigation} from "./components/Navigation";
+import Navigation from "./components/Navigation";
 import Profile from "./functions/profile";
 import SearchBar from "./components/Searchbar";
 import Timeline from "./components/Timeline";
@@ -50,7 +50,7 @@ TABLETS!!
 function App() {
 	let scrollTracker = useRef();
 	let focusedText = useRef([]);
-	//let navFirstElement=useRef()
+	let navFirstElement=useRef()
 	//let autoFocusNavElement=useRef();
 
 	let [clickedElement, setClickedElement] = useState("forYou");
@@ -75,19 +75,16 @@ function App() {
 	});
 
 	//EFFECTS
-/*
+
 	useEffect(()=>{
 		navFirstElement.current.focus();
-	},[]) */
+	},[])
 
 	useEffect(() => {
 		setPrevScrollTopValue(scrollTracker.current.scrollTop);
 		console.log(scrollTracker.current.scrollTop);
 	}, []);
 
-	// useEffect(()=>{
-	// 	autoFocusNavElement.style.color="red"
-	// })
 
 	useEffect(
 		() =>
@@ -104,7 +101,7 @@ function App() {
 	useEffect(() => {
 		clickedElement === "forYou"
 			? setFocusedBarLength(
-					/* `${focusedText.current[clickedElement].offsetWidth + 3.16}px` */"56px",
+					`${focusedText.current[clickedElement].offsetWidth /* + 3.16 */}px`/* "56px" */,
 			  )
 			: setFocusedBarLength(
 					`${focusedText.current[clickedElement].offsetWidth}px`,
@@ -169,7 +166,7 @@ function App() {
 			ref={scrollTracker}
 		>
 			<section className="nav-container">
-				<Navigation /* ref={navFirstElement} */ />
+				<Navigation navFirstElementRef={navFirstElement} />
 				{profile(imageSource, "TheSportsMediaCh...", "TheSportsMediaC")}
 			</section>
 			<section className="middle-container">

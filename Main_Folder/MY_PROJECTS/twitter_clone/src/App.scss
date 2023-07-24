@@ -376,6 +376,9 @@ overflow-x: visible;
 		max-height: 100%;
 		width: 100%;
 
+
+
+
 		@media only screen and (width>=500px) and (height>=500px) {
 			width: 60px;
 			//max-height: 402px;
@@ -952,18 +955,34 @@ button:hover {
 	&_ul {
 		display: flex;
 		align-items: stretch;
+		justify-content: space-between;
 		text-decoration: none;
 		list-style: none;
 		font-weight: 500;
 		height: 100%;
 		width: 100%;
 		margin: 0;
+		//margin-left:-1px;
 		padding: 0 0 0 0;
 		font-size: 15px;
 		//flex:1 1 0;
 		box-sizing: border-box;
 		overflow-x: auto; //this allows for perfect alignment of the texts in this case
 		flex-wrap: nowrap;
+		/* overflow-x: auto;
+		overflow-y: hidden;
+		position:relative;
+		z-index: 0;
+		font-size: 15px;
+		text-size-adjust: 100%;
+		scroll-padding-left: 36px;
+		scroll-padding-right: 36px;
+		scroll-padding-top: 0px;
+		scroll-snap-type: x mandatory;
+		-webkit-box-align: stretch;
+		-webkit-box-direction:normal;
+		-webkit-box-flex :1;
+		-webkit-box-orient:horizontal; */
 	}
 	&_li {
 		display: flex;
@@ -1021,7 +1040,7 @@ button:hover {
 	&_anchor--clicked {
 		@extend .header_anchor;
 		flex-direction: column;
-		padding: 16px 16px 0 16px;
+		padding: 16px 16px 0;
 		box-sizing: border-box;
 		div {
 			font-family: chirp;
@@ -1032,6 +1051,7 @@ button:hover {
 			font-size: 15px;
 			font-stretch: 100%;
 			font-weight: 700;
+			font-style: normal;
 			letter-spacing: normal;
 			word-wrap: wrap;
 			color: black;
@@ -1043,11 +1063,16 @@ button:hover {
 		.blue-focused-bar {
 			display: block;
 			margin: auto 0 1px 0;
+			//margin-left: -2px;
+			//padding-left:2px;
+			align-self: center;
 			justify-self: end;
 			background-color: rgb(29, 155, 240);
 			height: 4px;
 			border-radius: 99px;
 			border: none;
+			//min-width: 56px;
+			box-sizing: border-box;
 
 			@media screen and (width>=500px) {
 				margin: auto 0 0 0;

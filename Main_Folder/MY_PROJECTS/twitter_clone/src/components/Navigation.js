@@ -1,5 +1,5 @@
 import { useState, forwardRef, Provider } from "react";
-import NavListItems from "../functions/navListItems.js";
+import {NavListItems} from "../components/NavListItems.js";
 import { tweetButton } from "../functions/tweetButton.js";
 import { NavFocusContext } from "../contexts/contexts.js";
 import {
@@ -17,11 +17,12 @@ import {
 	communitiesIcon,
 } from "../assets/icons/svg_exports";
 
-export const Navigation = forwardRef(function (props,/* navFirstElement */) {
-
+export default function Navigation(props) {
 	NavListItems.defaultProps = {
 		classNames: "nav_li",
 	};
+
+	const navFirstElementRef=props.navFirstElementRef;
 	return (
 		<nav className="nav">
 			<div className="wrapper">
@@ -37,7 +38,7 @@ export const Navigation = forwardRef(function (props,/* navFirstElement */) {
 							identifier={homeIcon}
 							label={"Home"}
 							classNames={"nav_li--first-item"}
-							//ref={navFirstElement}
+							ref={navFirstElementRef}
 						/>
 						<NavListItems
 							identifier={searchIconNav}
@@ -55,26 +56,32 @@ export const Navigation = forwardRef(function (props,/* navFirstElement */) {
 						<NavListItems
 							identifier={listsIcon}
 							label={"Lists"}
+							classNames={`${NavListItems.defaultProps.classNames} hidden500`}
 						/>
 						<NavListItems
 							identifier={bookmarksIcon}
 							label={"Bookmarks"}
+							classNames={`${NavListItems.defaultProps.classNames} hidden750-h`}
 						/>
 						<NavListItems
 							identifier={communitiesIcon}
 							label={"Communities"}
+							classNames={`${NavListItems.defaultProps.classNames} hidden500`}
 						/>
 						<NavListItems
 							identifier={checkmarkIcon}
 							label={"Verified"}
+							classNames={`${NavListItems.defaultProps.classNames} hidden500`}
 						/>
 						<NavListItems
 							identifier={profileIcon}
 							label={"Profile"}
+							classNames={`${NavListItems.defaultProps.classNames} hidden500`}
 						/>
 						<NavListItems
 							identifier={moreIcon}
 							label={"More"}
+							classNames={`${NavListItems.defaultProps.classNames} hidden500`}
 						/>
 					</ul>
 				</NavFocusContext.Provider>
@@ -82,4 +89,4 @@ export const Navigation = forwardRef(function (props,/* navFirstElement */) {
 			</div>
 		</nav>
 	);
-});
+}
