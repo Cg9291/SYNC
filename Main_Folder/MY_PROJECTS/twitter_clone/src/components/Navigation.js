@@ -3,7 +3,7 @@ import {NavListItems} from "../components/NavListItems.js";
 import { tweetButton } from "../functions/tweetButton.js";
 import { NavFocusContext } from "../contexts/contexts.js";
 import {
-	twitterLogoNav,
+	twitterXLogoNav,
 	homeIcon,
 	searchIconNav,
 	bellIcon,
@@ -26,7 +26,7 @@ export default function Navigation(props) {
 	return (
 		<nav className="nav">
 			<div className="wrapper">
-				<div className="nav_twitter-logo-box">{twitterLogoNav}</div>
+				<div className="nav_twitter-logo-box">{twitterXLogoNav}</div>
 				<NavFocusContext.Provider
 					value={{
 						focusedLi: props.focusedLi,

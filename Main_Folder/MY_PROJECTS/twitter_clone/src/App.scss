@@ -351,7 +351,7 @@ overflow-x: visible;
 			border-radius: 0;
 			padding: 0;
 			margin: 0;
-			fill: rgb(29, 155, 240);
+			fill: rgb(0,0,0);
 		}
 
 		@media only screen and (width>=500px) {
@@ -933,7 +933,7 @@ button:hover {
 		padding: 0;
 		margin: 0;
 		flex: 1 1 auto;
-		fill: rgb(29, 155, 240);
+		fill: rgb(0,0,0);
 
 		@media only screen and (width>=500px) {
 			display: none;

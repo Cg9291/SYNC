@@ -3,7 +3,7 @@ import gificon from "../twitter-newui-iconkit/icons to be used/twitter-gif.png";
 import alignicon from "../twitter-newui-iconkit/icons to be used/twitter-align.png";
 import locationicon from "../twitter-newui-iconkit/icons to be used/twitter-location.png";
 import noiconicon from "../twitter-newui-iconkit/icons to be used/twitter-cross-2.png";
-import {twitterLogoHeader} from "../assets/icons/svg_exports.js";
+import {twitterXLogoHeader} from "../assets/icons/svg_exports.js";
 import { ForwardedRef, forwardRef } from "react";
 import { useRef } from "react";
 
@@ -23,7 +23,7 @@ export default function Header(props) {
 					</div>
 				</div>
 				<span className="header_text-span">Home</span>
-				<div className="header_twitter-logo-box">{twitterLogoHeader}</div>
+				<div className="header_twitter-logo-box">{twitterXLogoHeader}</div>
 				<div className="alignment-boxes"></div>
 			</div>
 			<div className="header_header-bottom">

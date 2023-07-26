@@ -15,6 +15,7 @@ import { moreInfo } from "./functions/moreInfo";
 
 /* TODO
 GLOBAL!!
+*add a way to limit width of tweets userNames when too long
 *add conditionallity for checkmark display in backup timeline
 *work on mass imports for tweetArray function
 *program profile username to end "..." when text is too long
