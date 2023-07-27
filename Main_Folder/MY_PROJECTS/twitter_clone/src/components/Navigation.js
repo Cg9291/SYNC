@@ -13,7 +13,6 @@ import {
 	checkmarkIcon,
 	profileIcon,
 	moreIcon,
-	hashtagIcon,
 	communitiesIcon,
 } from "../assets/icons/svg_exports";
 

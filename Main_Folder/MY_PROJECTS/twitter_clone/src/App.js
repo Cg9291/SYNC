@@ -38,7 +38,6 @@ Once timeline is switched from embed to api
 -review icons'svgs
 
 TABLETS!!
-*change svg fill on focus
 *add blue color to search bar border+icon on focus/selection
 *review flexible sizing for trending cards(maybe after api is added)
 *review scroll behavior of right container to make it move with timeline up to a point(need to join mid and third container)
