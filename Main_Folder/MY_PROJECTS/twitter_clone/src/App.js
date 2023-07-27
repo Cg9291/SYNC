@@ -1,9 +1,9 @@
 import logo from "./logo.svg";
 import "./App.scss";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
 import Header from "./components/Header";
 import FollowsRecSection from "./components/FollowRecs";
-import Navigation from "./components/Navigation";
+import { Navigation } from "./components/Navigation";
 import Profile from "./functions/profile";
 import SearchBar from "./components/Searchbar";
 import Timeline from "./components/Timeline";
@@ -11,6 +11,7 @@ import TrendingSection from "./components/Trending";
 import { GetVerified } from "./components/GetVerified";
 import { profile } from "./functions/profile.js";
 import { moreInfo } from "./functions/moreInfo";
+import { NavListItems } from "./components/NavListItems";
 /* import {tweetButton} from "./components/TweetButton.js"; */
 
 /* TODO
@@ -50,10 +51,13 @@ TABLETS!!
 function App() {
 	let scrollTracker = useRef();
 	let focusedText = useRef([]);
-	let navFirstElement=useRef()
+	let navComponentRef = useRef();
+	let navFirstElement = useRef();
 	//let autoFocusNavElement=useRef();
 
 	let [clickedElement, setClickedElement] = useState("forYou");
+
+	let [clickedNavElement, setClickedNavElement] = useState();
 
 	let [focusedBarLength, setFocusedBarLength] = useState();
 
@@ -76,15 +80,31 @@ function App() {
 
 	//EFFECTS
 
-	useEffect(()=>{
+	useEffect(() => {
 		navFirstElement.current.focus();
-	},[])
+	}, []);
+
+	// useLayoutEffect(() => {
+	// 	const myFn = e => {
+	// 		setClickedNavElement(e.target.className.baseVal);
+
+	// 	/* 	e.target.className.baseVal === "nav_nav-icons"
+	// 			? alert("workd")
+	// 			: alert(e.target.className.baseVal); */
+	// 	};
+
+
+	// 	window.addEventListener("mousedown", myFn);
+
+	// 	window.addEventListener("blur", myFn);
+
+	// 	return () => window.removeEventListener("click", myFn);
+	// });
 
 	useEffect(() => {
 		setPrevScrollTopValue(scrollTracker.current.scrollTop);
 		console.log(scrollTracker.current.scrollTop);
 	}, []);
-
 
 	useEffect(
 		() =>
@@ -101,7 +121,9 @@ function App() {
 	useEffect(() => {
 		clickedElement === "forYou"
 			? setFocusedBarLength(
-					`${focusedText.current[clickedElement].offsetWidth /* + 3.16 */}px`/* "56px" */,
+					`${
+						focusedText.current[clickedElement].offsetWidth /* + 3.16 */
+					}px` /* "56px" */,
 			  )
 			: setFocusedBarLength(
 					`${focusedText.current[clickedElement].offsetWidth}px`,
@@ -152,10 +174,10 @@ function App() {
 		focusedText: focusedText,
 	};
 
-	Navigation.defaultProps={
-		focusedLi:focusedLi,
-		setFocusedLi:setFocusedLi
-	}
+	Navigation.defaultProps = {
+		focusedLi: focusedLi,
+		setFocusedLi: setFocusedLi,
+	};
 
 	let imageSource =
 		"https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640";
@@ -166,7 +188,11 @@ function App() {
 			ref={scrollTracker}
 		>
 			<section className="nav-container">
-				<Navigation navFirstElementRef={navFirstElement} />
+				<Navigation
+					ref={navComponentRef}
+					navFirstElementRef={navFirstElement}
+					clickedNavElement={clickedNavElement}
+				/>
 				{profile(imageSource, "TheSportsMediaCh...", "TheSportsMediaC")}
 			</section>
 			<section className="middle-container">

@@ -1,5 +1,5 @@
 import { useState, forwardRef, Provider } from "react";
-import {NavListItems} from "../components/NavListItems.js";
+import { NavListItems } from "../components/NavListItems.js";
 import { tweetButton } from "../functions/tweetButton.js";
 import { NavFocusContext } from "../contexts/contexts.js";
 import {
@@ -16,20 +16,24 @@ import {
 	communitiesIcon,
 } from "../assets/icons/svg_exports";
 
-export default function Navigation(props) {
+export const Navigation = forwardRef((props, navComponentRef) => {
 	NavListItems.defaultProps = {
 		classNames: "nav_li",
 	};
 
-	const navFirstElementRef=props.navFirstElementRef;
+	const navFirstElementRef = props.navFirstElementRef;
 	return (
-		<nav className="nav">
+		<nav
+			className="nav"
+			ref={navComponentRef}
+		>
 			<div className="wrapper">
 				<div className="nav_twitter-logo-box">{twitterXLogoNav}</div>
 				<NavFocusContext.Provider
 					value={{
 						focusedLi: props.focusedLi,
 						setFocusedLi: props.setFocusedLi,
+						clickedNavElement: props.clickedNavElement,
 					}}
 				>
 					<ul className="nav_ul">
@@ -88,4 +92,4 @@ export default function Navigation(props) {
 			</div>
 		</nav>
 	);
-}
+});
