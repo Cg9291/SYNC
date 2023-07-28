@@ -7,60 +7,26 @@ export const NavListItems = forwardRef(function (props, navFirstElementRef) {
 
 	let focusedLi = focusedLiContext.focusedLi;
 	let setFocusedLi = focusedLiContext.setFocusedLi;
-	let clone = {};
 
-	let nextState = {};
-
-	let myModFn = () => {
-		Object.keys(focusedLi).forEach(key => (clone.focusedLi[key] = true));
-		console.log(clone);
-		focusedLiContext.setFocusedLi(clone);
-		console.log(clone);
+	const focusHandler = () => {
+		let nextState = {};
+		Object.keys(focusedLi).forEach(key => {
+			nextState[key] = false;
+		});
+		nextState[props.identifier.name] = true;
+		setFocusedLi(nextState);
+		//return focusedLi;
 	};
-	//console.log(focusedLi)
+
 	return (
 		<li className={props.classNames}>
 			<a
 				href="#"
 				className="nav_a"
 				ref={navFirstElementRef}
-				/* 	onClick={() => {
-					focusedLiContext.setFocusedLi(po => ({
-						...po,
-						[props.identifier]: true,
-					}));
-				}} */
-
-				/* onFocus={() => {
-					focusedLiContext.setFocusedLi(po => ({
-						...po,
-						[props.identifier]: true,
-					}));
-				}}
-				onBlur={() => {
-					//alert(focusedLiContext.clickedNavElement);
-					if (focusedLiContext.clickedNavElement === "nav_nav-icons") {
-						focusedLiContext.setFocusedLi(po => ({
-							...po,
-							[props.identifier]: false,
-						}));
-					}
-				}} */
-
-				onFocus={() => {
-
-					Object.keys(focusedLi).forEach(key => {
-						nextState[key] = false;
-					});
-					nextState[props.identifier] = true;
-
-					setFocusedLi(focusedLi => nextState);
-
-					console.log(focusedLi, nextState,props.identifier.name);
-					return focusedLi;
-				}}
+				onFocus={() => focusHandler()}
 			>
-				{props.identifier(focusedLiContext.focusedLi[props.identifier])}
+				{props.identifier(focusedLiContext.focusedLi[props.identifier.name])}
 				<span className="nav_text">{props.label}</span>
 			</a>
 		</li>

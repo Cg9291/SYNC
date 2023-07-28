@@ -16,7 +16,6 @@ import { NavListItems } from "./components/NavListItems";
 
 /* TODO
 GLOBAL!!
-*review object modification of onfocus function in NavListItems
 *add a way to limit width of tweets userNames when too long
 *add conditionallity for checkmark display in backup timeline
 *work on mass imports for tweetArray function
@@ -85,22 +84,9 @@ function App() {
 		navFirstElement.current.focus();
 	}, []);
 
-	// useLayoutEffect(() => {
-	// 	const myFn = e => {
-	// 		setClickedNavElement(e.target.className.baseVal);
-
-	// 	/* 	e.target.className.baseVal === "nav_nav-icons"
-	// 			? alert("workd")
-	// 			: alert(e.target.className.baseVal); */
-	// 	};
-
-
-	// 	window.addEventListener("mousedown", myFn);
-
-	// 	window.addEventListener("blur", myFn);
-
-	// 	return () => window.removeEventListener("click", myFn);
-	// });
+	useEffect(() => {
+		console.log(JSON.stringify(focusedLi));
+	}, [focusedLi]);
 
 	useEffect(() => {
 		setPrevScrollTopValue(scrollTracker.current.scrollTop);
@@ -114,7 +100,6 @@ function App() {
 					? setHeaderHeight("-53.5px")
 					: setHeaderHeight("-0.5px");
 				setPrevScrollTopValue(scrollTracker.current.scrollTop);
-				// console.log(scrollTracker.current.scrollTop,"scrolled");
 			}),
 		//THIS FUNCTION IS SET TO ONLY WORK ON SIZES<500PX..SEE CSS
 	);
@@ -130,7 +115,6 @@ function App() {
 					`${focusedText.current[clickedElement].offsetWidth}px`,
 			  );
 		console.log(focusedText.current[clickedElement].offsetWidth);
-		/* setFocusedBarLength(focusedText.current[clickedElement]) */
 	}, [clickedElement]);
 
 	//FUNCTIONS
