@@ -1,25 +1,31 @@
-import pic from "../assets/pictures/profile_pictures/nba_profile_picture.jpeg"
+import nba_pp from "../assets/pictures/profile_pictures/nba_profile_picture.jpeg";
+import nfl_pp from "../assets/pictures/profile_pictures/nfl_profile-picture.jpeg";
+import ufc_pp from "../assets/pictures/profile_pictures/ufc.jpeg"
+
 import { nbaProfilePic } from "../assets/pictures/profile_pictures/index.js";
 
-import media from "../assets/pictures/tweet_pictures/lakers_tweet_picture.jpg"
-import media2 from "../assets/pictures/tweet_pictures/jokic.jpeg"
+import media from "../assets/pictures/tweet_pictures/lakers_tweet_picture.jpg";
+import media2 from "../assets/pictures/tweet_pictures/jokic.jpeg";
+import nflmedia from "../assets/pictures/tweet_pictures/justin_herbert.jpg";
+import ufcMedia from "../assets/pictures/tweet_pictures/ufc.jpg"
 
-import MstudiosPP from "../assets/pictures/profile_pictures/Marvel_Studios.jpeg"
+import MstudiosPP from "../assets/pictures/profile_pictures/Marvel_Studios.jpeg";
 
-import MAssembledTP from "../assets/pictures/tweet_pictures/Marvel_Assembled.jpeg"
+import MAssembledTP from "../assets/pictures/tweet_pictures/Marvel_Assembled.jpeg";
 export const tweetsArray = [
 	{
 		authorInfo: {
-			profilePicture: pic,
-			userName: "ESPN on TNT",
-			userHandle: "ESPN",
+			profilePicture: nfl_pp,
+			userName: "NFL",
+			userHandle: "NFL",
 		},
-		tweetText: "This is a test tweet",
-		tweetMedia: media2,
+		tweetText:
+			"Chargers, QB Justin Herbert agree to 5-year, $262.5M contract extension. (via @rapsheet,@MikeGarafolo)",
+		tweetMedia: nflmedia,
 	},
 	{
 		authorInfo: {
-			profilePicture: nbaProfilePic,
+			profilePicture: nba_pp,
 			userName: "NBA",
 			userHandle: "NBA",
 		},
@@ -38,16 +44,16 @@ export const tweetsArray = [
 	},
 	{
 		authorInfo: {
-			profilePicture: nbaProfilePic,
-			userName: "NBA",
-			userHandle: "NBA",
+			profilePicture: ufc_pp,
+			userName: "UFC",
+			userHandle: "UFC",
 		},
-		tweetText: "This is a second test tweet",
-		tweetMedia: media,
+		tweetText: "It's time for the fighters to hit the scale ⚖️ Join us live for the #UFC291 Weigh-In Show now!📺http://youtube.com/watch?v=5tno0slQ26E",
+		tweetMedia: ufcMedia,
 	},
 	{
 		authorInfo: {
-			profilePicture: pic,
+			profilePicture: nba_pp,
 			userName: "ESPN on TNT",
 			userHandle: "ESPN",
 		},
@@ -65,7 +71,7 @@ export const tweetsArray = [
 	},
 	{
 		authorInfo: {
-			profilePicture: pic,
+			profilePicture: nba_pp,
 			userName: "ESPN on TNT",
 			userHandle: "ESPN",
 		},

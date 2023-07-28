@@ -28,8 +28,11 @@ export const timelineTweets = tweetObj => {
 			</div>
 			<div className="timeline-backup_main-section-container">
 				<div className="timeline-backup_header">
-					<span className="timeline-backup_header_user-name">
-						{tweetAuthorUserName}
+					<span className="timeline-backup_header_user-name-wrapper">
+						<div className="timeline-backup_header_user-name">
+							{tweetAuthorUserName}
+						</div>
+						<span></span>
 					</span>
 					<span className="timeline-backup_header_checkmark-wrapper">
 						{checkMark}
