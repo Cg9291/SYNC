@@ -16,6 +16,7 @@ import { NavListItems } from "./components/NavListItems";
 
 /* TODO
 GLOBAL!!
+*review object modification of onfocus function in NavListItems
 *add a way to limit width of tweets userNames when too long
 *add conditionallity for checkmark display in backup timeline
 *work on mass imports for tweetArray function
@@ -67,7 +68,7 @@ function App() {
 
 	let [focusedLi, setFocusedLi] = useState({
 		homeIcon: true,
-		searchIcon: false,
+		searchIconNav: false,
 		bellIcon: false,
 		messagesIcon: false,
 		listsIcon: false,

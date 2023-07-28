@@ -1,16 +1,23 @@
 import { useContext, forwardRef } from "react";
 import { NavFocusContext } from "../contexts/contexts.js";
+import { messagesIcon } from "../assets/icons/svg_exports.js";
 
 export const NavListItems = forwardRef(function (props, navFirstElementRef) {
 	const focusedLiContext = useContext(NavFocusContext);
 
 	let focusedLi = focusedLiContext.focusedLi;
+	let setFocusedLi = focusedLiContext.setFocusedLi;
 	let clone = {};
 
+	let nextState = {};
+
 	let myModFn = () => {
-		Object.keys(focusedLi).forEach(key => (clone.focusedLi[key] = true));console.log(clone);
-		focusedLiContext.setFocusedLi(clone);alert(clone)
+		Object.keys(focusedLi).forEach(key => (clone.focusedLi[key] = true));
+		console.log(clone);
+		focusedLiContext.setFocusedLi(clone);
+		console.log(clone);
 	};
+	//console.log(focusedLi)
 	return (
 		<li className={props.classNames}>
 			<a
@@ -40,7 +47,18 @@ export const NavListItems = forwardRef(function (props, navFirstElementRef) {
 					}
 				}} */
 
-				onClick={() => myModFn}
+				onFocus={() => {
+
+					Object.keys(focusedLi).forEach(key => {
+						nextState[key] = false;
+					});
+					nextState[props.identifier] = true;
+
+					setFocusedLi(focusedLi => nextState);
+
+					console.log(focusedLi, nextState,props.identifier.name);
+					return focusedLi;
+				}}
 			>
 				{props.identifier(focusedLiContext.focusedLi[props.identifier])}
 				<span className="nav_text">{props.label}</span>
