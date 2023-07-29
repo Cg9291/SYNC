@@ -296,17 +296,47 @@ export let writeTweetIcon = (
 	</svg>
 );
 
-export let ellipsis = (
-	<svg
-		viewBox="0 0 24 24"
-		aria-hidden="true"
-		className="more-info_ellipsis"
-	>
-		<g>
-			<path d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm7 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"></path>
-		</g>
-	</svg>
-);
+export let ellipsis = usage =>
+	//userprofile,tweet,trending,moreinfo
+	usage == "userprofile" ? (
+		<svg
+			viewBox="0 0 24 24"
+			className="profile-wrapper_ellipsis"
+		>
+			<g>
+				<path d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm7 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"></path>
+			</g>
+		</svg>
+	) : usage == "tweets" ? (
+		<svg
+			viewBox="0 0 24 24"
+			className="timeline-backup_header_ellipsis"
+		>
+			<g>
+				<path d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm7 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"></path>
+			</g>
+		</svg>
+	) : usage == "trendingcards" ? (
+		<svg
+			viewBox="0 0 24 24"
+			className="trending-wrapper_categories_ellipsis"
+		>
+			<g>
+				<path d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm7 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"></path>
+			</g>
+		</svg>
+	) : (
+		<svg
+			viewBox="0 0 24 24"
+			aria-hidden="true"
+			className="more-info_ellipsis"
+		>
+			<g>
+				<path d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm7 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"></path>
+			</g>
+		</svg>
+	);
+;
 
 export let checkMark = (
 	<svg

@@ -8,6 +8,7 @@ export default function SearchBar(props) {
 					{searchIconSearchBar}</div>
 				<input
 					className="searchBar_input"
+					type="text"
 					placeholder="Search Twitter"
 				></input>
 			</label>

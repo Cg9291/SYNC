@@ -16,27 +16,23 @@ import { NavListItems } from "./components/NavListItems";
 
 /* TODO
 GLOBAL!!
-*add a way to limit width of tweets userNames when too long
-*add conditionallity for checkmark display in backup timeline
+
 *work on mass imports for tweetArray function
 *program profile username to end "..." when text is too long
 *remove all references to twitter i.e classes using "twitter",tweet,word
 *review color of "getVerified text" & "show more" footers
 *add profiles and trending header images
+*review all texts rendering on mac vs windows
+
+-add a way to limit width of tweets userNames when too long
+-add conditionallity for checkmark display in backup timeline
 
 
 MOBILE!!
-*review anchor elements hover backgrounds
 *review for you clicked bar size + words alignment
-
-Once timeline is switched from embed to api
-
-
-*add notification blue indicators
-*add links to clickable elements
-
+-add notification blue indicators
+-add links to clickable elements
 -find a way to make header scroll behaviour smoother and more consistent
--review icons'svgs
 
 TABLETS!!
 *add blue color to search bar border+icon on focus/selection

@@ -1,5 +1,4 @@
-import { checkMark } from "../assets/icons/svg_exports";
-import { ellipsis } from "../assets/icons/svg_exports";
+import { checkMark,ellipsis} from "../assets/icons/svg_exports";
 import {
 	commentsIcon,
 	retweetsIcon,
@@ -43,7 +42,7 @@ export const timelineTweets = tweetObj => {
 					</span>
 					<span> · </span>
 					<span className="timeline-backup_header_posting-time">5h</span>
-					<span className="timeline-backup_header_ellipsis">{ellipsis}</span>
+					<span className="timeline-backup_header_ellipsis">{ellipsis('tweets')}</span>
 				</div>
 				<div className="timeline-backup_tweet-text">{tweetText}</div>
 				<div className="timeline-backup_media-wrapper">

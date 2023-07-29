@@ -19,7 +19,7 @@ export const moreInfo = () => {
 				<span className="more-info_text">Ads info</span>
 			</a>
 			<a className="more-info_elements">
-				<span className="more-info_text">More {ellipsis}</span>
+				<span className="more-info_text">More {ellipsis()}</span>
 			</a>
 			<a className="more-info_elements">
 				<span className="more-info_text">© 2023 X Corp.</span>
