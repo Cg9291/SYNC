@@ -552,6 +552,7 @@ button:hover {
 
 .main-container {
 	display: flex;
+	overflow-y: scroll;
 	@media only screen and (width>=688px) {
 		width: 600px;
 		flex: 2 0 auto;
@@ -1496,6 +1497,16 @@ button:hover {
 		max-width: 290px;
 		//padding-left: 1px;
 		box-sizing: border-box;
+		position: sticky;
+		top:-15px;
+		overflow-y: hidden;
+		//top:-100px;
+		z-index:0;
+	}
+
+	@media screen and (width>=1078px) {
+		max-width: 350px;
+		width: 350px;
 	}
 
 	@media screen and (width>=1078px) {
@@ -1510,6 +1521,9 @@ button:hover {
 
 .searchBar-wrapper {
 	display: none;
+	position: sticky;
+	top:4.5px;
+	z-index: 1;
 	@media screen and (width>=988px) {
 		position: sticky;
 		top: 0;
