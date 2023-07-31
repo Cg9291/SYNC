@@ -222,11 +222,13 @@ li {
 		padding: 0;
 		max-width: unset;
 		width: 88px;
+		max-width: 88px;
 		border: none;
 	}
 
 	@media only screen and (width>=688px) {
 		width: 88px;
+		max-width: unset;
 		flex: 1 1 auto;
 		align-items: end;
 		padding: 0 8px;
@@ -234,6 +236,7 @@ li {
 
 	@media only screen and (width>=988px) {
 		width: 68px;
+		//max-width: 68px;
 		flex: 1 0 auto;
 		align-items: end;
 		//justify-content: end;
@@ -243,20 +246,24 @@ li {
 
 	@media screen and (width>=1008px) {
 		width: 88px;
+		//max-width: 88px;
 		flex: 1 0 auto;
 		overflow-y: hidden;
 	}
-	@media screen and (width>=1025px) {
+	/* @media screen and (width>=1025px) {
 		width: 96.5px;
+		//max-width: 96.5px;
 		align-items: end;
-	}
-	@media screen and (width>=width>=1078px) {
+	} */
+	@media screen and (width>=1078px) {
 		width: 88px;
+		//max-width: 88px;
 		align-items: end;
 		//background-color: red;
 	}
 	@media screen and (width>=1265px) {
 		width: 275px;
+		//max-width: 275px;
 		align-items: end;
 		padding: 0;
 		//box-sizing: border-box;
@@ -424,6 +431,7 @@ li {
 
 		@media only screen and (width>=1265px) {
 			padding: 4px 0;
+			border-radius: 99px;
 		}
 	}
 
@@ -471,6 +479,7 @@ li {
 
 		@media screen and (width>=1265px) {
 			width: 100%;
+			height: 120%;
 			justify-content: flex-start;
 			padding-left: 12px;
 		}
@@ -485,6 +494,16 @@ li {
 		/* .nav_nav-icons{
 			fill: black;
 		} */
+	}
+
+	.ts {
+		@extend .nav_a;
+		border-radius: 99px;
+		width: min-content;
+	}
+
+	.ts:hover {
+		background-color: red;
 	}
 
 	&_nav-icons {
@@ -529,6 +548,29 @@ li {
 
 button:hover {
 	background-color: #1d8ad3;
+}
+
+.main-container {
+	display: flex;
+	@media only screen and (width>=688px) {
+		width: 600px;
+		flex: 2 0 auto;
+	}
+
+	@media only screen and (width>=988px) {
+		width: 920px;
+		flex: 1 0 auto;
+	}
+
+	@media screen and (width>=1078px) {
+		width: 990px;
+		flex: 1 0 auto;
+	}
+
+	@media screen and (width>=1265px) {
+		width: 990px;
+		flex: 1 0 auto;
+	}
 }
 
 .wrappers2 {
@@ -760,7 +802,7 @@ button:hover {
 			box-sizing: border-box;
 			justify-content: space-around;
 		}
-		div{
+		div {
 			font-weight: 400;
 			color: rgb(83, 100, 113);
 		}
@@ -774,8 +816,7 @@ button:hover {
 			padding-bottom: 3px;
 			text-overflow: ellipsis;
 			white-space: nowrap;
-			color:#0f1419
-
+			color: #0f1419;
 		}
 		span {
 			//box-sizing: border-box;
@@ -797,14 +838,13 @@ button:hover {
 			// letter-spacing: 1px;
 			// //flex:1 0 auto
 
-				width: 18.75px;
+			width: 18.75px;
 			aspect-ratio: 1/1;
 			box-sizing: border-box;
 			display: flex;
 			align-items: center;
-			fill: rgb(15,20,25);
+			fill: rgb(15, 20, 25);
 		}
-
 	}
 
 	/* @media screen and(688px) {
@@ -1719,13 +1759,13 @@ button:hover {
 					font-weight: 400;
 					display: flex;
 				}
-				&_ellipsis{
+				&_ellipsis {
 					margin-left: auto;
 					max-width: 18.75px;
-					max-height:11px;
+					max-height: 11px;
 					aspect-ratio: 1/1;
 					width: 18.75px;
-			/* aspect-ratio: 1/1;
+					/* aspect-ratio: 1/1;
 			padding: 3px 2px 0px 2px;
 			box-sizing: border-box;
 			display: flex;
@@ -1741,37 +1781,36 @@ button:hover {
 	}
 
 	.trending-wrapper_categories {
-				font-size: 13px;
-				height: 20px;
-				padding: 2.25px 0;
-				box-sizing: border-box;
-				display: flex;
-				//justify-content: space-between;
-				align-items: center;
-				span {
-					max-height: 15.5px;
-					line-height: 16px;
-					font-weight: 400;
-					display: flex;
-				}
-				&_ellipsis{
-					margin-left: auto;
-					aspect-ratio: 1/1;
-					width: 18.75px;
-					fill:rgb(83, 100, 113)
+		font-size: 13px;
+		height: 20px;
+		padding: 2.25px 0;
+		box-sizing: border-box;
+		display: flex;
+		//justify-content: space-between;
+		align-items: center;
+		span {
+			max-height: 15.5px;
+			line-height: 16px;
+			font-weight: 400;
+			display: flex;
+		}
+		&_ellipsis {
+			margin-left: auto;
+			aspect-ratio: 1/1;
+			width: 18.75px;
+			fill: rgb(83, 100, 113);
 			/* aspect-ratio: 1/1;
 			padding: 3px 2px 0px 2px;
 			box-sizing: border-box;
 			display: flex;
 			align-items: center;
 			fill: rgb(83, 100, 113); */
-				}
-			}
+		}
+	}
 
-			// .trending-wrapper_topics {
-			// 	margin-top: 3.5px;
-			// }
-
+	// .trending-wrapper_topics {
+	// 	margin-top: 3.5px;
+	// }
 
 	&_images {
 		width: 68px;
@@ -2041,6 +2080,12 @@ button:hover {
 	}
 
 	@media screen and (width>=1078px) {
+		width: 0px;
+		//max-width: 0px;
+		flex: 1 0 auto;
+	}
+
+	@media screen and (width>=1265px) {
 		width: 0px;
 		//max-width: 0px;
 		flex: 1 0 auto;

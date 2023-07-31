@@ -176,26 +176,28 @@ function App() {
 				/>
 				{profile(imageSource, "TheSportsMediaCh...", "TheSportsMediaC")}
 			</section>
-			<section className="middle-container">
-				<Header
-					headerHeight={headerHeight}
-					ref={focusedText}
-				/>
+			<div className="main-container">
+				<section className="middle-container">
+					<Header
+						headerHeight={headerHeight}
+						ref={focusedText}
+					/>
 
-				<Timeline ref={scrollTracker} />
-			</section>
-			<div className="custom-containers-margin"></div>
-			<section className="right-container ">
-				<SearchBar />
-				<GetVerified />
-				<TrendingSection
-					myTrendingNews={myTrendingNews}
-					imageSource={imageSource}
-				/>
-				<FollowsRecSection />
-				<>{moreInfo()}</>
-			</section>
-			<div className="whiteSpace-right"></div>
+					<Timeline ref={scrollTracker} />
+				</section>
+				<div className="custom-containers-margin"></div>
+				<section className="right-container ">
+					<SearchBar />
+					<GetVerified />
+					<TrendingSection
+						myTrendingNews={myTrendingNews}
+						imageSource={imageSource}
+					/>
+					<FollowsRecSection />
+					<>{moreInfo()}</>
+				</section>
+				<div className="whiteSpace-right"></div>
+			</div>
 		</div>
 	);
 }
