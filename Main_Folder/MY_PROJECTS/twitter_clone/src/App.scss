@@ -169,7 +169,7 @@ li {
 
 	@media only screen and (width>=500px) and (height>=500px) {
 		flex-direction: row;
-		//overflow-x: scroll;
+		overflow-y: scroll;
 	}
 }
 
@@ -229,7 +229,7 @@ li {
 	@media only screen and (width>=688px) {
 		width: 88px;
 		max-width: unset;
-		flex: 1 1 auto;
+		flex: 1 0 auto;
 		align-items: end;
 		padding: 0 8px;
 	}
@@ -552,7 +552,8 @@ button:hover {
 
 .main-container {
 	display: flex;
-	overflow-y: scroll;
+	//overflow-y: scroll;
+	//height: 100vh;
 	@media only screen and (width>=688px) {
 		width: 600px;
 		flex: 2 0 auto;
@@ -889,7 +890,7 @@ button:hover {
 
 	@media only screen and (width>=688px) {
 		width: 600px;
-		flex: 0 1 auto;
+		flex: 0 0 auto;
 		border-right: var(--main-border-style);
 	}
 
@@ -925,6 +926,7 @@ button:hover {
 	@media only screen and (width>=688px) {
 		max-width: 598px;
 		box-sizing: border-box;
+		//position: fixed;
 	}
 
 	&_header-top {
@@ -1144,10 +1146,10 @@ button:hover {
 
 .timeline-wrapper {
 	width: 100%;
+	/* margin-top:107px; */
 	height: auto;
 	padding: 0;
 	z-index: 0;
-	margin: 0;
 }
 
 .timeline-backup {
@@ -1480,12 +1482,14 @@ button:hover {
 
 	@media screen and (width>=688px) {
 		position: sticky;
-		top: 0;
-		display: flex;
+		top: -450px;
+		height: min-content;
+		display: contents;
 		width: auto;
-		flex: 2 1 auto;
+		flex: 1 0 auto;
 		flex-direction: column;
 		overflow-x: hidden;
+		overflow-y: scroll;
 		scrollbar-width: none;
 	}
 
@@ -1497,11 +1501,11 @@ button:hover {
 		max-width: 290px;
 		//padding-left: 1px;
 		box-sizing: border-box;
-		position: sticky;
-		top:-15px;
-		overflow-y: hidden;
+		//position: relative;
+		//top:-15px;
+		//overflow-y: visible;
 		//top:-100px;
-		z-index:0;
+		z-index: 0;
 	}
 
 	@media screen and (width>=1078px) {
@@ -1519,14 +1523,34 @@ button:hover {
 	}
 }
 
+.filler{
+	display: hidden;
+	width: 0;
+}
+.mywrapper {
+	width: 100%;
+	height: min-content;
+	display: contents;
+	flex-direction: column;
+	position: sticky;
+	overflow-y: scroll;
+	z-index:0;
+	//top:-100px
+}
+
+.wrapper-wrapper{
+@media screen and (width>=988px) {
+		flex-basis: 1 0 auto;
+	}
+
+}
 .searchBar-wrapper {
 	display: none;
-	position: sticky;
-	top:4.5px;
-	z-index: 1;
+
 	@media screen and (width>=988px) {
 		position: sticky;
-		top: 0;
+		top: 0px !important;
+		z-index: 1;
 		display: flex;
 		width: 290px;
 		height: 44px;
@@ -1619,6 +1643,7 @@ button:hover {
 		flex-direction: column;
 		width: 290px;
 		min-height: 126px;
+		//margin-top:65px;
 		background-color: rgb(247, 249, 249);
 		border: 1px solid rgb(247, 249, 249);
 		//margin-top: 3px;
@@ -2076,7 +2101,7 @@ button:hover {
 
 .whiteSpace-right {
 	display: none;
-	@media screen and (width>=989px) {
+	@media screen and (width>=988px) {
 		display: flex;
 		flex: 1 0 auto;
 	}

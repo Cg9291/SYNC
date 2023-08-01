@@ -17,6 +17,7 @@ import { NavListItems } from "./components/NavListItems";
 /* TODO
 GLOBAL!!
 
+*fix new classes names
 *work on mass imports for tweetArray function
 *program profile username to end "..." when text is too long
 *remove all references to twitter i.e classes using "twitter",tweet,word
@@ -187,14 +188,20 @@ function App() {
 				</section>
 				<div className="custom-containers-margin"></div>
 				<section className="right-container ">
-					<SearchBar />
-					<GetVerified />
-					<TrendingSection
-						myTrendingNews={myTrendingNews}
-						imageSource={imageSource}
-					/>
-					<FollowsRecSection />
-					<>{moreInfo()}</>
+					<div className="filler"></div>
+
+					<div className="wrapper-wrapper">
+						<div className="mywrapper">
+							<SearchBar />
+							<GetVerified />
+							<TrendingSection
+								myTrendingNews={myTrendingNews}
+								imageSource={imageSource}
+							/>
+							<FollowsRecSection />
+							<>{moreInfo()}</>
+						</div>
+					</div>
 				</section>
 				<div className="whiteSpace-right"></div>
 			</div>
