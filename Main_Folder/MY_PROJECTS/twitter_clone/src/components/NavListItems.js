@@ -27,7 +27,15 @@ export const NavListItems = forwardRef(function (props, navFirstElementRef) {
 				onFocus={() => focusHandler()}
 			>
 				{props.identifier(focusedLiContext.focusedLi[props.identifier.name])}
-				<span className="nav_text">{props.label}</span>
+				<span
+					className={
+						focusedLiContext.focusedLi[props.identifier.name]
+							? "nav_text-focused"
+							: "nav_text"
+					}
+				>
+					{props.label}
+				</span>
 			</a>
 		</li>
 	);

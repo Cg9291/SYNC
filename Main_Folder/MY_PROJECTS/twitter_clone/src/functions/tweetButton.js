@@ -11,7 +11,7 @@ export const tweetButton = (text, btn) =>
 				<span className="tweet-area_pill-btn-text">{text}</span>
 			</button>
 		</form>
-	) : text === "Tweet" ? (
+	) : text === "Post" ? (
 		<div className="tweet-button-container">
 			<a
 				href="#"

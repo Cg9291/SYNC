@@ -496,6 +496,8 @@ li {
 		} */
 	}
 
+
+
 	.ts {
 		@extend .nav_a;
 		border-radius: 99px;
@@ -536,6 +538,11 @@ li {
 			color: black;
 			//margin-left:auto
 		}
+	}
+
+	&_text-focused {
+		@extend .nav_text;
+		font-weight: bold;
 	}
 
 	/* &_text--selected{
@@ -1482,7 +1489,7 @@ button:hover {
 
 	@media screen and (width>=688px) {
 		position: sticky;
-		top: -450px;
+		//top: -10px;
 		height: min-content;
 		display: contents;
 		width: auto;
@@ -1523,7 +1530,7 @@ button:hover {
 	}
 }
 
-.filler{
+.filler {
 	display: hidden;
 	width: 0;
 }
@@ -1534,29 +1541,33 @@ button:hover {
 	flex-direction: column;
 	position: sticky;
 	overflow-y: scroll;
-	z-index:0;
-	//top:-100px
+	z-index: 0;
+	top: -100px;
 }
 
-.wrapper-wrapper{
-@media screen and (width>=988px) {
+.wrapper-wrapper {
+	@media screen and (width>=988px) {
 		flex-basis: 1 0 auto;
+		height: min-content;
 	}
-
 }
 .searchBar-wrapper {
 	display: none;
 
 	@media screen and (width>=988px) {
+		background-color: white;
 		position: sticky;
 		top: 0px !important;
 		z-index: 1;
 		display: flex;
+		align-items: start;
 		width: 290px;
-		height: 44px;
+		height: 53px;
 		min-height: 44px;
-		margin-bottom: 21px;
-		box-sizing: border-box;
+		margin-bottom: 12px;
+		//padding-botom:24.5px;
+		//border: 1px solid red;
+		//box-sizing: border-box;
 	}
 
 	@media screen and (width>=1078px) {
@@ -1568,7 +1579,7 @@ button:hover {
 .searchBar {
 	@media screen and (width>=988px) {
 		width: 100%;
-		height: 100%;
+		height: 44px;
 		border: none;
 		border-radius: 99px;
 		background-color: rgba(239, 243, 244, 255);
@@ -1641,6 +1652,7 @@ button:hover {
 	@media screen and (width>=988px) {
 		display: flex;
 		flex-direction: column;
+		justify-content: stretch;
 		width: 290px;
 		min-height: 126px;
 		//margin-top:65px;
@@ -1665,6 +1677,7 @@ button:hover {
 	height: 100%;
 	padding: 12px 16px;
 	box-sizing: border-box;
+	row-gap: 10px;
 
 	&_header {
 		font-family: chirp;
@@ -2059,7 +2072,7 @@ button:hover {
 	@media screen and (width>=988px) {
 		display: flex;
 		width: 288px;
-		height: 60px;
+		height: 40px;
 		margin: 0 16px;
 		box-sizing: border-box;
 		flex-wrap: wrap;
@@ -2078,8 +2091,9 @@ button:hover {
 		}
 
 		&_ellipsis {
-			width: 18.75px;
-			aspect-ratio: 1/1;
+			width: 17px;
+			height: 13px;
+			margin-top: 2px;
 			padding: 3px 2px 0px 2px;
 			box-sizing: border-box;
 			display: flex;

@@ -88,7 +88,7 @@ export const Navigation = forwardRef((props, navComponentRef) => {
 						/>
 					</ul>
 				</NavFocusContext.Provider>
-				<div className="wrappers2">{tweetButton("Tweet")}</div>
+				<div className="wrappers2">{tweetButton("Post")}</div>
 			</div>
 		</nav>
 	);

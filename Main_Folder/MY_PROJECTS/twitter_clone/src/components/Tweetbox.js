@@ -80,7 +80,7 @@ export default function TweetBox() {
 					<button className="tweet-area_pill-btn">
 						<span className="tweet-area_pill-btn-text">Tweet</span>
 					</button> */}
-					{tweetButton("Tweet", "btn")}
+					{tweetButton("Post", "btn")}
 				</div>
 			</div>
 		</div>
