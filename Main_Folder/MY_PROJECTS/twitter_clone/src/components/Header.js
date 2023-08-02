@@ -3,14 +3,15 @@ import gificon from "../twitter-newui-iconkit/icons to be used/twitter-gif.png";
 import alignicon from "../twitter-newui-iconkit/icons to be used/twitter-align.png";
 import locationicon from "../twitter-newui-iconkit/icons to be used/twitter-location.png";
 import noiconicon from "../twitter-newui-iconkit/icons to be used/twitter-cross-2.png";
-import {twitterXLogoHeader} from "../assets/icons/svg_exports.js";
+import { twitterXLogoHeader } from "../assets/icons/svg_exports.js";
 import { ForwardedRef, forwardRef } from "react";
 import { useRef } from "react";
+import HeaderListItems from "./HeaderListItems.js";
 
 export default function Header(props) {
 	return (
 		<div
-			style={{top: props.headerHeight}}
+			style={{ top: props.headerHeight }}
 			className="header headerTransition"
 		>
 			<div className="header_header-top">
@@ -28,7 +29,16 @@ export default function Header(props) {
 			</div>
 			<div className="header_header-bottom">
 				<ul className="header_ul">
-					<li
+					<HeaderListItems value="For you"/>
+					<HeaderListItems value="Following"/>
+					<HeaderListItems value="My feed"/>
+				</ul>
+			</div>
+		</div>
+	);
+}
+{
+	/* <li
 						className="header_li"
 						onFocus={props.focusHeader}
 					>
@@ -46,7 +56,7 @@ export default function Header(props) {
 							</div>
 							<div
 								className="blue-focused-bar"
-								style={{width: props.focusedBarLength}}
+								style={{ width: props.focusedBarLength }}
 							></div>
 						</a>
 					</li>
@@ -68,7 +78,7 @@ export default function Header(props) {
 							</div>
 							<span
 								className="blue-focused-bar"
-								style={{width: props.focusedBarLength}}
+								style={{ width: props.focusedBarLength }}
 							></span>
 						</a>
 					</li>
@@ -90,12 +100,8 @@ export default function Header(props) {
 							</div>
 							<span
 								className="blue-focused-bar"
-								style={{width: props.focusedBarLength}}
+								style={{ width: props.focusedBarLength }}
 							></span>
 						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	);
+					</li> */
 }

@@ -1,8 +1,9 @@
-import {profile} from "../functions/profile.js";
+import { profile } from "../functions/profile.js";
 
 export default function FollowsRecSection() {
 	let imageSource =
 		"https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640";
+
 	return (
 		<section className="follow-recommendations">
 			<div className="follow-recommendations_cards-header">
@@ -17,13 +18,6 @@ export default function FollowsRecSection() {
 			<div className="follow-recommendations_cards-footer">
 				<a href="#">Show more</a>
 			</div>
-
-			{/* <div class="follow-recommendations_cards">PROFILE #1</div>
-			<div class="follow-recommendations_cards">PROFILE #2</div>
-			<div class="follow-recommendations_cards">PROFILE #3</div>
-			<div class="follow-recommendations_cards-footer">
-				<a href="#">Show more</a>
-			</div> */}
 		</section>
 	);
 }

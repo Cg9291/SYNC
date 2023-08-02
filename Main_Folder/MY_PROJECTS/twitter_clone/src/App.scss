@@ -962,6 +962,15 @@ button:hover {
 		line-height: 20px;
 		text-align: start;
 		flex: 1 0 auto;
+
+		.awrapper {
+			width: max-content;
+			height: 53px;
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+			justify-content: center;
+		}
 		div {
 			font-family: chirp;
 			font-weight: 500;
@@ -978,11 +987,20 @@ button:hover {
 			display: none;
 		}
 	}
-	&_anchor--clicked {
+	&_anchor-focus {
 		@extend .header_anchor;
 		flex-direction: column;
 		padding: 16px 16px 0;
 		box-sizing: border-box;
+		.awrapper {
+			width: max-content;
+			height: 53px;
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+			justify-content: space-between;
+		}
+
 		div {
 			font-family: chirp;
 			font-weight: 700;
@@ -998,7 +1016,7 @@ button:hover {
 			color: black;
 			justify-self: center;
 			@media screen and (width>=500px) {
-				margin-top: 1px;
+				margin-top: 0.5px;
 			}
 		}
 		.blue-focused-bar {
@@ -1007,6 +1025,7 @@ button:hover {
 			align-self: center;
 			justify-self: end;
 			background-color: rgb(29, 155, 240);
+			width: 100%;
 			height: 4px;
 			border-radius: 99px;
 			border: none;

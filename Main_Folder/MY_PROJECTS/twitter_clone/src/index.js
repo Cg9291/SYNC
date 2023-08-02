@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-window.twttr = (function(d, s, id) {
+/* window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
     t = window.twttr || {};
   if (d.getElementById(id)) return t;
@@ -19,7 +19,7 @@ window.twttr = (function(d, s, id) {
   };
 
   return t;
-}(document, "script", "twitter-wjs"));
+}(document, "script", "twitter-wjs")); */
 
 
 

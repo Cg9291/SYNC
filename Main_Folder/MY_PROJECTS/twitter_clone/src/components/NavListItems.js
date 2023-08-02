@@ -24,7 +24,7 @@ export const NavListItems = forwardRef(function (props, navFirstElementRef) {
 				href="#"
 				className="nav_a"
 				ref={navFirstElementRef}
-				onFocus={() => focusHandler()}
+				onFocus={focusHandler}
 			>
 				{props.identifier(focusedLiContext.focusedLi[props.identifier.name])}
 				<span

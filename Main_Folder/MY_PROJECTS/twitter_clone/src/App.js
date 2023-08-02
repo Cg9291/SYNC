@@ -43,7 +43,8 @@ TABLETS!!
 */
 
 /* NOTES:
-	-remember that sticky remains in flow of things vs absolute doesnt..therefore sticky is preferred if you wanna make the sticky element part of a container/group scroll behaviour */
+	-remember that sticky remains in flow of things vs absolute doesnt..therefore sticky is preferred if you wanna make the sticky element part of a container/group scroll behaviour
+	*/
 
 function App() {
 	let scrollTracker = useRef();
@@ -101,18 +102,18 @@ function App() {
 		//THIS FUNCTION IS SET TO ONLY WORK ON SIZES<500PX..SEE CSS
 	);
 
-	useEffect(() => {
-		clickedElement === "forYou"
-			? setFocusedBarLength(
-					`${
-						focusedText.current[clickedElement].offsetWidth /* + 3.16 */
-					}px` /* "56px" */,
-			  )
-			: setFocusedBarLength(
-					`${focusedText.current[clickedElement].offsetWidth}px`,
-			  );
-		console.log(focusedText.current[clickedElement].offsetWidth);
-	}, [clickedElement]);
+	// useEffect(() => {
+	// 	clickedElement === "forYou"
+	// 		? setFocusedBarLength(
+	// 				`${
+	// 					focusedText.current[clickedElement].offsetWidth /* + 3.16 */
+	// 				}px` /* "56px" */,
+	// 		  )
+	// 		: setFocusedBarLength(
+	// 				`${focusedText.current[clickedElement].offsetWidth}px`,
+	// 		  );
+	// 	console.log(focusedText.current[clickedElement].offsetWidth);
+	// }, [clickedElement]);
 
 	//FUNCTIONS
 
