@@ -5,7 +5,8 @@ export default function SearchBar(props) {
 		<div className="searchBar-wrapper">
 			<label className="searchBar">
 				<div className="searchBar_searchIcon-wrapper">
-					{searchIconSearchBar}</div>
+					{searchIconSearchBar}
+				</div>
 				<input
 					className="searchBar_input"
 					type="text"
