@@ -5,10 +5,15 @@ import locationicon from "../twitter-newui-iconkit/icons to be used/twitter-loca
 import noiconicon from "../twitter-newui-iconkit/icons to be used/twitter-cross-2.png";
 import { twitterXLogoHeader } from "../assets/icons/svg_exports.js";
 import { ForwardedRef, forwardRef } from "react";
-import { useRef } from "react";
+import { useRef,useState } from "react";
 import HeaderListItems from "./HeaderListItems.js";
 
 export default function Header(props) {
+	const [focusStatus, setFocusStatus] = useState({
+		"For you": true,
+		Following: false,
+		"My feed": false,
+	}); //im using this instead of css:focus in order to prevent losing focus when any other element outside of this ul is clicked
 	return (
 		<div
 			style={{ top: props.headerHeight }}
@@ -29,9 +34,21 @@ export default function Header(props) {
 			</div>
 			<div className="header_header-bottom">
 				<ul className="header_ul">
-					<HeaderListItems value="For you"/>
-					<HeaderListItems value="Following"/>
-					<HeaderListItems value="My feed"/>
+					<HeaderListItems
+						value="For you"
+						focusStatusState={focusStatus}
+						setFocusStatus={setFocusStatus}
+					/>
+					<HeaderListItems
+						value="Following"
+						focusStatusState={focusStatus}
+						setFocusStatus={setFocusStatus}
+					/>
+					<HeaderListItems
+						value="My feed"
+						focusStatusState={focusStatus}
+						setFocusStatus={setFocusStatus}
+					/>
 				</ul>
 			</div>
 		</div>

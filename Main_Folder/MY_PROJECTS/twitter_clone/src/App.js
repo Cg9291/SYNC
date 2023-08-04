@@ -75,6 +75,7 @@ function App() {
 		profileIcon: false,
 		moreIcon: false,
 	});
+	
 
 	//EFFECTS
 
@@ -82,9 +83,9 @@ function App() {
 		navFirstElement.current.focus();
 	}, []);
 
-	useEffect(() => {
+	/* useEffect(() => {
 		console.log(JSON.stringify(focusedLi));
-	}, [focusedLi]);
+	}, [focusedLi]); */
 
 	useEffect(() => {
 		setPrevScrollTopValue(scrollTracker.current.scrollTop);
@@ -117,10 +118,10 @@ function App() {
 
 	//FUNCTIONS
 
-	const focusHeader = e => {
-		setClickedElement(e.target.id);
-		/* .innerText.length */
-	};
+	// const focusHeader = e => {
+	// 	setClickedElement(e.target.id);
+	// 	/* .innerText.length */
+	// };
 
 	let myTrendingNews = {
 		section1: {
@@ -152,7 +153,7 @@ function App() {
 
 	Header.defaultProps = {
 		clickedElement: clickedElement,
-		focusHeader: focusHeader,
+		//focusHeader: focusHeader,
 		focusedBarLength: focusedBarLength,
 		focusedText: focusedText,
 	};

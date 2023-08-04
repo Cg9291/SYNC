@@ -987,7 +987,7 @@ button:hover {
 			display: none;
 		}
 	}
-	&_anchor-focus {
+	&_anchor-focused {
 		@extend .header_anchor;
 		flex-direction: column;
 		padding: 16px 16px 0;
