@@ -25,9 +25,21 @@ export default function HeaderListItems(props) {
 				}
 				onFocus={handleFocus}
 			>
-				<div className="awrapper">
+				<div
+					className={
+						props.value === "For you"
+							? "awrapper--for-you"
+							: "awrapper"
+					}
+				>
 					<div>{props.value}</div>
-					<div className="blue-focused-bar"></div>
+					<div
+						className={
+							props.value === "For you"
+								? "blue-focused-bar--for-you"
+								: "blue-focused-bar"
+						}
+					></div>
 				</div>
 			</a>
 		</li>

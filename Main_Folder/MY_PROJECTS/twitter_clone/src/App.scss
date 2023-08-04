@@ -1001,6 +1001,13 @@ button:hover {
 			justify-content: space-between;
 		}
 
+		.awrapper--for-you{
+			@extend .awrapper;
+			width: 52.84px;
+			max-width: 52.84px;
+		}
+
+
 		div {
 			font-family: chirp;
 			font-weight: 700;
@@ -1034,6 +1041,11 @@ button:hover {
 			@media screen and (width>=500px) {
 				margin: auto 0 0 0;
 			}
+		}
+
+		.blue-focused-bar--for-you{
+			@extend .blue-focused-bar;
+			width: 56px;
 		}
 	}
 
