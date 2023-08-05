@@ -17,6 +17,7 @@ import { NavListItems } from "./components/NavListItems";
 /* TODO
 GLOBAL!!
 
+*add prompt for searchbar focus
 *adjust top property for right container scroll
 *fix new classes names
 *work on mass imports for tweetArray function
@@ -34,7 +35,7 @@ MOBILE!!
 -find a way to make header scroll behaviour smoother and more consistent
 
 TABLETS!!
-*fix searchbar blue border cutoff on focus
+
 *review flexible sizing for trending cards(maybe after api is added)
 */
 
