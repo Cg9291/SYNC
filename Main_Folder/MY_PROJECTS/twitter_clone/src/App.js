@@ -34,7 +34,7 @@ MOBILE!!
 -find a way to make header scroll behaviour smoother and more consistent
 
 TABLETS!!
-*add blue color to search bar border+icon on focus/selection
+*fix searchbar blue border cutoff on focus
 *review flexible sizing for trending cards(maybe after api is added)
 */
 

@@ -1001,12 +1001,11 @@ button:hover {
 			justify-content: space-between;
 		}
 
-		.awrapper--for-you{
+		.awrapper--for-you {
 			@extend .awrapper;
 			width: 52.84px;
 			max-width: 52.84px;
 		}
-
 
 		div {
 			font-family: chirp;
@@ -1043,7 +1042,7 @@ button:hover {
 			}
 		}
 
-		.blue-focused-bar--for-you{
+		.blue-focused-bar--for-you {
 			@extend .blue-focused-bar;
 			width: 56px;
 		}
@@ -1420,7 +1419,6 @@ button:hover {
 	width: 0;
 }
 
-
 .wrapper-wrapper {
 	@media screen and (width>=988px) {
 		flex-basis: 1 0 auto;
@@ -1449,7 +1447,8 @@ button:hover {
 	top: 0;
 }
 
-.anotherwrapper{
+.anotherwrapper {
+	width: 100%;
 	position: sticky;
 	top: -143px;
 }
@@ -1486,8 +1485,9 @@ button:hover {
 		margin-top: 4.5px;
 		box-sizing: border-box;
 		display: flex;
-		border: none;
+		border: solid 1px white;
 	}
+
 
 	&_searchIcon-wrapper {
 		min-width: 44px;
@@ -1495,6 +1495,7 @@ button:hover {
 		box-sizing: border-box;
 		display: flex;
 		align-items: center;
+		fill: rgb(83, 100, 113);
 	}
 
 	&_search-icon {
@@ -1502,9 +1503,13 @@ button:hover {
 		height: 18.75px;
 		width: 44px;
 		margin: 0;
-		margin-left: 14px;
-		fill: rgb(83, 100, 113);
+		margin-left: 12px;
 		padding: 0;
+	}
+
+	&_searchIcon-wrapper--focused {
+		@extend .searchBar_searchIcon-wrapper;
+		fill: rgb(0, 143, 253);
 	}
 
 	&_input {
@@ -1512,7 +1517,7 @@ button:hover {
 		margin: 0;
 		outline: none;
 		display: flex;
-		padding: 2px 0 0 13px;
+		padding: 0 0 0 11px;
 		font-stretch: extra-expanded;
 	}
 
@@ -1523,6 +1528,11 @@ button:hover {
 		font-stretch: 100%;
 		font-weight: 400;
 	}
+}
+
+.searchBar--focused{
+	@extend .searchBar;
+	border:solid 1px rgb(0, 143, 253);
 }
 
 .getVerified-wrapper {
