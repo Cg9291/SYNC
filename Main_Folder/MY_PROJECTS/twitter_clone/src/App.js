@@ -12,25 +12,23 @@ import { GetVerified } from "./components/GetVerified";
 import { profile } from "./functions/profile.js";
 import { moreInfo } from "./functions/moreInfo";
 import { NavListItems } from "./components/NavListItems";
-/* import {tweetButton} from "./components/TweetButton.js"; */
+
 
 /* TODO
 GLOBAL!!
 
+*adjust top property for right container scroll
 *fix new classes names
 *work on mass imports for tweetArray function
 *program profile username to end "..." when text is too long
 *remove all references to twitter i.e classes using "twitter",tweet,word
-*review color of "getVerified text" & "show more" footers
 *add profiles and trending header images
 *review all texts rendering on mac vs windows
 
--add a way to limit width of tweets userNames when too long
 -add conditionallity for checkmark display in backup timeline
 
 
 MOBILE!!
-*review for you clicked bar size + words alignment
 -add notification blue indicators
 -add links to clickable elements
 -find a way to make header scroll behaviour smoother and more consistent
@@ -38,8 +36,6 @@ MOBILE!!
 TABLETS!!
 *add blue color to search bar border+icon on focus/selection
 *review flexible sizing for trending cards(maybe after api is added)
-*review scroll behavior of right container to make it move with timeline up to a point(need to join mid and third container)
--for you,following and myfeed could use minor position adjustments
 */
 
 /* NOTES:
@@ -51,7 +47,6 @@ function App() {
 	let focusedText = useRef([]);
 	let navComponentRef = useRef();
 	let navFirstElement = useRef();
-	//let autoFocusNavElement=useRef();
 
 	let [clickedElement, setClickedElement] = useState("forYou");
 
@@ -75,17 +70,12 @@ function App() {
 		profileIcon: false,
 		moreIcon: false,
 	});
-	
 
 	//EFFECTS
 
 	useEffect(() => {
 		navFirstElement.current.focus();
 	}, []);
-
-	/* useEffect(() => {
-		console.log(JSON.stringify(focusedLi));
-	}, [focusedLi]); */
 
 	useEffect(() => {
 		setPrevScrollTopValue(scrollTracker.current.scrollTop);
@@ -102,26 +92,6 @@ function App() {
 			}),
 		//THIS FUNCTION IS SET TO ONLY WORK ON SIZES<500PX..SEE CSS
 	);
-
-	// useEffect(() => {
-	// 	clickedElement === "forYou"
-	// 		? setFocusedBarLength(
-	// 				`${
-	// 					focusedText.current[clickedElement].offsetWidth /* + 3.16 */
-	// 				}px` /* "56px" */,
-	// 		  )
-	// 		: setFocusedBarLength(
-	// 				`${focusedText.current[clickedElement].offsetWidth}px`,
-	// 		  );
-	// 	console.log(focusedText.current[clickedElement].offsetWidth);
-	// }, [clickedElement]);
-
-	//FUNCTIONS
-
-	// const focusHeader = e => {
-	// 	setClickedElement(e.target.id);
-	// 	/* .innerText.length */
-	// };
 
 	let myTrendingNews = {
 		section1: {
@@ -153,7 +123,6 @@ function App() {
 
 	Header.defaultProps = {
 		clickedElement: clickedElement,
-		//focusHeader: focusHeader,
 		focusedBarLength: focusedBarLength,
 		focusedText: focusedText,
 	};
@@ -195,13 +164,16 @@ function App() {
 					<div className="wrapper-wrapper">
 						<div className="mywrapper">
 							<SearchBar />
-							<GetVerified />
-							<TrendingSection
-								myTrendingNews={myTrendingNews}
-								imageSource={imageSource}
-							/>
-							<FollowsRecSection />
-							<>{moreInfo()}</>
+
+							<div className="anotherwrapper">
+								<GetVerified />
+								<TrendingSection
+									myTrendingNews={myTrendingNews}
+									imageSource={imageSource}
+								/>
+								<FollowsRecSection />
+								<>{moreInfo()}</>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -212,5 +184,3 @@ function App() {
 }
 
 export default App;
-
-//THIS STARTS THE CHILDREN FUNCTIONS TO THE APP

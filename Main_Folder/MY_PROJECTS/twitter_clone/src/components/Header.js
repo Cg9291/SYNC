@@ -1,11 +1,5 @@
-import squarepicicon from "../twitter-newui-iconkit/icons to be used/twitter-image.png";
-import gificon from "../twitter-newui-iconkit/icons to be used/twitter-gif.png";
-import alignicon from "../twitter-newui-iconkit/icons to be used/twitter-align.png";
-import locationicon from "../twitter-newui-iconkit/icons to be used/twitter-location.png";
-import noiconicon from "../twitter-newui-iconkit/icons to be used/twitter-cross-2.png";
 import { twitterXLogoHeader } from "../assets/icons/svg_exports.js";
-import { ForwardedRef, forwardRef } from "react";
-import { useRef,useState } from "react";
+import { useState } from "react";
 import HeaderListItems from "./HeaderListItems.js";
 
 export default function Header(props) {
@@ -14,6 +8,7 @@ export default function Header(props) {
 		Following: false,
 		"My feed": false,
 	}); //im using this instead of css:focus in order to prevent losing focus when any other element outside of this ul is clicked
+
 	return (
 		<div
 			style={{ top: props.headerHeight }}
@@ -53,72 +48,4 @@ export default function Header(props) {
 			</div>
 		</div>
 	);
-}
-{
-	/* <li
-						className="header_li"
-						onFocus={props.focusHeader}
-					>
-						<a
-							id="forYou"
-							href="#"
-							className={`${
-								props.clickedElement === "forYou"
-									? "header_anchor--clicked"
-									: "header_anchor"
-							}`}
-						>
-							<div ref={ref => (props.focusedText.current["forYou"] = ref)}>
-								For you
-							</div>
-							<div
-								className="blue-focused-bar"
-								style={{ width: props.focusedBarLength }}
-							></div>
-						</a>
-					</li>
-					<li
-						className="header_li"
-						onFocus={props.focusHeader}
-					>
-						<a
-							id="following"
-							href="#"
-							className={`${
-								props.clickedElement === "following"
-									? "header_anchor--clicked"
-									: "header_anchor"
-							}`}
-						>
-							<div ref={ref => (props.focusedText.current["following"] = ref)}>
-								Following
-							</div>
-							<span
-								className="blue-focused-bar"
-								style={{ width: props.focusedBarLength }}
-							></span>
-						</a>
-					</li>
-					<li
-						className="header_li"
-						onFocus={props.focusHeader}
-					>
-						<a
-							id="myFeed"
-							href="#"
-							className={`${
-								props.clickedElement === "myFeed"
-									? "header_anchor--clicked"
-									: "header_anchor"
-							}`}
-						>
-							<div ref={ref => (props.focusedText.current["myFeed"] = ref)}>
-								My feed
-							</div>
-							<span
-								className="blue-focused-bar"
-								style={{ width: props.focusedBarLength }}
-							></span>
-						</a>
-					</li> */
 }

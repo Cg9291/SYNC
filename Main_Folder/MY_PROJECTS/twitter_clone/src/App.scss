@@ -1387,7 +1387,7 @@ button:hover {
 		flex: 1 0 auto;
 		flex-direction: column;
 		overflow-x: hidden;
-		overflow-y: scroll;
+		//overflow-y: scroll;
 		scrollbar-width: none;
 	}
 
@@ -1419,22 +1419,15 @@ button:hover {
 	display: hidden;
 	width: 0;
 }
-.mywrapper {
-	width: 100%;
-	height: min-content;
-	display: contents;
-	flex-direction: column;
-	position: sticky;
-	overflow-y: scroll;
-	z-index: 0;
-	top: -100px;
-}
+
 
 .wrapper-wrapper {
 	@media screen and (width>=988px) {
 		flex-basis: 1 0 auto;
-		height: min-content;
+		height: 10000px;
 		display: flex;
+		position: sticky;
+		top: 0;
 		flex-direction: column;
 		align-items: center;
 		width: 290px;
@@ -1443,6 +1436,22 @@ button:hover {
 		max-width: 350px;
 		width: 350px;
 	}
+}
+
+.mywrapper {
+	width: 100%;
+	height: min-content;
+	display: contents;
+	flex-direction: column;
+	position: sticky;
+	//overflow-y: scroll;
+	z-index: 0;
+	top: 0;
+}
+
+.anotherwrapper{
+	position: sticky;
+	top: -143px;
 }
 .searchBar-wrapper {
 	display: none;

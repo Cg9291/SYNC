@@ -1,12 +1,8 @@
 import { useState, useEffect } from "react";
 
 export default function HeaderListItems(props) {
-	useEffect(() => {
-		console.log(props.focusStatusState);
-	});
-
 	const handleFocus = () => {
-		let focusStatusCopy = {}; //JSON.parse(JSON.stringify(focusStatus));
+		let focusStatusCopy = {};
 		Object.keys(props.focusStatusState).forEach(key => {
 			focusStatusCopy[key] = false;
 		});
@@ -27,9 +23,7 @@ export default function HeaderListItems(props) {
 			>
 				<div
 					className={
-						props.value === "For you"
-							? "awrapper--for-you"
-							: "awrapper"
+						props.value === "For you" ? "awrapper--for-you" : "awrapper"
 					}
 				>
 					<div>{props.value}</div>
