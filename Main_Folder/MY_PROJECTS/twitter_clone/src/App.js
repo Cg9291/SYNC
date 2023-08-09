@@ -4,15 +4,13 @@ import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
 import Header from "./components/Header";
 import FollowsRecSection from "./components/FollowRecs";
 import { Navigation } from "./components/Navigation";
-import Profile from "./functions/profile";
 import SearchBar from "./components/Searchbar";
 import Timeline from "./components/Timeline";
 import TrendingSection from "./components/Trending";
 import { GetVerified } from "./components/GetVerified";
-import { profile } from "./functions/profile.js";
-import { moreInfo } from "./functions/moreInfo";
+import Profile from "./components/Profile.js";
+import MoreInfoSection from "./components/MoreInfoSection.js";
 import { NavListItems } from "./components/NavListItems";
-
 
 /* TODO
 GLOBAL!!
@@ -147,7 +145,11 @@ function App() {
 					navFirstElementRef={navFirstElement}
 					clickedNavElement={clickedNavElement}
 				/>
-				{profile(imageSource, "TheSportsMediaCh...", "TheSportsMediaC")}
+				<Profile
+					img={imageSource}
+					userName="TheSportsMediaCh..."
+					handle="TheSportsMediaC"
+				/>
 			</section>
 			<div className="main-container">
 				<section className="middle-container">
@@ -173,7 +175,7 @@ function App() {
 									imageSource={imageSource}
 								/>
 								<FollowsRecSection />
-								<>{moreInfo()}</>
+								<MoreInfoSection />
 							</div>
 						</div>
 					</div>

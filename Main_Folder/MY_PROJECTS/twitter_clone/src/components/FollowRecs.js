@@ -1,4 +1,4 @@
-import { profile } from "../functions/profile.js";
+import Profile from "./Profile.js";
 
 export default function FollowsRecSection() {
 	let imageSource =
@@ -10,10 +10,20 @@ export default function FollowsRecSection() {
 				<span>Who to follow</span>
 			</div>
 			<div className="follow-recommendations_cards">
-				{profile(imageSource, "Stephen Curry", "StephenCurry30", true)}
+				<Profile
+					img={imageSource}
+					userName="Stephen Curry"
+					handle={"StephenCurry30"}
+					follow={true}
+				/>
 			</div>
 			<div className="follow-recommendations_cards">
-				{profile(imageSource, "NBA", "NBA", true)}
+				<Profile
+					img={imageSource}
+					userName="NBA"
+					handle={"NBA"}
+					follow={true}
+				/>
 			</div>
 			<div className="follow-recommendations_cards-footer">
 				<a href="#">Show more</a>

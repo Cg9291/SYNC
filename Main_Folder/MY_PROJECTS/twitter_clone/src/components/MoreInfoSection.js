@@ -1,6 +1,6 @@
 import { ellipsis } from "../assets/icons/svg_exports.js";
 
-export const moreInfo = () => {
+export default function MoreInfoSection (){
 	return (
 		<div className="more-info">
 			<a className="more-info_elements">

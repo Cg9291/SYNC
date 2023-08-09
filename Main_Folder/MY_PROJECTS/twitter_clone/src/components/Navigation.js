@@ -1,6 +1,6 @@
 import { useState, forwardRef, Provider } from "react";
 import { NavListItems } from "../components/NavListItems.js";
-import { tweetButton } from "../functions/tweetButton.js";
+import TweetButton from "./TweetButton.js";
 import { NavFocusContext } from "../contexts/contexts.js";
 import {
 	twitterXLogoNav,
@@ -88,7 +88,9 @@ export const Navigation = forwardRef((props, navComponentRef) => {
 						/>
 					</ul>
 				</NavFocusContext.Provider>
-				<div className="wrappers2">{tweetButton("Post")}</div>
+				<div className="wrappers2">
+					<TweetButton text="Post" />
+				</div>
 			</div>
 		</nav>
 	);

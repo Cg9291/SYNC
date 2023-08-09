@@ -1,4 +1,4 @@
-import {tweetButton} from "../functions/tweetButton.js";
+import TweetButton from "./TweetButton.js";
 
 export function GetVerified() {
 	return (
@@ -24,7 +24,7 @@ export function GetVerified() {
 						<span className="tweet-area_pill-btn-text">Get verified</span>
 					</button>
 				</div> */}
-				{tweetButton("Get Verified")}
+				<TweetButton text="Get Verified" />
 			</div>
 		</div>
 	);
