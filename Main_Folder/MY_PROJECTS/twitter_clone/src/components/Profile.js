@@ -1,4 +1,3 @@
-import { useState } from "react";
 import TweetButton from "./TweetButton.js";
 import { checkMark, ellipsis } from "../assets/icons/svg_exports.js";
 

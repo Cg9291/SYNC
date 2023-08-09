@@ -1,12 +1,12 @@
 import { searchIconSearchBar } from "../assets/icons/svg_exports";
 import { useState } from "react";
+
 export default function SearchBar(props) {
 	const [isFocused, setIsFocused] = useState(false);
 
 	return (
 		<div
 			className="searchBar-wrapper"
-			onFocus={e => console.log(e.target)}
 		>
 			<label className={isFocused ? "searchBar--focused" : "searchBar"}>
 				<div
@@ -34,4 +34,3 @@ export default function SearchBar(props) {
 		</div>
 	);
 }
-

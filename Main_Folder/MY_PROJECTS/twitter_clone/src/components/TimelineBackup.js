@@ -9,21 +9,13 @@ import {
 } from "../assets/icons/statistics_svg";
 import { tweetsArray } from "../objects/tweetsArray";
 
-function TweetStats(props) {
-	return props.value == null ? (
-		<div className="timeline-backup_statistics-row_group">
-			<span className="timeline-backup_statistics-row_icons-wrapper">
-				{props.icon}
-			</span>
-		</div>
-	) : (
-		<div className="timeline-backup_statistics-row_group">
-			<span className="timeline-backup_statistics-row_icons-wrapper">
-				{props.icon}
-			</span>
-			<span className="timeline-backup_statistics-row_values">
-				{props.value}
-			</span>
+
+export default function TimelineBackup() {
+	return (
+		<div className="timeline-backup">
+			{tweetsArray.map(tweet => (
+				<TimelineTweets tweetObj={tweet} />
+			))}
 		</div>
 	);
 }
@@ -35,7 +27,7 @@ function TimelineTweets(props) {
 	let profilePicture = props.tweetObj.authorInfo.profilePicture;
 	let tweetText = props.tweetObj.tweetText;
 	let tweetMedia = props.tweetObj.tweetMedia;
-	const aha = 55;
+	
 
 	return (
 		<div className="timeline-backup_tweets-card">
@@ -100,12 +92,21 @@ function TimelineTweets(props) {
 	);
 }
 
-export default function TimelineBackup() {
-	return (
-		<div className="timeline-backup">
-			{tweetsArray.map(tweet => (
-				<TimelineTweets tweetObj={tweet} />
-			))}
+function TweetStats(props) {
+	return props.value == null ? (
+		<div className="timeline-backup_statistics-row_group">
+			<span className="timeline-backup_statistics-row_icons-wrapper">
+				{props.icon}
+			</span>
+		</div>
+	) : (
+		<div className="timeline-backup_statistics-row_group">
+			<span className="timeline-backup_statistics-row_icons-wrapper">
+				{props.icon}
+			</span>
+			<span className="timeline-backup_statistics-row_values">
+				{props.value}
+			</span>
 		</div>
 	);
 }

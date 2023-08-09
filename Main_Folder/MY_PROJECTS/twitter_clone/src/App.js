@@ -2,15 +2,15 @@ import logo from "./logo.svg";
 import "./App.scss";
 import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
 import Header from "./components/Header";
-import FollowsRecSection from "./components/FollowRecs";
+import FollowsRecSection from "./components/FollowRecsSection";
 import { Navigation } from "./components/Navigation";
 import SearchBar from "./components/Searchbar";
 import Timeline from "./components/Timeline";
-import TrendingSection from "./components/Trending";
-import { GetVerified } from "./components/GetVerified";
+import TrendingSection from "./components/TrendingSection";
+import  GetVerifiedSection from "./components/GetVerifiedSection";
 import Profile from "./components/Profile.js";
 import MoreInfoSection from "./components/MoreInfoSection.js";
-import { NavListItems } from "./components/NavListItems";
+
 
 /* TODO
 GLOBAL!!
@@ -92,33 +92,7 @@ function App() {
 		//THIS FUNCTION IS SET TO ONLY WORK ON SIZES<500PX..SEE CSS
 	);
 
-	let myTrendingNews = {
-		section1: {
-			category: "NBA · LIVE",
-			topic: "Titanic",
-			scope: "140K tweets",
-		},
-		section2: {
-			category: "Sports",
-			topic: "#NBADraft",
-			scope: "Trending with...",
-		},
-		section3: {
-			category: "Business and Finance",
-			topic: "Carl's twitter clone",
-			scope: "22k tweets",
-		},
-		section4: {
-			category: "Uplifting News",
-			topic: "Carl's got a programmer Job",
-			scope: "900k tweets",
-		},
-		section5: {
-			category: "World",
-			topic: "Vancouver's hottest Summer",
-			scope: "trending with...",
-		},
-	};
+
 
 	Header.defaultProps = {
 		clickedElement: clickedElement,
@@ -158,7 +132,7 @@ function App() {
 						ref={focusedText}
 					/>
 
-					<Timeline ref={scrollTracker} />
+					<Timeline ref={scrollTracker} img={imageSource} />
 				</section>
 				<div className="custom-containers-margin"></div>
 				<section className="right-container ">
@@ -169,9 +143,8 @@ function App() {
 							<SearchBar />
 
 							<div className="anotherwrapper">
-								<GetVerified />
+								<GetVerifiedSection />
 								<TrendingSection
-									myTrendingNews={myTrendingNews}
 									imageSource={imageSource}
 								/>
 								<FollowsRecSection />

@@ -1,5 +1,4 @@
-import { useState, forwardRef, Provider } from "react";
-import { NavListItems } from "../components/NavListItems.js";
+import { useState, useContext, forwardRef, Provider } from "react";
 import TweetButton from "./TweetButton.js";
 import { NavFocusContext } from "../contexts/contexts.js";
 import {
@@ -93,5 +92,44 @@ export const Navigation = forwardRef((props, navComponentRef) => {
 				</div>
 			</div>
 		</nav>
+	);
+});
+
+
+const NavListItems = forwardRef(function (props, navFirstElementRef) {
+	const focusedLiContext = useContext(NavFocusContext);
+
+	let focusedLi = focusedLiContext.focusedLi;
+	let setFocusedLi = focusedLiContext.setFocusedLi;
+
+	const focusHandler = () => {
+		let nextState = {};
+		Object.keys(focusedLi).forEach(key => {
+			nextState[key] = false;
+		});
+		nextState[props.identifier.name] = true;
+		setFocusedLi(nextState);
+	};
+
+	return (
+		<li className={props.classNames}>
+			<a
+				href="#"
+				className="nav_a"
+				ref={navFirstElementRef}
+				onFocus={focusHandler}
+			>
+				{props.identifier(focusedLiContext.focusedLi[props.identifier.name])}
+				<span
+					className={
+						focusedLiContext.focusedLi[props.identifier.name]
+							? "nav_text-focused"
+							: "nav_text"
+					}
+				>
+					{props.label}
+				</span>
+			</a>
+		</li>
 	);
 });

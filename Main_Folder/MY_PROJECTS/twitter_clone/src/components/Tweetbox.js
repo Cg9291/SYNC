@@ -8,14 +8,14 @@ import {
 } from "../assets/icons/tweetbox_svg";
 import TweetButton from "./TweetButton.js";
 
-export default function TweetBox() {
+export default function TweetBox(props) {
 	return (
 		<div className="tweet-area hidden500 ">
 			<div className="tweet-area_wrapper">
 				<div className="tweet-area_profile-image-box">
 					<img
 						className="tweet-area_profile-img"
-						src="https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640"
+						src={props.img}
 					/>
 				</div>
 
@@ -76,10 +76,6 @@ export default function TweetBox() {
 					</li>
 				</ul>
 				<div className="tweet-area_wrapper--btn">
-					{/*
-					<button className="tweet-area_pill-btn">
-						<span className="tweet-area_pill-btn-text">Tweet</span>
-					</button> */}
 					<TweetButton
 						text="Post"
 						btn="btn"

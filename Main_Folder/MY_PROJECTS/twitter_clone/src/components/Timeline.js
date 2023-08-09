@@ -1,14 +1,13 @@
-import {Helmet} from "react-helmet"; //this allows to use helmet(which supports the insertion of script tags in the component's html)
+import { Helmet } from "react-helmet"; //this allows to use helmet(which supports the insertion of script tags in the component's html)
 import React from "react";
 import TweetBox from "./Tweetbox.js";
 import TimelineBackup from "./TimelineBackup.js";
 
 export default function Timeline(props) {
-	var myJson = require("../apiResponse.json");
+	let img=props.img;
 	return (
 		<div className="timeline-wrapper">
-			<TweetBox />
-			{/* {myJson.html} */}
+			<TweetBox img={img} />
 			<TimelineBackup />
 			{/* <a
 				id="timeline"
