@@ -1,4 +1,4 @@
-import { useState, useContext, forwardRef, Provider } from "react";
+import { useContext, forwardRef } from "react";
 import TweetButton from "./TweetButton.js";
 import { NavFocusContext } from "../contexts/contexts.js";
 import {
@@ -15,17 +15,13 @@ import {
 	communitiesIcon,
 } from "../assets/icons/svg_exports";
 
-export const Navigation = forwardRef((props, navComponentRef) => {
+export default function Navigation(props) {
 	NavListItems.defaultProps = {
 		classNames: "nav_li",
 	};
 
-	const navFirstElementRef = props.navFirstElementRef;
 	return (
-		<nav
-			className="nav"
-			ref={navComponentRef}
-		>
+		<nav className="nav">
 			<div className="wrapper">
 				<div className="nav_twitter-logo-box">{twitterXLogoNav}</div>
 				<NavFocusContext.Provider
@@ -39,8 +35,6 @@ export const Navigation = forwardRef((props, navComponentRef) => {
 						<NavListItems
 							identifier={homeIcon}
 							label={"Home"}
-							classNames={"nav_li--first-item"}
-							ref={navFirstElementRef}
 						/>
 						<NavListItems
 							identifier={searchIconNav}
@@ -93,10 +87,9 @@ export const Navigation = forwardRef((props, navComponentRef) => {
 			</div>
 		</nav>
 	);
-});
+}
 
-
-const NavListItems = forwardRef(function (props, navFirstElementRef) {
+function NavListItems(props) {
 	const focusedLiContext = useContext(NavFocusContext);
 
 	let focusedLi = focusedLiContext.focusedLi;
@@ -116,7 +109,6 @@ const NavListItems = forwardRef(function (props, navFirstElementRef) {
 			<a
 				href="#"
 				className="nav_a"
-				ref={navFirstElementRef}
 				onFocus={focusHandler}
 			>
 				{props.identifier(focusedLiContext.focusedLi[props.identifier.name])}
@@ -132,4 +124,4 @@ const NavListItems = forwardRef(function (props, navFirstElementRef) {
 			</a>
 		</li>
 	);
-});
+}

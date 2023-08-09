@@ -1,16 +1,14 @@
-import logo from "./logo.svg";
 import "./App.scss";
 import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
 import Header from "./components/Header";
 import FollowsRecSection from "./components/FollowRecsSection";
-import { Navigation } from "./components/Navigation";
+import Navigation from "./components/Navigation";
 import SearchBar from "./components/Searchbar";
 import Timeline from "./components/Timeline";
 import TrendingSection from "./components/TrendingSection";
-import  GetVerifiedSection from "./components/GetVerifiedSection";
+import GetVerifiedSection from "./components/GetVerifiedSection";
 import Profile from "./components/Profile.js";
 import MoreInfoSection from "./components/MoreInfoSection.js";
-
 
 /* TODO
 GLOBAL!!
@@ -43,17 +41,7 @@ TABLETS!!
 
 function App() {
 	let scrollTracker = useRef();
-	let focusedText = useRef([]);
-	let navComponentRef = useRef();
-	let navFirstElement = useRef();
 
-	let [clickedElement, setClickedElement] = useState("forYou");
-
-	let [clickedNavElement, setClickedNavElement] = useState();
-
-	let [focusedBarLength, setFocusedBarLength] = useState();
-
-	let [scrollTopValue, setScrollTopValue] = useState();
 	let [prevScrollTopValue, setPrevScrollTopValue] = useState();
 	let [headerHeight, setHeaderHeight] = useState("-0.5px");
 
@@ -72,14 +60,10 @@ function App() {
 
 	//EFFECTS
 
-	useEffect(() => {
-		navFirstElement.current.focus();
-	}, []);
-
-	useEffect(() => {
+	/* useEffect(() => {
 		setPrevScrollTopValue(scrollTracker.current.scrollTop);
 		console.log(scrollTracker.current.scrollTop);
-	}, []);
+	}, []); */
 
 	useEffect(
 		() =>
@@ -92,19 +76,6 @@ function App() {
 		//THIS FUNCTION IS SET TO ONLY WORK ON SIZES<500PX..SEE CSS
 	);
 
-
-
-	Header.defaultProps = {
-		clickedElement: clickedElement,
-		focusedBarLength: focusedBarLength,
-		focusedText: focusedText,
-	};
-
-	Navigation.defaultProps = {
-		focusedLi: focusedLi,
-		setFocusedLi: setFocusedLi,
-	};
-
 	let imageSource =
 		"https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png?w=640";
 
@@ -115,9 +86,8 @@ function App() {
 		>
 			<section className="nav-container">
 				<Navigation
-					ref={navComponentRef}
-					navFirstElementRef={navFirstElement}
-					clickedNavElement={clickedNavElement}
+					focusedLi={focusedLi}
+					setFocusedLi={setFocusedLi}
 				/>
 				<Profile
 					img={imageSource}
@@ -127,26 +97,19 @@ function App() {
 			</section>
 			<div className="main-container">
 				<section className="middle-container">
-					<Header
-						headerHeight={headerHeight}
-						ref={focusedText}
-					/>
+					<Header headerHeight={headerHeight} />
 
-					<Timeline ref={scrollTracker} img={imageSource} />
+					<Timeline img={imageSource} />
 				</section>
 				<div className="custom-containers-margin"></div>
 				<section className="right-container ">
 					<div className="filler"></div>
-
 					<div className="wrapper-wrapper">
 						<div className="mywrapper">
 							<SearchBar />
-
 							<div className="anotherwrapper">
 								<GetVerifiedSection />
-								<TrendingSection
-									imageSource={imageSource}
-								/>
+								<TrendingSection imageSource={imageSource} />
 								<FollowsRecSection />
 								<MoreInfoSection />
 							</div>
