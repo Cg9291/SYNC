@@ -17,4 +17,4 @@ export const getApiServerData = () => {
 	});
 };
 
-myApiCall();
+getApiServerData();

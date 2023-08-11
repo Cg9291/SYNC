@@ -1,8 +1,7 @@
-import { write } from "fs";
 import http from "http";
 
 export let postToServer = () => {
-	let myData = "What's going on in here?";
+	let myData = "What's going on out here?";
 
 	let options = {
 		hostname: "localhost",
@@ -25,4 +24,4 @@ export let postToServer = () => {
 	postRequest.end();
 };
 
-myRq();
+postToServer();

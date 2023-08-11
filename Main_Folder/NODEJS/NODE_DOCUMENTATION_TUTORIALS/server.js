@@ -1,8 +1,11 @@
 import http from "http";
-import { myRq } from "./Calls/echo_call.js";
-//import { myApiCall } from "./Calls/lucas_api_call.js";
+import fs from "fs";
+//import { postToServer } from "./Calls/echo_call.js";
+//import html from "./index.html"
+//import { getApiServerData } from "./Calls/lucas_api_call.js";
 
-var body = [];
+var body = "Welcome to the echo endpoint";
+export let avar;
 
 const server = http.createServer((req, res) => {
 	req.on("error", () => {
@@ -16,6 +19,7 @@ const server = http.createServer((req, res) => {
 	});
 
 	if (req.method === "POST" && req.url === "/echo") {
+		body = [];
 		req
 			.on("data", chunk => {
 				body.push(chunk);
@@ -36,10 +40,17 @@ const server = http.createServer((req, res) => {
 		//console.log(body);
 		res.end(body);
 	} else {
-		res.end("Welcome to my server boss");
+		fs.readFile("./index.html", (err, data) => {
+			if (err) {
+				console.log(err);
+			} else {
+				res.writeHead(200, { "Content-Type": "text/html" });
+				res.end(data);
+			}
+		});
 	}
 });
 
 server.listen(3000, () => {
-	console.log("Server is operational");
+	console.log("Server is operational", http.METHODS);
 });
