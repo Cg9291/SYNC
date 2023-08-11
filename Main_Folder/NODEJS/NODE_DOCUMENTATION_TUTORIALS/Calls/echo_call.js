@@ -1,7 +1,7 @@
 import { write } from "fs";
-import * as http from "http";
+import http from "http";
 
-export let myRq = () => {
+export let postToServer = () => {
 	let myData = "What's going on in here?";
 
 	let options = {
@@ -16,7 +16,7 @@ export let myRq = () => {
 	};
 
 	let postRequest = http.request(options, res => {
-		console.log("the response from the server is:"+res);
+		//console.log("the response from the server is:"+res);
 
 	});
 
@@ -25,4 +25,4 @@ export let myRq = () => {
 	postRequest.end();
 };
 
-//postRequest;
+myRq();
