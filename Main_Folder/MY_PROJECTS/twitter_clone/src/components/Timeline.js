@@ -4,10 +4,9 @@ import TweetBox from "./Tweetbox.js";
 import TimelineBackup from "./TimelineBackup.js";
 
 export default function Timeline(props) {
-	let img=props.img;
+	/* let img=props.img; */
 	return (
-		<div className="timeline-wrapper">
-			<TweetBox img={img} />
+		<div className="timeline_wrapper">
 			<TimelineBackup />
 			{/* <a
 				id="timeline"

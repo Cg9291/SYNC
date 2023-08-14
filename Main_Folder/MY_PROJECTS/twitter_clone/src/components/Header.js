@@ -72,10 +72,12 @@ function HeaderListItems(props) {
 			>
 				<div
 					className={
-						props.value === "For you" ? "awrapper--for-you" : "awrapper"
+						props.value === "For you"
+							? "header_anchor_wrapper--for-you"
+							: "header_anchor_wrapper"
 					}
 				>
-					<div>{props.value}</div>
+					<div className="header_anchor_text">{props.value}</div>
 					<div
 						className={
 							props.value === "For you"

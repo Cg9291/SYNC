@@ -81,7 +81,7 @@ export default function Navigation(props) {
 						/>
 					</ul>
 				</NavFocusContext.Provider>
-				<div className="wrappers2">
+				<div className="nav_tweet-button_wrapper">
 					<TweetButton text="Post" />
 				</div>
 			</div>

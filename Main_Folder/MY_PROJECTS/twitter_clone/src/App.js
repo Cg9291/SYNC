@@ -9,6 +9,7 @@ import TrendingSection from "./components/TrendingSection";
 import GetVerifiedSection from "./components/GetVerifiedSection";
 import Profile from "./components/Profile.js";
 import MoreInfoSection from "./components/MoreInfoSection.js";
+import TweetBox from "./components/Tweetbox.js";
 
 /* TODO
 GLOBAL!!
@@ -98,16 +99,17 @@ function App() {
 			<section className="main">
 				<section className="main_primary-container">
 					<Header headerHeight={headerHeight} />
+					<TweetBox img={imageSource} />
 
 					<Timeline img={imageSource} />
 				</section>
 				<div className="custom-containers-margin"></div>
 				<section className="main_sidebar-container ">
 					<div className="filler"></div>
-					<div className="wrapper-wrapper">
-						<div className="mywrapper">
+					<div className="main_sidebar-container_wrapper1">
+						<div className="main_sidebar-container_wrapper2">
 							<SearchBar />
-							<div className="anotherwrapper">
+							<div className="main_sidebar-container_wrapper3">
 								<GetVerifiedSection />
 								<TrendingSection imageSource={imageSource} />
 								<FollowsRecSection />

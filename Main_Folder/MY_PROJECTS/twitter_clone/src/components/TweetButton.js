@@ -8,13 +8,13 @@ export default function TweetButton(props) {
 			</button>
 		</form>
 	) : props.text === "Post" ? (
-		<div className="tweet-button-container">
+		<div className="nav_tweet-button_container">
 			<a
 				href="#"
-				className="tweet-button-wrapper"
+				className="nav_tweet-button_container_button-wrapper"
 			>
 				<>{writeTweetIcon}</>
-				<span className="tweet-button-wrapper_text">{props.text}</span>
+				<span className="nav_tweet-button_container_text">{props.text}</span>
 			</a>
 		</div>
 	) : props.text === "Follow" ? (

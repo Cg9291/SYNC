@@ -12,7 +12,7 @@ import { tweetsArray } from "../objects/tweetsArray";
 
 export default function TimelineBackup() {
 	return (
-		<div className="timeline-backup">
+		<div className="timeline_body">
 			{tweetsArray.map(tweet => (
 				<TimelineTweets tweetObj={tweet} />
 			))}
@@ -27,45 +27,45 @@ function TimelineTweets(props) {
 	let profilePicture = props.tweetObj.authorInfo.profilePicture;
 	let tweetText = props.tweetObj.tweetText;
 	let tweetMedia = props.tweetObj.tweetMedia;
-	
+
 
 	return (
-		<div className="timeline-backup_tweets-card">
-			<div className="timeline-backup_profile-picture-wrapper">
+		<div className="timeline_body_tweets-card">
+			<div className="timeline_body_profile-picture-wrapper">
 				<img
 					src={profilePicture}
 					alt="profile picture"
 				></img>
 			</div>
-			<div className="timeline-backup_main-section-container">
-				<div className="timeline-backup_header">
-					<span className="timeline-backup_header_user-name-wrapper">
-						<div className="timeline-backup_header_user-name">
+			<div className="timeline_body_main-section-container">
+				<div className="timeline_body_header">
+					<span className="timeline_body_header_user-name-wrapper">
+						<div className="timeline_body_header_user-name">
 							{tweetAuthorUserName}
 						</div>
 						<span></span>
 					</span>
-					<span className="timeline-backup_header_checkmark-wrapper">
+					<span className="timeline_body_header_checkmark-wrapper">
 						{checkMark}
 					</span>
-					<span className="timeline-backup_header_handle">
+					<span className="timeline_body_header_handle">
 						{"@"}
 						{tweetAuthorHandle}
 					</span>
 					<span> · </span>
-					<span className="timeline-backup_header_posting-time">5h</span>
-					<span className="timeline-backup_header_ellipsis">
+					<span className="timeline_body_header_posting-time">5h</span>
+					<span className="timeline_body_header_ellipsis">
 						{ellipsis("tweets")}
 					</span>
 				</div>
-				<div className="timeline-backup_tweet-text">{tweetText}</div>
-				<div className="timeline-backup_media-wrapper">
+				<div className="timeline_body_tweet-text">{tweetText}</div>
+				<div className="timeline_body_media-wrapper">
 					<img
-						className="timeline-backup_media"
+						className="timeline_body_media"
 						src={tweetMedia}
 					></img>
 				</div>
-				<div className="timeline-backup_statistics-row">
+				<div className="timeline_body_statistics-row">
 					<TweetStats
 						icon={commentsIcon}
 						value={22}
@@ -94,17 +94,17 @@ function TimelineTweets(props) {
 
 function TweetStats(props) {
 	return props.value == null ? (
-		<div className="timeline-backup_statistics-row_group">
-			<span className="timeline-backup_statistics-row_icons-wrapper">
+		<div className="timeline_body_statistics-row_group">
+			<span className="timeline_body_statistics-row_icons-wrapper">
 				{props.icon}
 			</span>
 		</div>
 	) : (
-		<div className="timeline-backup_statistics-row_group">
-			<span className="timeline-backup_statistics-row_icons-wrapper">
+		<div className="timeline_body_statistics-row_group">
+			<span className="timeline_body_statistics-row_icons-wrapper">
 				{props.icon}
 			</span>
-			<span className="timeline-backup_statistics-row_values">
+			<span className="timeline_body_statistics-row_values">
 				{props.value}
 			</span>
 		</div>
