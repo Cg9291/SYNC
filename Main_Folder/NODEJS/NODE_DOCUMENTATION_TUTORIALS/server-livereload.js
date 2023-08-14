@@ -46,7 +46,7 @@ const server = http.createServer((req, res) => {
 		//console.log(body);
 		res.end(body);
 	} else {
-		res.end("Welcome to the server's rootooosffs");
+		res.end("Welcome to the server's roots");
 	}
 });
 
@@ -54,5 +54,5 @@ const livereloadServer=livereload.createServer();
 livereloadServer.watch(__dirname);
 
 server.listen(3000, () => {
-	console.log("Server is operational", http.METHODS);
+	console.log("Server is operational", __dirname);
 });

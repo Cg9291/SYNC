@@ -12,7 +12,7 @@
 	},
 	"scripts": {
 		"start": "node server.js",
-		"watch": "concurrently \" nodemon --ext *\" \" livereload -d -p 3001\"",
-		"live":"livereload"
+		"watch": "concurrently \"nodemon server.js\" \" livereload  -d -p 3001\"",
+		"live": "livereload"
 	}
 }

@@ -1,7 +1,7 @@
 import http from "http";
 
 export let postToServer = () => {
-	let myData = "What's going on out here?";
+	let myData = "Bruv";
 
 	let options = {
 		hostname: "localhost",

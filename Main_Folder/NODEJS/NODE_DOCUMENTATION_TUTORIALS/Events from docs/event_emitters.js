@@ -18,9 +18,7 @@ myEmitter.on("myEvent", () => {
 myEmitter.emit("error", new Error("whoops!"));
 myEmitter.emit("myEvent");
 
-
 //const myEmitter2 = new EventEmitter();
 /* myEmitter2.on("myEvent", function (a, b) {
-	console.log(a, b, this);
-}); */
+	console.log(a, b, this);}); */
 //myEmitter2.emit("myEvent",'uno','dos')
