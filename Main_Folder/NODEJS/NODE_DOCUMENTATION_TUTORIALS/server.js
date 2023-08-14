@@ -1,13 +1,11 @@
 import http from "http";
 import fs from "fs";
-import modifyHTML from "./utility_functions/modifyHTML.js";
-import { rewriteHTML } from "./utility_functions/rewriteHTML.js";
-import { postToServer } from "./Calls/echo_call.js";
+//import { postToServer } from "./Calls/echo_call.js";
+//import html from "./index.html"
 //import { getApiServerData } from "./Calls/lucas_api_call.js";
 
 var body = "Welcome to the echo endpoint";
-var newHTML;
-let myData;
+export let avar;
 
 const server = http.createServer((req, res) => {
 	req.on("error", () => {
@@ -30,7 +28,6 @@ const server = http.createServer((req, res) => {
 			.on("end", () => {
 				body = Buffer.concat(body).toString();
 				//console.log(body);
-
 				res.end(body);
 			});
 
@@ -41,32 +38,18 @@ const server = http.createServer((req, res) => {
 			});
 	} else if (req.method === "GET" && req.url === "/echo") {
 		//console.log(body);
-
-		res.end(newHTML);
+		res.end(body);
 	} else {
 		fs.readFile("./index.html", (err, data) => {
 			if (err) {
 				console.log(err);
 			} else {
-				newHTML = modifyHTML(data.toString(), body);
-				myData = data.toString();
 				res.writeHead(200, { "Content-Type": "text/html" });
-				res.end(newHTML);
-				//console.log(req.method)
+				res.end(data);
 			}
 		});
 	}
 });
-
-let mydatas=fs.readFile("./index.html", (err, data) => {
-	if (err) {
-		console.log(`reading error is ${err}`);
-	} else {
-		console.log(`!!!!!!!HERE IS ${data.toString()}`);
-		return data.toString();
-	}
-})
-	rewriteHTML("vamos","mydatas");
 
 server.listen(3000, () => {
 	console.log("Server is operational", http.METHODS);
