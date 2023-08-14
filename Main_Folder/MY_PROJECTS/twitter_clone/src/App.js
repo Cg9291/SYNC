@@ -84,7 +84,7 @@ function App() {
 			className="App"
 			ref={scrollTracker}
 		>
-			<section className="nav-container">
+			<section className="navigation">
 				<Navigation
 					focusedLi={focusedLi}
 					setFocusedLi={setFocusedLi}
@@ -95,14 +95,14 @@ function App() {
 					handle="TheSportsMediaC"
 				/>
 			</section>
-			<div className="main-container">
-				<section className="middle-container">
+			<section className="main">
+				<section className="main_primary-container">
 					<Header headerHeight={headerHeight} />
 
 					<Timeline img={imageSource} />
 				</section>
 				<div className="custom-containers-margin"></div>
-				<section className="right-container ">
+				<section className="main_sidebar-container ">
 					<div className="filler"></div>
 					<div className="wrapper-wrapper">
 						<div className="mywrapper">
@@ -117,7 +117,7 @@ function App() {
 					</div>
 				</section>
 				<div className="whiteSpace-right"></div>
-			</div>
+			</section>
 		</div>
 	);
 }
