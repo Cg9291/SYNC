@@ -14,6 +14,7 @@ import TweetBox from "./components/Tweetbox.js";
 /* TODO
 GLOBAL!!
 
+*check hover status for sizes under 1265px..use ipad
 *add prompt for searchbar focus
 *adjust top property for right container scroll
 *fix new classes names

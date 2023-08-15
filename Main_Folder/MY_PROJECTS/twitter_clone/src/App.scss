@@ -1,6 +1,13 @@
 @mixin hover-bg($border-radius) {
 	&:hover {
-		background-color: grey;
+		background-color: lightgrey;
+		border-radius: $border-radius;
+	}
+}
+
+@mixin active-bg($border-radius) {
+	&:active {
+		background-color: lightgrey;
 		border-radius: $border-radius;
 	}
 }
@@ -320,7 +327,7 @@ li {
 		display: none;
 
 		@media only screen and (width>=500px) and (height>=500px) {
-			width: max-content;
+			width: 60px;
 			height: 56px;
 			min-height: 56px;
 			display: flex;
@@ -331,19 +338,30 @@ li {
 			box-sizing: border-box;
 		}
 
-		@media screen and (width>=1265px) {
+		@media screen and (width>=600px) {
+			width: 100%;
 			//justify-content: start;
 		}
 
+		@media only screen and (width>=1265px) {
+				justify-content: start;
+			}
+
 		&_hover-wrapper {
-			@include bg;
-			@include hover-bg(50%);
+			//@include hover-bg(50%);
+			@include active-bg(50%);
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			height: 100%;
 			aspect-ratio: 1/1;
 			//box-sizing: border-box;
+
+			@media only screen and (width>=1265px) {
+				@include hover-bg(50%);
+				//aspect-ratio: unset;
+				//width: 100%;
+			}
 		}
 	}
 
@@ -477,25 +495,35 @@ li {
 	}
 
 	&_hover-wrapper {
-		@include hover-bg(9999px);
+		@include active-bg(50%);
 		display: flex;
 		width: max-content;
-		height: 100%;
-		max-height: 100%;
+		aspect-ratio: 1/1;
+		/* height: 100%;
+		max-height: 100%; */
 		align-items: center;
+
+		@media screen and (width>=500px) {
+			/*  */
+			height: 100%;
+			padding: 4px;
+			//@include hover-bg(50%);
+		}
 
 		@media screen and (width>=1265px) {
 			/*  */
-
-			padding-left: 12px;
-			padding-right: 28px;
+			@include hover-bg(9999px);
+			aspect-ratio: unset;
+			padding: 0 28px 0 12px;
+			/* padding-left: 12px;
+			padding-right: 28px; */
 		}
 
 		/* border:solid blue;
 		display:flex; */
 	}
 
-	.ts {
+	/* .ts {
 		@extend .nav_a;
 		border-radius: 99px;
 		width: min-content;
@@ -503,22 +531,18 @@ li {
 
 	.ts:hover {
 		background-color: red;
-	}
+	} */
 
 	&_nav-icons {
 		width: 26.25px;
 		height: 26.25px;
 		border-radius: 50%;
-		padding: 12px 8px;
+		padding: /* 12px */ 8px;
 		overflow: visible;
 		@media screen and (width>=1265px) {
 			padding: 0;
 			margin-right: 20px;
 		}
-	}
-
-	&_nav-icons:active {
-		background-color: lightgray;
 	}
 
 	&_text {
@@ -710,9 +734,11 @@ li {
 	}
 
 	@media screen and (width>=1265px) {
-		width: 275px;
-		padding: 0 8px;
+		@include hover-bg(99px);
+		width: 259px;
+		padding: 0;
 		box-sizing: border-box;
+		margin-right:8px;
 	}
 
 	&_container {
@@ -988,7 +1014,12 @@ button:hover {
 		margin: 0;
 		box-sizing: border-box;
 		text-size-adjust: 100%;
+
+		@media screen and (width>=1265px) {
+			@include hover-bg(0);
+		}
 	}
+
 	&_anchor {
 		display: flex;
 		align-items: center;
