@@ -25,12 +25,12 @@ export default function TweetButton(props) {
 			<span className="follow-recommendations_button_text">{props.text}</span>
 		</a>
 	) : (
-		<div className="getVerified-container_button-container">
+		<div className="getVerified_button_container">
 			<a
 				href="#"
-				className="getVerified-container_button-wrapper"
+				className="getVerified_button_wrapper"
 			>
-				<span className="getVerified-container_button-text">{props.text}</span>
+				<span className="getVerified_button_text">{props.text}</span>
 			</a>
 		</div>
 	);

@@ -30,9 +30,9 @@ export default function TrendingSection(props) {
 	};
 
 	return (
-		<section className="trending-wrapper">
-			<div className="trending-wrapper_cards-header">
-				<span>What’s happening</span>
+		<section className="trending">
+			<div className="trending_cards-header">
+				<span className="trending_cards-header_text">What’s happening</span>
 			</div>
 			<TrendingCards
 				trendingCardInfo={{
@@ -70,7 +70,7 @@ export default function TrendingSection(props) {
 					scope: `${myTrendingNews.section5.scope}`,
 				}}
 			/>
-			<div className="trending-wrapper_cards-footer">
+			<div className="trending_cards_footer">
 				<a href="#">Show more</a>
 			</div>
 		</section>
@@ -79,13 +79,15 @@ export default function TrendingSection(props) {
 
 function TrendingCards(props) {
 	return props.trendingCardInfo.pic ? (
-		<div className="trending-wrapper_cards-with-image">
+		<div className="trending_cards-with-image">
 			<div className="wrappers--flex ">
-				<div className="wrapper1">
-					<div className="trending-wrapper_categories">
-						<span>{props.trendingCardInfo.category}</span>
+				<div className="trending_cards-with-image_wrapper">
+					<div className="trending_categories">
+						<span>
+							{props.trendingCardInfo.category}
+						</span>
 					</div>
-					<div className="trending-wrapper_topics">
+					<div className="trending_topics">
 						<span>{props.trendingCardInfo.topic}</span>
 					</div>
 				</div>
@@ -93,21 +95,21 @@ function TrendingCards(props) {
 				<div className="flex-b1">
 					<img
 						src={props.trendingCardInfo.pic}
-						className="trending-wrapper_images"
+						className="trending_images"
 					/>
 				</div>
 			</div>
 		</div>
 	) : (
-		<div className="trending-wrapper_cards">
-			<div className="trending-wrapper_categories">
+		<div className="trending_cards">
+			<div className="trending_categories">
 				<span>{props.trendingCardInfo.category}</span>
 				{ellipsis("trendingcards")}
 			</div>
-			<div className="trending-wrapper_topics">
+			<div className="trending_topics">
 				<span>{props.trendingCardInfo.topic}</span>
 			</div>
-			<div className="trending-wrapper_trending-scopes">
+			<div className="trending_scopes">
 				<span>{props.trendingCardInfo.scope}</span>
 			</div>
 		</div>

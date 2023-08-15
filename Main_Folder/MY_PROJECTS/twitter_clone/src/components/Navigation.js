@@ -111,15 +111,18 @@ function NavListItems(props) {
 				className="nav_a"
 				onFocus={focusHandler}
 			>
-				{props.identifier(focusedLiContext.focusedLi[props.identifier.name])}
-				<span
-					className={
-						focusedLiContext.focusedLi[props.identifier.name]
-							? "nav_text-focused"
-							: "nav_text"
-					}
-				>
-					{props.label}
+				<span className="nav_hover-wrapper">
+					{props.identifier(focusedLiContext.focusedLi[props.identifier.name])}
+
+					<span
+						className={
+							focusedLiContext.focusedLi[props.identifier.name]
+								? "nav_text-focused"
+								: "nav_text"
+						}
+					>
+						{props.label}
+					</span>
 				</span>
 			</a>
 		</li>

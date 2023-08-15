@@ -1,3 +1,14 @@
+@mixin hover-bg($border-radius) {
+	&:hover {
+		background-color: grey;
+		border-radius: $border-radius;
+	}
+}
+
+@mixin bg {
+	background-color: yellow;
+}
+
 @font-face {
 	font-family: "chirp";
 	src: url("./assets/fonts/Chirp-Regular.80fda27a.woff2") format("woff2");
@@ -309,7 +320,7 @@ li {
 		display: none;
 
 		@media only screen and (width>=500px) and (height>=500px) {
-			width: 100%;
+			width: fit-content;
 			height: 56px;
 			min-height: 56px;
 			display: flex;
@@ -331,7 +342,7 @@ li {
 		@media only screen and (width>=500px) {
 			width: 50px;
 			height: 30px;
-			border-radius: 0;
+			//border-radius: 50%;
 			padding: 0;
 			margin: 0;
 			fill: rgb(0, 0, 0);
@@ -433,15 +444,17 @@ li {
 
 	&_a {
 		display: flex;
-		justify-content: center;
+		justify-content: start;
 		align-items: center;
 		text-decoration: none;
+		//border:solid blue;
 
 		@media screen and (width>=1265px) {
+			box-sizing: border-box;
 			width: 100%;
 			height: 120%;
 			justify-content: flex-start;
-			padding-left: 12px;
+			padding: 5px 0;
 		}
 	}
 
@@ -450,6 +463,27 @@ li {
 			font-family: chirp;
 			font-weight: bold;
 		}
+	}
+
+	&_hover-wrapper {
+		@include bg;
+		@include hover-bg(9999px);
+		display: flex;
+		width: max-content;
+		//min-height: 100%;
+		height: 100%;
+		max-height: 100%;
+		align-items: center;
+
+		@media screen and (width>=1265px) {
+			/*  */
+
+			padding-left: 12px;
+			padding-right: 28px;
+		}
+
+		/* border:solid blue;
+		display:flex; */
 	}
 
 	.ts {
@@ -1455,7 +1489,7 @@ button:hover {
 	top: -143px;
 }
 
-.searchBar-wrapper {
+.searchBar {
 	display: none;
 
 	@media screen and (width>=988px) {
@@ -1477,23 +1511,22 @@ button:hover {
 		max-width: 350px;
 		width: 350px;
 	}
-}
 
-.searchBar {
-	@media screen and (width>=988px) {
-		width: 100%;
-		height: 44px;
-		border-radius: 99px;
-		//background-color: rgba(239, 243, 244, 255);
-		margin-top: 4.5px;
-		//margin-bottom: 10px;
-		box-sizing: border-box;
-		display: flex;
-		align-items: center;
-		border: solid 1px white;
-		background-color: rgb(247, 249, 249);
+	&_container {
+		@media screen and (width>=988px) {
+			width: 100%;
+			height: 44px;
+			border-radius: 99px;
+			//background-color: rgba(239, 243, 244, 255);
+			margin-top: 4.5px;
+			//margin-bottom: 10px;
+			box-sizing: border-box;
+			display: flex;
+			align-items: center;
+			border: solid 1px white;
+			background-color: rgb(247, 249, 249);
+		}
 	}
-
 	&_searchIcon-wrapper {
 		min-width: 44px;
 		max-width: 44px;
@@ -1518,7 +1551,7 @@ button:hover {
 	}
 
 	&_input {
-		@extend .searchBar;
+		@extend .searchBar_container;
 		margin: 0;
 		outline: none;
 		display: flex;
@@ -1539,11 +1572,14 @@ button:hover {
 	}
 
 	&_prompt-wrapper {
+		display: none;
 		position: absolute;
 		top: 48.5px;
 		width: 100%;
 		height: 100px;
 		z-index: 1;
+		box-sizing: border-box;
+		padding: 20px 12px 12px 12px;
 		background-color: #ffffff;
 		border-radius: 8px;
 		box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 15px;
@@ -1552,13 +1588,12 @@ button:hover {
 
 	&_prompt {
 		width: 100%;
-		height: 72px;
-		box-sizing: border-box;
-		padding: 20px 12px 12px;
+		height: 20px;
 		font-size: 15px;
 		font-weight: 400;
 		line-height: 20px;
 		text-align: center;
+		margin-left: 17px;
 		color: rgb(83, 100, 113);
 		word-wrap: wrap;
 		overflow-wrap: break-word;
@@ -1568,10 +1603,20 @@ button:hover {
 
 .searchBar--focused {
 	@extend .searchBar;
-	border: solid 1px rgb(0, 143, 253);
+	.searchBar_container {
+		border: solid 1px rgb(0, 143, 253);
+	}
+
+	.searchBar_input {
+		border: none;
+	}
+
+	.searchBar_prompt-wrapper {
+		display: block;
+	}
 }
 
-.getVerified-wrapper {
+.getVerified {
 	display: none;
 	@media screen and (width>=988px) {
 		display: flex;
@@ -1589,16 +1634,16 @@ button:hover {
 		max-width: 350px;
 		width: 350px;
 	}
-}
 
-.getVerified-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	height: 100%;
-	padding: 12px 16px;
-	box-sizing: border-box;
-	row-gap: 10px;
+	&_container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+		padding: 12px 16px;
+		box-sizing: border-box;
+		row-gap: 10px;
+	}
 
 	&_header {
 		font-family: chirp;
@@ -1614,14 +1659,14 @@ button:hover {
 		box-sizing: border-box;
 	}
 
-	&_button-container {
+	&_button_container {
 		height: 36px;
 		box-sizing: border-box;
 		display: flex;
 		align-items: center;
 	}
 
-	&_button-wrapper {
+	&_button_wrapper {
 		@extend .nav_tweet-button_container_button-wrapper;
 		color: rgb(255, 255, 255);
 		text-decoration: none;
@@ -1634,7 +1679,7 @@ button:hover {
 		border-radius: 99px;
 	}
 
-	&_button-text {
+	&_button_text {
 		@extend .nav_tweet-button_container_text;
 		display: flex;
 		align-items: center;
@@ -1647,7 +1692,7 @@ button:hover {
 	}
 }
 
-.trending-wrapper {
+.trending {
 	display: none;
 	@media screen and (width>=988px) {
 		display: flex;
@@ -1679,15 +1724,16 @@ button:hover {
 		width: 288px;
 		padding: 12px 16px;
 		box-sizing: border-box;
-		span {
-			border: none;
-			min-width: 178.281px;
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-			font-weight: 800;
-			font-family: chirp;
-		}
+	}
+
+	&_cards-header_text {
+		border: none;
+		min-width: 178.281px;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-weight: 800;
+		font-family: chirp;
 	}
 
 	&_cards {
@@ -1698,62 +1744,69 @@ button:hover {
 		padding: 12px 16px;
 		box-sizing: border-box;
 	}
+
 	&_cards-with-image {
-		@extend .trending-wrapper_cards;
+		@extend .trending_cards;
 		height: 92px;
 		width: 100%;
-
-		.wrapper1 {
-			@extend .wrappers--flex;
-			width: 100%;
-			margin-right: 12px;
-			box-sizing: border-box;
-			flex-direction: column;
-			align-items: stretch;
-
-			.trending-wrapper_categories {
-				font-size: 13px;
-				height: 20px;
-				padding: 2.25px 0;
-				box-sizing: border-box;
-				display: flex;
-				align-items: center;
-				span {
-					max-height: 15.5px;
-					line-height: 16px;
-					font-weight: 400;
-					display: flex;
-				}
-				&_ellipsis {
-					margin-left: auto;
-					max-width: 18.75px;
-					max-height: 11px;
-					aspect-ratio: 1/1;
-					width: 18.75px;
-				}
-			}
-		}
 	}
 
-	.trending-wrapper_categories {
+	&_cards-with-image_wrapper {
+		@extend .wrappers--flex;
+		width: 100%;
+		margin-right: 12px;
+		box-sizing: border-box;
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	/* &_cards-with-image_categories {
 		font-size: 13px;
 		height: 20px;
+		padding: 2.25px 0;
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+	}
+
+	&_cards-with-image_categories_text {
+		max-height: 15.5px;
+		line-height: 16px;
+		font-weight: 400;
+		display: flex;
+	} */
+
+	/* &_cards-with-image_ellipsis {
+		margin-left: auto;
+		max-width: 18.75px;
+		max-height: 11px;
+		aspect-ratio: 1/1;
+		width: 18.75px;
+	} */
+
+	&_categories {
+		font-size: 13px;
+		height: 16px;
 		padding: 0;
 		box-sizing: border-box;
 		display: flex;
 		align-items: start;
-		span {
-			max-height: 15.5px;
-			line-height: 16px;
-			font-weight: 400;
-			display: flex;
-		}
-		&_ellipsis {
-			margin-left: auto;
-			aspect-ratio: 1/1;
-			width: 18.75px;
-			fill: rgb(83, 100, 113);
-		}
+		justify-content: space-between;
+		color: rgb(83, 100, 113);
+	}
+
+	/* &_categories_text {
+		max-height: 15.5px;
+		line-height: 16px;
+		font-weight: 400;
+		display: flex;
+	} */
+
+	&_categories_ellipsis {
+		margin-left: auto;
+		aspect-ratio: 1/1;
+		width: 18.75px;
+		fill: rgb(83, 100, 113);
 	}
 
 	&_images {
@@ -1761,13 +1814,14 @@ button:hover {
 		height: 68px;
 		border-radius: 12px;
 	}
-	&_categories {
-		display: flex;
-		justify-content: space-between;
-		height: 16px;
-		font-size: 13px;
-		color: rgb(83, 100, 113);
-	}
+
+	/* &_categories {
+			display: flex;
+			justify-content: space-between;
+			height: 16px;
+			font-size: 13px;
+			color: rgb(83, 100, 113);
+		} */
 
 	&_topics {
 		height: 20px;
@@ -1779,17 +1833,14 @@ button:hover {
 		align-items: center;
 	}
 
-	&_trending-scopes {
+	&_scopes {
 		height: 16px;
 		margin-top: 4px;
 		font-size: 13px;
 		color: rgb(83, 100, 113);
 	}
 
-	/* .thesec {
-		color: black;
-	} */
-	&_cards-footer {
+	&_cards_footer {
 		width: 288px;
 		height: 52px;
 		box-sizing: border-box;
