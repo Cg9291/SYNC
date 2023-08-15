@@ -23,7 +23,11 @@ export default function Navigation(props) {
 	return (
 		<nav className="nav">
 			<div className="wrapper">
-				<div className="nav_twitter-logo-box">{twitterXLogoNav}</div>
+				<div className="nav_twitter-logo-box">
+					<div className="nav_twitter-logo-box_hover-wrapper">
+						{twitterXLogoNav}
+					</div>
+				</div>
 				<NavFocusContext.Provider
 					value={{
 						focusedLi: props.focusedLi,
@@ -112,7 +116,7 @@ function NavListItems(props) {
 				onFocus={focusHandler}
 			>
 				<span className="nav_hover-wrapper">
-					{props.identifier(focusedLiContext.focusedLi[props.identifier.name])}
+						{props.identifier(focusedLiContext.focusedLi[props.identifier.name])}
 
 					<span
 						className={
