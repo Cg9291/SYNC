@@ -1,7 +1,9 @@
 @mixin hover-bg($border-radius) {
-	&:hover {
-		background-color: lightgrey;
-		border-radius: $border-radius;
+	@media screen and (width>=1265px) {
+		&:hover {
+			background-color: lightgrey;
+			border-radius: $border-radius;
+		}
 	}
 }
 
@@ -344,24 +346,17 @@ li {
 		}
 
 		@media only screen and (width>=1265px) {
-				justify-content: start;
-			}
+			justify-content: start;
+		}
 
 		&_hover-wrapper {
-			//@include hover-bg(50%);
+			@include hover-bg(50%);
 			@include active-bg(50%);
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			height: 100%;
 			aspect-ratio: 1/1;
-			//box-sizing: border-box;
-
-			@media only screen and (width>=1265px) {
-				@include hover-bg(50%);
-				//aspect-ratio: unset;
-				//width: 100%;
-			}
 		}
 	}
 
@@ -507,7 +502,6 @@ li {
 			/*  */
 			height: 100%;
 			padding: 4px;
-			//@include hover-bg(50%);
 		}
 
 		@media screen and (width>=1265px) {
@@ -515,12 +509,7 @@ li {
 			@include hover-bg(9999px);
 			aspect-ratio: unset;
 			padding: 0 28px 0 12px;
-			/* padding-left: 12px;
-			padding-right: 28px; */
 		}
-
-		/* border:solid blue;
-		display:flex; */
 	}
 
 	/* .ts {
@@ -697,6 +686,7 @@ li {
 
 .profile-wrapper {
 	display: none;
+	@include hover-bg(99px);
 
 	@media only screen and (width>=500px) and (height>=500px) {
 		display: flex;
@@ -734,11 +724,10 @@ li {
 	}
 
 	@media screen and (width>=1265px) {
-		@include hover-bg(99px);
 		width: 259px;
 		padding: 0;
 		box-sizing: border-box;
-		margin-right:8px;
+		margin-right: 8px;
 	}
 
 	&_container {
@@ -1002,6 +991,7 @@ button:hover {
 		flex-wrap: nowrap;
 	}
 	&_li {
+		@include hover-bg(0);
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
@@ -1014,10 +1004,6 @@ button:hover {
 		margin: 0;
 		box-sizing: border-box;
 		text-size-adjust: 100%;
-
-		@media screen and (width>=1265px) {
-			@include hover-bg(0);
-		}
 	}
 
 	&_anchor {
@@ -1777,6 +1763,7 @@ button:hover {
 	}
 
 	&_cards {
+		@include hover-bg(0);
 		display: flex;
 		flex-direction: column;
 		width: 100%;
@@ -1881,7 +1868,8 @@ button:hover {
 	}
 
 	&_cards_footer {
-		width: 288px;
+		@include hover-bg(0 0 14px 14px);
+		width: 100%;
 		height: 52px;
 		box-sizing: border-box;
 		padding: 16px;
@@ -1908,7 +1896,7 @@ button:hover {
 		height: 233.109px;
 	}
 
-	&_cards-header {
+	&_cards_header {
 		display: flex;
 		align-items: center;
 		height: 48px;
@@ -1928,6 +1916,7 @@ button:hover {
 	}
 
 	&_cards {
+		@include hover-bg(0);
 		display: flex;
 		width: 100%;
 		height: 65.5546875px;
@@ -2027,6 +2016,7 @@ button:hover {
 	}
 
 	&_cards-footer {
+		@include hover-bg(0 0 14px 14px);
 		width: 288px;
 		height: 52px;
 		box-sizing: border-box;

@@ -6,7 +6,7 @@ export default function FollowsRecSection() {
 
 	return (
 		<section className="follow-recommendations">
-			<div className="follow-recommendations_cards-header">
+			<div className="follow-recommendations_cards_header">
 				<span>Who to follow</span>
 			</div>
 			<div className="follow-recommendations_cards">
