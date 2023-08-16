@@ -66,7 +66,7 @@ export default function TweetBox(props) {
 							{schedulesIcon}
 						</a>
 					</li>
-					<li className="tweet-area_li lightIcons">
+					<li className="tweet-area_li--light-icon">
 						<a
 							className="tweet-area_anchors"
 							href="#"
