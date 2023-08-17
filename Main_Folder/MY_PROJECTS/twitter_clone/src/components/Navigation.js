@@ -85,7 +85,7 @@ export default function Navigation(props) {
 						/>
 					</ul>
 				</NavFocusContext.Provider>
-				<div className="nav_tweet-button_wrapper">
+				<div className="nav_tweet-button">
 					<TweetButton text="Post" />
 				</div>
 			</div>
@@ -116,7 +116,7 @@ function NavListItems(props) {
 				onFocus={focusHandler}
 			>
 				<span className="nav_hover-wrapper">
-						{props.identifier(focusedLiContext.focusedLi[props.identifier.name])}
+					{props.identifier(focusedLiContext.focusedLi[props.identifier.name])}
 
 					<span
 						className={

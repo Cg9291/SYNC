@@ -217,6 +217,7 @@ li {
 	max-height: 53.5px; //both heights required + purposefully diff from twitter actual height in order to avoid creating wrapper inside nav
 	width: 100%;
 	box-sizing: border-box;
+	background-color: $theme-color;
 
 	@media only screen and (width>=500px) and (height>=500px) {
 		flex-direction: column;
@@ -551,7 +552,7 @@ li {
 	}
 }
 
-.nav_tweet-button_wrapper {
+.nav_tweet-button {
 	@media screen and (width>=500px) and (height>=500px) {
 		display: flex;
 		width: 100%;
@@ -586,7 +587,7 @@ li {
 	width: 56px;
 	aspect-ratio: 1/1;
 	right: 20px;
-	bottom: 73px;
+	bottom: 73.5px;
 	padding: 0;
 
 	@media screen and (width>=500px) and (height>=500px) {
@@ -1544,18 +1545,28 @@ button:hover {
 		max-width: 350px;
 		width: 350px;
 	}
+	&_wrapper{
+		@media screen and (width>=988px) {
+		box-sizing: border-box;
+		width: 100%;
+		height: 42px;
+		border: 1px solid rgb(239, 243, 244);
+		border-radius: 99px;
+		margin-top: 3.5px;
+		}
+	}
 
 	&_container {
 		@media screen and (width>=988px) {
 			width: 100%;
 			height: 44px;
 			border-radius: 99px;
-			margin-top: 4.5px;
+
 			box-sizing: border-box;
 			display: flex;
 			align-items: center;
-			border: solid 1px white;
-			background-color: $sub-theme-color;
+			//border: solid 1px white;
+			background-color: rgb(239, 243, 244);
 		}
 	}
 	&_searchIcon-wrapper {
@@ -1583,6 +1594,8 @@ button:hover {
 
 	&_input {
 		@extend .searchBar_container;
+		border:none;
+		background-color: transparent;
 		margin: 0;
 		outline: none;
 		display: flex;
@@ -1618,17 +1631,19 @@ button:hover {
 	}
 
 	&_prompt {
+		display: flex;
 		width: 100%;
 		height: 20px;
 		font-size: 15px;
 		font-weight: 400;
 		line-height: 20px;
 		text-align: center;
-		margin-left: 17px;
+		justify-content: start;
+		//margin-left: 17px;
 		color: rgb(83, 100, 113);
 		word-wrap: wrap;
 		overflow-wrap: break-word;
-		text-indent: -4px;
+		text-indent: -3px;
 	}
 }
 
@@ -1643,7 +1658,8 @@ button:hover {
 	}
 
 	.searchBar_prompt-wrapper {
-		display: block;
+		display: flex;
+		justify-content: center;
 	}
 }
 
@@ -2046,6 +2062,7 @@ button:hover {
 		margin: 0 16px;
 		box-sizing: border-box;
 		flex-wrap: wrap;
+		row-gap:5px;
 		&_elements {
 			display: flex;
 			align-items: center;
