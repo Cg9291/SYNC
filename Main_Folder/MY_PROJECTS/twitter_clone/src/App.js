@@ -110,7 +110,7 @@ function App() {
 						<div className="main_sidebar-container_wrapper2">
 							<SearchBar />
 							<div className="main_sidebar-container_wrapper3">
-								<GetVerifiedSection />
+								<GetVerifiedSection mode="Subscribe" />
 								<TrendingSection imageSource={imageSource} />
 								<FollowsRecSection />
 								<MoreInfoSection />

@@ -24,6 +24,15 @@ export default function TweetButton(props) {
 		>
 			<span className="follow-recommendations_button_text">{props.text}</span>
 		</a>
+	) : props.text === "Subscribe" ? (
+		<div className="subscribeToPremium_button_container">
+			<a
+				href="#"
+				className="subscribeToPremium_button_wrapper"
+			>
+				<span className="subscribeToPremium_button_text">{props.text}</span>
+			</a>
+		</div>
 	) : (
 		<div className="getVerified_button_container">
 			<a

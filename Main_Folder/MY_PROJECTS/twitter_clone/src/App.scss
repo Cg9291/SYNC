@@ -1739,6 +1739,78 @@ button:hover {
 	}
 }
 
+.subscribeToPremium{
+	@extend .getVerified;
+	min-height: 166px;
+
+	@media screen and (width>=1078px) {
+			min-height: 146px;
+			max-height: 146px;
+	}
+	&_container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		min-height: 164px;
+		padding: 12px 16px;
+		box-sizing: border-box;
+		row-gap: 10px;
+
+		@media screen and (width>=1078px) {
+			min-height: 144px;
+			max-height: 144px;
+	}
+	}
+
+	&_header {
+		font-family: chirp;
+		font-weight: 900;
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	&_text {
+		font-size: 15px;
+		line-height: 20px;
+		font-weight: 700;
+		height: 60px;
+		//padding: 1px 0px;
+		box-sizing: border-box;
+	}
+
+	&_button_container {
+		height: 36px;
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+	}
+
+	&_button_wrapper {
+		@extend .nav_tweet-button_container_button-wrapper;
+		color: rgb(255, 255, 255);
+		text-decoration: none;
+		background-color: black;
+		height: 36px;
+		min-width: 106.86px;
+		max-width: 106.86px;
+		//padding: 0px 16px;
+		box-sizing: border-box;
+		border-radius: 99px;
+	}
+
+	&_button_text {
+		@extend .nav_tweet-button_container_text;
+		display: flex;
+		align-items: center;
+		font-size: 15px;
+		line-height: 20px;
+		height: 20px;
+		font-weight: 700;
+		text-size-adjust: 100%;
+		color: rgb(255, 255, 255);
+	}
+}
+
 .trending {
 	display: none;
 	@media screen and (width>=988px) {
