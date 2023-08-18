@@ -6,6 +6,7 @@ import {
 	likesIcon,
 	statsIcon,
 	shareIcon,
+	shareIconAlt
 } from "../assets/icons/statistics_svg";
 import { tweetsArray } from "../objects/tweetsArray";
 
@@ -83,7 +84,7 @@ function TimelineTweets(props) {
 						value={"75.6K"}
 					/>
 					<TweetStats
-						icon={shareIcon}
+						icon={shareIconAlt}
 						//value={22}
 					/>
 				</div>

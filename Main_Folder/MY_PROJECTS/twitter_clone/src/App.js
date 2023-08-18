@@ -15,10 +15,9 @@ import TweetBox from "./components/Tweetbox.js";
 GLOBAL!!
 
 *check hover status for sizes under 1265px..use ipad
-*review share tweet icon
+
 *review searchbar
 *work on mass imports for tweetArray function
-*program profile username to end "..." when text is too long
 *remove all references to twitter i.e classes using "twitter",tweet,word
 *add profiles and trending header images
 *review all texts rendering on mac vs windows
@@ -92,7 +91,7 @@ function App() {
 				/>
 				<Profile
 					img={imageSource}
-					userName="TheSportsMediaCh..."
+					userName="TheSportsMediaChannel"
 					handle="TheSportsMediaC"
 				/>
 			</section>
