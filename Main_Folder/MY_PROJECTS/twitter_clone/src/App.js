@@ -15,8 +15,6 @@ import TweetBox from "./components/Tweetbox.js";
 GLOBAL!!
 
 *check hover status for sizes under 1265px..use ipad
-
-*review searchbar
 *work on mass imports for tweetArray function
 *remove all references to twitter i.e classes using "twitter",tweet,word
 *add profiles and trending header images
