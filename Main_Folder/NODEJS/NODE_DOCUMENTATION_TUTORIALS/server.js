@@ -4,7 +4,7 @@ import { postToServer } from "./Calls/echo_call.js";
 //import html from "./index.html"
 //import { getApiServerData } from "./Calls/lucas_api_call.js";
 
-/* var body = "Welcome to the echo endpoint";
+var body = "Welcome to the echo endpoint";
 export let avar;
 
 const server = http.createServer((req, res) => {
@@ -54,10 +54,8 @@ const server = http.createServer((req, res) => {
 server.listen(3000, () => {
 	console.log("Server is operational", http.METHODS);
 });
- */
 
-
-http
+/* http
 	.createServer((request, response) => {
 		request.on("error", err => {
 			console.error(`error is ${err}`);
@@ -75,3 +73,4 @@ http
 		}
 	})
 	.listen(3000,()=>{console.log("hey")});
+ */
