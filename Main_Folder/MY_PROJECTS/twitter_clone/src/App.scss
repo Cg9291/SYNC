@@ -1926,6 +1926,8 @@ button:hover {
 		color: rgb(83, 100, 113);
 	}
 
+
+
 	/* &_categories_text {
 		max-height: 15.5px;
 		line-height: 16px;
@@ -1937,8 +1939,13 @@ button:hover {
 		margin-left: auto;
 		aspect-ratio: 1/1;
 		width: 18.75px;
+		//height: 100%;
+		box-sizing: border-box;
+		margin-top: 1.5px;
 		fill: rgb(83, 100, 113);
 	}
+
+
 
 	&_images {
 		width: 68px;

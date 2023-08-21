@@ -83,9 +83,7 @@ function TrendingCards(props) {
 			<div className="wrappers--flex ">
 				<div className="trending_cards-with-image_wrapper">
 					<div className="trending_categories">
-						<span>
-							{props.trendingCardInfo.category}
-						</span>
+						<span>{props.trendingCardInfo.category}</span>
 					</div>
 					<div className="trending_topics">
 						<span>{props.trendingCardInfo.topic}</span>
@@ -103,8 +101,12 @@ function TrendingCards(props) {
 	) : (
 		<div className="trending_cards">
 			<div className="trending_categories">
-				<span>{props.trendingCardInfo.category}</span>
-				{ellipsis("trendingcards")}
+				<span className="trending_trending_categories_wrapper">
+					{props.trendingCardInfo.category}
+				</span>
+				<span className="trending_categories_ellipsis_wrapper">
+					{ellipsis("trendingcards")}
+				</span>
 			</div>
 			<div className="trending_topics">
 				<span>{props.trendingCardInfo.topic}</span>
