@@ -6,7 +6,7 @@ export default function call1() {
 	let options = {
 		hostname: "localhost",
 		port: 3000,
-		path: "/api/:date?",
+		path: "/api/",
 		method: "POST",
 		headers: {
 			"Content-Type": "application/javascript",
