@@ -3,6 +3,10 @@ import url from "url";
 
 http
 	.createServer((req, res) => {
+		res.setHeader("Access-Control-Allow-Origin", "*");
+		res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+		res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
 		let myResObj = {};
 
 		req.on("error", err => {
@@ -14,7 +18,7 @@ http
 		});
 
 		if (req.url === "/api/whoami") {
-			myResObj.ipaddress = req.headers.host
+			myResObj.ipaddress = req.headers.host;
 			myResObj.language = req.headers["accept-language"];
 			myResObj.software = req.headers["user-agent"];
 			res.writeHead(200, { "Content-type": "application/json" });
@@ -22,7 +26,7 @@ http
 			console.log(req.headers);
 		} else {
 			//res.writeHead(200, { "Content-type": "plain/text" });
-            res.writeHead(200, { "Content-type": "text/plain" });
+			res.writeHead(200, { "Content-type": "text/plain" });
 			res.end("Welcome to the root");
 		}
 	})
