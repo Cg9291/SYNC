@@ -6,10 +6,9 @@ import {
 	likesIcon,
 	statsIcon,
 	shareIcon,
-	shareIconAlt
+	shareIconAlt,
 } from "../assets/icons/statistics_svg";
 import { tweetsArray } from "../objects/tweetsArray";
-
 
 export default function TimelineBackup() {
 	return (
@@ -29,9 +28,11 @@ function TimelineTweets(props) {
 	let tweetText = props.tweetObj.tweetText;
 	let tweetMedia = props.tweetObj.tweetMedia;
 
-
 	return (
-		<div className="timeline_body_tweets-card">
+		<a
+			href="#"
+			className="timeline_body_tweets-card"
+		>
 			<div className="timeline_body_profile-picture-wrapper">
 				<img
 					src={profilePicture}
@@ -41,9 +42,12 @@ function TimelineTweets(props) {
 			<div className="timeline_body_main-section-container">
 				<div className="timeline_body_header">
 					<span className="timeline_body_header_user-name-wrapper">
-						<div className="timeline_body_header_user-name">
+						<a
+							href="#"
+							className="timeline_body_header_user-name"
+						>
 							{tweetAuthorUserName}
-						</div>
+						</a>
 						<span></span>
 					</span>
 					<span className="timeline_body_header_checkmark-wrapper">
@@ -89,7 +93,7 @@ function TimelineTweets(props) {
 					/>
 				</div>
 			</div>
-		</div>
+		</a>
 	);
 }
 
@@ -105,9 +109,7 @@ function TweetStats(props) {
 			<span className="timeline_body_statistics-row_icons-wrapper">
 				{props.icon}
 			</span>
-			<span className="timeline_body_statistics-row_values">
-				{props.value}
-			</span>
+			<span className="timeline_body_statistics-row_values">{props.value}</span>
 		</div>
 	);
 }
