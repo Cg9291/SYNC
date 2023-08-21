@@ -70,16 +70,16 @@ export default function TrendingSection(props) {
 					scope: `${myTrendingNews.section5.scope}`,
 				}}
 			/>
-			<div className="trending_cards_footer">
+			<a href="#" className="trending_cards_footer">
 				<a href="#">Show more</a>
-			</div>
+			</a>
 		</section>
 	);
 }
 
 function TrendingCards(props) {
 	return props.trendingCardInfo.pic ? (
-		<div className="trending_cards-with-image">
+		<a href="#" className="trending_cards-with-image">
 			<div className="wrappers--flex ">
 				<div className="trending_cards-with-image_wrapper">
 					<div className="trending_categories">
@@ -97,9 +97,9 @@ function TrendingCards(props) {
 					/>
 				</div>
 			</div>
-		</div>
+		</a>
 	) : (
-		<div className="trending_cards">
+		<a href="#"  className="trending_cards">
 			<div className="trending_categories">
 				<span className="trending_trending_categories_wrapper">
 					{props.trendingCardInfo.category}
@@ -114,6 +114,6 @@ function TrendingCards(props) {
 			<div className="trending_scopes">
 				<span>{props.trendingCardInfo.scope}</span>
 			</div>
-		</div>
+		</a>
 	);
 }

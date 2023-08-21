@@ -9,25 +9,25 @@ export default function FollowsRecSection() {
 			<div className="follow-recommendations_cards_header">
 				<span>Who to follow</span>
 			</div>
-			<div className="follow-recommendations_cards">
+			<a href="#"  className="follow-recommendations_cards">
 				<Profile
 					img={imageSource}
 					userName="Stephen Curry"
 					handle={"StephenCurry30"}
 					follow={true}
 				/>
-			</div>
-			<div className="follow-recommendations_cards">
+			</a>
+			<a href="#"  className="follow-recommendations_cards">
 				<Profile
 					img={imageSource}
 					userName="NBA"
 					handle={"NBA"}
 					follow={true}
 				/>
-			</div>
-			<div className="follow-recommendations_cards-footer">
+			</a>
+			<a href="#"  className="follow-recommendations_cards-footer">
 				<a href="#">Show more</a>
-			</div>
+			</a>
 		</section>
 	);
 }

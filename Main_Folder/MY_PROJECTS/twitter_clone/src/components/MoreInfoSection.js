@@ -1,29 +1,32 @@
 import { ellipsis } from "../assets/icons/svg_exports.js";
 
-export default function MoreInfoSection (){
+export default function MoreInfoSection() {
 	return (
 		<div className="more-info">
-			<a className="more-info_elements">
-				<span className="more-info_text">Terms of Service</span>
-			</a>
-			<a className="more-info_elements">
-				<span className="more-info_text">Privacy Policy</span>
-			</a>
-			<a className="more-info_elements">
-				<span className="more-info_text">Cookie Policy</span>
-			</a>
-			<a className="more-info_elements">
-				<span className="more-info_text">Accessibility</span>
-			</a>
-			<a className="more-info_elements">
-				<span className="more-info_text">Ads info</span>
-			</a>
-			<a className="more-info_elements">
-				<span className="more-info_text">More {ellipsis()}</span>
-			</a>
-			<a className="more-info_elements">
-				<span className="more-info_text">© 2023 X Corp.</span>
-			</a>
+			<MoreInfoElements text="Terms of Service" />
+			<MoreInfoElements text="Privacy Policy" />
+			<MoreInfoElements text="Cookie Policy" />
+			<MoreInfoElements text="Accessibility" />
+			<MoreInfoElements text="Ads info" />
+			<MoreInfoElements
+				text="More"
+				ellipsis="true"
+			/>
+			<MoreInfoElements text="© 2023 X Corp." />
 		</div>
 	);
-};
+}
+
+function MoreInfoElements(props) {
+	return (
+		<a
+			href="#"
+			className="more-info_elements"
+		>
+			<span className="more-info_text">
+				{props.text}
+				{props.ellipsis && ellipsis()}
+			</span>
+		</a>
+	);
+}
