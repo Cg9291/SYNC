@@ -1,4 +1,4 @@
-//check to see if it can return jsx without parenthesis
+	//check to see if it can return jsx without parenthesis
 import { checkMark, ellipsis } from "../assets/icons/svg_exports";
 import {
 	commentsIcon,
