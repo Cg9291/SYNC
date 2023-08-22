@@ -88,9 +88,9 @@ export default function TweetBox(props) {
 	) : (
 		<div className="tweet-area--shrunk hidden500 ">
 			<div className="tweet-area--shrunk_wrapper">
-				<div className="tweet-area--shrunk_profile-image-box">
+				<div className="tweet-area_profile-image-box">
 					<img
-						className="tweet-area--shrunk_profile-img"
+						className="tweet-area_profile-img"
 						src={props.img}
 					/>
 				</div>
@@ -100,58 +100,58 @@ export default function TweetBox(props) {
 					placeholder="What is happening?!"
 				></textarea>
 			</div>
-			<div className="tweet-area_--shrunkicons-row">
-				<ul className="tweet-area--shrunk_ul">
-					<li className="tweet-area--shrunk_li tweet-area--shrunk_li--first-item">
+			<div className="tweet-area--shrunk_icons-row">
+				<ul className="tweet-area_ul">
+					<li className="tweet-area_li tweet-area_li--first-item">
 						<a
-							className="tweet-area--shrunk_anchors"
+							className="tweet-area_anchors"
 							href="#"
 						>
 							{imagesIcon}
 						</a>
 					</li>
-					<li className="tweet-area--shrunk_li">
+					<li className="tweet-area_li">
 						<a
-							className="tweet-area--shrunk_anchors"
+							className="tweet-area_anchors"
 							href="#"
 						>
 							{gifsIcon}
 						</a>
 					</li>
-					<li className="tweet-area--shrunk_li hidden688">
+					<li className="tweet-area_li hidden688">
 						<a
-							className="tweet-area--shrunk_anchors"
+							className="tweet-area_anchors"
 							href="#"
 						>
 							{pollsIcon}
 						</a>
 					</li>
-					<li className="tweet-area--shrunk_li hidden-More">
+					<li className="tweet-area_li hidden-688">
 						<a
-							className="tweet-area--shrunk_anchors"
+							className="tweet-area_anchors"
 							href="#"
 						>
 							{emojisIcon}
 						</a>
 					</li>
-					<li className="tweet-area--shrunk_li hidden688">
+					<li className="tweet-area_li hidden688">
 						<a
-							className="tweet-area--shrunk_anchors"
+							className="tweet-area_anchors"
 							href="#"
 						>
 							{schedulesIcon}
 						</a>
 					</li>
-					<li className="tweet-area--shrunk_li--light-icon">
+					<li className="tweet-area_li--light-icon">
 						<a
-							className="tweet-area--shrunk_anchors"
+							className="tweet-area_anchors"
 							href="#"
 						>
 							{locationsIcon}
 						</a>
 					</li>
 				</ul>
-				<div className="tweet-area--shrunk_wrapper--btn">
+				<div className="tweet-area_wrapper--btn">
 					<TweetButton
 						text="Post"
 						btn="btn"

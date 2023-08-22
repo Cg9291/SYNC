@@ -97,7 +97,7 @@ function App() {
 			<section className="main">
 				<section className="main_primary-container">
 					<Header headerHeight={headerHeight} />
-					<TweetBox img={imageSource} size="regular" />
+					<TweetBox img={imageSource} size="shrunk" />
 
 					<Timeline img={imageSource} />
 				</section>

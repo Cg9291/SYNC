@@ -1289,11 +1289,55 @@ button:hover {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	height: 120px;
+	height: 121px;
 	margin: 0 0 0 0;
 	padding: 4px 16px 0 16px;
 	box-sizing: border-box;
 	border-bottom: var(--main-border-style);
+
+	&_wrapper {
+		@extend .wrappers--flex;
+		padding: 0;
+		box-sizing: border-box;
+		height: fit-content;
+	}
+
+	&_tweet-input {
+		appearance: none;
+		background-color: rgba(0, 0, 0, 0);
+		color: rgb(15, 20, 25);
+		width: 100%;
+		height: 56px;
+		display: block;
+		padding: 20px 0 0 2px;
+		box-sizing: border-box;
+		border: none;
+		font-size: 20px;
+		font-family: chirp;
+		font-weight: 400;
+		font-optical-sizing: auto;
+		resize: none;
+		outline: none;
+		font-feature-settings: normal;
+		font-kerning: auto;
+		font-stretch: 100%;
+		letter-spacing: normal;
+		text-rendering: auto;
+		text-shadow: none;
+		text-transform: none;
+		word-wrap: wrap;
+		line-height: normal;
+		overflow-wrap: break-word;
+	}
+
+	&_icons-row {
+		display: flex;
+		height: 52px;
+		margin: 0 0 0 52px;
+		padding: 0 0 0 2px;
+		justify-content: space-between;
+		box-sizing: border-box;
+	}
 }
 
 .timeline_wrapper {
@@ -1320,10 +1364,10 @@ button:hover {
 		width: 100%;
 		box-sizing: border-box;
 		//margin-top: 12px;
-		padding:12px 17px;
+		padding: 12px 17px;
 		border-bottom: var(--main-border-style);
 		text-decoration: none;
-/*
+		/*
 		@media screen and (width>=500px) {
 			padding: 12px 17px;
 		} */
