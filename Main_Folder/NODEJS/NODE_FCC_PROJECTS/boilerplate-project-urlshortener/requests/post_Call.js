@@ -15,5 +15,5 @@ export default function postUrl() {
 	myReq.on("finish", () => {
 		console.log("Data has been transmitted");
 	});
-	myReq.end("https://www.yahoo.com/");
+	myReq.end("https://www.instagram.com/");
 }
