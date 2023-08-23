@@ -2,11 +2,6 @@ import TweetButton from "./TweetButton.js";
 import { checkMark, ellipsis } from "../assets/icons/svg_exports.js";
 
 export default function Profile(props) {
-	/* const [userName,setUserName]=useState({
-      userName:"CGcodes",
-      userHandle:"@Cg_devs"
-    }) */
-
 	return props.follow === true ? (
 		<div className="follow-recommendations_cards_wrapper">
 			<div className="follow-recommendations_cards_container">

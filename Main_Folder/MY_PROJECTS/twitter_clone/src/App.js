@@ -14,7 +14,7 @@ import TweetBox from "./components/Tweetbox.js";
 /* TODO
 GLOBAL!!
 
-
+*figure out best svg structure
 *check hover status for sizes under 1265px..use ipad
 *work on mass imports for tweetArray function
 *remove all references to twitter i.e classes using "twitter",tweet,word
@@ -97,7 +97,7 @@ function App() {
 			<section className="main">
 				<section className="main_primary-container">
 					<Header headerHeight={headerHeight} />
-					<TweetBox img={imageSource} size="shrunk" />
+					<TweetBox img={imageSource} size="regular" />
 
 					<Timeline img={imageSource} />
 				</section>
