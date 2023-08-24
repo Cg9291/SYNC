@@ -93,16 +93,24 @@ const server = http.createServer((req, res) => {
 				})
 				.on("end", () => {
 					/* body = Buffer.concat(body).toString(); */
-					body = JSON.stringify(body).slice(5, body.length + 1);
-					console.log(body);
+					body = decodeURIComponent(
+						/* JSON.stringify(body).slice(5, body.length + 1), */
+						body.slice(4, body.length + 1),
+					);
+					console.log(decodeURIComponent(body));
 
 					fs.readFile("./objects/addressLookup.json", "utf-8", (err, data) => {
+						console.log('data is'+data)
 						if (err) {
 							console.log(err);
 							return;
 						} else {
-							if (checkUrlDuplicate(makeRawDataItterable,data, body) === true) {
-								return;
+							if (
+								checkUrlDuplicate(makeRawDataItterable, data, body) === true
+							) {
+								res.writeHead(409, { "Content-Type": "text/plain" });
+								res.end("409 Error: Post request was rejected because this URL has already been assigned a short url.");
+								console.log("URL already exists");
 							} else {
 								myResObj.original_url = body;
 								myResObj.short_url = Math.floor(Math.random() * (1000 - 1) + 1);
@@ -145,4 +153,3 @@ process.on("SIGINT", code => {
 	console.log("..........Server has been terminated");
 	process.exit(0);
 });
-
