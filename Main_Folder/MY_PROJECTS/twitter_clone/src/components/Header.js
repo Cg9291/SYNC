@@ -1,4 +1,4 @@
-import { twitterXLogoHeader } from "../assets/icons/svg_exports.js";
+import { TwitterXLogo } from "../assets/icons/svg_exports.js";
 import { useState } from "react";
 
 export default function Header(props) {
@@ -23,7 +23,9 @@ export default function Header(props) {
 					</div>
 				</div>
 				<span className="header_text-span">Home</span>
-				<div className="header_twitter-logo-box">{twitterXLogoHeader}</div>
+				<div className="header_twitter-logo-box">
+					<TwitterXLogo usage="header" />
+				</div>
 				<div className="alignment-boxes"></div>
 			</div>
 			<div className="header_header-bottom">
