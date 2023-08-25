@@ -1,4 +1,5 @@
-import { writeTweetIcon } from "../assets/icons/svg_exports.js";
+import { SvgIcon } from "./SvgIcon.js";
+import { generalIcons } from "../objects/navListIcons";
 
 export default function TweetButton(props) {
 	return props.btn === "btn" ? (
@@ -13,7 +14,10 @@ export default function TweetButton(props) {
 				href="#"
 				className="nav_tweet-button_container_button-wrapper"
 			>
-				<>{writeTweetIcon}</>
+				<SvgIcon
+					classNames="write-tweet-icon"
+					path={generalIcons.writeTweetIcon}
+				/>
 				<span className="nav_tweet-button_container_text">{props.text}</span>
 			</a>
 		</div>

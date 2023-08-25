@@ -1,4 +1,5 @@
-import { ellipsis } from "../assets/icons/svg_exports.js";
+import { SvgIcon } from "./SvgIcon";
+import { generalIcons } from "../objects/navListIcons";
 
 export default function TrendingSection(props) {
 	let myTrendingNews = {
@@ -70,7 +71,10 @@ export default function TrendingSection(props) {
 					scope: `${myTrendingNews.section5.scope}`,
 				}}
 			/>
-			<a href="#" className="trending_cards_footer">
+			<a
+				href="#"
+				className="trending_cards_footer"
+			>
 				<a href="#">Show more</a>
 			</a>
 		</section>
@@ -78,8 +82,13 @@ export default function TrendingSection(props) {
 }
 
 function TrendingCards(props) {
+	let ellipsisInfo = generalIcons.ellipsis.userProfile;
+
 	return props.trendingCardInfo.pic ? (
-		<a href="#" className="trending_cards-with-image">
+		<a
+			href="#"
+			className="trending_cards-with-image"
+		>
 			<div className="wrappers--flex ">
 				<div className="trending_cards-with-image_wrapper">
 					<div className="trending_categories">
@@ -99,13 +108,19 @@ function TrendingCards(props) {
 			</div>
 		</a>
 	) : (
-		<a href="#"  className="trending_cards">
+		<a
+			href="#"
+			className="trending_cards"
+		>
 			<div className="trending_categories">
 				<span className="trending_trending_categories_wrapper">
 					{props.trendingCardInfo.category}
 				</span>
 				<span className="trending_categories_ellipsis_wrapper">
-					{ellipsis("trendingcards")}
+					<SvgIcon
+						classNames={ellipsisInfo.classNames}
+						path={ellipsisInfo.path}
+					/>
 				</span>
 			</div>
 			<div className="trending_topics">

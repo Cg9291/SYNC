@@ -1,19 +1,8 @@
-import { useContext, forwardRef } from "react";
+import { useContext} from "react";
 import TweetButton from "./TweetButton.js";
 import { NavFocusContext } from "../contexts/contexts.js";
-import {
-	TwitterXLogo,
-	HomeIcon,
-	SearchIconNav,
-	BellIcon,
-	MessagesIcon,
-	listsIcon,
-	bookmarksIcon,
-	checkmarkIcon,
-	profileIcon,
-	moreIcon,
-	communitiesIcon,
-} from "../assets/icons/svg_exports";
+import { SvgIcon } from "./SvgIcon.js";
+import { generalIcons } from "../objects/navListIcons.js";
 
 export default function Navigation(props) {
 	NavListItems.defaultProps = {
@@ -25,7 +14,10 @@ export default function Navigation(props) {
 			<div className="wrapper">
 				<div className="nav_twitter-logo-box">
 					<div className="nav_twitter-logo-box_hover-wrapper">
-						<TwitterXLogo usage="nav" />
+						<SvgIcon
+							classNames={"nav_twitter-logo"}
+							path={generalIcons.twitterXLogo}
+						/>
 					</div>
 				</div>
 				<NavFocusContext.Provider
@@ -112,6 +104,10 @@ function NavListItems(props) {
 		setFocusedLi(focusedLi => ({ ...focusedLi, nextState }));
 	};
 
+	SvgIcon.defaultProps = {
+		classNames: "nav_nav-icons",
+	};
+
 	return (
 		<li className={props.classNames}>
 			<a
@@ -121,7 +117,6 @@ function NavListItems(props) {
 			>
 				<span className="nav_hover-wrapper">
 					<SvgIcon
-						iconName={identifier}
 						path={
 							focusedLi[identifier].focused
 								? focusedLi[identifier].focusedStyle
@@ -139,18 +134,5 @@ function NavListItems(props) {
 				</span>
 			</a>
 		</li>
-	);
-}
-
-function SvgIcon(props) {
-	return (
-		<svg
-			className="nav_nav-icons"
-			viewBox="0 0 24 24 "
-		>
-			<g>
-				<path d={props.path}></path>
-			</g>
-		</svg>
 	);
 }

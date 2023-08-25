@@ -1,5 +1,7 @@
-	//check to see if it can return jsx without parenthesis
-import { checkMark, ellipsis } from "../assets/icons/svg_exports";
+//check to see if it can return jsx without parenthesis
+//import { checkMark } from "../assets/icons/svg_exports";
+import { SvgIcon } from "./SvgIcon";
+import { generalIcons } from "../objects/navListIcons";
 import {
 	commentsIcon,
 	retweetsIcon,
@@ -28,6 +30,8 @@ function TimelineTweets(props) {
 	let tweetText = props.tweetObj.tweetText;
 	let tweetMedia = props.tweetObj.tweetMedia;
 
+	const ellipsisInfo = generalIcons.ellipsis.tweets;
+
 	return (
 		<a
 			href="#"
@@ -51,7 +55,10 @@ function TimelineTweets(props) {
 						<span></span>
 					</span>
 					<span className="timeline_body_header_checkmark-wrapper">
-						{checkMark}
+						<SvgIcon
+							classNames={generalIcons.checkmarkIcon.classNames}
+							path={generalIcons.checkmarkIcon.path}
+						/>
 					</span>
 					<span className="timeline_body_header_handle">
 						{"@"}
@@ -60,7 +67,10 @@ function TimelineTweets(props) {
 					<span> · </span>
 					<span className="timeline_body_header_posting-time">5h</span>
 					<span className="timeline_body_header_ellipsis">
-						{ellipsis("tweets")}
+						<SvgIcon
+							classNames={ellipsisInfo.classNames}
+							path={ellipsisInfo.path}
+						/>
 					</span>
 				</div>
 				<div className="timeline_body_tweet-text">{tweetText}</div>

@@ -1,5 +1,6 @@
-import { searchIconSearchBar } from "../assets/icons/svg_exports";
 import { useState } from "react";
+import { SvgIcon } from "./SvgIcon";
+import { generalIcons } from "../objects/navListIcons.js";
 
 export default function SearchBar(props) {
 	const [isFocused, setIsFocused] = useState(false);
@@ -15,7 +16,10 @@ export default function SearchBar(props) {
 								: "searchBar_searchIcon-wrapper"
 						}
 					>
-						{searchIconSearchBar}
+						<SvgIcon
+							classNames="searchBar_search-icon"
+							path={generalIcons.searchIconSearchBar}
+						/>
 					</div>
 					<input
 						className="searchBar_input"

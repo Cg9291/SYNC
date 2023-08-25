@@ -1,4 +1,5 @@
-import { ellipsis } from "../assets/icons/svg_exports.js";
+import { SvgIcon } from "./SvgIcon";
+import { generalIcons } from "../objects/navListIcons";
 
 export default function MoreInfoSection() {
 	return (
@@ -18,6 +19,7 @@ export default function MoreInfoSection() {
 }
 
 function MoreInfoElements(props) {
+	const ellipsisInfo = generalIcons.ellipsis.moreInfo;
 	return (
 		<a
 			href="#"
@@ -25,7 +27,12 @@ function MoreInfoElements(props) {
 		>
 			<span className="more-info_text">
 				{props.text}
-				{props.ellipsis && ellipsis()}
+				{props.ellipsis && (
+					<SvgIcon
+						classNames={ellipsisInfo.classNames}
+						path={ellipsisInfo.path}
+					/>
+				)}
 			</span>
 		</a>
 	);

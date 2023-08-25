@@ -1,7 +1,12 @@
 import TweetButton from "./TweetButton.js";
-import { checkMark, ellipsis } from "../assets/icons/svg_exports.js";
+/*  */
+
+import { SvgIcon } from "./SvgIcon";
+import { generalIcons } from "../objects/navListIcons";
 
 export default function Profile(props) {
+	let ellipsisInfo=generalIcons.ellipsis.userProfile
+
 	return props.follow === true ? (
 		<div className="follow-recommendations_cards_wrapper">
 			<div className="follow-recommendations_cards_container">
@@ -36,7 +41,7 @@ export default function Profile(props) {
 					<b>{props.userName}</b>
 					<div>@{props.handle}</div>
 				</div>
-				<span>{ellipsis("userprofile")}</span>
+				<span><SvgIcon classNames={ellipsisInfo.classNames} path={ellipsisInfo.path}/></span>
 			</div>
 		</div>
 	);

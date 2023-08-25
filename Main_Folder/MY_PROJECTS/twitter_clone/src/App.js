@@ -10,12 +10,14 @@ import GetVerifiedSection from "./components/GetVerifiedSection";
 import Profile from "./components/Profile.js";
 import MoreInfoSection from "./components/MoreInfoSection.js";
 import TweetBox from "./components/Tweetbox.js";
-import { navListIcons } from "./objects/navListIcons.js";
+import { navListIcons,generalIcons } from "./objects/navListIcons.js";
 
 /* TODO
 GLOBAL!!
 
-*figure out best svg structure
+*decide on whether to pass svg classes inline of have them in the object where path is
+*review sizing of header X logo
+*structure stats svgs
 *check hover status for sizes under 1265px..use ipad
 *work on mass imports for tweetArray function
 *remove all references to twitter i.e classes using "twitter",tweet,word
@@ -46,6 +48,7 @@ function App() {
 	let [headerHeight, setHeaderHeight] = useState("-0.5px");
 
 	let [focusedLi, setFocusedLi] = useState(navListIcons);
+
 
 	//EFFECTS
 
