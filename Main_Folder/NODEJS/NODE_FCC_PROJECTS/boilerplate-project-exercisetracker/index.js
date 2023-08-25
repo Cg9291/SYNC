@@ -28,19 +28,29 @@ const server = http.createServer((req, res) => {
 
 	if (req.method === "GET") {
 		if (routesIndex.rootEndpoint(pathSegments) === true) {
-			fs.readFile(
-				path.join(__dirname, "./views/index.html"),
-				"utf-8",
-				(err, data) => {
-					if (err) {
-						console.log(err);
-						return;
-					} else {
-						res.writeHead(200, { "Content-Type": "text/html" });
-						res.end(data);
-					}
-				},
-			);
+			/* if (request.url.match(/^\/css\//)) {
+				var css = fs.readFileSync("./FirstApp/HtmlPages" + request.url);
+				response.writeHead(200, { "Content-Type": "text/css" });
+				response.write(css);
+				response.end();
+				return;
+			} */
+			const filePath = path.join(__dirname, "./views/index.html");
+			fs.readFile(filePath, "utf-8", (err, content) => {
+				if (err) {
+					console.log(err);
+					res.writeHead(500, { "Content-Type": "text/plain" });
+					res.end("Internal server error");
+				} else {
+					res.writeHead(200, { "Content-Type": "text/html" });
+					/* res.on("finish", err => {
+						if (err) {
+							console.log(err);
+						}
+					}); */
+					res.end(content);
+				}
+			});
 		}
 	} else if (req.method === "POST") {
 		let body = "";
