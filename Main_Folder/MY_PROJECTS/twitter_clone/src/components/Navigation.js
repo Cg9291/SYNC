@@ -37,20 +37,20 @@ export default function Navigation(props) {
 				>
 					<ul className="nav_ul">
 						<NavListItems
-							identifier="HomeIcon"
+							identifier="homeIcon"
 							label={"Home"}
 						/>
 						<NavListItems
-							identifier="SearchIconNav"
+							identifier="searchIconNav"
 							label={"Explore"}
 							classNames={"nav_li--search-icon"}
 						/>
 						<NavListItems
-							identifier="BellIcon"
+							identifier="bellIcon"
 							label={"Notifications"}
 						/>
 						<NavListItems
-							identifier="MessagesIcon"
+							identifier="messagesIcon"
 							label={"Messages"}
 						/>
 						<NavListItems
@@ -101,22 +101,17 @@ function NavListItems(props) {
 	const identifier = props.identifier;
 
 	const focusHandler = () => {
-		setFocusedLi(for (let obj in focusedLi) {
+		let nextState = focusedLi;
+		for (let obj in focusedLi) {
 			if (obj !== identifier) {
-				obj.focused = false;
+				nextState[obj].focused = false;
 			} else {
-				obj.focused = true;
-			}})
-
-
-			/* let nextState = {}; */
-			/* Object.keys(focusedLi).forEach(key => {
-			nextState[key].focused = false;
-		}); */
-		/* nextState[identifier].focused = true;
-		setFocusedLi(nextState); */
+				nextState[obj].focused = true;
+			}
+		}
+		setFocusedLi(focusedLi => ({ ...focusedLi, nextState }));
 	};
-	/* console.log(focusedLiContext.focusedLi[props.identifier].unfocusedStyle); */
+
 	return (
 		<li className={props.classNames}>
 			<a
@@ -125,15 +120,10 @@ function NavListItems(props) {
 				onFocus={focusHandler}
 			>
 				<span className="nav_hover-wrapper">
-					{/* {props.identifier(focusedLiContext.focusedLi[props.identifier.name])} */}
-					{/* 	<props.identifier
-						focused={focusedLiContext.focusedLi[props.identifier.name]}
-					/>
-					{console.log(props.identifier)} */}
 					<SvgIcon
 						iconName={identifier}
 						path={
-							focusedLi[identifier].focused === true
+							focusedLi[identifier].focused
 								? focusedLi[identifier].focusedStyle
 								: focusedLi[identifier].unfocusedStyle
 						}
@@ -153,7 +143,6 @@ function NavListItems(props) {
 }
 
 function SvgIcon(props) {
-	//console.log(props.path);
 	return (
 		<svg
 			className="nav_nav-icons"
