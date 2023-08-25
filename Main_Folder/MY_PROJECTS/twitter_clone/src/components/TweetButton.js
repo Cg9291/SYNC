@@ -15,8 +15,8 @@ export default function TweetButton(props) {
 				className="nav_tweet-button_container_button-wrapper"
 			>
 				<SvgIcon
-					classNames="write-tweet-icon"
-					path={generalIcons.writeTweetIcon}
+					classNames={generalIcons.writeTweetIcon.classNames}
+					path={generalIcons.writeTweetIcon.path}
 				/>
 				<span className="nav_tweet-button_container_text">{props.text}</span>
 			</a>

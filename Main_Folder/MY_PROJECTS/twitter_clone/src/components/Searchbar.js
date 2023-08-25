@@ -17,8 +17,8 @@ export default function SearchBar(props) {
 						}
 					>
 						<SvgIcon
-							classNames="searchBar_search-icon"
-							path={generalIcons.searchIconSearchBar}
+							classNames={generalIcons.searchIconSearchBar.classNames}
+							path={generalIcons.searchIconSearchBar.path}
 						/>
 					</div>
 					<input

@@ -1,7 +1,7 @@
 //check to see if it can return jsx without parenthesis
 //import { checkMark } from "../assets/icons/svg_exports";
 import { SvgIcon } from "./SvgIcon";
-import { generalIcons } from "../objects/navListIcons";
+import { generalIcons, tweetStatsIcons } from "../objects/navListIcons";
 import {
 	commentsIcon,
 	retweetsIcon,
@@ -82,24 +82,48 @@ function TimelineTweets(props) {
 				</div>
 				<div className="timeline_body_statistics-row">
 					<TweetStats
-						icon={commentsIcon}
+						icon={
+							<SvgIcon
+								classNames={tweetStatsIcons.defaultClassNames}
+								path={tweetStatsIcons.commentsIconPath}
+							/>
+						}
 						value={22}
 					/>
 					<TweetStats
-						icon={retweetsIcon}
+						icon={
+							<SvgIcon
+								classNames={tweetStatsIcons.defaultClassNames}
+								path={tweetStatsIcons.retweetsIconPath}
+							/>
+						}
 						value={98}
 					/>
 					<TweetStats
-						icon={likesIcon}
+						icon={
+							<SvgIcon
+								classNames={tweetStatsIcons.defaultClassNames}
+								path={tweetStatsIcons.likesIconPath}
+							/>
+						}
 						value={798}
 					/>
 					<TweetStats
-						icon={statsIcon}
+						icon={
+							<SvgIcon
+								classNames={tweetStatsIcons.defaultClassNames}
+								path={tweetStatsIcons.statIconPath}
+							/>
+						}
 						value={"75.6K"}
 					/>
 					<TweetStats
-						icon={shareIconAlt}
-						//value={22}
+						icon={
+							<SvgIcon
+								classNames={tweetStatsIcons.defaultClassNames}
+								path={tweetStatsIcons.shareIconAltPath}
+							/>
+						}
 					/>
 				</div>
 			</div>
