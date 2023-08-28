@@ -1,8 +1,8 @@
-import { useContext} from "react";
+import { useContext } from "react";
 import TweetButton from "./TweetButton.js";
 import { NavFocusContext } from "../contexts/contexts.js";
 import { SvgIcon } from "./SvgIcon.js";
-import { generalIcons } from "../objects/navListIcons.js";
+import { generalIcons } from "../objects/svgIcons.js";
 
 export default function Navigation(props) {
 	NavListItems.defaultProps = {

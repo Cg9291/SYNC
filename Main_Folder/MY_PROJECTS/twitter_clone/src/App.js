@@ -10,7 +10,7 @@ import GetVerifiedSection from "./components/GetVerifiedSection";
 import Profile from "./components/Profile.js";
 import MoreInfoSection from "./components/MoreInfoSection.js";
 import TweetBox from "./components/Tweetbox.js";
-import { navListIcons, generalIcons } from "./objects/navListIcons.js";
+import { navListIcons, generalIcons } from "./objects/svgIcons.js";
 
 /* TODO
 GLOBAL!!

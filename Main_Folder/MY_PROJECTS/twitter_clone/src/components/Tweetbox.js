@@ -1,12 +1,6 @@
-import {
-	imagesIcon,
-	gifsIcon,
-	pollsIcon,
-	emojisIcon,
-	schedulesIcon,
-	locationsIcon,
-} from "../assets/icons/tweetbox_svg";
 import TweetButton from "./TweetButton.js";
+import { SvgIcon } from "./SvgIcon";
+import { tweetBoxIcons } from "../objects/svgIcons";
 
 export default function TweetBox(props) {
 	return props.size === "regular" ? (
@@ -33,7 +27,12 @@ export default function TweetBox(props) {
 							className="tweet-area_anchors"
 							href="#"
 						>
-							{imagesIcon}
+							<SvgIcon
+								classNames={`
+									${tweetBoxIcons.defaultClassNames}
+									tweet-area_tweet-icons--first-icon`}
+								path={tweetBoxIcons.imagesIcon}
+							/>
 						</a>
 					</li>
 					<li className="tweet-area_li">
@@ -41,7 +40,10 @@ export default function TweetBox(props) {
 							className="tweet-area_anchors"
 							href="#"
 						>
-							{gifsIcon}
+							<SvgIcon
+								classNames={tweetBoxIcons.defaultClassNames}
+								path={tweetBoxIcons.gifsIcon}
+							/>
 						</a>
 					</li>
 					<li className="tweet-area_li hidden688">
@@ -49,7 +51,10 @@ export default function TweetBox(props) {
 							className="tweet-area_anchors"
 							href="#"
 						>
-							{pollsIcon}
+							<SvgIcon
+								classNames={tweetBoxIcons.defaultClassNames}
+								path={tweetBoxIcons.pollsIcon}
+							/>
 						</a>
 					</li>
 					<li className="tweet-area_li hidden-More">
@@ -57,7 +62,10 @@ export default function TweetBox(props) {
 							className="tweet-area_anchors"
 							href="#"
 						>
-							{emojisIcon}
+							<SvgIcon
+								classNames={tweetBoxIcons.defaultClassNames}
+								path={tweetBoxIcons.emojisIcon}
+							/>
 						</a>
 					</li>
 					<li className="tweet-area_li hidden688">
@@ -65,7 +73,10 @@ export default function TweetBox(props) {
 							className="tweet-area_anchors"
 							href="#"
 						>
-							{schedulesIcon}
+							<SvgIcon
+								classNames={tweetBoxIcons.defaultClassNames}
+								path={tweetBoxIcons.schedulesIcon}
+							/>
 						</a>
 					</li>
 					<li className="tweet-area_li--light-icon">
@@ -73,7 +84,12 @@ export default function TweetBox(props) {
 							className="tweet-area_anchors"
 							href="#"
 						>
-							{locationsIcon}
+							<SvgIcon
+								classNames={`
+									${tweetBoxIcons.defaultClassNames}
+									tweet-area_tweet-icons--light-icons`}
+								path={tweetBoxIcons.locationsIcon}
+							/>
 						</a>
 					</li>
 				</ul>
@@ -107,7 +123,12 @@ export default function TweetBox(props) {
 							className="tweet-area_anchors"
 							href="#"
 						>
-							{imagesIcon}
+							<SvgIcon
+								classNames={`
+									${tweetBoxIcons.defaultClassNames}
+									tweet-area_tweet-icons--first-icon`}
+								path={tweetBoxIcons.imagesIcon}
+							/>
 						</a>
 					</li>
 					<li className="tweet-area_li">
@@ -115,7 +136,10 @@ export default function TweetBox(props) {
 							className="tweet-area_anchors"
 							href="#"
 						>
-							{gifsIcon}
+							<SvgIcon
+								classNames={tweetBoxIcons.defaultClassNames}
+								path={tweetBoxIcons.gifsIcon}
+							/>
 						</a>
 					</li>
 					<li className="tweet-area_li hidden688">
@@ -123,7 +147,10 @@ export default function TweetBox(props) {
 							className="tweet-area_anchors"
 							href="#"
 						>
-							{pollsIcon}
+							<SvgIcon
+								classNames={tweetBoxIcons.defaultClassNames}
+								path={tweetBoxIcons.pollsIcon}
+							/>
 						</a>
 					</li>
 					<li className="tweet-area_li hidden-688">
@@ -131,7 +158,10 @@ export default function TweetBox(props) {
 							className="tweet-area_anchors"
 							href="#"
 						>
-							{emojisIcon}
+							<SvgIcon
+								classNames={tweetBoxIcons.defaultClassNames}
+								path={tweetBoxIcons.emojisIcon}
+							/>
 						</a>
 					</li>
 					<li className="tweet-area_li hidden688">
@@ -139,7 +169,10 @@ export default function TweetBox(props) {
 							className="tweet-area_anchors"
 							href="#"
 						>
-							{schedulesIcon}
+							<SvgIcon
+								classNames={tweetBoxIcons.defaultClassNames}
+								path={tweetBoxIcons.schedulesIcon}
+							/>
 						</a>
 					</li>
 					<li className="tweet-area_li--light-icon">
@@ -147,7 +180,12 @@ export default function TweetBox(props) {
 							className="tweet-area_anchors"
 							href="#"
 						>
-							{locationsIcon}
+							<SvgIcon
+								classNames={`
+									${tweetBoxIcons.defaultClassNames}
+									tweet-area_tweet-icons--light-icons`}
+								path={tweetBoxIcons.locationsIcon}
+							/>
 						</a>
 					</li>
 				</ul>
@@ -160,4 +198,4 @@ export default function TweetBox(props) {
 			</div>
 		</div>
 	);
-	}
+}

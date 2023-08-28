@@ -1,7 +1,7 @@
 //check to see if it can return jsx without parenthesis
 //import { checkMark } from "../assets/icons/svg_exports";
 import { SvgIcon } from "./SvgIcon";
-import { generalIcons, tweetStatsIcons } from "../objects/navListIcons";
+import { generalIcons, tweetStatsIcons } from "../objects/svgIcons";
 import {
 	commentsIcon,
 	retweetsIcon,
