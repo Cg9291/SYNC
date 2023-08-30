@@ -1,6 +1,6 @@
-import nba_pp from "../assets/pictures/profile_pictures/nba_profile_picture.jpeg";
+/* import nba_pp from "../assets/pictures/profile_pictures/nba_profile_picture.jpeg";
 import nfl_pp from "../assets/pictures/profile_pictures/nfl_profile-picture.jpeg";
-import ufc_pp from "../assets/pictures/profile_pictures/ufc.jpeg"
+import ufc_pp from "../assets/pictures/profile_pictures/ufc.jpeg" */
 
 import { nbaProfilePic } from "../assets/pictures/profile_pictures/index.js";
 
