@@ -15,12 +15,12 @@ export default function TrendingSection(props) {
 		},
 		section3: {
 			category: "Business and Finance",
-			topic: "Carl's twitter clone",
+			topic: "Carly's twitter clone",
 			scope: "22k tweets",
 		},
 		section4: {
 			category: "Uplifting News",
-			topic: "Carl's got a programmer Job",
+			topic: "Carly's got a programmer Job",
 			scope: "900k tweets",
 		},
 		section5: {
@@ -82,7 +82,7 @@ export default function TrendingSection(props) {
 }
 
 function TrendingCards(props) {
-	let ellipsisInfo = generalIcons.ellipsis.userProfile;
+	let ellipsisInfo = generalIcons.ellipsis.trendingCards;
 
 	return props.trendingCardInfo.pic ? (
 		<a
@@ -91,7 +91,7 @@ function TrendingCards(props) {
 		>
 			<div className="wrappers--flex ">
 				<div className="trending_cards-with-image_wrapper">
-					<div className="trending_categories">
+					<div className="trending_cards-with-image_wrapper_categories">
 						<span>{props.trendingCardInfo.category}</span>
 					</div>
 					<div className="trending_topics">
@@ -116,12 +116,12 @@ function TrendingCards(props) {
 				<span className="trending_trending_categories_wrapper">
 					{props.trendingCardInfo.category}
 				</span>
-				<span className="trending_categories_ellipsis_wrapper">
+			{/* 	<span className="trending_categories_ellipsis"> */}
 					<SvgIcon
 						classNames={ellipsisInfo.classNames}
 						path={ellipsisInfo.path}
 					/>
-				</span>
+				{/* </span> */}
 			</div>
 			<div className="trending_topics">
 				<span>{props.trendingCardInfo.topic}</span>

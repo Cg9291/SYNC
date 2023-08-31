@@ -1966,6 +1966,19 @@ button:hover {
 		box-sizing: border-box;
 		flex-direction: column;
 		align-items: stretch;
+
+		&_categories {
+		font-size: 13px;
+		height: 16px;
+		padding: 0;
+		box-sizing: border-box;
+		padding-top: 2px;
+		margin-bottom: 4px;
+		display: flex;
+		align-items: start;
+		justify-content: space-between;
+		color: rgb(83, 100, 113);
+	}
 	}
 
 	/* &_cards-with-image_categories {

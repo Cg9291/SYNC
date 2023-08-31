@@ -17,7 +17,6 @@ GLOBAL!!
 
 *add hover to tweet stats icons
 *review sizing of header X logo
-*structure stats svgs
 *check hover status for sizes under 1265px..use ipad
 *work on mass imports for tweetArray function
 *remove all references to twitter i.e classes using "twitter",tweet,word
