@@ -1,3 +1,4 @@
+import grouse_pp from "./grouse_pp.jpeg"
 import marvel_pp from "./Marvel_profile_pic.jpeg";
 import marvel_studios_pp from "./Marvel_Studios.jpeg";
 import nba_pp from "./nba_profile_picture.jpeg";
@@ -5,6 +6,7 @@ import nfl_pp from "./nfl_profile-picture.jpeg";
 import ufc_pp from "./ufc.jpeg";
 
 export const myProfilePicturesIndex = {
+	grouse_pp,
 	marvel_pp,
 	marvel_studios_pp,
 	nba_pp,

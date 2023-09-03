@@ -1,4 +1,5 @@
 import cyrilGane_tp from "./cyril_gane.jpeg";
+import grouseSkiPatrol_tp from "./grouse_ski_patrol.jpeg";
 import jokic_tp from "./jokic.jpeg";
 import jHerbert_tp from "./justin_herbert.jpg";
 import lakers_tp from "./lakers_tweet_picture.jpg";
@@ -7,7 +8,8 @@ import marvelSpiderman_tp from "./Marvel_Spiderman.jpg";
 import ufc_tp from "./ufc.jpg";
 
 export const myTweetPicturesIndex = {
-    cyrilGane_tp,
+	cyrilGane_tp,
+	grouseSkiPatrol_tp,
 	jokic_tp,
 	jHerbert_tp,
 	lakers_tp,
