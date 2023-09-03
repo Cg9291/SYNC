@@ -1,15 +1,8 @@
 //check to see if it can return jsx without parenthesis
 //import { checkMark } from "../assets/icons/svg_exports";
+import { useState } from "react";
 import { SvgIcon } from "./SvgIcon";
 import { generalIcons, tweetStatsIcons } from "../objects/svgIcons";
-import {
-	commentsIcon,
-	retweetsIcon,
-	likesIcon,
-	statsIcon,
-	shareIcon,
-	shareIconAlt,
-} from "../assets/icons/statistics_svg";
 import { tweetsArray } from "../objects/tweetsArray";
 
 export default function TimelineBackup() {
@@ -23,7 +16,6 @@ export default function TimelineBackup() {
 }
 
 function TimelineTweets(props) {
-	let num = Math.random();
 	let tweetAuthorUserName = props.tweetObj.authorInfo.userName;
 	let tweetAuthorHandle = props.tweetObj.authorInfo.userHandle;
 	let profilePicture = props.tweetObj.authorInfo.profilePicture;
@@ -31,6 +23,17 @@ function TimelineTweets(props) {
 	let tweetMedia = props.tweetObj.tweetMedia;
 
 	const ellipsisInfo = generalIcons.ellipsis.tweets;
+
+	const rgbCodes = {
+		blue: "rgb(29, 155, 240)",
+		green: "rgb(0, 186, 124)",
+		pink: "rgb(249, 24, 128)",
+		defaultGrey: "rgb(83, 100, 113)",
+	};
+
+	TweetStatsIcons.defaultProps = {
+		defaultGrey: rgbCodes.defaultGrey,
+	};
 
 	return (
 		<a
@@ -81,7 +84,7 @@ function TimelineTweets(props) {
 					></img>
 				</div>
 				<div className="timeline_body_statistics-row">
-					<TweetStats
+					<TweetStatsIcons
 						icon={
 							<SvgIcon
 								classNames={tweetStatsIcons.defaultClassNames}
@@ -89,8 +92,9 @@ function TimelineTweets(props) {
 							/>
 						}
 						value={22}
+						fill={rgbCodes.blue}
 					/>
-					<TweetStats
+					<TweetStatsIcons
 						icon={
 							<SvgIcon
 								classNames={tweetStatsIcons.defaultClassNames}
@@ -98,8 +102,9 @@ function TimelineTweets(props) {
 							/>
 						}
 						value={98}
+						fill={rgbCodes.green}
 					/>
-					<TweetStats
+					<TweetStatsIcons
 						icon={
 							<SvgIcon
 								classNames={tweetStatsIcons.defaultClassNames}
@@ -107,8 +112,9 @@ function TimelineTweets(props) {
 							/>
 						}
 						value={798}
+						fill={rgbCodes.pink}
 					/>
-					<TweetStats
+					<TweetStatsIcons
 						icon={
 							<SvgIcon
 								classNames={tweetStatsIcons.defaultClassNames}
@@ -116,14 +122,16 @@ function TimelineTweets(props) {
 							/>
 						}
 						value={"75.6K"}
+						fill={rgbCodes.blue}
 					/>
-					<TweetStats
+					<TweetStatsIcons
 						icon={
 							<SvgIcon
 								classNames={tweetStatsIcons.defaultClassNames}
 								path={tweetStatsIcons.shareIconAltPath}
 							/>
 						}
+						fill={rgbCodes.blue}
 					/>
 				</div>
 			</div>
@@ -131,15 +139,31 @@ function TimelineTweets(props) {
 	);
 }
 
-function TweetStats(props) {
+function TweetStatsIcons(props) {
+	const [hoverStyle, setHoverStyle] = useState();
+
 	return props.value == null ? (
-		<div className="timeline_body_statistics-row_group">
+		<div
+			className="timeline_body_statistics-row_group"
+			style={hoverStyle}
+			onMouseOver={() => setHoverStyle({ fill: props.fill, color: props.fill })}
+			onMouseLeave={() =>
+				setHoverStyle({ fill: props.defaultGrey, color: props.defaultGrey })
+			}
+		>
 			<span className="timeline_body_statistics-row_icons-wrapper">
 				{props.icon}
 			</span>
 		</div>
 	) : (
-		<div className="timeline_body_statistics-row_group">
+		<div
+			className="timeline_body_statistics-row_group"
+			style={hoverStyle}
+			onMouseOver={() => setHoverStyle({ fill: props.fill, color: props.fill })}
+			onMouseLeave={() =>
+				setHoverStyle({ fill: props.defaultGrey, color: props.defaultGrey })
+			}
+		>
 			<span className="timeline_body_statistics-row_icons-wrapper">
 				{props.icon}
 			</span>
