@@ -15,16 +15,16 @@ import { navListIcons, generalIcons } from "./objects/svgIcons.js";
 /* TODO
 GLOBAL!!
 
-
-*review sizing of header X logo
 *review tweets image sizes
+*figure out how to enable new lines in tweet text body
+*review text/links in each tweets body
+*review sizing of header X logo
 *check hover status for sizes under 1265px..use ipad
 *work on mass imports for tweetArray function
 *remove all references to twitter i.e classes using "twitter",tweet,word
 *add profiles and trending header images
 *review all texts rendering on mac vs windows
-
--add conditionallity for checkmark display in backup timeline
+*add conditionallity for checkmark display in backup timeline
 
 
 MOBILE!!
