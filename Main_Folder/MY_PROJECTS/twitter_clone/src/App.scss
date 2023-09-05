@@ -1,3 +1,5 @@
+@import "../node_modules/normalize.css/normalize.css";
+
 @mixin hover-bg($border-radius, $no-bg: false, $blue-bg: false) {
 	@media screen and (width>=1265px) {
 		&:hover {
@@ -373,6 +375,11 @@ li {
 			align-items: center;
 			height: 100%;
 			aspect-ratio: 1/1;
+
+			@media only screen and (width>=500px) {
+				//justify-content: start;
+				max-width: 52px;
+			}
 		}
 	}
 
@@ -389,7 +396,7 @@ li {
 		}
 
 		@media only screen and (width>=500px) {
-			width: fit-content;
+			//width: fit-content;
 		}
 
 		@media screen and (width>=1265px) {
@@ -545,8 +552,10 @@ li {
 
 		@media screen and (width>=1265px) {
 			display: flex;
+			align-items: end;
 			font-size: 20px;
 			color: black;
+			height: 24px;
 		}
 	}
 
@@ -670,11 +679,14 @@ li {
 		display: none;
 
 		@media screen and (width>=1265px) {
-			display: inline-block;
+			display: flex;
+			align-items: end;
 			color: rgb(255, 255, 255);
+			height: 20px;
 			font-size: 17px;
 			font-family: chirp;
 			font-weight: bold;
+			padding-top: 2px;
 		}
 	}
 }
@@ -766,16 +778,19 @@ li {
 			font-size: 15px;
 			box-sizing: border-box;
 			justify-content: space-around;
+			margin-top: 4px;
 		}
 		b {
 			overflow-x: hidden;
 			text-overflow: ellipsis;
+			height: 21.06px;
 		}
 		div {
 			overflow-x: hidden;
 			text-overflow: ellipsis;
 			font-weight: 400;
 			color: rgb(83, 100, 113);
+			height: 20px;
 		}
 	}
 
@@ -817,6 +832,10 @@ button:hover {
 
 .main {
 	display: flex;
+	@media only screen and (width>=500px) {
+		width: 430px;
+		flex: 2 0 auto;
+	}
 
 	@media only screen and (width>=688px) {
 		width: 600px;
@@ -931,6 +950,7 @@ button:hover {
 			font-size: 20px;
 			font-weight: bold;
 			color: #0f1419;
+			margin-top: 1px;
 		}
 	}
 	&_profile-picture {
@@ -1000,6 +1020,7 @@ button:hover {
 		box-sizing: border-box;
 		overflow-x: auto; //this allows for perfect alignment of the texts in this case
 		flex-wrap: nowrap;
+		overflow-y: hidden;
 	}
 	&_li {
 		@include hover-bg(0);
@@ -1046,7 +1067,6 @@ button:hover {
 		}
 		&_text {
 			font-family: chirp;
-			font-weight: 500;
 			line-height: 20px;
 			box-sizing: border-box;
 			font-size: 15px;
@@ -1054,6 +1074,8 @@ button:hover {
 			list-style-position: outside;
 			overflow-wrap: break-word;
 			text-align: start;
+			//padding-bottom: 1px;
+			//@media query height>=1272px
 		}
 		.blue-focused-bar {
 			display: none;
@@ -1065,6 +1087,7 @@ button:hover {
 		flex-direction: column;
 		padding: 16px 16px 0;
 		box-sizing: border-box;
+		max-height: 100%;
 		.header_anchor_wrapper {
 			width: max-content;
 			height: 53px;
@@ -1078,6 +1101,8 @@ button:hover {
 			@extend .header_anchor_wrapper;
 			width: 52.84px;
 			max-width: 52.84px;
+			max-height: 100%;
+			justify-content: space-evenly;
 		}
 
 		.header_anchor_text {
@@ -1119,6 +1144,7 @@ button:hover {
 		.blue-focused-bar--for-you {
 			@extend .blue-focused-bar;
 			width: 56px;
+			bottom: 0px;
 		}
 	}
 
@@ -1275,7 +1301,7 @@ button:hover {
 		color: rgb(255, 255, 255);
 		background-color: rgba(29, 155, 240, 0.5);
 		margin: 0;
-		padding: 0;
+		padding: 2px 0 0 0;
 		border: none;
 	}
 
@@ -1406,6 +1432,7 @@ button:hover {
 			overflow-x: hidden;
 			overflow-y: hidden;
 			overflow-wrap: normal;
+			text-overflow: ellipsis;
 		}
 
 		&_user-name {
@@ -1459,7 +1486,7 @@ button:hover {
 		word-wrap: break-word;
 		line-height: 18px;
 		color: rgba(0, 0, 0, 1);
-		pre{
+		pre {
 			margin: inherit;
 			font: inherit;
 			max-width: inherit;
@@ -1902,6 +1929,7 @@ button:hover {
 		font-weight: 700;
 		text-size-adjust: 100%;
 		color: rgb(255, 255, 255);
+		padding-bottom: 2px;
 	}
 }
 
@@ -2224,6 +2252,7 @@ button:hover {
 		color: white;
 		margin: 0;
 		height: 100%;
+		//padding-top:2px;
 	}
 
 	&_cards-footer {

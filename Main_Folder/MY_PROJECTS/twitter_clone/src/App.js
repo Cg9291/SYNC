@@ -15,6 +15,7 @@ import { navListIcons, generalIcons } from "./objects/svgIcons.js";
 /* TODO
 GLOBAL!!
 *review text/links in each tweets body
+*review btn alignments,and other bugs using browsers other than chrome
 *review sizing of header X logo
 *check hover status for sizes under 1265px..use ipad
 *add profiles and trending header images
