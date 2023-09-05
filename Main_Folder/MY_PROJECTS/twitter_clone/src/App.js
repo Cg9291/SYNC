@@ -21,6 +21,7 @@ GLOBAL!!
 *add profiles and trending header images
 *review all texts rendering on mac vs windows
 *add a way to render condtional checkmark's color
+*add linear gradient to twitter gold checkmark icon
 *remove all references to twitter i.e classes using "twitter",tweet,word
 
 MOBILE!!
@@ -87,7 +88,7 @@ function App() {
 					<Header headerHeight={headerHeight} />
 					<TweetBox
 						img={imageSource}
-						size="regular"
+						size="shrunk"
 					/>
 
 					<Timeline img={imageSource} />

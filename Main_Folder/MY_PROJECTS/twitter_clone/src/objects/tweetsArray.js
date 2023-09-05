@@ -3,9 +3,11 @@ import { myTweetPicturesIndex } from "../assets/pictures/tweet_pictures/index";
 
 const {
 	apple_tv_pp,
+	city_of_vancouver_pp,
 	grouse_pp,
 	marverl_pp,
 	marvel_studios_pp,
+	mkbhd_pp,
 	nasa_pp,
 	nba_pp,
 	nba_on_espn_pp,
@@ -15,6 +17,7 @@ const {
 
 const {
 	apple_tv_monsters,
+	city_of_vancouver_summer_tp,
 	cyrilGane_tp,
 	cyrilGane_ufcParis_w,
 	grouseSkiPatrol_tp,
@@ -24,10 +27,13 @@ const {
 	luka_doncic_tp,
 	marvelA_tp,
 	marvelSpiderman_tp,
+	mkbhd_wonderlust_tp,
 	nasa_sun_tp,
 	nfl_eagles_patriots_opener,
 	ufc_tp,
 } = myTweetPicturesIndex;
+
+const [gold, blue, grey, none] = ["gold", "blue", "grey", "none"];
 
 function TweetConstructor(
 	profilePicture,
@@ -35,13 +41,13 @@ function TweetConstructor(
 	userHandle,
 	tweetText,
 	tweetMedia,
-	isVerified,
+	verifiedStatus,
 ) {
 	return {
 		authorInfo: { profilePicture, userName, userHandle },
 		tweetText,
 		tweetMedia,
-		isVerified,
+		verifiedStatus,
 	};
 }
 
@@ -52,7 +58,7 @@ export const tweetsArray = [
 		"grousemountain",
 		"Always keeping watch ✨ \n\n📸: madyhart",
 		grouseSkiPatrol_tp,
-		false,
+		none,
 	),
 	new TweetConstructor(
 		nfl_pp,
@@ -60,7 +66,7 @@ export const tweetsArray = [
 		"NFL",
 		"The defending NFC champs head to New England to open the season. 🎬\n\n@eagles|@patriots\n\n📺: #PHIvsNE -- Sunday 4:25pm ET on CBS\n📱: Stream on #NFLPlus",
 		nfl_eagles_patriots_opener,
-		true,
+		gold,
 	),
 	new TweetConstructor(
 		nasa_pp,
@@ -68,7 +74,7 @@ export const tweetsArray = [
 		"NASA",
 		"Today's the day! Applications are due Aug. 31 for our spring internships.\nFrom engineers to communicators, we're looking for @NASAInterns from a variety of backgrounds to help us push the boundaries of exploration: https://intern.nasa.gov",
 		nasa_sun_tp,
-		true,
+		gold,
 	),
 	new TweetConstructor(
 		nba_on_espn_pp,
@@ -76,7 +82,7 @@ export const tweetsArray = [
 		"ESPNNBA",
 		"Luka balled out in Slovenia's FIBA opener vs. Venezuela 😮‍💨",
 		luka_doncic_tp,
-		true,
+		gold,
 	),
 	new TweetConstructor(
 		marvel_studios_pp,
@@ -84,7 +90,7 @@ export const tweetsArray = [
 		"MarvelStudios",
 		"Marvel Studios’ Assembled: The Making of #AntManAndTheWaspQuantumania is now streaming only on @DisneyPlus",
 		marvelA_tp,
-		true,
+		gold,
 	),
 	new TweetConstructor(
 		ufc_pp,
@@ -92,7 +98,15 @@ export const tweetsArray = [
 		"UFC",
 		"It's time for the fighters to hit the scale ⚖️ \nJoin us live for the #UFC291 Weigh-In Show now!📺http://youtube.com/watch?v=5tno0slQ26E",
 		ufc_tp,
-		true,
+		gold,
+	),
+	new TweetConstructor(
+		mkbhd_pp,
+		"Marques Brownlee",
+		"MKBHD",
+		"Well well well, look what just showed up",
+		mkbhd_wonderlust_tp,
+		blue,
 	),
 	new TweetConstructor(
 		ufc_pp,
@@ -100,7 +114,7 @@ export const tweetsArray = [
 		"UFC",
 		"It was a masterclass from @Ciryl_Gane yesterday at #UFCParis! 👊🇫🇷\nWho's next for the French heavyweight?",
 		cyrilGane_ufcParis_w,
-		true,
+		gold,
 	),
 	new TweetConstructor(
 		apple_tv_pp,
@@ -108,7 +122,15 @@ export const tweetsArray = [
 		"AppleTV",
 		"In the wake of G-Day, who are the real monsters?",
 		apple_tv_monsters,
-		true,
+		gold,
+	),
+	new TweetConstructor(
+		city_of_vancouver_pp,
+		"City of Vancouver",
+		"CityofVancouver",
+		"What's your favourite summer activity in our beautiful city, Vancouver? 🤔",
+		city_of_vancouver_summer_tp,
+		grey,
 	),
 ];
 /* {

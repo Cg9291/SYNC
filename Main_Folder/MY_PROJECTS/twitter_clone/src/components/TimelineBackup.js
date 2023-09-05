@@ -19,7 +19,7 @@ function TimelineTweets(props) {
 	let profilePicture = props.tweetObj.authorInfo.profilePicture;
 	let tweetText = props.tweetObj.tweetText;
 	let tweetMedia = props.tweetObj.tweetMedia;
-	const isVerified = props.tweetObj.isVerified;
+	const verifiedStatus = props.tweetObj.verifiedStatus;
 
 	const ellipsisInfo = generalIcons.ellipsis.tweets;
 
@@ -57,12 +57,18 @@ function TimelineTweets(props) {
 						<span></span>
 					</span>
 					<span className="timeline_body_header_checkmark-wrapper">
-						{isVerified === true ? (
+						{verifiedStatus === "none" ? null : (
 							<SvgIcon
-								classNames={generalIcons.checkmarkIcon.classNames}
+								classNames={
+									verifiedStatus === "gold"
+										? generalIcons.checkmarkIcon.classNames.goldFill
+										: verifiedStatus === "grey"
+										? generalIcons.checkmarkIcon.classNames.greyFill
+										: generalIcons.checkmarkIcon.classNames.blueFill
+								}
 								path={generalIcons.checkmarkIcon.path}
 							/>
-						) : null}
+						)}
 					</span>
 					<span className="timeline_body_header_handle">
 						{"@"}

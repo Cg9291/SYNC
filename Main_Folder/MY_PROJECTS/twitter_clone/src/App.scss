@@ -1458,6 +1458,14 @@ button:hover {
 			aspect-ratio: 1/1;
 			fill: rgb(29, 155, 240);
 		}
+		&_checkmark--gold {
+			@extend .timeline_body_header_checkmark;
+			fill: rgb(209, 136, 0);
+		}
+		&_checkmark--grey {
+			@extend .timeline_body_header_checkmark;
+			fill: rgb(130, 154, 171);
+		}
 		&_handle {
 			margin-left: 4px;
 			margin-right: 4px;
