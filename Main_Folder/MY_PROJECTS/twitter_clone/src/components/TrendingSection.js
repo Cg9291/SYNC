@@ -2,75 +2,59 @@ import { SvgIcon } from "./SvgIcon";
 import { generalIcons } from "../objects/svgIcons";
 
 export default function TrendingSection(props) {
-	let myTrendingNews = {
-		section1: {
+	let myTrendingNews = [
+		{
 			category: "NBA · LIVE",
 			topic: "Titanic",
 			scope: "140K tweets",
 		},
-		section2: {
+		{
 			category: "Sports",
 			topic: "#NBADraft",
 			scope: "Trending with...",
 		},
-		section3: {
+		{
 			category: "Business and Finance",
 			topic: "Carly's twitter clone",
 			scope: "22k tweets",
 		},
-		section4: {
+		{
 			category: "Uplifting News",
 			topic: "Carly's got a programmer Job",
 			scope: "900k tweets",
 		},
-		section5: {
+		{
 			category: "World",
 			topic: "Vancouver's hottest Summer",
 			scope: "trending with...",
 		},
-	};
+	];
 
 	return (
 		<section className="trending">
 			<div className="trending_cards-header">
 				<span className="trending_cards-header_text">What’s happening</span>
 			</div>
-			<TrendingCards
-				trendingCardInfo={{
-					category: `${myTrendingNews.section1.category}`,
-					topic: `${myTrendingNews.section1.topic}`,
-					scope: `${myTrendingNews.section1.scope}`,
-					pic: `${props.imageSource}`,
-				}}
-			/>
-			<TrendingCards
-				trendingCardInfo={{
-					category: `${myTrendingNews.section2.category}`,
-					topic: `${myTrendingNews.section2.topic}`,
-					scope: `${myTrendingNews.section2.scope}`,
-				}}
-			/>
-			<TrendingCards
-				trendingCardInfo={{
-					category: `${myTrendingNews.section3.category}`,
-					topic: `${myTrendingNews.section3.topic}`,
-					scope: `${myTrendingNews.section3.scope}`,
-				}}
-			/>
-			<TrendingCards
-				trendingCardInfo={{
-					category: `${myTrendingNews.section4.category}`,
-					topic: `${myTrendingNews.section4.topic}`,
-					scope: `${myTrendingNews.section4.scope}`,
-				}}
-			/>
-			<TrendingCards
-				trendingCardInfo={{
-					category: `${myTrendingNews.section5.category}`,
-					topic: `${myTrendingNews.section5.topic}`,
-					scope: `${myTrendingNews.section5.scope}`,
-				}}
-			/>
+			{myTrendingNews.map(obj => {
+				return myTrendingNews.indexOf(obj) === 0 ? (
+					<TrendingCards
+						trendingCardInfo={{
+							category: `${obj.category}`,
+							topic: `${obj.topic}`,
+							scope: `${obj.scope}`,
+							pic: `${props.imageSource}`,
+						}}
+					/>
+				) : (
+					<TrendingCards
+						trendingCardInfo={{
+							category: `${obj.category}`,
+							topic: `${obj.topic}`,
+							scope: `${obj.scope}`,
+						}}
+					/>
+				);
+			})}
 			<a
 				href="#"
 				className="trending_cards_footer"
@@ -116,11 +100,11 @@ function TrendingCards(props) {
 				<span className="trending_trending_categories_wrapper">
 					{props.trendingCardInfo.category}
 				</span>
-			{/* 	<span className="trending_categories_ellipsis"> */}
-					<SvgIcon
-						classNames={ellipsisInfo.classNames}
-						path={ellipsisInfo.path}
-					/>
+				{/* 	<span className="trending_categories_ellipsis"> */}
+				<SvgIcon
+					classNames={ellipsisInfo.classNames}
+					path={ellipsisInfo.path}
+				/>
 				{/* </span> */}
 			</div>
 			<div className="trending_topics">
