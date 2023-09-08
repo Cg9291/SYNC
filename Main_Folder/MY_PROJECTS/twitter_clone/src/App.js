@@ -14,6 +14,7 @@ import { navListIcons, generalIcons } from "./objects/svgIcons.js";
 
 /* TODO
 GLOBAL!!
+*fill out follow recs pictures etc..
 *review text/links in each tweets body
 *review btn alignments,and other bugs using browsers other than chrome
 *review sizing of header X logo
