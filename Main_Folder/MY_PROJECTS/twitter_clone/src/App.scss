@@ -1542,6 +1542,13 @@ button:hover {
 			fill: inherit;
 		}
 
+		&_icons-wrapper{
+			background-color: none;
+			border-radius: 50%;
+			margin: none;
+			padding: none;
+		}
+
 		&_values {
 			font-size: 13px;
 			height: 20px;

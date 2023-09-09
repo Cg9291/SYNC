@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SvgIcon } from "./SvgIcon";
-import { generalIcons, tweetStatsIcons } from "../objects/svgIcons";
+import { generalIcons, storeTweetStatsIcons } from "../objects/svgIcons";
 import { tweetsArray } from "../objects/tweetsArray";
 
 export default function TimelineBackup() {
@@ -93,67 +93,18 @@ function TimelineTweets(props) {
 					></img>
 				</div>
 				<div className="timeline_body_statistics-row">
-					{TweetStatsIcons.icons.map(obj => (
+					{storeTweetStatsIcons().icons.map(obj => (
 						<TweetStatsIcons
 							icon={
 								<SvgIcon
-									classNames={tweetStatsIcons.defaultClassNames}
+									classNames={storeTweetStatsIcons().defaultClassNames}
 									path={obj.path}
 								/>
 							}
 							value={obj.value}
-							fill={obj.fillColor}
+							fill={obj.color}
 						/>
 					))}
-					{/* <TweetStatsIcons
-						icon={
-							<SvgIcon
-								classNames={tweetStatsIcons.defaultClassNames}
-								path={tweetStatsIcons.commentsIconPath}
-							/>
-						}
-						value={22}
-						fill={rgbCodes.blue}
-					/>
-					<TweetStatsIcons
-						icon={
-							<SvgIcon
-								classNames={tweetStatsIcons.defaultClassNames}
-								path={tweetStatsIcons.retweetsIconPath}
-							/>
-						}
-						value={98}
-						fill={rgbCodes.green}
-					/>
-					<TweetStatsIcons
-						icon={
-							<SvgIcon
-								classNames={tweetStatsIcons.defaultClassNames}
-								path={tweetStatsIcons.likesIconPath}
-							/>
-						}
-						value={798}
-						fill={rgbCodes.pink}
-					/>
-					<TweetStatsIcons
-						icon={
-							<SvgIcon
-								classNames={tweetStatsIcons.defaultClassNames}
-								path={tweetStatsIcons.statIconPath}
-							/>
-						}
-						value={"75.6K"}
-						fill={rgbCodes.blue}
-					/>
-					<TweetStatsIcons
-						icon={
-							<SvgIcon
-								classNames={tweetStatsIcons.defaultClassNames}
-								path={tweetStatsIcons.shareIconAltPath}
-							/>
-						}
-						fill={rgbCodes.blue}
-					/> */}
 				</div>
 			</div>
 		</a>
