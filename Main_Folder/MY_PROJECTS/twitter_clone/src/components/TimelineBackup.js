@@ -85,7 +85,6 @@ function TimelineTweets(props) {
 				</div>
 				<div className="timeline_body_tweet-text">
 					<pre>{tweetText}</pre>
-					{/* {tweetText} */}
 				</div>
 				<div className="timeline_body_media-wrapper">
 					<img
@@ -94,7 +93,19 @@ function TimelineTweets(props) {
 					></img>
 				</div>
 				<div className="timeline_body_statistics-row">
-					<TweetStatsIcons
+					{TweetStatsIcons.icons.map(obj => (
+						<TweetStatsIcons
+							icon={
+								<SvgIcon
+									classNames={tweetStatsIcons.defaultClassNames}
+									path={obj.path}
+								/>
+							}
+							value={obj.value}
+							fill={obj.fillColor}
+						/>
+					))}
+					{/* <TweetStatsIcons
 						icon={
 							<SvgIcon
 								classNames={tweetStatsIcons.defaultClassNames}
@@ -142,7 +153,7 @@ function TimelineTweets(props) {
 							/>
 						}
 						fill={rgbCodes.blue}
-					/>
+					/> */}
 				</div>
 			</div>
 		</a>
