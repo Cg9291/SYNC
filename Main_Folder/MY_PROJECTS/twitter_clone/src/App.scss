@@ -1,10 +1,13 @@
+@use "scss";
+@use "./scss/variables";
+//@use "";
 @import "../node_modules/normalize.css/normalize.css";
 
 @mixin hover-bg($border-radius, $no-bg: false, $blue-bg: false) {
 	@media screen and (width>=1265px) {
 		&:hover {
 			@if $no-bg {
-				background-color: $theme-color;
+				background-color: variables.$theme-color;
 			} @else if $blue-bg {
 				background-color: lightblue;
 				border-radius: $border-radius;
@@ -33,7 +36,6 @@
 	}
 }
 
-$theme-color: white;
 $sub-theme-color: rgba(239, 243, 244, 0.5);
 
 @font-face {
@@ -200,93 +202,11 @@ li {
 	overflow-x: hidden;
 	font-family: chirp;
 	font-weight: light;
-	background-color: $theme-color;
+	background-color: variables.$theme-color;
 
 	@media only screen and (width>=500px) and (height>=500px) {
 		flex-direction: row;
 		overflow-y: scroll;
-	}
-}
-
-.navigation {
-	z-index: 3;
-	position: sticky;
-	order: 3;
-	display: flex;
-	bottom: 0;
-	margin: 0;
-	padding: 0;
-	margin-top: auto;
-	border-top: var(--main-border-style);
-	height: 53.5px;
-	min-height: 53.5px;
-	max-height: 53.5px; //both heights required + purposefully diff from twitter actual height in order to avoid creating wrapper inside nav
-	width: 100%;
-	box-sizing: border-box;
-	background-color: $theme-color;
-
-	@media only screen and (width>=500px) and (height>=500px) {
-		flex-direction: column;
-		flex: 1 0 auto;
-		height: max-content;
-		max-height: 100vh;
-		min-height: max-content;
-		width: 68px;
-		max-width: 68px;
-		border-top: 0;
-		margin: 0;
-		padding: 0 4px;
-		order: unset;
-		overflow-y: hidden;
-		justify-content: space-between;
-		align-items: center;
-		top: 0;
-		overflow-x: hidden;
-		overflow-y: scroll;
-
-		@media screen and (height>=662px) {
-			min-height: 100%;
-		}
-	}
-
-	@media only screen and (width>=600px) {
-		padding: 0;
-		max-width: unset;
-		width: 88px;
-		max-width: 88px;
-		border: none;
-	}
-
-	@media only screen and (width>=688px) {
-		width: 88px;
-		max-width: unset;
-		flex: 1 0 auto;
-		align-items: end;
-		padding: 0 8px;
-	}
-
-	@media only screen and (width>=988px) {
-		width: 68px;
-		flex: 1 0 auto;
-		align-items: end;
-		overflow-y: hidden;
-		padding: 0;
-	}
-
-	@media screen and (width>=1008px) {
-		width: 88px;
-		flex: 1 0 auto;
-		overflow-y: hidden;
-	}
-
-	@media screen and (width>=1078px) {
-		width: 88px;
-		align-items: end;
-	}
-	@media screen and (width>=1265px) {
-		width: 275px;
-		align-items: end;
-		padding: 0;
 	}
 }
 
@@ -1542,7 +1462,7 @@ button:hover {
 			fill: inherit;
 		}
 
-		&_icons-wrapper{
+		&_icons-wrapper {
 			background-color: none;
 			border-radius: 50%;
 			margin: none;
@@ -1661,7 +1581,7 @@ button:hover {
 	display: none;
 
 	@media screen and (width>=988px) {
-		background-color: $theme-color;
+		background-color: variables.$theme-color;
 		position: sticky;
 		top: 0px !important;
 		z-index: 1;
@@ -1757,7 +1677,7 @@ button:hover {
 		z-index: 1;
 		box-sizing: border-box;
 		padding: 20px 12px 12px 12px;
-		background-color: $theme-color;
+		background-color:variables.$theme-color;
 		border-radius: 8px;
 		box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 15px;
 		box-shadow: rgba(101, 119, 134, 0.15) 0px 0px 3px 1px;
@@ -2142,7 +2062,7 @@ button:hover {
 		margin-bottom: 16px;
 		border: 1px solid $sub-theme-color;
 		box-sizing: border-box;
-		height: fit-content
+		height: fit-content;
 	}
 
 	&_cards_header {

@@ -1,4 +1,4 @@
-import TweetButton from "./TweetButton.js";
+import TweetButton from "../TweetButton.js";
 
 export default function GetVerifiedSection(props) {
 	return props.mode === "verify" ? (

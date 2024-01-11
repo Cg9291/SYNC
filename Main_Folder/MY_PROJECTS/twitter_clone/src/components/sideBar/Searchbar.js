@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { SvgIcon } from "./SvgIcon";
-import { generalIcons } from "../objects/svgIcons.js";
+import { SvgIcon } from "../SvgIcon.js";
+import { generalIcons } from "../../objects/svgIcons.js";
 
 export default function SearchBar(props) {
 	const [isFocused, setIsFocused] = useState(false);

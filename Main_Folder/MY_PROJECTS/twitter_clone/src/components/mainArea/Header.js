@@ -1,6 +1,6 @@
-import { SvgIcon } from "./SvgIcon.js";
-import { TwitterXLogo } from "../assets/icons/svg_exports.js";
-import { generalIcons } from "../objects/svgIcons.js";
+import { SvgIcon } from "../SvgIcon.js";
+import { TwitterXLogo } from "../../assets/icons/svg_exports.js";
+import { generalIcons } from "../../objects/svgIcons.js";
 import { useState } from "react";
 
 export default function Header(props) {

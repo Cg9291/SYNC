@@ -1,5 +1,5 @@
-import { SvgIcon } from "./SvgIcon";
-import { generalIcons } from "../objects/svgIcons";
+import { SvgIcon } from "../SvgIcon";
+import { generalIcons } from "../../objects/svgIcons";
 
 export default function TrendingSection(props) {
 	let myTrendingNews = [

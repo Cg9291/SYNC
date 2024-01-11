@@ -1,39 +1,42 @@
 import "./App.scss";
 import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
-import Header from "./components/Header";
-import FollowsRecSection from "./components/FollowRecsSection";
-import Navigation from "./components/Navigation";
-import SearchBar from "./components/Searchbar";
-import Timeline from "./components/Timeline";
-import TrendingSection from "./components/TrendingSection";
-import GetVerifiedSection from "./components/GetVerifiedSection";
-import Profile from "./components/Profile.js";
-import MoreInfoSection from "./components/MoreInfoSection.js";
-import TweetBox from "./components/Tweetbox.js";
-import { navListIcons, generalIcons } from "./objects/svgIcons.js";
+import Header from "./components/mainArea/Header.js";
+import FollowsRecSection from "./components/sideBar/FollowRecsSection.js";
+import Navigation from "./components/navigation/Navigation.js";
+import SearchBar from "./components/sideBar/Searchbar.js";
+import Timeline from "./components/mainArea/Timeline.js";
+import TrendingSection from "./components/sideBar/TrendingSection.js";
+import GetVerifiedSection from "./components/sideBar/GetVerifiedSection.js";
+import Profile from "./components/sideBar/Profile.js";
+import MoreInfoSection from "./components/sideBar/MoreInfoSection.js";
+import TweetBox from "./components/mainArea/Tweetbox.js";
+import { navListIcons } from "./objects/svgIcons.js";
 
 /* TODO
-GLOBAL!!
-*add hover to tweetstatsicon
-*fill out follow recs pictures etc..
-*review text/links in each tweets body
+
+Priority - High:
+*ensure all designs are good & responsive accross multiple browsers
 *review btn alignments,and other bugs using browsers other than chrome
+*review all texts rendering on mac vs windows
+	--mobile:
+	*add notification blue indicators
+
+
+Priority - Medium:
+*fill out follow recs pictures etc..
+*add profiles and trending header images
+*review text/links in each tweets body
 *review sizing of header X logo
 *check hover status for sizes under 1265px..use ipad
-*add profiles and trending header images
-*review all texts rendering on mac vs windows
+	--mobile:
+		*add links to clickable elements
+		*find a way to make header scroll behaviour smoother and more consistent
+
+Priority - Low:
 *add a way to render condtional checkmark's color
 *add linear gradient to twitter gold checkmark icon
 *remove all references to twitter i.e classes using "twitter",tweet,word
 
-MOBILE!!
--add notification blue indicators
--add links to clickable elements
--find a way to make header scroll behaviour smoother and more consistent
-
-TABLETS!!
-
-*review flexible sizing for trending cards(maybe after api is added)
 */
 
 /* NOTES:

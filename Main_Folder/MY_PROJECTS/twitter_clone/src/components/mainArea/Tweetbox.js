@@ -1,6 +1,6 @@
-import TweetButton from "./TweetButton.js";
-import { SvgIcon } from "./SvgIcon";
-import { tweetBoxIcons } from "../objects/svgIcons";
+import TweetButton from "../TweetButton.js";
+import { SvgIcon } from "../SvgIcon.js";
+import { tweetBoxIcons } from "../../objects/svgIcons.js";
 
 export default function TweetBox(props) {
 	return props.size === "regular" ? (

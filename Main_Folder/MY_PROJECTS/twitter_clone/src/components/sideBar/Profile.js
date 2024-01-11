@@ -1,8 +1,8 @@
-import TweetButton from "./TweetButton.js";
+import TweetButton from "../TweetButton.js";
 /*  */
 
-import { SvgIcon } from "./SvgIcon";
-import { generalIcons } from "../objects/svgIcons.js";
+import { SvgIcon } from "../SvgIcon.js";
+import { generalIcons } from "../../objects/svgIcons.js";
 
 export default function Profile(props) {
 	let ellipsisInfo = generalIcons.ellipsis.userProfile;
