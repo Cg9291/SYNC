@@ -1,40 +1,9 @@
 @use "scss";
 @use "./scss/variables";
-//@use "";
+@use "./scss/mixins";
 @import "../node_modules/normalize.css/normalize.css";
 
-@mixin hover-bg($border-radius, $no-bg: false, $blue-bg: false) {
-	@media screen and (width>=1265px) {
-		&:hover {
-			@if $no-bg {
-				background-color: variables.$theme-color;
-			} @else if $blue-bg {
-				background-color: lightblue;
-				border-radius: $border-radius;
-			} @else {
-				background-color: lightgrey;
-				border-radius: $border-radius;
-			}
-		}
-	}
-}
 
-@mixin hover-btn-bg($enabled: true) {
-	&:hover {
-		@if $enabled {
-			background-color: rgba(23, 124, 192);
-		} @else {
-			background-color: rgb(0, 0, 0);
-		}
-	}
-}
-
-@mixin active-bg($border-radius) {
-	&:active {
-		background-color: lightgrey;
-		border-radius: $border-radius;
-	}
-}
 
 $sub-theme-color: rgba(239, 243, 244, 0.5);
 
@@ -210,280 +179,7 @@ li {
 	}
 }
 
-.nav {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
 
-	@media only screen and (width>=500px) and (height>=500px) {
-		display: flex;
-		min-height: max-content;
-		max-height: max-content;
-		height: max-content;
-		flex: 1 0 auto;
-		flex-direction: column;
-		align-items: center;
-		justify-content: start;
-		margin: 0;
-		z-index: 0;
-		overflow-y: visible;
-	}
-	@media only screen and (width>=600px) {
-		box-sizing: border-box;
-		width: 88px;
-		padding: 0 8px;
-	}
-
-	@media only screen and (width>=688px) {
-		padding: 0;
-		width: 72px;
-	}
-
-	@media only screen and (width>=988px) {
-		width: 60px;
-		height: unset;
-		padding: 0 4px;
-		flex: 1 0 auto;
-		box-sizing: content-box;
-	}
-
-	@media screen and (width>=1008px) {
-		width: 88px;
-		padding: 0 8px;
-		box-sizing: border-box;
-	}
-	@media screen and (width>=1025px) {
-		width: 88px;
-	}
-
-	@media screen and (width>=1265px) {
-		width: 275px;
-		max-width: 275px;
-		padding: 0 8px;
-	}
-
-	&_twitter-logo-box {
-		display: none;
-
-		@media only screen and (width>=500px) and (height>=500px) {
-			width: 60px;
-			height: 56px;
-			min-height: 56px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin: 0;
-			padding: 2px 0;
-			box-sizing: border-box;
-		}
-
-		@media screen and (width>=600px) {
-			width: 100%;
-			//justify-content: start;
-		}
-
-		@media only screen and (width>=1265px) {
-			justify-content: start;
-		}
-
-		&_hover-wrapper {
-			@include hover-bg(50%);
-			@include active-bg(50%);
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 100%;
-			aspect-ratio: 1/1;
-
-			@media only screen and (width>=500px) {
-				//justify-content: start;
-				max-width: 52px;
-			}
-		}
-	}
-
-	&_twitter-logo {
-		display: flex;
-
-		@media only screen and (width>=500px) {
-			width: 50px;
-			height: 30px;
-			//border-radius: 50%;
-			padding: 0;
-			margin: 0;
-			fill: rgb(0, 0, 0);
-		}
-
-		@media only screen and (width>=500px) {
-			//width: fit-content;
-		}
-
-		@media screen and (width>=1265px) {
-			justify-content: center;
-			//padding-left: 11px;
-		}
-	}
-
-	&_ul {
-		display: flex;
-		justify-content: space-evenly;
-		align-items: end;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		height: 100%;
-		max-height: 100%;
-		width: 100%;
-
-		@media only screen and (width>=500px) and (height>=500px) {
-			width: 60px;
-			height: max-content;
-			flex-direction: column;
-			align-items: center;
-			justify-content: start;
-			margin: 2px 0 4px 0;
-			overflow-y: visible;
-			flex: 1 0 auto;
-		}
-
-		@media screen and (width>=500px) and (height>=615px) {
-			//min-height: 502.5px;
-		}
-
-		@media only screen and (width>=600px) {
-			width: 100%;
-		}
-	}
-
-	&_li {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		height: 100%;
-
-		@media only screen and (width>=500px) {
-			height: 50.25px;
-			@media screen and (height>=855px) {
-				padding: 4px 0px;
-			}
-		}
-
-		@media only screen and (width>=688px) {
-			margin: 0 0;
-		}
-
-		@media only screen and (width>=1265px) {
-			padding: 4px 0;
-			border-radius: 99px;
-		}
-	}
-
-	&_li--first-item {
-		@extend .nav_li;
-
-		@media only screen and (width>=500px) {
-			/* margin-top: 0; */
-			/* .nav_text:focus {
-				font-family: chirp;
-				font-weight: bold;
-			} */
-			@media screen and (height>=855px) {
-				padding: 4px 0px;
-			}
-		}
-	}
-
-	&_li--search-icon {
-		@extend .nav_li;
-		@media screen and (width>=500px) and (height>=855px) {
-			padding: 4px 0px;
-		}
-	}
-
-	&_li--hashtag-icon {
-		@extend .nav_li;
-		display: none;
-	}
-
-	&_a {
-		display: flex;
-		justify-content: start;
-		align-items: center;
-		text-decoration: none;
-		//border:solid blue;
-
-		@media screen and (width>=1265px) {
-			box-sizing: border-box;
-			width: 100%;
-			height: 120%;
-			justify-content: flex-start;
-			padding: 5px 0;
-		}
-	}
-
-	&_a:focus {
-		.nav_text {
-			font-family: chirp;
-			font-weight: bold;
-		}
-	}
-
-	&_hover-wrapper {
-		@include active-bg(50%);
-		display: flex;
-		width: max-content;
-		aspect-ratio: 1/1;
-		/* height: 100%;
-		max-height: 100%; */
-		align-items: center;
-
-		@media screen and (width>=500px) {
-			/*  */
-			height: 100%;
-			padding: 4px;
-		}
-
-		@media screen and (width>=1265px) {
-			/*  */
-			@include hover-bg(9999px);
-			aspect-ratio: unset;
-			padding: 0 28px 0 12px;
-		}
-	}
-
-	&_nav-icons {
-		width: 26.25px;
-		height: 26.25px;
-		border-radius: 50%;
-		padding: /* 12px */ 8px;
-		overflow: visible;
-		@media screen and (width>=1265px) {
-			padding: 0;
-			margin-right: 20px;
-		}
-	}
-
-	&_text {
-		display: none;
-
-		@media screen and (width>=1265px) {
-			display: flex;
-			align-items: end;
-			font-size: 20px;
-			color: black;
-			height: 24px;
-		}
-	}
-
-	&_text-focused {
-		@extend .nav_text;
-		font-weight: bold;
-	}
-}
 
 .nav_tweet-button {
 	@media screen and (width>=500px) and (height>=500px) {
@@ -569,7 +265,7 @@ li {
 	}
 
 	&_button-wrapper {
-		@include hover-btn-bg();
+		@include mixins.hover-btn-bg();
 		width: 100%;
 		height: 100%;
 		display: flex;
@@ -625,7 +321,7 @@ li {
 
 .profile-wrapper {
 	display: none;
-	@include hover-bg(99px);
+	@include mixins.hover-bg(99px);
 
 	@media only screen and (width>=500px) and (height>=500px) {
 		display: flex;
@@ -943,7 +639,7 @@ button:hover {
 		overflow-y: hidden;
 	}
 	&_li {
-		@include hover-bg(0);
+		@include mixins.hover-bg(0);
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
@@ -1158,7 +854,7 @@ button:hover {
 	}
 
 	&_li {
-		@include hover-bg(50%, false, true);
+		@include mixins.hover-bg(50%, false, true);
 		display: flex;
 		height: 100%;
 		width: 36px;
@@ -1177,7 +873,7 @@ button:hover {
 
 	&_li--light-icon {
 		@extend .tweet-area_li;
-		@include hover-bg(0, true);
+		@include mixins.hover-bg(0, true);
 	}
 
 	&_anchors {
@@ -1633,7 +1329,7 @@ button:hover {
 	}
 
 	&_search-icon {
-		@extend .nav_nav-icons;
+		//@extend .nav_nav-icons;
 		height: 18.75px;
 		width: 44px;
 		margin: 0;
@@ -1842,7 +1538,7 @@ button:hover {
 
 	&_button_wrapper {
 		@extend .nav_tweet-button_container_button-wrapper;
-		@include hover-btn-bg(false);
+		@include mixins.hover-btn-bg(false);
 		color: rgb(255, 255, 255);
 		text-decoration: none;
 		background-color: black;
@@ -1913,7 +1609,7 @@ button:hover {
 	}
 
 	&_cards {
-		@include hover-bg(0);
+		@include mixins.hover-bg(0);
 		display: flex;
 		flex-direction: column;
 		width: 100%;
@@ -2036,7 +1732,7 @@ button:hover {
 	}
 
 	&_cards_footer {
-		@include hover-bg(0 0 14px 14px);
+		@include mixins.hover-bg(0 0 14px 14px);
 		width: 100%;
 		height: 52px;
 		box-sizing: border-box;
@@ -2085,7 +1781,7 @@ button:hover {
 	}
 
 	&_cards {
-		@include hover-bg(0);
+		@include mixins.hover-bg(0);
 		display: flex;
 		width: 100%;
 		height: 65.5546875px;
@@ -2167,7 +1863,7 @@ button:hover {
 
 	&_button_wrapper {
 		@extend .nav_tweet-button_container_button-wrapper;
-		@include hover-btn-bg(false);
+		@include mixins.hover-btn-bg(false);
 		border-radius: 99px;
 		height: 32px;
 		width: 78px;
@@ -2191,7 +1887,7 @@ button:hover {
 	}
 
 	&_cards-footer {
-		@include hover-bg(0 0 14px 14px);
+		@include mixins.hover-bg(0 0 14px 14px);
 		width: 288px;
 		height: 52px;
 		box-sizing: border-box;
