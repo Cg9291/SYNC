@@ -1,5 +1,6 @@
 **/.DS_Store
 **/node_modules
+<<<<<<< HEAD
 **/projects/Cg9291.github.io
 **/projects/timer-app
 **/projects/twitter-clone
@@ -8,6 +9,17 @@
 **/projects/portfolio
 **/misc/awesome-cv
 **/tutorials-and-learning/jest-tutorial
+=======
+**/Cg9291.github.io
+**/Timer-App
+**/portfolio-index
+**/Random-Quote-Generator
+**/Music_Box
+**/Twitter-Clone
+**/Main_Folder/MY_PROJECTS/Pokedex
+**/Main_Folder/MY_PROJECTS/Portfolio
+**/Main_Folder/MY_PROJECTS/Twitter_Clone
+>>>>>>> 6f4976956838aa4921f0de2a51f843f14379fce3
 **/.env
 **.env
 .env
