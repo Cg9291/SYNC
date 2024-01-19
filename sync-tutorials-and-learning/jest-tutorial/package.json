@@ -1,0 +1,15 @@
+{
+	"name": "jest_tutorial",
+	"version": "1.0.0",
+	"description": "project to follow along jest tutorial",
+	"main": "sum.js",
+	"scripts": {
+		"test": "jest -t mockingTest"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"eslint": "^8.56.0",
+		"jest": "^29.7.0"
+	}
+}

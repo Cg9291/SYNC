@@ -1,0 +1,29 @@
+
+
+h1{
+    color:red;
+    font: {
+      family:helvetica;
+      size: 5rem;
+    }
+    p{
+      color:magenta;
+    }
+  }
+  
+  h2{
+    color:blue;
+    p{
+      color:silver;
+      @extend p ;
+    }
+    
+  }
+  
+  h3{
+    color:green;
+  }
+  
+  p{
+    color:gold
+  }

@@ -1,13 +1,5 @@
 **/.DS_Store
 **/node_modules
-**/projects/Cg9291.github.io
-**/projects/timer-app
-**/projects/twitter-clone
-**/projects/twitter-clone-old
-**/projects/pokedex
-**/projects/portfolio
-**/misc/awesome-cv
-**/tutorials-and-learning/jest-tutorial
 **/.env
 **.env
 .env
